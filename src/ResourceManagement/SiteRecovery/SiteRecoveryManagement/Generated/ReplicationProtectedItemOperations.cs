@@ -3398,6 +3398,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             propertiesValue["vmNics"] = vmNicsArray;
                         }
                     }
+                    
+                    if (input.Properties.LicenseType != null)
+                    {
+                        propertiesValue["licenseType"] = input.Properties.LicenseType;
+                    }
                 }
                 
                 requestContent = requestDoc.ToString(Newtonsoft.Json.Formatting.Indented);
@@ -4853,6 +4858,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                         }
                                         
+                                        JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance = ((string)licenseTypeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -5542,6 +5554,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                             hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                        }
+                                        
+                                        JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -6757,6 +6776,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                         }
                                         
+                                        JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance = ((string)licenseTypeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -7446,6 +7472,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                             hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                        }
+                                        
+                                        JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -8720,6 +8753,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                         }
                                         
+                                        JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance = ((string)licenseTypeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -9409,6 +9449,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                             hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                        }
+                                        
+                                        JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -10914,6 +10961,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                         }
                                         
+                                        JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance = ((string)licenseTypeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -11603,6 +11657,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                             hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                        }
+                                        
+                                        JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -12877,6 +12938,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                         }
                                         
+                                        JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance = ((string)licenseTypeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -13566,6 +13634,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                             hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                        }
+                                        
+                                        JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -15071,6 +15146,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                         }
                                         
+                                        JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance = ((string)licenseTypeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -15760,6 +15842,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                             hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                        }
+                                        
+                                        JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -17034,6 +17123,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                         }
                                         
+                                        JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance = ((string)licenseTypeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -17723,6 +17819,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                             hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                        }
+                                        
+                                        JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -18997,6 +19100,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                         }
                                         
+                                        JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance = ((string)licenseTypeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -19686,6 +19796,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                             hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                        }
+                                        
+                                        JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -20960,6 +21077,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                         }
                                         
+                                        JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance = ((string)licenseTypeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -21649,6 +21773,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                             hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                        }
+                                        
+                                        JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -22923,6 +23054,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                         }
                                         
+                                        JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance = ((string)licenseTypeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -23612,6 +23750,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                             hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                        }
+                                        
+                                        JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -24886,6 +25031,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                         }
                                         
+                                        JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance = ((string)licenseTypeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -25575,6 +25727,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                             hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                        }
+                                        
+                                        JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -26898,6 +27057,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                                 }
                                                 
+                                                JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                                if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                                {
+                                                    string licenseTypeInstance = ((string)licenseTypeValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                                 {
@@ -27587,6 +27753,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                                     hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                                }
+                                                
+                                                JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                                if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                                    hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -28861,6 +29034,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                                 }
                                                 
+                                                JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                                if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                                {
+                                                    string licenseTypeInstance = ((string)licenseTypeValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                                 {
@@ -29550,6 +29730,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                                     hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                                }
+                                                
+                                                JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                                if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                                    hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -30782,6 +30969,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
                                                 }
                                                 
+                                                JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                                if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                                {
+                                                    string licenseTypeInstance = ((string)licenseTypeValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                                 {
@@ -31471,6 +31665,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
                                                     hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                                }
+                                                
+                                                JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                                if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                                    hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
