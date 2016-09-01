@@ -1082,6 +1082,8 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     recoveryPlanProviderSpecificFailoverInputValue["secondaryKekCertificatePfx"] = derived.SecondaryKekCertificatePfx;
                                 }
                                 
+                                recoveryPlanProviderSpecificFailoverInputValue["rpRecoveryPointType"] = derived.RpRecoveryPointType;
+                                
                                 if (derived.InstanceType != null)
                                 {
                                     recoveryPlanProviderSpecificFailoverInputValue["instanceType"] = derived.InstanceType;
@@ -1555,6 +1557,8 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     recoveryPlanProviderSpecificFailoverInputValue["secondaryKekCertificatePfx"] = derived.SecondaryKekCertificatePfx;
                                 }
                                 
+                                recoveryPlanProviderSpecificFailoverInputValue["rpRecoveryPointType"] = derived.RpRecoveryPointType;
+                                
                                 if (derived.InstanceType != null)
                                 {
                                     recoveryPlanProviderSpecificFailoverInputValue["instanceType"] = derived.InstanceType;
@@ -1845,6 +1849,8 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 {
                                     recoveryPlanProviderSpecificFailoverInputValue["secondaryKekCertificatePfx"] = derived.SecondaryKekCertificatePfx;
                                 }
+                                
+                                recoveryPlanProviderSpecificFailoverInputValue["rpRecoveryPointType"] = derived.RpRecoveryPointType;
                                 
                                 if (derived.InstanceType != null)
                                 {

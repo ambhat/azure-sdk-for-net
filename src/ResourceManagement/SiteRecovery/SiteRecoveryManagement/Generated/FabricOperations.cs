@@ -2325,6 +2325,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string freeSpaceInstance = ((string)freeSpaceValue);
                                                             dataStoreInstance.FreeSpace = freeSpaceInstance;
                                                         }
+                                                        
+                                                        JToken typeValue = dataStoresValue["type"];
+                                                        if (typeValue != null && typeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string typeInstance = ((string)typeValue);
+                                                            dataStoreInstance.Type = typeInstance;
+                                                        }
                                                     }
                                                 }
                                             }
@@ -2547,11 +2554,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 fabricInstance.Name = nameInstance2;
                             }
                             
-                            JToken typeValue = responseDoc["type"];
-                            if (typeValue != null && typeValue.Type != JTokenType.Null)
+                            JToken typeValue2 = responseDoc["type"];
+                            if (typeValue2 != null && typeValue2.Type != JTokenType.Null)
                             {
-                                string typeInstance = ((string)typeValue);
-                                fabricInstance.Type = typeInstance;
+                                string typeInstance2 = ((string)typeValue2);
+                                fabricInstance.Type = typeInstance2;
                             }
                             
                             JToken locationValue2 = responseDoc["location"];
@@ -3439,6 +3446,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string freeSpaceInstance = ((string)freeSpaceValue);
                                                             dataStoreInstance.FreeSpace = freeSpaceInstance;
                                                         }
+                                                        
+                                                        JToken typeValue = dataStoresValue["type"];
+                                                        if (typeValue != null && typeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string typeInstance = ((string)typeValue);
+                                                            dataStoreInstance.Type = typeInstance;
+                                                        }
                                                     }
                                                 }
                                             }
@@ -3661,11 +3675,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 fabricInstance.Name = nameInstance2;
                             }
                             
-                            JToken typeValue = responseDoc["type"];
-                            if (typeValue != null && typeValue.Type != JTokenType.Null)
+                            JToken typeValue2 = responseDoc["type"];
+                            if (typeValue2 != null && typeValue2.Type != JTokenType.Null)
                             {
-                                string typeInstance = ((string)typeValue);
-                                fabricInstance.Type = typeInstance;
+                                string typeInstance2 = ((string)typeValue2);
+                                fabricInstance.Type = typeInstance2;
                             }
                             
                             JToken locationValue2 = responseDoc["location"];
@@ -4612,6 +4626,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string freeSpaceInstance = ((string)freeSpaceValue);
                                                             dataStoreInstance.FreeSpace = freeSpaceInstance;
                                                         }
+                                                        
+                                                        JToken typeValue = dataStoresValue["type"];
+                                                        if (typeValue != null && typeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string typeInstance = ((string)typeValue);
+                                                            dataStoreInstance.Type = typeInstance;
+                                                        }
                                                     }
                                                 }
                                             }
@@ -4834,11 +4855,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 fabricInstance.Name = nameInstance2;
                             }
                             
-                            JToken typeValue = responseDoc["type"];
-                            if (typeValue != null && typeValue.Type != JTokenType.Null)
+                            JToken typeValue2 = responseDoc["type"];
+                            if (typeValue2 != null && typeValue2.Type != JTokenType.Null)
                             {
-                                string typeInstance = ((string)typeValue);
-                                fabricInstance.Type = typeInstance;
+                                string typeInstance2 = ((string)typeValue2);
+                                fabricInstance.Type = typeInstance2;
                             }
                             
                             JToken locationValue2 = responseDoc["location"];
@@ -5785,6 +5806,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string freeSpaceInstance = ((string)freeSpaceValue);
                                                             dataStoreInstance.FreeSpace = freeSpaceInstance;
                                                         }
+                                                        
+                                                        JToken typeValue = dataStoresValue["type"];
+                                                        if (typeValue != null && typeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string typeInstance = ((string)typeValue);
+                                                            dataStoreInstance.Type = typeInstance;
+                                                        }
                                                     }
                                                 }
                                             }
@@ -6007,11 +6035,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 fabricInstance.Name = nameInstance2;
                             }
                             
-                            JToken typeValue = responseDoc["type"];
-                            if (typeValue != null && typeValue.Type != JTokenType.Null)
+                            JToken typeValue2 = responseDoc["type"];
+                            if (typeValue2 != null && typeValue2.Type != JTokenType.Null)
                             {
-                                string typeInstance = ((string)typeValue);
-                                fabricInstance.Type = typeInstance;
+                                string typeInstance2 = ((string)typeValue2);
+                                fabricInstance.Type = typeInstance2;
                             }
                             
                             JToken locationValue2 = responseDoc["location"];
@@ -6727,6 +6755,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string freeSpaceInstance = ((string)freeSpaceValue);
                                                             dataStoreInstance.FreeSpace = freeSpaceInstance;
                                                         }
+                                                        
+                                                        JToken typeValue = dataStoresValue["type"];
+                                                        if (typeValue != null && typeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string typeInstance = ((string)typeValue);
+                                                            dataStoreInstance.Type = typeInstance;
+                                                        }
                                                     }
                                                 }
                                             }
@@ -6949,11 +6984,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 fabricInstance.Name = nameInstance2;
                             }
                             
-                            JToken typeValue = responseDoc["type"];
-                            if (typeValue != null && typeValue.Type != JTokenType.Null)
+                            JToken typeValue2 = responseDoc["type"];
+                            if (typeValue2 != null && typeValue2.Type != JTokenType.Null)
                             {
-                                string typeInstance = ((string)typeValue);
-                                fabricInstance.Type = typeInstance;
+                                string typeInstance2 = ((string)typeValue2);
+                                fabricInstance.Type = typeInstance2;
                             }
                             
                             JToken locationValue2 = responseDoc["location"];
@@ -7698,6 +7733,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                                     string freeSpaceInstance = ((string)freeSpaceValue);
                                                                     dataStoreInstance.FreeSpace = freeSpaceInstance;
                                                                 }
+                                                                
+                                                                JToken typeValue = dataStoresValue["type"];
+                                                                if (typeValue != null && typeValue.Type != JTokenType.Null)
+                                                                {
+                                                                    string typeInstance = ((string)typeValue);
+                                                                    dataStoreInstance.Type = typeInstance;
+                                                                }
                                                             }
                                                         }
                                                     }
@@ -7920,11 +7962,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         fabricInstance.Name = nameInstance2;
                                     }
                                     
-                                    JToken typeValue = valueValue["type"];
-                                    if (typeValue != null && typeValue.Type != JTokenType.Null)
+                                    JToken typeValue2 = valueValue["type"];
+                                    if (typeValue2 != null && typeValue2.Type != JTokenType.Null)
                                     {
-                                        string typeInstance = ((string)typeValue);
-                                        fabricInstance.Type = typeInstance;
+                                        string typeInstance2 = ((string)typeValue2);
+                                        fabricInstance.Type = typeInstance2;
                                     }
                                     
                                     JToken locationValue2 = valueValue["location"];

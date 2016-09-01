@@ -1546,6 +1546,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             {
                                 providerSpecificDetailsValue["secondaryKekCertificatePfx"] = derived.SecondaryKekCertificatePfx;
                             }
+                            
+                            if (derived.RecoveryPointId != null)
+                            {
+                                providerSpecificDetailsValue["recoveryPointId "] = derived.RecoveryPointId;
+                            }
                         }
                         if (input.Properties.ProviderSpecificDetails is HyperVReplicaAzureFailbackProviderInput)
                         {
@@ -2294,10 +2299,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 providerSpecificDetailsValue["storageAccountId"] = derived2.StorageAccountId;
                             }
                             
-                            if (derived2.LogStorageAccountId != null)
-                            {
-                                providerSpecificDetailsValue["logStorageAccountId"] = derived2.LogStorageAccountId;
-                            }
+                            providerSpecificDetailsValue["logStorageAccountId"] = providerSpecificDetailsValue;
                             
                             if (derived2.DisksToInclude != null)
                             {
@@ -2730,6 +2732,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             {
                                 providerSpecificDetailsValue["secondaryKekCertificatePfx"] = derived.SecondaryKekCertificatePfx;
                             }
+                            
+                            if (derived.RecoveryPointId != null)
+                            {
+                                providerSpecificDetailsValue["recoveryPointId "] = derived.RecoveryPointId;
+                            }
                         }
                         if (input.Properties.ProviderSpecificDetails is HyperVReplicaAzureFailbackProviderInput)
                         {
@@ -3047,6 +3054,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             if (derived.SecondaryKekCertificatePfx != null)
                             {
                                 providerSpecificDetailsValue["secondaryKekCertificatePfx"] = derived.SecondaryKekCertificatePfx;
+                            }
+                            
+                            if (derived.RecoveryPointId != null)
+                            {
+                                providerSpecificDetailsValue["recoveryPointId "] = derived.RecoveryPointId;
                             }
                         }
                         if (input.Properties.ProviderSpecificDetails is HyperVReplicaAzureFailbackProviderInput)
@@ -5235,6 +5247,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                            {
+                                                inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance = ((string)targetVmIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -5675,6 +5703,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                             inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                        }
+                                        
+                                        JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                            {
+                                                inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                            inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -7329,6 +7373,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                            {
+                                                inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance = ((string)targetVmIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -7769,6 +7829,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                             inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                        }
+                                        
+                                        JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                            {
+                                                inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                            inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -9482,6 +9558,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                            {
+                                                inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance = ((string)targetVmIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -9922,6 +10014,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                             inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                        }
+                                        
+                                        JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                            {
+                                                inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                            inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -11866,6 +11974,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                            {
+                                                inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance = ((string)targetVmIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -12306,6 +12430,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                             inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                        }
+                                        
+                                        JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                            {
+                                                inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                            inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -14019,6 +14159,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                            {
+                                                inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance = ((string)targetVmIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -14459,6 +14615,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                             inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                        }
+                                        
+                                        JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                            {
+                                                inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                            inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -16403,6 +16575,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                            {
+                                                inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance = ((string)targetVmIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -16843,6 +17031,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                             inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                        }
+                                        
+                                        JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                            {
+                                                inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                            inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -18556,6 +18760,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                            {
+                                                inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance = ((string)targetVmIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -18996,6 +19216,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                             inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                        }
+                                        
+                                        JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                            {
+                                                inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                            inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -20709,6 +20945,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                            {
+                                                inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance = ((string)targetVmIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -21149,6 +21401,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                             inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                        }
+                                        
+                                        JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                            {
+                                                inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                            inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -22862,6 +23130,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                            {
+                                                inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance = ((string)targetVmIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -23302,6 +23586,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                             inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                        }
+                                        
+                                        JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                            {
+                                                inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                            inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -25015,6 +25315,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                            {
+                                                inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance = ((string)targetVmIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -25455,6 +25771,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                             inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                        }
+                                        
+                                        JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                            {
+                                                inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                            inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -27168,6 +27500,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                            {
+                                                inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance = ((string)targetVmIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -27608,6 +27956,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                             inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                        }
+                                        
+                                        JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                            {
+                                                inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                            inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -29370,6 +29734,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                                 }
                                                 
+                                                JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                                if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                                    {
+                                                        inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                                    }
+                                                }
+                                                
+                                                JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                                if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string targetVmIdInstance = ((string)targetVmIdValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -29810,6 +30190,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                                     inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                                }
+                                                
+                                                JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                                if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                                    {
+                                                        inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                                    }
+                                                }
+                                                
+                                                JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                                if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                                    inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -31523,6 +31919,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                                 }
                                                 
+                                                JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                                if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                                    {
+                                                        inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                                    }
+                                                }
+                                                
+                                                JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                                if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string targetVmIdInstance = ((string)targetVmIdValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -31963,6 +32375,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                                     inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                                }
+                                                
+                                                JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                                if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                                    {
+                                                        inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                                    }
+                                                }
+                                                
+                                                JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                                if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                                    inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -33634,6 +34062,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                                 }
                                                 
+                                                JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                                if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                                    {
+                                                        inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                                    }
+                                                }
+                                                
+                                                JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                                if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string targetVmIdInstance = ((string)targetVmIdValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -34074,6 +34518,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
                                                     inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                                }
+                                                
+                                                JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                                if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                                    {
+                                                        inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                                    }
+                                                }
+                                                
+                                                JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                                if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                                    inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];

@@ -65,6 +65,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._compressedDataRateInMB = value; }
         }
         
+        private IList<string> _datastores;
+        
+        /// <summary>
+        /// Optional. Gets or sets the data stores for the VM.
+        /// </summary>
+        public IList<string> Datastores
+        {
+            get { return this._datastores; }
+            set { this._datastores = value; }
+        }
+        
         private string _discoveryType;
         
         /// <summary>
@@ -358,6 +369,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._sourceVmRAMSizeInMB = value; }
         }
         
+        private string _targetVmId;
+        
+        /// <summary>
+        /// Optional. Gets or sets the ARM Id of the target Azure VM.
+        /// </summary>
+        public string TargetVmId
+        {
+            get { return this._targetVmId; }
+            set { this._targetVmId = value; }
+        }
+        
         private double _uncompressedDataRateInMB;
         
         /// <summary>
@@ -442,6 +464,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         public InMageAzureV2ProviderSpecificSettings()
         {
             this.AzureVMDiskDetails = new LazyList<AzureVmDiskDetails>();
+            this.Datastores = new LazyList<string>();
             this.ProtectedDisks = new LazyList<InMageAzureV2ProtectedDiskDetails>();
             this.VMNics = new LazyList<VMNicDetails>();
         }

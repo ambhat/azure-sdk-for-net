@@ -41,6 +41,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._primaryKekCertificatePfx = value; }
         }
         
+        private string _recoveryPointId;
+        
+        /// <summary>
+        /// Optional. Gets or sets Recovery point Id.
+        /// </summary>
+        public string RecoveryPointId
+        {
+            get { return this._recoveryPointId; }
+            set { this._recoveryPointId = value; }
+        }
+        
         private string _secondaryKekCertificatePfx;
         
         /// <summary>

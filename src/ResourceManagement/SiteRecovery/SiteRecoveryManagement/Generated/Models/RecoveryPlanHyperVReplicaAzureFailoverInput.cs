@@ -41,6 +41,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._primaryKekCertificatePfx = value; }
         }
         
+        private string _rpRecoveryPointType;
+        
+        /// <summary>
+        /// Required. RP Recovery point type.
+        /// </summary>
+        public string RpRecoveryPointType
+        {
+            get { return this._rpRecoveryPointType; }
+            set { this._rpRecoveryPointType = value; }
+        }
+        
         private string _secondaryKekCertificatePfx;
         
         /// <summary>
@@ -76,14 +87,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// RecoveryPlanHyperVReplicaAzureFailoverInput class with required
         /// arguments.
         /// </summary>
-        public RecoveryPlanHyperVReplicaAzureFailoverInput(string vaultLocation)
+        public RecoveryPlanHyperVReplicaAzureFailoverInput(string vaultLocation, string rpRecoveryPointType)
             : this()
         {
             if (vaultLocation == null)
             {
                 throw new ArgumentNullException("vaultLocation");
             }
+            if (rpRecoveryPointType == null)
+            {
+                throw new ArgumentNullException("rpRecoveryPointType");
+            }
             this.VaultLocation = vaultLocation;
+            this.RpRecoveryPointType = rpRecoveryPointType;
         }
     }
 }

@@ -63,6 +63,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._symbolicName = value; }
         }
         
+        private string _type;
+        
+        /// <summary>
+        /// Optional. The type of data store.
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+        
         private string _uuid;
         
         /// <summary>
