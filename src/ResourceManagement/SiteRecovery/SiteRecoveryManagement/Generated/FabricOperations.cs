@@ -119,7 +119,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(fabricName);
             url = url + "/checkConsistency";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -303,7 +303,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + "/replicationFabrics/";
             url = url + Uri.EscapeDataString(fabricName);
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -518,7 +518,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(fabricName);
             url = url + "/remove";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -703,7 +703,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(fabricName);
             url = url + "/deployProcessServer";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -936,7 +936,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + "/replicationFabrics/";
             url = url + Uri.EscapeDataString(fabricName);
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -1121,7 +1121,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(fabricName);
             url = url + "/reassociateGateway";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -1348,7 +1348,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(fabricName);
             url = url + "/renewCertificate";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -1784,7 +1784,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + "/replicationFabrics/";
             url = url + Uri.EscapeDataString(fabricName);
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -7187,7 +7187,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(this.Client.ResourceName);
             url = url + "/replicationFabrics";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);

@@ -99,6 +99,31 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._targetAzureSubnetId = value; }
         }
         
+        private string _targetAzureV1ResourceGroupId;
+        
+        /// <summary>
+        /// Optional. Gets or sets the Id of the target resource group (for
+        /// classic deployment) in which the failover VM is to be created.
+        /// </summary>
+        public string TargetAzureV1ResourceGroupId
+        {
+            get { return this._targetAzureV1ResourceGroupId; }
+            set { this._targetAzureV1ResourceGroupId = value; }
+        }
+        
+        private string _targetAzureV2ResourceGroupId;
+        
+        /// <summary>
+        /// Optional. Gets or sets the Id of the target resource group (for
+        /// resource manager deployment) in which the failover VM is to be
+        /// created.
+        /// </summary>
+        public string TargetAzureV2ResourceGroupId
+        {
+            get { return this._targetAzureV2ResourceGroupId; }
+            set { this._targetAzureV2ResourceGroupId = value; }
+        }
+        
         private string _targetAzureVmName;
         
         /// <summary>

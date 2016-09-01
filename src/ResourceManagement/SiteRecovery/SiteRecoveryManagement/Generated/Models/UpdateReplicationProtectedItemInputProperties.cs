@@ -56,6 +56,18 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._licenseType = value; }
         }
         
+        private UpdateReplicationProtectedItemProviderInput _providerSpecificDetails;
+        
+        /// <summary>
+        /// Optional. Gets or sets the provider specific input to update
+        /// replication protected item.
+        /// </summary>
+        public UpdateReplicationProtectedItemProviderInput ProviderSpecificDetails
+        {
+            get { return this._providerSpecificDetails; }
+            set { this._providerSpecificDetails = value; }
+        }
+        
         private string _recoveryAvailabilitySetId;
         
         /// <summary>
@@ -87,28 +99,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         {
             get { return this._recoveryAzureVMSize; }
             set { this._recoveryAzureVMSize = value; }
-        }
-        
-        private string _recoveryCloudServiceId;
-        
-        /// <summary>
-        /// Optional. Gets or sets the target cloud service ARM Id (for V1).
-        /// </summary>
-        public string RecoveryCloudServiceId
-        {
-            get { return this._recoveryCloudServiceId; }
-            set { this._recoveryCloudServiceId = value; }
-        }
-        
-        private string _recoveryResourceGroupId;
-        
-        /// <summary>
-        /// Optional. Gets or sets the target resource group ARM Id (for V2).
-        /// </summary>
-        public string RecoveryResourceGroupId
-        {
-            get { return this._recoveryResourceGroupId; }
-            set { this._recoveryResourceGroupId = value; }
         }
         
         private string _selectedRecoveryAzureNetworkId;

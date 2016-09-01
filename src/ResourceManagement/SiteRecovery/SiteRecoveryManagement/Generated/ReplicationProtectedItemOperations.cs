@@ -224,7 +224,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             url = url + "/applyRecoveryPoint";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -473,7 +473,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             url = url + "/failoverCommit";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -678,7 +678,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             url = url + "/remove";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -925,7 +925,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + "/ReplicationProtectedItems/";
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -1049,6 +1049,16 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     providerSpecificDetailsValue["disksToInclude"] = disksToIncludeArray;
                                 }
                             }
+                            
+                            if (derived.TargetAzureV1ResourceGroupId != null)
+                            {
+                                providerSpecificDetailsValue["targetAzureV1ResourceGroupId"] = derived.TargetAzureV1ResourceGroupId;
+                            }
+                            
+                            if (derived.TargetAzureV2ResourceGroupId != null)
+                            {
+                                providerSpecificDetailsValue["targetAzureV2ResourceGroupId"] = derived.TargetAzureV2ResourceGroupId;
+                            }
                         }
                         if (input.Properties.ProviderSpecificDetails is InMageAzureV2EnableProtectionInput)
                         {
@@ -1126,6 +1136,16 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     }
                                     providerSpecificDetailsValue["disksToInclude"] = disksToIncludeArray2;
                                 }
+                            }
+                            
+                            if (derived2.TargetAzureV1ResourceGroupId != null)
+                            {
+                                providerSpecificDetailsValue["targetAzureV1ResourceGroupId"] = derived2.TargetAzureV1ResourceGroupId;
+                            }
+                            
+                            if (derived2.TargetAzureV2ResourceGroupId != null)
+                            {
+                                providerSpecificDetailsValue["targetAzureV2ResourceGroupId"] = derived2.TargetAzureV2ResourceGroupId;
                             }
                         }
                         if (input.Properties.ProviderSpecificDetails is InMageEnableProtectionInput)
@@ -1470,7 +1490,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             url = url + "/plannedFailover";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -1779,7 +1799,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + "/ReplicationProtectedItems/";
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -1977,7 +1997,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             url = url + "/repairReplication";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -2182,7 +2202,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             url = url + "/reProtect";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -2646,7 +2666,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             url = url + "/testFailover";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -2974,7 +2994,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             url = url + "/unplannedFailover";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -3297,7 +3317,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             url = url + "/updateMobilityService";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -3530,7 +3550,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + "/ReplicationProtectedItems/";
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -3637,19 +3657,60 @@ namespace Microsoft.Azure.Management.SiteRecovery
                         propertiesValue["licenseType"] = input.Properties.LicenseType;
                     }
                     
-                    if (input.Properties.RecoveryCloudServiceId != null)
-                    {
-                        propertiesValue["recoveryCloudServiceId"] = input.Properties.RecoveryCloudServiceId;
-                    }
-                    
-                    if (input.Properties.RecoveryResourceGroupId != null)
-                    {
-                        propertiesValue["recoveryResourceGroupId"] = input.Properties.RecoveryResourceGroupId;
-                    }
-                    
                     if (input.Properties.RecoveryAvailabilitySetId != null)
                     {
                         propertiesValue["recoveryAvailabilitySetId"] = input.Properties.RecoveryAvailabilitySetId;
+                    }
+                    
+                    if (input.Properties.ProviderSpecificDetails != null)
+                    {
+                        JObject providerSpecificDetailsValue = new JObject();
+                        propertiesValue["providerSpecificDetails"] = providerSpecificDetailsValue;
+                        if (input.Properties.ProviderSpecificDetails is A2AUpdateReplicationProtectedItemInput)
+                        {
+                            providerSpecificDetailsValue["instanceType"] = "A2A";
+                            A2AUpdateReplicationProtectedItemInput derived = ((A2AUpdateReplicationProtectedItemInput)input.Properties.ProviderSpecificDetails);
+                            
+                            if (derived.RecoveryCloudServiceId != null)
+                            {
+                                providerSpecificDetailsValue["recoveryCloudServiceId"] = derived.RecoveryCloudServiceId;
+                            }
+                            
+                            if (derived.RecoveryResourceGroupId != null)
+                            {
+                                providerSpecificDetailsValue["recoveryResourceGroupId"] = derived.RecoveryResourceGroupId;
+                            }
+                        }
+                        if (input.Properties.ProviderSpecificDetails is HyperVReplicaAzureUpdateReplicationProtectedItemInput)
+                        {
+                            providerSpecificDetailsValue["instanceType"] = "HyperVReplicaAzure";
+                            HyperVReplicaAzureUpdateReplicationProtectedItemInput derived2 = ((HyperVReplicaAzureUpdateReplicationProtectedItemInput)input.Properties.ProviderSpecificDetails);
+                            
+                            if (derived2.RecoveryAzureV1ResourceGroupId != null)
+                            {
+                                providerSpecificDetailsValue["recoveryAzureV1ResourceGroupId"] = derived2.RecoveryAzureV1ResourceGroupId;
+                            }
+                            
+                            if (derived2.RecoveryAzureV2ResourceGroupId != null)
+                            {
+                                providerSpecificDetailsValue["recoveryAzureV2ResourceGroupId"] = derived2.RecoveryAzureV2ResourceGroupId;
+                            }
+                        }
+                        if (input.Properties.ProviderSpecificDetails is InMageAzureV2UpdateReplicationProtectedItemInput)
+                        {
+                            providerSpecificDetailsValue["instanceType"] = "InMageAzureV2";
+                            InMageAzureV2UpdateReplicationProtectedItemInput derived3 = ((InMageAzureV2UpdateReplicationProtectedItemInput)input.Properties.ProviderSpecificDetails);
+                            
+                            if (derived3.RecoveryAzureV1ResourceGroupId != null)
+                            {
+                                providerSpecificDetailsValue["recoveryAzureV1ResourceGroupId"] = derived3.RecoveryAzureV1ResourceGroupId;
+                            }
+                            
+                            if (derived3.RecoveryAzureV2ResourceGroupId != null)
+                            {
+                                providerSpecificDetailsValue["recoveryAzureV2ResourceGroupId"] = derived3.RecoveryAzureV2ResourceGroupId;
+                            }
+                        }
                     }
                 }
                 
@@ -4038,7 +4099,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + "/replicationProtectedItems/";
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -5263,6 +5324,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                         }
                                         
+                                        JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -6017,6 +6085,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance5 = ((string)vmProtectionStateDescriptionValue5);
                                             hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
+                                        }
+                                        
+                                        JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -7389,6 +7464,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                         }
                                         
+                                        JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -8143,6 +8225,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance5 = ((string)vmProtectionStateDescriptionValue5);
                                             hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
+                                        }
+                                        
+                                        JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -9574,6 +9663,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                         }
                                         
+                                        JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -10328,6 +10424,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance5 = ((string)vmProtectionStateDescriptionValue5);
                                             hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
+                                        }
+                                        
+                                        JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -11990,6 +12093,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                         }
                                         
+                                        JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -12744,6 +12854,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance5 = ((string)vmProtectionStateDescriptionValue5);
                                             hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
+                                        }
+                                        
+                                        JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -14175,6 +14292,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                         }
                                         
+                                        JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -14929,6 +15053,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance5 = ((string)vmProtectionStateDescriptionValue5);
                                             hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
+                                        }
+                                        
+                                        JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -16591,6 +16722,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                         }
                                         
+                                        JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -17345,6 +17483,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance5 = ((string)vmProtectionStateDescriptionValue5);
                                             hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
+                                        }
+                                        
+                                        JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -18776,6 +18921,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                         }
                                         
+                                        JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -19530,6 +19682,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance5 = ((string)vmProtectionStateDescriptionValue5);
                                             hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
+                                        }
+                                        
+                                        JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -20961,6 +21120,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                         }
                                         
+                                        JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -21715,6 +21881,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance5 = ((string)vmProtectionStateDescriptionValue5);
                                             hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
+                                        }
+                                        
+                                        JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -23146,6 +23319,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                         }
                                         
+                                        JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -23900,6 +24080,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance5 = ((string)vmProtectionStateDescriptionValue5);
                                             hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
+                                        }
+                                        
+                                        JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -25331,6 +25518,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                         }
                                         
+                                        JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -26085,6 +26279,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance5 = ((string)vmProtectionStateDescriptionValue5);
                                             hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
+                                        }
+                                        
+                                        JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -27516,6 +27717,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                         }
                                         
+                                        JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -28272,6 +28480,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
                                         }
                                         
+                                        JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
+                                        }
+                                        
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue6 != null && instanceTypeValue6.Type != JTokenType.Null)
                                         {
@@ -28520,7 +28735,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(protectionContainerName);
             url = url + "/replicationProtectedItems";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -29750,6 +29965,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                                 }
                                                 
+                                                JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                                if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -30506,6 +30728,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
                                                 }
                                                 
+                                                JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                                if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                                    hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
+                                                }
+                                                
                                                 JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue6 != null && instanceTypeValue6.Type != JTokenType.Null)
                                                 {
@@ -30696,7 +30925,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             {
                 queryParameters.Add("skipToken=" + Uri.EscapeDataString(skipToken));
             }
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             List<string> odataFilter = new List<string>();
             if (parameters != null && parameters.ToQueryString() != null)
             {
@@ -31935,6 +32164,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                                 }
                                                 
+                                                JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                                if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -32689,6 +32925,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string vmProtectionStateDescriptionInstance5 = ((string)vmProtectionStateDescriptionValue5);
                                                     hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
+                                                }
+                                                
+                                                JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                                if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                                    hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -34078,6 +34321,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
                                                 }
                                                 
+                                                JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                                if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -34834,6 +35084,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
                                                 }
                                                 
+                                                JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                                if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                                    hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
+                                                }
+                                                
                                                 JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue6 != null && instanceTypeValue6.Type != JTokenType.Null)
                                                 {
@@ -35043,7 +35300,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(replicationProtectedItemName);
             url = url + "/targetComputeSizes";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);

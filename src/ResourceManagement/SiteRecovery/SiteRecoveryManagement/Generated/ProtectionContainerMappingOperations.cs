@@ -147,7 +147,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + "/replicationProtectionContainerMappings/";
             url = url + Uri.EscapeDataString(mappingName);
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -376,7 +376,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + "/replicationProtectionContainerMappings/";
             url = url + Uri.EscapeDataString(mappingName);
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -581,7 +581,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(mappingName);
             url = url + "/remove";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -875,7 +875,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + "/replicationProtectionContainerMappings/";
             url = url + Uri.EscapeDataString(mappingName);
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -2262,7 +2262,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(protectionContainerName);
             url = url + "/replicationProtectionContainerMappings";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);
@@ -2656,7 +2656,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             url = url + Uri.EscapeDataString(this.Client.ResourceName);
             url = url + "/replicationProtectionContainerMappings";
             List<string> queryParameters = new List<string>();
-            queryParameters.Add("api-version=2015-11-10");
+            queryParameters.Add("api-version=2016-08-10");
             if (queryParameters.Count > 0)
             {
                 url = url + "?" + string.Join("&", queryParameters);

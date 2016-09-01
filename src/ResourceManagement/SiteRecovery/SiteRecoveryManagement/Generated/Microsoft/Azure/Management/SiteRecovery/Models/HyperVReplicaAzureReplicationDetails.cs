@@ -111,6 +111,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._oSDetails = value; }
         }
         
+        private string _recoveryAzureResourceGroupId;
+        
+        /// <summary>
+        /// Optional. Gets or sets the recovery Azure resource group Id.
+        /// </summary>
+        public string RecoveryAzureResourceGroupId
+        {
+            get { return this._recoveryAzureResourceGroupId; }
+            set { this._recoveryAzureResourceGroupId = value; }
+        }
+        
         private string _recoveryAzureStorageAccount;
         
         /// <summary>
