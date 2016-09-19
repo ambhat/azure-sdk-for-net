@@ -26,6 +26,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
 {
     public partial class A2AProtectedDiskDetails
     {
+        private string _diskType;
+        
+        /// <summary>
+        /// Optional. Type of the disk.
+        /// </summary>
+        public string DiskType
+        {
+            get { return this._diskType; }
+            set { this._diskType = value; }
+        }
+        
         private string _diskUri;
         
         /// <summary>

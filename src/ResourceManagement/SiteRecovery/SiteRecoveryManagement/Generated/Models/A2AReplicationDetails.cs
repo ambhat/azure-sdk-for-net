@@ -65,6 +65,28 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._multiVmGroupName = value; }
         }
         
+        private string _oSType;
+        
+        /// <summary>
+        /// Optional. Operating system type.
+        /// </summary>
+        public string OSType
+        {
+            get { return this._oSType; }
+            set { this._oSType = value; }
+        }
+        
+        private string _primaryFabricLocation;
+        
+        /// <summary>
+        /// Optional. Primary fabric location.
+        /// </summary>
+        public string PrimaryFabricLocation
+        {
+            get { return this._primaryFabricLocation; }
+            set { this._primaryFabricLocation = value; }
+        }
+        
         private IList<A2AProtectedDiskDetails> _protectedDisks;
         
         /// <summary>
@@ -74,6 +96,61 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         {
             get { return this._protectedDisks; }
             set { this._protectedDisks = value; }
+        }
+        
+        private string _recoveryAzureResourceGroupId;
+        
+        /// <summary>
+        /// Optional. Recovery azure resource group id.
+        /// </summary>
+        public string RecoveryAzureResourceGroupId
+        {
+            get { return this._recoveryAzureResourceGroupId; }
+            set { this._recoveryAzureResourceGroupId = value; }
+        }
+        
+        private string _recoveryAzureVMName;
+        
+        /// <summary>
+        /// Optional. Recovery azure vm name.
+        /// </summary>
+        public string RecoveryAzureVMName
+        {
+            get { return this._recoveryAzureVMName; }
+            set { this._recoveryAzureVMName = value; }
+        }
+        
+        private string _recoveryAzureVMSize;
+        
+        /// <summary>
+        /// Optional. Recovery azure vm size.
+        /// </summary>
+        public string RecoveryAzureVMSize
+        {
+            get { return this._recoveryAzureVMSize; }
+            set { this._recoveryAzureVMSize = value; }
+        }
+        
+        private string _recoveryFabricLocation;
+        
+        /// <summary>
+        /// Optional. Recovery fabric location.
+        /// </summary>
+        public string RecoveryFabricLocation
+        {
+            get { return this._recoveryFabricLocation; }
+            set { this._recoveryFabricLocation = value; }
+        }
+        
+        private string _selectedRecoveryAzureNetworkId;
+        
+        /// <summary>
+        /// Optional. Selected recovery azure network id.
+        /// </summary>
+        public string SelectedRecoveryAzureNetworkId
+        {
+            get { return this._selectedRecoveryAzureNetworkId; }
+            set { this._selectedRecoveryAzureNetworkId = value; }
         }
         
         /// <summary>
