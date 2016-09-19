@@ -305,6 +305,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             
                             providerSpecificDetailsValue["vaultLocation"] = derived2.VaultLocation;
                         }
+                        if (input.Properties.ProviderSpecificDetails is A2AApplyRecoveryPointInput)
+                        {
+                            providerSpecificDetailsValue["instanceType"] = "A2A";
+                            A2AApplyRecoveryPointInput derived3 = ((A2AApplyRecoveryPointInput)input.Properties.ProviderSpecificDetails);
+                        }
                     }
                 }
                 
