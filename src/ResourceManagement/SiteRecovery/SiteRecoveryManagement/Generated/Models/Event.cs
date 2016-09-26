@@ -48,19 +48,5 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         public Event()
         {
         }
-        
-        /// <summary>
-        /// Initializes a new instance of the Event class with required
-        /// arguments.
-        /// </summary>
-        public Event(string location)
-            : this()
-        {
-            if (location == null)
-            {
-                throw new ArgumentNullException("location");
-            }
-            this.Location = location;
-        }
     }
 }

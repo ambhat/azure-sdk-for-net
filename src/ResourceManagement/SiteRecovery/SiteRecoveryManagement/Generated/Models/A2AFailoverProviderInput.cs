@@ -30,6 +30,18 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// </summary>
     public partial class A2AFailoverProviderInput : ProviderSpecificFailoverInput
     {
+        private string _cloudServiceCreationOption;
+        
+        /// <summary>
+        /// Optional. Gets or sets a value indicating whether to use recovery
+        /// cloud service or create new cloud service for test failover or not.
+        /// </summary>
+        public string CloudServiceCreationOption
+        {
+            get { return this._cloudServiceCreationOption; }
+            set { this._cloudServiceCreationOption = value; }
+        }
+        
         private string _recoveryPointId;
         
         /// <summary>

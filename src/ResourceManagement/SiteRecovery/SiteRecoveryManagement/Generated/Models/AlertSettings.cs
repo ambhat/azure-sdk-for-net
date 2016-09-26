@@ -48,19 +48,5 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         public AlertSettings()
         {
         }
-        
-        /// <summary>
-        /// Initializes a new instance of the AlertSettings class with required
-        /// arguments.
-        /// </summary>
-        public AlertSettings(string location)
-            : this()
-        {
-            if (location == null)
-            {
-                throw new ArgumentNullException("location");
-            }
-            this.Location = location;
-        }
     }
 }

@@ -48,19 +48,5 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         public Policy()
         {
         }
-        
-        /// <summary>
-        /// Initializes a new instance of the Policy class with required
-        /// arguments.
-        /// </summary>
-        public Policy(string location)
-            : this()
-        {
-            if (location == null)
-            {
-                throw new ArgumentNullException("location");
-            }
-            this.Location = location;
-        }
     }
 }

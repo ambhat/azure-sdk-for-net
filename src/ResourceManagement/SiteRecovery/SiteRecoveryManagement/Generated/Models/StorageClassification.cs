@@ -48,19 +48,5 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         public StorageClassification()
         {
         }
-        
-        /// <summary>
-        /// Initializes a new instance of the StorageClassification class with
-        /// required arguments.
-        /// </summary>
-        public StorageClassification(string location)
-            : this()
-        {
-            if (location == null)
-            {
-                throw new ArgumentNullException("location");
-            }
-            this.Location = location;
-        }
     }
 }

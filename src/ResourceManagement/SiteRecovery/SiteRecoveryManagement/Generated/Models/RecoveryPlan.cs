@@ -48,19 +48,5 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         public RecoveryPlan()
         {
         }
-        
-        /// <summary>
-        /// Initializes a new instance of the RecoveryPlan class with required
-        /// arguments.
-        /// </summary>
-        public RecoveryPlan(string location)
-            : this()
-        {
-            if (location == null)
-            {
-                throw new ArgumentNullException("location");
-            }
-            this.Location = location;
-        }
     }
 }

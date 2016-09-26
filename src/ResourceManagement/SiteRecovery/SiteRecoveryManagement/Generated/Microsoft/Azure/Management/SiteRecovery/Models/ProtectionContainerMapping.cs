@@ -48,19 +48,5 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         public ProtectionContainerMapping()
         {
         }
-        
-        /// <summary>
-        /// Initializes a new instance of the ProtectionContainerMapping class
-        /// with required arguments.
-        /// </summary>
-        public ProtectionContainerMapping(string location)
-            : this()
-        {
-            if (location == null)
-            {
-                throw new ArgumentNullException("location");
-            }
-            this.Location = location;
-        }
     }
 }

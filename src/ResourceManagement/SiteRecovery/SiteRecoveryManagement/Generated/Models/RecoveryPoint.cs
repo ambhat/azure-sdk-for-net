@@ -53,19 +53,14 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// Initializes a new instance of the RecoveryPoint class with required
         /// arguments.
         /// </summary>
-        public RecoveryPoint(RecoveryPointProperties properties, string location)
+        public RecoveryPoint(RecoveryPointProperties properties)
             : this()
         {
             if (properties == null)
             {
                 throw new ArgumentNullException("properties");
             }
-            if (location == null)
-            {
-                throw new ArgumentNullException("location");
-            }
             this.Properties = properties;
-            this.Location = location;
         }
     }
 }

@@ -53,19 +53,14 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// Initializes a new instance of the NetworkMapping class with
         /// required arguments.
         /// </summary>
-        public NetworkMapping(NetworkMappingProperties properties, string location)
+        public NetworkMapping(NetworkMappingProperties properties)
             : this()
         {
             if (properties == null)
             {
                 throw new ArgumentNullException("properties");
             }
-            if (location == null)
-            {
-                throw new ArgumentNullException("location");
-            }
             this.Properties = properties;
-            this.Location = location;
         }
     }
 }

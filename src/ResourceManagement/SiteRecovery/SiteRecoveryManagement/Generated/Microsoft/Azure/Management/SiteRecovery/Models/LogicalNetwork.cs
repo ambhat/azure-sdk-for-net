@@ -53,19 +53,14 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// Initializes a new instance of the LogicalNetwork class with
         /// required arguments.
         /// </summary>
-        public LogicalNetwork(LogicalNetworkProperties properties, string location)
+        public LogicalNetwork(LogicalNetworkProperties properties)
             : this()
         {
             if (properties == null)
             {
                 throw new ArgumentNullException("properties");
             }
-            if (location == null)
-            {
-                throw new ArgumentNullException("location");
-            }
             this.Properties = properties;
-            this.Location = location;
         }
     }
 }

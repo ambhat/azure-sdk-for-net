@@ -53,19 +53,14 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// Initializes a new instance of the ProtectableItem class with
         /// required arguments.
         /// </summary>
-        public ProtectableItem(ProtectableItemProperties properties, string location)
+        public ProtectableItem(ProtectableItemProperties properties)
             : this()
         {
             if (properties == null)
             {
                 throw new ArgumentNullException("properties");
             }
-            if (location == null)
-            {
-                throw new ArgumentNullException("location");
-            }
             this.Properties = properties;
-            this.Location = location;
         }
     }
 }

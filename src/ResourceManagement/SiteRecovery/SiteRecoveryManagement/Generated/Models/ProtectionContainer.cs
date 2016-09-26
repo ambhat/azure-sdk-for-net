@@ -53,19 +53,14 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// Initializes a new instance of the ProtectionContainer class with
         /// required arguments.
         /// </summary>
-        public ProtectionContainer(ProtectionContainerProperties properties, string location)
+        public ProtectionContainer(ProtectionContainerProperties properties)
             : this()
         {
             if (properties == null)
             {
                 throw new ArgumentNullException("properties");
             }
-            if (location == null)
-            {
-                throw new ArgumentNullException("location");
-            }
             this.Properties = properties;
-            this.Location = location;
         }
     }
 }

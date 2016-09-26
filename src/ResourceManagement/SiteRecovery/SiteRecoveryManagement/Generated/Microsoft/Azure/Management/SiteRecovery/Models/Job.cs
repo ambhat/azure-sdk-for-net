@@ -52,19 +52,14 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the Job class with required arguments.
         /// </summary>
-        public Job(JobProperties properties, string location)
+        public Job(JobProperties properties)
             : this()
         {
             if (properties == null)
             {
                 throw new ArgumentNullException("properties");
             }
-            if (location == null)
-            {
-                throw new ArgumentNullException("location");
-            }
             this.Properties = properties;
-            this.Location = location;
         }
     }
 }
