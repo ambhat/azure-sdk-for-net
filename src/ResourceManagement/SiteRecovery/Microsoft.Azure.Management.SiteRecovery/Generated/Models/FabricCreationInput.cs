@@ -10,18 +10,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Newtonsoft.Json;
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
+    using Microsoft.Rest.Azure;
 
-    public partial class PlannedFailoverInput
+    public partial class FabricCreationInput
     {
         /// <summary>
-        /// Initializes a new instance of the PlannedFailoverInput class.
+        /// Initializes a new instance of the FabricCreationInput class.
         /// </summary>
-        public PlannedFailoverInput() { }
+        public FabricCreationInput() { }
 
         /// <summary>
-        /// Initializes a new instance of the PlannedFailoverInput class.
+        /// Initializes a new instance of the FabricCreationInput class.
         /// </summary>
-        public PlannedFailoverInput(PlannedFailoverInputProperties properties = default(PlannedFailoverInputProperties))
+        public FabricCreationInput(FabricCreationInputProperties properties = default(FabricCreationInputProperties))
         {
             Properties = properties;
         }
@@ -29,7 +30,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
-        public PlannedFailoverInputProperties Properties { get; set; }
+        public FabricCreationInputProperties Properties { get; set; }
 
     }
 }

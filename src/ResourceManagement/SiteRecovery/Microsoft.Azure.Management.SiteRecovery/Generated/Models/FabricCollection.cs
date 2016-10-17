@@ -10,20 +10,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Newtonsoft.Json;
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
+    using Microsoft.Rest.Azure;
 
-    public partial class ReplicationProtectedItemCollection
+    public partial class FabricCollection
     {
         /// <summary>
-        /// Initializes a new instance of the
-        /// ReplicationProtectedItemCollection class.
+        /// Initializes a new instance of the FabricCollection class.
         /// </summary>
-        public ReplicationProtectedItemCollection() { }
+        public FabricCollection() { }
 
         /// <summary>
-        /// Initializes a new instance of the
-        /// ReplicationProtectedItemCollection class.
+        /// Initializes a new instance of the FabricCollection class.
         /// </summary>
-        public ReplicationProtectedItemCollection(IList<ReplicationProtectedItem> value = default(IList<ReplicationProtectedItem>), string nextLink = default(string))
+        public FabricCollection(IList<Fabric> value = default(IList<Fabric>), string nextLink = default(string))
         {
             Value = value;
             NextLink = nextLink;
@@ -32,7 +31,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// </summary>
         [JsonProperty(PropertyName = "value")]
-        public IList<ReplicationProtectedItem> Value { get; set; }
+        public IList<Fabric> Value { get; set; }
 
         /// <summary>
         /// </summary>

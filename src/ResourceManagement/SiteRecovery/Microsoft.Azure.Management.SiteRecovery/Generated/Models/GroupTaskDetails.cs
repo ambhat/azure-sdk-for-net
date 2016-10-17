@@ -10,28 +10,33 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Newtonsoft.Json;
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
+    using Microsoft.Rest.Azure;
 
-    public partial class ReplicationProviderSpecificSettings
+    public partial class GroupTaskDetails
     {
         /// <summary>
-        /// Initializes a new instance of the
-        /// ReplicationProviderSpecificSettings class.
+        /// Initializes a new instance of the GroupTaskDetails class.
         /// </summary>
-        public ReplicationProviderSpecificSettings() { }
+        public GroupTaskDetails() { }
 
         /// <summary>
-        /// Initializes a new instance of the
-        /// ReplicationProviderSpecificSettings class.
+        /// Initializes a new instance of the GroupTaskDetails class.
         /// </summary>
-        public ReplicationProviderSpecificSettings(string instanceType = default(string))
+        public GroupTaskDetails(string instanceType = default(string), IList<STask> childTasks = default(IList<STask>))
         {
             InstanceType = instanceType;
+            ChildTasks = childTasks;
         }
 
         /// <summary>
         /// </summary>
         [JsonProperty(PropertyName = "instanceType")]
-        public string InstanceType { get; private set; }
+        public string InstanceType { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "childTasks")]
+        public IList<STask> ChildTasks { get; set; }
 
     }
 }

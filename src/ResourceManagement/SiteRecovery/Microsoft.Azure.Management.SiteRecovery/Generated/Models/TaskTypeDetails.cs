@@ -10,20 +10,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Newtonsoft.Json;
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
+    using Microsoft.Rest.Azure;
 
-    public partial class ReplicationProviderSpecificContainerMappingInput
+    public partial class TaskTypeDetails
     {
         /// <summary>
-        /// Initializes a new instance of the
-        /// ReplicationProviderSpecificContainerMappingInput class.
+        /// Initializes a new instance of the TaskTypeDetails class.
         /// </summary>
-        public ReplicationProviderSpecificContainerMappingInput() { }
+        public TaskTypeDetails() { }
 
         /// <summary>
-        /// Initializes a new instance of the
-        /// ReplicationProviderSpecificContainerMappingInput class.
+        /// Initializes a new instance of the TaskTypeDetails class.
         /// </summary>
-        public ReplicationProviderSpecificContainerMappingInput(string instanceType = default(string))
+        public TaskTypeDetails(string instanceType = default(string))
         {
             InstanceType = instanceType;
         }

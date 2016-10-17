@@ -10,28 +10,33 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Newtonsoft.Json;
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
+    using Microsoft.Rest.Azure;
 
-    public partial class ProtectionContainerMappingProviderSpecificDetails
+    public partial class JobDetails
     {
         /// <summary>
-        /// Initializes a new instance of the
-        /// ProtectionContainerMappingProviderSpecificDetails class.
+        /// Initializes a new instance of the JobDetails class.
         /// </summary>
-        public ProtectionContainerMappingProviderSpecificDetails() { }
+        public JobDetails() { }
 
         /// <summary>
-        /// Initializes a new instance of the
-        /// ProtectionContainerMappingProviderSpecificDetails class.
+        /// Initializes a new instance of the JobDetails class.
         /// </summary>
-        public ProtectionContainerMappingProviderSpecificDetails(string instanceType = default(string))
+        public JobDetails(string instanceType = default(string), IDictionary<string, string> affectedObjectDetails = default(IDictionary<string, string>))
         {
             InstanceType = instanceType;
+            AffectedObjectDetails = affectedObjectDetails;
         }
 
         /// <summary>
         /// </summary>
         [JsonProperty(PropertyName = "instanceType")]
         public string InstanceType { get; private set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "affectedObjectDetails")]
+        public IDictionary<string, string> AffectedObjectDetails { get; set; }
 
     }
 }

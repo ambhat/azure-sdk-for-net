@@ -10,29 +10,25 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Newtonsoft.Json;
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
+    using Microsoft.Rest.Azure;
 
-    public partial class ProtectionContainerMapping
+    public partial class Fabric
     {
         /// <summary>
-        /// Initializes a new instance of the ProtectionContainerMapping class.
+        /// Initializes a new instance of the Fabric class.
         /// </summary>
-        public ProtectionContainerMapping() { }
+        public Fabric() { }
 
         /// <summary>
-        /// Initializes a new instance of the ProtectionContainerMapping class.
+        /// Initializes a new instance of the Fabric class.
         /// </summary>
-        public ProtectionContainerMapping(string id = default(string), string name = default(string), string type = default(string), ProtectionContainerMappingProperties properties = default(ProtectionContainerMappingProperties))
+        public Fabric(string name = default(string), string type = default(string), string id = default(string), FabricProperties properties = default(FabricProperties))
         {
-            Id = id;
             Name = name;
             Type = type;
+            Id = id;
             Properties = properties;
         }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "id")]
-        public string Id { get; set; }
 
         /// <summary>
         /// </summary>
@@ -46,8 +42,13 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
 
         /// <summary>
         /// </summary>
+        [JsonProperty(PropertyName = "id")]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// </summary>
         [JsonProperty(PropertyName = "properties")]
-        public ProtectionContainerMappingProperties Properties { get; set; }
+        public FabricProperties Properties { get; set; }
 
     }
 }

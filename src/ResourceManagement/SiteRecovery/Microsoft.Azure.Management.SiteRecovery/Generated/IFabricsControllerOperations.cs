@@ -10,33 +10,26 @@ namespace Microsoft.Azure.Management.SiteRecovery
     using System.Threading;
     using System.Threading.Tasks;
     using Microsoft.Rest;
+    using Microsoft.Rest.Azure;
     using Models;
 
     /// <summary>
-    /// ProtectionContainerMappingsController operations.
+    /// FabricsControllerOperations operations.
     /// </summary>
-    public partial interface IProtectionContainerMappingsController
+    public partial interface IFabricsControllerOperations
     {
         /// <param name='fabricName'>
         /// </param>
-        /// <param name='protectionContainerName'>
-        /// </param>
-        /// <param name='mappingName'>
-        /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<HttpOperationResponse<ProtectionContainerMapping>> GetProtectionContainerMappingWithHttpMessagesAsync(string fabricName, string protectionContainerName, string mappingName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Fabric>> GetFabricWithHttpMessagesAsync(string fabricName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <param name='fabricName'>
         /// </param>
-        /// <param name='protectionContainerName'>
-        /// </param>
-        /// <param name='mappingName'>
-        /// </param>
-        /// <param name='creationInput'>
+        /// <param name='input'>
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -44,6 +37,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<HttpOperationResponse<object>> CreateProtectionContainerMappingWithHttpMessagesAsync(string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> CreateFabricWithHttpMessagesAsync(string fabricName, FabricCreationInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse<FabricCollection>> EnumerateFabricsWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }
