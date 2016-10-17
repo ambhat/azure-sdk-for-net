@@ -10,6 +10,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
     using System.Threading;
     using System.Threading.Tasks;
     using Microsoft.Rest;
+    using Microsoft.Rest.Azure.OData;
     using Microsoft.Rest.Azure;
     using Models;
 
@@ -21,20 +22,52 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            public static JobCollection EnumerateJobs(this IJobsControllerOperations operations)
+            /// <param name='jobName'>
+            /// </param>
+            public static Job GetJob(this IJobsControllerOperations operations, string jobName)
             {
-                return Task.Factory.StartNew(s => ((IJobsControllerOperations)s).EnumerateJobsAsync(), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IJobsControllerOperations)s).GetJobAsync(jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='jobName'>
+            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<JobCollection> EnumerateJobsAsync(this IJobsControllerOperations operations, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Job> GetJobAsync(this IJobsControllerOperations operations, string jobName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.EnumerateJobsWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetJobWithHttpMessagesAsync(jobName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='odataQuery'>
+            /// OData parameters to apply to the operation.
+            /// </param>
+            public static JobCollection EnumerateJobs(this IJobsControllerOperations operations, ODataQuery<JobQueryParameter> odataQuery = default(ODataQuery<JobQueryParameter>))
+            {
+                return Task.Factory.StartNew(s => ((IJobsControllerOperations)s).EnumerateJobsAsync(odataQuery), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='odataQuery'>
+            /// OData parameters to apply to the operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<JobCollection> EnumerateJobsAsync(this IJobsControllerOperations operations, ODataQuery<JobQueryParameter> odataQuery = default(ODataQuery<JobQueryParameter>), CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.EnumerateJobsWithHttpMessagesAsync(odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
