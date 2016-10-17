@@ -26,25 +26,15 @@ using Microsoft.Azure.Management.SiteRecovery.Models;
 namespace Microsoft.Azure.Management.SiteRecovery.Models
 {
     /// <summary>
-    /// Input for creating a network maping.
+    /// Network mapping creation input for mapping VMM to Azure networks.
     /// </summary>
-    public partial class CreateNetworkMappingInput
+    public partial class VmmToAzureCreateNetworkMappingInput : FabricSpecificCreateNetworkMappingInput
     {
-        private CreateNetworkMappingInputProperties _properties;
-        
         /// <summary>
-        /// Optional. The network mapping input properties.
+        /// Initializes a new instance of the
+        /// VmmToAzureCreateNetworkMappingInput class.
         /// </summary>
-        public CreateNetworkMappingInputProperties Properties
-        {
-            get { return this._properties; }
-            set { this._properties = value; }
-        }
-        
-        /// <summary>
-        /// Initializes a new instance of the CreateNetworkMappingInput class.
-        /// </summary>
-        public CreateNetworkMappingInput()
+        public VmmToAzureCreateNetworkMappingInput()
         {
         }
     }

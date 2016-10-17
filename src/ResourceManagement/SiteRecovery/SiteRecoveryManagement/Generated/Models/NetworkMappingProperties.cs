@@ -21,6 +21,7 @@
 
 using System;
 using System.Linq;
+using Microsoft.Azure.Management.SiteRecovery.Models;
 
 namespace Microsoft.Azure.Management.SiteRecovery.Models
 {
@@ -29,15 +30,26 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// </summary>
     public partial class NetworkMappingProperties
     {
-        private string _pairingStatus;
+        private NetworkMappingFabricSpecificSettings _fabricSpecificSettings;
         
         /// <summary>
-        /// Optional. Pairing Status
+        /// Optional. Gets or sets the fabric specific settings.
         /// </summary>
-        public string PairingStatus
+        public NetworkMappingFabricSpecificSettings FabricSpecificSettings
         {
-            get { return this._pairingStatus; }
-            set { this._pairingStatus = value; }
+            get { return this._fabricSpecificSettings; }
+            set { this._fabricSpecificSettings = value; }
+        }
+        
+        private string _primaryFabricFriendlyName;
+        
+        /// <summary>
+        /// Optional. Friendly name of the primary fabric.
+        /// </summary>
+        public string PrimaryFabricFriendlyName
+        {
+            get { return this._primaryFabricFriendlyName; }
+            set { this._primaryFabricFriendlyName = value; }
         }
         
         private string _primaryNetworkFriendlyName;
@@ -49,6 +61,28 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         {
             get { return this._primaryNetworkFriendlyName; }
             set { this._primaryNetworkFriendlyName = value; }
+        }
+        
+        private string _primaryNetworkId;
+        
+        /// <summary>
+        /// Optional. ARM id of the primary network.
+        /// </summary>
+        public string PrimaryNetworkId
+        {
+            get { return this._primaryNetworkId; }
+            set { this._primaryNetworkId = value; }
+        }
+        
+        private string _recoveryFabricFriendlyName;
+        
+        /// <summary>
+        /// Optional. Friendly name of the recovery fabric.
+        /// </summary>
+        public string RecoveryFabricFriendlyName
+        {
+            get { return this._recoveryFabricFriendlyName; }
+            set { this._recoveryFabricFriendlyName = value; }
         }
         
         private string _recoveryNetworkFriendlyName;
@@ -71,6 +105,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         {
             get { return this._recoveryNetworkId; }
             set { this._recoveryNetworkId = value; }
+        }
+        
+        private string _state;
+        
+        /// <summary>
+        /// Optional. Pairing Status
+        /// </summary>
+        public string State
+        {
+            get { return this._state; }
+            set { this._state = value; }
         }
         
         /// <summary>

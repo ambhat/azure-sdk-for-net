@@ -21,30 +21,30 @@
 
 using System;
 using System.Linq;
-using Microsoft.Azure.Management.SiteRecovery.Models;
 
 namespace Microsoft.Azure.Management.SiteRecovery.Models
 {
     /// <summary>
-    /// Input for creating a network maping.
+    /// Apply fabric specific input for updating network mapping.
     /// </summary>
-    public partial class CreateNetworkMappingInput
+    public partial class FabricSpecificUpdateNetworkMappingInput
     {
-        private CreateNetworkMappingInputProperties _properties;
+        private string _instanceType;
         
         /// <summary>
-        /// Optional. The network mapping input properties.
+        /// Optional. Type of derived class
         /// </summary>
-        public CreateNetworkMappingInputProperties Properties
+        public string InstanceType
         {
-            get { return this._properties; }
-            set { this._properties = value; }
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
         }
         
         /// <summary>
-        /// Initializes a new instance of the CreateNetworkMappingInput class.
+        /// Initializes a new instance of the
+        /// FabricSpecificUpdateNetworkMappingInput class.
         /// </summary>
-        public CreateNetworkMappingInput()
+        public FabricSpecificUpdateNetworkMappingInput()
         {
         }
     }

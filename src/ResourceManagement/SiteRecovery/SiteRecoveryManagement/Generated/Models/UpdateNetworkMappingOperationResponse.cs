@@ -26,25 +26,26 @@ using Microsoft.Azure.Management.SiteRecovery.Models;
 namespace Microsoft.Azure.Management.SiteRecovery.Models
 {
     /// <summary>
-    /// Input for creating a network maping.
+    /// A standard service response for long running operations.
     /// </summary>
-    public partial class CreateNetworkMappingInput
+    public partial class UpdateNetworkMappingOperationResponse : LongRunningOperationResponse
     {
-        private CreateNetworkMappingInputProperties _properties;
+        private NetworkMapping _networkMapping;
         
         /// <summary>
-        /// Optional. The network mapping input properties.
+        /// Optional. Updated Network Mapping.
         /// </summary>
-        public CreateNetworkMappingInputProperties Properties
+        public NetworkMapping NetworkMapping
         {
-            get { return this._properties; }
-            set { this._properties = value; }
+            get { return this._networkMapping; }
+            set { this._networkMapping = value; }
         }
         
         /// <summary>
-        /// Initializes a new instance of the CreateNetworkMappingInput class.
+        /// Initializes a new instance of the
+        /// UpdateNetworkMappingOperationResponse class.
         /// </summary>
-        public CreateNetworkMappingInput()
+        public UpdateNetworkMappingOperationResponse()
         {
         }
     }

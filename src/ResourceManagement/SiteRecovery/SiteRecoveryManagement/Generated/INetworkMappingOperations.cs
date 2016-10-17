@@ -82,6 +82,32 @@ namespace Microsoft.Azure.Management.SiteRecovery
         Task<LongRunningOperationResponse> BeginDeletingAsync(string fabricName, string primaryNetworkName, string networkMappingName, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
         
         /// <summary>
+        /// Updates Network Mapping.
+        /// </summary>
+        /// <param name='fabricName'>
+        /// Fabric Name.
+        /// </param>
+        /// <param name='primaryNetworkName'>
+        /// Primary Network Name.
+        /// </param>
+        /// <param name='networkMappingName'>
+        /// Network Mapping Name.
+        /// </param>
+        /// <param name='input'>
+        /// Network Mapping input.
+        /// </param>
+        /// <param name='customRequestHeaders'>
+        /// Request header parameters.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// Cancellation token.
+        /// </param>
+        /// <returns>
+        /// A standard service response for long running operations.
+        /// </returns>
+        Task<LongRunningOperationResponse> BeginUpdatingAsync(string fabricName, string primaryNetworkName, string networkMappingName, UpdateNetworkMappingInput input, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
+        
+        /// <summary>
         /// Creates Network Mapping.
         /// </summary>
         /// <param name='fabricName'>
@@ -202,6 +228,23 @@ namespace Microsoft.Azure.Management.SiteRecovery
         Task<LongRunningOperationResponse> GetDeleteStatusAsync(string operationStatusLink, CancellationToken cancellationToken);
         
         /// <summary>
+        /// The Get Operation Status operation returns the status of the
+        /// specified operation. After calling an asynchronous operation, you
+        /// can call Get Operation Status to determine whether the operation
+        /// has succeeded, failed, or is still in progress.
+        /// </summary>
+        /// <param name='operationStatusLink'>
+        /// Location value returned by the Begin operation.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// Cancellation token.
+        /// </param>
+        /// <returns>
+        /// A standard service response for long running operations.
+        /// </returns>
+        Task<UpdateNetworkMappingOperationResponse> GetUpdateStatusAsync(string operationStatusLink, CancellationToken cancellationToken);
+        
+        /// <summary>
         /// Get list of Network Mappings.
         /// </summary>
         /// <param name='fabricName'>
@@ -220,5 +263,31 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The response model for the list of Network Mappings.
         /// </returns>
         Task<NetworkMappingsListResponse> ListAsync(string fabricName, string primaryNetworkName, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Update Policy.
+        /// </summary>
+        /// <param name='fabricName'>
+        /// Fabric Name.
+        /// </param>
+        /// <param name='primaryNetworkName'>
+        /// Primary Network Name.
+        /// </param>
+        /// <param name='networkMappingName'>
+        /// Network Mapping Name.
+        /// </param>
+        /// <param name='input'>
+        /// Network Mapping input.
+        /// </param>
+        /// <param name='customRequestHeaders'>
+        /// Request header parameters.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// Cancellation token.
+        /// </param>
+        /// <returns>
+        /// A standard service response for long running operations.
+        /// </returns>
+        Task<LongRunningOperationResponse> UpdateAsync(string fabricName, string primaryNetworkName, string networkMappingName, UpdateNetworkMappingInput input, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
     }
 }

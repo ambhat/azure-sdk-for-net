@@ -26,25 +26,26 @@ using Microsoft.Azure.Management.SiteRecovery.Models;
 namespace Microsoft.Azure.Management.SiteRecovery.Models
 {
     /// <summary>
-    /// Input for creating a network maping.
+    /// Network mapping update input for mapping for azure networks.
     /// </summary>
-    public partial class CreateNetworkMappingInput
+    public partial class AzureToAzureUpdateNetworkMappingInput : FabricSpecificUpdateNetworkMappingInput
     {
-        private CreateNetworkMappingInputProperties _properties;
+        private string _primaryNetworkId;
         
         /// <summary>
-        /// Optional. The network mapping input properties.
+        /// Optional. Primary Network Id.
         /// </summary>
-        public CreateNetworkMappingInputProperties Properties
+        public string PrimaryNetworkId
         {
-            get { return this._properties; }
-            set { this._properties = value; }
+            get { return this._primaryNetworkId; }
+            set { this._primaryNetworkId = value; }
         }
         
         /// <summary>
-        /// Initializes a new instance of the CreateNetworkMappingInput class.
+        /// Initializes a new instance of the
+        /// AzureToAzureUpdateNetworkMappingInput class.
         /// </summary>
-        public CreateNetworkMappingInput()
+        public AzureToAzureUpdateNetworkMappingInput()
         {
         }
     }

@@ -307,11 +307,50 @@ namespace SiteRecovery.Tests
                 {
                     //RecoveryFabricName = "Vmm;f0632449-effd-4858-a210-4ea15756e4b7",
                     //RecoveryNetworkId = "/Subscriptions/fa7fd0da-bfa7-41b1-9877-8664fc43d59f/resourceGroups/Default-Storage-WestUS/providers/Microsoft.SiteRecovery/SiteRecoveryVault/testVault/replicationFabrics/Vmm;f0632449-effd-4858-a210-4ea15756e4b7/replicationNetworks/15e1a665-e184-4da0-8e9d-0de72a7d8fa9"
-                    RecoveryFabricName = "Microsoft Azure",
-                    RecoveryNetworkId = "/subscriptions/19b823e2-d1f3-4805-93d7-401c5d8230d5/resourceGroups/Default-Networking/providers/Microsoft.ClassicNetwork/virtualNetworks/BvtMapped1Network1"
+                    Properties = new CreateNetworkMappingInputProperties
+                    {
+                        RecoveryFabricName = "Microsoft Azure",
+                        RecoveryNetworkId = "/subscriptions/19b823e2-d1f3-4805-93d7-401c5d8230d5/resourceGroups/Default-Networking/providers/Microsoft.ClassicNetwork/virtualNetworks/BvtMapped1Network1",
+                        FabricSpecificDetails = new AzureToAzureCreateNetworkMappingInput
+                        {
+                            PrimaryNetworkId = "/subscriptions/19b823e2-d1f3-4805-93d7-401c5d8230d5/resourceGroups/Default-Networking/providers/Microsoft.ClassicNetwork/virtualNetworks/BvtMapped1NetworkPrimary"
+                        }
+                    }
                 };
 
                 var response = client.NetworkMapping.Create(
+                    fabricName,
+                    primaryNetworkName,
+                    networkMappingName,
+                    input,
+                    RequestHeaders);
+            }
+        }
+
+        public void UpdateNetworkPair()
+        {
+            using (UndoContext context = UndoContext.Current)
+            {
+                context.Start();
+                var client = GetSiteRecoveryClient(CustomHttpHandler);
+
+                const string fabricName = "Vmm;f0632449-effd-4858-a210-4ea15756e4b7";
+                const string primaryNetworkName = "718b68df-ac22-412e-9312-91135cc4451f";
+                const string networkMappingName = "Test";
+                UpdateNetworkMappingInput input = new UpdateNetworkMappingInput
+                {
+                    Properties = new UpdateNetworkMappingInputProperties
+                    {
+                        RecoveryFabricName = "Microsoft Azure",
+                        RecoveryNetworkId = "/subscriptions/19b823e2-d1f3-4805-93d7-401c5d8230d5/resourceGroups/Default-Networking/providers/Microsoft.ClassicNetwork/virtualNetworks/BvtMapped1Network1",
+                        FabricSpecificDetails = new AzureToAzureUpdateNetworkMappingInput
+                        {
+                            PrimaryNetworkId = "/subscriptions/19b823e2-d1f3-4805-93d7-401c5d8230d5/resourceGroups/Default-Networking/providers/Microsoft.ClassicNetwork/virtualNetworks/BvtMapped1NetworkPrimary"
+                        }
+                    }
+                };
+
+                var response = client.NetworkMapping.Update(
                     fabricName,
                     primaryNetworkName,
                     networkMappingName,
