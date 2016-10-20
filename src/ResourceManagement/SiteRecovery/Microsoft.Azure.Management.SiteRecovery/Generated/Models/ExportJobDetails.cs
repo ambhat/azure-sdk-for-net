@@ -22,8 +22,8 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the ExportJobDetails class.
         /// </summary>
-        public ExportJobDetails(string instanceType = default(string), IDictionary<string, string> affectedObjectDetails = default(IDictionary<string, string>), string blobUri = default(string), string sasToken = default(string))
-            : base(instanceType, affectedObjectDetails)
+        public ExportJobDetails(IDictionary<string, string> affectedObjectDetails = default(IDictionary<string, string>), string blobUri = default(string), string sasToken = default(string))
+            : base(affectedObjectDetails)
         {
             BlobUri = blobUri;
             SasToken = sasToken;

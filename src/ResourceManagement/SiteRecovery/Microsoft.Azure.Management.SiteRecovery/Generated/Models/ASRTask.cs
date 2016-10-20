@@ -12,17 +12,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
-    public partial class STask
+    public partial class ASRTask
     {
         /// <summary>
-        /// Initializes a new instance of the STask class.
+        /// Initializes a new instance of the ASRTask class.
         /// </summary>
-        public STask() { }
+        public ASRTask() { }
 
         /// <summary>
-        /// Initializes a new instance of the STask class.
+        /// Initializes a new instance of the ASRTask class.
         /// </summary>
-        public STask(string taskId = default(string), string name = default(string), DateTime? startTime = default(DateTime?), DateTime? endTime = default(DateTime?), IList<string> allowedActions = default(IList<string>), string friendlyName = default(string), string state = default(string), string stateDescription = default(string), string taskType = default(string), TaskTypeDetails customDetails = default(TaskTypeDetails), GroupTaskDetails groupTaskCustomDetails = default(GroupTaskDetails), IList<JobErrorDetails> errors = default(IList<JobErrorDetails>))
+        public ASRTask(string taskId = default(string), string name = default(string), DateTime? startTime = default(DateTime?), DateTime? endTime = default(DateTime?), IList<string> allowedActions = default(IList<string>), string friendlyName = default(string), string state = default(string), string stateDescription = default(string), string taskType = default(string), TaskTypeDetails customDetails = default(TaskTypeDetails), GroupTaskDetails groupTaskCustomDetails = default(GroupTaskDetails), IList<JobErrorDetails> errors = default(IList<JobErrorDetails>))
         {
             TaskId = taskId;
             Name = name;

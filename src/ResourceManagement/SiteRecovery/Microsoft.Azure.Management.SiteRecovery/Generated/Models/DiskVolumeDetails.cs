@@ -12,31 +12,31 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
-    public partial class FabricCollection
+    public partial class DiskVolumeDetails
     {
         /// <summary>
-        /// Initializes a new instance of the FabricCollection class.
+        /// Initializes a new instance of the DiskVolumeDetails class.
         /// </summary>
-        public FabricCollection() { }
+        public DiskVolumeDetails() { }
 
         /// <summary>
-        /// Initializes a new instance of the FabricCollection class.
+        /// Initializes a new instance of the DiskVolumeDetails class.
         /// </summary>
-        public FabricCollection(IList<Fabric> value = default(IList<Fabric>), string nextLink = default(string))
+        public DiskVolumeDetails(string label = default(string), string name = default(string))
         {
-            Value = value;
-            NextLink = nextLink;
+            Label = label;
+            Name = name;
         }
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "value")]
-        public IList<Fabric> Value { get; set; }
+        [JsonProperty(PropertyName = "label")]
+        public string Label { get; set; }
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "nextLink")]
-        public string NextLink { get; set; }
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
 
     }
 }

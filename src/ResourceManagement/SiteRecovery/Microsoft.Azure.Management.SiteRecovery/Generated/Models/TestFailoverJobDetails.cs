@@ -22,8 +22,8 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the TestFailoverJobDetails class.
         /// </summary>
-        public TestFailoverJobDetails(string instanceType = default(string), IDictionary<string, string> affectedObjectDetails = default(IDictionary<string, string>), string testFailoverStatus = default(string), string comments = default(string), string networkName = default(string), string networkFriendlyName = default(string), string networkType = default(string), IList<TestFailoverReplicationProtectedItemDetails> protectedItemDetails = default(IList<TestFailoverReplicationProtectedItemDetails>))
-            : base(instanceType, affectedObjectDetails)
+        public TestFailoverJobDetails(IDictionary<string, string> affectedObjectDetails = default(IDictionary<string, string>), string testFailoverStatus = default(string), string comments = default(string), string networkName = default(string), string networkFriendlyName = default(string), string networkType = default(string), IList<TestFailoverReplicationProtectedItemDetails> protectedItemDetails = default(IList<TestFailoverReplicationProtectedItemDetails>))
+            : base(affectedObjectDetails)
         {
             TestFailoverStatus = testFailoverStatus;
             Comments = comments;

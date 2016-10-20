@@ -22,8 +22,8 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the AsrJobDetails class.
         /// </summary>
-        public AsrJobDetails(string instanceType = default(string), IDictionary<string, string> affectedObjectDetails = default(IDictionary<string, string>))
-            : base(instanceType, affectedObjectDetails)
+        public AsrJobDetails(IDictionary<string, string> affectedObjectDetails = default(IDictionary<string, string>))
+            : base(affectedObjectDetails)
         {
         }
 

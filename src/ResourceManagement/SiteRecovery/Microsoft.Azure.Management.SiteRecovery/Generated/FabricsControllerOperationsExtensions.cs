@@ -23,6 +23,156 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// </param>
             /// <param name='fabricName'>
             /// </param>
+            /// <param name='jobName'>
+            /// </param>
+            public static void TrackAsyncFabricOperation(this IFabricsControllerOperations operations, string fabricName, string jobName)
+            {
+                Task.Factory.StartNew(s => ((IFabricsControllerOperations)s).TrackAsyncFabricOperationAsync(fabricName, jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// </param>
+            /// <param name='jobName'>
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task TrackAsyncFabricOperationAsync(this IFabricsControllerOperations operations, string fabricName, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.TrackAsyncFabricOperationWithHttpMessagesAsync(fabricName, jobName, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// </param>
+            /// <param name='failoverProcessServerRequest'>
+            /// </param>
+            public static void FailoverProcessServer(this IFabricsControllerOperations operations, string fabricName, FailoverProcessServerRequest failoverProcessServerRequest)
+            {
+                Task.Factory.StartNew(s => ((IFabricsControllerOperations)s).FailoverProcessServerAsync(fabricName, failoverProcessServerRequest), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// </param>
+            /// <param name='failoverProcessServerRequest'>
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task FailoverProcessServerAsync(this IFabricsControllerOperations operations, string fabricName, FailoverProcessServerRequest failoverProcessServerRequest, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.FailoverProcessServerWithHttpMessagesAsync(fabricName, failoverProcessServerRequest, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// </param>
+            /// <param name='request'>
+            /// </param>
+            public static void DeployProcessServerImage(this IFabricsControllerOperations operations, string fabricName, DeployProcessServerRequest request)
+            {
+                Task.Factory.StartNew(s => ((IFabricsControllerOperations)s).DeployProcessServerImageAsync(fabricName, request), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// </param>
+            /// <param name='request'>
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task DeployProcessServerImageAsync(this IFabricsControllerOperations operations, string fabricName, DeployProcessServerRequest request, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.DeployProcessServerImageWithHttpMessagesAsync(fabricName, request, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// </param>
+            public static void RenewCertificate(this IFabricsControllerOperations operations, string fabricName)
+            {
+                Task.Factory.StartNew(s => ((IFabricsControllerOperations)s).RenewCertificateAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task RenewCertificateAsync(this IFabricsControllerOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.RenewCertificateWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// </param>
+            public static void CheckConsistency(this IFabricsControllerOperations operations, string fabricName)
+            {
+                Task.Factory.StartNew(s => ((IFabricsControllerOperations)s).CheckConsistencyAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task CheckConsistencyAsync(this IFabricsControllerOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.CheckConsistencyWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// </param>
+            public static void DeleteFabric(this IFabricsControllerOperations operations, string fabricName)
+            {
+                Task.Factory.StartNew(s => ((IFabricsControllerOperations)s).DeleteFabricAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task DeleteFabricAsync(this IFabricsControllerOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.DeleteFabricWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// </param>
             public static Fabric GetFabric(this IFabricsControllerOperations operations, string fabricName)
             {
                 return Task.Factory.StartNew(s => ((IFabricsControllerOperations)s).GetFabricAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
@@ -74,7 +224,30 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            public static FabricCollection EnumerateFabrics(this IFabricsControllerOperations operations)
+            /// <param name='fabricName'>
+            /// </param>
+            public static void PurgeFabric(this IFabricsControllerOperations operations, string fabricName)
+            {
+                Task.Factory.StartNew(s => ((IFabricsControllerOperations)s).PurgeFabricAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task PurgeFabricAsync(this IFabricsControllerOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.PurgeFabricWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            public static IPage<Fabric> EnumerateFabrics(this IFabricsControllerOperations operations)
             {
                 return Task.Factory.StartNew(s => ((IFabricsControllerOperations)s).EnumerateFabricsAsync(), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
@@ -85,9 +258,37 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<FabricCollection> EnumerateFabricsAsync(this IFabricsControllerOperations operations, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Fabric>> EnumerateFabricsAsync(this IFabricsControllerOperations operations, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.EnumerateFabricsWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            public static IPage<Fabric> EnumerateFabricsNext(this IFabricsControllerOperations operations, string nextPageLink)
+            {
+                return Task.Factory.StartNew(s => ((IFabricsControllerOperations)s).EnumerateFabricsNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IPage<Fabric>> EnumerateFabricsNextAsync(this IFabricsControllerOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.EnumerateFabricsNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

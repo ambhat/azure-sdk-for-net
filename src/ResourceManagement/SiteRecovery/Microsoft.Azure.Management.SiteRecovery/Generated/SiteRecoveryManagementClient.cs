@@ -94,6 +94,51 @@ namespace Microsoft.Azure.Management.SiteRecovery
         public bool? GenerateClientRequestId { get; set; }
 
         /// <summary>
+        /// Gets the IReplicationProtectedItemsControllerOperations.
+        /// </summary>
+        public virtual IReplicationProtectedItemsControllerOperations ReplicationProtectedItemsController { get; private set; }
+
+        /// <summary>
+        /// Gets the IRecoveryServicesProviderControllerOperations.
+        /// </summary>
+        public virtual IRecoveryServicesProviderControllerOperations RecoveryServicesProviderController { get; private set; }
+
+        /// <summary>
+        /// Gets the IProtectionContainersControllerOperations.
+        /// </summary>
+        public virtual IProtectionContainersControllerOperations ProtectionContainersController { get; private set; }
+
+        /// <summary>
+        /// Gets the IProtectionContainerMappingsControllerOperations.
+        /// </summary>
+        public virtual IProtectionContainerMappingsControllerOperations ProtectionContainerMappingsController { get; private set; }
+
+        /// <summary>
+        /// Gets the IProtectableItemsControllerOperations.
+        /// </summary>
+        public virtual IProtectableItemsControllerOperations ProtectableItemsController { get; private set; }
+
+        /// <summary>
+        /// Gets the IPolicyControllerOperations.
+        /// </summary>
+        public virtual IPolicyControllerOperations PolicyController { get; private set; }
+
+        /// <summary>
+        /// Gets the INetworksControllerOperations.
+        /// </summary>
+        public virtual INetworksControllerOperations NetworksController { get; private set; }
+
+        /// <summary>
+        /// Gets the INetworkMappingsControllerOperations.
+        /// </summary>
+        public virtual INetworkMappingsControllerOperations NetworkMappingsController { get; private set; }
+
+        /// <summary>
+        /// Gets the ILogicalNetworksControllerOperations.
+        /// </summary>
+        public virtual ILogicalNetworksControllerOperations LogicalNetworksController { get; private set; }
+
+        /// <summary>
         /// Gets the IJobsControllerOperations.
         /// </summary>
         public virtual IJobsControllerOperations JobsController { get; private set; }
@@ -282,6 +327,15 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </summary>
         private void Initialize()
         {
+            this.ReplicationProtectedItemsController = new ReplicationProtectedItemsControllerOperations(this);
+            this.RecoveryServicesProviderController = new RecoveryServicesProviderControllerOperations(this);
+            this.ProtectionContainersController = new ProtectionContainersControllerOperations(this);
+            this.ProtectionContainerMappingsController = new ProtectionContainerMappingsControllerOperations(this);
+            this.ProtectableItemsController = new ProtectableItemsControllerOperations(this);
+            this.PolicyController = new PolicyControllerOperations(this);
+            this.NetworksController = new NetworksControllerOperations(this);
+            this.NetworkMappingsController = new NetworkMappingsControllerOperations(this);
+            this.LogicalNetworksController = new LogicalNetworksControllerOperations(this);
             this.JobsController = new JobsControllerOperations(this);
             this.FabricsController = new FabricsControllerOperations(this);
             this.BaseUri = new Uri("https://management.azure.com");
@@ -318,6 +372,32 @@ namespace Microsoft.Azure.Management.SiteRecovery
             DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<FabricSpecificDetails>("instanceType"));
             SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<FabricSpecificCreationInput>("instanceType"));
             DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<FabricSpecificCreationInput>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<TaskTypeDetails>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<TaskTypeDetails>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<GroupTaskDetails>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<GroupTaskDetails>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<JobDetails>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<JobDetails>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<PolicyProviderSpecificDetails>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<PolicyProviderSpecificDetails>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<PolicyProviderSpecificInput>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<PolicyProviderSpecificInput>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<ConfigurationSettings>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<ConfigurationSettings>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<ReplicationProviderSpecificContainerCreationInput>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<ReplicationProviderSpecificContainerCreationInput>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<ReplicationProviderSpecificSettings>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<ReplicationProviderSpecificSettings>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<EnableProtectionProviderSpecificInput>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<EnableProtectionProviderSpecificInput>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<DisableProtectionProviderSpecificInput>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<DisableProtectionProviderSpecificInput>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<ProviderSpecificFailoverInput>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<ProviderSpecificFailoverInput>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<ReverseReplicationProviderSpecificInput>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<ReverseReplicationProviderSpecificInput>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<ApplyRecoveryPointProviderSpecificInput>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<ApplyRecoveryPointProviderSpecificInput>("instanceType"));
             DeserializationSettings.Converters.Add(new CloudErrorJsonConverter()); 
         }    
     }

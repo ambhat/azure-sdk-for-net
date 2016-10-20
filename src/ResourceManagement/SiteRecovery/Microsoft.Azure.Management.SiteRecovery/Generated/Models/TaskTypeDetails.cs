@@ -19,18 +19,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// </summary>
         public TaskTypeDetails() { }
 
-        /// <summary>
-        /// Initializes a new instance of the TaskTypeDetails class.
-        /// </summary>
-        public TaskTypeDetails(string instanceType = default(string))
-        {
-            InstanceType = instanceType;
-        }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "instanceType")]
-        public string InstanceType { get; set; }
 
     }
 }

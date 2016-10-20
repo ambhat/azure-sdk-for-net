@@ -91,6 +91,51 @@ namespace Microsoft.Azure.Management.SiteRecovery
 
 
         /// <summary>
+        /// Gets the IReplicationProtectedItemsControllerOperations.
+        /// </summary>
+        IReplicationProtectedItemsControllerOperations ReplicationProtectedItemsController { get; }
+
+        /// <summary>
+        /// Gets the IRecoveryServicesProviderControllerOperations.
+        /// </summary>
+        IRecoveryServicesProviderControllerOperations RecoveryServicesProviderController { get; }
+
+        /// <summary>
+        /// Gets the IProtectionContainersControllerOperations.
+        /// </summary>
+        IProtectionContainersControllerOperations ProtectionContainersController { get; }
+
+        /// <summary>
+        /// Gets the IProtectionContainerMappingsControllerOperations.
+        /// </summary>
+        IProtectionContainerMappingsControllerOperations ProtectionContainerMappingsController { get; }
+
+        /// <summary>
+        /// Gets the IProtectableItemsControllerOperations.
+        /// </summary>
+        IProtectableItemsControllerOperations ProtectableItemsController { get; }
+
+        /// <summary>
+        /// Gets the IPolicyControllerOperations.
+        /// </summary>
+        IPolicyControllerOperations PolicyController { get; }
+
+        /// <summary>
+        /// Gets the INetworksControllerOperations.
+        /// </summary>
+        INetworksControllerOperations NetworksController { get; }
+
+        /// <summary>
+        /// Gets the INetworkMappingsControllerOperations.
+        /// </summary>
+        INetworkMappingsControllerOperations NetworkMappingsController { get; }
+
+        /// <summary>
+        /// Gets the ILogicalNetworksControllerOperations.
+        /// </summary>
+        ILogicalNetworksControllerOperations LogicalNetworksController { get; }
+
+        /// <summary>
         /// Gets the IJobsControllerOperations.
         /// </summary>
         IJobsControllerOperations JobsController { get; }

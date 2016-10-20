@@ -22,21 +22,15 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the GroupTaskDetails class.
         /// </summary>
-        public GroupTaskDetails(string instanceType = default(string), IList<STask> childTasks = default(IList<STask>))
+        public GroupTaskDetails(IList<ASRTask> childTasks = default(IList<ASRTask>))
         {
-            InstanceType = instanceType;
             ChildTasks = childTasks;
         }
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "instanceType")]
-        public string InstanceType { get; set; }
-
-        /// <summary>
-        /// </summary>
         [JsonProperty(PropertyName = "childTasks")]
-        public IList<STask> ChildTasks { get; set; }
+        public IList<ASRTask> ChildTasks { get; set; }
 
     }
 }

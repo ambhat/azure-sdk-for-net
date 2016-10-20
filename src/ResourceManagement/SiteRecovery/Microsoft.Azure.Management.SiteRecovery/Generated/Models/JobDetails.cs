@@ -22,16 +22,10 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the JobDetails class.
         /// </summary>
-        public JobDetails(string instanceType = default(string), IDictionary<string, string> affectedObjectDetails = default(IDictionary<string, string>))
+        public JobDetails(IDictionary<string, string> affectedObjectDetails = default(IDictionary<string, string>))
         {
-            InstanceType = instanceType;
             AffectedObjectDetails = affectedObjectDetails;
         }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "instanceType")]
-        public string InstanceType { get; private set; }
 
         /// <summary>
         /// </summary>

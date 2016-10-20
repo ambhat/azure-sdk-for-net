@@ -22,7 +22,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the JobProperties class.
         /// </summary>
-        public JobProperties(string activityId = default(string), string scenarioName = default(string), string friendlyName = default(string), string state = default(string), string stateDescription = default(string), IList<STask> tasks = default(IList<STask>), IList<JobErrorDetails> errors = default(IList<JobErrorDetails>), DateTime? startTime = default(DateTime?), DateTime? endTime = default(DateTime?), IList<string> allowedActions = default(IList<string>), string targetObjectId = default(string), string targetObjectName = default(string), string targetInstanceType = default(string), JobDetails customDetails = default(JobDetails))
+        public JobProperties(string activityId = default(string), string scenarioName = default(string), string friendlyName = default(string), string state = default(string), string stateDescription = default(string), IList<ASRTask> tasks = default(IList<ASRTask>), IList<JobErrorDetails> errors = default(IList<JobErrorDetails>), DateTime? startTime = default(DateTime?), DateTime? endTime = default(DateTime?), IList<string> allowedActions = default(IList<string>), string targetObjectId = default(string), string targetObjectName = default(string), string targetInstanceType = default(string), JobDetails customDetails = default(JobDetails))
         {
             ActivityId = activityId;
             ScenarioName = scenarioName;
@@ -68,7 +68,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// </summary>
         [JsonProperty(PropertyName = "tasks")]
-        public IList<STask> Tasks { get; set; }
+        public IList<ASRTask> Tasks { get; set; }
 
         /// <summary>
         /// </summary>
