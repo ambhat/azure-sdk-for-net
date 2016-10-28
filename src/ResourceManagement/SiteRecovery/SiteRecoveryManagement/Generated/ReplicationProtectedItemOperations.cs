@@ -4908,6 +4908,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                         }
                                         
+                                        JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                        if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                            a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                            
+                                            JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                            {
+                                                foreach (JProperty property in tagsSequenceElement)
+                                                {
+                                                    string tagsKey = ((string)property.Name);
+                                                    string tagsValue = ((string)property.Value);
+                                                    vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                }
+                                            }
+                                            
+                                            JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                            if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                {
+                                                    RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                    vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                    
+                                                    JToken idValue = roleAssignmentsValue["id"];
+                                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                                    {
+                                                        string idInstance = ((string)idValue);
+                                                        roleAssignmentInstance.Id = idInstance;
+                                                    }
+                                                    
+                                                    JToken nameValue = roleAssignmentsValue["name"];
+                                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string nameInstance = ((string)nameValue);
+                                                        roleAssignmentInstance.Name = nameInstance;
+                                                    }
+                                                    
+                                                    JToken scopeValue = roleAssignmentsValue["scope"];
+                                                    if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                    {
+                                                        string scopeInstance = ((string)scopeValue);
+                                                        roleAssignmentInstance.Scope = scopeInstance;
+                                                    }
+                                                    
+                                                    JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                    if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string principalIdInstance = ((string)principalIdValue);
+                                                        roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                    }
+                                                    
+                                                    JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                    if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                        roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                            if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                {
+                                                    InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                    vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                    
+                                                    JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                    if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string endpointNameInstance = ((string)endpointNameValue);
+                                                        inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                    }
+                                                    
+                                                    JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                    if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int privatePortInstance = ((int)privatePortValue);
+                                                        inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                    }
+                                                    
+                                                    JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                    if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int publicPortInstance = ((int)publicPortValue);
+                                                        inputEndpointInstance.PublicPort = publicPortInstance;
+                                                    }
+                                                    
+                                                    JToken protocolValue = inputEndpointsValue["protocol"];
+                                                    if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                    {
+                                                        string protocolInstance = ((string)protocolValue);
+                                                        inputEndpointInstance.Protocol = protocolInstance;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -5677,10 +5778,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                         if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                         {
-                                            foreach (JProperty property in consistencyPointsSequenceElement)
+                                            foreach (JProperty property2 in consistencyPointsSequenceElement)
                                             {
-                                                string consistencyPointsKey = ((string)property.Name);
-                                                DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                string consistencyPointsKey = ((string)property2.Name);
+                                                DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                 inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                             }
                                         }
@@ -6181,18 +6282,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 }
                             }
                             
-                            JToken idValue = responseDoc["id"];
-                            if (idValue != null && idValue.Type != JTokenType.Null)
+                            JToken idValue2 = responseDoc["id"];
+                            if (idValue2 != null && idValue2.Type != JTokenType.Null)
                             {
-                                string idInstance = ((string)idValue);
-                                replicationProtectedItemInstance.Id = idInstance;
+                                string idInstance2 = ((string)idValue2);
+                                replicationProtectedItemInstance.Id = idInstance2;
                             }
                             
-                            JToken nameValue = responseDoc["name"];
-                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                            JToken nameValue2 = responseDoc["name"];
+                            if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                             {
-                                string nameInstance = ((string)nameValue);
-                                replicationProtectedItemInstance.Name = nameInstance;
+                                string nameInstance2 = ((string)nameValue2);
+                                replicationProtectedItemInstance.Name = nameInstance2;
                             }
                             
                             JToken typeValue = responseDoc["type"];
@@ -6209,14 +6310,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 replicationProtectedItemInstance.Location = locationInstance;
                             }
                             
-                            JToken tagsSequenceElement = ((JToken)responseDoc["tags"]);
-                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                            JToken tagsSequenceElement2 = ((JToken)responseDoc["tags"]);
+                            if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                             {
-                                foreach (JProperty property2 in tagsSequenceElement)
+                                foreach (JProperty property3 in tagsSequenceElement2)
                                 {
-                                    string tagsKey = ((string)property2.Name);
-                                    string tagsValue = ((string)property2.Value);
-                                    replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                    string tagsKey2 = ((string)property3.Name);
+                                    string tagsValue2 = ((string)property3.Value);
+                                    replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                 }
                             }
                             
@@ -7104,6 +7205,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                         }
                                         
+                                        JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                        if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                            a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                            
+                                            JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                            {
+                                                foreach (JProperty property in tagsSequenceElement)
+                                                {
+                                                    string tagsKey = ((string)property.Name);
+                                                    string tagsValue = ((string)property.Value);
+                                                    vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                }
+                                            }
+                                            
+                                            JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                            if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                {
+                                                    RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                    vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                    
+                                                    JToken idValue = roleAssignmentsValue["id"];
+                                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                                    {
+                                                        string idInstance = ((string)idValue);
+                                                        roleAssignmentInstance.Id = idInstance;
+                                                    }
+                                                    
+                                                    JToken nameValue = roleAssignmentsValue["name"];
+                                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string nameInstance = ((string)nameValue);
+                                                        roleAssignmentInstance.Name = nameInstance;
+                                                    }
+                                                    
+                                                    JToken scopeValue = roleAssignmentsValue["scope"];
+                                                    if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                    {
+                                                        string scopeInstance = ((string)scopeValue);
+                                                        roleAssignmentInstance.Scope = scopeInstance;
+                                                    }
+                                                    
+                                                    JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                    if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string principalIdInstance = ((string)principalIdValue);
+                                                        roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                    }
+                                                    
+                                                    JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                    if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                        roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                            if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                {
+                                                    InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                    vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                    
+                                                    JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                    if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string endpointNameInstance = ((string)endpointNameValue);
+                                                        inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                    }
+                                                    
+                                                    JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                    if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int privatePortInstance = ((int)privatePortValue);
+                                                        inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                    }
+                                                    
+                                                    JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                    if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int publicPortInstance = ((int)publicPortValue);
+                                                        inputEndpointInstance.PublicPort = publicPortInstance;
+                                                    }
+                                                    
+                                                    JToken protocolValue = inputEndpointsValue["protocol"];
+                                                    if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                    {
+                                                        string protocolInstance = ((string)protocolValue);
+                                                        inputEndpointInstance.Protocol = protocolInstance;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -7873,10 +8075,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                         if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                         {
-                                            foreach (JProperty property in consistencyPointsSequenceElement)
+                                            foreach (JProperty property2 in consistencyPointsSequenceElement)
                                             {
-                                                string consistencyPointsKey = ((string)property.Name);
-                                                DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                string consistencyPointsKey = ((string)property2.Name);
+                                                DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                 inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                             }
                                         }
@@ -8377,18 +8579,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 }
                             }
                             
-                            JToken idValue = responseDoc["id"];
-                            if (idValue != null && idValue.Type != JTokenType.Null)
+                            JToken idValue2 = responseDoc["id"];
+                            if (idValue2 != null && idValue2.Type != JTokenType.Null)
                             {
-                                string idInstance = ((string)idValue);
-                                replicationProtectedItemInstance.Id = idInstance;
+                                string idInstance2 = ((string)idValue2);
+                                replicationProtectedItemInstance.Id = idInstance2;
                             }
                             
-                            JToken nameValue = responseDoc["name"];
-                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                            JToken nameValue2 = responseDoc["name"];
+                            if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                             {
-                                string nameInstance = ((string)nameValue);
-                                replicationProtectedItemInstance.Name = nameInstance;
+                                string nameInstance2 = ((string)nameValue2);
+                                replicationProtectedItemInstance.Name = nameInstance2;
                             }
                             
                             JToken typeValue = responseDoc["type"];
@@ -8405,14 +8607,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 replicationProtectedItemInstance.Location = locationInstance;
                             }
                             
-                            JToken tagsSequenceElement = ((JToken)responseDoc["tags"]);
-                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                            JToken tagsSequenceElement2 = ((JToken)responseDoc["tags"]);
+                            if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                             {
-                                foreach (JProperty property2 in tagsSequenceElement)
+                                foreach (JProperty property3 in tagsSequenceElement2)
                                 {
-                                    string tagsKey = ((string)property2.Name);
-                                    string tagsValue = ((string)property2.Value);
-                                    replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                    string tagsKey2 = ((string)property3.Name);
+                                    string tagsValue2 = ((string)property3.Value);
+                                    replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                 }
                             }
                             
@@ -9359,6 +9561,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                         }
                                         
+                                        JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                        if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                            a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                            
+                                            JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                            {
+                                                foreach (JProperty property in tagsSequenceElement)
+                                                {
+                                                    string tagsKey = ((string)property.Name);
+                                                    string tagsValue = ((string)property.Value);
+                                                    vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                }
+                                            }
+                                            
+                                            JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                            if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                {
+                                                    RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                    vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                    
+                                                    JToken idValue = roleAssignmentsValue["id"];
+                                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                                    {
+                                                        string idInstance = ((string)idValue);
+                                                        roleAssignmentInstance.Id = idInstance;
+                                                    }
+                                                    
+                                                    JToken nameValue = roleAssignmentsValue["name"];
+                                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string nameInstance = ((string)nameValue);
+                                                        roleAssignmentInstance.Name = nameInstance;
+                                                    }
+                                                    
+                                                    JToken scopeValue = roleAssignmentsValue["scope"];
+                                                    if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                    {
+                                                        string scopeInstance = ((string)scopeValue);
+                                                        roleAssignmentInstance.Scope = scopeInstance;
+                                                    }
+                                                    
+                                                    JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                    if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string principalIdInstance = ((string)principalIdValue);
+                                                        roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                    }
+                                                    
+                                                    JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                    if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                        roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                            if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                {
+                                                    InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                    vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                    
+                                                    JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                    if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string endpointNameInstance = ((string)endpointNameValue);
+                                                        inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                    }
+                                                    
+                                                    JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                    if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int privatePortInstance = ((int)privatePortValue);
+                                                        inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                    }
+                                                    
+                                                    JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                    if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int publicPortInstance = ((int)publicPortValue);
+                                                        inputEndpointInstance.PublicPort = publicPortInstance;
+                                                    }
+                                                    
+                                                    JToken protocolValue = inputEndpointsValue["protocol"];
+                                                    if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                    {
+                                                        string protocolInstance = ((string)protocolValue);
+                                                        inputEndpointInstance.Protocol = protocolInstance;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -10128,10 +10431,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                         if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                         {
-                                            foreach (JProperty property in consistencyPointsSequenceElement)
+                                            foreach (JProperty property2 in consistencyPointsSequenceElement)
                                             {
-                                                string consistencyPointsKey = ((string)property.Name);
-                                                DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                string consistencyPointsKey = ((string)property2.Name);
+                                                DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                 inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                             }
                                         }
@@ -10632,18 +10935,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 }
                             }
                             
-                            JToken idValue = responseDoc["id"];
-                            if (idValue != null && idValue.Type != JTokenType.Null)
+                            JToken idValue2 = responseDoc["id"];
+                            if (idValue2 != null && idValue2.Type != JTokenType.Null)
                             {
-                                string idInstance = ((string)idValue);
-                                replicationProtectedItemInstance.Id = idInstance;
+                                string idInstance2 = ((string)idValue2);
+                                replicationProtectedItemInstance.Id = idInstance2;
                             }
                             
-                            JToken nameValue = responseDoc["name"];
-                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                            JToken nameValue2 = responseDoc["name"];
+                            if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                             {
-                                string nameInstance = ((string)nameValue);
-                                replicationProtectedItemInstance.Name = nameInstance;
+                                string nameInstance2 = ((string)nameValue2);
+                                replicationProtectedItemInstance.Name = nameInstance2;
                             }
                             
                             JToken typeValue = responseDoc["type"];
@@ -10660,14 +10963,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 replicationProtectedItemInstance.Location = locationInstance;
                             }
                             
-                            JToken tagsSequenceElement = ((JToken)responseDoc["tags"]);
-                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                            JToken tagsSequenceElement2 = ((JToken)responseDoc["tags"]);
+                            if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                             {
-                                foreach (JProperty property2 in tagsSequenceElement)
+                                foreach (JProperty property3 in tagsSequenceElement2)
                                 {
-                                    string tagsKey = ((string)property2.Name);
-                                    string tagsValue = ((string)property2.Value);
-                                    replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                    string tagsKey2 = ((string)property3.Name);
+                                    string tagsValue2 = ((string)property3.Value);
+                                    replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                 }
                             }
                             
@@ -11845,6 +12148,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                         }
                                         
+                                        JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                        if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                            a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                            
+                                            JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                            {
+                                                foreach (JProperty property in tagsSequenceElement)
+                                                {
+                                                    string tagsKey = ((string)property.Name);
+                                                    string tagsValue = ((string)property.Value);
+                                                    vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                }
+                                            }
+                                            
+                                            JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                            if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                {
+                                                    RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                    vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                    
+                                                    JToken idValue = roleAssignmentsValue["id"];
+                                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                                    {
+                                                        string idInstance = ((string)idValue);
+                                                        roleAssignmentInstance.Id = idInstance;
+                                                    }
+                                                    
+                                                    JToken nameValue = roleAssignmentsValue["name"];
+                                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string nameInstance = ((string)nameValue);
+                                                        roleAssignmentInstance.Name = nameInstance;
+                                                    }
+                                                    
+                                                    JToken scopeValue = roleAssignmentsValue["scope"];
+                                                    if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                    {
+                                                        string scopeInstance = ((string)scopeValue);
+                                                        roleAssignmentInstance.Scope = scopeInstance;
+                                                    }
+                                                    
+                                                    JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                    if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string principalIdInstance = ((string)principalIdValue);
+                                                        roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                    }
+                                                    
+                                                    JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                    if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                        roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                            if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                {
+                                                    InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                    vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                    
+                                                    JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                    if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string endpointNameInstance = ((string)endpointNameValue);
+                                                        inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                    }
+                                                    
+                                                    JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                    if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int privatePortInstance = ((int)privatePortValue);
+                                                        inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                    }
+                                                    
+                                                    JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                    if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int publicPortInstance = ((int)publicPortValue);
+                                                        inputEndpointInstance.PublicPort = publicPortInstance;
+                                                    }
+                                                    
+                                                    JToken protocolValue = inputEndpointsValue["protocol"];
+                                                    if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                    {
+                                                        string protocolInstance = ((string)protocolValue);
+                                                        inputEndpointInstance.Protocol = protocolInstance;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -12614,10 +13018,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                         if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                         {
-                                            foreach (JProperty property in consistencyPointsSequenceElement)
+                                            foreach (JProperty property2 in consistencyPointsSequenceElement)
                                             {
-                                                string consistencyPointsKey = ((string)property.Name);
-                                                DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                string consistencyPointsKey = ((string)property2.Name);
+                                                DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                 inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                             }
                                         }
@@ -13118,18 +13522,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 }
                             }
                             
-                            JToken idValue = responseDoc["id"];
-                            if (idValue != null && idValue.Type != JTokenType.Null)
+                            JToken idValue2 = responseDoc["id"];
+                            if (idValue2 != null && idValue2.Type != JTokenType.Null)
                             {
-                                string idInstance = ((string)idValue);
-                                replicationProtectedItemInstance.Id = idInstance;
+                                string idInstance2 = ((string)idValue2);
+                                replicationProtectedItemInstance.Id = idInstance2;
                             }
                             
-                            JToken nameValue = responseDoc["name"];
-                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                            JToken nameValue2 = responseDoc["name"];
+                            if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                             {
-                                string nameInstance = ((string)nameValue);
-                                replicationProtectedItemInstance.Name = nameInstance;
+                                string nameInstance2 = ((string)nameValue2);
+                                replicationProtectedItemInstance.Name = nameInstance2;
                             }
                             
                             JToken typeValue = responseDoc["type"];
@@ -13146,14 +13550,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 replicationProtectedItemInstance.Location = locationInstance;
                             }
                             
-                            JToken tagsSequenceElement = ((JToken)responseDoc["tags"]);
-                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                            JToken tagsSequenceElement2 = ((JToken)responseDoc["tags"]);
+                            if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                             {
-                                foreach (JProperty property2 in tagsSequenceElement)
+                                foreach (JProperty property3 in tagsSequenceElement2)
                                 {
-                                    string tagsKey = ((string)property2.Name);
-                                    string tagsValue = ((string)property2.Value);
-                                    replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                    string tagsKey2 = ((string)property3.Name);
+                                    string tagsValue2 = ((string)property3.Value);
+                                    replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                 }
                             }
                             
@@ -14100,6 +14504,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                         }
                                         
+                                        JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                        if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                            a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                            
+                                            JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                            {
+                                                foreach (JProperty property in tagsSequenceElement)
+                                                {
+                                                    string tagsKey = ((string)property.Name);
+                                                    string tagsValue = ((string)property.Value);
+                                                    vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                }
+                                            }
+                                            
+                                            JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                            if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                {
+                                                    RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                    vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                    
+                                                    JToken idValue = roleAssignmentsValue["id"];
+                                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                                    {
+                                                        string idInstance = ((string)idValue);
+                                                        roleAssignmentInstance.Id = idInstance;
+                                                    }
+                                                    
+                                                    JToken nameValue = roleAssignmentsValue["name"];
+                                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string nameInstance = ((string)nameValue);
+                                                        roleAssignmentInstance.Name = nameInstance;
+                                                    }
+                                                    
+                                                    JToken scopeValue = roleAssignmentsValue["scope"];
+                                                    if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                    {
+                                                        string scopeInstance = ((string)scopeValue);
+                                                        roleAssignmentInstance.Scope = scopeInstance;
+                                                    }
+                                                    
+                                                    JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                    if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string principalIdInstance = ((string)principalIdValue);
+                                                        roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                    }
+                                                    
+                                                    JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                    if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                        roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                            if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                {
+                                                    InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                    vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                    
+                                                    JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                    if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string endpointNameInstance = ((string)endpointNameValue);
+                                                        inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                    }
+                                                    
+                                                    JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                    if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int privatePortInstance = ((int)privatePortValue);
+                                                        inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                    }
+                                                    
+                                                    JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                    if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int publicPortInstance = ((int)publicPortValue);
+                                                        inputEndpointInstance.PublicPort = publicPortInstance;
+                                                    }
+                                                    
+                                                    JToken protocolValue = inputEndpointsValue["protocol"];
+                                                    if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                    {
+                                                        string protocolInstance = ((string)protocolValue);
+                                                        inputEndpointInstance.Protocol = protocolInstance;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -14869,10 +15374,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                         if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                         {
-                                            foreach (JProperty property in consistencyPointsSequenceElement)
+                                            foreach (JProperty property2 in consistencyPointsSequenceElement)
                                             {
-                                                string consistencyPointsKey = ((string)property.Name);
-                                                DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                string consistencyPointsKey = ((string)property2.Name);
+                                                DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                 inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                             }
                                         }
@@ -15373,18 +15878,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 }
                             }
                             
-                            JToken idValue = responseDoc["id"];
-                            if (idValue != null && idValue.Type != JTokenType.Null)
+                            JToken idValue2 = responseDoc["id"];
+                            if (idValue2 != null && idValue2.Type != JTokenType.Null)
                             {
-                                string idInstance = ((string)idValue);
-                                replicationProtectedItemInstance.Id = idInstance;
+                                string idInstance2 = ((string)idValue2);
+                                replicationProtectedItemInstance.Id = idInstance2;
                             }
                             
-                            JToken nameValue = responseDoc["name"];
-                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                            JToken nameValue2 = responseDoc["name"];
+                            if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                             {
-                                string nameInstance = ((string)nameValue);
-                                replicationProtectedItemInstance.Name = nameInstance;
+                                string nameInstance2 = ((string)nameValue2);
+                                replicationProtectedItemInstance.Name = nameInstance2;
                             }
                             
                             JToken typeValue = responseDoc["type"];
@@ -15401,14 +15906,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 replicationProtectedItemInstance.Location = locationInstance;
                             }
                             
-                            JToken tagsSequenceElement = ((JToken)responseDoc["tags"]);
-                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                            JToken tagsSequenceElement2 = ((JToken)responseDoc["tags"]);
+                            if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                             {
-                                foreach (JProperty property2 in tagsSequenceElement)
+                                foreach (JProperty property3 in tagsSequenceElement2)
                                 {
-                                    string tagsKey = ((string)property2.Name);
-                                    string tagsValue = ((string)property2.Value);
-                                    replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                    string tagsKey2 = ((string)property3.Name);
+                                    string tagsValue2 = ((string)property3.Value);
+                                    replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                 }
                             }
                             
@@ -16586,6 +17091,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                         }
                                         
+                                        JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                        if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                            a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                            
+                                            JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                            {
+                                                foreach (JProperty property in tagsSequenceElement)
+                                                {
+                                                    string tagsKey = ((string)property.Name);
+                                                    string tagsValue = ((string)property.Value);
+                                                    vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                }
+                                            }
+                                            
+                                            JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                            if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                {
+                                                    RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                    vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                    
+                                                    JToken idValue = roleAssignmentsValue["id"];
+                                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                                    {
+                                                        string idInstance = ((string)idValue);
+                                                        roleAssignmentInstance.Id = idInstance;
+                                                    }
+                                                    
+                                                    JToken nameValue = roleAssignmentsValue["name"];
+                                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string nameInstance = ((string)nameValue);
+                                                        roleAssignmentInstance.Name = nameInstance;
+                                                    }
+                                                    
+                                                    JToken scopeValue = roleAssignmentsValue["scope"];
+                                                    if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                    {
+                                                        string scopeInstance = ((string)scopeValue);
+                                                        roleAssignmentInstance.Scope = scopeInstance;
+                                                    }
+                                                    
+                                                    JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                    if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string principalIdInstance = ((string)principalIdValue);
+                                                        roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                    }
+                                                    
+                                                    JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                    if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                        roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                            if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                {
+                                                    InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                    vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                    
+                                                    JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                    if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string endpointNameInstance = ((string)endpointNameValue);
+                                                        inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                    }
+                                                    
+                                                    JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                    if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int privatePortInstance = ((int)privatePortValue);
+                                                        inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                    }
+                                                    
+                                                    JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                    if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int publicPortInstance = ((int)publicPortValue);
+                                                        inputEndpointInstance.PublicPort = publicPortInstance;
+                                                    }
+                                                    
+                                                    JToken protocolValue = inputEndpointsValue["protocol"];
+                                                    if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                    {
+                                                        string protocolInstance = ((string)protocolValue);
+                                                        inputEndpointInstance.Protocol = protocolInstance;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -17355,10 +17961,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                         if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                         {
-                                            foreach (JProperty property in consistencyPointsSequenceElement)
+                                            foreach (JProperty property2 in consistencyPointsSequenceElement)
                                             {
-                                                string consistencyPointsKey = ((string)property.Name);
-                                                DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                string consistencyPointsKey = ((string)property2.Name);
+                                                DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                 inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                             }
                                         }
@@ -17859,18 +18465,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 }
                             }
                             
-                            JToken idValue = responseDoc["id"];
-                            if (idValue != null && idValue.Type != JTokenType.Null)
+                            JToken idValue2 = responseDoc["id"];
+                            if (idValue2 != null && idValue2.Type != JTokenType.Null)
                             {
-                                string idInstance = ((string)idValue);
-                                replicationProtectedItemInstance.Id = idInstance;
+                                string idInstance2 = ((string)idValue2);
+                                replicationProtectedItemInstance.Id = idInstance2;
                             }
                             
-                            JToken nameValue = responseDoc["name"];
-                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                            JToken nameValue2 = responseDoc["name"];
+                            if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                             {
-                                string nameInstance = ((string)nameValue);
-                                replicationProtectedItemInstance.Name = nameInstance;
+                                string nameInstance2 = ((string)nameValue2);
+                                replicationProtectedItemInstance.Name = nameInstance2;
                             }
                             
                             JToken typeValue = responseDoc["type"];
@@ -17887,14 +18493,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 replicationProtectedItemInstance.Location = locationInstance;
                             }
                             
-                            JToken tagsSequenceElement = ((JToken)responseDoc["tags"]);
-                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                            JToken tagsSequenceElement2 = ((JToken)responseDoc["tags"]);
+                            if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                             {
-                                foreach (JProperty property2 in tagsSequenceElement)
+                                foreach (JProperty property3 in tagsSequenceElement2)
                                 {
-                                    string tagsKey = ((string)property2.Name);
-                                    string tagsValue = ((string)property2.Value);
-                                    replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                    string tagsKey2 = ((string)property3.Name);
+                                    string tagsValue2 = ((string)property3.Value);
+                                    replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                 }
                             }
                             
@@ -18841,6 +19447,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                         }
                                         
+                                        JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                        if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                            a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                            
+                                            JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                            {
+                                                foreach (JProperty property in tagsSequenceElement)
+                                                {
+                                                    string tagsKey = ((string)property.Name);
+                                                    string tagsValue = ((string)property.Value);
+                                                    vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                }
+                                            }
+                                            
+                                            JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                            if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                {
+                                                    RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                    vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                    
+                                                    JToken idValue = roleAssignmentsValue["id"];
+                                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                                    {
+                                                        string idInstance = ((string)idValue);
+                                                        roleAssignmentInstance.Id = idInstance;
+                                                    }
+                                                    
+                                                    JToken nameValue = roleAssignmentsValue["name"];
+                                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string nameInstance = ((string)nameValue);
+                                                        roleAssignmentInstance.Name = nameInstance;
+                                                    }
+                                                    
+                                                    JToken scopeValue = roleAssignmentsValue["scope"];
+                                                    if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                    {
+                                                        string scopeInstance = ((string)scopeValue);
+                                                        roleAssignmentInstance.Scope = scopeInstance;
+                                                    }
+                                                    
+                                                    JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                    if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string principalIdInstance = ((string)principalIdValue);
+                                                        roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                    }
+                                                    
+                                                    JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                    if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                        roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                            if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                {
+                                                    InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                    vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                    
+                                                    JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                    if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string endpointNameInstance = ((string)endpointNameValue);
+                                                        inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                    }
+                                                    
+                                                    JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                    if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int privatePortInstance = ((int)privatePortValue);
+                                                        inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                    }
+                                                    
+                                                    JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                    if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int publicPortInstance = ((int)publicPortValue);
+                                                        inputEndpointInstance.PublicPort = publicPortInstance;
+                                                    }
+                                                    
+                                                    JToken protocolValue = inputEndpointsValue["protocol"];
+                                                    if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                    {
+                                                        string protocolInstance = ((string)protocolValue);
+                                                        inputEndpointInstance.Protocol = protocolInstance;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -19610,10 +20317,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                         if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                         {
-                                            foreach (JProperty property in consistencyPointsSequenceElement)
+                                            foreach (JProperty property2 in consistencyPointsSequenceElement)
                                             {
-                                                string consistencyPointsKey = ((string)property.Name);
-                                                DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                string consistencyPointsKey = ((string)property2.Name);
+                                                DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                 inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                             }
                                         }
@@ -20114,18 +20821,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 }
                             }
                             
-                            JToken idValue = responseDoc["id"];
-                            if (idValue != null && idValue.Type != JTokenType.Null)
+                            JToken idValue2 = responseDoc["id"];
+                            if (idValue2 != null && idValue2.Type != JTokenType.Null)
                             {
-                                string idInstance = ((string)idValue);
-                                replicationProtectedItemInstance.Id = idInstance;
+                                string idInstance2 = ((string)idValue2);
+                                replicationProtectedItemInstance.Id = idInstance2;
                             }
                             
-                            JToken nameValue = responseDoc["name"];
-                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                            JToken nameValue2 = responseDoc["name"];
+                            if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                             {
-                                string nameInstance = ((string)nameValue);
-                                replicationProtectedItemInstance.Name = nameInstance;
+                                string nameInstance2 = ((string)nameValue2);
+                                replicationProtectedItemInstance.Name = nameInstance2;
                             }
                             
                             JToken typeValue = responseDoc["type"];
@@ -20142,14 +20849,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 replicationProtectedItemInstance.Location = locationInstance;
                             }
                             
-                            JToken tagsSequenceElement = ((JToken)responseDoc["tags"]);
-                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                            JToken tagsSequenceElement2 = ((JToken)responseDoc["tags"]);
+                            if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                             {
-                                foreach (JProperty property2 in tagsSequenceElement)
+                                foreach (JProperty property3 in tagsSequenceElement2)
                                 {
-                                    string tagsKey = ((string)property2.Name);
-                                    string tagsValue = ((string)property2.Value);
-                                    replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                    string tagsKey2 = ((string)property3.Name);
+                                    string tagsValue2 = ((string)property3.Value);
+                                    replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                 }
                             }
                             
@@ -21096,6 +21803,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                         }
                                         
+                                        JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                        if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                            a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                            
+                                            JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                            {
+                                                foreach (JProperty property in tagsSequenceElement)
+                                                {
+                                                    string tagsKey = ((string)property.Name);
+                                                    string tagsValue = ((string)property.Value);
+                                                    vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                }
+                                            }
+                                            
+                                            JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                            if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                {
+                                                    RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                    vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                    
+                                                    JToken idValue = roleAssignmentsValue["id"];
+                                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                                    {
+                                                        string idInstance = ((string)idValue);
+                                                        roleAssignmentInstance.Id = idInstance;
+                                                    }
+                                                    
+                                                    JToken nameValue = roleAssignmentsValue["name"];
+                                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string nameInstance = ((string)nameValue);
+                                                        roleAssignmentInstance.Name = nameInstance;
+                                                    }
+                                                    
+                                                    JToken scopeValue = roleAssignmentsValue["scope"];
+                                                    if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                    {
+                                                        string scopeInstance = ((string)scopeValue);
+                                                        roleAssignmentInstance.Scope = scopeInstance;
+                                                    }
+                                                    
+                                                    JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                    if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string principalIdInstance = ((string)principalIdValue);
+                                                        roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                    }
+                                                    
+                                                    JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                    if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                        roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                            if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                {
+                                                    InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                    vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                    
+                                                    JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                    if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string endpointNameInstance = ((string)endpointNameValue);
+                                                        inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                    }
+                                                    
+                                                    JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                    if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int privatePortInstance = ((int)privatePortValue);
+                                                        inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                    }
+                                                    
+                                                    JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                    if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int publicPortInstance = ((int)publicPortValue);
+                                                        inputEndpointInstance.PublicPort = publicPortInstance;
+                                                    }
+                                                    
+                                                    JToken protocolValue = inputEndpointsValue["protocol"];
+                                                    if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                    {
+                                                        string protocolInstance = ((string)protocolValue);
+                                                        inputEndpointInstance.Protocol = protocolInstance;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -21865,10 +22673,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                         if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                         {
-                                            foreach (JProperty property in consistencyPointsSequenceElement)
+                                            foreach (JProperty property2 in consistencyPointsSequenceElement)
                                             {
-                                                string consistencyPointsKey = ((string)property.Name);
-                                                DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                string consistencyPointsKey = ((string)property2.Name);
+                                                DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                 inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                             }
                                         }
@@ -22369,18 +23177,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 }
                             }
                             
-                            JToken idValue = responseDoc["id"];
-                            if (idValue != null && idValue.Type != JTokenType.Null)
+                            JToken idValue2 = responseDoc["id"];
+                            if (idValue2 != null && idValue2.Type != JTokenType.Null)
                             {
-                                string idInstance = ((string)idValue);
-                                replicationProtectedItemInstance.Id = idInstance;
+                                string idInstance2 = ((string)idValue2);
+                                replicationProtectedItemInstance.Id = idInstance2;
                             }
                             
-                            JToken nameValue = responseDoc["name"];
-                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                            JToken nameValue2 = responseDoc["name"];
+                            if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                             {
-                                string nameInstance = ((string)nameValue);
-                                replicationProtectedItemInstance.Name = nameInstance;
+                                string nameInstance2 = ((string)nameValue2);
+                                replicationProtectedItemInstance.Name = nameInstance2;
                             }
                             
                             JToken typeValue = responseDoc["type"];
@@ -22397,14 +23205,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 replicationProtectedItemInstance.Location = locationInstance;
                             }
                             
-                            JToken tagsSequenceElement = ((JToken)responseDoc["tags"]);
-                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                            JToken tagsSequenceElement2 = ((JToken)responseDoc["tags"]);
+                            if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                             {
-                                foreach (JProperty property2 in tagsSequenceElement)
+                                foreach (JProperty property3 in tagsSequenceElement2)
                                 {
-                                    string tagsKey = ((string)property2.Name);
-                                    string tagsValue = ((string)property2.Value);
-                                    replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                    string tagsKey2 = ((string)property3.Name);
+                                    string tagsValue2 = ((string)property3.Value);
+                                    replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                 }
                             }
                             
@@ -23351,6 +24159,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                         }
                                         
+                                        JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                        if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                            a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                            
+                                            JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                            {
+                                                foreach (JProperty property in tagsSequenceElement)
+                                                {
+                                                    string tagsKey = ((string)property.Name);
+                                                    string tagsValue = ((string)property.Value);
+                                                    vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                }
+                                            }
+                                            
+                                            JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                            if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                {
+                                                    RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                    vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                    
+                                                    JToken idValue = roleAssignmentsValue["id"];
+                                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                                    {
+                                                        string idInstance = ((string)idValue);
+                                                        roleAssignmentInstance.Id = idInstance;
+                                                    }
+                                                    
+                                                    JToken nameValue = roleAssignmentsValue["name"];
+                                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string nameInstance = ((string)nameValue);
+                                                        roleAssignmentInstance.Name = nameInstance;
+                                                    }
+                                                    
+                                                    JToken scopeValue = roleAssignmentsValue["scope"];
+                                                    if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                    {
+                                                        string scopeInstance = ((string)scopeValue);
+                                                        roleAssignmentInstance.Scope = scopeInstance;
+                                                    }
+                                                    
+                                                    JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                    if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string principalIdInstance = ((string)principalIdValue);
+                                                        roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                    }
+                                                    
+                                                    JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                    if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                        roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                            if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                {
+                                                    InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                    vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                    
+                                                    JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                    if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string endpointNameInstance = ((string)endpointNameValue);
+                                                        inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                    }
+                                                    
+                                                    JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                    if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int privatePortInstance = ((int)privatePortValue);
+                                                        inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                    }
+                                                    
+                                                    JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                    if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int publicPortInstance = ((int)publicPortValue);
+                                                        inputEndpointInstance.PublicPort = publicPortInstance;
+                                                    }
+                                                    
+                                                    JToken protocolValue = inputEndpointsValue["protocol"];
+                                                    if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                    {
+                                                        string protocolInstance = ((string)protocolValue);
+                                                        inputEndpointInstance.Protocol = protocolInstance;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -24120,10 +25029,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                         if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                         {
-                                            foreach (JProperty property in consistencyPointsSequenceElement)
+                                            foreach (JProperty property2 in consistencyPointsSequenceElement)
                                             {
-                                                string consistencyPointsKey = ((string)property.Name);
-                                                DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                string consistencyPointsKey = ((string)property2.Name);
+                                                DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                 inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                             }
                                         }
@@ -24624,18 +25533,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 }
                             }
                             
-                            JToken idValue = responseDoc["id"];
-                            if (idValue != null && idValue.Type != JTokenType.Null)
+                            JToken idValue2 = responseDoc["id"];
+                            if (idValue2 != null && idValue2.Type != JTokenType.Null)
                             {
-                                string idInstance = ((string)idValue);
-                                replicationProtectedItemInstance.Id = idInstance;
+                                string idInstance2 = ((string)idValue2);
+                                replicationProtectedItemInstance.Id = idInstance2;
                             }
                             
-                            JToken nameValue = responseDoc["name"];
-                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                            JToken nameValue2 = responseDoc["name"];
+                            if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                             {
-                                string nameInstance = ((string)nameValue);
-                                replicationProtectedItemInstance.Name = nameInstance;
+                                string nameInstance2 = ((string)nameValue2);
+                                replicationProtectedItemInstance.Name = nameInstance2;
                             }
                             
                             JToken typeValue = responseDoc["type"];
@@ -24652,14 +25561,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 replicationProtectedItemInstance.Location = locationInstance;
                             }
                             
-                            JToken tagsSequenceElement = ((JToken)responseDoc["tags"]);
-                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                            JToken tagsSequenceElement2 = ((JToken)responseDoc["tags"]);
+                            if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                             {
-                                foreach (JProperty property2 in tagsSequenceElement)
+                                foreach (JProperty property3 in tagsSequenceElement2)
                                 {
-                                    string tagsKey = ((string)property2.Name);
-                                    string tagsValue = ((string)property2.Value);
-                                    replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                    string tagsKey2 = ((string)property3.Name);
+                                    string tagsValue2 = ((string)property3.Value);
+                                    replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                 }
                             }
                             
@@ -25606,6 +26515,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                         }
                                         
+                                        JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                        if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                            a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                            
+                                            JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                            {
+                                                foreach (JProperty property in tagsSequenceElement)
+                                                {
+                                                    string tagsKey = ((string)property.Name);
+                                                    string tagsValue = ((string)property.Value);
+                                                    vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                }
+                                            }
+                                            
+                                            JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                            if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                {
+                                                    RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                    vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                    
+                                                    JToken idValue = roleAssignmentsValue["id"];
+                                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                                    {
+                                                        string idInstance = ((string)idValue);
+                                                        roleAssignmentInstance.Id = idInstance;
+                                                    }
+                                                    
+                                                    JToken nameValue = roleAssignmentsValue["name"];
+                                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string nameInstance = ((string)nameValue);
+                                                        roleAssignmentInstance.Name = nameInstance;
+                                                    }
+                                                    
+                                                    JToken scopeValue = roleAssignmentsValue["scope"];
+                                                    if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                    {
+                                                        string scopeInstance = ((string)scopeValue);
+                                                        roleAssignmentInstance.Scope = scopeInstance;
+                                                    }
+                                                    
+                                                    JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                    if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string principalIdInstance = ((string)principalIdValue);
+                                                        roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                    }
+                                                    
+                                                    JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                    if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                        roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                            if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                {
+                                                    InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                    vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                    
+                                                    JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                    if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string endpointNameInstance = ((string)endpointNameValue);
+                                                        inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                    }
+                                                    
+                                                    JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                    if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int privatePortInstance = ((int)privatePortValue);
+                                                        inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                    }
+                                                    
+                                                    JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                    if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int publicPortInstance = ((int)publicPortValue);
+                                                        inputEndpointInstance.PublicPort = publicPortInstance;
+                                                    }
+                                                    
+                                                    JToken protocolValue = inputEndpointsValue["protocol"];
+                                                    if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                    {
+                                                        string protocolInstance = ((string)protocolValue);
+                                                        inputEndpointInstance.Protocol = protocolInstance;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -26375,10 +27385,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                         if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                         {
-                                            foreach (JProperty property in consistencyPointsSequenceElement)
+                                            foreach (JProperty property2 in consistencyPointsSequenceElement)
                                             {
-                                                string consistencyPointsKey = ((string)property.Name);
-                                                DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                string consistencyPointsKey = ((string)property2.Name);
+                                                DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                 inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                             }
                                         }
@@ -26879,18 +27889,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 }
                             }
                             
-                            JToken idValue = responseDoc["id"];
-                            if (idValue != null && idValue.Type != JTokenType.Null)
+                            JToken idValue2 = responseDoc["id"];
+                            if (idValue2 != null && idValue2.Type != JTokenType.Null)
                             {
-                                string idInstance = ((string)idValue);
-                                replicationProtectedItemInstance.Id = idInstance;
+                                string idInstance2 = ((string)idValue2);
+                                replicationProtectedItemInstance.Id = idInstance2;
                             }
                             
-                            JToken nameValue = responseDoc["name"];
-                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                            JToken nameValue2 = responseDoc["name"];
+                            if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                             {
-                                string nameInstance = ((string)nameValue);
-                                replicationProtectedItemInstance.Name = nameInstance;
+                                string nameInstance2 = ((string)nameValue2);
+                                replicationProtectedItemInstance.Name = nameInstance2;
                             }
                             
                             JToken typeValue = responseDoc["type"];
@@ -26907,14 +27917,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 replicationProtectedItemInstance.Location = locationInstance;
                             }
                             
-                            JToken tagsSequenceElement = ((JToken)responseDoc["tags"]);
-                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                            JToken tagsSequenceElement2 = ((JToken)responseDoc["tags"]);
+                            if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                             {
-                                foreach (JProperty property2 in tagsSequenceElement)
+                                foreach (JProperty property3 in tagsSequenceElement2)
                                 {
-                                    string tagsKey = ((string)property2.Name);
-                                    string tagsValue = ((string)property2.Value);
-                                    replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                    string tagsKey2 = ((string)property3.Name);
+                                    string tagsValue2 = ((string)property3.Value);
+                                    replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                 }
                             }
                             
@@ -27861,6 +28871,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                         }
                                         
+                                        JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                        if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                            a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                            
+                                            JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                            {
+                                                foreach (JProperty property in tagsSequenceElement)
+                                                {
+                                                    string tagsKey = ((string)property.Name);
+                                                    string tagsValue = ((string)property.Value);
+                                                    vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                }
+                                            }
+                                            
+                                            JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                            if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                {
+                                                    RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                    vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                    
+                                                    JToken idValue = roleAssignmentsValue["id"];
+                                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                                    {
+                                                        string idInstance = ((string)idValue);
+                                                        roleAssignmentInstance.Id = idInstance;
+                                                    }
+                                                    
+                                                    JToken nameValue = roleAssignmentsValue["name"];
+                                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string nameInstance = ((string)nameValue);
+                                                        roleAssignmentInstance.Name = nameInstance;
+                                                    }
+                                                    
+                                                    JToken scopeValue = roleAssignmentsValue["scope"];
+                                                    if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                    {
+                                                        string scopeInstance = ((string)scopeValue);
+                                                        roleAssignmentInstance.Scope = scopeInstance;
+                                                    }
+                                                    
+                                                    JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                    if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string principalIdInstance = ((string)principalIdValue);
+                                                        roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                    }
+                                                    
+                                                    JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                    if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                        roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                            if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                {
+                                                    InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                    vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                    
+                                                    JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                    if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string endpointNameInstance = ((string)endpointNameValue);
+                                                        inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                    }
+                                                    
+                                                    JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                    if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int privatePortInstance = ((int)privatePortValue);
+                                                        inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                    }
+                                                    
+                                                    JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                    if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int publicPortInstance = ((int)publicPortValue);
+                                                        inputEndpointInstance.PublicPort = publicPortInstance;
+                                                    }
+                                                    
+                                                    JToken protocolValue = inputEndpointsValue["protocol"];
+                                                    if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                    {
+                                                        string protocolInstance = ((string)protocolValue);
+                                                        inputEndpointInstance.Protocol = protocolInstance;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -28630,10 +29741,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                         if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                         {
-                                            foreach (JProperty property in consistencyPointsSequenceElement)
+                                            foreach (JProperty property2 in consistencyPointsSequenceElement)
                                             {
-                                                string consistencyPointsKey = ((string)property.Name);
-                                                DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                string consistencyPointsKey = ((string)property2.Name);
+                                                DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                 inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                             }
                                         }
@@ -29134,18 +30245,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 }
                             }
                             
-                            JToken idValue = responseDoc["id"];
-                            if (idValue != null && idValue.Type != JTokenType.Null)
+                            JToken idValue2 = responseDoc["id"];
+                            if (idValue2 != null && idValue2.Type != JTokenType.Null)
                             {
-                                string idInstance = ((string)idValue);
-                                replicationProtectedItemInstance.Id = idInstance;
+                                string idInstance2 = ((string)idValue2);
+                                replicationProtectedItemInstance.Id = idInstance2;
                             }
                             
-                            JToken nameValue = responseDoc["name"];
-                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                            JToken nameValue2 = responseDoc["name"];
+                            if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                             {
-                                string nameInstance = ((string)nameValue);
-                                replicationProtectedItemInstance.Name = nameInstance;
+                                string nameInstance2 = ((string)nameValue2);
+                                replicationProtectedItemInstance.Name = nameInstance2;
                             }
                             
                             JToken typeValue = responseDoc["type"];
@@ -29162,14 +30273,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 replicationProtectedItemInstance.Location = locationInstance;
                             }
                             
-                            JToken tagsSequenceElement = ((JToken)responseDoc["tags"]);
-                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                            JToken tagsSequenceElement2 = ((JToken)responseDoc["tags"]);
+                            if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                             {
-                                foreach (JProperty property2 in tagsSequenceElement)
+                                foreach (JProperty property3 in tagsSequenceElement2)
                                 {
-                                    string tagsKey = ((string)property2.Name);
-                                    string tagsValue = ((string)property2.Value);
-                                    replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                    string tagsKey2 = ((string)property3.Name);
+                                    string tagsValue2 = ((string)property3.Value);
+                                    replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                 }
                             }
                             
@@ -30165,6 +31276,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                                 }
                                                 
+                                                JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                                if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                                {
+                                                    AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                                    a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                                    
+                                                    JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                                    if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                                    {
+                                                        foreach (JProperty property in tagsSequenceElement)
+                                                        {
+                                                            string tagsKey = ((string)property.Name);
+                                                            string tagsValue = ((string)property.Value);
+                                                            vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                        }
+                                                    }
+                                                    
+                                                    JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                                    if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                                    {
+                                                        foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                        {
+                                                            RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                            vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                            
+                                                            JToken idValue = roleAssignmentsValue["id"];
+                                                            if (idValue != null && idValue.Type != JTokenType.Null)
+                                                            {
+                                                                string idInstance = ((string)idValue);
+                                                                roleAssignmentInstance.Id = idInstance;
+                                                            }
+                                                            
+                                                            JToken nameValue = roleAssignmentsValue["name"];
+                                                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                            {
+                                                                string nameInstance = ((string)nameValue);
+                                                                roleAssignmentInstance.Name = nameInstance;
+                                                            }
+                                                            
+                                                            JToken scopeValue = roleAssignmentsValue["scope"];
+                                                            if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                            {
+                                                                string scopeInstance = ((string)scopeValue);
+                                                                roleAssignmentInstance.Scope = scopeInstance;
+                                                            }
+                                                            
+                                                            JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                            if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                            {
+                                                                string principalIdInstance = ((string)principalIdValue);
+                                                                roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                            }
+                                                            
+                                                            JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                            if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                            {
+                                                                string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                                roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                            }
+                                                        }
+                                                    }
+                                                    
+                                                    JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                                    if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                                    {
+                                                        foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                        {
+                                                            InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                            vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                            
+                                                            JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                            if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                            {
+                                                                string endpointNameInstance = ((string)endpointNameValue);
+                                                                inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                            }
+                                                            
+                                                            JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                            if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                            {
+                                                                int privatePortInstance = ((int)privatePortValue);
+                                                                inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                            }
+                                                            
+                                                            JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                            if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                            {
+                                                                int publicPortInstance = ((int)publicPortValue);
+                                                                inputEndpointInstance.PublicPort = publicPortInstance;
+                                                            }
+                                                            
+                                                            JToken protocolValue = inputEndpointsValue["protocol"];
+                                                            if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                            {
+                                                                string protocolInstance = ((string)protocolValue);
+                                                                inputEndpointInstance.Protocol = protocolInstance;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                                 {
@@ -30934,10 +32146,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                                 if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                                 {
-                                                    foreach (JProperty property in consistencyPointsSequenceElement)
+                                                    foreach (JProperty property2 in consistencyPointsSequenceElement)
                                                     {
-                                                        string consistencyPointsKey = ((string)property.Name);
-                                                        DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                        string consistencyPointsKey = ((string)property2.Name);
+                                                        DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                         inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                                     }
                                                 }
@@ -31438,18 +32650,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         }
                                     }
                                     
-                                    JToken idValue = valueValue["id"];
-                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                    JToken idValue2 = valueValue["id"];
+                                    if (idValue2 != null && idValue2.Type != JTokenType.Null)
                                     {
-                                        string idInstance = ((string)idValue);
-                                        replicationProtectedItemInstance.Id = idInstance;
+                                        string idInstance2 = ((string)idValue2);
+                                        replicationProtectedItemInstance.Id = idInstance2;
                                     }
                                     
-                                    JToken nameValue = valueValue["name"];
-                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                    JToken nameValue2 = valueValue["name"];
+                                    if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                                     {
-                                        string nameInstance = ((string)nameValue);
-                                        replicationProtectedItemInstance.Name = nameInstance;
+                                        string nameInstance2 = ((string)nameValue2);
+                                        replicationProtectedItemInstance.Name = nameInstance2;
                                     }
                                     
                                     JToken typeValue = valueValue["type"];
@@ -31466,14 +32678,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         replicationProtectedItemInstance.Location = locationInstance;
                                     }
                                     
-                                    JToken tagsSequenceElement = ((JToken)valueValue["tags"]);
-                                    if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                    JToken tagsSequenceElement2 = ((JToken)valueValue["tags"]);
+                                    if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                                     {
-                                        foreach (JProperty property2 in tagsSequenceElement)
+                                        foreach (JProperty property3 in tagsSequenceElement2)
                                         {
-                                            string tagsKey = ((string)property2.Name);
-                                            string tagsValue = ((string)property2.Value);
-                                            replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                            string tagsKey2 = ((string)property3.Name);
+                                            string tagsValue2 = ((string)property3.Value);
+                                            replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                         }
                                     }
                                 }
@@ -32420,6 +33632,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                                 }
                                                 
+                                                JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                                if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                                {
+                                                    AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                                    a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                                    
+                                                    JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                                    if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                                    {
+                                                        foreach (JProperty property in tagsSequenceElement)
+                                                        {
+                                                            string tagsKey = ((string)property.Name);
+                                                            string tagsValue = ((string)property.Value);
+                                                            vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                        }
+                                                    }
+                                                    
+                                                    JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                                    if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                                    {
+                                                        foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                        {
+                                                            RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                            vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                            
+                                                            JToken idValue = roleAssignmentsValue["id"];
+                                                            if (idValue != null && idValue.Type != JTokenType.Null)
+                                                            {
+                                                                string idInstance = ((string)idValue);
+                                                                roleAssignmentInstance.Id = idInstance;
+                                                            }
+                                                            
+                                                            JToken nameValue = roleAssignmentsValue["name"];
+                                                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                            {
+                                                                string nameInstance = ((string)nameValue);
+                                                                roleAssignmentInstance.Name = nameInstance;
+                                                            }
+                                                            
+                                                            JToken scopeValue = roleAssignmentsValue["scope"];
+                                                            if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                            {
+                                                                string scopeInstance = ((string)scopeValue);
+                                                                roleAssignmentInstance.Scope = scopeInstance;
+                                                            }
+                                                            
+                                                            JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                            if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                            {
+                                                                string principalIdInstance = ((string)principalIdValue);
+                                                                roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                            }
+                                                            
+                                                            JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                            if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                            {
+                                                                string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                                roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                            }
+                                                        }
+                                                    }
+                                                    
+                                                    JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                                    if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                                    {
+                                                        foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                        {
+                                                            InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                            vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                            
+                                                            JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                            if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                            {
+                                                                string endpointNameInstance = ((string)endpointNameValue);
+                                                                inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                            }
+                                                            
+                                                            JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                            if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                            {
+                                                                int privatePortInstance = ((int)privatePortValue);
+                                                                inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                            }
+                                                            
+                                                            JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                            if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                            {
+                                                                int publicPortInstance = ((int)publicPortValue);
+                                                                inputEndpointInstance.PublicPort = publicPortInstance;
+                                                            }
+                                                            
+                                                            JToken protocolValue = inputEndpointsValue["protocol"];
+                                                            if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                            {
+                                                                string protocolInstance = ((string)protocolValue);
+                                                                inputEndpointInstance.Protocol = protocolInstance;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                                 {
@@ -33189,10 +34502,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                                 if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                                 {
-                                                    foreach (JProperty property in consistencyPointsSequenceElement)
+                                                    foreach (JProperty property2 in consistencyPointsSequenceElement)
                                                     {
-                                                        string consistencyPointsKey = ((string)property.Name);
-                                                        DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                        string consistencyPointsKey = ((string)property2.Name);
+                                                        DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                         inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                                     }
                                                 }
@@ -33693,18 +35006,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         }
                                     }
                                     
-                                    JToken idValue = valueValue["id"];
-                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                    JToken idValue2 = valueValue["id"];
+                                    if (idValue2 != null && idValue2.Type != JTokenType.Null)
                                     {
-                                        string idInstance = ((string)idValue);
-                                        replicationProtectedItemInstance.Id = idInstance;
+                                        string idInstance2 = ((string)idValue2);
+                                        replicationProtectedItemInstance.Id = idInstance2;
                                     }
                                     
-                                    JToken nameValue = valueValue["name"];
-                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                    JToken nameValue2 = valueValue["name"];
+                                    if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                                     {
-                                        string nameInstance = ((string)nameValue);
-                                        replicationProtectedItemInstance.Name = nameInstance;
+                                        string nameInstance2 = ((string)nameValue2);
+                                        replicationProtectedItemInstance.Name = nameInstance2;
                                     }
                                     
                                     JToken typeValue = valueValue["type"];
@@ -33721,14 +35034,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         replicationProtectedItemInstance.Location = locationInstance;
                                     }
                                     
-                                    JToken tagsSequenceElement = ((JToken)valueValue["tags"]);
-                                    if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                    JToken tagsSequenceElement2 = ((JToken)valueValue["tags"]);
+                                    if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                                     {
-                                        foreach (JProperty property2 in tagsSequenceElement)
+                                        foreach (JProperty property3 in tagsSequenceElement2)
                                         {
-                                            string tagsKey = ((string)property2.Name);
-                                            string tagsValue = ((string)property2.Value);
-                                            replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                            string tagsKey2 = ((string)property3.Name);
+                                            string tagsValue2 = ((string)property3.Value);
+                                            replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                         }
                                     }
                                 }
@@ -34633,6 +35946,107 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
                                                 }
                                                 
+                                                JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                                if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                                {
+                                                    AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                                    a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                                    
+                                                    JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                                    if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                                    {
+                                                        foreach (JProperty property in tagsSequenceElement)
+                                                        {
+                                                            string tagsKey = ((string)property.Name);
+                                                            string tagsValue = ((string)property.Value);
+                                                            vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                        }
+                                                    }
+                                                    
+                                                    JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                                    if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                                    {
+                                                        foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                        {
+                                                            RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                            vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                            
+                                                            JToken idValue = roleAssignmentsValue["id"];
+                                                            if (idValue != null && idValue.Type != JTokenType.Null)
+                                                            {
+                                                                string idInstance = ((string)idValue);
+                                                                roleAssignmentInstance.Id = idInstance;
+                                                            }
+                                                            
+                                                            JToken nameValue = roleAssignmentsValue["name"];
+                                                            if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                            {
+                                                                string nameInstance = ((string)nameValue);
+                                                                roleAssignmentInstance.Name = nameInstance;
+                                                            }
+                                                            
+                                                            JToken scopeValue = roleAssignmentsValue["scope"];
+                                                            if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                            {
+                                                                string scopeInstance = ((string)scopeValue);
+                                                                roleAssignmentInstance.Scope = scopeInstance;
+                                                            }
+                                                            
+                                                            JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                            if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                            {
+                                                                string principalIdInstance = ((string)principalIdValue);
+                                                                roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                            }
+                                                            
+                                                            JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                            if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                            {
+                                                                string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                                roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                            }
+                                                        }
+                                                    }
+                                                    
+                                                    JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                                    if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                                    {
+                                                        foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                        {
+                                                            InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                            vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                            
+                                                            JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                            if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                            {
+                                                                string endpointNameInstance = ((string)endpointNameValue);
+                                                                inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                            }
+                                                            
+                                                            JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                            if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                            {
+                                                                int privatePortInstance = ((int)privatePortValue);
+                                                                inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                            }
+                                                            
+                                                            JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                            if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                            {
+                                                                int publicPortInstance = ((int)publicPortValue);
+                                                                inputEndpointInstance.PublicPort = publicPortInstance;
+                                                            }
+                                                            
+                                                            JToken protocolValue = inputEndpointsValue["protocol"];
+                                                            if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                            {
+                                                                string protocolInstance = ((string)protocolValue);
+                                                                inputEndpointInstance.Protocol = protocolInstance;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                                 {
@@ -35402,10 +36816,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
                                                 if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
                                                 {
-                                                    foreach (JProperty property in consistencyPointsSequenceElement)
+                                                    foreach (JProperty property2 in consistencyPointsSequenceElement)
                                                     {
-                                                        string consistencyPointsKey = ((string)property.Name);
-                                                        DateTime consistencyPointsValue = ((DateTime)property.Value);
+                                                        string consistencyPointsKey = ((string)property2.Name);
+                                                        DateTime consistencyPointsValue = ((DateTime)property2.Value);
                                                         inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
                                                     }
                                                 }
@@ -35906,18 +37320,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         }
                                     }
                                     
-                                    JToken idValue = valueValue["id"];
-                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                    JToken idValue2 = valueValue["id"];
+                                    if (idValue2 != null && idValue2.Type != JTokenType.Null)
                                     {
-                                        string idInstance = ((string)idValue);
-                                        replicationProtectedItemInstance.Id = idInstance;
+                                        string idInstance2 = ((string)idValue2);
+                                        replicationProtectedItemInstance.Id = idInstance2;
                                     }
                                     
-                                    JToken nameValue = valueValue["name"];
-                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                    JToken nameValue2 = valueValue["name"];
+                                    if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
                                     {
-                                        string nameInstance = ((string)nameValue);
-                                        replicationProtectedItemInstance.Name = nameInstance;
+                                        string nameInstance2 = ((string)nameValue2);
+                                        replicationProtectedItemInstance.Name = nameInstance2;
                                     }
                                     
                                     JToken typeValue = valueValue["type"];
@@ -35934,14 +37348,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         replicationProtectedItemInstance.Location = locationInstance;
                                     }
                                     
-                                    JToken tagsSequenceElement = ((JToken)valueValue["tags"]);
-                                    if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                    JToken tagsSequenceElement2 = ((JToken)valueValue["tags"]);
+                                    if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
                                     {
-                                        foreach (JProperty property2 in tagsSequenceElement)
+                                        foreach (JProperty property3 in tagsSequenceElement2)
                                         {
-                                            string tagsKey = ((string)property2.Name);
-                                            string tagsValue = ((string)property2.Value);
-                                            replicationProtectedItemInstance.Tags.Add(tagsKey, tagsValue);
+                                            string tagsKey2 = ((string)property3.Name);
+                                            string tagsValue2 = ((string)property3.Value);
+                                            replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
                                         }
                                     }
                                 }
