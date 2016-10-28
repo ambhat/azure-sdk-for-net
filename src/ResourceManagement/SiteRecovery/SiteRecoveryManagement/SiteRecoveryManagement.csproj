@@ -19,6 +19,7 @@
     <NoWarn>$(NoWarn);0108</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Customizations\SiteRecoveryManagementClient.cs" />
     <Compile Include="Generated\Models\**\*.cs" />
     <Compile Include="Generated\*.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
