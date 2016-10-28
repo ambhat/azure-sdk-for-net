@@ -21,24 +21,34 @@
 
 using System;
 using System.Linq;
-using Microsoft.Azure.Management.SiteRecovery.Models;
 
 namespace Microsoft.Azure.Management.SiteRecovery.Models
 {
     /// <summary>
-    /// Input for creating a network maping.
+    /// Network mapping creation input.
     /// </summary>
     public partial class CreateNetworkMappingInput
     {
-        private CreateNetworkMappingInputProperties _properties;
+        private string _recoveryFabricName;
         
         /// <summary>
-        /// Optional. The network mapping input properties.
+        /// Optional. Recovery Fabric Name.
         /// </summary>
-        public CreateNetworkMappingInputProperties Properties
+        public string RecoveryFabricName
         {
-            get { return this._properties; }
-            set { this._properties = value; }
+            get { return this._recoveryFabricName; }
+            set { this._recoveryFabricName = value; }
+        }
+        
+        private string _recoveryNetworkId;
+        
+        /// <summary>
+        /// Optional. Recovery Network Id.
+        /// </summary>
+        public string RecoveryNetworkId
+        {
+            get { return this._recoveryNetworkId; }
+            set { this._recoveryNetworkId = value; }
         }
         
         /// <summary>

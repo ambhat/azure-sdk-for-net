@@ -153,70 +153,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
         }
         
         /// <summary>
-        /// Updates Network Mapping.
-        /// </summary>
-        /// <param name='operations'>
-        /// Reference to the
-        /// Microsoft.Azure.Management.SiteRecovery.INetworkMappingOperations.
-        /// </param>
-        /// <param name='fabricName'>
-        /// Required. Fabric Name.
-        /// </param>
-        /// <param name='primaryNetworkName'>
-        /// Required. Primary Network Name.
-        /// </param>
-        /// <param name='networkMappingName'>
-        /// Required. Network Mapping Name.
-        /// </param>
-        /// <param name='input'>
-        /// Required. Network Mapping input.
-        /// </param>
-        /// <param name='customRequestHeaders'>
-        /// Optional. Request header parameters.
-        /// </param>
-        /// <returns>
-        /// A standard service response for long running operations.
-        /// </returns>
-        public static LongRunningOperationResponse BeginUpdating(this INetworkMappingOperations operations, string fabricName, string primaryNetworkName, string networkMappingName, UpdateNetworkMappingInput input, CustomRequestHeaders customRequestHeaders)
-        {
-            return Task.Factory.StartNew((object s) => 
-            {
-                return ((INetworkMappingOperations)s).BeginUpdatingAsync(fabricName, primaryNetworkName, networkMappingName, input, customRequestHeaders);
-            }
-            , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
-        }
-        
-        /// <summary>
-        /// Updates Network Mapping.
-        /// </summary>
-        /// <param name='operations'>
-        /// Reference to the
-        /// Microsoft.Azure.Management.SiteRecovery.INetworkMappingOperations.
-        /// </param>
-        /// <param name='fabricName'>
-        /// Required. Fabric Name.
-        /// </param>
-        /// <param name='primaryNetworkName'>
-        /// Required. Primary Network Name.
-        /// </param>
-        /// <param name='networkMappingName'>
-        /// Required. Network Mapping Name.
-        /// </param>
-        /// <param name='input'>
-        /// Required. Network Mapping input.
-        /// </param>
-        /// <param name='customRequestHeaders'>
-        /// Optional. Request header parameters.
-        /// </param>
-        /// <returns>
-        /// A standard service response for long running operations.
-        /// </returns>
-        public static Task<LongRunningOperationResponse> BeginUpdatingAsync(this INetworkMappingOperations operations, string fabricName, string primaryNetworkName, string networkMappingName, UpdateNetworkMappingInput input, CustomRequestHeaders customRequestHeaders)
-        {
-            return operations.BeginUpdatingAsync(fabricName, primaryNetworkName, networkMappingName, input, customRequestHeaders, CancellationToken.None);
-        }
-        
-        /// <summary>
         /// Creates Network Mapping.
         /// </summary>
         /// <param name='operations'>
@@ -529,52 +465,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
         }
         
         /// <summary>
-        /// The Get Operation Status operation returns the status of the
-        /// specified operation. After calling an asynchronous operation, you
-        /// can call Get Operation Status to determine whether the operation
-        /// has succeeded, failed, or is still in progress.
-        /// </summary>
-        /// <param name='operations'>
-        /// Reference to the
-        /// Microsoft.Azure.Management.SiteRecovery.INetworkMappingOperations.
-        /// </param>
-        /// <param name='operationStatusLink'>
-        /// Required. Location value returned by the Begin operation.
-        /// </param>
-        /// <returns>
-        /// A standard service response for long running operations.
-        /// </returns>
-        public static UpdateNetworkMappingOperationResponse GetUpdateStatus(this INetworkMappingOperations operations, string operationStatusLink)
-        {
-            return Task.Factory.StartNew((object s) => 
-            {
-                return ((INetworkMappingOperations)s).GetUpdateStatusAsync(operationStatusLink);
-            }
-            , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
-        }
-        
-        /// <summary>
-        /// The Get Operation Status operation returns the status of the
-        /// specified operation. After calling an asynchronous operation, you
-        /// can call Get Operation Status to determine whether the operation
-        /// has succeeded, failed, or is still in progress.
-        /// </summary>
-        /// <param name='operations'>
-        /// Reference to the
-        /// Microsoft.Azure.Management.SiteRecovery.INetworkMappingOperations.
-        /// </param>
-        /// <param name='operationStatusLink'>
-        /// Required. Location value returned by the Begin operation.
-        /// </param>
-        /// <returns>
-        /// A standard service response for long running operations.
-        /// </returns>
-        public static Task<UpdateNetworkMappingOperationResponse> GetUpdateStatusAsync(this INetworkMappingOperations operations, string operationStatusLink)
-        {
-            return operations.GetUpdateStatusAsync(operationStatusLink, CancellationToken.None);
-        }
-        
-        /// <summary>
         /// Get list of Network Mappings.
         /// </summary>
         /// <param name='operations'>
@@ -624,70 +514,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
         public static Task<NetworkMappingsListResponse> ListAsync(this INetworkMappingOperations operations, string fabricName, string primaryNetworkName, CustomRequestHeaders customRequestHeaders)
         {
             return operations.ListAsync(fabricName, primaryNetworkName, customRequestHeaders, CancellationToken.None);
-        }
-        
-        /// <summary>
-        /// Update Policy.
-        /// </summary>
-        /// <param name='operations'>
-        /// Reference to the
-        /// Microsoft.Azure.Management.SiteRecovery.INetworkMappingOperations.
-        /// </param>
-        /// <param name='fabricName'>
-        /// Required. Fabric Name.
-        /// </param>
-        /// <param name='primaryNetworkName'>
-        /// Required. Primary Network Name.
-        /// </param>
-        /// <param name='networkMappingName'>
-        /// Required. Network Mapping Name.
-        /// </param>
-        /// <param name='input'>
-        /// Required. Network Mapping input.
-        /// </param>
-        /// <param name='customRequestHeaders'>
-        /// Optional. Request header parameters.
-        /// </param>
-        /// <returns>
-        /// A standard service response for long running operations.
-        /// </returns>
-        public static LongRunningOperationResponse Update(this INetworkMappingOperations operations, string fabricName, string primaryNetworkName, string networkMappingName, UpdateNetworkMappingInput input, CustomRequestHeaders customRequestHeaders)
-        {
-            return Task.Factory.StartNew((object s) => 
-            {
-                return ((INetworkMappingOperations)s).UpdateAsync(fabricName, primaryNetworkName, networkMappingName, input, customRequestHeaders);
-            }
-            , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
-        }
-        
-        /// <summary>
-        /// Update Policy.
-        /// </summary>
-        /// <param name='operations'>
-        /// Reference to the
-        /// Microsoft.Azure.Management.SiteRecovery.INetworkMappingOperations.
-        /// </param>
-        /// <param name='fabricName'>
-        /// Required. Fabric Name.
-        /// </param>
-        /// <param name='primaryNetworkName'>
-        /// Required. Primary Network Name.
-        /// </param>
-        /// <param name='networkMappingName'>
-        /// Required. Network Mapping Name.
-        /// </param>
-        /// <param name='input'>
-        /// Required. Network Mapping input.
-        /// </param>
-        /// <param name='customRequestHeaders'>
-        /// Optional. Request header parameters.
-        /// </param>
-        /// <returns>
-        /// A standard service response for long running operations.
-        /// </returns>
-        public static Task<LongRunningOperationResponse> UpdateAsync(this INetworkMappingOperations operations, string fabricName, string primaryNetworkName, string networkMappingName, UpdateNetworkMappingInput input, CustomRequestHeaders customRequestHeaders)
-        {
-            return operations.UpdateAsync(fabricName, primaryNetworkName, networkMappingName, input, customRequestHeaders, CancellationToken.None);
         }
     }
 }
