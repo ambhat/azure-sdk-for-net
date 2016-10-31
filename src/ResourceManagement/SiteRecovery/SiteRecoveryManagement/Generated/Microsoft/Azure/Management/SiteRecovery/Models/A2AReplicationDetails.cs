@@ -153,6 +153,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._selectedRecoveryAzureNetworkId = value; }
         }
         
+        private AzureToAzureVmSyncedConfigDetails _vmSyncedConfigDetails;
+        
+        /// <summary>
+        /// Optional. Synced configuration details of the virtual machine.
+        /// </summary>
+        public AzureToAzureVmSyncedConfigDetails VmSyncedConfigDetails
+        {
+            get { return this._vmSyncedConfigDetails; }
+            set { this._vmSyncedConfigDetails = value; }
+        }
+        
         /// <summary>
         /// Initializes a new instance of the A2AReplicationDetails class.
         /// </summary>
