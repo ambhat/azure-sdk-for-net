@@ -334,17 +334,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='fabricName'>
         /// Required. Fabric Name.
         /// </param>
+        /// <param name='input'>
+        /// Required. Renew certificate type.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Optional. Request header parameters.
         /// </param>
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        public static LongRunningOperationResponse BeginRenewCertificate(this IFabricOperations operations, string fabricName, CustomRequestHeaders customRequestHeaders)
+        public static LongRunningOperationResponse BeginRenewCertificate(this IFabricOperations operations, string fabricName, RenewCertificateInput input, CustomRequestHeaders customRequestHeaders)
         {
             return Task.Factory.StartNew((object s) => 
             {
-                return ((IFabricOperations)s).BeginRenewCertificateAsync(fabricName, customRequestHeaders);
+                return ((IFabricOperations)s).BeginRenewCertificateAsync(fabricName, input, customRequestHeaders);
             }
             , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
         }
@@ -359,15 +362,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='fabricName'>
         /// Required. Fabric Name.
         /// </param>
+        /// <param name='input'>
+        /// Required. Renew certificate type.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Optional. Request header parameters.
         /// </param>
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        public static Task<LongRunningOperationResponse> BeginRenewCertificateAsync(this IFabricOperations operations, string fabricName, CustomRequestHeaders customRequestHeaders)
+        public static Task<LongRunningOperationResponse> BeginRenewCertificateAsync(this IFabricOperations operations, string fabricName, RenewCertificateInput input, CustomRequestHeaders customRequestHeaders)
         {
-            return operations.BeginRenewCertificateAsync(fabricName, customRequestHeaders, CancellationToken.None);
+            return operations.BeginRenewCertificateAsync(fabricName, input, customRequestHeaders, CancellationToken.None);
         }
         
         /// <summary>
@@ -1082,17 +1088,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='fabricName'>
         /// Required. Fabric Name.
         /// </param>
+        /// <param name='input'>
+        /// Required. Renew certificate type.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Optional. Request header parameters.
         /// </param>
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        public static LongRunningOperationResponse RenewCertificate(this IFabricOperations operations, string fabricName, CustomRequestHeaders customRequestHeaders)
+        public static LongRunningOperationResponse RenewCertificate(this IFabricOperations operations, string fabricName, RenewCertificateInput input, CustomRequestHeaders customRequestHeaders)
         {
             return Task.Factory.StartNew((object s) => 
             {
-                return ((IFabricOperations)s).RenewCertificateAsync(fabricName, customRequestHeaders);
+                return ((IFabricOperations)s).RenewCertificateAsync(fabricName, input, customRequestHeaders);
             }
             , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
         }
@@ -1107,15 +1116,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='fabricName'>
         /// Required. Fabric Name.
         /// </param>
+        /// <param name='input'>
+        /// Required. Renew certificate type.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Optional. Request header parameters.
         /// </param>
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        public static Task<LongRunningOperationResponse> RenewCertificateAsync(this IFabricOperations operations, string fabricName, CustomRequestHeaders customRequestHeaders)
+        public static Task<LongRunningOperationResponse> RenewCertificateAsync(this IFabricOperations operations, string fabricName, RenewCertificateInput input, CustomRequestHeaders customRequestHeaders)
         {
-            return operations.RenewCertificateAsync(fabricName, customRequestHeaders, CancellationToken.None);
+            return operations.RenewCertificateAsync(fabricName, input, customRequestHeaders, CancellationToken.None);
         }
     }
 }

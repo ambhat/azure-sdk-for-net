@@ -254,6 +254,28 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._spaceUsageStatus = value; }
         }
         
+        private System.DateTime? _sslCertExpiryDate;
+        
+        /// <summary>
+        /// Optional. CS server SSL cert expiry date.
+        /// </summary>
+        public System.DateTime? SslCertExpiryDate
+        {
+            get { return this._sslCertExpiryDate; }
+            set { this._sslCertExpiryDate = value; }
+        }
+        
+        private int? _sslCertExpiryRemainingDays;
+        
+        /// <summary>
+        /// Optional. CS server SSL cert expiry remaining says.
+        /// </summary>
+        public int? SslCertExpiryRemainingDays
+        {
+            get { return this._sslCertExpiryRemainingDays; }
+            set { this._sslCertExpiryRemainingDays = value; }
+        }
+        
         private string _systemLoad;
         
         /// <summary>

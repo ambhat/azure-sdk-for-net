@@ -149,6 +149,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='fabricName'>
         /// Fabric Name.
         /// </param>
+        /// <param name='input'>
+        /// Renew certificate type.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Request header parameters.
         /// </param>
@@ -158,7 +161,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        Task<LongRunningOperationResponse> BeginRenewCertificateAsync(string fabricName, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
+        Task<LongRunningOperationResponse> BeginRenewCertificateAsync(string fabricName, RenewCertificateInput input, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
         
         /// <summary>
         /// Checks consistency of a fabric.
@@ -427,6 +430,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='fabricName'>
         /// Fabric Name.
         /// </param>
+        /// <param name='input'>
+        /// Renew certificate type.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Request header parameters.
         /// </param>
@@ -436,6 +442,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        Task<LongRunningOperationResponse> RenewCertificateAsync(string fabricName, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
+        Task<LongRunningOperationResponse> RenewCertificateAsync(string fabricName, RenewCertificateInput input, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
     }
 }

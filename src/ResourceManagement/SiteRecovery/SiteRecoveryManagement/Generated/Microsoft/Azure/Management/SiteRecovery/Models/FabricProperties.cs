@@ -20,7 +20,9 @@
 // code is regenerated.
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using Hyak.Common;
 using Microsoft.Azure.Management.SiteRecovery.Models;
 
 namespace Microsoft.Azure.Management.SiteRecovery.Models
@@ -74,6 +76,28 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._friendlyName = value; }
         }
         
+        private string _health;
+        
+        /// <summary>
+        /// Optional. Health of fabric.
+        /// </summary>
+        public string Health
+        {
+            get { return this._health; }
+            set { this._health = value; }
+        }
+        
+        private IList<HealthError> _healthErrorDetails;
+        
+        /// <summary>
+        /// Optional. List of fabric Health errors.
+        /// </summary>
+        public IList<HealthError> HealthErrorDetails
+        {
+            get { return this._healthErrorDetails; }
+            set { this._healthErrorDetails = value; }
+        }
+        
         private string _internalIdentifier;
         
         /// <summary>
@@ -101,6 +125,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// </summary>
         public FabricProperties()
         {
+            this.HealthErrorDetails = new LazyList<HealthError>();
         }
     }
 }
