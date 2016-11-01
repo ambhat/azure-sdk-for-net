@@ -124,10 +124,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         public override void Dispose()
         {
             if (this.donotAllowDispose)
-            {
-                throw new Exception("Dispose is not allowed on this object as the HTTP client underneath is shared");
-            }
-
+                return;
             base.Dispose();
         }
     }
