@@ -199,6 +199,66 @@ namespace Microsoft.Azure.Management.SiteRecovery
         }
         
         /// <summary>
+        /// Switches protection from one container to another or one
+        /// replication provider to another.
+        /// </summary>
+        /// <param name='operations'>
+        /// Reference to the
+        /// Microsoft.Azure.Management.SiteRecovery.IProtectionContainerOperations.
+        /// </param>
+        /// <param name='fabricName'>
+        /// Required. Fabric name.
+        /// </param>
+        /// <param name='protectionContainerName'>
+        /// Required. Protection container name.
+        /// </param>
+        /// <param name='input'>
+        /// Required. Switch protection input.
+        /// </param>
+        /// <param name='customRequestHeaders'>
+        /// Optional. Request header parameters.
+        /// </param>
+        /// <returns>
+        /// A standard service response for long running operations.
+        /// </returns>
+        public static LongRunningOperationResponse BeginSwitchProtection(this IProtectionContainerOperations operations, string fabricName, string protectionContainerName, SwitchProtectionInput input, CustomRequestHeaders customRequestHeaders)
+        {
+            return Task.Factory.StartNew((object s) => 
+            {
+                return ((IProtectionContainerOperations)s).BeginSwitchProtectionAsync(fabricName, protectionContainerName, input, customRequestHeaders);
+            }
+            , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+        }
+        
+        /// <summary>
+        /// Switches protection from one container to another or one
+        /// replication provider to another.
+        /// </summary>
+        /// <param name='operations'>
+        /// Reference to the
+        /// Microsoft.Azure.Management.SiteRecovery.IProtectionContainerOperations.
+        /// </param>
+        /// <param name='fabricName'>
+        /// Required. Fabric name.
+        /// </param>
+        /// <param name='protectionContainerName'>
+        /// Required. Protection container name.
+        /// </param>
+        /// <param name='input'>
+        /// Required. Switch protection input.
+        /// </param>
+        /// <param name='customRequestHeaders'>
+        /// Optional. Request header parameters.
+        /// </param>
+        /// <returns>
+        /// A standard service response for long running operations.
+        /// </returns>
+        public static Task<LongRunningOperationResponse> BeginSwitchProtectionAsync(this IProtectionContainerOperations operations, string fabricName, string protectionContainerName, SwitchProtectionInput input, CustomRequestHeaders customRequestHeaders)
+        {
+            return operations.BeginSwitchProtectionAsync(fabricName, protectionContainerName, input, customRequestHeaders, CancellationToken.None);
+        }
+        
+        /// <summary>
         /// Creates a protection container
         /// </summary>
         /// <param name='operations'>
@@ -561,6 +621,54 @@ namespace Microsoft.Azure.Management.SiteRecovery
         }
         
         /// <summary>
+        /// The Get Operation Status operation returns the status of the
+        /// specified operation. After calling an asynchronous operation, you
+        /// can call Get Operation Status to determine whether the operation
+        /// has succeeded, failed, or is still in progress.
+        /// </summary>
+        /// <param name='operations'>
+        /// Reference to the
+        /// Microsoft.Azure.Management.SiteRecovery.IProtectionContainerOperations.
+        /// </param>
+        /// <param name='operationStatusLink'>
+        /// Required. Location value returned by the Begin operation.
+        /// </param>
+        /// <returns>
+        /// Service response for operation which change status of protection
+        /// container.
+        /// </returns>
+        public static ContainerOperationResponse GetSwitchProtectionStatus(this IProtectionContainerOperations operations, string operationStatusLink)
+        {
+            return Task.Factory.StartNew((object s) => 
+            {
+                return ((IProtectionContainerOperations)s).GetSwitchProtectionStatusAsync(operationStatusLink);
+            }
+            , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+        }
+        
+        /// <summary>
+        /// The Get Operation Status operation returns the status of the
+        /// specified operation. After calling an asynchronous operation, you
+        /// can call Get Operation Status to determine whether the operation
+        /// has succeeded, failed, or is still in progress.
+        /// </summary>
+        /// <param name='operations'>
+        /// Reference to the
+        /// Microsoft.Azure.Management.SiteRecovery.IProtectionContainerOperations.
+        /// </param>
+        /// <param name='operationStatusLink'>
+        /// Required. Location value returned by the Begin operation.
+        /// </param>
+        /// <returns>
+        /// Service response for operation which change status of protection
+        /// container.
+        /// </returns>
+        public static Task<ContainerOperationResponse> GetSwitchProtectionStatusAsync(this IProtectionContainerOperations operations, string operationStatusLink)
+        {
+            return operations.GetSwitchProtectionStatusAsync(operationStatusLink, CancellationToken.None);
+        }
+        
+        /// <summary>
         /// Get the list of all ProtectionContainers for the given server.
         /// </summary>
         /// <param name='operations'>
@@ -644,6 +752,66 @@ namespace Microsoft.Azure.Management.SiteRecovery
         public static Task<ProtectionContainerListResponse> ListAllAsync(this IProtectionContainerOperations operations, CustomRequestHeaders customRequestHeaders)
         {
             return operations.ListAllAsync(customRequestHeaders, CancellationToken.None);
+        }
+        
+        /// <summary>
+        /// Switches protection from one container to another or one
+        /// replication provider to another.
+        /// </summary>
+        /// <param name='operations'>
+        /// Reference to the
+        /// Microsoft.Azure.Management.SiteRecovery.IProtectionContainerOperations.
+        /// </param>
+        /// <param name='fabricName'>
+        /// Required. Fabric name.
+        /// </param>
+        /// <param name='protectionContainerName'>
+        /// Required. Protection container name.
+        /// </param>
+        /// <param name='input'>
+        /// Required. Switch protection input.
+        /// </param>
+        /// <param name='customRequestHeaders'>
+        /// Optional. Request header parameters.
+        /// </param>
+        /// <returns>
+        /// A standard service response for long running operations.
+        /// </returns>
+        public static LongRunningOperationResponse SwitchProtection(this IProtectionContainerOperations operations, string fabricName, string protectionContainerName, SwitchProtectionInput input, CustomRequestHeaders customRequestHeaders)
+        {
+            return Task.Factory.StartNew((object s) => 
+            {
+                return ((IProtectionContainerOperations)s).SwitchProtectionAsync(fabricName, protectionContainerName, input, customRequestHeaders);
+            }
+            , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+        }
+        
+        /// <summary>
+        /// Switches protection from one container to another or one
+        /// replication provider to another.
+        /// </summary>
+        /// <param name='operations'>
+        /// Reference to the
+        /// Microsoft.Azure.Management.SiteRecovery.IProtectionContainerOperations.
+        /// </param>
+        /// <param name='fabricName'>
+        /// Required. Fabric name.
+        /// </param>
+        /// <param name='protectionContainerName'>
+        /// Required. Protection container name.
+        /// </param>
+        /// <param name='input'>
+        /// Required. Switch protection input.
+        /// </param>
+        /// <param name='customRequestHeaders'>
+        /// Optional. Request header parameters.
+        /// </param>
+        /// <returns>
+        /// A standard service response for long running operations.
+        /// </returns>
+        public static Task<LongRunningOperationResponse> SwitchProtectionAsync(this IProtectionContainerOperations operations, string fabricName, string protectionContainerName, SwitchProtectionInput input, CustomRequestHeaders customRequestHeaders)
+        {
+            return operations.SwitchProtectionAsync(fabricName, protectionContainerName, input, customRequestHeaders, CancellationToken.None);
         }
     }
 }

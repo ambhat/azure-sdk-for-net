@@ -32,7 +32,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         private string _id;
         
         /// <summary>
-        /// Optional. Id of the role assignment.
+        /// Optional. ARM Id of the role assignment.
         /// </summary>
         public string Id
         {

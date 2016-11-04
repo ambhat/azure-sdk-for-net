@@ -100,6 +100,30 @@ namespace Microsoft.Azure.Management.SiteRecovery
         Task<LongRunningOperationResponse> BeginDiscoverProtectableItemAsync(string fabricName, string protectionContainerName, DiscoverProtectableItemRequest input, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
         
         /// <summary>
+        /// Switches protection from one container to another or one
+        /// replication provider to another.
+        /// </summary>
+        /// <param name='fabricName'>
+        /// Fabric name.
+        /// </param>
+        /// <param name='protectionContainerName'>
+        /// Protection container name.
+        /// </param>
+        /// <param name='input'>
+        /// Switch protection input.
+        /// </param>
+        /// <param name='customRequestHeaders'>
+        /// Request header parameters.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// Cancellation token.
+        /// </param>
+        /// <returns>
+        /// A standard service response for long running operations.
+        /// </returns>
+        Task<LongRunningOperationResponse> BeginSwitchProtectionAsync(string fabricName, string protectionContainerName, SwitchProtectionInput input, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
+        
+        /// <summary>
         /// Creates a protection container
         /// </summary>
         /// <param name='fabricName'>
@@ -239,6 +263,24 @@ namespace Microsoft.Azure.Management.SiteRecovery
         Task<DiscoverProtectableItemResponse> GetDiscoverProtectableItemStatusAsync(string operationStatusLink, CancellationToken cancellationToken);
         
         /// <summary>
+        /// The Get Operation Status operation returns the status of the
+        /// specified operation. After calling an asynchronous operation, you
+        /// can call Get Operation Status to determine whether the operation
+        /// has succeeded, failed, or is still in progress.
+        /// </summary>
+        /// <param name='operationStatusLink'>
+        /// Location value returned by the Begin operation.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// Cancellation token.
+        /// </param>
+        /// <returns>
+        /// Service response for operation which change status of protection
+        /// container.
+        /// </returns>
+        Task<ContainerOperationResponse> GetSwitchProtectionStatusAsync(string operationStatusLink, CancellationToken cancellationToken);
+        
+        /// <summary>
         /// Get the list of all ProtectionContainers for the given server.
         /// </summary>
         /// <param name='fabricName'>
@@ -268,5 +310,29 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The response model for the list ProtectionContainers operation.
         /// </returns>
         Task<ProtectionContainerListResponse> ListAllAsync(CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Switches protection from one container to another or one
+        /// replication provider to another.
+        /// </summary>
+        /// <param name='fabricName'>
+        /// Fabric name.
+        /// </param>
+        /// <param name='protectionContainerName'>
+        /// Protection container name.
+        /// </param>
+        /// <param name='input'>
+        /// Switch protection input.
+        /// </param>
+        /// <param name='customRequestHeaders'>
+        /// Request header parameters.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// Cancellation token.
+        /// </param>
+        /// <returns>
+        /// A standard service response for long running operations.
+        /// </returns>
+        Task<LongRunningOperationResponse> SwitchProtectionAsync(string fabricName, string protectionContainerName, SwitchProtectionInput input, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
     }
 }
