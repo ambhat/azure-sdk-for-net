@@ -30,6 +30,28 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// </summary>
     public partial class AzureToAzureNetworkMappingSettings : NetworkMappingFabricSpecificSettings
     {
+        private string _primaryFabricLocation;
+        
+        /// <summary>
+        /// Optional. Location of the primary fabric.
+        /// </summary>
+        public string PrimaryFabricLocation
+        {
+            get { return this._primaryFabricLocation; }
+            set { this._primaryFabricLocation = value; }
+        }
+        
+        private string _recoveryFabricLocation;
+        
+        /// <summary>
+        /// Optional. Location of the recovery fabric.
+        /// </summary>
+        public string RecoveryFabricLocation
+        {
+            get { return this._recoveryFabricLocation; }
+            set { this._recoveryFabricLocation = value; }
+        }
+        
         /// <summary>
         /// Initializes a new instance of the
         /// AzureToAzureNetworkMappingSettings class.

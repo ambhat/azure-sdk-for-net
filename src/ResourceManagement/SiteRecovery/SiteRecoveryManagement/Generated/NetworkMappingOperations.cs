@@ -1166,6 +1166,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     {
                                         AzureToAzureNetworkMappingSettings azureToAzureNetworkMappingSettingsInstance = new AzureToAzureNetworkMappingSettings();
                                         
+                                        JToken primaryFabricLocationValue = fabricSpecificSettingsValue["primaryFabricLocation"];
+                                        if (primaryFabricLocationValue != null && primaryFabricLocationValue.Type != JTokenType.Null)
+                                        {
+                                            string primaryFabricLocationInstance = ((string)primaryFabricLocationValue);
+                                            azureToAzureNetworkMappingSettingsInstance.PrimaryFabricLocation = primaryFabricLocationInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricLocationValue = fabricSpecificSettingsValue["recoveryFabricLocation"];
+                                        if (recoveryFabricLocationValue != null && recoveryFabricLocationValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricLocationInstance = ((string)recoveryFabricLocationValue);
+                                            azureToAzureNetworkMappingSettingsInstance.RecoveryFabricLocation = recoveryFabricLocationInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue = fabricSpecificSettingsValue["instanceType"];
                                         if (instanceTypeValue != null && instanceTypeValue.Type != JTokenType.Null)
                                         {
@@ -1507,6 +1521,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             {
                                                 AzureToAzureNetworkMappingSettings azureToAzureNetworkMappingSettingsInstance = new AzureToAzureNetworkMappingSettings();
                                                 
+                                                JToken primaryFabricLocationValue = fabricSpecificSettingsValue["primaryFabricLocation"];
+                                                if (primaryFabricLocationValue != null && primaryFabricLocationValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryFabricLocationInstance = ((string)primaryFabricLocationValue);
+                                                    azureToAzureNetworkMappingSettingsInstance.PrimaryFabricLocation = primaryFabricLocationInstance;
+                                                }
+                                                
+                                                JToken recoveryFabricLocationValue = fabricSpecificSettingsValue["recoveryFabricLocation"];
+                                                if (recoveryFabricLocationValue != null && recoveryFabricLocationValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryFabricLocationInstance = ((string)recoveryFabricLocationValue);
+                                                    azureToAzureNetworkMappingSettingsInstance.RecoveryFabricLocation = recoveryFabricLocationInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue = fabricSpecificSettingsValue["instanceType"];
                                                 if (instanceTypeValue != null && instanceTypeValue.Type != JTokenType.Null)
                                                 {
@@ -1827,6 +1855,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     if (typeName == "AzureToAzure")
                                     {
                                         AzureToAzureNetworkMappingSettings azureToAzureNetworkMappingSettingsInstance = new AzureToAzureNetworkMappingSettings();
+                                        
+                                        JToken primaryFabricLocationValue = fabricSpecificSettingsValue["primaryFabricLocation"];
+                                        if (primaryFabricLocationValue != null && primaryFabricLocationValue.Type != JTokenType.Null)
+                                        {
+                                            string primaryFabricLocationInstance = ((string)primaryFabricLocationValue);
+                                            azureToAzureNetworkMappingSettingsInstance.PrimaryFabricLocation = primaryFabricLocationInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricLocationValue = fabricSpecificSettingsValue["recoveryFabricLocation"];
+                                        if (recoveryFabricLocationValue != null && recoveryFabricLocationValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricLocationInstance = ((string)recoveryFabricLocationValue);
+                                            azureToAzureNetworkMappingSettingsInstance.RecoveryFabricLocation = recoveryFabricLocationInstance;
+                                        }
                                         
                                         JToken instanceTypeValue = fabricSpecificSettingsValue["instanceType"];
                                         if (instanceTypeValue != null && instanceTypeValue.Type != JTokenType.Null)
@@ -2430,6 +2472,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     {
                                         AzureToAzureNetworkMappingSettings azureToAzureNetworkMappingSettingsInstance = new AzureToAzureNetworkMappingSettings();
                                         
+                                        JToken primaryFabricLocationValue = fabricSpecificSettingsValue["primaryFabricLocation"];
+                                        if (primaryFabricLocationValue != null && primaryFabricLocationValue.Type != JTokenType.Null)
+                                        {
+                                            string primaryFabricLocationInstance = ((string)primaryFabricLocationValue);
+                                            azureToAzureNetworkMappingSettingsInstance.PrimaryFabricLocation = primaryFabricLocationInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricLocationValue = fabricSpecificSettingsValue["recoveryFabricLocation"];
+                                        if (recoveryFabricLocationValue != null && recoveryFabricLocationValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricLocationInstance = ((string)recoveryFabricLocationValue);
+                                            azureToAzureNetworkMappingSettingsInstance.RecoveryFabricLocation = recoveryFabricLocationInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue = fabricSpecificSettingsValue["instanceType"];
                                         if (instanceTypeValue != null && instanceTypeValue.Type != JTokenType.Null)
                                         {
@@ -2849,6 +2905,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             if (typeName == "AzureToAzure")
                                             {
                                                 AzureToAzureNetworkMappingSettings azureToAzureNetworkMappingSettingsInstance = new AzureToAzureNetworkMappingSettings();
+                                                
+                                                JToken primaryFabricLocationValue = fabricSpecificSettingsValue["primaryFabricLocation"];
+                                                if (primaryFabricLocationValue != null && primaryFabricLocationValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryFabricLocationInstance = ((string)primaryFabricLocationValue);
+                                                    azureToAzureNetworkMappingSettingsInstance.PrimaryFabricLocation = primaryFabricLocationInstance;
+                                                }
+                                                
+                                                JToken recoveryFabricLocationValue = fabricSpecificSettingsValue["recoveryFabricLocation"];
+                                                if (recoveryFabricLocationValue != null && recoveryFabricLocationValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryFabricLocationInstance = ((string)recoveryFabricLocationValue);
+                                                    azureToAzureNetworkMappingSettingsInstance.RecoveryFabricLocation = recoveryFabricLocationInstance;
+                                                }
                                                 
                                                 JToken instanceTypeValue = fabricSpecificSettingsValue["instanceType"];
                                                 if (instanceTypeValue != null && instanceTypeValue.Type != JTokenType.Null)
