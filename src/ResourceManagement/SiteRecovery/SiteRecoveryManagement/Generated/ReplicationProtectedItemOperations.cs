@@ -4533,6 +4533,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance = ((string)selectionTypeValue);
                                                     vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                    vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                    vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                }
                                             }
                                         }
                                         
@@ -4697,6 +4711,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                     vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                    vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                    vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                 }
                                             }
                                         }
@@ -5072,7 +5100,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                     vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                    vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                    vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                }
                                             }
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                        if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                            a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -5498,6 +5547,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                     vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                    vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                    vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                 }
                                             }
                                         }
@@ -5985,6 +6048,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                     vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                    vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                    vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                }
                                             }
                                         }
                                         
@@ -6221,6 +6298,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                     vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                    vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                    vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                 }
                                             }
                                         }
@@ -6896,6 +6987,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance = ((string)selectionTypeValue);
                                                     vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                    vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                    vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                }
                                             }
                                         }
                                         
@@ -7060,6 +7165,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                     vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                    vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                    vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                 }
                                             }
                                         }
@@ -7435,7 +7554,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                     vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                    vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                    vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                }
                                             }
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                        if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                            a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -7861,6 +8001,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                     vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                    vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                    vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                 }
                                             }
                                         }
@@ -8348,6 +8502,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                     vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                    vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                    vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                }
                                             }
                                         }
                                         
@@ -8584,6 +8752,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                     vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                    vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                    vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                 }
                                             }
                                         }
@@ -9318,6 +9500,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance = ((string)selectionTypeValue);
                                                     vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                    vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                    vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                }
                                             }
                                         }
                                         
@@ -9482,6 +9678,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                     vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                    vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                    vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                 }
                                             }
                                         }
@@ -9857,7 +10067,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                     vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                    vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                    vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                }
                                             }
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                        if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                            a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -10283,6 +10514,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                     vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                    vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                    vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                 }
                                             }
                                         }
@@ -10770,6 +11015,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                     vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                    vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                    vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                }
                                             }
                                         }
                                         
@@ -11006,6 +11265,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                     vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                    vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                    vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                 }
                                             }
                                         }
@@ -11971,6 +12244,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance = ((string)selectionTypeValue);
                                                     vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                    vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                    vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                }
                                             }
                                         }
                                         
@@ -12135,6 +12422,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                     vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                    vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                    vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                 }
                                             }
                                         }
@@ -12510,7 +12811,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                     vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                    vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                    vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                }
                                             }
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                        if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                            a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -12936,6 +13258,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                     vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                    vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                    vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                 }
                                             }
                                         }
@@ -13423,6 +13759,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                     vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                    vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                    vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                }
                                             }
                                         }
                                         
@@ -13659,6 +14009,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                     vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                    vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                    vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                 }
                                             }
                                         }
@@ -14393,6 +14757,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance = ((string)selectionTypeValue);
                                                     vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                    vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                    vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                }
                                             }
                                         }
                                         
@@ -14557,6 +14935,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                     vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                    vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                    vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                 }
                                             }
                                         }
@@ -14932,7 +15324,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                     vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                    vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                    vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                }
                                             }
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                        if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                            a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -15358,6 +15771,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                     vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                    vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                    vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                 }
                                             }
                                         }
@@ -15845,6 +16272,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                     vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                    vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                    vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                }
                                             }
                                         }
                                         
@@ -16081,6 +16522,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                     vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                    vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                    vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                 }
                                             }
                                         }
@@ -17046,6 +17501,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance = ((string)selectionTypeValue);
                                                     vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                    vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                    vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                }
                                             }
                                         }
                                         
@@ -17210,6 +17679,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                     vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                    vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                    vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                 }
                                             }
                                         }
@@ -17585,7 +18068,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                     vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                    vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                    vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                }
                                             }
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                        if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                            a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -18011,6 +18515,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                     vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                    vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                    vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                 }
                                             }
                                         }
@@ -18498,6 +19016,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                     vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                    vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                    vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                }
                                             }
                                         }
                                         
@@ -18734,6 +19266,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                     vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                    vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                    vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                 }
                                             }
                                         }
@@ -19468,6 +20014,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance = ((string)selectionTypeValue);
                                                     vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                    vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                    vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                }
                                             }
                                         }
                                         
@@ -19632,6 +20192,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                     vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                    vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                    vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                 }
                                             }
                                         }
@@ -20007,7 +20581,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                     vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                    vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                    vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                }
                                             }
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                        if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                            a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -20433,6 +21028,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                     vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                    vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                    vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                 }
                                             }
                                         }
@@ -20920,6 +21529,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                     vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                    vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                    vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                }
                                             }
                                         }
                                         
@@ -21156,6 +21779,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                     vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                    vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                    vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                 }
                                             }
                                         }
@@ -21890,6 +22527,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance = ((string)selectionTypeValue);
                                                     vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                    vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                    vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                }
                                             }
                                         }
                                         
@@ -22054,6 +22705,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                     vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                    vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                    vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                 }
                                             }
                                         }
@@ -22429,7 +23094,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                     vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                    vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                    vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                }
                                             }
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                        if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                            a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -22855,6 +23541,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                     vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                    vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                    vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                 }
                                             }
                                         }
@@ -23342,6 +24042,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                     vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                    vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                    vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                }
                                             }
                                         }
                                         
@@ -23578,6 +24292,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                     vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                    vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                    vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                 }
                                             }
                                         }
@@ -24312,6 +25040,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance = ((string)selectionTypeValue);
                                                     vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                    vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                    vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                }
                                             }
                                         }
                                         
@@ -24476,6 +25218,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                     vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                    vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                    vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                 }
                                             }
                                         }
@@ -24851,7 +25607,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                     vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                    vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                    vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                }
                                             }
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                        if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                            a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -25277,6 +26054,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                     vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                    vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                    vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                 }
                                             }
                                         }
@@ -25764,6 +26555,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                     vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                    vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                    vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                }
                                             }
                                         }
                                         
@@ -26000,6 +26805,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                     vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                    vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                    vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                 }
                                             }
                                         }
@@ -26734,6 +27553,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance = ((string)selectionTypeValue);
                                                     vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                    vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                    vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                }
                                             }
                                         }
                                         
@@ -26898,6 +27731,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                     vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                    vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                    vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                 }
                                             }
                                         }
@@ -27273,7 +28120,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                     vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                    vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                    vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                }
                                             }
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                        if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                            a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -27699,6 +28567,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                     vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                    vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                    vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                 }
                                             }
                                         }
@@ -28186,6 +29068,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                     vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                    vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                    vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                }
                                             }
                                         }
                                         
@@ -28422,6 +29318,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                     vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                    vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                    vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                 }
                                             }
                                         }
@@ -29156,6 +30066,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance = ((string)selectionTypeValue);
                                                     vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                    vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                    vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                }
                                             }
                                         }
                                         
@@ -29320,6 +30244,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                     vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                    vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                    vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                 }
                                             }
                                         }
@@ -29695,7 +30633,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                     vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                    vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                    vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                }
                                             }
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                        if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                            a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -30121,6 +31080,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                     vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                    vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                    vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                 }
                                             }
                                         }
@@ -30608,6 +31581,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                     vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                 }
+                                                
+                                                JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                    vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                    vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                }
                                             }
                                         }
                                         
@@ -30844,6 +31831,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                     vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                    vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                    vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                 }
                                             }
                                         }
@@ -31627,6 +32628,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string selectionTypeInstance = ((string)selectionTypeValue);
                                                             vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                         }
+                                                        
+                                                        JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                            vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                            vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                        }
                                                     }
                                                 }
                                                 
@@ -31791,6 +32806,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                             vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                        }
+                                                        
+                                                        JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                            vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                            vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                         }
                                                     }
                                                 }
@@ -32166,7 +33195,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                             vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                         }
+                                                        
+                                                        JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                            vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                            vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                        }
                                                     }
+                                                }
+                                                
+                                                JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                                if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                                    a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                                 }
                                                 
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -32592,6 +33642,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                             vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                        }
+                                                        
+                                                        JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                            vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                            vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                         }
                                                     }
                                                 }
@@ -33079,6 +34143,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                             vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                         }
+                                                        
+                                                        JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                            vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                            vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                        }
                                                     }
                                                 }
                                                 
@@ -33315,6 +34393,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                             vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                        }
+                                                        
+                                                        JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                            vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                            vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                         }
                                                     }
                                                 }
@@ -34049,6 +35141,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string selectionTypeInstance = ((string)selectionTypeValue);
                                                             vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                         }
+                                                        
+                                                        JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                            vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                            vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                        }
                                                     }
                                                 }
                                                 
@@ -34213,6 +35319,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                             vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                        }
+                                                        
+                                                        JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                            vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                            vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                         }
                                                     }
                                                 }
@@ -34588,7 +35708,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                             vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                         }
+                                                        
+                                                        JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                            vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                            vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                        }
                                                     }
+                                                }
+                                                
+                                                JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                                if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                                    a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                                 }
                                                 
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -35014,6 +36155,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                             vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                        }
+                                                        
+                                                        JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                            vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                            vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                         }
                                                     }
                                                 }
@@ -35501,6 +36656,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                             vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                         }
+                                                        
+                                                        JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                            vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                            vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                        }
                                                     }
                                                 }
                                                 
@@ -35737,6 +36906,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                             vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                        }
+                                                        
+                                                        JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                            vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                            vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                         }
                                                     }
                                                 }
@@ -36429,6 +37612,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string selectionTypeInstance = ((string)selectionTypeValue);
                                                             vMNicDetailsInstance.SelectionType = selectionTypeInstance;
                                                         }
+                                                        
+                                                        JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                            vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                            vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                        }
                                                     }
                                                 }
                                                 
@@ -36593,6 +37790,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string selectionTypeInstance2 = ((string)selectionTypeValue2);
                                                             vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                        }
+                                                        
+                                                        JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                            vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                            vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
                                                         }
                                                     }
                                                 }
@@ -36968,7 +38179,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string selectionTypeInstance3 = ((string)selectionTypeValue3);
                                                             vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
                                                         }
+                                                        
+                                                        JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                            vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                            vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                        }
                                                     }
+                                                }
+                                                
+                                                JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                                if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                                    a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
                                                 }
                                                 
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -37394,6 +38626,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string selectionTypeInstance4 = ((string)selectionTypeValue4);
                                                             vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                        }
+                                                        
+                                                        JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                            vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                            vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
                                                         }
                                                     }
                                                 }
@@ -37881,6 +39127,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string selectionTypeInstance5 = ((string)selectionTypeValue5);
                                                             vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
                                                         }
+                                                        
+                                                        JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                            vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                            vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                        }
                                                     }
                                                 }
                                                 
@@ -38117,6 +39377,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string selectionTypeInstance6 = ((string)selectionTypeValue6);
                                                             vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                        }
+                                                        
+                                                        JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                        if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                        {
+                                                            string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                            vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                        }
+                                                        
+                                                        JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                        if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                        {
+                                                            string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                            vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
                                                         }
                                                     }
                                                 }

@@ -51,6 +51,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._nicId = value; }
         }
         
+        private string _primaryNicStaticIPAddress;
+        
+        /// <summary>
+        /// Optional. Gets or sets primary NIC static IP address.
+        /// </summary>
+        public string PrimaryNicStaticIPAddress
+        {
+            get { return this._primaryNicStaticIPAddress; }
+            set { this._primaryNicStaticIPAddress = value; }
+        }
+        
         private string _recoveryVMNetworkId;
         
         /// <summary>
@@ -93,6 +104,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         {
             get { return this._selectionType; }
             set { this._selectionType = value; }
+        }
+        
+        private string _sourceNicArmId;
+        
+        /// <summary>
+        /// Optional. Gets or sets source NIC ARM Id.
+        /// </summary>
+        public string SourceNicArmId
+        {
+            get { return this._sourceNicArmId; }
+            set { this._sourceNicArmId = value; }
         }
         
         private string _vMNetworkName;

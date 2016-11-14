@@ -98,6 +98,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._protectedDisks = value; }
         }
         
+        private string _recoveryAvailabilitySet;
+        
+        /// <summary>
+        /// Optional. Recovery availability set.
+        /// </summary>
+        public string RecoveryAvailabilitySet
+        {
+            get { return this._recoveryAvailabilitySet; }
+            set { this._recoveryAvailabilitySet = value; }
+        }
+        
         private string _recoveryAzureResourceGroupId;
         
         /// <summary>
