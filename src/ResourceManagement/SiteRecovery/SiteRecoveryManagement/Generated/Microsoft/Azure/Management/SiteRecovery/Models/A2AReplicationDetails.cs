@@ -153,6 +153,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._selectedRecoveryAzureNetworkId = value; }
         }
         
+        private IList<VMNicDetails> _vMNics;
+        
+        /// <summary>
+        /// Optional. Gets or sets the network details.
+        /// </summary>
+        public IList<VMNicDetails> VMNics
+        {
+            get { return this._vMNics; }
+            set { this._vMNics = value; }
+        }
+        
         private AzureToAzureVmSyncedConfigDetails _vmSyncedConfigDetails;
         
         /// <summary>
@@ -170,6 +181,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         public A2AReplicationDetails()
         {
             this.ProtectedDisks = new LazyList<A2AProtectedDiskDetails>();
+            this.VMNics = new LazyList<VMNicDetails>();
         }
     }
 }
