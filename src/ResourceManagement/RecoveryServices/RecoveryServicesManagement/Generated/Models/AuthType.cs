@@ -21,32 +21,15 @@
 
 using System;
 using System.Linq;
-using Microsoft.Azure;
-using Microsoft.Azure.Management.RecoveryServices.Models;
 
 namespace Microsoft.Azure.Management.RecoveryServices.Models
 {
-    /// <summary>
-    /// The definition of a resource group object.
-    /// </summary>
-    public partial class ResourceGroup : ResourceBaseExtended
+    public enum AuthType
     {
-        private ResourceGroupProperties _properties;
+        Invalid = 0,
         
-        /// <summary>
-        /// Optional. Properties of resourceGroup
-        /// </summary>
-        public ResourceGroupProperties Properties
-        {
-            get { return this._properties; }
-            set { this._properties = value; }
-        }
+        ACS = 1,
         
-        /// <summary>
-        /// Initializes a new instance of the ResourceGroup class.
-        /// </summary>
-        public ResourceGroup()
-        {
-        }
+        AAD = 2,
     }
 }

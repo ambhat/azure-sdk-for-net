@@ -48,19 +48,5 @@ namespace Microsoft.Azure.Management.RecoveryServices.Models
         public ResourceExtendedInformation()
         {
         }
-        
-        /// <summary>
-        /// Initializes a new instance of the ResourceExtendedInformation class
-        /// with required arguments.
-        /// </summary>
-        public ResourceExtendedInformation(string location)
-            : this()
-        {
-            if (location == null)
-            {
-                throw new ArgumentNullException("location");
-            }
-            this.Location = location;
-        }
     }
 }

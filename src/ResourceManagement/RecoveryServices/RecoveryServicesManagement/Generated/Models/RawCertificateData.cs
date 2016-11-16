@@ -21,31 +21,41 @@
 
 using System;
 using System.Linq;
-using Microsoft.Azure;
 using Microsoft.Azure.Management.RecoveryServices.Models;
 
 namespace Microsoft.Azure.Management.RecoveryServices.Models
 {
     /// <summary>
-    /// The definition of a resource group object.
+    /// Certificate details to be uploaded to the vault.
     /// </summary>
-    public partial class ResourceGroup : ResourceBaseExtended
+    public partial class RawCertificateData
     {
-        private ResourceGroupProperties _properties;
+        private AuthType _authtype;
         
         /// <summary>
-        /// Optional. Properties of resourceGroup
+        /// Optional. Authentication type to be used with the certificate.
         /// </summary>
-        public ResourceGroupProperties Properties
+        public AuthType Authtype
         {
-            get { return this._properties; }
-            set { this._properties = value; }
+            get { return this._authtype; }
+            set { this._authtype = value; }
+        }
+        
+        private string _certificate;
+        
+        /// <summary>
+        /// Optional. Base 64 encoded raw data string of the certificate.
+        /// </summary>
+        public string Certificate
+        {
+            get { return this._certificate; }
+            set { this._certificate = value; }
         }
         
         /// <summary>
-        /// Initializes a new instance of the ResourceGroup class.
+        /// Initializes a new instance of the RawCertificateData class.
         /// </summary>
-        public ResourceGroup()
+        public RawCertificateData()
         {
         }
     }

@@ -21,31 +21,30 @@
 
 using System;
 using System.Linq;
-using Microsoft.Azure;
 using Microsoft.Azure.Management.RecoveryServices.Models;
 
 namespace Microsoft.Azure.Management.RecoveryServices.Models
 {
     /// <summary>
-    /// The definition of a resource group object.
+    /// Parameters of the request to upload certificate.
     /// </summary>
-    public partial class ResourceGroup : ResourceBaseExtended
+    public partial class CertificateRequest
     {
-        private ResourceGroupProperties _properties;
+        private RawCertificateData _properties;
         
         /// <summary>
-        /// Optional. Properties of resourceGroup
+        /// Optional. Certificate Properties.
         /// </summary>
-        public ResourceGroupProperties Properties
+        public RawCertificateData Properties
         {
             get { return this._properties; }
             set { this._properties = value; }
         }
         
         /// <summary>
-        /// Initializes a new instance of the ResourceGroup class.
+        /// Initializes a new instance of the CertificateRequest class.
         /// </summary>
-        public ResourceGroup()
+        public CertificateRequest()
         {
         }
     }

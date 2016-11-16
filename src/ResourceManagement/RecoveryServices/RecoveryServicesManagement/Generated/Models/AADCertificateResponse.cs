@@ -27,25 +27,58 @@ using Microsoft.Azure.Management.RecoveryServices.Models;
 namespace Microsoft.Azure.Management.RecoveryServices.Models
 {
     /// <summary>
-    /// The definition of a resource group object.
+    /// The response model for the upload certificate response for AAD
     /// </summary>
-    public partial class ResourceGroup : ResourceBaseExtended
+    public partial class AADCertificateResponse : AzureOperationResponse
     {
-        private ResourceGroupProperties _properties;
+        private string _id;
         
         /// <summary>
-        /// Optional. Properties of resourceGroup
+        /// Optional. Id.
         /// </summary>
-        public ResourceGroupProperties Properties
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+        
+        private string _name;
+        
+        /// <summary>
+        /// Optional. Name.
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+        
+        private ResourceCertificateAndAADDetails _properties;
+        
+        /// <summary>
+        /// Optional. Certificate Properties.
+        /// </summary>
+        public ResourceCertificateAndAADDetails Properties
         {
             get { return this._properties; }
             set { this._properties = value; }
         }
         
+        private string _type;
+        
         /// <summary>
-        /// Initializes a new instance of the ResourceGroup class.
+        /// Optional. type.
         /// </summary>
-        public ResourceGroup()
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+        
+        /// <summary>
+        /// Initializes a new instance of the AADCertificateResponse class.
+        /// </summary>
+        public AADCertificateResponse()
         {
         }
     }
