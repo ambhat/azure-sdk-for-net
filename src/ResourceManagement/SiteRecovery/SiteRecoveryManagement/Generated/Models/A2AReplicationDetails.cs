@@ -153,6 +153,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._recoveryFabricLocation = value; }
         }
         
+        private string _recoveryFabricObjectId;
+        
+        /// <summary>
+        /// Optional. Gets or sets the recovery fabric object Id.
+        /// </summary>
+        public string RecoveryFabricObjectId
+        {
+            get { return this._recoveryFabricObjectId; }
+            set { this._recoveryFabricObjectId = value; }
+        }
+        
         private string _selectedRecoveryAzureNetworkId;
         
         /// <summary>

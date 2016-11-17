@@ -211,6 +211,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._providerSpecificDetails = value; }
         }
         
+        private string _recoveryContainerId;
+        
+        /// <summary>
+        /// Optional. Gets or sets the recovery container Id.
+        /// </summary>
+        public string RecoveryContainerId
+        {
+            get { return this._recoveryContainerId; }
+            set { this._recoveryContainerId = value; }
+        }
+        
         private string _recoveryFabricFriendlyName;
         
         /// <summary>

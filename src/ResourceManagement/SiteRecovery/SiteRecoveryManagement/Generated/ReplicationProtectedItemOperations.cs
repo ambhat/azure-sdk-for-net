@@ -4448,6 +4448,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                 }
                                 
+                                JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                    propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                }
+                                
                                 JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                 if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                 {
@@ -5122,6 +5129,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                             a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                        if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -6902,6 +6916,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                 }
                                 
+                                JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                    propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                }
+                                
                                 JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                 if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                 {
@@ -7576,6 +7597,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                             a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                        if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -9415,6 +9443,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                 }
                                 
+                                JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                    propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                }
+                                
                                 JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                 if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                 {
@@ -10089,6 +10124,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                             a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                        if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -12159,6 +12201,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                 }
                                 
+                                JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                    propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                }
+                                
                                 JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                 if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                 {
@@ -12833,6 +12882,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                             a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                        if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -14672,6 +14728,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                 }
                                 
+                                JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                    propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                }
+                                
                                 JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                 if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                 {
@@ -15346,6 +15409,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                             a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                        if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -17416,6 +17486,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                 }
                                 
+                                JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                    propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                }
+                                
                                 JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                 if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                 {
@@ -18090,6 +18167,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                             a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                        if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -19929,6 +20013,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                 }
                                 
+                                JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                    propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                }
+                                
                                 JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                 if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                 {
@@ -20603,6 +20694,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                             a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                        if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -22442,6 +22540,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                 }
                                 
+                                JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                    propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                }
+                                
                                 JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                 if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                 {
@@ -23116,6 +23221,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                             a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                        if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -24955,6 +25067,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                 }
                                 
+                                JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                    propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                }
+                                
                                 JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                 if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                 {
@@ -25629,6 +25748,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                             a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                        if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -27468,6 +27594,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                 }
                                 
+                                JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                    propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                }
+                                
                                 JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                 if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                 {
@@ -28142,6 +28275,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                             a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                        if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -29981,6 +30121,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                 }
                                 
+                                JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                    propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                }
+                                
                                 JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                 if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                 {
@@ -30655,6 +30802,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                             a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                        if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -32543,6 +32697,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                         }
                                         
+                                        JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                        if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                            propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                        }
+                                        
                                         JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                         if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                         {
@@ -33217,6 +33378,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                                     a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                                }
+                                                
+                                                JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                                if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                                    a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                                 }
                                                 
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -35056,6 +35224,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                         }
                                         
+                                        JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                        if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                            propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                        }
+                                        
                                         JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                         if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                         {
@@ -35730,6 +35905,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                                     a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                                }
+                                                
+                                                JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                                if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                                    a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                                 }
                                                 
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -37527,6 +37709,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
                                         }
                                         
+                                        JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                        if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                            propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                        }
+                                        
                                         JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
                                         if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
                                         {
@@ -38201,6 +38390,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
                                                     a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                                }
+                                                
+                                                JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                                if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                                    a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
                                                 }
                                                 
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
