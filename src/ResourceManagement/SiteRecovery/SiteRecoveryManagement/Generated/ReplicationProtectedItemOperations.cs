@@ -4936,6 +4936,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
                                         }
                                         
+                                        JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                        if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                            a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
+                                        }
+                                        
                                         JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
                                         if (selectedRecoveryAzureNetworkIdValue != null && selectedRecoveryAzureNetworkIdValue.Type != JTokenType.Null)
                                         {
@@ -7402,6 +7409,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
                                             a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
+                                        JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                        if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                            a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
                                         }
                                         
                                         JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
@@ -9929,6 +9943,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
                                             a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
+                                        JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                        if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                            a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
                                         }
                                         
                                         JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
@@ -12689,6 +12710,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
                                         }
                                         
+                                        JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                        if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                            a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
+                                        }
+                                        
                                         JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
                                         if (selectedRecoveryAzureNetworkIdValue != null && selectedRecoveryAzureNetworkIdValue.Type != JTokenType.Null)
                                         {
@@ -15214,6 +15242,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
                                             a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
+                                        JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                        if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                            a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
                                         }
                                         
                                         JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
@@ -17974,6 +18009,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
                                         }
                                         
+                                        JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                        if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                            a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
+                                        }
+                                        
                                         JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
                                         if (selectedRecoveryAzureNetworkIdValue != null && selectedRecoveryAzureNetworkIdValue.Type != JTokenType.Null)
                                         {
@@ -20499,6 +20541,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
                                             a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
+                                        JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                        if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                            a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
                                         }
                                         
                                         JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
@@ -23028,6 +23077,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
                                         }
                                         
+                                        JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                        if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                            a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
+                                        }
+                                        
                                         JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
                                         if (selectedRecoveryAzureNetworkIdValue != null && selectedRecoveryAzureNetworkIdValue.Type != JTokenType.Null)
                                         {
@@ -25553,6 +25609,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
                                             a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
+                                        JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                        if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                            a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
                                         }
                                         
                                         JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
@@ -28082,6 +28145,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
                                         }
                                         
+                                        JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                        if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                            a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
+                                        }
+                                        
                                         JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
                                         if (selectedRecoveryAzureNetworkIdValue != null && selectedRecoveryAzureNetworkIdValue.Type != JTokenType.Null)
                                         {
@@ -30607,6 +30677,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
                                             a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
+                                        JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                        if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                            a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
                                         }
                                         
                                         JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
@@ -33185,6 +33262,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
                                                 }
                                                 
+                                                JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                                if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                                    a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
+                                                }
+                                                
                                                 JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
                                                 if (selectedRecoveryAzureNetworkIdValue != null && selectedRecoveryAzureNetworkIdValue.Type != JTokenType.Null)
                                                 {
@@ -35712,6 +35796,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
                                                 }
                                                 
+                                                JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                                if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                                    a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
+                                                }
+                                                
                                                 JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
                                                 if (selectedRecoveryAzureNetworkIdValue != null && selectedRecoveryAzureNetworkIdValue.Type != JTokenType.Null)
                                                 {
@@ -38195,6 +38286,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
                                                     a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                                }
+                                                
+                                                JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                                if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                                    a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
                                                 }
                                                 
                                                 JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];

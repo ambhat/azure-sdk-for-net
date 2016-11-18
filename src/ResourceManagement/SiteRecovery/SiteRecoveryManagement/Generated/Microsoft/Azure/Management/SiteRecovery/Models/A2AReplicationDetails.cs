@@ -142,6 +142,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._recoveryAzureVMSize = value; }
         }
         
+        private string _recoveryCloudService;
+        
+        /// <summary>
+        /// Optional. Recovery azure cloud service.
+        /// </summary>
+        public string RecoveryCloudService
+        {
+            get { return this._recoveryCloudService; }
+            set { this._recoveryCloudService = value; }
+        }
+        
         private string _recoveryFabricLocation;
         
         /// <summary>
