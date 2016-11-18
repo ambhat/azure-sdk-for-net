@@ -45,11 +45,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </summary>
         public SiteRecoveryManagementClient Client { get; private set; }
 
+        /// <summary>
+        /// Gets the details of a protection entity.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container Id.
         /// </param>
         /// <param name='protectableItemName'>
+        /// Protection entity Id.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -250,9 +256,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of protection entities.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container Id.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -447,6 +458,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of protection entities.
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Store the fabric details specific to the VMware fabric.
+    /// </summary>
     [JsonObject("VMware")]
     public partial class VMwareDetails : FabricSpecificDetails
     {
@@ -55,136 +58,166 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the list of Process Servers associated with the
+        /// fabric.
         /// </summary>
         [JsonProperty(PropertyName = "processServers")]
         public IList<ProcessServer> ProcessServers { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of Master Target servers associated with
+        /// the fabric.
         /// </summary>
         [JsonProperty(PropertyName = "masterTargetServers")]
         public IList<MasterTargetServer> MasterTargetServers { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of run as accounts created on the server.
         /// </summary>
         [JsonProperty(PropertyName = "runAsAccounts")]
         public IList<RunAsAccount> RunAsAccounts { get; set; }
 
         /// <summary>
+        /// Gets or sets the number of replication pairs configured in this CS.
         /// </summary>
         [JsonProperty(PropertyName = "replicationPairCount")]
         public string ReplicationPairCount { get; set; }
 
         /// <summary>
+        /// Gets or sets the number of process servers.
         /// </summary>
         [JsonProperty(PropertyName = "processServerCount")]
         public string ProcessServerCount { get; set; }
 
         /// <summary>
+        /// Gets or sets the number of source and target servers configured to
+        /// talk to this CS.
         /// </summary>
         [JsonProperty(PropertyName = "agentCount")]
         public string AgentCount { get; set; }
 
         /// <summary>
+        /// Gets or sets the number of protected servers.
         /// </summary>
         [JsonProperty(PropertyName = "protectedServers")]
         public string ProtectedServers { get; set; }
 
         /// <summary>
+        /// Gets or sets the percentage of the system load.
         /// </summary>
         [JsonProperty(PropertyName = "systemLoad")]
         public string SystemLoad { get; set; }
 
         /// <summary>
+        /// Gets or sets the system load status.
         /// </summary>
         [JsonProperty(PropertyName = "systemLoadStatus")]
         public string SystemLoadStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the percentage of the CPU load.
         /// </summary>
         [JsonProperty(PropertyName = "cpuLoad")]
         public string CpuLoad { get; set; }
 
         /// <summary>
+        /// Gets or sets the CPU load status.
         /// </summary>
         [JsonProperty(PropertyName = "cpuLoadStatus")]
         public string CpuLoadStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the total memory.
         /// </summary>
         [JsonProperty(PropertyName = "totalMemoryInBytes")]
         public long? TotalMemoryInBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the available memory.
         /// </summary>
         [JsonProperty(PropertyName = "availableMemoryInBytes")]
         public long? AvailableMemoryInBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the memory usage status.
         /// </summary>
         [JsonProperty(PropertyName = "memoryUsageStatus")]
         public string MemoryUsageStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the total space.
         /// </summary>
         [JsonProperty(PropertyName = "totalSpaceInBytes")]
         public long? TotalSpaceInBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the available space.
         /// </summary>
         [JsonProperty(PropertyName = "availableSpaceInBytes")]
         public long? AvailableSpaceInBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the space usage status.
         /// </summary>
         [JsonProperty(PropertyName = "spaceUsageStatus")]
         public string SpaceUsageStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the web load.
         /// </summary>
         [JsonProperty(PropertyName = "webLoad")]
         public string WebLoad { get; set; }
 
         /// <summary>
+        /// Gets or sets the web load status.
         /// </summary>
         [JsonProperty(PropertyName = "webLoadStatus")]
         public string WebLoadStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the database server load.
         /// </summary>
         [JsonProperty(PropertyName = "databaseServerLoad")]
         public string DatabaseServerLoad { get; set; }
 
         /// <summary>
+        /// Gets or sets the database server load status.
         /// </summary>
         [JsonProperty(PropertyName = "databaseServerLoadStatus")]
         public string DatabaseServerLoadStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the CS service status.
         /// </summary>
         [JsonProperty(PropertyName = "csServiceStatus")]
         public string CsServiceStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the IP address.
         /// </summary>
         [JsonProperty(PropertyName = "ipAddress")]
         public string IpAddress { get; set; }
 
         /// <summary>
+        /// Gets or sets the agent Version.
         /// </summary>
         [JsonProperty(PropertyName = "agentVersion")]
         public string AgentVersion { get; set; }
 
         /// <summary>
+        /// Gets or sets the host name.
         /// </summary>
         [JsonProperty(PropertyName = "hostName")]
         public string HostName { get; set; }
 
         /// <summary>
+        /// Gets or sets the last heartbeat received from CS server.
         /// </summary>
         [JsonProperty(PropertyName = "lastHeartbeat")]
         public DateTime? LastHeartbeat { get; set; }
 
         /// <summary>
+        /// Gets or sets version status
         /// </summary>
         [JsonProperty(PropertyName = "versionStatus")]
         public string VersionStatus { get; set; }

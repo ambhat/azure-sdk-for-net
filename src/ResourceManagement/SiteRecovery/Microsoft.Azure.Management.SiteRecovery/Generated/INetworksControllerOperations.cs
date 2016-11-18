@@ -18,6 +18,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
     /// </summary>
     public partial interface INetworksControllerOperations
     {
+        /// <summary>
+        /// Gets the list of networks. View-only API.
+        /// </summary>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
@@ -25,7 +28,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<IPage<Network>>> EnumerateAllNetworksWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of networks under a fabric.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Server Id.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -34,9 +41,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<IPage<Network>>> EnumerateNetworksWithHttpMessagesAsync(string fabricName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets a network with specified server id and network name.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Server Id.
         /// </param>
         /// <param name='networkName'>
+        /// Primary network name.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -45,6 +57,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<Network>> GetNetworkWithHttpMessagesAsync(string fabricName, string networkName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of networks. View-only API.
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>
@@ -55,6 +70,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<IPage<Network>>> EnumerateAllNetworksNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of networks under a fabric.
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

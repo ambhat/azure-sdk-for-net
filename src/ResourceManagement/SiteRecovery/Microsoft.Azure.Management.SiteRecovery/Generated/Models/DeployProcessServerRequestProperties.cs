@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Deploy Process Server request properties.
+    /// </summary>
     public partial class DeployProcessServerRequestProperties
     {
         /// <summary>
@@ -37,41 +40,49 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the subscription Id.
         /// </summary>
         [JsonProperty(PropertyName = "subscriptionId")]
         public string SubscriptionId { get; set; }
 
         /// <summary>
+        /// Gets or sets the vault location.
         /// </summary>
         [JsonProperty(PropertyName = "vaultLocation")]
         public string VaultLocation { get; set; }
 
         /// <summary>
+        /// Gets or sets the process server name.
         /// </summary>
         [JsonProperty(PropertyName = "friendlyName")]
         public string FriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the user name.
         /// </summary>
         [JsonProperty(PropertyName = "userName")]
         public string UserName { get; set; }
 
         /// <summary>
+        /// Gets or sets the password.
         /// </summary>
         [JsonProperty(PropertyName = "password")]
         public string Password { get; set; }
 
         /// <summary>
+        /// Gets or sets the ip address.
         /// </summary>
         [JsonProperty(PropertyName = "ipAddress")]
         public string IpAddress { get; set; }
 
         /// <summary>
+        /// Gets or sets the azure network name.
         /// </summary>
         [JsonProperty(PropertyName = "azureNetworkName")]
         public string AzureNetworkName { get; set; }
 
         /// <summary>
+        /// Gets or sets the azure network subnet.
         /// </summary>
         [JsonProperty(PropertyName = "azureNetworkSubnet")]
         public string AzureNetworkSubnet { get; set; }

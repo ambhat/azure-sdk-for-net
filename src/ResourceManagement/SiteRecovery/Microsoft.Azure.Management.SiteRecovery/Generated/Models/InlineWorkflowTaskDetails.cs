@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class represents the inline workflow task details.
+    /// </summary>
     public partial class InlineWorkflowTaskDetails : GroupTaskDetails
     {
         /// <summary>
@@ -29,6 +32,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the list of child workflow ids.
         /// </summary>
         [JsonProperty(PropertyName = "workflowIds")]
         public IList<string> WorkflowIds { get; set; }

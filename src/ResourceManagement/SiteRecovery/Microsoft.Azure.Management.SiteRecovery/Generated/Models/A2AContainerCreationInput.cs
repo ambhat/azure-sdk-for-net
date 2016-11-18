@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// A2A cloud creation input.
+    /// </summary>
     public partial class A2AContainerCreationInput : ReplicationProviderSpecificContainerCreationInput
     {
         /// <summary>

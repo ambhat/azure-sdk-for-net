@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Enable protection input.
+    /// </summary>
     public partial class EnableProtectionInput
     {
         /// <summary>
@@ -28,6 +31,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets enable protection input properties.
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public EnableProtectionInputProperties Properties { get; set; }

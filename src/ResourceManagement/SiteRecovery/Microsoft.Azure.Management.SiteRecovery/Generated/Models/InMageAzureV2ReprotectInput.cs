@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// InMageAzureV2 specific provider input.
+    /// </summary>
     public partial class InMageAzureV2ReprotectInput : ReverseReplicationProviderSpecificInput
     {
         /// <summary>
@@ -36,36 +39,44 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Master target Id.
         /// </summary>
         [JsonProperty(PropertyName = "masterTargetId")]
         public string MasterTargetId { get; set; }
 
         /// <summary>
+        /// Gets or sets the Process Server Id.
         /// </summary>
         [JsonProperty(PropertyName = "processServerId")]
         public string ProcessServerId { get; set; }
 
         /// <summary>
+        /// Gets or sets the storage account id.
         /// </summary>
         [JsonProperty(PropertyName = "storageAccountId")]
         public string StorageAccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets the CS account Id.
         /// </summary>
         [JsonProperty(PropertyName = "runAsAccountId")]
         public string RunAsAccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets the Policy Id.
         /// </summary>
         [JsonProperty(PropertyName = "policyId")]
         public string PolicyId { get; set; }
 
         /// <summary>
+        /// Gets or sets the storage account to be used for logging
+        /// during replication.
         /// </summary>
         [JsonProperty(PropertyName = "logStorageAccountId")]
         public string LogStorageAccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets the disks to include list.
         /// </summary>
         [JsonProperty(PropertyName = "disksToInclude")]
         public IList<string> DisksToInclude { get; set; }

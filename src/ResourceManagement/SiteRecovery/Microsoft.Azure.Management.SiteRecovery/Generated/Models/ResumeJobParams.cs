@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Resume job params.
+    /// </summary>
     public partial class ResumeJobParams
     {
         /// <summary>
@@ -28,6 +31,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Resume job properties.
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public ResumeJobParamsProperties Properties { get; set; }

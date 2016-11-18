@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Input definition for planned failover.
+    /// </summary>
     public partial class TestFailoverInput
     {
         /// <summary>
@@ -28,6 +31,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Planned failover input properties
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public TestFailoverInputProperties Properties { get; set; }

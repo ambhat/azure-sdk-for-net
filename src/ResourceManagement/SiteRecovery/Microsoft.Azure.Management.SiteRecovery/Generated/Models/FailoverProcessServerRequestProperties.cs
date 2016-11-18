@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// The properties of the Failover Process Server request.
+    /// </summary>
     public partial class FailoverProcessServerRequestProperties
     {
         /// <summary>
@@ -34,26 +37,32 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the container identifier.
         /// </summary>
         [JsonProperty(PropertyName = "containerName")]
         public string ContainerName { get; set; }
 
         /// <summary>
+        /// Gets or sets the source process server.
         /// </summary>
         [JsonProperty(PropertyName = "sourceProcessServerId")]
         public string SourceProcessServerId { get; set; }
 
         /// <summary>
+        /// Gets or sets the new process server.
         /// </summary>
         [JsonProperty(PropertyName = "targetProcessServerId")]
         public string TargetProcessServerId { get; set; }
 
         /// <summary>
+        /// Gets or sets the VMS to migrate.
         /// </summary>
         [JsonProperty(PropertyName = "vmsToMigrate")]
         public IList<string> VmsToMigrate { get; set; }
 
         /// <summary>
+        /// Gets or sets a value for failover type. It can be
+        /// systemlevel/serverlevel
         /// </summary>
         [JsonProperty(PropertyName = "updateType")]
         public string UpdateType { get; set; }

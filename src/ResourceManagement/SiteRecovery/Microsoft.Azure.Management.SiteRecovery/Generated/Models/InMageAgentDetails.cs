@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// The details of the InMage agent.
+    /// </summary>
     public partial class InMageAgentDetails
     {
         /// <summary>
@@ -30,16 +33,21 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the agent version.
         /// </summary>
         [JsonProperty(PropertyName = "agentVersion")]
         public string AgentVersion { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether installed agent needs to
+        /// be updated.
         /// </summary>
         [JsonProperty(PropertyName = "agentUpdateStatus")]
         public string AgentUpdateStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether reboot is required after
+        /// update is applied.
         /// </summary>
         [JsonProperty(PropertyName = "postUpdateRebootStatus")]
         public string PostUpdateRebootStatus { get; set; }

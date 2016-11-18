@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Azure specific enable protection input.
+    /// </summary>
     public partial class HyperVReplicaAzureEnableProtectionInput : EnableProtectionProviderSpecificInput
     {
         /// <summary>
@@ -39,51 +42,64 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Hyper-V host Vm Id.
         /// </summary>
         [JsonProperty(PropertyName = "hvHostVmId")]
         public string HvHostVmId { get; set; }
 
         /// <summary>
+        /// Gets or sets the Vm Name.
         /// </summary>
         [JsonProperty(PropertyName = "vmName")]
         public string VmName { get; set; }
 
         /// <summary>
+        /// Gets or sets the OS type associated with vm.
         /// </summary>
         [JsonProperty(PropertyName = "osType")]
         public string OsType { get; set; }
 
         /// <summary>
+        /// Gets or sets the OS disk VHD id associated with vm.
         /// </summary>
         [JsonProperty(PropertyName = "vhdId")]
         public string VhdId { get; set; }
 
         /// <summary>
+        /// Gets or sets the storage account name.
         /// </summary>
         [JsonProperty(PropertyName = "targetStorageAccountId")]
         public string TargetStorageAccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets the selected target Azure network Id.
         /// </summary>
         [JsonProperty(PropertyName = "targetAzureNetworkId")]
         public string TargetAzureNetworkId { get; set; }
 
         /// <summary>
+        /// Gets or sets the selected target Azure subnet Id.
         /// </summary>
         [JsonProperty(PropertyName = "targetAzureSubnetId")]
         public string TargetAzureSubnetId { get; set; }
 
         /// <summary>
+        /// Gets or sets the selected option to enable RDP\\\\SSH on target vm
+        /// after failover.
+        /// String value of
+        /// {SrsDataContract.EnableRDPOnTargetOption} enum.
         /// </summary>
         [JsonProperty(PropertyName = "enableRDPOnTargetOption")]
         public string EnableRDPOnTargetOption { get; set; }
 
         /// <summary>
+        /// Gets or sets the target azure Vm Name.
         /// </summary>
         [JsonProperty(PropertyName = "targetAzureVmName")]
         public string TargetAzureVmName { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of VHD IDs of disks to be protected.
         /// </summary>
         [JsonProperty(PropertyName = "disksToInclude")]
         public IList<string> DisksToInclude { get; set; }

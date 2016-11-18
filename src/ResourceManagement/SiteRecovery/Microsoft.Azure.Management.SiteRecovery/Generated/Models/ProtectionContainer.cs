@@ -12,7 +12,11 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
-    public partial class ProtectionContainer
+    /// <summary>
+    /// Protection container details.
+    /// </summary>
+    [JsonTransformation]
+    public partial class ProtectionContainer : Resource
     {
         /// <summary>
         /// Initializes a new instance of the ProtectionContainer class.
@@ -22,33 +26,59 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the ProtectionContainer class.
         /// </summary>
-        public ProtectionContainer(string id = default(string), string name = default(string), string type = default(string), ProtectionContainerProperties properties = default(ProtectionContainerProperties))
+        public ProtectionContainer(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string fabricFriendlyName = default(string), string friendlyName = default(string), string fabricType = default(string), int? protectedItemCount = default(int?), string pairingStatus = default(string), string role = default(string), ProtectionContainerFabricSpecificDetails fabricSpecificDetails = default(ProtectionContainerFabricSpecificDetails))
+            : base(id, name, type, location)
         {
-            Id = id;
-            Name = name;
-            Type = type;
-            Properties = properties;
+            FabricFriendlyName = fabricFriendlyName;
+            FriendlyName = friendlyName;
+            FabricType = fabricType;
+            ProtectedItemCount = protectedItemCount;
+            PairingStatus = pairingStatus;
+            Role = role;
+            FabricSpecificDetails = fabricSpecificDetails;
         }
 
         /// <summary>
+        /// Gets or sets Fabric friendly name.
         /// </summary>
-        [JsonProperty(PropertyName = "id")]
-        public string Id { get; set; }
+        [JsonProperty(PropertyName = "properties.fabricFriendlyName")]
+        public string FabricFriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the name.
         /// </summary>
-        [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
+        [JsonProperty(PropertyName = "properties.friendlyName")]
+        public string FriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the fabric type.
         /// </summary>
-        [JsonProperty(PropertyName = "type")]
-        public string Type { get; set; }
+        [JsonProperty(PropertyName = "properties.fabricType")]
+        public string FabricType { get; set; }
 
         /// <summary>
+        /// Gets or sets Number of protected PEs
         /// </summary>
-        [JsonProperty(PropertyName = "properties")]
-        public ProtectionContainerProperties Properties { get; set; }
+        [JsonProperty(PropertyName = "properties.protectedItemCount")]
+        public int? ProtectedItemCount { get; set; }
+
+        /// <summary>
+        /// Gets or sets the pairing status of this cloud.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.pairingStatus")]
+        public string PairingStatus { get; set; }
+
+        /// <summary>
+        /// Gets or sets the role of this cloud.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.role")]
+        public string Role { get; set; }
+
+        /// <summary>
+        /// Gets or sets fabric specific details.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.fabricSpecificDetails")]
+        public ProtectionContainerFabricSpecificDetails FabricSpecificDetails { get; set; }
 
     }
 }

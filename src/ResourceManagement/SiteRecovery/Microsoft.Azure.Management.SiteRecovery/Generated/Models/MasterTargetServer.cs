@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Details of a Master Target Server.
+    /// </summary>
     public partial class MasterTargetServer
     {
         /// <summary>
@@ -36,46 +39,55 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the server Id.
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
 
         /// <summary>
+        /// Gets or sets the IP address of the server.
         /// </summary>
         [JsonProperty(PropertyName = "ipAddress")]
         public string IpAddress { get; set; }
 
         /// <summary>
+        /// Gets or sets the server name.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the OS type of the server.
         /// </summary>
         [JsonProperty(PropertyName = "osType")]
         public string OsType { get; set; }
 
         /// <summary>
+        /// Gets or sets the version of the scout component on the server.
         /// </summary>
         [JsonProperty(PropertyName = "agentVersion")]
         public string AgentVersion { get; set; }
 
         /// <summary>
+        /// Gets or sets the last heartbeat received from the server.
         /// </summary>
         [JsonProperty(PropertyName = "lastHeartbeat")]
         public DateTime? LastHeartbeat { get; set; }
 
         /// <summary>
+        /// Gets or sets version status
         /// </summary>
         [JsonProperty(PropertyName = "versionStatus")]
         public string VersionStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the retention volumes of Master target Server.
         /// </summary>
         [JsonProperty(PropertyName = "retentionVolumes")]
         public IList<RetentionVolume> RetentionVolumes { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of data stores in the fabric.
         /// </summary>
         [JsonProperty(PropertyName = "dataStores")]
         public IList<DataStore> DataStores { get; set; }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Update protected item input properties.
+    /// </summary>
     public partial class UpdateReplicationProtectedItemInputProperties
     {
         /// <summary>
@@ -24,7 +27,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// Initializes a new instance of the
         /// UpdateReplicationProtectedItemInputProperties class.
         /// </summary>
-        public UpdateReplicationProtectedItemInputProperties(string recoveryAzureVMName = default(string), string recoveryAzureVMSize = default(string), string selectedRecoveryAzureNetworkId = default(string), string enableRDPOnTargetOption = default(string), IList<VMNicInputDetails> vmNics = default(IList<VMNicInputDetails>), string recoveryCloudServiceId = default(string), string recoveryResourceGroupId = default(string), string recoveryAvailabilitySetId = default(string), int? licenseType = default(int?))
+        public UpdateReplicationProtectedItemInputProperties(string recoveryAzureVMName = default(string), string recoveryAzureVMSize = default(string), string selectedRecoveryAzureNetworkId = default(string), string enableRDPOnTargetOption = default(string), IList<VMNicInputDetails> vmNics = default(IList<VMNicInputDetails>), string recoveryCloudServiceId = default(string), string recoveryResourceGroupId = default(string), string recoveryAvailabilitySetId = default(string), LicenseType? licenseType = default(LicenseType?))
         {
             RecoveryAzureVMName = recoveryAzureVMName;
             RecoveryAzureVMSize = recoveryAzureVMSize;
@@ -38,49 +41,62 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets target azure VM name given by the user.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryAzureVMName")]
         public string RecoveryAzureVMName { get; set; }
 
         /// <summary>
+        /// Gets or sets Target Azure Vm size.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryAzureVMSize")]
         public string RecoveryAzureVMSize { get; set; }
 
         /// <summary>
+        /// Gets or sets target Azure Network Id.
         /// </summary>
         [JsonProperty(PropertyName = "selectedRecoveryAzureNetworkId")]
         public string SelectedRecoveryAzureNetworkId { get; set; }
 
         /// <summary>
+        /// Gets or sets the selected option to enable RDP\\\\SSH on target vm
+        /// after failover.
+        /// String value of
+        /// {SrsDataContract.EnableRDPOnTargetOption} enum.
         /// </summary>
         [JsonProperty(PropertyName = "enableRDPOnTargetOption")]
         public string EnableRDPOnTargetOption { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of vm nic details.
         /// </summary>
         [JsonProperty(PropertyName = "vmNics")]
         public IList<VMNicInputDetails> VmNics { get; set; }
 
         /// <summary>
+        /// Gets or sets the target cloud service ARM Id (for V1).
         /// </summary>
         [JsonProperty(PropertyName = "recoveryCloudServiceId")]
         public string RecoveryCloudServiceId { get; set; }
 
         /// <summary>
+        /// Gets or sets the target resource group ARM Id (for V2).
         /// </summary>
         [JsonProperty(PropertyName = "recoveryResourceGroupId")]
         public string RecoveryResourceGroupId { get; set; }
 
         /// <summary>
+        /// Gets or sets the target availability set id.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryAvailabilitySetId")]
         public string RecoveryAvailabilitySetId { get; set; }
 
         /// <summary>
+        /// Gets or sets LicenseType. Possible values include: 'NotSpecified',
+        /// 'NoLicenseType', 'WindowsServer'
         /// </summary>
         [JsonProperty(PropertyName = "licenseType")]
-        public int? LicenseType { get; set; }
+        public LicenseType? LicenseType { get; set; }
 
     }
 }

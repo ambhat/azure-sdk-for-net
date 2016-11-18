@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Create protection container input.
+    /// </summary>
     public partial class CreateProtectionContainerInput
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets create protection container input properties.
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public CreateProtectionContainerInputProperties Properties { get; set; }

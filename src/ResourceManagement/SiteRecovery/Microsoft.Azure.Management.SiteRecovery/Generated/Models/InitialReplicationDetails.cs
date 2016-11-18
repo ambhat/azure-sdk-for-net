@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Initial replication details.
+    /// </summary>
     public partial class InitialReplicationDetails
     {
         /// <summary>
@@ -29,11 +32,13 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets initial replication type.
         /// </summary>
         [JsonProperty(PropertyName = "initialReplicationType")]
         public string InitialReplicationType { get; set; }
 
         /// <summary>
+        /// Gets or sets the initial replication progress percentage.
         /// </summary>
         [JsonProperty(PropertyName = "initialReplicationProgressPercentage")]
         public string InitialReplicationProgressPercentage { get; set; }

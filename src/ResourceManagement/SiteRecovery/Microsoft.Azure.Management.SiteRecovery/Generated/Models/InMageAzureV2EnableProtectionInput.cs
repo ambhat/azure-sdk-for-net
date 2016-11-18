@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// VMware Azure specific enable protection input.
+    /// </summary>
     public partial class InMageAzureV2EnableProtectionInput : EnableProtectionProviderSpecificInput
     {
         /// <summary>
@@ -41,61 +44,77 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Master target Id.
         /// </summary>
         [JsonProperty(PropertyName = "masterTargetId")]
         public string MasterTargetId { get; set; }
 
         /// <summary>
+        /// Gets or sets the Process Server Id.
         /// </summary>
         [JsonProperty(PropertyName = "processServerId")]
         public string ProcessServerId { get; set; }
 
         /// <summary>
+        /// Gets or sets the storage account name.
         /// </summary>
         [JsonProperty(PropertyName = "storageAccountId")]
         public string StorageAccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets the CS account Id.
         /// </summary>
         [JsonProperty(PropertyName = "runAsAccountId")]
         public string RunAsAccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets the multi vm group Id.
         /// </summary>
         [JsonProperty(PropertyName = "multiVmGroupId")]
         public string MultiVmGroupId { get; set; }
 
         /// <summary>
+        /// Gets or sets the multi vm group name.
         /// </summary>
         [JsonProperty(PropertyName = "multiVmGroupName")]
         public string MultiVmGroupName { get; set; }
 
         /// <summary>
+        /// Gets or sets the disks to include list.
         /// </summary>
         [JsonProperty(PropertyName = "disksToInclude")]
         public IList<string> DisksToInclude { get; set; }
 
         /// <summary>
+        /// Gets or sets the selected target Azure network Id.
         /// </summary>
         [JsonProperty(PropertyName = "targetAzureNetworkId")]
         public string TargetAzureNetworkId { get; set; }
 
         /// <summary>
+        /// Gets or sets the selected target Azure subnet Id.
         /// </summary>
         [JsonProperty(PropertyName = "targetAzureSubnetId")]
         public string TargetAzureSubnetId { get; set; }
 
         /// <summary>
+        /// Gets or sets the selected option to enable RDP\\\\SSH on target vm
+        /// after failover.
+        /// String value of
+        /// {SrsDataContract.EnableRDPOnTargetOption} enum.
         /// </summary>
         [JsonProperty(PropertyName = "enableRDPOnTargetOption")]
         public string EnableRDPOnTargetOption { get; set; }
 
         /// <summary>
+        /// Gets or sets the target azure Vm Name.
         /// </summary>
         [JsonProperty(PropertyName = "targetAzureVmName")]
         public string TargetAzureVmName { get; set; }
 
         /// <summary>
+        /// Gets or sets the storage account to be used for logging
+        /// during replication.
         /// </summary>
         [JsonProperty(PropertyName = "logStorageAccountId")]
         public string LogStorageAccountId { get; set; }

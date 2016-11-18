@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class represents the task details for an automation runbook.
+    /// </summary>
     public partial class AutomationRunbookTaskDetails : TaskTypeDetails
     {
         /// <summary>
@@ -38,46 +41,56 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the recovery plan task name.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the cloud service of the automation runbook account.
         /// </summary>
         [JsonProperty(PropertyName = "cloudServiceName")]
         public string CloudServiceName { get; set; }
 
         /// <summary>
+        /// Gets or sets the subscription Id of the automation runbook account.
         /// </summary>
         [JsonProperty(PropertyName = "subscriptionId")]
         public string SubscriptionId { get; set; }
 
         /// <summary>
+        /// Gets or sets the automation account name of the runbook.
         /// </summary>
         [JsonProperty(PropertyName = "accountName")]
         public string AccountName { get; set; }
 
         /// <summary>
+        /// Gets or sets the runbook Id.
         /// </summary>
         [JsonProperty(PropertyName = "runbookId")]
         public string RunbookId { get; set; }
 
         /// <summary>
+        /// Gets or sets the runbook name.
         /// </summary>
         [JsonProperty(PropertyName = "runbookName")]
         public string RunbookName { get; set; }
 
         /// <summary>
+        /// Gets or sets the job Id of the runbook execution.
         /// </summary>
         [JsonProperty(PropertyName = "jobId")]
         public string JobId { get; set; }
 
         /// <summary>
+        /// Gets or sets the execution output of the runbook.
         /// </summary>
         [JsonProperty(PropertyName = "jobOutput")]
         public string JobOutput { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether it is a primary side
+        /// script or not.
         /// </summary>
         [JsonProperty(PropertyName = "isPrimarySideScript")]
         public bool? IsPrimarySideScript { get; set; }

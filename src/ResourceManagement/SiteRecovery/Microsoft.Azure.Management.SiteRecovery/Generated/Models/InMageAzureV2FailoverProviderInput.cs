@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// InMageAzureV2 provider specific input for failover.
+    /// </summary>
     public partial class InMageAzureV2FailoverProviderInput : ProviderSpecificFailoverInput
     {
         /// <summary>
@@ -31,11 +34,16 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Location of the vault.
         /// </summary>
         [JsonProperty(PropertyName = "vaultLocation")]
         public string VaultLocation { get; set; }
 
         /// <summary>
+        /// Gets or sets the recovery point id to be passed to failover to a
+        /// particular recovery
+        /// point. In case of latest recovery point, null should
+        /// be passed.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryPointId")]
         public string RecoveryPointId { get; set; }

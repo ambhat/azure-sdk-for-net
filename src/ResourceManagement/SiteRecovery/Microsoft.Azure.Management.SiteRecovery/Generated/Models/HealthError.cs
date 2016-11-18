@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Health Error
+    /// </summary>
     public partial class HealthError
     {
         /// <summary>
@@ -35,41 +38,49 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Level of error.
         /// </summary>
         [JsonProperty(PropertyName = "errorLevel")]
         public string ErrorLevel { get; set; }
 
         /// <summary>
+        /// Gets or sets error code.
         /// </summary>
         [JsonProperty(PropertyName = "errorCode")]
         public string ErrorCode { get; set; }
 
         /// <summary>
+        /// Gets or sets error message.
         /// </summary>
         [JsonProperty(PropertyName = "errorMessage")]
         public string ErrorMessage { get; set; }
 
         /// <summary>
+        /// Gets or sets possible causes of error.
         /// </summary>
         [JsonProperty(PropertyName = "possibleCauses")]
         public string PossibleCauses { get; set; }
 
         /// <summary>
+        /// Gets or sets recommended action to resolve error.
         /// </summary>
         [JsonProperty(PropertyName = "recommendedAction")]
         public string RecommendedAction { get; set; }
 
         /// <summary>
+        /// Gets or sets Error creation time (UTC)
         /// </summary>
         [JsonProperty(PropertyName = "creationTimeUtc")]
         public DateTime? CreationTimeUtc { get; set; }
 
         /// <summary>
+        /// Gets or sets DRA error message.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryProviderErrorMessage")]
         public string RecoveryProviderErrorMessage { get; set; }
 
         /// <summary>
+        /// Gets or sets ID of the entity.
         /// </summary>
         [JsonProperty(PropertyName = "entityId")]
         public string EntityId { get; set; }

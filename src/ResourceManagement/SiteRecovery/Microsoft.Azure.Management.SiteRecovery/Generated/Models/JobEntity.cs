@@ -12,6 +12,10 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class contains the minimal job details required to navigate to
+    /// the desired drill down.
+    /// </summary>
     public partial class JobEntity
     {
         /// <summary>
@@ -33,31 +37,37 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the job id.
         /// </summary>
         [JsonProperty(PropertyName = "jobId")]
         public string JobId { get; set; }
 
         /// <summary>
+        /// Gets or sets the job display name.
         /// </summary>
         [JsonProperty(PropertyName = "jobFriendlyName")]
         public string JobFriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the object id.
         /// </summary>
         [JsonProperty(PropertyName = "targetObjectId")]
         public string TargetObjectId { get; set; }
 
         /// <summary>
+        /// Gets or sets the object name.
         /// </summary>
         [JsonProperty(PropertyName = "targetObjectName")]
         public string TargetObjectName { get; set; }
 
         /// <summary>
+        /// Gets or sets the workflow affected object type.
         /// </summary>
         [JsonProperty(PropertyName = "targetInstanceType")]
         public string TargetInstanceType { get; set; }
 
         /// <summary>
+        /// Gets or sets the job name. Enum type ScenarioName.
         /// </summary>
         [JsonProperty(PropertyName = "jobScenarioName")]
         public string JobScenarioName { get; set; }

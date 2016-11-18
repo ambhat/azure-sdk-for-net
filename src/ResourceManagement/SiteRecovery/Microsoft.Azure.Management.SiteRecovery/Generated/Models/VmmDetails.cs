@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// VMM fabric specific details.
+    /// </summary>
     [JsonObject("VMM")]
     public partial class VmmDetails : FabricSpecificDetails
     {

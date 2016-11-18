@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Unpairing input properties.
+    /// </summary>
     public partial class RemoveProtectionContainerMappingInputProperties
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Provider specific input for unpairing.
         /// </summary>
         [JsonProperty(PropertyName = "providerSpecificInput")]
         public ReplicationProviderContainerUnmappingInput ProviderSpecificInput { get; set; }

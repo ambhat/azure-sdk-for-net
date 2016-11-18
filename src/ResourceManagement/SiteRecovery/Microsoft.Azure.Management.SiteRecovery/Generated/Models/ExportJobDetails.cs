@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class represents details for export jobs workflow.
+    /// </summary>
     public partial class ExportJobDetails : JobDetails
     {
         /// <summary>
@@ -30,11 +33,13 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets blobUri of the exported jobs.
         /// </summary>
         [JsonProperty(PropertyName = "blobUri")]
         public string BlobUri { get; set; }
 
         /// <summary>
+        /// Gets or sets the sas token to access blob.
         /// </summary>
         [JsonProperty(PropertyName = "sasToken")]
         public string SasToken { get; set; }

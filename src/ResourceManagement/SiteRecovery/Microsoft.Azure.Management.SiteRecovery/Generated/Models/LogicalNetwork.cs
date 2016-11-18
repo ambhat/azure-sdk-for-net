@@ -12,7 +12,11 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
-    public partial class LogicalNetwork
+    /// <summary>
+    /// Logical network data model.
+    /// </summary>
+    [JsonTransformation]
+    public partial class LogicalNetwork : Resource
     {
         /// <summary>
         /// Initializes a new instance of the LogicalNetwork class.
@@ -22,33 +26,41 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the LogicalNetwork class.
         /// </summary>
-        public LogicalNetwork(string type = default(string), string id = default(string), string name = default(string), LogicalNetworkProperties properties = default(LogicalNetworkProperties))
+        public LogicalNetwork(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string friendlyName = default(string), string networkVirtualizationStatus = default(string), string logicalNetworkUsage = default(string), string logicalNetworkDefinitionsStatus = default(string))
+            : base(id, name, type, location)
         {
-            Type = type;
-            Id = id;
-            Name = name;
-            Properties = properties;
+            FriendlyName = friendlyName;
+            NetworkVirtualizationStatus = networkVirtualizationStatus;
+            LogicalNetworkUsage = logicalNetworkUsage;
+            LogicalNetworkDefinitionsStatus = logicalNetworkDefinitionsStatus;
         }
 
         /// <summary>
+        /// Gets or sets the Friendly Name.
         /// </summary>
-        [JsonProperty(PropertyName = "type")]
-        public string Type { get; set; }
+        [JsonProperty(PropertyName = "properties.friendlyName")]
+        public string FriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether Network Virtualization is
+        /// enabled for the logical network.
         /// </summary>
-        [JsonProperty(PropertyName = "id")]
-        public string Id { get; set; }
+        [JsonProperty(PropertyName = "properties.networkVirtualizationStatus")]
+        public string NetworkVirtualizationStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether logical network is used as
+        /// private test network by test failover.
         /// </summary>
-        [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
+        [JsonProperty(PropertyName = "properties.logicalNetworkUsage")]
+        public string LogicalNetworkUsage { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether logical network
+        /// definitions are isolated.
         /// </summary>
-        [JsonProperty(PropertyName = "properties")]
-        public LogicalNetworkProperties Properties { get; set; }
+        [JsonProperty(PropertyName = "properties.logicalNetworkDefinitionsStatus")]
+        public string LogicalNetworkDefinitionsStatus { get; set; }
 
     }
 }

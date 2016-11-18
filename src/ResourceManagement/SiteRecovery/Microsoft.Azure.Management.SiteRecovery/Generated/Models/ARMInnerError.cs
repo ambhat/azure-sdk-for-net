@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// ARM internal error class for providing additional debug data.
+    /// </summary>
     public partial class ARMInnerError
     {
         /// <summary>
@@ -42,76 +45,91 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets complete stack trace of the exception.
         /// </summary>
         [JsonProperty(PropertyName = "trace")]
         public string Trace { get; set; }
 
         /// <summary>
+        /// Gets exception source.
         /// </summary>
         [JsonProperty(PropertyName = "source")]
         public string Source { get; set; }
 
         /// <summary>
+        /// Gets data related to method which threw the exception.
         /// </summary>
         [JsonProperty(PropertyName = "methodStatus")]
         public MethodCallStatus MethodStatus { get; set; }
 
         /// <summary>
+        /// Gets cloud Id in exception.
         /// </summary>
         [JsonProperty(PropertyName = "cloudId")]
         public string CloudId { get; set; }
 
         /// <summary>
+        /// Gets hyperV host ID.
         /// </summary>
         [JsonProperty(PropertyName = "hVHostId")]
         public string HVHostId { get; set; }
 
         /// <summary>
+        /// Gets hyperV cluster Id.
         /// </summary>
         [JsonProperty(PropertyName = "hVClusterId")]
         public string HVClusterId { get; set; }
 
         /// <summary>
+        /// Gets network Id.
         /// </summary>
         [JsonProperty(PropertyName = "networkId")]
         public string NetworkId { get; set; }
 
         /// <summary>
+        /// Gets Vm Id.
         /// </summary>
         [JsonProperty(PropertyName = "vmId")]
         public string VmId { get; set; }
 
         /// <summary>
+        /// Gets Fabric Id.
         /// </summary>
         [JsonProperty(PropertyName = "fabricId")]
         public string FabricId { get; set; }
 
         /// <summary>
+        /// Gets Live Id of the caller.
         /// </summary>
         [JsonProperty(PropertyName = "liveId")]
         public string LiveId { get; set; }
 
         /// <summary>
+        /// Gets container Id of the caller.
         /// </summary>
         [JsonProperty(PropertyName = "containerId")]
         public string ContainerId { get; set; }
 
         /// <summary>
+        /// Gets resource id used in the call.
         /// </summary>
         [JsonProperty(PropertyName = "resourceId")]
         public string ResourceId { get; set; }
 
         /// <summary>
+        /// Gets caller resource name.
         /// </summary>
         [JsonProperty(PropertyName = "resourceName")]
         public string ResourceName { get; set; }
 
         /// <summary>
+        /// Gets subscription Id.
         /// </summary>
         [JsonProperty(PropertyName = "subscriptionId")]
         public string SubscriptionId { get; set; }
 
         /// <summary>
+        /// Gets serialized SRS log context.
         /// </summary>
         [JsonProperty(PropertyName = "serializedSRSLogContext")]
         public string SerializedSRSLogContext { get; set; }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// InMage provider specific settings
+    /// </summary>
     public partial class InMageReplicationDetails : ReplicationProviderSpecificSettings
     {
         /// <summary>
@@ -58,156 +61,200 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the active location of the VM. If the VM is being
+        /// protected
+        /// from Azure, this field will take values from { Azure,
+        /// OnPrem }. If the VM
+        /// is being protected between two data-centers, this
+        /// field will be OnPrem always.
         /// </summary>
         [JsonProperty(PropertyName = "activeSiteType")]
         public string ActiveSiteType { get; set; }
 
         /// <summary>
+        /// Gets or sets the CPU count of the VM on the primary side.
         /// </summary>
         [JsonProperty(PropertyName = "sourceVmCPUCount")]
         public int? SourceVmCPUCount { get; set; }
 
         /// <summary>
+        /// Gets or sets the RAM size of the VM on the primary side.
         /// </summary>
         [JsonProperty(PropertyName = "sourceVmRAMSizeInMB")]
         public int? SourceVmRAMSizeInMB { get; set; }
 
         /// <summary>
+        /// Gets or sets the OS details.
         /// </summary>
         [JsonProperty(PropertyName = "osDetails")]
         public OSDiskDetails OsDetails { get; set; }
 
         /// <summary>
+        /// Gets or sets the protection stage.
         /// </summary>
         [JsonProperty(PropertyName = "protectionStage")]
         public string ProtectionStage { get; set; }
 
         /// <summary>
+        /// Gets or sets the virtual machine Id.
         /// </summary>
         [JsonProperty(PropertyName = "vmId")]
         public string VmId { get; set; }
 
         /// <summary>
+        /// Gets or sets the protection state for the vm.
         /// </summary>
         [JsonProperty(PropertyName = "vmProtectionState")]
         public string VmProtectionState { get; set; }
 
         /// <summary>
+        /// Gets or sets the protection state description for the vm.
         /// </summary>
         [JsonProperty(PropertyName = "vmProtectionStateDescription")]
         public string VmProtectionStateDescription { get; set; }
 
         /// <summary>
+        /// Gets or sets the resync details of the machine
         /// </summary>
         [JsonProperty(PropertyName = "resyncDetails")]
         public InitialReplicationDetails ResyncDetails { get; set; }
 
         /// <summary>
+        /// Gets or sets the retention window start time.
         /// </summary>
         [JsonProperty(PropertyName = "retentionWindowStart")]
         public DateTime? RetentionWindowStart { get; set; }
 
         /// <summary>
+        /// Gets or sets the retention window end time.
         /// </summary>
         [JsonProperty(PropertyName = "retentionWindowEnd")]
         public DateTime? RetentionWindowEnd { get; set; }
 
         /// <summary>
+        /// Gets or sets the compressed data change rate in MB.
         /// </summary>
         [JsonProperty(PropertyName = "compressedDataRateInMB")]
         public double? CompressedDataRateInMB { get; set; }
 
         /// <summary>
+        /// Gets or sets the uncompressed data change rate in MB.
         /// </summary>
         [JsonProperty(PropertyName = "uncompressedDataRateInMB")]
         public double? UncompressedDataRateInMB { get; set; }
 
         /// <summary>
+        /// Gets or sets the RPO in seconds.
         /// </summary>
         [JsonProperty(PropertyName = "rpoInSeconds")]
         public long? RpoInSeconds { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of protected disks.
         /// </summary>
         [JsonProperty(PropertyName = "protectedDisks")]
         public IList<InMageProtectedDiskDetails> ProtectedDisks { get; set; }
 
         /// <summary>
+        /// Gets or sets the source IP address.
         /// </summary>
         [JsonProperty(PropertyName = "ipAddress")]
         public string IpAddress { get; set; }
 
         /// <summary>
+        /// Gets or sets the last heartbeat received from the source server.
         /// </summary>
         [JsonProperty(PropertyName = "lastHeartbeat")]
         public DateTime? LastHeartbeat { get; set; }
 
         /// <summary>
+        /// Gets or sets the process server Id.
         /// </summary>
         [JsonProperty(PropertyName = "processServerId")]
         public string ProcessServerId { get; set; }
 
         /// <summary>
+        /// Gets or sets the master target Id.
         /// </summary>
         [JsonProperty(PropertyName = "masterTargetId")]
         public string MasterTargetId { get; set; }
 
         /// <summary>
+        /// Gets or sets the collection of Consistency points.
         /// </summary>
         [JsonProperty(PropertyName = "consistencyPoints")]
         public IDictionary<string, DateTime?> ConsistencyPoints { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether any disk is resized for
+        /// this VM.
         /// </summary>
         [JsonProperty(PropertyName = "diskResized")]
         public string DiskResized { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the source server requires
+        /// a restart after
+        /// update.
         /// </summary>
         [JsonProperty(PropertyName = "rebootAfterUpdateStatus")]
         public string RebootAfterUpdateStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the multi vm group Id, if any.
         /// </summary>
         [JsonProperty(PropertyName = "multiVmGroupId")]
         public string MultiVmGroupId { get; set; }
 
         /// <summary>
+        /// Gets or sets the multi vm group name, if any.
         /// </summary>
         [JsonProperty(PropertyName = "multiVmGroupName")]
         public string MultiVmGroupName { get; set; }
 
         /// <summary>
+        /// Gets or sets the agent details.
         /// </summary>
         [JsonProperty(PropertyName = "agentDetails")]
         public InMageAgentDetails AgentDetails { get; set; }
 
         /// <summary>
+        /// Gets or sets the vCenter infrastructure Id.
         /// </summary>
         [JsonProperty(PropertyName = "vCenterInfrastructureId")]
         public string VCenterInfrastructureId { get; set; }
 
         /// <summary>
+        /// Gets or sets the infrastructure VM Id.
         /// </summary>
         [JsonProperty(PropertyName = "infrastructureVmId")]
         public string InfrastructureVmId { get; set; }
 
         /// <summary>
+        /// Gets or sets the PE Network details.
         /// </summary>
         [JsonProperty(PropertyName = "vmNics")]
         public IList<VMNicDetails> VmNics { get; set; }
 
         /// <summary>
+        /// Gets or sets a value inidicating the discovery type of the machine.
         /// </summary>
         [JsonProperty(PropertyName = "discoveryType")]
         public string DiscoveryType { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating the underlying Azure storage
+        /// account. If
+        /// the VM is not running in Azure, this value shall be
+        /// set to null.
         /// </summary>
         [JsonProperty(PropertyName = "azureStorageAccountId")]
         public string AzureStorageAccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets the datastores of the on-premise machine
+        /// Value can be list of strings that contain datastore
+        /// names
         /// </summary>
         [JsonProperty(PropertyName = "datastores")]
         public IList<string> Datastores { get; set; }

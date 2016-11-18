@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Task of the Job.
+    /// </summary>
     public partial class ASRTask
     {
         /// <summary>
@@ -39,61 +42,88 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Id.
         /// </summary>
         [JsonProperty(PropertyName = "taskId")]
         public string TaskId { get; set; }
 
         /// <summary>
+        /// Gets or sets the unique Task name.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the start time.
         /// </summary>
         [JsonProperty(PropertyName = "startTime")]
         public DateTime? StartTime { get; set; }
 
         /// <summary>
+        /// Gets or sets the end time.
         /// </summary>
         [JsonProperty(PropertyName = "endTime")]
         public DateTime? EndTime { get; set; }
 
         /// <summary>
+        /// Gets or sets the state/actions applicable on this task.
         /// </summary>
         [JsonProperty(PropertyName = "allowedActions")]
         public IList<string> AllowedActions { get; set; }
 
         /// <summary>
+        /// Gets or sets the name.
         /// </summary>
         [JsonProperty(PropertyName = "friendlyName")]
         public string FriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the State. It is one of these values - NotStarted,
+        /// InProgress,
+        /// Succeeded, Failed, Cancelled, Suspended or Other.
         /// </summary>
         [JsonProperty(PropertyName = "state")]
         public string State { get; set; }
 
         /// <summary>
+        /// Gets or sets the description of the task state. For example - For
+        /// Succeeded state,
+        /// description can be Completed, PartiallySucceeded,
+        /// CompletedWithInformation or Skipped.
         /// </summary>
         [JsonProperty(PropertyName = "stateDescription")]
         public string StateDescription { get; set; }
 
         /// <summary>
+        /// Gets or sets the type of task. Details in CustomDetails property
+        /// depend on this type.
         /// </summary>
         [JsonProperty(PropertyName = "taskType")]
         public string TaskType { get; set; }
 
         /// <summary>
+        /// Gets or sets the custom task details based on the task type. If
+        /// the task is one of
+        /// GroupTaskDetails or it's derived types, the details
+        /// will be in GroupTaskCustomDetails.
+        /// This was done to avoid hydra limitation of not having
+        /// cyclic dependency, as GroupTasks
+        /// again have child tasks which are of parent type -
+        /// Task. (Refer Bug 6269808.)
         /// </summary>
         [JsonProperty(PropertyName = "customDetails")]
         public TaskTypeDetails CustomDetails { get; set; }
 
         /// <summary>
+        /// Gets or sets the custom task details based on the task type, if
+        /// the task type is
+        /// GroupTaskDetails or one of the types derived from it.
         /// </summary>
         [JsonProperty(PropertyName = "groupTaskCustomDetails")]
         public GroupTaskDetails GroupTaskCustomDetails { get; set; }
 
         /// <summary>
+        /// Gets or sets the task error details.
         /// </summary>
         [JsonProperty(PropertyName = "errors")]
         public IList<JobErrorDetails> Errors { get; set; }

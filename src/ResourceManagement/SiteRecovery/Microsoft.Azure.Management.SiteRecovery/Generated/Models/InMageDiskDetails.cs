@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// VMware/Physical specific Disk Details
+    /// </summary>
     public partial class InMageDiskDetails
     {
         /// <summary>
@@ -33,31 +36,37 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the disk Id.
         /// </summary>
         [JsonProperty(PropertyName = "diskId")]
         public string DiskId { get; set; }
 
         /// <summary>
+        /// Gets or sets the disk name.
         /// </summary>
         [JsonProperty(PropertyName = "diskName")]
         public string DiskName { get; set; }
 
         /// <summary>
+        /// Gets or sets the disk size in MB.
         /// </summary>
         [JsonProperty(PropertyName = "diskSizeInMB")]
         public string DiskSizeInMB { get; set; }
 
         /// <summary>
+        /// Gets or sets whether disk is system disk or data disk.
         /// </summary>
         [JsonProperty(PropertyName = "diskType")]
         public string DiskType { get; set; }
 
         /// <summary>
+        /// Gets or sets whether disk is dynamic disk or basic disk.
         /// </summary>
         [JsonProperty(PropertyName = "diskConfiguration")]
         public string DiskConfiguration { get; set; }
 
         /// <summary>
+        /// Gets or sets volumes of the disk.
         /// </summary>
         [JsonProperty(PropertyName = "volumeList")]
         public IList<DiskVolumeDetails> VolumeList { get; set; }

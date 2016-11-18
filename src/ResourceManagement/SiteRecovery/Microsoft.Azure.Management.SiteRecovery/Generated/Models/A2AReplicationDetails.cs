@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// A2A provider specific settings.
+    /// </summary>
     public partial class A2AReplicationDetails : ReplicationProviderSpecificSettings
     {
         /// <summary>
@@ -32,26 +35,31 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the fabric specific object Id of the virtual machine.
         /// </summary>
         [JsonProperty(PropertyName = "fabricObjectId")]
         public string FabricObjectId { get; set; }
 
         /// <summary>
+        /// Gets or sets the multi vm group Id.
         /// </summary>
         [JsonProperty(PropertyName = "multiVmGroupId")]
         public string MultiVmGroupId { get; set; }
 
         /// <summary>
+        /// Gets or sets the multi vm group name.
         /// </summary>
         [JsonProperty(PropertyName = "multiVmGroupName")]
         public string MultiVmGroupName { get; set; }
 
         /// <summary>
+        /// Gets or sets the management Id.
         /// </summary>
         [JsonProperty(PropertyName = "managementId")]
         public string ManagementId { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of protected disks.
         /// </summary>
         [JsonProperty(PropertyName = "protectedDisks")]
         public IList<A2AProtectedDiskDetails> ProtectedDisks { get; set; }

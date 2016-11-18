@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class contains the error details per object.
+    /// </summary>
     public partial class ProviderError
     {
         /// <summary>
@@ -32,26 +35,31 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Error code.
         /// </summary>
         [JsonProperty(PropertyName = "errorCode")]
         public int? ErrorCode { get; set; }
 
         /// <summary>
+        /// Gets or sets the Error message.
         /// </summary>
         [JsonProperty(PropertyName = "errorMessage")]
         public string ErrorMessage { get; set; }
 
         /// <summary>
+        /// Gets or sets the Provider error Id.
         /// </summary>
         [JsonProperty(PropertyName = "errorId")]
         public string ErrorId { get; set; }
 
         /// <summary>
+        /// Gets or sets the possible causes for the error.
         /// </summary>
         [JsonProperty(PropertyName = "possibleCauses")]
         public string PossibleCauses { get; set; }
 
         /// <summary>
+        /// Gets or sets the recommended action to resolve the error.
         /// </summary>
         [JsonProperty(PropertyName = "recommendedAction")]
         public string RecommendedAction { get; set; }

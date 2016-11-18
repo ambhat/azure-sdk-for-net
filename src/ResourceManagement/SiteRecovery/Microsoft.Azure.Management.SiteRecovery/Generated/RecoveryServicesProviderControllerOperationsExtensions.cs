@@ -18,24 +18,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
     /// </summary>
     public static partial class RecoveryServicesProviderControllerOperationsExtensions
     {
+            /// <summary>
+            /// Refresh the data on the provider.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric name.
             /// </param>
             /// <param name='providerName'>
+            /// Unique provider name.
             /// </param>
             public static void RefreshProvider(this IRecoveryServicesProviderControllerOperations operations, string fabricName, string providerName)
             {
                 Task.Factory.StartNew(s => ((IRecoveryServicesProviderControllerOperations)s).RefreshProviderAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Refresh the data on the provider.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric name.
             /// </param>
             /// <param name='providerName'>
+            /// Unique provider name.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -45,24 +55,48 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 await operations.RefreshProviderWithHttpMessagesAsync(fabricName, providerName, null, cancellationToken).ConfigureAwait(false);
             }
 
+            /// <summary>
+            /// Deletes provider from fabric.
+            /// Note: Deleting provider for any fabric other than SingleHost
+            /// is unsupported. To
+            /// maintain backward compatibility for released clients the
+            /// object "deleteRspInput" is
+            /// used (if the object is empty we assume that it is old client
+            /// and continue the old
+            /// behavior).
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric Id.
             /// </param>
             /// <param name='providerName'>
+            /// Unique provider id.
             /// </param>
             public static void DeleteProvider(this IRecoveryServicesProviderControllerOperations operations, string fabricName, string providerName)
             {
                 Task.Factory.StartNew(s => ((IRecoveryServicesProviderControllerOperations)s).DeleteProviderAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Deletes provider from fabric.
+            /// Note: Deleting provider for any fabric other than SingleHost
+            /// is unsupported. To
+            /// maintain backward compatibility for released clients the
+            /// object "deleteRspInput" is
+            /// used (if the object is empty we assume that it is old client
+            /// and continue the old
+            /// behavior).
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric Id.
             /// </param>
             /// <param name='providerName'>
+            /// Unique provider id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -72,24 +106,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 await operations.DeleteProviderWithHttpMessagesAsync(fabricName, providerName, null, cancellationToken).ConfigureAwait(false);
             }
 
+            /// <summary>
+            /// Gets the details of a server.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric Id.
             /// </param>
             /// <param name='providerName'>
+            /// Server id.
             /// </param>
             public static RecoveryServicesProvider GetProvider(this IRecoveryServicesProviderControllerOperations operations, string fabricName, string providerName)
             {
                 return Task.Factory.StartNew(s => ((IRecoveryServicesProviderControllerOperations)s).GetProviderAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the details of a server.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric Id.
             /// </param>
             /// <param name='providerName'>
+            /// Server id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -102,24 +146,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Purges provider from fabric
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric Id.
             /// </param>
             /// <param name='providerName'>
+            /// Unique provider id.
             /// </param>
             public static void PurgeProvider(this IRecoveryServicesProviderControllerOperations operations, string fabricName, string providerName)
             {
                 Task.Factory.StartNew(s => ((IRecoveryServicesProviderControllerOperations)s).PurgeProviderAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Purges provider from fabric
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric Id.
             /// </param>
             /// <param name='providerName'>
+            /// Unique provider id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -129,20 +183,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 await operations.PurgeProviderWithHttpMessagesAsync(fabricName, providerName, null, cancellationToken).ConfigureAwait(false);
             }
 
+            /// <summary>
+            /// Gets the list of servers registered.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Id of the fabric to be retrieved
             /// </param>
             public static IPage<RecoveryServicesProvider> EnumerateProviders(this IRecoveryServicesProviderControllerOperations operations, string fabricName)
             {
                 return Task.Factory.StartNew(s => ((IRecoveryServicesProviderControllerOperations)s).EnumerateProvidersAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of servers registered.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Id of the fabric to be retrieved
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -155,6 +217,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Gets the list of servers registered across fabrics.
+            /// This is view only api.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -163,6 +229,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 return Task.Factory.StartNew(s => ((IRecoveryServicesProviderControllerOperations)s).EnumerateAllProvidersAsync(), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of servers registered across fabrics.
+            /// This is view only api.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -177,6 +247,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Gets the list of servers registered.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -188,6 +261,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 return Task.Factory.StartNew(s => ((IRecoveryServicesProviderControllerOperations)s).EnumerateProvidersNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of servers registered.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -205,6 +281,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Gets the list of servers registered across fabrics.
+            /// This is view only api.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -216,6 +296,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 return Task.Factory.StartNew(s => ((IRecoveryServicesProviderControllerOperations)s).EnumerateAllProvidersNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of servers registered across fabrics.
+            /// This is view only api.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>

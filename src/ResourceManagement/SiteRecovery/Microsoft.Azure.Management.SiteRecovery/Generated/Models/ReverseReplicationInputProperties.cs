@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Reverse replication input properties.
+    /// </summary>
     public partial class ReverseReplicationInputProperties
     {
         /// <summary>
@@ -31,11 +34,13 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Failover direction.
         /// </summary>
         [JsonProperty(PropertyName = "failoverDirection")]
         public string FailoverDirection { get; set; }
 
         /// <summary>
+        /// Gets or sets Provider specific reverse replication input.
         /// </summary>
         [JsonProperty(PropertyName = "providerSpecificDetails")]
         public ReverseReplicationProviderSpecificInput ProviderSpecificDetails { get; set; }

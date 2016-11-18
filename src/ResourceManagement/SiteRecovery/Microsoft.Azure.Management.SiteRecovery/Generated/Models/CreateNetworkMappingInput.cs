@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Create network mappings input.
+    /// </summary>
     public partial class CreateNetworkMappingInput
     {
         /// <summary>
@@ -29,11 +32,13 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets recovery server Id.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryFabricName")]
         public string RecoveryFabricName { get; set; }
 
         /// <summary>
+        /// Gets or sets recovery network Id.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryNetworkId")]
         public string RecoveryNetworkId { get; set; }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// VMWare Azure specific protection profile Input.
+    /// </summary>
     public partial class InMageAzureV2PolicyInput : PolicyProviderSpecificInput
     {
         /// <summary>
@@ -22,7 +25,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the InMageAzureV2PolicyInput class.
         /// </summary>
-        public InMageAzureV2PolicyInput(int multiVmSyncStatus, int? recoveryPointThresholdInMinutes = default(int?), int? recoveryPointHistory = default(int?), int? crashConsistentFrequencyInMinutes = default(int?), int? appConsistentFrequencyInMinutes = default(int?))
+        public InMageAzureV2PolicyInput(SetMultiVmSyncStatus multiVmSyncStatus, int? recoveryPointThresholdInMinutes = default(int?), int? recoveryPointHistory = default(int?), int? crashConsistentFrequencyInMinutes = default(int?), int? appConsistentFrequencyInMinutes = default(int?))
         {
             RecoveryPointThresholdInMinutes = recoveryPointThresholdInMinutes;
             RecoveryPointHistory = recoveryPointHistory;
@@ -32,36 +35,45 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the recovery point threshold in minutes.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryPointThresholdInMinutes")]
         public int? RecoveryPointThresholdInMinutes { get; set; }
 
         /// <summary>
+        /// Gets or sets the duration in minutes until which the recovery
+        /// points need to be
+        /// stored.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryPointHistory")]
         public int? RecoveryPointHistory { get; set; }
 
         /// <summary>
+        /// Gets or sets the crash consistent snapshot frequency (in minutes).
         /// </summary>
         [JsonProperty(PropertyName = "crashConsistentFrequencyInMinutes")]
         public int? CrashConsistentFrequencyInMinutes { get; set; }
 
         /// <summary>
+        /// Gets or sets the app consistent snapshot frequency (in minutes).
         /// </summary>
         [JsonProperty(PropertyName = "appConsistentFrequencyInMinutes")]
         public int? AppConsistentFrequencyInMinutes { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether multi-VM sync has to be
+        /// enabled.
+        /// Value should be 'Enabled' or 'Disabled'. Possible
+        /// values include: 'Enable', 'Disable'
         /// </summary>
         [JsonProperty(PropertyName = "multiVmSyncStatus")]
-        public int MultiVmSyncStatus { get; set; }
+        public SetMultiVmSyncStatus MultiVmSyncStatus { get; set; }
 
         /// <summary>
         /// Validate the object. Throws ValidationException if validation fails.
         /// </summary>
         public virtual void Validate()
         {
-            //Nothing to validate
         }
     }
 }

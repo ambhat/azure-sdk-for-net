@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Request to failover a process server.
+    /// </summary>
     public partial class FailoverProcessServerRequest
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the properties of the PS Failover request.
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public FailoverProcessServerRequestProperties Properties { get; set; }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Current scenario details of the protected entity.
+    /// </summary>
     public partial class CurrentScenarioDetails
     {
         /// <summary>
@@ -30,16 +33,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Scenario name.
         /// </summary>
         [JsonProperty(PropertyName = "scenarioName")]
         public string ScenarioName { get; set; }
 
         /// <summary>
+        /// Gets or sets ARM Id of the job being executed.
         /// </summary>
         [JsonProperty(PropertyName = "jobId")]
         public string JobId { get; set; }
 
         /// <summary>
+        /// Gets or sets Start time of the workflow.
         /// </summary>
         [JsonProperty(PropertyName = "startTime")]
         public DateTime? StartTime { get; set; }

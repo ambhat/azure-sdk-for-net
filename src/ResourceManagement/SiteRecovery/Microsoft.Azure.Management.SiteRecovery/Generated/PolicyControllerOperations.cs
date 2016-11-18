@@ -45,7 +45,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </summary>
         public SiteRecoveryManagementClient Client { get; private set; }
 
+        /// <summary>
+        /// Gets the requested policy.
+        /// </summary>
         /// <param name='policyName'>
+        /// Unique name of policy.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -234,9 +238,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Creates the policy.
+        /// </summary>
         /// <param name='policyName'>
+        /// name of Protection Profile
         /// </param>
         /// <param name='input'>
+        /// Create policy input
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -405,7 +414,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Delete the policy.
+        /// </summary>
         /// <param name='policyName'>
+        /// Policy name.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -563,9 +576,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Updates the protection profile.
+        /// </summary>
         /// <param name='policyName'>
+        /// Protection profile Id.
         /// </param>
         /// <param name='input'>
+        /// Update Protection Profile Input
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -734,6 +752,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of policies
+        /// </summary>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
         /// </param>
@@ -915,6 +936,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of policies
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

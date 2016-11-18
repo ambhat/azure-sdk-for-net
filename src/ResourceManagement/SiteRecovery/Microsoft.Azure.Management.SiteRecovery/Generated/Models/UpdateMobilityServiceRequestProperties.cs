@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// The properties of an update mobility service request.
+    /// </summary>
     public partial class UpdateMobilityServiceRequestProperties
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the CS run as account Id.
         /// </summary>
         [JsonProperty(PropertyName = "runAsAccountId")]
         public string RunAsAccountId { get; set; }

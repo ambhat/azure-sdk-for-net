@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// ApplyRecoveryPoint input specific to InMageAzureV2 provider.
+    /// </summary>
     public partial class InMageAzureV2ApplyRecoveryPointInput : ApplyRecoveryPointProviderSpecificInput
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the vault location where the recovery Vm resides.
         /// </summary>
         [JsonProperty(PropertyName = "vaultLocation")]
         public string VaultLocation { get; set; }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// The retention details of the MT.
+    /// </summary>
     public partial class RetentionVolume
     {
         /// <summary>
@@ -31,21 +34,25 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the volume name.
         /// </summary>
         [JsonProperty(PropertyName = "volumeName")]
         public string VolumeName { get; set; }
 
         /// <summary>
+        /// Gets or sets the volume capacity.
         /// </summary>
         [JsonProperty(PropertyName = "capacityInBytes")]
         public long? CapacityInBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the free space available in this volume.
         /// </summary>
         [JsonProperty(PropertyName = "freeSpaceInBytes")]
         public long? FreeSpaceInBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the threshold percentage.
         /// </summary>
         [JsonProperty(PropertyName = "thresholdPercentage")]
         public int? ThresholdPercentage { get; set; }

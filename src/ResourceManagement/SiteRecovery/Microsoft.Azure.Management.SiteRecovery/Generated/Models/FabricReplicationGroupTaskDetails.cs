@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class represents the fabric replication group task details.
+    /// </summary>
     public partial class FabricReplicationGroupTaskDetails : TaskTypeDetails
     {
         /// <summary>
@@ -32,16 +35,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the skipped reason.
         /// </summary>
         [JsonProperty(PropertyName = "skippedReason")]
         public string SkippedReason { get; set; }
 
         /// <summary>
+        /// Gets or sets the skipped reason string.
         /// </summary>
         [JsonProperty(PropertyName = "skippedReasonString")]
         public string SkippedReasonString { get; set; }
 
         /// <summary>
+        /// Gets or sets the job entity.
         /// </summary>
         [JsonProperty(PropertyName = "jobTask")]
         public JobEntity JobTask { get; set; }

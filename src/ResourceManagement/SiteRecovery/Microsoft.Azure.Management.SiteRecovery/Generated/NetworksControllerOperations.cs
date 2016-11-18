@@ -45,6 +45,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </summary>
         public SiteRecoveryManagementClient Client { get; private set; }
 
+        /// <summary>
+        /// Gets the list of networks. View-only API.
+        /// </summary>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
         /// </param>
@@ -226,7 +229,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of networks under a fabric.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Server Id.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -415,9 +422,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets a network with specified server id and network name.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Server Id.
         /// </param>
         /// <param name='networkName'>
+        /// Primary network name.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -612,6 +624,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of networks. View-only API.
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>
@@ -768,6 +783,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of networks under a fabric.
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

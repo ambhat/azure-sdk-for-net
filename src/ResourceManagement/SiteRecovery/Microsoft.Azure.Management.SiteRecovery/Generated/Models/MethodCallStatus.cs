@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Reports method status where exception was raised.
+    /// </summary>
     public partial class MethodCallStatus
     {
         /// <summary>
@@ -30,16 +33,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets a value indicating whether called method was virtual
         /// </summary>
         [JsonProperty(PropertyName = "isVirtual")]
         public string IsVirtual { get; set; }
 
         /// <summary>
+        /// Gets parameter list passed to method.
         /// </summary>
         [JsonProperty(PropertyName = "parameters")]
         public IList<string> Parameters { get; set; }
 
         /// <summary>
+        /// Gets a value indicating whether method container generic params.
         /// </summary>
         [JsonProperty(PropertyName = "containsGenericParameters")]
         public string ContainsGenericParameters { get; set; }

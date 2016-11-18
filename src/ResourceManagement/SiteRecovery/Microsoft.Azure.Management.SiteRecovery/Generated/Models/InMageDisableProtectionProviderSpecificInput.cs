@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// InMage disable protection provider specific input.
+    /// </summary>
     public partial class InMageDisableProtectionProviderSpecificInput : DisableProtectionProviderSpecificInput
     {
         /// <summary>
@@ -30,6 +33,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the replica VM should be
+        /// destroyed or retained.
+        /// Values from Delete and Retain.
         /// </summary>
         [JsonProperty(PropertyName = "replicaVmDeletionStatus")]
         public string ReplicaVmDeletionStatus { get; set; }

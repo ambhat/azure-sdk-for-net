@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Test failover details for a replication protected item.
+    /// </summary>
     public partial class TestFailoverReplicationProtectedItemDetails
     {
         /// <summary>
@@ -36,36 +39,43 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the name.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the friendly name.
         /// </summary>
         [JsonProperty(PropertyName = "friendlyName")]
         public string FriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the test Vm name.
         /// </summary>
         [JsonProperty(PropertyName = "testVmName")]
         public string TestVmName { get; set; }
 
         /// <summary>
+        /// Gets or sets the test Vm friendly name.
         /// </summary>
         [JsonProperty(PropertyName = "testVmFriendlyName")]
         public string TestVmFriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the network connection status.
         /// </summary>
         [JsonProperty(PropertyName = "networkConnectionStatus")]
         public string NetworkConnectionStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the network friendly name.
         /// </summary>
         [JsonProperty(PropertyName = "networkFriendlyName")]
         public string NetworkFriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the network subnet.
         /// </summary>
         [JsonProperty(PropertyName = "subnet")]
         public string Subnet { get; set; }

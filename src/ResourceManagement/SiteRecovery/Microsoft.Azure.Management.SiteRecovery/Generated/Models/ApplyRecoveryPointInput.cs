@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Input to apply recovery point.
+    /// </summary>
     public partial class ApplyRecoveryPointInput
     {
         /// <summary>
@@ -28,6 +31,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the input properties to apply recovery point.
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public ApplyRecoveryPointInputProperties Properties { get; set; }

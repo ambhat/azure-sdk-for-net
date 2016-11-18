@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Replication provider specific settings.
+    /// </summary>
     public partial class ReplicationProviderSpecificSettings
     {
         /// <summary>

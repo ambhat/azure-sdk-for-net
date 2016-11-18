@@ -18,13 +18,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
     /// </summary>
     public partial interface IProtectionContainerMappingsControllerOperations
     {
+        /// <summary>
+        /// Remove container mapping.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric ARM name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Unique protection container ARM name.
         /// </param>
         /// <param name='mappingName'>
+        /// Unique protection container mapping name.
         /// </param>
         /// <param name='removalInput'>
+        /// Removal input.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -33,11 +40,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> RemoveProtectionContainerMappingWithHttpMessagesAsync(string fabricName, string protectionContainerName, string mappingName, RemoveProtectionContainerMappingInput removalInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of mappings under a container.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Fabric unique ARM name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Unique protection container name.
         /// </param>
         /// <param name='mappingName'>
+        /// Container mapping ARM name.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -46,13 +59,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<ProtectionContainerMapping>> GetProtectionContainerMappingWithHttpMessagesAsync(string fabricName, string protectionContainerName, string mappingName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Create protection container mapping.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric ARM name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Unique protection container ARM name.
         /// </param>
         /// <param name='mappingName'>
+        /// Unique protection container mapping name.
         /// </param>
         /// <param name='creationInput'>
+        /// Mapping creation input.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -61,11 +81,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> CreateProtectionContainerMappingWithHttpMessagesAsync(string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Purges protection container mapping.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric ARM name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Unique protection container ARM name.
         /// </param>
         /// <param name='mappingName'>
+        /// Unique protection container mapping name.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -74,9 +100,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> PurgeProtectionContainerMappingWithHttpMessagesAsync(string fabricName, string protectionContainerName, string mappingName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of mappings under a container.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Fabric unique ARM name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Unique protection container name.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -85,6 +116,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<IPage<ProtectionContainerMapping>>> EnumerateProtectionContainerMappingsWithHttpMessagesAsync(string fabricName, string protectionContainerName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of all protection container mappings in a vault.
+        /// </summary>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
@@ -92,6 +126,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<IPage<ProtectionContainerMapping>>> EnumerateAllProtectionContainerMappingsWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of mappings under a container.
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>
@@ -102,6 +139,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<IPage<ProtectionContainerMapping>>> EnumerateProtectionContainerMappingsNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of all protection container mappings in a vault.
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

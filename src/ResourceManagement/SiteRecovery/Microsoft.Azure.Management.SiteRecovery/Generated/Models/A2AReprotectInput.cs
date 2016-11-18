@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Azure specific reprotect input.
+    /// </summary>
     public partial class A2AReprotectInput : ReverseReplicationProviderSpecificInput
     {
         /// <summary>
@@ -33,31 +36,38 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the recovery container Id.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryContainerId")]
         public string RecoveryContainerId { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of vm disk details.
         /// </summary>
         [JsonProperty(PropertyName = "vmDisks")]
         public IList<A2AVmDiskInputDetails> VmDisks { get; set; }
 
         /// <summary>
+        /// Gets or sets the recovery resource group Id. Valid for V2
+        /// scenarios.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryResourceGroupId")]
         public string RecoveryResourceGroupId { get; set; }
 
         /// <summary>
+        /// Gets or sets the recovery cloud service Id. Valid for V1 scenarios.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryCloudServiceId")]
         public string RecoveryCloudServiceId { get; set; }
 
         /// <summary>
+        /// Gets or sets the recovery availability set.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryAvailabilitySetId")]
         public string RecoveryAvailabilitySetId { get; set; }
 
         /// <summary>
+        /// Gets or sets the Policy Id.
         /// </summary>
         [JsonProperty(PropertyName = "policyId")]
         public string PolicyId { get; set; }

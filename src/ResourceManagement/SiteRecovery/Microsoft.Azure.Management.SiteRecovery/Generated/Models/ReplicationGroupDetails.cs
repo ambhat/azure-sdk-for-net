@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Replication group details. This will be used in case of San and Wvr.
+    /// </summary>
     public partial class ReplicationGroupDetails : ConfigurationSettings
     {
         /// <summary>

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Request to update the mobility service on a protected item.
+    /// </summary>
     public partial class UpdateMobilityServiceRequest
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the properties of the update mobility service request.
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public UpdateMobilityServiceRequestProperties Properties { get; set; }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// The Mobility Service update details.
+    /// </summary>
     public partial class MobilityServiceUpdate
     {
         /// <summary>
@@ -30,16 +33,20 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the version of the latest update.
         /// </summary>
         [JsonProperty(PropertyName = "version")]
         public string Version { get; set; }
 
         /// <summary>
+        /// Gets or sets the reboot status of the update - whether it is
+        /// required or not.
         /// </summary>
         [JsonProperty(PropertyName = "rebootStatus")]
         public string RebootStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the OS type.
         /// </summary>
         [JsonProperty(PropertyName = "osType")]
         public string OsType { get; set; }

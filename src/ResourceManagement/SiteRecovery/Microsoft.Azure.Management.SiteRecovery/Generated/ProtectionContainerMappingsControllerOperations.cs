@@ -45,13 +45,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </summary>
         public SiteRecoveryManagementClient Client { get; private set; }
 
+        /// <summary>
+        /// Remove container mapping.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric ARM name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Unique protection container ARM name.
         /// </param>
         /// <param name='mappingName'>
+        /// Unique protection container mapping name.
         /// </param>
         /// <param name='removalInput'>
+        /// Removal input.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -232,11 +239,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of mappings under a container.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Fabric unique ARM name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Unique protection container name.
         /// </param>
         /// <param name='mappingName'>
+        /// Container mapping ARM name.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -437,13 +450,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Create protection container mapping.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric ARM name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Unique protection container ARM name.
         /// </param>
         /// <param name='mappingName'>
+        /// Unique protection container mapping name.
         /// </param>
         /// <param name='creationInput'>
+        /// Mapping creation input.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -624,11 +644,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Purges protection container mapping.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric ARM name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Unique protection container ARM name.
         /// </param>
         /// <param name='mappingName'>
+        /// Unique protection container mapping name.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -798,9 +824,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of mappings under a container.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Fabric unique ARM name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Unique protection container name.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -995,6 +1026,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of all protection container mappings in a vault.
+        /// </summary>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
         /// </param>
@@ -1176,6 +1210,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of mappings under a container.
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>
@@ -1332,6 +1369,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of all protection container mappings in a vault.
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

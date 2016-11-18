@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Disk Details.
+    /// </summary>
     public partial class OSDetails
     {
         /// <summary>
@@ -33,31 +36,37 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets VM Disk details.
         /// </summary>
         [JsonProperty(PropertyName = "osType")]
         public string OsType { get; set; }
 
         /// <summary>
+        /// Gets or sets ProductType.
         /// </summary>
         [JsonProperty(PropertyName = "productType")]
         public string ProductType { get; set; }
 
         /// <summary>
+        /// Gets or sets the OSEdition.
         /// </summary>
         [JsonProperty(PropertyName = "osEdition")]
         public string OsEdition { get; set; }
 
         /// <summary>
+        /// Gets or sets the OS Version.
         /// </summary>
         [JsonProperty(PropertyName = "oSVersion")]
         public string OSVersion { get; set; }
 
         /// <summary>
+        /// Gets or sets the OS Major Version.
         /// </summary>
         [JsonProperty(PropertyName = "oSMajorVersion")]
         public string OSMajorVersion { get; set; }
 
         /// <summary>
+        /// Gets or sets the OS Minor Version.
         /// </summary>
         [JsonProperty(PropertyName = "oSMinorVersion")]
         public string OSMinorVersion { get; set; }

@@ -18,13 +18,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
     /// </summary>
     public partial interface INetworkMappingsControllerOperations
     {
+        /// <summary>
+        /// Tracks the provider async operation.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Primary fabric name.
         /// </param>
         /// <param name='networkName'>
+        /// Primary network name.
         /// </param>
         /// <param name='networkMappingName'>
+        /// ARM Resource Name for network mapping.
         /// </param>
         /// <param name='jobName'>
+        /// job id to track.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -33,84 +40,5 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> TrackAsyncNetworkMappingOperationWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        Task<AzureOperationResponse<IPage<NetworkMapping>>> EnumerateAllNetworkMappingsWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-        /// <param name='fabricName'>
-        /// </param>
-        /// <param name='networkName'>
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        Task<AzureOperationResponse<IPage<NetworkMapping>>> EnumerateNetworkMappingsWithHttpMessagesAsync(string fabricName, string networkName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-        /// <param name='fabricName'>
-        /// </param>
-        /// <param name='networkName'>
-        /// </param>
-        /// <param name='networkMappingName'>
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        Task<AzureOperationResponse<NetworkMapping>> GetNetworkMappingWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-        /// <param name='fabricName'>
-        /// </param>
-        /// <param name='networkName'>
-        /// </param>
-        /// <param name='networkMappingName'>
-        /// </param>
-        /// <param name='input'>
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        Task<AzureOperationResponse> CreateNetworkMappingWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-        /// <param name='fabricName'>
-        /// </param>
-        /// <param name='networkName'>
-        /// </param>
-        /// <param name='networkMappingName'>
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        Task<AzureOperationResponse> DeleteNetworkMappingWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-        /// <param name='nextPageLink'>
-        /// The NextLink from the previous successful call to List operation.
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        Task<AzureOperationResponse<IPage<NetworkMapping>>> EnumerateAllNetworkMappingsNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-        /// <param name='nextPageLink'>
-        /// The NextLink from the previous successful call to List operation.
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        Task<AzureOperationResponse<IPage<NetworkMapping>>> EnumerateNetworkMappingsNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

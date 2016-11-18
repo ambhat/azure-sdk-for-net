@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Container unpairing input.
+    /// </summary>
     public partial class RemoveProtectionContainerMappingInput
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Configure protection input properties.
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public RemoveProtectionContainerMappingInputProperties Properties { get; set; }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Query parameter to enumerate jobs.
+    /// </summary>
     public partial class JobQueryParameter
     {
         /// <summary>
@@ -32,26 +35,31 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Date time to get jobs from.
         /// </summary>
         [JsonProperty(PropertyName = "startTime")]
         public string StartTime { get; set; }
 
         /// <summary>
+        /// Gets or sets Date time to get jobs upto.
         /// </summary>
         [JsonProperty(PropertyName = "endTime")]
         public string EndTime { get; set; }
 
         /// <summary>
+        /// Gets or sets the Id of the fabric to search jobs under.
         /// </summary>
         [JsonProperty(PropertyName = "fabricId")]
         public string FabricId { get; set; }
 
         /// <summary>
+        /// Gets or sets the type of objects.
         /// </summary>
         [JsonProperty(PropertyName = "affectedObjectTypes")]
         public IList<string> AffectedObjectTypes { get; set; }
 
         /// <summary>
+        /// Gets or sets the states of the job to be filtered can be in.
         /// </summary>
         [JsonProperty(PropertyName = "jobStatus")]
         public IList<string> JobStatus { get; set; }

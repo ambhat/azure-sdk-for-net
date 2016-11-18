@@ -18,20 +18,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
     /// </summary>
     public static partial class PolicyControllerOperationsExtensions
     {
+            /// <summary>
+            /// Gets the requested policy.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='policyName'>
+            /// Unique name of policy.
             /// </param>
             public static Policy GetPolicy(this IPolicyControllerOperations operations, string policyName)
             {
                 return Task.Factory.StartNew(s => ((IPolicyControllerOperations)s).GetPolicyAsync(policyName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the requested policy.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='policyName'>
+            /// Unique name of policy.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -44,24 +52,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Creates the policy.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='policyName'>
+            /// name of Protection Profile
             /// </param>
             /// <param name='input'>
+            /// Create policy input
             /// </param>
             public static void CreatePolicy(this IPolicyControllerOperations operations, string policyName, CreatePolicyInput input)
             {
                 Task.Factory.StartNew(s => ((IPolicyControllerOperations)s).CreatePolicyAsync(policyName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Creates the policy.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='policyName'>
+            /// name of Protection Profile
             /// </param>
             /// <param name='input'>
+            /// Create policy input
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -71,20 +89,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 await operations.CreatePolicyWithHttpMessagesAsync(policyName, input, null, cancellationToken).ConfigureAwait(false);
             }
 
+            /// <summary>
+            /// Delete the policy.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='policyName'>
+            /// Policy name.
             /// </param>
             public static void DeletePolicy(this IPolicyControllerOperations operations, string policyName)
             {
                 Task.Factory.StartNew(s => ((IPolicyControllerOperations)s).DeletePolicyAsync(policyName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Delete the policy.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='policyName'>
+            /// Policy name.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -94,24 +120,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 await operations.DeletePolicyWithHttpMessagesAsync(policyName, null, cancellationToken).ConfigureAwait(false);
             }
 
+            /// <summary>
+            /// Updates the protection profile.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='policyName'>
+            /// Protection profile Id.
             /// </param>
             /// <param name='input'>
+            /// Update Protection Profile Input
             /// </param>
             public static void UpdatePolicy(this IPolicyControllerOperations operations, string policyName, UpdatePolicyInput input)
             {
                 Task.Factory.StartNew(s => ((IPolicyControllerOperations)s).UpdatePolicyAsync(policyName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Updates the protection profile.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='policyName'>
+            /// Protection profile Id.
             /// </param>
             /// <param name='input'>
+            /// Update Protection Profile Input
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -121,6 +157,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 await operations.UpdatePolicyWithHttpMessagesAsync(policyName, input, null, cancellationToken).ConfigureAwait(false);
             }
 
+            /// <summary>
+            /// Gets the list of policies
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -129,6 +168,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 return Task.Factory.StartNew(s => ((IPolicyControllerOperations)s).EnumeratePoliciesAsync(), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of policies
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -143,6 +185,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Gets the list of policies
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -154,6 +199,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 return Task.Factory.StartNew(s => ((IPolicyControllerOperations)s).EnumeratePoliciesNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of policies
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>

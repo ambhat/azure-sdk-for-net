@@ -12,7 +12,11 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
-    public partial class RecoveryServicesProvider
+    /// <summary>
+    /// Provider details.
+    /// </summary>
+    [JsonTransformation]
+    public partial class RecoveryServicesProvider : Resource
     {
         /// <summary>
         /// Initializes a new instance of the RecoveryServicesProvider class.
@@ -22,33 +26,87 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the RecoveryServicesProvider class.
         /// </summary>
-        public RecoveryServicesProvider(string id = default(string), string type = default(string), string name = default(string), RecoveryServicesProviderProperties properties = default(RecoveryServicesProviderProperties))
+        public RecoveryServicesProvider(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string fabricType = default(string), string friendlyName = default(string), string providerVersion = default(string), string serverVersion = default(string), string providerVersionState = default(string), DateTime? providerVersionExpiryDate = default(DateTime?), string fabricFriendlyName = default(string), DateTime? lastHeartBeat = default(DateTime?), string connectionStatus = default(string), int? protectedItemCount = default(int?), IList<string> allowedScenarios = default(IList<string>))
+            : base(id, name, type, location)
         {
-            Id = id;
-            Type = type;
-            Name = name;
-            Properties = properties;
+            FabricType = fabricType;
+            FriendlyName = friendlyName;
+            ProviderVersion = providerVersion;
+            ServerVersion = serverVersion;
+            ProviderVersionState = providerVersionState;
+            ProviderVersionExpiryDate = providerVersionExpiryDate;
+            FabricFriendlyName = fabricFriendlyName;
+            LastHeartBeat = lastHeartBeat;
+            ConnectionStatus = connectionStatus;
+            ProtectedItemCount = protectedItemCount;
+            AllowedScenarios = allowedScenarios;
         }
 
         /// <summary>
+        /// Gets or sets type of the site.
         /// </summary>
-        [JsonProperty(PropertyName = "id")]
-        public string Id { get; set; }
+        [JsonProperty(PropertyName = "properties.fabricType")]
+        public string FabricType { get; set; }
 
         /// <summary>
+        /// Gets or sets Friendly name of the DRA.
         /// </summary>
-        [JsonProperty(PropertyName = "type")]
-        public string Type { get; set; }
+        [JsonProperty(PropertyName = "properties.friendlyName")]
+        public string FriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the provider version.
         /// </summary>
-        [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
+        [JsonProperty(PropertyName = "properties.providerVersion")]
+        public string ProviderVersion { get; set; }
 
         /// <summary>
+        /// Gets or sets the fabric provider.
         /// </summary>
-        [JsonProperty(PropertyName = "properties")]
-        public RecoveryServicesProviderProperties Properties { get; set; }
+        [JsonProperty(PropertyName = "properties.serverVersion")]
+        public string ServerVersion { get; set; }
+
+        /// <summary>
+        /// Gets or sets DRA version status.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.providerVersionState")]
+        public string ProviderVersionState { get; set; }
+
+        /// <summary>
+        /// Gets or sets Expiry date if the version is deprecated.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.providerVersionExpiryDate")]
+        public DateTime? ProviderVersionExpiryDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the fabric friendly name.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.fabricFriendlyName")]
+        public string FabricFriendlyName { get; set; }
+
+        /// <summary>
+        /// Gets or sets Time when last heartbeat was sent by the DRA.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.lastHeartBeat")]
+        public DateTime? LastHeartBeat { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether DRA is responsive.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.connectionStatus")]
+        public string ConnectionStatus { get; set; }
+
+        /// <summary>
+        /// Gets or sets Number of protected VMs currently managed by the DRA.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.protectedItemCount")]
+        public int? ProtectedItemCount { get; set; }
+
+        /// <summary>
+        /// Gets or sets the scenarions allowed on this provider.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.allowedScenarios")]
+        public IList<string> AllowedScenarios { get; set; }
 
     }
 }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// InMageAzureV2 protected disk details.
+    /// </summary>
     public partial class InMageAzureV2ProtectedDiskDetails
     {
         /// <summary>
@@ -43,71 +46,86 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the disk id.
         /// </summary>
         [JsonProperty(PropertyName = "diskId")]
         public string DiskId { get; set; }
 
         /// <summary>
+        /// Gets or sets the disk name.
         /// </summary>
         [JsonProperty(PropertyName = "diskName")]
         public string DiskName { get; set; }
 
         /// <summary>
+        /// Gets or sets the protection stage.
         /// </summary>
         [JsonProperty(PropertyName = "protectionStage")]
         public string ProtectionStage { get; set; }
 
         /// <summary>
+        /// Gets or sets the health error code for the disk.
         /// </summary>
         [JsonProperty(PropertyName = "healthErrorCode")]
         public string HealthErrorCode { get; set; }
 
         /// <summary>
+        /// Gets or sets the RPO in seconds.
         /// </summary>
         [JsonProperty(PropertyName = "rpoInSeconds")]
         public long? RpoInSeconds { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether resync is required for
+        /// this disk.
         /// </summary>
         [JsonProperty(PropertyName = "resyncRequired")]
         public string ResyncRequired { get; set; }
 
         /// <summary>
+        /// Gets or sets the resync progress percentage.
         /// </summary>
         [JsonProperty(PropertyName = "resyncProgressPercentage")]
         public int? ResyncProgressPercentage { get; set; }
 
         /// <summary>
+        /// Gets or sets the resync duration in seconds.
         /// </summary>
         [JsonProperty(PropertyName = "resyncDurationInSeconds")]
         public long? ResyncDurationInSeconds { get; set; }
 
         /// <summary>
+        /// Gets or sets the disk capacity in bytes.
         /// </summary>
         [JsonProperty(PropertyName = "diskCapacityInBytes")]
         public long? DiskCapacityInBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the disk file system capacity in bytes.
         /// </summary>
         [JsonProperty(PropertyName = "fileSystemCapacityInBytes")]
         public long? FileSystemCapacityInBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the source data transit in MB.
         /// </summary>
         [JsonProperty(PropertyName = "sourceDataInMegaBytes")]
         public double? SourceDataInMegaBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the PS data transit in MB.
         /// </summary>
         [JsonProperty(PropertyName = "psDataInMegaBytes")]
         public double? PsDataInMegaBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the target data transit in MB.
         /// </summary>
         [JsonProperty(PropertyName = "targetDataInMegaBytes")]
         public double? TargetDataInMegaBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether disk is resized.
         /// </summary>
         [JsonProperty(PropertyName = "diskResized")]
         public string DiskResized { get; set; }

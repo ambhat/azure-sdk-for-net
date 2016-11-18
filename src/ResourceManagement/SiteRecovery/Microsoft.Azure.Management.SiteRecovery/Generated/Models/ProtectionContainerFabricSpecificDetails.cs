@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Base class for fabric specific details of container.
+    /// </summary>
     public partial class ProtectionContainerFabricSpecificDetails
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets the class type. Overriden in derived classes.
         /// </summary>
         [JsonProperty(PropertyName = "instanceType")]
         public string InstanceType { get; private set; }

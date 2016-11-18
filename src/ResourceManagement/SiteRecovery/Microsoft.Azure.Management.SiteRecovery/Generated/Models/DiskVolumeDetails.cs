@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Volume details.
+    /// </summary>
     public partial class DiskVolumeDetails
     {
         /// <summary>
@@ -29,11 +32,13 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the volume label.
         /// </summary>
         [JsonProperty(PropertyName = "label")]
         public string Label { get; set; }
 
         /// <summary>
+        /// Gets or sets the volume name.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }

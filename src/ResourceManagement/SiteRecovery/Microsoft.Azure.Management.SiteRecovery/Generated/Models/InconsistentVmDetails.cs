@@ -12,6 +12,10 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class stores the monitoring details for consistency check of
+    /// inconsistent Protected Entity.
+    /// </summary>
     public partial class InconsistentVmDetails
     {
         /// <summary>
@@ -31,21 +35,26 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Vm name.
         /// </summary>
         [JsonProperty(PropertyName = "vmName")]
         public string VmName { get; set; }
 
         /// <summary>
+        /// Gets or sets the Cloud name.
         /// </summary>
         [JsonProperty(PropertyName = "cloudName")]
         public string CloudName { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of details regarding state of the
+        /// Protected Entity in SRS and On prem.
         /// </summary>
         [JsonProperty(PropertyName = "details")]
         public IList<string> Details { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of error ids.
         /// </summary>
         [JsonProperty(PropertyName = "errorIds")]
         public IList<string> ErrorIds { get; set; }

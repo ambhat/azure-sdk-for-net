@@ -12,7 +12,11 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
-    public partial class Policy
+    /// <summary>
+    /// Protection profile details.
+    /// </summary>
+    [JsonTransformation]
+    public partial class Policy : Resource
     {
         /// <summary>
         /// Initializes a new instance of the Policy class.
@@ -22,33 +26,24 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the Policy class.
         /// </summary>
-        public Policy(string id = default(string), string name = default(string), string type = default(string), PolicyProperties properties = default(PolicyProperties))
+        public Policy(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string friendlyName = default(string), PolicyProviderSpecificDetails providerSpecificDetails = default(PolicyProviderSpecificDetails))
+            : base(id, name, type, location)
         {
-            Id = id;
-            Name = name;
-            Type = type;
-            Properties = properties;
+            FriendlyName = friendlyName;
+            ProviderSpecificDetails = providerSpecificDetails;
         }
 
         /// <summary>
+        /// Gets or sets the FriendlyName.
         /// </summary>
-        [JsonProperty(PropertyName = "id")]
-        public string Id { get; set; }
+        [JsonProperty(PropertyName = "properties.friendlyName")]
+        public string FriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the ReplicationChannelSetting.
         /// </summary>
-        [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "type")]
-        public string Type { get; set; }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "properties")]
-        public PolicyProperties Properties { get; set; }
+        [JsonProperty(PropertyName = "properties.providerSpecificDetails")]
+        public PolicyProviderSpecificDetails ProviderSpecificDetails { get; set; }
 
     }
 }

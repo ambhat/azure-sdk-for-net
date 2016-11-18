@@ -12,7 +12,11 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
-    public partial class Network
+    /// <summary>
+    /// Network model.
+    /// </summary>
+    [JsonTransformation]
+    public partial class Network : Resource
     {
         /// <summary>
         /// Initializes a new instance of the Network class.
@@ -22,33 +26,38 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the Network class.
         /// </summary>
-        public Network(string type = default(string), string id = default(string), string name = default(string), NetworkProperties properties = default(NetworkProperties))
+        public Network(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string fabricType = default(string), IList<Subnet> subnets = default(IList<Subnet>), string friendlyName = default(string), string networkType = default(string))
+            : base(id, name, type, location)
         {
-            Type = type;
-            Id = id;
-            Name = name;
-            Properties = properties;
+            FabricType = fabricType;
+            Subnets = subnets;
+            FriendlyName = friendlyName;
+            NetworkType = networkType;
         }
 
         /// <summary>
+        /// Gets or sets the Fabric Type.
         /// </summary>
-        [JsonProperty(PropertyName = "type")]
-        public string Type { get; set; }
+        [JsonProperty(PropertyName = "properties.fabricType")]
+        public string FabricType { get; set; }
 
         /// <summary>
+        /// Gets or sets the List of subnets.
         /// </summary>
-        [JsonProperty(PropertyName = "id")]
-        public string Id { get; set; }
+        [JsonProperty(PropertyName = "properties.subnets")]
+        public IList<Subnet> Subnets { get; set; }
 
         /// <summary>
+        /// Gets or sets the Friendly Name.
         /// </summary>
-        [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
+        [JsonProperty(PropertyName = "properties.friendlyName")]
+        public string FriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the Network Type.
         /// </summary>
-        [JsonProperty(PropertyName = "properties")]
-        public NetworkProperties Properties { get; set; }
+        [JsonProperty(PropertyName = "properties.networkType")]
+        public string NetworkType { get; set; }
 
     }
 }

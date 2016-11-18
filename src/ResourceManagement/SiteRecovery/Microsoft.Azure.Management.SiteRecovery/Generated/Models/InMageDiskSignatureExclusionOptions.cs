@@ -12,6 +12,11 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Guest disk signature based disk exclusion option when doing enable
+    /// protection of
+    /// virtual machine in InMage provider.
+    /// </summary>
     public partial class InMageDiskSignatureExclusionOptions
     {
         /// <summary>
@@ -30,6 +35,8 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the guest signature of disk to be excluded from
+        /// replication.
         /// </summary>
         [JsonProperty(PropertyName = "diskSignature")]
         public string DiskSignature { get; set; }

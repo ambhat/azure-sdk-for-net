@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Task details based on specific task type.
+    /// </summary>
     public partial class TaskTypeDetails
     {
         /// <summary>

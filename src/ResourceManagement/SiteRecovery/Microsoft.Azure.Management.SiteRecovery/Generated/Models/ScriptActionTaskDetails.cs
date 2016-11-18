@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class represents the script action task details.
+    /// </summary>
     public partial class ScriptActionTaskDetails : TaskTypeDetails
     {
         /// <summary>
@@ -31,21 +34,26 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the name.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the path.
         /// </summary>
         [JsonProperty(PropertyName = "path")]
         public string Path { get; set; }
 
         /// <summary>
+        /// Gets or sets the output.
         /// </summary>
         [JsonProperty(PropertyName = "output")]
         public string Output { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether it is a primary side
+        /// script or not.
         /// </summary>
         [JsonProperty(PropertyName = "isPrimarySideScript")]
         public bool? IsPrimarySideScript { get; set; }

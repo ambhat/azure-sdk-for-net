@@ -18,28 +18,40 @@ namespace Microsoft.Azure.Management.SiteRecovery
     /// </summary>
     public static partial class ProtectableItemsControllerOperationsExtensions
     {
+            /// <summary>
+            /// Gets the details of a protection entity.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric name.
             /// </param>
             /// <param name='protectionContainerName'>
+            /// Protection container Id.
             /// </param>
             /// <param name='protectableItemName'>
+            /// Protection entity Id.
             /// </param>
             public static ProtectableItem GetProtectableItem(this IProtectableItemsControllerOperations operations, string fabricName, string protectionContainerName, string protectableItemName)
             {
                 return Task.Factory.StartNew(s => ((IProtectableItemsControllerOperations)s).GetProtectableItemAsync(fabricName, protectionContainerName, protectableItemName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the details of a protection entity.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric name.
             /// </param>
             /// <param name='protectionContainerName'>
+            /// Protection container Id.
             /// </param>
             /// <param name='protectableItemName'>
+            /// Protection entity Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -52,24 +64,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Gets the list of protection entities.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric name.
             /// </param>
             /// <param name='protectionContainerName'>
+            /// Protection container Id.
             /// </param>
             public static IPage<ProtectableItem> EnumerateProtectableItems(this IProtectableItemsControllerOperations operations, string fabricName, string protectionContainerName)
             {
                 return Task.Factory.StartNew(s => ((IProtectableItemsControllerOperations)s).EnumerateProtectableItemsAsync(fabricName, protectionContainerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of protection entities.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric name.
             /// </param>
             /// <param name='protectionContainerName'>
+            /// Protection container Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -82,6 +104,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Gets the list of protection entities.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -93,6 +118,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 return Task.Factory.StartNew(s => ((IProtectableItemsControllerOperations)s).EnumerateProtectableItemsNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of protection entities.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>

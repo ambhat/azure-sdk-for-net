@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Hyper-V Replica specific protection profile Input.
+    /// </summary>
     public partial class HyperVReplicaPolicyInput : PolicyProviderSpecificInput
     {
         /// <summary>
@@ -37,51 +40,64 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets a value indicating the number of recovery points.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryPoints")]
         public int? RecoveryPoints { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating the application consistent
+        /// frequency.
         /// </summary>
         [JsonProperty(PropertyName = "applicationConsistentSnapshotFrequencyInHours")]
         public int? ApplicationConsistentSnapshotFrequencyInHours { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether compression has to be
+        /// enabled.
         /// </summary>
         [JsonProperty(PropertyName = "compression")]
         public string Compression { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether IR is online.
         /// </summary>
         [JsonProperty(PropertyName = "initialReplicationMethod")]
         public string InitialReplicationMethod { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating the online IR start time.
         /// </summary>
         [JsonProperty(PropertyName = "onlineReplicationStartTime")]
         public string OnlineReplicationStartTime { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating the offline IR import path.
         /// </summary>
         [JsonProperty(PropertyName = "offlineReplicationImportPath")]
         public string OfflineReplicationImportPath { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating the offline IR export path.
         /// </summary>
         [JsonProperty(PropertyName = "offlineReplicationExportPath")]
         public string OfflineReplicationExportPath { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating the recovery HTTPS port.
         /// </summary>
         [JsonProperty(PropertyName = "replicationPort")]
         public int? ReplicationPort { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating the authentication type.
         /// </summary>
         [JsonProperty(PropertyName = "allowedAuthenticationType")]
         public int? AllowedAuthenticationType { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the VM has to be auto
+        /// deleted.
         /// </summary>
         [JsonProperty(PropertyName = "replicaDeletion")]
         public string ReplicaDeletion { get; set; }

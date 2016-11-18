@@ -12,6 +12,11 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class represents a task which is actually a workflow so that one
+    /// can navigate
+    /// to its individual drill down.
+    /// </summary>
     public partial class JobTaskDetails : TaskTypeDetails
     {
         /// <summary>
@@ -28,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the job entity.
         /// </summary>
         [JsonProperty(PropertyName = "jobTask")]
         public JobEntity JobTask { get; set; }

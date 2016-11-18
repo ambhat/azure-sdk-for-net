@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Create protection container input properties.
+    /// </summary>
     public partial class CreateProtectionContainerInputProperties
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets provider specific inputs for container creation.
         /// </summary>
         [JsonProperty(PropertyName = "providerSpecificInput")]
         public IList<ReplicationProviderSpecificContainerCreationInput> ProviderSpecificInput { get; set; }

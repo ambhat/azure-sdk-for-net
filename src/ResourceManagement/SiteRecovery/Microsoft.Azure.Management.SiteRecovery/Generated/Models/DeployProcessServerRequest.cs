@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Request to create a Process Server.
+    /// </summary>
     public partial class DeployProcessServerRequest
     {
         /// <summary>
@@ -28,6 +31,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the deploy process server request propertyies.
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public DeployProcessServerRequestProperties Properties { get; set; }

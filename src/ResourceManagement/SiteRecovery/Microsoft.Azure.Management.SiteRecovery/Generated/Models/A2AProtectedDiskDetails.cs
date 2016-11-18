@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// A2A protected disk details.
+    /// </summary>
     public partial class A2AProtectedDiskDetails
     {
         /// <summary>
@@ -32,26 +35,31 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the disk uri.
         /// </summary>
         [JsonProperty(PropertyName = "diskUri")]
         public string DiskUri { get; set; }
 
         /// <summary>
+        /// Gets or sets the recovery disk storage account.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryAzureStorageAccountId")]
         public string RecoveryAzureStorageAccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets the primary staging storage account.
         /// </summary>
         [JsonProperty(PropertyName = "primaryStagingAzureStorageAccountId")]
         public string PrimaryStagingAzureStorageAccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets the primary disk storage account.
         /// </summary>
         [JsonProperty(PropertyName = "primaryDiskAzureStorageAccountId")]
         public string PrimaryDiskAzureStorageAccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets recovery disk uri.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryDiskUri")]
         public string RecoveryDiskUri { get; set; }

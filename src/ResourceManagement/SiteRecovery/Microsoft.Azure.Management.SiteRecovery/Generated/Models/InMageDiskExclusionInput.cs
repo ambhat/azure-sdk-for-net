@@ -12,6 +12,10 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// DiskExclusionInput when doing enable protection of virtual machine in
+    /// InMage provider.
+    /// </summary>
     public partial class InMageDiskExclusionInput
     {
         /// <summary>
@@ -29,11 +33,14 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the volume label based option for disk exclusion.
         /// </summary>
         [JsonProperty(PropertyName = "volumeOptions")]
         public IList<InMageVolumeExclusionOptions> VolumeOptions { get; set; }
 
         /// <summary>
+        /// Gets or sets the guest disk signature based option for disk
+        /// exclusion.
         /// </summary>
         [JsonProperty(PropertyName = "diskSignatureOptions")]
         public IList<InMageDiskSignatureExclusionOptions> DiskSignatureOptions { get; set; }

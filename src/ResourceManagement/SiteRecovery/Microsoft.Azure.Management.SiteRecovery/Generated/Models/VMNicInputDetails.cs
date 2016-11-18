@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Hyper V VM network input details.
+    /// </summary>
     public partial class VMNicInputDetails
     {
         /// <summary>
@@ -31,21 +34,25 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the nic Id.
         /// </summary>
         [JsonProperty(PropertyName = "nicId")]
         public string NicId { get; set; }
 
         /// <summary>
+        /// Gets or sets recovery VM subnet name.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryVMSubnetName")]
         public string RecoveryVMSubnetName { get; set; }
 
         /// <summary>
+        /// Gets or sets replica nic static IP address.
         /// </summary>
         [JsonProperty(PropertyName = "replicaNicStaticIPAddress")]
         public string ReplicaNicStaticIPAddress { get; set; }
 
         /// <summary>
+        /// Gets or sets selection type for failover.
         /// </summary>
         [JsonProperty(PropertyName = "selectionType")]
         public string SelectionType { get; set; }

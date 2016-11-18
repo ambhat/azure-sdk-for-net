@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// HvrA provider specific input for failback.
+    /// </summary>
     public partial class HyperVReplicaAzureFailbackProviderInput : ProviderSpecificFailoverInput
     {
         /// <summary>
@@ -32,16 +35,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Data sync option.
         /// </summary>
         [JsonProperty(PropertyName = "dataSyncOption")]
         public string DataSyncOption { get; set; }
 
         /// <summary>
+        /// Gets or sets ALR options to create alternate recovery.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryVmCreationOption")]
         public string RecoveryVmCreationOption { get; set; }
 
         /// <summary>
+        /// Gets or sets Provider ID for alternate location
         /// </summary>
         [JsonProperty(PropertyName = "providerIdForAlternateRecovery")]
         public string ProviderIdForAlternateRecovery { get; set; }

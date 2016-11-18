@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class represents the recovery plan group task.
+    /// </summary>
     public partial class RecoveryPlanGroupTaskDetails : GroupTaskDetails
     {
         /// <summary>
@@ -33,16 +36,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the name.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the group identifier.
         /// </summary>
         [JsonProperty(PropertyName = "groupId")]
         public string GroupId { get; set; }
 
         /// <summary>
+        /// Gets or sets the group type.
         /// </summary>
         [JsonProperty(PropertyName = "rpGroupType")]
         public string RpGroupType { get; set; }

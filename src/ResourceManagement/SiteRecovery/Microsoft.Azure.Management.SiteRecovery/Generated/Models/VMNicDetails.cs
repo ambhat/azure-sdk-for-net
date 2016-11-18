@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Hyper V VM network details.
+    /// </summary>
     public partial class VMNicDetails
     {
         /// <summary>
@@ -35,41 +38,49 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the nic Id.
         /// </summary>
         [JsonProperty(PropertyName = "nicId")]
         public string NicId { get; set; }
 
         /// <summary>
+        /// Gets or sets VM subnet name.
         /// </summary>
         [JsonProperty(PropertyName = "vMSubnetName")]
         public string VMSubnetName { get; set; }
 
         /// <summary>
+        /// Gets or sets VM network name.
         /// </summary>
         [JsonProperty(PropertyName = "vMNetworkName")]
         public string VMNetworkName { get; set; }
 
         /// <summary>
+        /// Gets or sets recovery VM network Id.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryVMNetworkId")]
         public string RecoveryVMNetworkId { get; set; }
 
         /// <summary>
+        /// Gets or sets recovery VM subnet name.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryVMSubnetName")]
         public string RecoveryVMSubnetName { get; set; }
 
         /// <summary>
+        /// Gets or sets ip address type.
         /// </summary>
         [JsonProperty(PropertyName = "ipAddressType")]
         public string IpAddressType { get; set; }
 
         /// <summary>
+        /// Gets or sets replica nic static IP address.
         /// </summary>
         [JsonProperty(PropertyName = "replicaNicStaticIPAddress")]
         public string ReplicaNicStaticIPAddress { get; set; }
 
         /// <summary>
+        /// Gets or sets selection type for failover.
         /// </summary>
         [JsonProperty(PropertyName = "selectionType")]
         public string SelectionType { get; set; }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Base class for Provider specific details for policies.
+    /// </summary>
     public partial class PolicyProviderSpecificDetails
     {
         /// <summary>

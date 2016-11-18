@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class contains the error details per object.
+    /// </summary>
     public partial class JobErrorDetails
     {
         /// <summary>
@@ -32,26 +35,31 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Service error details.
         /// </summary>
         [JsonProperty(PropertyName = "serviceErrorDetails")]
         public ServiceError ServiceErrorDetails { get; set; }
 
         /// <summary>
+        /// Gets or sets the Provider error details.
         /// </summary>
         [JsonProperty(PropertyName = "providerErrorDetails")]
         public ProviderError ProviderErrorDetails { get; set; }
 
         /// <summary>
+        /// Gets or sets error level of error.
         /// </summary>
         [JsonProperty(PropertyName = "errorLevel")]
         public string ErrorLevel { get; set; }
 
         /// <summary>
+        /// Gets or sets the creation time of job error.
         /// </summary>
         [JsonProperty(PropertyName = "creationTime")]
         public DateTime? CreationTime { get; set; }
 
         /// <summary>
+        /// Gets or sets the Id of the task.
         /// </summary>
         [JsonProperty(PropertyName = "taskId")]
         public string TaskId { get; set; }

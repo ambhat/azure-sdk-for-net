@@ -101,6 +101,16 @@ namespace Microsoft.Azure.Management.SiteRecovery
         IRecoveryServicesProviderControllerOperations RecoveryServicesProviderController { get; }
 
         /// <summary>
+        /// Gets the IRecoveryPointsControllerOperations.
+        /// </summary>
+        IRecoveryPointsControllerOperations RecoveryPointsController { get; }
+
+        /// <summary>
+        /// Gets the IRecoveryPlansControllerOperations.
+        /// </summary>
+        IRecoveryPlansControllerOperations RecoveryPlansController { get; }
+
+        /// <summary>
         /// Gets the IProtectionContainersControllerOperations.
         /// </summary>
         IProtectionContainersControllerOperations ProtectionContainersController { get; }
@@ -131,19 +141,24 @@ namespace Microsoft.Azure.Management.SiteRecovery
         INetworkMappingsControllerOperations NetworkMappingsController { get; }
 
         /// <summary>
-        /// Gets the ILogicalNetworksControllerOperations.
+        /// Gets the INetworkMappingsOperations.
         /// </summary>
-        ILogicalNetworksControllerOperations LogicalNetworksController { get; }
+        INetworkMappingsOperations NetworkMappings { get; }
 
         /// <summary>
-        /// Gets the IJobsControllerOperations.
+        /// Gets the ILogicalNetworksOperations.
         /// </summary>
-        IJobsControllerOperations JobsController { get; }
+        ILogicalNetworksOperations LogicalNetworks { get; }
 
         /// <summary>
-        /// Gets the IFabricsControllerOperations.
+        /// Gets the IJobsOperations.
         /// </summary>
-        IFabricsControllerOperations FabricsController { get; }
+        IJobsOperations Jobs { get; }
+
+        /// <summary>
+        /// Gets the IFabricsOperations.
+        /// </summary>
+        IFabricsOperations Fabrics { get; }
 
     }
 }

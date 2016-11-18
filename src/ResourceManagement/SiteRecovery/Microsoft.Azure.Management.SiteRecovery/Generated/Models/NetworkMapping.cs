@@ -12,7 +12,11 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
-    public partial class NetworkMapping
+    /// <summary>
+    /// Network Mapping model.
+    /// </summary>
+    [JsonTransformation]
+    public partial class NetworkMapping : Resource
     {
         /// <summary>
         /// Initializes a new instance of the NetworkMapping class.
@@ -22,33 +26,38 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the NetworkMapping class.
         /// </summary>
-        public NetworkMapping(string type = default(string), string id = default(string), string name = default(string), NetworkMappingProperties properties = default(NetworkMappingProperties))
+        public NetworkMapping(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string state = default(string), string primaryNetworkFriendlyName = default(string), string recoveryNetworkFriendlyName = default(string), string recoveryNetworkId = default(string))
+            : base(id, name, type, location)
         {
-            Type = type;
-            Id = id;
-            Name = name;
-            Properties = properties;
+            State = state;
+            PrimaryNetworkFriendlyName = primaryNetworkFriendlyName;
+            RecoveryNetworkFriendlyName = recoveryNetworkFriendlyName;
+            RecoveryNetworkId = recoveryNetworkId;
         }
 
         /// <summary>
+        /// Gets or sets the pairing status for network mapping.
         /// </summary>
-        [JsonProperty(PropertyName = "type")]
-        public string Type { get; set; }
+        [JsonProperty(PropertyName = "properties.state")]
+        public string State { get; set; }
 
         /// <summary>
+        /// Gets or sets the primary network friendly name.
         /// </summary>
-        [JsonProperty(PropertyName = "id")]
-        public string Id { get; set; }
+        [JsonProperty(PropertyName = "properties.primaryNetworkFriendlyName")]
+        public string PrimaryNetworkFriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the recovery network friendly name.
         /// </summary>
-        [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
+        [JsonProperty(PropertyName = "properties.recoveryNetworkFriendlyName")]
+        public string RecoveryNetworkFriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the recovery network id for network mapping.
         /// </summary>
-        [JsonProperty(PropertyName = "properties")]
-        public NetworkMappingProperties Properties { get; set; }
+        [JsonProperty(PropertyName = "properties.recoveryNetworkId")]
+        public string RecoveryNetworkId { get; set; }
 
     }
 }

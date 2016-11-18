@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// InMage specific protection profile details.
+    /// </summary>
     public partial class InMagePolicyDetails : PolicyProviderSpecificDetails
     {
         /// <summary>
@@ -31,21 +34,28 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the recovery point threshold in minutes.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryPointThresholdInMinutes")]
         public int? RecoveryPointThresholdInMinutes { get; set; }
 
         /// <summary>
+        /// Gets or sets the duration in minutes until which the recovery
+        /// points need to be
+        /// stored.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryPointHistory")]
         public int? RecoveryPointHistory { get; set; }
 
         /// <summary>
+        /// Gets or sets the app consistent snapshot frequency in minutes.
         /// </summary>
         [JsonProperty(PropertyName = "appConsistentFrequencyInMinutes")]
         public int? AppConsistentFrequencyInMinutes { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether multi-VM sync has to be
+        /// enabled.
         /// </summary>
         [JsonProperty(PropertyName = "multiVmSyncStatus")]
         public string MultiVmSyncStatus { get; set; }

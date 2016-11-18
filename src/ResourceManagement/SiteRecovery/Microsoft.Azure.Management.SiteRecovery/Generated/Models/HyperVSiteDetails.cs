@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// HyperVSite fabric specific details.
+    /// </summary>
     [JsonObject("HyperVSite")]
     public partial class HyperVSiteDetails : FabricSpecificDetails
     {

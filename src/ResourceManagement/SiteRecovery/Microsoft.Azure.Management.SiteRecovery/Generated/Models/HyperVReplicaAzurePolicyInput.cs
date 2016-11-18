@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Hyper-V Replica Azure specific input for creating a protection profile.
+    /// </summary>
     public partial class HyperVReplicaAzurePolicyInput : PolicyProviderSpecificInput
     {
         /// <summary>
@@ -35,31 +38,46 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the duration (in hours) to which point the recovery
+        /// history needs to be
+        /// maintained.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryPointHistoryDuration")]
         public int? RecoveryPointHistoryDuration { get; set; }
 
         /// <summary>
+        /// Gets or sets the interval (in hours) at which Hyper-V Replica
+        /// should create an
+        /// application consistent snapshot within the VM.
         /// </summary>
         [JsonProperty(PropertyName = "applicationConsistentSnapshotFrequencyInHours")]
         public int? ApplicationConsistentSnapshotFrequencyInHours { get; set; }
 
         /// <summary>
+        /// Gets or sets the replication interval.
         /// </summary>
         [JsonProperty(PropertyName = "replicationInterval")]
         public int? ReplicationInterval { get; set; }
 
         /// <summary>
+        /// Gets or sets the scheduled start time for the initial replication.
+        /// If this parameter
+        /// is Null, the initial replication starts immediately.
         /// </summary>
         [JsonProperty(PropertyName = "onlineReplicationStartTime")]
         public string OnlineReplicationStartTime { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether encryption needs to be
+        /// enabled for Vms in this cloud.
         /// </summary>
         [JsonProperty(PropertyName = "encryption")]
         public string Encryption { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of storage accounts to which the VMs in the
+        /// primary cloud can
+        /// replicate to.
         /// </summary>
         [JsonProperty(PropertyName = "storageAccounts")]
         public IList<string> StorageAccounts { get; set; }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class represents the manual action task details.
+    /// </summary>
     public partial class ManualActionTaskDetails : TaskTypeDetails
     {
         /// <summary>
@@ -30,16 +33,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the name.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the instructions.
         /// </summary>
         [JsonProperty(PropertyName = "instructions")]
         public string Instructions { get; set; }
 
         /// <summary>
+        /// Gets or sets the observation.
         /// </summary>
         [JsonProperty(PropertyName = "observation")]
         public string Observation { get; set; }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Input definition for planned failover input properties.
+    /// </summary>
     public partial class TestFailoverInputProperties
     {
         /// <summary>
@@ -33,21 +36,25 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Failover direction.
         /// </summary>
         [JsonProperty(PropertyName = "failoverDirection")]
         public string FailoverDirection { get; set; }
 
         /// <summary>
+        /// Gets or sets network type to be used for test failover.
         /// </summary>
         [JsonProperty(PropertyName = "networkType")]
         public string NetworkType { get; set; }
 
         /// <summary>
+        /// Gets or sets the id of the network to be used for test failover
         /// </summary>
         [JsonProperty(PropertyName = "networkId")]
         public string NetworkId { get; set; }
 
         /// <summary>
+        /// Gets or sets Provider specific settings
         /// </summary>
         [JsonProperty(PropertyName = "providerSpecificDetails")]
         public ProviderSpecificFailoverInput ProviderSpecificDetails { get; set; }

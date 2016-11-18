@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Details of the OS Disk.
+    /// </summary>
     public partial class OSDiskDetails
     {
         /// <summary>
@@ -30,16 +33,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the id of the disk containing the OS.
         /// </summary>
         [JsonProperty(PropertyName = "osVhdId")]
         public string OsVhdId { get; set; }
 
         /// <summary>
+        /// Gets or sets the type of the OS on the VM.
         /// </summary>
         [JsonProperty(PropertyName = "osType")]
         public string OsType { get; set; }
 
         /// <summary>
+        /// Gets or sets the OS disk VHD name.
         /// </summary>
         [JsonProperty(PropertyName = "vhdName")]
         public string VhdName { get; set; }

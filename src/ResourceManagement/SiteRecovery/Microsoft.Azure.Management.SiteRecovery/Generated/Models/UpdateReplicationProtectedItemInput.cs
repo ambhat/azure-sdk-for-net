@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Update replication protected item input.
+    /// </summary>
     public partial class UpdateReplicationProtectedItemInput
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets update replication protected item properties.
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public UpdateReplicationProtectedItemInputProperties Properties { get; set; }

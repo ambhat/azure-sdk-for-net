@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// ApplyRecoveryPoint input specific to HyperVReplicaAzure provider.
+    /// </summary>
     public partial class HyperVReplicaAzureApplyRecoveryPointInput : ApplyRecoveryPointProviderSpecificInput
     {
         /// <summary>
@@ -32,16 +35,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the vault location where the recovery Vm resides.
         /// </summary>
         [JsonProperty(PropertyName = "vaultLocation")]
         public string VaultLocation { get; set; }
 
         /// <summary>
+        /// Gets or sets the primary kek certificate pfx.
         /// </summary>
         [JsonProperty(PropertyName = "primaryKekCertificatePfx")]
         public string PrimaryKekCertificatePfx { get; set; }
 
         /// <summary>
+        /// Gets or sets the secondary kek certificate pfx.
         /// </summary>
         [JsonProperty(PropertyName = "secondaryKekCertificatePfx")]
         public string SecondaryKekCertificatePfx { get; set; }

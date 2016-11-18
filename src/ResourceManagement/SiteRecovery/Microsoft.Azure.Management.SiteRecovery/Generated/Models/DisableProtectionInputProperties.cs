@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Disable protection input properties.
+    /// </summary>
     public partial class DisableProtectionInputProperties
     {
         /// <summary>
@@ -24,18 +27,22 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// Initializes a new instance of the DisableProtectionInputProperties
         /// class.
         /// </summary>
-        public DisableProtectionInputProperties(int? disableProtectionReason = default(int?), DisableProtectionProviderSpecificInput replicationProviderInput = default(DisableProtectionProviderSpecificInput))
+        public DisableProtectionInputProperties(DisableProtectionReason? disableProtectionReason = default(DisableProtectionReason?), DisableProtectionProviderSpecificInput replicationProviderInput = default(DisableProtectionProviderSpecificInput))
         {
             DisableProtectionReason = disableProtectionReason;
             ReplicationProviderInput = replicationProviderInput;
         }
 
         /// <summary>
+        /// Gets or sets Disable protection reason. It can have values
+        /// NotSpecified/MigrationComplete. Possible values include:
+        /// 'NotSpecified', 'MigrationComplete'
         /// </summary>
         [JsonProperty(PropertyName = "disableProtectionReason")]
-        public int? DisableProtectionReason { get; set; }
+        public DisableProtectionReason? DisableProtectionReason { get; set; }
 
         /// <summary>
+        /// Gets or sets replication provider specific input.
         /// </summary>
         [JsonProperty(PropertyName = "replicationProviderInput")]
         public DisableProtectionProviderSpecificInput ReplicationProviderInput { get; set; }

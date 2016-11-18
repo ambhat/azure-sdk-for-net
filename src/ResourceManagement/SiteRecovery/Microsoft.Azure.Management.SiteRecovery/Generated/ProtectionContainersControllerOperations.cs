@@ -45,9 +45,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </summary>
         public SiteRecoveryManagementClient Client { get; private set; }
 
+        /// <summary>
+        /// Removes a protection container.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric ARM name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Unique protection container ARM name.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -211,9 +216,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the protection container details.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container id.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -408,11 +418,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Create a protection container.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric ARM name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Unique protection container ARM name.
         /// </param>
         /// <param name='creationInput'>
+        /// Creation input.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -587,7 +603,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of protection container.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric name.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -776,6 +796,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of all protection containers in a vault.
+        /// </summary>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
         /// </param>
@@ -957,6 +980,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of protection container.
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>
@@ -1113,6 +1139,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             return _result;
         }
 
+        /// <summary>
+        /// Gets the list of all protection containers in a vault.
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

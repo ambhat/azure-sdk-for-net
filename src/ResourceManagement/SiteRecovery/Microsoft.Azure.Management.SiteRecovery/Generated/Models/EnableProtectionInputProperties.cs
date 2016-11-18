@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Enable protection input properties.
+    /// </summary>
     public partial class EnableProtectionInputProperties
     {
         /// <summary>
@@ -32,16 +35,24 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Policy Id.
         /// </summary>
         [JsonProperty(PropertyName = "policyId")]
         public string PolicyId { get; set; }
 
         /// <summary>
+        /// Gets or sets the protectable item Id.
         /// </summary>
         [JsonProperty(PropertyName = "protectableItemId")]
         public string ProtectableItemId { get; set; }
 
         /// <summary>
+        /// Gets or sets the ReplicationProviderInput.
+        /// For HyperVReplicaAzure provider, it will be
+        /// AzureEnableProtectionInput object.
+        /// For San provider, it will be SanEnableProtectionInput
+        /// object.
+        /// For HyperVReplicaAzure provider, it can be null.
         /// </summary>
         [JsonProperty(PropertyName = "providerSpecificDetails")]
         public EnableProtectionProviderSpecificInput ProviderSpecificDetails { get; set; }

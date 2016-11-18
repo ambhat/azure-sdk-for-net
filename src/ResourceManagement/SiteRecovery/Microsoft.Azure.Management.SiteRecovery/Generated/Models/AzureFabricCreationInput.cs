@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Fabric provider specific settings.
+    /// </summary>
     [JsonObject("Azure")]
     public partial class AzureFabricCreationInput : FabricSpecificCreationInput
     {
@@ -29,6 +32,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Location.
         /// </summary>
         [JsonProperty(PropertyName = "location")]
         public string Location { get; set; }

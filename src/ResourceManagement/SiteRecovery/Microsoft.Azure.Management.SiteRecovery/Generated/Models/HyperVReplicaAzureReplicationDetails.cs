@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Hyper V Replica Azure provider specific settings.
+    /// </summary>
     public partial class HyperVReplicaAzureReplicationDetails : ReplicationProviderSpecificSettings
     {
         /// <summary>
@@ -45,81 +48,100 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Azure VM Disk details.
         /// </summary>
         [JsonProperty(PropertyName = "azureVMDiskDetails")]
         public IList<AzureVmDiskDetails> AzureVMDiskDetails { get; set; }
 
         /// <summary>
+        /// Gets or sets Recovery Azure given name.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryAzureVMName")]
         public string RecoveryAzureVMName { get; set; }
 
         /// <summary>
+        /// Gets or sets the Recovery Azure VM size.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryAzureVMSize")]
         public string RecoveryAzureVMSize { get; set; }
 
         /// <summary>
+        /// Gets or sets the recovery Azure storage account.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryAzureStorageAccount")]
         public string RecoveryAzureStorageAccount { get; set; }
 
         /// <summary>
+        /// Gets or sets the Last replication time.
         /// </summary>
         [JsonProperty(PropertyName = "lastReplicatedTime")]
         public DateTime? LastReplicatedTime { get; set; }
 
         /// <summary>
+        /// Gets or sets the virtual machine Id.
         /// </summary>
         [JsonProperty(PropertyName = "vmId")]
         public string VmId { get; set; }
 
         /// <summary>
+        /// Gets or sets the protection state for the vm.
         /// </summary>
         [JsonProperty(PropertyName = "vmProtectionState")]
         public string VmProtectionState { get; set; }
 
         /// <summary>
+        /// Gets or sets the protection state description for the vm.
         /// </summary>
         [JsonProperty(PropertyName = "vmProtectionStateDescription")]
         public string VmProtectionStateDescription { get; set; }
 
         /// <summary>
+        /// Gets or sets initial replication details.
         /// </summary>
         [JsonProperty(PropertyName = "initialReplicationDetails")]
         public InitialReplicationDetails InitialReplicationDetails { get; set; }
 
         /// <summary>
+        /// Gets or sets the PE Network details.
         /// </summary>
         [JsonProperty(PropertyName = "vmNics")]
         public IList<VMNicDetails> VmNics { get; set; }
 
         /// <summary>
+        /// Gets or sets the selected recovery azure network Id.
         /// </summary>
         [JsonProperty(PropertyName = "selectedRecoveryAzureNetworkId")]
         public string SelectedRecoveryAzureNetworkId { get; set; }
 
         /// <summary>
+        /// Gets or sets the encryption info.
         /// </summary>
         [JsonProperty(PropertyName = "encryption")]
         public string Encryption { get; set; }
 
         /// <summary>
+        /// Gets or sets the operating system info.
         /// </summary>
         [JsonProperty(PropertyName = "oSDetails")]
         public OSDetails OSDetails { get; set; }
 
         /// <summary>
+        /// Gets or sets the RAM size of the VM on the primary side.
         /// </summary>
         [JsonProperty(PropertyName = "sourceVmRAMSizeInMB")]
         public int? SourceVmRAMSizeInMB { get; set; }
 
         /// <summary>
+        /// Gets or sets the CPU count of the VM on the primary side.
         /// </summary>
         [JsonProperty(PropertyName = "sourceVmCPUCount")]
         public int? SourceVmCPUCount { get; set; }
 
         /// <summary>
+        /// Gets or sets the selected option to enable RDP\\\\SSH on target vm
+        /// after failover.
+        /// String value of
+        /// {SrsDataContract.EnableRDPOnTargetOption} enum.
         /// </summary>
         [JsonProperty(PropertyName = "enableRDPOnTargetOption")]
         public string EnableRDPOnTargetOption { get; set; }

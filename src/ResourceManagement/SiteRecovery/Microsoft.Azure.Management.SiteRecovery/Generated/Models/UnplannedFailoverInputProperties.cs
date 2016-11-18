@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Input definition for planned failover input properties.
+    /// </summary>
     public partial class UnplannedFailoverInputProperties
     {
         /// <summary>
@@ -32,16 +35,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Failover direction.
         /// </summary>
         [JsonProperty(PropertyName = "failoverDirection")]
         public string FailoverDirection { get; set; }
 
         /// <summary>
+        /// Gets or sets source site operations status
         /// </summary>
         [JsonProperty(PropertyName = "sourceSiteOperations")]
         public string SourceSiteOperations { get; set; }
 
         /// <summary>
+        /// Gets or sets Provider specific settings
         /// </summary>
         [JsonProperty(PropertyName = "providerSpecificDetails")]
         public ProviderSpecificFailoverInput ProviderSpecificDetails { get; set; }

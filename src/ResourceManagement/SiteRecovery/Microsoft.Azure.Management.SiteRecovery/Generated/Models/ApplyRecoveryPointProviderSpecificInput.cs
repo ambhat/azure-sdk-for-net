@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Provider specific input for apply recovery point.
+    /// </summary>
     public partial class ApplyRecoveryPointProviderSpecificInput
     {
         /// <summary>

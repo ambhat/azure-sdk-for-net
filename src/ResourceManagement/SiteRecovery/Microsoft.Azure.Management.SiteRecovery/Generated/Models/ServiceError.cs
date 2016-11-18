@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// ASR error model
+    /// </summary>
     public partial class ServiceError
     {
         /// <summary>
@@ -32,26 +35,31 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets error code.
         /// </summary>
         [JsonProperty(PropertyName = "code")]
         public string Code { get; set; }
 
         /// <summary>
+        /// Gets or sets error message.
         /// </summary>
         [JsonProperty(PropertyName = "message")]
         public string Message { get; set; }
 
         /// <summary>
+        /// Gets or sets possible causes of error.
         /// </summary>
         [JsonProperty(PropertyName = "possibleCauses")]
         public string PossibleCauses { get; set; }
 
         /// <summary>
+        /// Gets or sets recommended action to resolve error.
         /// </summary>
         [JsonProperty(PropertyName = "recommendedAction")]
         public string RecommendedAction { get; set; }
 
         /// <summary>
+        /// Gets or sets activity Id.
         /// </summary>
         [JsonProperty(PropertyName = "activityId")]
         public string ActivityId { get; set; }

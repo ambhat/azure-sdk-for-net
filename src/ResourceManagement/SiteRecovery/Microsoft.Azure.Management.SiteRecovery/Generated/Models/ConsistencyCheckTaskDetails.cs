@@ -12,6 +12,10 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class contains monitoring details of all the inconsistent
+    /// Protected Entites in Vmm.
+    /// </summary>
     public partial class ConsistencyCheckTaskDetails : TaskTypeDetails
     {
         /// <summary>
@@ -30,6 +34,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the list of inconsistent Vm details.
         /// </summary>
         [JsonProperty(PropertyName = "vmDetails")]
         public IList<InconsistentVmDetails> VmDetails { get; set; }

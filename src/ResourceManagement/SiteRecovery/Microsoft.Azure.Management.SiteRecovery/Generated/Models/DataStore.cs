@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// The datastore details of the MT.
+    /// </summary>
     public partial class DataStore
     {
         /// <summary>
@@ -32,26 +35,31 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the symbolic name of data store.
         /// </summary>
         [JsonProperty(PropertyName = "symbolicName")]
         public string SymbolicName { get; set; }
 
         /// <summary>
+        /// Gets or sets the uuid of data store.
         /// </summary>
         [JsonProperty(PropertyName = "uuid")]
         public string Uuid { get; set; }
 
         /// <summary>
+        /// Gets or sets the capacity of data store in GBs.
         /// </summary>
         [JsonProperty(PropertyName = "capacity")]
         public string Capacity { get; set; }
 
         /// <summary>
+        /// Gets or sets the free space of data store in GBs.
         /// </summary>
         [JsonProperty(PropertyName = "freeSpace")]
         public string FreeSpace { get; set; }
 
         /// <summary>
+        /// Gets or sets the type of data store.
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string Type { get; set; }

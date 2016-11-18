@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Onprem disk details data.
+    /// </summary>
     public partial class DiskDetails
     {
         /// <summary>
@@ -31,21 +34,25 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the hard disk max size in MB.
         /// </summary>
         [JsonProperty(PropertyName = "maxSizeMB")]
         public long? MaxSizeMB { get; set; }
 
         /// <summary>
+        /// Gets or sets the type of the volume.
         /// </summary>
         [JsonProperty(PropertyName = "vhdType")]
         public string VhdType { get; set; }
 
         /// <summary>
+        /// Gets or sets the VHD Id.
         /// </summary>
         [JsonProperty(PropertyName = "vhdId")]
         public string VhdId { get; set; }
 
         /// <summary>
+        /// Gets or sets the VHD name.
         /// </summary>
         [JsonProperty(PropertyName = "vhdName")]
         public string VhdName { get; set; }

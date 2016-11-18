@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Protection profile input.
+    /// </summary>
     public partial class CreatePolicyInput
     {
         /// <summary>
@@ -28,6 +31,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets policy creation properties.
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public CreatePolicyInputProperties Properties { get; set; }

@@ -12,6 +12,11 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class represents the group task details when parent child
+    /// relationship exists
+    /// in the drill down.
+    /// </summary>
     public partial class GroupTaskDetails
     {
         /// <summary>
@@ -28,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the child tasks.
         /// </summary>
         [JsonProperty(PropertyName = "childTasks")]
         public IList<ASRTask> ChildTasks { get; set; }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Hyper V replica provider specific settings
+    /// </summary>
     public partial class HyperVVirtualMachineDetails : ConfigurationSettings
     {
         /// <summary>
@@ -33,21 +36,25 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the source id of the object.
         /// </summary>
         [JsonProperty(PropertyName = "sourceItemId")]
         public string SourceItemId { get; set; }
 
         /// <summary>
+        /// Gets or sets the id of the object in fabric.
         /// </summary>
         [JsonProperty(PropertyName = "generation")]
         public string Generation { get; set; }
 
         /// <summary>
+        /// Gets or sets the Last replication time.
         /// </summary>
         [JsonProperty(PropertyName = "osDetails")]
         public OSDetails OsDetails { get; set; }
 
         /// <summary>
+        /// Gets or sets the Last successful failover time.
         /// </summary>
         [JsonProperty(PropertyName = "diskDetails")]
         public IList<DiskDetails> DiskDetails { get; set; }

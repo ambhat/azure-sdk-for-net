@@ -18,24 +18,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
     /// </summary>
     public static partial class ProtectionContainersControllerOperationsExtensions
     {
+            /// <summary>
+            /// Removes a protection container.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric ARM name.
             /// </param>
             /// <param name='protectionContainerName'>
+            /// Unique protection container ARM name.
             /// </param>
             public static void RemoveProtectionContainer(this IProtectionContainersControllerOperations operations, string fabricName, string protectionContainerName)
             {
                 Task.Factory.StartNew(s => ((IProtectionContainersControllerOperations)s).RemoveProtectionContainerAsync(fabricName, protectionContainerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Removes a protection container.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric ARM name.
             /// </param>
             /// <param name='protectionContainerName'>
+            /// Unique protection container ARM name.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -45,24 +55,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 await operations.RemoveProtectionContainerWithHttpMessagesAsync(fabricName, protectionContainerName, null, cancellationToken).ConfigureAwait(false);
             }
 
+            /// <summary>
+            /// Gets the protection container details.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric name.
             /// </param>
             /// <param name='protectionContainerName'>
+            /// Protection container id.
             /// </param>
             public static ProtectionContainer GetProtectionContainer(this IProtectionContainersControllerOperations operations, string fabricName, string protectionContainerName)
             {
                 return Task.Factory.StartNew(s => ((IProtectionContainersControllerOperations)s).GetProtectionContainerAsync(fabricName, protectionContainerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the protection container details.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric name.
             /// </param>
             /// <param name='protectionContainerName'>
+            /// Protection container id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -75,28 +95,40 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Create a protection container.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric ARM name.
             /// </param>
             /// <param name='protectionContainerName'>
+            /// Unique protection container ARM name.
             /// </param>
             /// <param name='creationInput'>
+            /// Creation input.
             /// </param>
             public static void CreateProtectionContainer(this IProtectionContainersControllerOperations operations, string fabricName, string protectionContainerName, CreateProtectionContainerInput creationInput)
             {
                 Task.Factory.StartNew(s => ((IProtectionContainersControllerOperations)s).CreateProtectionContainerAsync(fabricName, protectionContainerName, creationInput), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Create a protection container.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric ARM name.
             /// </param>
             /// <param name='protectionContainerName'>
+            /// Unique protection container ARM name.
             /// </param>
             /// <param name='creationInput'>
+            /// Creation input.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -106,20 +138,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 await operations.CreateProtectionContainerWithHttpMessagesAsync(fabricName, protectionContainerName, creationInput, null, cancellationToken).ConfigureAwait(false);
             }
 
+            /// <summary>
+            /// Gets the list of protection container.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric name.
             /// </param>
             public static IPage<ProtectionContainer> EnumerateProtectionContainers(this IProtectionContainersControllerOperations operations, string fabricName)
             {
                 return Task.Factory.StartNew(s => ((IProtectionContainersControllerOperations)s).EnumerateProtectionContainersAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of protection container.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Unique fabric name.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -132,6 +172,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Gets the list of all protection containers in a vault.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -140,6 +183,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 return Task.Factory.StartNew(s => ((IProtectionContainersControllerOperations)s).EnumerateAllProtectionContainersAsync(), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of all protection containers in a vault.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -154,6 +200,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Gets the list of protection container.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -165,6 +214,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 return Task.Factory.StartNew(s => ((IProtectionContainersControllerOperations)s).EnumerateProtectionContainersNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of protection container.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -182,6 +234,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Gets the list of all protection containers in a vault.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -193,6 +248,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 return Task.Factory.StartNew(s => ((IProtectionContainersControllerOperations)s).EnumerateAllProtectionContainersNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of all protection containers in a vault.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>

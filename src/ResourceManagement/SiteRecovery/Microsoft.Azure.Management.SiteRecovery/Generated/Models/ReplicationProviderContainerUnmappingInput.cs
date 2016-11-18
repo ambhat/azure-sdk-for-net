@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Provider specific input for unpairing operations.
+    /// </summary>
     public partial class ReplicationProviderContainerUnmappingInput
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the class type.
         /// </summary>
         [JsonProperty(PropertyName = "instanceType")]
         public string InstanceType { get; set; }

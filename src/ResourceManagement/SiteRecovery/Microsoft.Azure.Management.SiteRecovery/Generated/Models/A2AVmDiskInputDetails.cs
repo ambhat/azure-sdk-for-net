@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Azure VM disk input details.
+    /// </summary>
     public partial class A2AVmDiskInputDetails
     {
         /// <summary>
@@ -30,16 +33,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the disk Uri.
         /// </summary>
         [JsonProperty(PropertyName = "diskUri")]
         public string DiskUri { get; set; }
 
         /// <summary>
+        /// Gets or sets the recovery VHD storage account Id.
         /// </summary>
         [JsonProperty(PropertyName = "recoveryAzureStorageAccountId")]
         public string RecoveryAzureStorageAccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets the primary staging storage account Id.
         /// </summary>
         [JsonProperty(PropertyName = "primaryStagingAzureStorageAccountId")]
         public string PrimaryStagingAzureStorageAccountId { get; set; }

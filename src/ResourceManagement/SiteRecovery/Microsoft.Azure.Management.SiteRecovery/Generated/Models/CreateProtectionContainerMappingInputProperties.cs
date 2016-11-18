@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Configure pairing input properties.
+    /// </summary>
     public partial class CreateProtectionContainerMappingInputProperties
     {
         /// <summary>
@@ -32,16 +35,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the target unique protection container name.
         /// </summary>
         [JsonProperty(PropertyName = "targetProtectionContainerId")]
         public string TargetProtectionContainerId { get; set; }
 
         /// <summary>
+        /// Gets or sets applicable policy.
         /// </summary>
         [JsonProperty(PropertyName = "PolicyId")]
         public string PolicyId { get; set; }
 
         /// <summary>
+        /// Gets or sets Provider specific input for pairing.
         /// </summary>
         [JsonProperty(PropertyName = "providerSpecificInput")]
         public ReplicationProviderSpecificContainerMappingInput ProviderSpecificInput { get; set; }

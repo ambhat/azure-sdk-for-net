@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Reverse replication input.
+    /// </summary>
     public partial class ReverseReplicationInput
     {
         /// <summary>
@@ -28,6 +31,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets Reverse replication properties
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public ReverseReplicationInputProperties Properties { get; set; }

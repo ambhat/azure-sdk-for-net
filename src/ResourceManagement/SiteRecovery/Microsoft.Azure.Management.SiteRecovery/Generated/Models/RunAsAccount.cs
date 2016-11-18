@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// CS Accounts Details.
+    /// </summary>
     public partial class RunAsAccount
     {
         /// <summary>
@@ -29,11 +32,13 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the CS RunAs account Id.
         /// </summary>
         [JsonProperty(PropertyName = "accountId")]
         public string AccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets the CS RunAs account name.
         /// </summary>
         [JsonProperty(PropertyName = "accountName")]
         public string AccountName { get; set; }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class represents the details for a test failover job.
+    /// </summary>
     public partial class TestFailoverJobDetails : JobDetails
     {
         /// <summary>
@@ -34,31 +37,38 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the test failover status.
         /// </summary>
         [JsonProperty(PropertyName = "testFailoverStatus")]
         public string TestFailoverStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the test failover comments.
         /// </summary>
         [JsonProperty(PropertyName = "comments")]
         public string Comments { get; set; }
 
         /// <summary>
+        /// Gets or sets the test network name.
         /// </summary>
         [JsonProperty(PropertyName = "networkName")]
         public string NetworkName { get; set; }
 
         /// <summary>
+        /// Gets or sets the test network friendly name.
         /// </summary>
         [JsonProperty(PropertyName = "networkFriendlyName")]
         public string NetworkFriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the test network type (see TestFailoverInput enum for
+        /// possible values).
         /// </summary>
         [JsonProperty(PropertyName = "networkType")]
         public string NetworkType { get; set; }
 
         /// <summary>
+        /// Gets or sets the test VM details.
         /// </summary>
         [JsonProperty(PropertyName = "protectedItemDetails")]
         public IList<TestFailoverReplicationProtectedItemDetails> ProtectedItemDetails { get; set; }

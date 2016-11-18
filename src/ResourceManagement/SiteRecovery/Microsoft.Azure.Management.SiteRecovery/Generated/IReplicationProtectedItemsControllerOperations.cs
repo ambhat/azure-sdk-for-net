@@ -18,13 +18,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
     /// </summary>
     public partial interface IReplicationProtectedItemsControllerOperations
     {
+        /// <summary>
+        /// Applies recovery point.
+        /// </summary>
         /// <param name='fabricName'>
+        /// The ARM fabric name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// The protection container name.
         /// </param>
         /// <param name='replicatedProtectedItemName'>
+        /// The replicated protected item's name.
         /// </param>
         /// <param name='applyRecoveryPointInput'>
+        /// The ApplyRecoveryPointInput.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -33,11 +40,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> ApplyRecoveryPointWithHttpMessagesAsync(string fabricName, string protectionContainerName, string replicatedProtectedItemName, ApplyRecoveryPointInput applyRecoveryPointInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Repairs replication.
+        /// </summary>
         /// <param name='fabricName'>
+        /// The name of the fabric.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// The name of the container.
         /// </param>
         /// <param name='replicatedProtectedItemName'>
+        /// The name of the replication protected item.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -46,13 +59,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> RepairReplicationWithHttpMessagesAsync(string fabricName, string protectionContainerName, string replicatedProtectedItemName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Update the mobility service on a protected machine.
+        /// </summary>
         /// <param name='fabricName'>
+        /// The name of the fabric containing the machine.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// The name of the container containing the machine.
         /// </param>
         /// <param name='replicatedProtectedItemName'>
+        /// The name of the machine on which the agent
+        /// is to be updated.
         /// </param>
         /// <param name='updateMobilityServiceRequest'>
+        /// Request to update the mobility
+        /// service on the machine.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -61,13 +83,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> UpdateMobilityServiceWithHttpMessagesAsync(string fabricName, string protectionContainerName, string replicatedProtectedItemName, UpdateMobilityServiceRequest updateMobilityServiceRequest, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Execute Reverse Replication\\\\Reprotect
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container name.
         /// </param>
         /// <param name='replicatedProtectedItemName'>
+        /// Replication protected item name.
         /// </param>
         /// <param name='rrInput'>
+        /// Disable protection input.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -76,11 +105,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> ReprotectWithHttpMessagesAsync(string fabricName, string protectionContainerName, string replicatedProtectedItemName, ReverseReplicationInput rrInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Execute commit failover
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container name.
         /// </param>
         /// <param name='replicatedProtectedItemName'>
+        /// Replication protected item name.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -89,13 +124,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> CommitFailoverWithHttpMessagesAsync(string fabricName, string protectionContainerName, string replicatedProtectedItemName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Execute test failover
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container name.
         /// </param>
         /// <param name='replicatedProtectedItemName'>
+        /// Replication protected item name.
         /// </param>
         /// <param name='failoverInput'>
+        /// Disable protection input.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -104,13 +146,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> TestFailoverWithHttpMessagesAsync(string fabricName, string protectionContainerName, string replicatedProtectedItemName, TestFailoverInput failoverInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Execute unplanned failover
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container name.
         /// </param>
         /// <param name='replicatedProtectedItemName'>
+        /// Replication protected item name.
         /// </param>
         /// <param name='failoverInput'>
+        /// Disable protection input.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -119,13 +168,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> UnplannedFailoverWithHttpMessagesAsync(string fabricName, string protectionContainerName, string replicatedProtectedItemName, UnplannedFailoverInput failoverInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Execute planned failover
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container name.
         /// </param>
         /// <param name='replicatedProtectedItemName'>
+        /// Replication protected item name.
         /// </param>
         /// <param name='failoverInput'>
+        /// Disable protection input.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -134,13 +190,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> PlannedFailoverWithHttpMessagesAsync(string fabricName, string protectionContainerName, string replicatedProtectedItemName, PlannedFailoverInput failoverInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Disables protection.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container name.
         /// </param>
         /// <param name='replicatedProtectedItemName'>
+        /// Replication protected item name.
         /// </param>
         /// <param name='disableProtectionInput'>
+        /// Disable protection input.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -149,11 +212,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> DisableProtectionWithHttpMessagesAsync(string fabricName, string protectionContainerName, string replicatedProtectedItemName, DisableProtectionInput disableProtectionInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the details of a Replication protected item.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Fabric unique name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container name.
         /// </param>
         /// <param name='replicatedProtectedItemName'>
+        /// Replication protected item name.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -162,13 +231,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<ReplicationProtectedItem>> GetReplicationProtectedItemWithHttpMessagesAsync(string fabricName, string protectionContainerName, string replicatedProtectedItemName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Enables protection.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique name of the fabric.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container name.
         /// </param>
         /// <param name='replicatedProtectedItemName'>
+        /// Replication protected item name.
         /// </param>
         /// <param name='input'>
+        /// Enable Protection Input.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -177,11 +253,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> EnableProtectionWithHttpMessagesAsync(string fabricName, string protectionContainerName, string replicatedProtectedItemName, EnableProtectionInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Purges protection.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container name.
         /// </param>
         /// <param name='replicatedProtectedItemName'>
+        /// Replication protected item name.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -190,13 +272,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> PurgeProtectionWithHttpMessagesAsync(string fabricName, string protectionContainerName, string replicatedProtectedItemName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Updates protection.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Unique fabric name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container name.
         /// </param>
         /// <param name='replicatedProtectedItemName'>
+        /// Replication protected item name.
         /// </param>
         /// <param name='updateProtectionInput'>
+        /// Update protection input.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -205,9 +294,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> UpdateProtectionWithHttpMessagesAsync(string fabricName, string protectionContainerName, string replicatedProtectedItemName, UpdateReplicationProtectedItemInput updateProtectionInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of Replication protected items.
+        /// </summary>
         /// <param name='fabricName'>
+        /// Fabric unique name.
         /// </param>
         /// <param name='protectionContainerName'>
+        /// Protection container name.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -216,7 +310,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<IPage<ReplicationProtectedItem>>> EnumerateReplicationProtectedItemsWithHttpMessagesAsync(string fabricName, string protectionContainerName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of replication protected items.
+        /// </summary>
         /// <param name='skipToken'>
+        /// The pagination token.
+        /// Possible values: "FabricId" or "FabricId_CloudId" or
+        /// null
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -225,6 +325,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<IPage<ReplicationProtectedItem>>> EnumerateAllReplicationProtectedItemsWithHttpMessagesAsync(string skipToken = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of Replication protected items.
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>
@@ -235,6 +338,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<IPage<ReplicationProtectedItem>>> EnumerateReplicationProtectedItemsNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of replication protected items.
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

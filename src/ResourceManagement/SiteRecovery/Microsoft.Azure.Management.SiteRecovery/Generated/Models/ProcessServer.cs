@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Details of the Process Server.
+    /// </summary>
     public partial class ProcessServer
     {
         /// <summary>
@@ -49,111 +52,135 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Process Server's friendly name.
         /// </summary>
         [JsonProperty(PropertyName = "friendlyName")]
         public string FriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the Process Server Id.
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
 
         /// <summary>
+        /// Gets or sets the IP address of the server.
         /// </summary>
         [JsonProperty(PropertyName = "ipAddress")]
         public string IpAddress { get; set; }
 
         /// <summary>
+        /// Gets or sets the OS type of the server.
         /// </summary>
         [JsonProperty(PropertyName = "osType")]
         public string OsType { get; set; }
 
         /// <summary>
+        /// Gets or sets the version of the scout component on the server.
         /// </summary>
         [JsonProperty(PropertyName = "agentVersion")]
         public string AgentVersion { get; set; }
 
         /// <summary>
+        /// Gets or sets the last heartbeat received from the server.
         /// </summary>
         [JsonProperty(PropertyName = "lastHeartbeat")]
         public DateTime? LastHeartbeat { get; set; }
 
         /// <summary>
+        /// Gets or sets version status
         /// </summary>
         [JsonProperty(PropertyName = "versionStatus")]
         public string VersionStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of the mobility service updates available on
+        /// the
+        /// Process Server.
         /// </summary>
         [JsonProperty(PropertyName = "mobilityServiceUpdates")]
         public IList<MobilityServiceUpdate> MobilityServiceUpdates { get; set; }
 
         /// <summary>
+        /// Gets or sets the agent generated Id.
         /// </summary>
         [JsonProperty(PropertyName = "hostId")]
         public string HostId { get; set; }
 
         /// <summary>
+        /// Gets or sets the servers configured with this PS.
         /// </summary>
         [JsonProperty(PropertyName = "machineCount")]
         public string MachineCount { get; set; }
 
         /// <summary>
+        /// Gets or sets the number of replication pairs configured in this PS.
         /// </summary>
         [JsonProperty(PropertyName = "replicationPairCount")]
         public string ReplicationPairCount { get; set; }
 
         /// <summary>
+        /// Gets or sets the percentage of the system load.
         /// </summary>
         [JsonProperty(PropertyName = "systemLoad")]
         public string SystemLoad { get; set; }
 
         /// <summary>
+        /// Gets or sets the system load status.
         /// </summary>
         [JsonProperty(PropertyName = "systemLoadStatus")]
         public string SystemLoadStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the percentage of the CPU load.
         /// </summary>
         [JsonProperty(PropertyName = "cpuLoad")]
         public string CpuLoad { get; set; }
 
         /// <summary>
+        /// Gets or sets the CPU load status.
         /// </summary>
         [JsonProperty(PropertyName = "cpuLoadStatus")]
         public string CpuLoadStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the total memory.
         /// </summary>
         [JsonProperty(PropertyName = "totalMemoryInBytes")]
         public long? TotalMemoryInBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the available memory.
         /// </summary>
         [JsonProperty(PropertyName = "availableMemoryInBytes")]
         public long? AvailableMemoryInBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the memory usage status.
         /// </summary>
         [JsonProperty(PropertyName = "memoryUsageStatus")]
         public string MemoryUsageStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the total space.
         /// </summary>
         [JsonProperty(PropertyName = "totalSpaceInBytes")]
         public long? TotalSpaceInBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the available space.
         /// </summary>
         [JsonProperty(PropertyName = "availableSpaceInBytes")]
         public long? AvailableSpaceInBytes { get; set; }
 
         /// <summary>
+        /// Gets or sets the space usage status.
         /// </summary>
         [JsonProperty(PropertyName = "spaceUsageStatus")]
         public string SpaceUsageStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets the PS service status.
         /// </summary>
         [JsonProperty(PropertyName = "psServiceStatus")]
         public string PsServiceStatus { get; set; }

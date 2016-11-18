@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Update protection profile input.
+    /// </summary>
     public partial class UpdatePolicyInput
     {
         /// <summary>
@@ -28,6 +31,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the ReplicationProviderSettings.
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public UpdatePolicyInputProperties Properties { get; set; }

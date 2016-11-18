@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Azure Fabric Specific Details.
+    /// </summary>
     [JsonObject("Azure")]
     public partial class AzureFabricSpecificDetails : FabricSpecificDetails
     {
@@ -30,11 +33,13 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Location for the Azure fabric.
         /// </summary>
         [JsonProperty(PropertyName = "location")]
         public string Location { get; set; }
 
         /// <summary>
+        /// Gets or sets the container Ids for the Azure fabric.
         /// </summary>
         [JsonProperty(PropertyName = "containerIds")]
         public IList<string> ContainerIds { get; set; }

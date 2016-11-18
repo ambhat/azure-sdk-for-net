@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// ApplyRecoveryPoint input specific to A2A provider.
+    /// </summary>
     public partial class A2AApplyRecoveryPointInput : ApplyRecoveryPointProviderSpecificInput
     {
         /// <summary>

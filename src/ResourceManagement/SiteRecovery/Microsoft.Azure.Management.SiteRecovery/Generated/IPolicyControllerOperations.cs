@@ -18,7 +18,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
     /// </summary>
     public partial interface IPolicyControllerOperations
     {
+        /// <summary>
+        /// Gets the requested policy.
+        /// </summary>
         /// <param name='policyName'>
+        /// Unique name of policy.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -27,9 +31,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<Policy>> GetPolicyWithHttpMessagesAsync(string policyName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Creates the policy.
+        /// </summary>
         /// <param name='policyName'>
+        /// name of Protection Profile
         /// </param>
         /// <param name='input'>
+        /// Create policy input
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -38,7 +47,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> CreatePolicyWithHttpMessagesAsync(string policyName, CreatePolicyInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Delete the policy.
+        /// </summary>
         /// <param name='policyName'>
+        /// Policy name.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -47,9 +60,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> DeletePolicyWithHttpMessagesAsync(string policyName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Updates the protection profile.
+        /// </summary>
         /// <param name='policyName'>
+        /// Protection profile Id.
         /// </param>
         /// <param name='input'>
+        /// Update Protection Profile Input
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -58,6 +76,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse> UpdatePolicyWithHttpMessagesAsync(string policyName, UpdatePolicyInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of policies
+        /// </summary>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
@@ -65,6 +86,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// The cancellation token.
         /// </param>
         Task<AzureOperationResponse<IPage<Policy>>> EnumeratePoliciesWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Gets the list of policies
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

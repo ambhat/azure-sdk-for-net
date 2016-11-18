@@ -18,6 +18,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
     /// </summary>
     public static partial class NetworksControllerOperationsExtensions
     {
+            /// <summary>
+            /// Gets the list of networks. View-only API.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -26,6 +29,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 return Task.Factory.StartNew(s => ((INetworksControllerOperations)s).EnumerateAllNetworksAsync(), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of networks. View-only API.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -40,20 +46,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Gets the list of networks under a fabric.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Server Id.
             /// </param>
             public static IPage<Network> EnumerateNetworks(this INetworksControllerOperations operations, string fabricName)
             {
                 return Task.Factory.StartNew(s => ((INetworksControllerOperations)s).EnumerateNetworksAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of networks under a fabric.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Server Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -66,24 +80,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Gets a network with specified server id and network name.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Server Id.
             /// </param>
             /// <param name='networkName'>
+            /// Primary network name.
             /// </param>
             public static Network GetNetwork(this INetworksControllerOperations operations, string fabricName, string networkName)
             {
                 return Task.Factory.StartNew(s => ((INetworksControllerOperations)s).GetNetworkAsync(fabricName, networkName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets a network with specified server id and network name.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
+            /// Server Id.
             /// </param>
             /// <param name='networkName'>
+            /// Primary network name.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -96,6 +120,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Gets the list of networks. View-only API.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -107,6 +134,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 return Task.Factory.StartNew(s => ((INetworksControllerOperations)s).EnumerateAllNetworksNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of networks. View-only API.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -124,6 +154,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 }
             }
 
+            /// <summary>
+            /// Gets the list of networks under a fabric.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -135,6 +168,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 return Task.Factory.StartNew(s => ((INetworksControllerOperations)s).EnumerateNetworksNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// Gets the list of networks under a fabric.
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Provider specific reverse replication input.
+    /// </summary>
     public partial class ReverseReplicationProviderSpecificInput
     {
         /// <summary>

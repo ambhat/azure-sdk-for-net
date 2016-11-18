@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class represents job details based on specific job type.
+    /// </summary>
     public partial class AsrJobDetails : JobDetails
     {
         /// <summary>

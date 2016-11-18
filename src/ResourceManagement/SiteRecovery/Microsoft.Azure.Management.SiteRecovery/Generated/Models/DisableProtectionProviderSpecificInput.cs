@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Disable protection provider specific input.
+    /// </summary>
     public partial class DisableProtectionProviderSpecificInput
     {
         /// <summary>

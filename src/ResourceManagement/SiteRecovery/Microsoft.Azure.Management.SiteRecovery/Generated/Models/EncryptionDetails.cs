@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Encryption details for the fabric.
+    /// </summary>
     public partial class EncryptionDetails
     {
         /// <summary>
@@ -30,16 +33,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the key encryption key state for the Vmm.
         /// </summary>
         [JsonProperty(PropertyName = "kekState")]
         public string KekState { get; set; }
 
         /// <summary>
+        /// Gets or sets the key encryption key certificate thumbprint.
         /// </summary>
         [JsonProperty(PropertyName = "kekCertThumbprint")]
         public string KekCertThumbprint { get; set; }
 
         /// <summary>
+        /// Gets or sets the key encryption key certificate expiry date.
         /// </summary>
         [JsonProperty(PropertyName = "kekCertExpiryDate")]
         public DateTime? KekCertExpiryDate { get; set; }

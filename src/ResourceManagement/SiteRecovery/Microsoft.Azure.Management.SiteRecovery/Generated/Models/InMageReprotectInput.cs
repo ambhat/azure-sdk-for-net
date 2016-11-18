@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// InMageAzureV2 specific provider input.
+    /// </summary>
     public partial class InMageReprotectInput : ReverseReplicationProviderSpecificInput
     {
         /// <summary>
@@ -35,41 +38,49 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Master Target Id.
         /// </summary>
         [JsonProperty(PropertyName = "masterTargetId")]
         public string MasterTargetId { get; set; }
 
         /// <summary>
+        /// Gets or sets the Process Server Id.
         /// </summary>
         [JsonProperty(PropertyName = "processServerId")]
         public string ProcessServerId { get; set; }
 
         /// <summary>
+        /// Gets or sets the retention drive to use on the MT.
         /// </summary>
         [JsonProperty(PropertyName = "retentionDrive")]
         public string RetentionDrive { get; set; }
 
         /// <summary>
+        /// Gets or sets the CS account Id.
         /// </summary>
         [JsonProperty(PropertyName = "runAsAccountId")]
         public string RunAsAccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets the target datastore name.
         /// </summary>
         [JsonProperty(PropertyName = "datastoreName")]
         public string DatastoreName { get; set; }
 
         /// <summary>
+        /// Gets or sets the enable disk exclusion input.
         /// </summary>
         [JsonProperty(PropertyName = "diskExclusionInput")]
         public InMageDiskExclusionInput DiskExclusionInput { get; set; }
 
         /// <summary>
+        /// Gets or sets the Policy Id.
         /// </summary>
         [JsonProperty(PropertyName = "profileId")]
         public string ProfileId { get; set; }
 
         /// <summary>
+        /// Gets or sets the disks to include list.
         /// </summary>
         [JsonProperty(PropertyName = "disksToInclude")]
         public IList<string> DisksToInclude { get; set; }

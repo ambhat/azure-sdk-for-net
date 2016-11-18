@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// HyperV replica 2012 replication details.
+    /// </summary>
     public partial class HyperVReplicaReplicationDetails : ReplicationProviderSpecificSettings
     {
         /// <summary>
@@ -36,36 +39,43 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Last replication time.
         /// </summary>
         [JsonProperty(PropertyName = "lastReplicatedTime")]
         public DateTime? LastReplicatedTime { get; set; }
 
         /// <summary>
+        /// Gets or sets the PE Network details.
         /// </summary>
         [JsonProperty(PropertyName = "vmNics")]
         public IList<VMNicDetails> VmNics { get; set; }
 
         /// <summary>
+        /// Gets or sets the virtual machine Id.
         /// </summary>
         [JsonProperty(PropertyName = "vmId")]
         public string VmId { get; set; }
 
         /// <summary>
+        /// Gets or sets the protection state for the vm.
         /// </summary>
         [JsonProperty(PropertyName = "vmProtectionState")]
         public string VmProtectionState { get; set; }
 
         /// <summary>
+        /// Gets or sets the protection state description for the vm.
         /// </summary>
         [JsonProperty(PropertyName = "vmProtectionStateDescription")]
         public string VmProtectionStateDescription { get; set; }
 
         /// <summary>
+        /// Gets or sets initial replication details.
         /// </summary>
         [JsonProperty(PropertyName = "initialReplicationDetails")]
         public InitialReplicationDetails InitialReplicationDetails { get; set; }
 
         /// <summary>
+        /// Gets or sets VM disk details.
         /// </summary>
         [JsonProperty(PropertyName = "vMDiskDetails")]
         public IList<DiskDetails> VMDiskDetails { get; set; }

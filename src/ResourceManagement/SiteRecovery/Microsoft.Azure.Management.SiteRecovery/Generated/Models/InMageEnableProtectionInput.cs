@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// VMware Azure specific enable protection input.
+    /// </summary>
     public partial class InMageEnableProtectionInput : EnableProtectionProviderSpecificInput
     {
         /// <summary>
@@ -24,14 +27,13 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// Initializes a new instance of the InMageEnableProtectionInput
         /// class.
         /// </summary>
-        public InMageEnableProtectionInput(string vmFriendlyName = default(string), string masterTargetId = default(string), string processServerId = default(string), string retentionDrive = default(string), string runAsAccountId = default(string), AzureDeploymentDetails sourceAzureDeployment = default(AzureDeploymentDetails), string multiVmGroupId = default(string), string multiVmGroupName = default(string), string datastoreName = default(string), InMageDiskExclusionInput diskExclusionInput = default(InMageDiskExclusionInput), IList<string> disksToInclude = default(IList<string>))
+        public InMageEnableProtectionInput(string vmFriendlyName = default(string), string masterTargetId = default(string), string processServerId = default(string), string retentionDrive = default(string), string runAsAccountId = default(string), string multiVmGroupId = default(string), string multiVmGroupName = default(string), string datastoreName = default(string), InMageDiskExclusionInput diskExclusionInput = default(InMageDiskExclusionInput), IList<string> disksToInclude = default(IList<string>))
         {
             VmFriendlyName = vmFriendlyName;
             MasterTargetId = masterTargetId;
             ProcessServerId = processServerId;
             RetentionDrive = retentionDrive;
             RunAsAccountId = runAsAccountId;
-            SourceAzureDeployment = sourceAzureDeployment;
             MultiVmGroupId = multiVmGroupId;
             MultiVmGroupName = multiVmGroupName;
             DatastoreName = datastoreName;
@@ -40,56 +42,61 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the Vm Name.
         /// </summary>
         [JsonProperty(PropertyName = "vmFriendlyName")]
         public string VmFriendlyName { get; set; }
 
         /// <summary>
+        /// Gets or sets the Master Target Id.
         /// </summary>
         [JsonProperty(PropertyName = "masterTargetId")]
         public string MasterTargetId { get; set; }
 
         /// <summary>
+        /// Gets or sets the Process Server Id.
         /// </summary>
         [JsonProperty(PropertyName = "processServerId")]
         public string ProcessServerId { get; set; }
 
         /// <summary>
+        /// Gets or sets the retention drive to use on the MT.
         /// </summary>
         [JsonProperty(PropertyName = "retentionDrive")]
         public string RetentionDrive { get; set; }
 
         /// <summary>
+        /// Gets or sets the CS account Id.
         /// </summary>
         [JsonProperty(PropertyName = "runAsAccountId")]
         public string RunAsAccountId { get; set; }
 
         /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "sourceAzureDeployment")]
-        public AzureDeploymentDetails SourceAzureDeployment { get; set; }
-
-        /// <summary>
+        /// Gets or sets the multi vm group Id.
         /// </summary>
         [JsonProperty(PropertyName = "multiVmGroupId")]
         public string MultiVmGroupId { get; set; }
 
         /// <summary>
+        /// Gets or sets the multi vm group name.
         /// </summary>
         [JsonProperty(PropertyName = "multiVmGroupName")]
         public string MultiVmGroupName { get; set; }
 
         /// <summary>
+        /// Gets or sets the target datastore name.
         /// </summary>
         [JsonProperty(PropertyName = "datastoreName")]
         public string DatastoreName { get; set; }
 
         /// <summary>
+        /// Gets or sets the enable disk exclusion input.
         /// </summary>
         [JsonProperty(PropertyName = "diskExclusionInput")]
         public InMageDiskExclusionInput DiskExclusionInput { get; set; }
 
         /// <summary>
+        /// Gets or sets the disks to include list.
         /// </summary>
         [JsonProperty(PropertyName = "disksToInclude")]
         public IList<string> DisksToInclude { get; set; }

@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Disk details for E2A provider.
+    /// </summary>
     public partial class AzureVmDiskDetails
     {
         /// <summary>
@@ -34,36 +37,43 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets VHD type.
         /// </summary>
         [JsonProperty(PropertyName = "vhdType")]
         public string VhdType { get; set; }
 
         /// <summary>
+        /// Gets or sets the VHD id.
         /// </summary>
         [JsonProperty(PropertyName = "vhdId")]
         public string VhdId { get; set; }
 
         /// <summary>
+        /// Gets or sets VHD name.
         /// </summary>
         [JsonProperty(PropertyName = "vhdName")]
         public string VhdName { get; set; }
 
         /// <summary>
+        /// Gets or sets max side in MB.
         /// </summary>
         [JsonProperty(PropertyName = "maxSizeMB")]
         public string MaxSizeMB { get; set; }
 
         /// <summary>
+        /// Gets or sets blob uri of the Azure disk.
         /// </summary>
         [JsonProperty(PropertyName = "targetDiskLocation")]
         public string TargetDiskLocation { get; set; }
 
         /// <summary>
+        /// Gets or sets the target Azure disk name.
         /// </summary>
         [JsonProperty(PropertyName = "targetDiskName")]
         public string TargetDiskName { get; set; }
 
         /// <summary>
+        /// Gets or sets Ordinal\\\\LunId of the disk for the Azure VM.
         /// </summary>
         [JsonProperty(PropertyName = "lunId")]
         public string LunId { get; set; }

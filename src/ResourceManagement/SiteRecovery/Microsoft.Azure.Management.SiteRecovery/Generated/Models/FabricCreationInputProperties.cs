@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Properties of site details provided during the time of site creation
+    /// </summary>
     public partial class FabricCreationInputProperties
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets fabric provider specific creation input.
         /// </summary>
         [JsonProperty(PropertyName = "customDetails")]
         public FabricSpecificCreationInput CustomDetails { get; set; }

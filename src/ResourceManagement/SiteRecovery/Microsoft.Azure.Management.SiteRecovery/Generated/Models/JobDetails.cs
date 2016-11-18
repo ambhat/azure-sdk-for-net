@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Job details based on specific job type.
+    /// </summary>
     public partial class JobDetails
     {
         /// <summary>
@@ -28,6 +31,10 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets the affected object properties like source server,
+        /// source cloud, target
+        /// server, target cloud etc. based on the workflow object
+        /// details.
         /// </summary>
         [JsonProperty(PropertyName = "affectedObjectDetails")]
         public IDictionary<string, string> AffectedObjectDetails { get; set; }

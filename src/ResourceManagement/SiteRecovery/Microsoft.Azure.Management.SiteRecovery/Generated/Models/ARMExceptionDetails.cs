@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// Service based exception details.
+    /// </summary>
     public partial class ARMExceptionDetails
     {
         /// <summary>
@@ -34,36 +37,43 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets service error code.
         /// </summary>
         [JsonProperty(PropertyName = "code")]
         public string Code { get; set; }
 
         /// <summary>
+        /// Gets error message.
         /// </summary>
         [JsonProperty(PropertyName = "message")]
         public string Message { get; set; }
 
         /// <summary>
+        /// Gets possible cause for error.
         /// </summary>
         [JsonProperty(PropertyName = "possibleCauses")]
         public string PossibleCauses { get; set; }
 
         /// <summary>
+        /// Gets recommended action for the error.
         /// </summary>
         [JsonProperty(PropertyName = "recommendedAction")]
         public string RecommendedAction { get; set; }
 
         /// <summary>
+        /// Gets the client request Id for the session.
         /// </summary>
         [JsonProperty(PropertyName = "clientRequestId")]
         public string ClientRequestId { get; set; }
 
         /// <summary>
+        /// Gets the activity Id for the session.
         /// </summary>
         [JsonProperty(PropertyName = "activityId")]
         public string ActivityId { get; set; }
 
         /// <summary>
+        /// Gets exception target.
         /// </summary>
         [JsonProperty(PropertyName = "target")]
         public string Target { get; set; }

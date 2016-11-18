@@ -12,6 +12,9 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     using Microsoft.Rest.Serialization;
     using Microsoft.Rest.Azure;
 
+    /// <summary>
+    /// This class represents the vm NicUpdates task details.
+    /// </summary>
     public partial class VmNicUpdatesTaskDetails : TaskTypeDetails
     {
         /// <summary>
@@ -30,16 +33,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         }
 
         /// <summary>
+        /// Gets or sets VmId.
         /// </summary>
         [JsonProperty(PropertyName = "vmId")]
         public string VmId { get; set; }
 
         /// <summary>
+        /// Gets or sets NicId.
         /// </summary>
         [JsonProperty(PropertyName = "nicId")]
         public string NicId { get; set; }
 
         /// <summary>
+        /// Gets or sets Name.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
