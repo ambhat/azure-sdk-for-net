@@ -26,6 +26,28 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
 {
     public partial class A2AProtectedDiskDetails
     {
+        private double _dataPendingAtSourceAgentInMB;
+        
+        /// <summary>
+        /// Optional. The data pending at source virtual machine in MB.
+        /// </summary>
+        public double DataPendingAtSourceAgentInMB
+        {
+            get { return this._dataPendingAtSourceAgentInMB; }
+            set { this._dataPendingAtSourceAgentInMB = value; }
+        }
+        
+        private double _dataPendingInStagingStorageAccountInMB;
+        
+        /// <summary>
+        /// Optional. The data pending for replication in MB at staging account.
+        /// </summary>
+        public double DataPendingInStagingStorageAccountInMB
+        {
+            get { return this._dataPendingInStagingStorageAccountInMB; }
+            set { this._dataPendingInStagingStorageAccountInMB = value; }
+        }
+        
         private string _diskType;
         
         /// <summary>
@@ -46,6 +68,28 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         {
             get { return this._diskUri; }
             set { this._diskUri = value; }
+        }
+        
+        private string _monitoringJobType;
+        
+        /// <summary>
+        /// Optional. The type of the monitoring job.
+        /// </summary>
+        public string MonitoringJobType
+        {
+            get { return this._monitoringJobType; }
+            set { this._monitoringJobType = value; }
+        }
+        
+        private int? _monitoringPercentageCompletion;
+        
+        /// <summary>
+        /// Optional. The percentage of the monitoring job.
+        /// </summary>
+        public int? MonitoringPercentageCompletion
+        {
+            get { return this._monitoringPercentageCompletion; }
+            set { this._monitoringPercentageCompletion = value; }
         }
         
         private string _primaryDiskAzureStorageAccountId;
@@ -90,6 +134,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         {
             get { return this._recoveryDiskUri; }
             set { this._recoveryDiskUri = value; }
+        }
+        
+        private bool _resyncRequired;
+        
+        /// <summary>
+        /// Optional. Value indicating whether resync is required by the disk.
+        /// </summary>
+        public bool ResyncRequired
+        {
+            get { return this._resyncRequired; }
+            set { this._resyncRequired = value; }
         }
         
         /// <summary>

@@ -43,6 +43,39 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._fabricObjectId = value; }
         }
         
+        private System.DateTime? _lastHeartbeat;
+        
+        /// <summary>
+        /// Optional. Gets or sets the last heart beat.
+        /// </summary>
+        public System.DateTime? LastHeartbeat
+        {
+            get { return this._lastHeartbeat; }
+            set { this._lastHeartbeat = value; }
+        }
+        
+        private string _monitoringJobType;
+        
+        /// <summary>
+        /// Optional. Gets or sets the monitoring job type.
+        /// </summary>
+        public string MonitoringJobType
+        {
+            get { return this._monitoringJobType; }
+            set { this._monitoringJobType = value; }
+        }
+        
+        private int? _monitoringPercentageCompletion;
+        
+        /// <summary>
+        /// Optional. Gets or sets the monitoring percentage completion.
+        /// </summary>
+        public int? MonitoringPercentageCompletion
+        {
+            get { return this._monitoringPercentageCompletion; }
+            set { this._monitoringPercentageCompletion = value; }
+        }
+        
         private string _multiVmGroupId;
         
         /// <summary>

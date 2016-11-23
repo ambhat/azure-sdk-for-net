@@ -426,6 +426,60 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         }
                                         propertiesInstance.ProviderDetails = inMageAzureV2EventDetailsInstance;
                                     }
+                                    if (typeName == "A2A")
+                                    {
+                                        A2AEventDetails a2AEventDetailsInstance = new A2AEventDetails();
+                                        
+                                        JToken protectedItemNameValue = providerSpecificDetailsValue["protectedItemName"];
+                                        if (protectedItemNameValue != null && protectedItemNameValue.Type != JTokenType.Null)
+                                        {
+                                            string protectedItemNameInstance = ((string)protectedItemNameValue);
+                                            a2AEventDetailsInstance.ProtectedItemName = protectedItemNameInstance;
+                                        }
+                                        
+                                        JToken fabricObjectIdValue = providerSpecificDetailsValue["fabricObjectId"];
+                                        if (fabricObjectIdValue != null && fabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string fabricObjectIdInstance = ((string)fabricObjectIdValue);
+                                            a2AEventDetailsInstance.FabricObjectId = fabricObjectIdInstance;
+                                        }
+                                        
+                                        JToken fabricNameValue4 = providerSpecificDetailsValue["fabricName"];
+                                        if (fabricNameValue4 != null && fabricNameValue4.Type != JTokenType.Null)
+                                        {
+                                            string fabricNameInstance4 = ((string)fabricNameValue4);
+                                            a2AEventDetailsInstance.FabricName = fabricNameInstance4;
+                                        }
+                                        
+                                        JToken fabricLocationValue = providerSpecificDetailsValue["fabricLocation"];
+                                        if (fabricLocationValue != null && fabricLocationValue.Type != JTokenType.Null)
+                                        {
+                                            string fabricLocationInstance = ((string)fabricLocationValue);
+                                            a2AEventDetailsInstance.FabricLocation = fabricLocationInstance;
+                                        }
+                                        
+                                        JToken remoteFabricNameValue3 = providerSpecificDetailsValue["remoteFabricName"];
+                                        if (remoteFabricNameValue3 != null && remoteFabricNameValue3.Type != JTokenType.Null)
+                                        {
+                                            string remoteFabricNameInstance3 = ((string)remoteFabricNameValue3);
+                                            a2AEventDetailsInstance.RemoteFabricName = remoteFabricNameInstance3;
+                                        }
+                                        
+                                        JToken remoteFabricLocationValue = providerSpecificDetailsValue["remoteFabricLocation"];
+                                        if (remoteFabricLocationValue != null && remoteFabricLocationValue.Type != JTokenType.Null)
+                                        {
+                                            string remoteFabricLocationInstance = ((string)remoteFabricLocationValue);
+                                            a2AEventDetailsInstance.RemoteFabricLocation = remoteFabricLocationInstance;
+                                        }
+                                        
+                                        JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
+                                        if (instanceTypeValue5 != null && instanceTypeValue5.Type != JTokenType.Null)
+                                        {
+                                            string instanceTypeInstance5 = ((string)instanceTypeValue5);
+                                            a2AEventDetailsInstance.InstanceType = instanceTypeInstance5;
+                                        }
+                                        propertiesInstance.ProviderDetails = a2AEventDetailsInstance;
+                                    }
                                 }
                                 
                                 JToken eventSpecificDetailsValue = propertiesValue["eventSpecificDetails"];
@@ -464,11 +518,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             jobStatusEventDetailsInstance.AffectedObjectType = affectedObjectTypeInstance;
                                         }
                                         
-                                        JToken instanceTypeValue5 = eventSpecificDetailsValue["instanceType"];
-                                        if (instanceTypeValue5 != null && instanceTypeValue5.Type != JTokenType.Null)
+                                        JToken instanceTypeValue6 = eventSpecificDetailsValue["instanceType"];
+                                        if (instanceTypeValue6 != null && instanceTypeValue6.Type != JTokenType.Null)
                                         {
-                                            string instanceTypeInstance5 = ((string)instanceTypeValue5);
-                                            jobStatusEventDetailsInstance.InstanceType = instanceTypeInstance5;
+                                            string instanceTypeInstance6 = ((string)instanceTypeValue6);
+                                            jobStatusEventDetailsInstance.InstanceType = instanceTypeInstance6;
                                         }
                                         propertiesInstance.EventSpecificDetails = jobStatusEventDetailsInstance;
                                     }
@@ -1030,6 +1084,60 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 }
                                                 propertiesInstance.ProviderDetails = inMageAzureV2EventDetailsInstance;
                                             }
+                                            if (typeName == "A2A")
+                                            {
+                                                A2AEventDetails a2AEventDetailsInstance = new A2AEventDetails();
+                                                
+                                                JToken protectedItemNameValue = providerSpecificDetailsValue["protectedItemName"];
+                                                if (protectedItemNameValue != null && protectedItemNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string protectedItemNameInstance = ((string)protectedItemNameValue);
+                                                    a2AEventDetailsInstance.ProtectedItemName = protectedItemNameInstance;
+                                                }
+                                                
+                                                JToken fabricObjectIdValue = providerSpecificDetailsValue["fabricObjectId"];
+                                                if (fabricObjectIdValue != null && fabricObjectIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string fabricObjectIdInstance = ((string)fabricObjectIdValue);
+                                                    a2AEventDetailsInstance.FabricObjectId = fabricObjectIdInstance;
+                                                }
+                                                
+                                                JToken fabricNameValue4 = providerSpecificDetailsValue["fabricName"];
+                                                if (fabricNameValue4 != null && fabricNameValue4.Type != JTokenType.Null)
+                                                {
+                                                    string fabricNameInstance4 = ((string)fabricNameValue4);
+                                                    a2AEventDetailsInstance.FabricName = fabricNameInstance4;
+                                                }
+                                                
+                                                JToken fabricLocationValue = providerSpecificDetailsValue["fabricLocation"];
+                                                if (fabricLocationValue != null && fabricLocationValue.Type != JTokenType.Null)
+                                                {
+                                                    string fabricLocationInstance = ((string)fabricLocationValue);
+                                                    a2AEventDetailsInstance.FabricLocation = fabricLocationInstance;
+                                                }
+                                                
+                                                JToken remoteFabricNameValue3 = providerSpecificDetailsValue["remoteFabricName"];
+                                                if (remoteFabricNameValue3 != null && remoteFabricNameValue3.Type != JTokenType.Null)
+                                                {
+                                                    string remoteFabricNameInstance3 = ((string)remoteFabricNameValue3);
+                                                    a2AEventDetailsInstance.RemoteFabricName = remoteFabricNameInstance3;
+                                                }
+                                                
+                                                JToken remoteFabricLocationValue = providerSpecificDetailsValue["remoteFabricLocation"];
+                                                if (remoteFabricLocationValue != null && remoteFabricLocationValue.Type != JTokenType.Null)
+                                                {
+                                                    string remoteFabricLocationInstance = ((string)remoteFabricLocationValue);
+                                                    a2AEventDetailsInstance.RemoteFabricLocation = remoteFabricLocationInstance;
+                                                }
+                                                
+                                                JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
+                                                if (instanceTypeValue5 != null && instanceTypeValue5.Type != JTokenType.Null)
+                                                {
+                                                    string instanceTypeInstance5 = ((string)instanceTypeValue5);
+                                                    a2AEventDetailsInstance.InstanceType = instanceTypeInstance5;
+                                                }
+                                                propertiesInstance.ProviderDetails = a2AEventDetailsInstance;
+                                            }
                                         }
                                         
                                         JToken eventSpecificDetailsValue = propertiesValue["eventSpecificDetails"];
@@ -1068,11 +1176,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     jobStatusEventDetailsInstance.AffectedObjectType = affectedObjectTypeInstance;
                                                 }
                                                 
-                                                JToken instanceTypeValue5 = eventSpecificDetailsValue["instanceType"];
-                                                if (instanceTypeValue5 != null && instanceTypeValue5.Type != JTokenType.Null)
+                                                JToken instanceTypeValue6 = eventSpecificDetailsValue["instanceType"];
+                                                if (instanceTypeValue6 != null && instanceTypeValue6.Type != JTokenType.Null)
                                                 {
-                                                    string instanceTypeInstance5 = ((string)instanceTypeValue5);
-                                                    jobStatusEventDetailsInstance.InstanceType = instanceTypeInstance5;
+                                                    string instanceTypeInstance6 = ((string)instanceTypeValue6);
+                                                    jobStatusEventDetailsInstance.InstanceType = instanceTypeInstance6;
                                                 }
                                                 propertiesInstance.EventSpecificDetails = jobStatusEventDetailsInstance;
                                             }
