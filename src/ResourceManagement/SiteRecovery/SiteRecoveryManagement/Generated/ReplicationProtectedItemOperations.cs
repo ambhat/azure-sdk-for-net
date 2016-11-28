@@ -2739,6 +2739,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                         propertiesValue["networkId"] = input.Properties.NetworkId;
                     }
                     
+                    if (input.Properties.SkipTestFailoverCleanup != null)
+                    {
+                        propertiesValue["skipTestFailoverCleanup"] = input.Properties.SkipTestFailoverCleanup;
+                    }
+                    
                     if (input.Properties.ProviderSpecificDetails != null)
                     {
                         JObject providerSpecificDetailsValue = new JObject();
@@ -2834,6 +2839,235 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             }
                         }
                     }
+                }
+                
+                requestContent = requestDoc.ToString(Newtonsoft.Json.Formatting.Indented);
+                httpRequest.Content = new StringContent(requestContent, Encoding.UTF8);
+                httpRequest.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
+                
+                // Send Request
+                HttpResponseMessage httpResponse = null;
+                try
+                {
+                    if (shouldTrace)
+                    {
+                        TracingAdapter.SendRequest(invocationId, httpRequest);
+                    }
+                    cancellationToken.ThrowIfCancellationRequested();
+                    httpResponse = await this.Client.HttpClient.SendAsync(httpRequest, cancellationToken).ConfigureAwait(false);
+                    if (shouldTrace)
+                    {
+                        TracingAdapter.ReceiveResponse(invocationId, httpResponse);
+                    }
+                    HttpStatusCode statusCode = httpResponse.StatusCode;
+                    if (statusCode != HttpStatusCode.OK && statusCode != HttpStatusCode.Accepted)
+                    {
+                        cancellationToken.ThrowIfCancellationRequested();
+                        CloudException ex = CloudException.Create(httpRequest, requestContent, httpResponse, await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false));
+                        if (shouldTrace)
+                        {
+                            TracingAdapter.Error(invocationId, ex);
+                        }
+                        throw ex;
+                    }
+                    
+                    // Create Result
+                    LongRunningOperationResponse result = null;
+                    // Deserialize Response
+                    result = new LongRunningOperationResponse();
+                    result.StatusCode = statusCode;
+                    if (httpResponse.Headers.Contains("Azure-AsyncOperation"))
+                    {
+                        result.AsyncOperation = httpResponse.Headers.GetValues("Azure-AsyncOperation").FirstOrDefault();
+                    }
+                    if (httpResponse.Content != null && httpResponse.Content.Headers.Contains("Content-Type"))
+                    {
+                        result.ContentType = httpResponse.Content.Headers.GetValues("Content-Type").FirstOrDefault();
+                    }
+                    if (httpResponse.Headers.Contains("Date"))
+                    {
+                        result.Date = httpResponse.Headers.GetValues("Date").FirstOrDefault();
+                    }
+                    if (httpResponse.Headers.Contains("Location"))
+                    {
+                        result.Location = httpResponse.Headers.GetValues("Location").FirstOrDefault();
+                    }
+                    if (httpResponse.Headers.Contains("Retry-After"))
+                    {
+                        result.RetryAfter = int.Parse(httpResponse.Headers.GetValues("Retry-After").FirstOrDefault(), CultureInfo.InvariantCulture);
+                    }
+                    if (httpResponse.Headers.Contains("x-ms-client-request-id"))
+                    {
+                        result.ClientRequestId = httpResponse.Headers.GetValues("x-ms-client-request-id").FirstOrDefault();
+                    }
+                    if (httpResponse.Headers.Contains("x-ms-correlation-request-id"))
+                    {
+                        result.CorrelationRequestId = httpResponse.Headers.GetValues("x-ms-correlation-request-id").FirstOrDefault();
+                    }
+                    if (httpResponse.Headers.Contains("x-ms-request-id"))
+                    {
+                        result.RequestId = httpResponse.Headers.GetValues("x-ms-request-id").FirstOrDefault();
+                    }
+                    
+                    if (shouldTrace)
+                    {
+                        TracingAdapter.Exit(invocationId, result);
+                    }
+                    return result;
+                }
+                finally
+                {
+                    if (httpResponse != null)
+                    {
+                        httpResponse.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (httpRequest != null)
+                {
+                    httpRequest.Dispose();
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Execute Test failover cleanup for the given Replication protected
+        /// item.
+        /// </summary>
+        /// <param name='fabricName'>
+        /// Required. Fabric name.
+        /// </param>
+        /// <param name='protectionContainerName'>
+        /// Required. Protection container name.
+        /// </param>
+        /// <param name='replicationProtectedItemName'>
+        /// Required. Replication protected item name.
+        /// </param>
+        /// <param name='input'>
+        /// Required. Test failover cleanup input.
+        /// </param>
+        /// <param name='customRequestHeaders'>
+        /// Optional. Request header parameters.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// Cancellation token.
+        /// </param>
+        /// <returns>
+        /// A standard service response for long running operations.
+        /// </returns>
+        public async Task<LongRunningOperationResponse> BeginTestFailoverCleanupAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, TestFailoverCleanupInput input, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken)
+        {
+            // Validate
+            if (fabricName == null)
+            {
+                throw new ArgumentNullException("fabricName");
+            }
+            if (protectionContainerName == null)
+            {
+                throw new ArgumentNullException("protectionContainerName");
+            }
+            if (replicationProtectedItemName == null)
+            {
+                throw new ArgumentNullException("replicationProtectedItemName");
+            }
+            if (input == null)
+            {
+                throw new ArgumentNullException("input");
+            }
+            if (input.Properties == null)
+            {
+                throw new ArgumentNullException("input.Properties");
+            }
+            
+            // Tracing
+            bool shouldTrace = TracingAdapter.IsEnabled;
+            string invocationId = null;
+            if (shouldTrace)
+            {
+                invocationId = TracingAdapter.NextInvocationId.ToString();
+                Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
+                tracingParameters.Add("fabricName", fabricName);
+                tracingParameters.Add("protectionContainerName", protectionContainerName);
+                tracingParameters.Add("replicationProtectedItemName", replicationProtectedItemName);
+                tracingParameters.Add("input", input);
+                tracingParameters.Add("customRequestHeaders", customRequestHeaders);
+                TracingAdapter.Enter(invocationId, this, "BeginTestFailoverCleanupAsync", tracingParameters);
+            }
+            
+            // Construct URL
+            string url = "";
+            url = url + "/Subscriptions/";
+            if (this.Client.Credentials.SubscriptionId != null)
+            {
+                url = url + Uri.EscapeDataString(this.Client.Credentials.SubscriptionId);
+            }
+            url = url + "/resourceGroups/";
+            url = url + Uri.EscapeDataString(this.Client.ResourceGroupName);
+            url = url + "/providers/";
+            url = url + Uri.EscapeDataString(this.Client.ResourceNamespace);
+            url = url + "/";
+            url = url + Uri.EscapeDataString(this.Client.ResourceType);
+            url = url + "/";
+            url = url + Uri.EscapeDataString(this.Client.ResourceName);
+            url = url + "/replicationFabrics/";
+            url = url + Uri.EscapeDataString(fabricName);
+            url = url + "/replicationProtectionContainers/";
+            url = url + Uri.EscapeDataString(protectionContainerName);
+            url = url + "/ReplicationProtectedItems/";
+            url = url + Uri.EscapeDataString(replicationProtectedItemName);
+            url = url + "/testFailoverCleanup";
+            List<string> queryParameters = new List<string>();
+            queryParameters.Add("api-version=2016-08-10");
+            if (queryParameters.Count > 0)
+            {
+                url = url + "?" + string.Join("&", queryParameters);
+            }
+            string baseUrl = this.Client.BaseUri.AbsoluteUri;
+            // Trim '/' character from the end of baseUrl and beginning of url.
+            if (baseUrl[baseUrl.Length - 1] == '/')
+            {
+                baseUrl = baseUrl.Substring(0, baseUrl.Length - 1);
+            }
+            if (url[0] == '/')
+            {
+                url = url.Substring(1);
+            }
+            url = baseUrl + "/" + url;
+            url = url.Replace(" ", "%20");
+            
+            // Create HTTP transport objects
+            HttpRequestMessage httpRequest = null;
+            try
+            {
+                httpRequest = new HttpRequestMessage();
+                httpRequest.Method = HttpMethod.Post;
+                httpRequest.RequestUri = new Uri(url);
+                
+                // Set Headers
+                httpRequest.Headers.Add("Accept-Language", customRequestHeaders.Culture);
+                httpRequest.Headers.Add("Agent-Authentication", customRequestHeaders.AgentAuthenticationHeader);
+                httpRequest.Headers.Add("x-ms-client-request-id", customRequestHeaders.ClientRequestId);
+                httpRequest.Headers.Add("x-ms-version", "2015-01-01");
+                
+                // Set Credentials
+                cancellationToken.ThrowIfCancellationRequested();
+                await this.Client.Credentials.ProcessHttpRequestAsync(httpRequest, cancellationToken).ConfigureAwait(false);
+                
+                // Serialize Request
+                string requestContent = null;
+                JToken requestDoc = null;
+                
+                JObject testFailoverCleanupInputValue = new JObject();
+                requestDoc = testFailoverCleanupInputValue;
+                
+                JObject propertiesValue = new JObject();
+                testFailoverCleanupInputValue["properties"] = propertiesValue;
+                
+                if (input.Properties.Comments != null)
+                {
+                    propertiesValue["comments"] = input.Properties.Comments;
                 }
                 
                 requestContent = requestDoc.ToString(Newtonsoft.Json.Formatting.Indented);
@@ -20074,6 +20308,2596 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("operationStatusLink", operationStatusLink);
                 TracingAdapter.Enter(invocationId, this, "GetReprotectStatusAsync", tracingParameters);
+            }
+            
+            // Construct URL
+            string url = "";
+            url = url + operationStatusLink;
+            url = url.Replace(" ", "%20");
+            
+            // Create HTTP transport objects
+            HttpRequestMessage httpRequest = null;
+            try
+            {
+                httpRequest = new HttpRequestMessage();
+                httpRequest.Method = HttpMethod.Get;
+                httpRequest.RequestUri = new Uri(url);
+                
+                // Set Headers
+                httpRequest.Headers.Add("x-ms-client-request-id", Guid.NewGuid().ToString());
+                httpRequest.Headers.Add("x-ms-version", "2015-01-01");
+                
+                // Set Credentials
+                cancellationToken.ThrowIfCancellationRequested();
+                await this.Client.Credentials.ProcessHttpRequestAsync(httpRequest, cancellationToken).ConfigureAwait(false);
+                
+                // Send Request
+                HttpResponseMessage httpResponse = null;
+                try
+                {
+                    if (shouldTrace)
+                    {
+                        TracingAdapter.SendRequest(invocationId, httpRequest);
+                    }
+                    cancellationToken.ThrowIfCancellationRequested();
+                    httpResponse = await this.Client.HttpClient.SendAsync(httpRequest, cancellationToken).ConfigureAwait(false);
+                    if (shouldTrace)
+                    {
+                        TracingAdapter.ReceiveResponse(invocationId, httpResponse);
+                    }
+                    HttpStatusCode statusCode = httpResponse.StatusCode;
+                    if (statusCode != HttpStatusCode.OK && statusCode != HttpStatusCode.Accepted)
+                    {
+                        cancellationToken.ThrowIfCancellationRequested();
+                        CloudException ex = CloudException.Create(httpRequest, null, httpResponse, await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false));
+                        if (shouldTrace)
+                        {
+                            TracingAdapter.Error(invocationId, ex);
+                        }
+                        throw ex;
+                    }
+                    
+                    // Create Result
+                    ReplicationProtectedItemOperationResponse result = null;
+                    // Deserialize Response
+                    if (statusCode == HttpStatusCode.OK || statusCode == HttpStatusCode.Accepted)
+                    {
+                        cancellationToken.ThrowIfCancellationRequested();
+                        string responseContent = await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        result = new ReplicationProtectedItemOperationResponse();
+                        JToken responseDoc = null;
+                        if (string.IsNullOrEmpty(responseContent) == false)
+                        {
+                            responseDoc = JToken.Parse(responseContent);
+                        }
+                        
+                        if (responseDoc != null && responseDoc.Type != JTokenType.Null)
+                        {
+                            ReplicationProtectedItem replicationProtectedItemInstance = new ReplicationProtectedItem();
+                            result.ReplicationProtectedItem = replicationProtectedItemInstance;
+                            
+                            JToken propertiesValue = responseDoc["properties"];
+                            if (propertiesValue != null && propertiesValue.Type != JTokenType.Null)
+                            {
+                                ReplicationProtectedItemProperties propertiesInstance = new ReplicationProtectedItemProperties();
+                                replicationProtectedItemInstance.Properties = propertiesInstance;
+                                
+                                JToken friendlyNameValue = propertiesValue["friendlyName"];
+                                if (friendlyNameValue != null && friendlyNameValue.Type != JTokenType.Null)
+                                {
+                                    string friendlyNameInstance = ((string)friendlyNameValue);
+                                    propertiesInstance.FriendlyName = friendlyNameInstance;
+                                }
+                                
+                                JToken protectedItemTypeValue = propertiesValue["protectedItemType"];
+                                if (protectedItemTypeValue != null && protectedItemTypeValue.Type != JTokenType.Null)
+                                {
+                                    string protectedItemTypeInstance = ((string)protectedItemTypeValue);
+                                    propertiesInstance.ProtectedItemType = protectedItemTypeInstance;
+                                }
+                                
+                                JToken protectableItemIdValue = propertiesValue["protectableItemId"];
+                                if (protectableItemIdValue != null && protectableItemIdValue.Type != JTokenType.Null)
+                                {
+                                    string protectableItemIdInstance = ((string)protectableItemIdValue);
+                                    propertiesInstance.ProtectableItemId = protectableItemIdInstance;
+                                }
+                                
+                                JToken recoveryServicesProviderIdValue = propertiesValue["recoveryServicesProviderId"];
+                                if (recoveryServicesProviderIdValue != null && recoveryServicesProviderIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryServicesProviderIdInstance = ((string)recoveryServicesProviderIdValue);
+                                    propertiesInstance.RecoveryServicesProviderId = recoveryServicesProviderIdInstance;
+                                }
+                                
+                                JToken primaryFabricFriendlyNameValue = propertiesValue["primaryFabricFriendlyName"];
+                                if (primaryFabricFriendlyNameValue != null && primaryFabricFriendlyNameValue.Type != JTokenType.Null)
+                                {
+                                    string primaryFabricFriendlyNameInstance = ((string)primaryFabricFriendlyNameValue);
+                                    propertiesInstance.PrimaryFabricFriendlyName = primaryFabricFriendlyNameInstance;
+                                }
+                                
+                                JToken recoveryFabricFriendlyNameValue = propertiesValue["recoveryFabricFriendlyName"];
+                                if (recoveryFabricFriendlyNameValue != null && recoveryFabricFriendlyNameValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryFabricFriendlyNameInstance = ((string)recoveryFabricFriendlyNameValue);
+                                    propertiesInstance.RecoveryFabricFriendlyName = recoveryFabricFriendlyNameInstance;
+                                }
+                                
+                                JToken recoveryFabricIdValue = propertiesValue["recoveryFabricId"];
+                                if (recoveryFabricIdValue != null && recoveryFabricIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryFabricIdInstance = ((string)recoveryFabricIdValue);
+                                    propertiesInstance.RecoveryFabricId = recoveryFabricIdInstance;
+                                }
+                                
+                                JToken primaryProtectionContainerFriendlyNameValue = propertiesValue["primaryProtectionContainerFriendlyName"];
+                                if (primaryProtectionContainerFriendlyNameValue != null && primaryProtectionContainerFriendlyNameValue.Type != JTokenType.Null)
+                                {
+                                    string primaryProtectionContainerFriendlyNameInstance = ((string)primaryProtectionContainerFriendlyNameValue);
+                                    propertiesInstance.PrimaryProtectionContainerFriendlyName = primaryProtectionContainerFriendlyNameInstance;
+                                }
+                                
+                                JToken recoveryProtectionContainerFriendlyNameValue = propertiesValue["recoveryProtectionContainerFriendlyName"];
+                                if (recoveryProtectionContainerFriendlyNameValue != null && recoveryProtectionContainerFriendlyNameValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryProtectionContainerFriendlyNameInstance = ((string)recoveryProtectionContainerFriendlyNameValue);
+                                    propertiesInstance.RecoveryProtectionContainerFriendlyName = recoveryProtectionContainerFriendlyNameInstance;
+                                }
+                                
+                                JToken protectionStateValue = propertiesValue["protectionState"];
+                                if (protectionStateValue != null && protectionStateValue.Type != JTokenType.Null)
+                                {
+                                    string protectionStateInstance = ((string)protectionStateValue);
+                                    propertiesInstance.ProtectionState = protectionStateInstance;
+                                }
+                                
+                                JToken protectionStateDescriptionValue = propertiesValue["protectionStateDescription"];
+                                if (protectionStateDescriptionValue != null && protectionStateDescriptionValue.Type != JTokenType.Null)
+                                {
+                                    string protectionStateDescriptionInstance = ((string)protectionStateDescriptionValue);
+                                    propertiesInstance.ProtectionStateDescription = protectionStateDescriptionInstance;
+                                }
+                                
+                                JToken activeLocationValue = propertiesValue["activeLocation"];
+                                if (activeLocationValue != null && activeLocationValue.Type != JTokenType.Null)
+                                {
+                                    string activeLocationInstance = ((string)activeLocationValue);
+                                    propertiesInstance.ActiveLocation = activeLocationInstance;
+                                }
+                                
+                                JToken testFailoverStateValue = propertiesValue["testFailoverState"];
+                                if (testFailoverStateValue != null && testFailoverStateValue.Type != JTokenType.Null)
+                                {
+                                    string testFailoverStateInstance = ((string)testFailoverStateValue);
+                                    propertiesInstance.TestFailoverState = testFailoverStateInstance;
+                                }
+                                
+                                JToken testFailoverStateDescriptionValue = propertiesValue["testFailoverStateDescription"];
+                                if (testFailoverStateDescriptionValue != null && testFailoverStateDescriptionValue.Type != JTokenType.Null)
+                                {
+                                    string testFailoverStateDescriptionInstance = ((string)testFailoverStateDescriptionValue);
+                                    propertiesInstance.TestFailoverStateDescription = testFailoverStateDescriptionInstance;
+                                }
+                                
+                                JToken allowedOperationsArray = propertiesValue["allowedOperations"];
+                                if (allowedOperationsArray != null && allowedOperationsArray.Type != JTokenType.Null)
+                                {
+                                    foreach (JToken allowedOperationsValue in ((JArray)allowedOperationsArray))
+                                    {
+                                        propertiesInstance.AllowedOperations.Add(((string)allowedOperationsValue));
+                                    }
+                                }
+                                
+                                JToken replicationHealthValue = propertiesValue["replicationHealth"];
+                                if (replicationHealthValue != null && replicationHealthValue.Type != JTokenType.Null)
+                                {
+                                    string replicationHealthInstance = ((string)replicationHealthValue);
+                                    propertiesInstance.ReplicationHealth = replicationHealthInstance;
+                                }
+                                
+                                JToken replicationHealthErrorsArray = propertiesValue["replicationHealthErrors"];
+                                if (replicationHealthErrorsArray != null && replicationHealthErrorsArray.Type != JTokenType.Null)
+                                {
+                                    foreach (JToken replicationHealthErrorsValue in ((JArray)replicationHealthErrorsArray))
+                                    {
+                                        HealthError healthErrorInstance = new HealthError();
+                                        propertiesInstance.ReplicationHealthErrors.Add(healthErrorInstance);
+                                        
+                                        JToken errorLevelValue = replicationHealthErrorsValue["errorLevel"];
+                                        if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
+                                        {
+                                            string errorLevelInstance = ((string)errorLevelValue);
+                                            healthErrorInstance.ErrorLevel = errorLevelInstance;
+                                        }
+                                        
+                                        JToken errorCodeValue = replicationHealthErrorsValue["errorCode"];
+                                        if (errorCodeValue != null && errorCodeValue.Type != JTokenType.Null)
+                                        {
+                                            string errorCodeInstance = ((string)errorCodeValue);
+                                            healthErrorInstance.ErrorCode = errorCodeInstance;
+                                        }
+                                        
+                                        JToken errorMessageValue = replicationHealthErrorsValue["errorMessage"];
+                                        if (errorMessageValue != null && errorMessageValue.Type != JTokenType.Null)
+                                        {
+                                            string errorMessageInstance = ((string)errorMessageValue);
+                                            healthErrorInstance.ErrorMessage = errorMessageInstance;
+                                        }
+                                        
+                                        JToken possibleCausesValue = replicationHealthErrorsValue["possibleCauses"];
+                                        if (possibleCausesValue != null && possibleCausesValue.Type != JTokenType.Null)
+                                        {
+                                            string possibleCausesInstance = ((string)possibleCausesValue);
+                                            healthErrorInstance.PossibleCauses = possibleCausesInstance;
+                                        }
+                                        
+                                        JToken recommendedActionValue = replicationHealthErrorsValue["recommendedAction"];
+                                        if (recommendedActionValue != null && recommendedActionValue.Type != JTokenType.Null)
+                                        {
+                                            string recommendedActionInstance = ((string)recommendedActionValue);
+                                            healthErrorInstance.RecommendedAction = recommendedActionInstance;
+                                        }
+                                        
+                                        JToken creationTimeUtcValue = replicationHealthErrorsValue["creationTimeUtc"];
+                                        if (creationTimeUtcValue != null && creationTimeUtcValue.Type != JTokenType.Null)
+                                        {
+                                            string creationTimeUtcInstance = ((string)creationTimeUtcValue);
+                                            healthErrorInstance.CreationTimeUtc = creationTimeUtcInstance;
+                                        }
+                                        
+                                        JToken recoveryProviderErrorMessageValue = replicationHealthErrorsValue["recoveryProviderErrorMessage"];
+                                        if (recoveryProviderErrorMessageValue != null && recoveryProviderErrorMessageValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryProviderErrorMessageInstance = ((string)recoveryProviderErrorMessageValue);
+                                            healthErrorInstance.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance;
+                                        }
+                                        
+                                        JToken entityIdValue = replicationHealthErrorsValue["entityId"];
+                                        if (entityIdValue != null && entityIdValue.Type != JTokenType.Null)
+                                        {
+                                            string entityIdInstance = ((string)entityIdValue);
+                                            healthErrorInstance.EntityId = entityIdInstance;
+                                        }
+                                    }
+                                }
+                                
+                                JToken policyIdValue = propertiesValue["policyId"];
+                                if (policyIdValue != null && policyIdValue.Type != JTokenType.Null)
+                                {
+                                    string policyIdInstance = ((string)policyIdValue);
+                                    propertiesInstance.PolicyID = policyIdInstance;
+                                }
+                                
+                                JToken policyFriendlyNameValue = propertiesValue["policyFriendlyName"];
+                                if (policyFriendlyNameValue != null && policyFriendlyNameValue.Type != JTokenType.Null)
+                                {
+                                    string policyFriendlyNameInstance = ((string)policyFriendlyNameValue);
+                                    propertiesInstance.PolicyFriendlyName = policyFriendlyNameInstance;
+                                }
+                                
+                                JToken lastSuccessfulFailoverTimeValue = propertiesValue["lastSuccessfulFailoverTime"];
+                                if (lastSuccessfulFailoverTimeValue != null && lastSuccessfulFailoverTimeValue.Type != JTokenType.Null)
+                                {
+                                    DateTime lastSuccessfulFailoverTimeInstance = ((DateTime)lastSuccessfulFailoverTimeValue);
+                                    propertiesInstance.LastSuccessfulFailoverTime = lastSuccessfulFailoverTimeInstance;
+                                }
+                                
+                                JToken lastSuccessfulTestFailoverTimeValue = propertiesValue["lastSuccessfulTestFailoverTime"];
+                                if (lastSuccessfulTestFailoverTimeValue != null && lastSuccessfulTestFailoverTimeValue.Type != JTokenType.Null)
+                                {
+                                    DateTime lastSuccessfulTestFailoverTimeInstance = ((DateTime)lastSuccessfulTestFailoverTimeValue);
+                                    propertiesInstance.LastSuccessfulTestFailoverTime = lastSuccessfulTestFailoverTimeInstance;
+                                }
+                                
+                                JToken currentScenarioValue = propertiesValue["currentScenario"];
+                                if (currentScenarioValue != null && currentScenarioValue.Type != JTokenType.Null)
+                                {
+                                    CurrentScenarioDetails currentScenarioInstance = new CurrentScenarioDetails();
+                                    propertiesInstance.CurrentScenario = currentScenarioInstance;
+                                    
+                                    JToken scenarioNameValue = currentScenarioValue["scenarioName"];
+                                    if (scenarioNameValue != null && scenarioNameValue.Type != JTokenType.Null)
+                                    {
+                                        string scenarioNameInstance = ((string)scenarioNameValue);
+                                        currentScenarioInstance.ScenarioName = scenarioNameInstance;
+                                    }
+                                    
+                                    JToken jobIdValue = currentScenarioValue["jobId"];
+                                    if (jobIdValue != null && jobIdValue.Type != JTokenType.Null)
+                                    {
+                                        string jobIdInstance = ((string)jobIdValue);
+                                        currentScenarioInstance.JobId = jobIdInstance;
+                                    }
+                                    
+                                    JToken startTimeValue = currentScenarioValue["startTime"];
+                                    if (startTimeValue != null && startTimeValue.Type != JTokenType.Null)
+                                    {
+                                        DateTime startTimeInstance = ((DateTime)startTimeValue);
+                                        currentScenarioInstance.StartTime = startTimeInstance;
+                                    }
+                                }
+                                
+                                JToken failoverRecoveryPointIdValue = propertiesValue["failoverRecoveryPointId"];
+                                if (failoverRecoveryPointIdValue != null && failoverRecoveryPointIdValue.Type != JTokenType.Null)
+                                {
+                                    string failoverRecoveryPointIdInstance = ((string)failoverRecoveryPointIdValue);
+                                    propertiesInstance.FailoverRecoveryPointId = failoverRecoveryPointIdInstance;
+                                }
+                                
+                                JToken recoveryContainerIdValue = propertiesValue["recoveryContainerId"];
+                                if (recoveryContainerIdValue != null && recoveryContainerIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryContainerIdInstance = ((string)recoveryContainerIdValue);
+                                    propertiesInstance.RecoveryContainerId = recoveryContainerIdInstance;
+                                }
+                                
+                                JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
+                                if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
+                                {
+                                    string typeName = ((string)providerSpecificDetailsValue["instanceType"]);
+                                    if (typeName == "HyperVReplica2012")
+                                    {
+                                        HyperVReplica2012ReplicationDetails hyperVReplica2012ReplicationDetailsInstance = new HyperVReplica2012ReplicationDetails();
+                                        
+                                        JToken lastReplicatedTimeValue = providerSpecificDetailsValue["lastReplicatedTime"];
+                                        if (lastReplicatedTimeValue != null && lastReplicatedTimeValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastReplicatedTimeInstance = ((DateTime)lastReplicatedTimeValue);
+                                            hyperVReplica2012ReplicationDetailsInstance.LastReplicatedTime = lastReplicatedTimeInstance;
+                                        }
+                                        
+                                        JToken vmIdValue = providerSpecificDetailsValue["vmId"];
+                                        if (vmIdValue != null && vmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string vmIdInstance = ((string)vmIdValue);
+                                            hyperVReplica2012ReplicationDetailsInstance.VmId = vmIdInstance;
+                                        }
+                                        
+                                        JToken vmNicsArray = providerSpecificDetailsValue["vmNics"];
+                                        if (vmNicsArray != null && vmNicsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken vmNicsValue in ((JArray)vmNicsArray))
+                                            {
+                                                VMNicDetails vMNicDetailsInstance = new VMNicDetails();
+                                                hyperVReplica2012ReplicationDetailsInstance.VmNics.Add(vMNicDetailsInstance);
+                                                
+                                                JToken nicIdValue = vmNicsValue["nicId"];
+                                                if (nicIdValue != null && nicIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string nicIdInstance = ((string)nicIdValue);
+                                                    vMNicDetailsInstance.NicId = nicIdInstance;
+                                                }
+                                                
+                                                JToken vMSubnetNameValue = vmNicsValue["vMSubnetName"];
+                                                if (vMSubnetNameValue != null && vMSubnetNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string vMSubnetNameInstance = ((string)vMSubnetNameValue);
+                                                    vMNicDetailsInstance.VMSubnetName = vMSubnetNameInstance;
+                                                }
+                                                
+                                                JToken vMNetworkNameValue = vmNicsValue["vMNetworkName"];
+                                                if (vMNetworkNameValue != null && vMNetworkNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string vMNetworkNameInstance = ((string)vMNetworkNameValue);
+                                                    vMNicDetailsInstance.VMNetworkName = vMNetworkNameInstance;
+                                                }
+                                                
+                                                JToken recoveryVMNetworkIdValue = vmNicsValue["recoveryVMNetworkId"];
+                                                if (recoveryVMNetworkIdValue != null && recoveryVMNetworkIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryVMNetworkIdInstance = ((string)recoveryVMNetworkIdValue);
+                                                    vMNicDetailsInstance.RecoveryVMNetworkId = recoveryVMNetworkIdInstance;
+                                                }
+                                                
+                                                JToken recoveryVMSubnetNameValue = vmNicsValue["recoveryVMSubnetName"];
+                                                if (recoveryVMSubnetNameValue != null && recoveryVMSubnetNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryVMSubnetNameInstance = ((string)recoveryVMSubnetNameValue);
+                                                    vMNicDetailsInstance.RecoveryVMSubnetName = recoveryVMSubnetNameInstance;
+                                                }
+                                                
+                                                JToken ipAddressTypeValue = vmNicsValue["ipAddressType"];
+                                                if (ipAddressTypeValue != null && ipAddressTypeValue.Type != JTokenType.Null)
+                                                {
+                                                    string ipAddressTypeInstance = ((string)ipAddressTypeValue);
+                                                    vMNicDetailsInstance.IpAddressType = ipAddressTypeInstance;
+                                                }
+                                                
+                                                JToken replicaNicStaticIPAddressValue = vmNicsValue["replicaNicStaticIPAddress"];
+                                                if (replicaNicStaticIPAddressValue != null && replicaNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                {
+                                                    string replicaNicStaticIPAddressInstance = ((string)replicaNicStaticIPAddressValue);
+                                                    vMNicDetailsInstance.ReplicaNicStaticIPAddress = replicaNicStaticIPAddressInstance;
+                                                }
+                                                
+                                                JToken selectionTypeValue = vmNicsValue["selectionType"];
+                                                if (selectionTypeValue != null && selectionTypeValue.Type != JTokenType.Null)
+                                                {
+                                                    string selectionTypeInstance = ((string)selectionTypeValue);
+                                                    vMNicDetailsInstance.SelectionType = selectionTypeInstance;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue = vmNicsValue["sourceNicArmId"];
+                                                if (sourceNicArmIdValue != null && sourceNicArmIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance = ((string)sourceNicArmIdValue);
+                                                    vMNicDetailsInstance.SourceNicArmId = sourceNicArmIdInstance;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue = vmNicsValue["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue != null && primaryNicStaticIPAddressValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance = ((string)primaryNicStaticIPAddressValue);
+                                                    vMNicDetailsInstance.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance;
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken initialReplicationDetailsValue = providerSpecificDetailsValue["initialReplicationDetails"];
+                                        if (initialReplicationDetailsValue != null && initialReplicationDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            InitialReplicationDetails initialReplicationDetailsInstance = new InitialReplicationDetails();
+                                            hyperVReplica2012ReplicationDetailsInstance.InitialReplicationDetails = initialReplicationDetailsInstance;
+                                            
+                                            JToken initialReplicationTypeValue = initialReplicationDetailsValue["initialReplicationType"];
+                                            if (initialReplicationTypeValue != null && initialReplicationTypeValue.Type != JTokenType.Null)
+                                            {
+                                                string initialReplicationTypeInstance = ((string)initialReplicationTypeValue);
+                                                initialReplicationDetailsInstance.InitialReplicationType = initialReplicationTypeInstance;
+                                            }
+                                            
+                                            JToken initialReplicationProgressPercentageValue = initialReplicationDetailsValue["initialReplicationProgressPercentage"];
+                                            if (initialReplicationProgressPercentageValue != null && initialReplicationProgressPercentageValue.Type != JTokenType.Null)
+                                            {
+                                                string initialReplicationProgressPercentageInstance = ((string)initialReplicationProgressPercentageValue);
+                                                initialReplicationDetailsInstance.InitialReplicationProgressPercentage = initialReplicationProgressPercentageInstance;
+                                            }
+                                        }
+                                        
+                                        JToken vMDiskDetailsArray = providerSpecificDetailsValue["vMDiskDetails"];
+                                        if (vMDiskDetailsArray != null && vMDiskDetailsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken vMDiskDetailsValue in ((JArray)vMDiskDetailsArray))
+                                            {
+                                                DiskDetails diskDetailsInstance = new DiskDetails();
+                                                hyperVReplica2012ReplicationDetailsInstance.VMDiskDetails.Add(diskDetailsInstance);
+                                                
+                                                JToken maxSizeMBValue = vMDiskDetailsValue["maxSizeMB"];
+                                                if (maxSizeMBValue != null && maxSizeMBValue.Type != JTokenType.Null)
+                                                {
+                                                    ulong maxSizeMBInstance = ((ulong)maxSizeMBValue);
+                                                    diskDetailsInstance.MaxSizeMB = maxSizeMBInstance;
+                                                }
+                                                
+                                                JToken vhdTypeValue = vMDiskDetailsValue["vhdType"];
+                                                if (vhdTypeValue != null && vhdTypeValue.Type != JTokenType.Null)
+                                                {
+                                                    string vhdTypeInstance = ((string)vhdTypeValue);
+                                                    diskDetailsInstance.VhdType = vhdTypeInstance;
+                                                }
+                                                
+                                                JToken vhdIdValue = vMDiskDetailsValue["vhdId"];
+                                                if (vhdIdValue != null && vhdIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string vhdIdInstance = ((string)vhdIdValue);
+                                                    diskDetailsInstance.VhdId = vhdIdInstance;
+                                                }
+                                                
+                                                JToken vhdNameValue = vMDiskDetailsValue["vhdName"];
+                                                if (vhdNameValue != null && vhdNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string vhdNameInstance = ((string)vhdNameValue);
+                                                    diskDetailsInstance.VhdName = vhdNameInstance;
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken vmProtectionStateValue = providerSpecificDetailsValue["vmProtectionState"];
+                                        if (vmProtectionStateValue != null && vmProtectionStateValue.Type != JTokenType.Null)
+                                        {
+                                            string vmProtectionStateInstance = ((string)vmProtectionStateValue);
+                                            hyperVReplica2012ReplicationDetailsInstance.VmProtectionState = vmProtectionStateInstance;
+                                        }
+                                        
+                                        JToken vmProtectionStateDescriptionValue = providerSpecificDetailsValue["vmProtectionStateDescription"];
+                                        if (vmProtectionStateDescriptionValue != null && vmProtectionStateDescriptionValue.Type != JTokenType.Null)
+                                        {
+                                            string vmProtectionStateDescriptionInstance = ((string)vmProtectionStateDescriptionValue);
+                                            hyperVReplica2012ReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance;
+                                        }
+                                        
+                                        JToken instanceTypeValue = providerSpecificDetailsValue["instanceType"];
+                                        if (instanceTypeValue != null && instanceTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string instanceTypeInstance = ((string)instanceTypeValue);
+                                            hyperVReplica2012ReplicationDetailsInstance.InstanceType = instanceTypeInstance;
+                                        }
+                                        propertiesInstance.ProviderSpecificDetails = hyperVReplica2012ReplicationDetailsInstance;
+                                    }
+                                    if (typeName == "HyperVReplica2012R2")
+                                    {
+                                        HyperVReplica2012R2ReplicationDetails hyperVReplica2012R2ReplicationDetailsInstance = new HyperVReplica2012R2ReplicationDetails();
+                                        
+                                        JToken lastReplicatedTimeValue2 = providerSpecificDetailsValue["lastReplicatedTime"];
+                                        if (lastReplicatedTimeValue2 != null && lastReplicatedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastReplicatedTimeInstance2 = ((DateTime)lastReplicatedTimeValue2);
+                                            hyperVReplica2012R2ReplicationDetailsInstance.LastReplicatedTime = lastReplicatedTimeInstance2;
+                                        }
+                                        
+                                        JToken vmIdValue2 = providerSpecificDetailsValue["vmId"];
+                                        if (vmIdValue2 != null && vmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string vmIdInstance2 = ((string)vmIdValue2);
+                                            hyperVReplica2012R2ReplicationDetailsInstance.VmId = vmIdInstance2;
+                                        }
+                                        
+                                        JToken vmNicsArray2 = providerSpecificDetailsValue["vmNics"];
+                                        if (vmNicsArray2 != null && vmNicsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken vmNicsValue2 in ((JArray)vmNicsArray2))
+                                            {
+                                                VMNicDetails vMNicDetailsInstance2 = new VMNicDetails();
+                                                hyperVReplica2012R2ReplicationDetailsInstance.VmNics.Add(vMNicDetailsInstance2);
+                                                
+                                                JToken nicIdValue2 = vmNicsValue2["nicId"];
+                                                if (nicIdValue2 != null && nicIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string nicIdInstance2 = ((string)nicIdValue2);
+                                                    vMNicDetailsInstance2.NicId = nicIdInstance2;
+                                                }
+                                                
+                                                JToken vMSubnetNameValue2 = vmNicsValue2["vMSubnetName"];
+                                                if (vMSubnetNameValue2 != null && vMSubnetNameValue2.Type != JTokenType.Null)
+                                                {
+                                                    string vMSubnetNameInstance2 = ((string)vMSubnetNameValue2);
+                                                    vMNicDetailsInstance2.VMSubnetName = vMSubnetNameInstance2;
+                                                }
+                                                
+                                                JToken vMNetworkNameValue2 = vmNicsValue2["vMNetworkName"];
+                                                if (vMNetworkNameValue2 != null && vMNetworkNameValue2.Type != JTokenType.Null)
+                                                {
+                                                    string vMNetworkNameInstance2 = ((string)vMNetworkNameValue2);
+                                                    vMNicDetailsInstance2.VMNetworkName = vMNetworkNameInstance2;
+                                                }
+                                                
+                                                JToken recoveryVMNetworkIdValue2 = vmNicsValue2["recoveryVMNetworkId"];
+                                                if (recoveryVMNetworkIdValue2 != null && recoveryVMNetworkIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryVMNetworkIdInstance2 = ((string)recoveryVMNetworkIdValue2);
+                                                    vMNicDetailsInstance2.RecoveryVMNetworkId = recoveryVMNetworkIdInstance2;
+                                                }
+                                                
+                                                JToken recoveryVMSubnetNameValue2 = vmNicsValue2["recoveryVMSubnetName"];
+                                                if (recoveryVMSubnetNameValue2 != null && recoveryVMSubnetNameValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryVMSubnetNameInstance2 = ((string)recoveryVMSubnetNameValue2);
+                                                    vMNicDetailsInstance2.RecoveryVMSubnetName = recoveryVMSubnetNameInstance2;
+                                                }
+                                                
+                                                JToken ipAddressTypeValue2 = vmNicsValue2["ipAddressType"];
+                                                if (ipAddressTypeValue2 != null && ipAddressTypeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string ipAddressTypeInstance2 = ((string)ipAddressTypeValue2);
+                                                    vMNicDetailsInstance2.IpAddressType = ipAddressTypeInstance2;
+                                                }
+                                                
+                                                JToken replicaNicStaticIPAddressValue2 = vmNicsValue2["replicaNicStaticIPAddress"];
+                                                if (replicaNicStaticIPAddressValue2 != null && replicaNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                {
+                                                    string replicaNicStaticIPAddressInstance2 = ((string)replicaNicStaticIPAddressValue2);
+                                                    vMNicDetailsInstance2.ReplicaNicStaticIPAddress = replicaNicStaticIPAddressInstance2;
+                                                }
+                                                
+                                                JToken selectionTypeValue2 = vmNicsValue2["selectionType"];
+                                                if (selectionTypeValue2 != null && selectionTypeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string selectionTypeInstance2 = ((string)selectionTypeValue2);
+                                                    vMNicDetailsInstance2.SelectionType = selectionTypeInstance2;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue2 = vmNicsValue2["sourceNicArmId"];
+                                                if (sourceNicArmIdValue2 != null && sourceNicArmIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance2 = ((string)sourceNicArmIdValue2);
+                                                    vMNicDetailsInstance2.SourceNicArmId = sourceNicArmIdInstance2;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue2 = vmNicsValue2["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue2 != null && primaryNicStaticIPAddressValue2.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance2 = ((string)primaryNicStaticIPAddressValue2);
+                                                    vMNicDetailsInstance2.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance2;
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken initialReplicationDetailsValue2 = providerSpecificDetailsValue["initialReplicationDetails"];
+                                        if (initialReplicationDetailsValue2 != null && initialReplicationDetailsValue2.Type != JTokenType.Null)
+                                        {
+                                            InitialReplicationDetails initialReplicationDetailsInstance2 = new InitialReplicationDetails();
+                                            hyperVReplica2012R2ReplicationDetailsInstance.InitialReplicationDetails = initialReplicationDetailsInstance2;
+                                            
+                                            JToken initialReplicationTypeValue2 = initialReplicationDetailsValue2["initialReplicationType"];
+                                            if (initialReplicationTypeValue2 != null && initialReplicationTypeValue2.Type != JTokenType.Null)
+                                            {
+                                                string initialReplicationTypeInstance2 = ((string)initialReplicationTypeValue2);
+                                                initialReplicationDetailsInstance2.InitialReplicationType = initialReplicationTypeInstance2;
+                                            }
+                                            
+                                            JToken initialReplicationProgressPercentageValue2 = initialReplicationDetailsValue2["initialReplicationProgressPercentage"];
+                                            if (initialReplicationProgressPercentageValue2 != null && initialReplicationProgressPercentageValue2.Type != JTokenType.Null)
+                                            {
+                                                string initialReplicationProgressPercentageInstance2 = ((string)initialReplicationProgressPercentageValue2);
+                                                initialReplicationDetailsInstance2.InitialReplicationProgressPercentage = initialReplicationProgressPercentageInstance2;
+                                            }
+                                        }
+                                        
+                                        JToken vMDiskDetailsArray2 = providerSpecificDetailsValue["vMDiskDetails"];
+                                        if (vMDiskDetailsArray2 != null && vMDiskDetailsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken vMDiskDetailsValue2 in ((JArray)vMDiskDetailsArray2))
+                                            {
+                                                DiskDetails diskDetailsInstance2 = new DiskDetails();
+                                                hyperVReplica2012R2ReplicationDetailsInstance.VMDiskDetails.Add(diskDetailsInstance2);
+                                                
+                                                JToken maxSizeMBValue2 = vMDiskDetailsValue2["maxSizeMB"];
+                                                if (maxSizeMBValue2 != null && maxSizeMBValue2.Type != JTokenType.Null)
+                                                {
+                                                    ulong maxSizeMBInstance2 = ((ulong)maxSizeMBValue2);
+                                                    diskDetailsInstance2.MaxSizeMB = maxSizeMBInstance2;
+                                                }
+                                                
+                                                JToken vhdTypeValue2 = vMDiskDetailsValue2["vhdType"];
+                                                if (vhdTypeValue2 != null && vhdTypeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string vhdTypeInstance2 = ((string)vhdTypeValue2);
+                                                    diskDetailsInstance2.VhdType = vhdTypeInstance2;
+                                                }
+                                                
+                                                JToken vhdIdValue2 = vMDiskDetailsValue2["vhdId"];
+                                                if (vhdIdValue2 != null && vhdIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string vhdIdInstance2 = ((string)vhdIdValue2);
+                                                    diskDetailsInstance2.VhdId = vhdIdInstance2;
+                                                }
+                                                
+                                                JToken vhdNameValue2 = vMDiskDetailsValue2["vhdName"];
+                                                if (vhdNameValue2 != null && vhdNameValue2.Type != JTokenType.Null)
+                                                {
+                                                    string vhdNameInstance2 = ((string)vhdNameValue2);
+                                                    diskDetailsInstance2.VhdName = vhdNameInstance2;
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken vmProtectionStateValue2 = providerSpecificDetailsValue["vmProtectionState"];
+                                        if (vmProtectionStateValue2 != null && vmProtectionStateValue2.Type != JTokenType.Null)
+                                        {
+                                            string vmProtectionStateInstance2 = ((string)vmProtectionStateValue2);
+                                            hyperVReplica2012R2ReplicationDetailsInstance.VmProtectionState = vmProtectionStateInstance2;
+                                        }
+                                        
+                                        JToken vmProtectionStateDescriptionValue2 = providerSpecificDetailsValue["vmProtectionStateDescription"];
+                                        if (vmProtectionStateDescriptionValue2 != null && vmProtectionStateDescriptionValue2.Type != JTokenType.Null)
+                                        {
+                                            string vmProtectionStateDescriptionInstance2 = ((string)vmProtectionStateDescriptionValue2);
+                                            hyperVReplica2012R2ReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance2;
+                                        }
+                                        
+                                        JToken instanceTypeValue2 = providerSpecificDetailsValue["instanceType"];
+                                        if (instanceTypeValue2 != null && instanceTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string instanceTypeInstance2 = ((string)instanceTypeValue2);
+                                            hyperVReplica2012R2ReplicationDetailsInstance.InstanceType = instanceTypeInstance2;
+                                        }
+                                        propertiesInstance.ProviderSpecificDetails = hyperVReplica2012R2ReplicationDetailsInstance;
+                                    }
+                                    if (typeName == "A2A")
+                                    {
+                                        A2AReplicationDetails a2AReplicationDetailsInstance = new A2AReplicationDetails();
+                                        
+                                        JToken fabricObjectIdValue = providerSpecificDetailsValue["fabricObjectId"];
+                                        if (fabricObjectIdValue != null && fabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string fabricObjectIdInstance = ((string)fabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.FabricObjectId = fabricObjectIdInstance;
+                                        }
+                                        
+                                        JToken multiVmGroupIdValue = providerSpecificDetailsValue["multiVmGroupId"];
+                                        if (multiVmGroupIdValue != null && multiVmGroupIdValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmGroupIdInstance = ((string)multiVmGroupIdValue);
+                                            a2AReplicationDetailsInstance.MultiVmGroupId = multiVmGroupIdInstance;
+                                        }
+                                        
+                                        JToken multiVmGroupNameValue = providerSpecificDetailsValue["multiVmGroupName"];
+                                        if (multiVmGroupNameValue != null && multiVmGroupNameValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmGroupNameInstance = ((string)multiVmGroupNameValue);
+                                            a2AReplicationDetailsInstance.MultiVmGroupName = multiVmGroupNameInstance;
+                                        }
+                                        
+                                        JToken protectedDisksArray = providerSpecificDetailsValue["protectedDisks"];
+                                        if (protectedDisksArray != null && protectedDisksArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken protectedDisksValue in ((JArray)protectedDisksArray))
+                                            {
+                                                A2AProtectedDiskDetails a2AProtectedDiskDetailsInstance = new A2AProtectedDiskDetails();
+                                                a2AReplicationDetailsInstance.ProtectedDisks.Add(a2AProtectedDiskDetailsInstance);
+                                                
+                                                JToken diskUriValue = protectedDisksValue["diskUri"];
+                                                if (diskUriValue != null && diskUriValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskUriInstance = ((string)diskUriValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
+                                                }
+                                                
+                                                JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
+                                                if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAzureStorageAccountIdInstance = ((string)recoveryAzureStorageAccountIdValue);
+                                                    a2AProtectedDiskDetailsInstance.RecoveryAzureStorageAccountId = recoveryAzureStorageAccountIdInstance;
+                                                }
+                                                
+                                                JToken primaryStagingAzureStorageAccountIdValue = protectedDisksValue["primaryStagingAzureStorageAccountId"];
+                                                if (primaryStagingAzureStorageAccountIdValue != null && primaryStagingAzureStorageAccountIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryStagingAzureStorageAccountIdInstance = ((string)primaryStagingAzureStorageAccountIdValue);
+                                                    a2AProtectedDiskDetailsInstance.PrimaryStagingAzureStorageAccountId = primaryStagingAzureStorageAccountIdInstance;
+                                                }
+                                                
+                                                JToken primaryDiskAzureStorageAccountIdValue = protectedDisksValue["primaryDiskAzureStorageAccountId"];
+                                                if (primaryDiskAzureStorageAccountIdValue != null && primaryDiskAzureStorageAccountIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string primaryDiskAzureStorageAccountIdInstance = ((string)primaryDiskAzureStorageAccountIdValue);
+                                                    a2AProtectedDiskDetailsInstance.PrimaryDiskAzureStorageAccountId = primaryDiskAzureStorageAccountIdInstance;
+                                                }
+                                                
+                                                JToken recoveryDiskUriValue = protectedDisksValue["recoveryDiskUri"];
+                                                if (recoveryDiskUriValue != null && recoveryDiskUriValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryDiskUriInstance = ((string)recoveryDiskUriValue);
+                                                    a2AProtectedDiskDetailsInstance.RecoveryDiskUri = recoveryDiskUriInstance;
+                                                }
+                                                
+                                                JToken diskTypeValue = protectedDisksValue["diskType"];
+                                                if (diskTypeValue != null && diskTypeValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskTypeInstance = ((string)diskTypeValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskType = diskTypeInstance;
+                                                }
+                                                
+                                                JToken resyncRequiredValue = protectedDisksValue["resyncRequired"];
+                                                if (resyncRequiredValue != null && resyncRequiredValue.Type != JTokenType.Null)
+                                                {
+                                                    bool resyncRequiredInstance = ((bool)resyncRequiredValue);
+                                                    a2AProtectedDiskDetailsInstance.ResyncRequired = resyncRequiredInstance;
+                                                }
+                                                
+                                                JToken monitoringPercentageCompletionValue = protectedDisksValue["monitoringPercentageCompletion"];
+                                                if (monitoringPercentageCompletionValue != null && monitoringPercentageCompletionValue.Type != JTokenType.Null)
+                                                {
+                                                    int monitoringPercentageCompletionInstance = ((int)monitoringPercentageCompletionValue);
+                                                    a2AProtectedDiskDetailsInstance.MonitoringPercentageCompletion = monitoringPercentageCompletionInstance;
+                                                }
+                                                
+                                                JToken monitoringJobTypeValue = protectedDisksValue["monitoringJobType"];
+                                                if (monitoringJobTypeValue != null && monitoringJobTypeValue.Type != JTokenType.Null)
+                                                {
+                                                    string monitoringJobTypeInstance = ((string)monitoringJobTypeValue);
+                                                    a2AProtectedDiskDetailsInstance.MonitoringJobType = monitoringJobTypeInstance;
+                                                }
+                                                
+                                                JToken dataPendingInStagingStorageAccountInMBValue = protectedDisksValue["dataPendingInStagingStorageAccountInMB"];
+                                                if (dataPendingInStagingStorageAccountInMBValue != null && dataPendingInStagingStorageAccountInMBValue.Type != JTokenType.Null)
+                                                {
+                                                    double dataPendingInStagingStorageAccountInMBInstance = ((double)dataPendingInStagingStorageAccountInMBValue);
+                                                    a2AProtectedDiskDetailsInstance.DataPendingInStagingStorageAccountInMB = dataPendingInStagingStorageAccountInMBInstance;
+                                                }
+                                                
+                                                JToken dataPendingAtSourceAgentInMBValue = protectedDisksValue["dataPendingAtSourceAgentInMB"];
+                                                if (dataPendingAtSourceAgentInMBValue != null && dataPendingAtSourceAgentInMBValue.Type != JTokenType.Null)
+                                                {
+                                                    double dataPendingAtSourceAgentInMBInstance = ((double)dataPendingAtSourceAgentInMBValue);
+                                                    a2AProtectedDiskDetailsInstance.DataPendingAtSourceAgentInMB = dataPendingAtSourceAgentInMBInstance;
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken primaryFabricLocationValue = providerSpecificDetailsValue["primaryFabricLocation"];
+                                        if (primaryFabricLocationValue != null && primaryFabricLocationValue.Type != JTokenType.Null)
+                                        {
+                                            string primaryFabricLocationInstance = ((string)primaryFabricLocationValue);
+                                            a2AReplicationDetailsInstance.PrimaryFabricLocation = primaryFabricLocationInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricLocationValue = providerSpecificDetailsValue["recoveryFabricLocation"];
+                                        if (recoveryFabricLocationValue != null && recoveryFabricLocationValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricLocationInstance = ((string)recoveryFabricLocationValue);
+                                            a2AReplicationDetailsInstance.RecoveryFabricLocation = recoveryFabricLocationInstance;
+                                        }
+                                        
+                                        JToken osTypeValue = providerSpecificDetailsValue["osType"];
+                                        if (osTypeValue != null && osTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string osTypeInstance = ((string)osTypeValue);
+                                            a2AReplicationDetailsInstance.OSType = osTypeInstance;
+                                        }
+                                        
+                                        JToken recoveryAzureVMSizeValue = providerSpecificDetailsValue["recoveryAzureVMSize"];
+                                        if (recoveryAzureVMSizeValue != null && recoveryAzureVMSizeValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureVMSizeInstance = ((string)recoveryAzureVMSizeValue);
+                                            a2AReplicationDetailsInstance.RecoveryAzureVMSize = recoveryAzureVMSizeInstance;
+                                        }
+                                        
+                                        JToken recoveryAzureVMNameValue = providerSpecificDetailsValue["recoveryAzureVMName"];
+                                        if (recoveryAzureVMNameValue != null && recoveryAzureVMNameValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureVMNameInstance = ((string)recoveryAzureVMNameValue);
+                                            a2AReplicationDetailsInstance.RecoveryAzureVMName = recoveryAzureVMNameInstance;
+                                        }
+                                        
+                                        JToken recoveryAzureResourceGroupIdValue = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue != null && recoveryAzureResourceGroupIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance = ((string)recoveryAzureResourceGroupIdValue);
+                                            a2AReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance;
+                                        }
+                                        
+                                        JToken recoveryCloudServiceValue = providerSpecificDetailsValue["recoveryCloudService"];
+                                        if (recoveryCloudServiceValue != null && recoveryCloudServiceValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryCloudServiceInstance = ((string)recoveryCloudServiceValue);
+                                            a2AReplicationDetailsInstance.RecoveryCloudService = recoveryCloudServiceInstance;
+                                        }
+                                        
+                                        JToken selectedRecoveryAzureNetworkIdValue = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
+                                        if (selectedRecoveryAzureNetworkIdValue != null && selectedRecoveryAzureNetworkIdValue.Type != JTokenType.Null)
+                                        {
+                                            string selectedRecoveryAzureNetworkIdInstance = ((string)selectedRecoveryAzureNetworkIdValue);
+                                            a2AReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance;
+                                        }
+                                        
+                                        JToken vmSyncedConfigDetailsValue = providerSpecificDetailsValue["vmSyncedConfigDetails"];
+                                        if (vmSyncedConfigDetailsValue != null && vmSyncedConfigDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            AzureToAzureVmSyncedConfigDetails vmSyncedConfigDetailsInstance = new AzureToAzureVmSyncedConfigDetails();
+                                            a2AReplicationDetailsInstance.VmSyncedConfigDetails = vmSyncedConfigDetailsInstance;
+                                            
+                                            JToken tagsSequenceElement = ((JToken)vmSyncedConfigDetailsValue["tags"]);
+                                            if (tagsSequenceElement != null && tagsSequenceElement.Type != JTokenType.Null)
+                                            {
+                                                foreach (JProperty property in tagsSequenceElement)
+                                                {
+                                                    string tagsKey = ((string)property.Name);
+                                                    string tagsValue = ((string)property.Value);
+                                                    vmSyncedConfigDetailsInstance.Tags.Add(tagsKey, tagsValue);
+                                                }
+                                            }
+                                            
+                                            JToken roleAssignmentsArray = vmSyncedConfigDetailsValue["roleAssignments"];
+                                            if (roleAssignmentsArray != null && roleAssignmentsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken roleAssignmentsValue in ((JArray)roleAssignmentsArray))
+                                                {
+                                                    RoleAssignment roleAssignmentInstance = new RoleAssignment();
+                                                    vmSyncedConfigDetailsInstance.RoleAssignments.Add(roleAssignmentInstance);
+                                                    
+                                                    JToken idValue = roleAssignmentsValue["id"];
+                                                    if (idValue != null && idValue.Type != JTokenType.Null)
+                                                    {
+                                                        string idInstance = ((string)idValue);
+                                                        roleAssignmentInstance.Id = idInstance;
+                                                    }
+                                                    
+                                                    JToken nameValue = roleAssignmentsValue["name"];
+                                                    if (nameValue != null && nameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string nameInstance = ((string)nameValue);
+                                                        roleAssignmentInstance.Name = nameInstance;
+                                                    }
+                                                    
+                                                    JToken scopeValue = roleAssignmentsValue["scope"];
+                                                    if (scopeValue != null && scopeValue.Type != JTokenType.Null)
+                                                    {
+                                                        string scopeInstance = ((string)scopeValue);
+                                                        roleAssignmentInstance.Scope = scopeInstance;
+                                                    }
+                                                    
+                                                    JToken principalIdValue = roleAssignmentsValue["principalId"];
+                                                    if (principalIdValue != null && principalIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string principalIdInstance = ((string)principalIdValue);
+                                                        roleAssignmentInstance.PrincipalId = principalIdInstance;
+                                                    }
+                                                    
+                                                    JToken roleDefinitionIdValue = roleAssignmentsValue["roleDefinitionId"];
+                                                    if (roleDefinitionIdValue != null && roleDefinitionIdValue.Type != JTokenType.Null)
+                                                    {
+                                                        string roleDefinitionIdInstance = ((string)roleDefinitionIdValue);
+                                                        roleAssignmentInstance.RoleDefinitionId = roleDefinitionIdInstance;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            JToken inputEndpointsArray = vmSyncedConfigDetailsValue["inputEndpoints"];
+                                            if (inputEndpointsArray != null && inputEndpointsArray.Type != JTokenType.Null)
+                                            {
+                                                foreach (JToken inputEndpointsValue in ((JArray)inputEndpointsArray))
+                                                {
+                                                    InputEndpoint inputEndpointInstance = new InputEndpoint();
+                                                    vmSyncedConfigDetailsInstance.InputEndpoints.Add(inputEndpointInstance);
+                                                    
+                                                    JToken endpointNameValue = inputEndpointsValue["endpointName"];
+                                                    if (endpointNameValue != null && endpointNameValue.Type != JTokenType.Null)
+                                                    {
+                                                        string endpointNameInstance = ((string)endpointNameValue);
+                                                        inputEndpointInstance.EndpointName = endpointNameInstance;
+                                                    }
+                                                    
+                                                    JToken privatePortValue = inputEndpointsValue["privatePort"];
+                                                    if (privatePortValue != null && privatePortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int privatePortInstance = ((int)privatePortValue);
+                                                        inputEndpointInstance.PrivatePort = privatePortInstance;
+                                                    }
+                                                    
+                                                    JToken publicPortValue = inputEndpointsValue["publicPort"];
+                                                    if (publicPortValue != null && publicPortValue.Type != JTokenType.Null)
+                                                    {
+                                                        int publicPortInstance = ((int)publicPortValue);
+                                                        inputEndpointInstance.PublicPort = publicPortInstance;
+                                                    }
+                                                    
+                                                    JToken protocolValue = inputEndpointsValue["protocol"];
+                                                    if (protocolValue != null && protocolValue.Type != JTokenType.Null)
+                                                    {
+                                                        string protocolInstance = ((string)protocolValue);
+                                                        inputEndpointInstance.Protocol = protocolInstance;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken vmNicsArray3 = providerSpecificDetailsValue["vmNics"];
+                                        if (vmNicsArray3 != null && vmNicsArray3.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken vmNicsValue3 in ((JArray)vmNicsArray3))
+                                            {
+                                                VMNicDetails vMNicDetailsInstance3 = new VMNicDetails();
+                                                a2AReplicationDetailsInstance.VMNics.Add(vMNicDetailsInstance3);
+                                                
+                                                JToken nicIdValue3 = vmNicsValue3["nicId"];
+                                                if (nicIdValue3 != null && nicIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string nicIdInstance3 = ((string)nicIdValue3);
+                                                    vMNicDetailsInstance3.NicId = nicIdInstance3;
+                                                }
+                                                
+                                                JToken vMSubnetNameValue3 = vmNicsValue3["vMSubnetName"];
+                                                if (vMSubnetNameValue3 != null && vMSubnetNameValue3.Type != JTokenType.Null)
+                                                {
+                                                    string vMSubnetNameInstance3 = ((string)vMSubnetNameValue3);
+                                                    vMNicDetailsInstance3.VMSubnetName = vMSubnetNameInstance3;
+                                                }
+                                                
+                                                JToken vMNetworkNameValue3 = vmNicsValue3["vMNetworkName"];
+                                                if (vMNetworkNameValue3 != null && vMNetworkNameValue3.Type != JTokenType.Null)
+                                                {
+                                                    string vMNetworkNameInstance3 = ((string)vMNetworkNameValue3);
+                                                    vMNicDetailsInstance3.VMNetworkName = vMNetworkNameInstance3;
+                                                }
+                                                
+                                                JToken recoveryVMNetworkIdValue3 = vmNicsValue3["recoveryVMNetworkId"];
+                                                if (recoveryVMNetworkIdValue3 != null && recoveryVMNetworkIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryVMNetworkIdInstance3 = ((string)recoveryVMNetworkIdValue3);
+                                                    vMNicDetailsInstance3.RecoveryVMNetworkId = recoveryVMNetworkIdInstance3;
+                                                }
+                                                
+                                                JToken recoveryVMSubnetNameValue3 = vmNicsValue3["recoveryVMSubnetName"];
+                                                if (recoveryVMSubnetNameValue3 != null && recoveryVMSubnetNameValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryVMSubnetNameInstance3 = ((string)recoveryVMSubnetNameValue3);
+                                                    vMNicDetailsInstance3.RecoveryVMSubnetName = recoveryVMSubnetNameInstance3;
+                                                }
+                                                
+                                                JToken ipAddressTypeValue3 = vmNicsValue3["ipAddressType"];
+                                                if (ipAddressTypeValue3 != null && ipAddressTypeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string ipAddressTypeInstance3 = ((string)ipAddressTypeValue3);
+                                                    vMNicDetailsInstance3.IpAddressType = ipAddressTypeInstance3;
+                                                }
+                                                
+                                                JToken replicaNicStaticIPAddressValue3 = vmNicsValue3["replicaNicStaticIPAddress"];
+                                                if (replicaNicStaticIPAddressValue3 != null && replicaNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                {
+                                                    string replicaNicStaticIPAddressInstance3 = ((string)replicaNicStaticIPAddressValue3);
+                                                    vMNicDetailsInstance3.ReplicaNicStaticIPAddress = replicaNicStaticIPAddressInstance3;
+                                                }
+                                                
+                                                JToken selectionTypeValue3 = vmNicsValue3["selectionType"];
+                                                if (selectionTypeValue3 != null && selectionTypeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string selectionTypeInstance3 = ((string)selectionTypeValue3);
+                                                    vMNicDetailsInstance3.SelectionType = selectionTypeInstance3;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue3 = vmNicsValue3["sourceNicArmId"];
+                                                if (sourceNicArmIdValue3 != null && sourceNicArmIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance3 = ((string)sourceNicArmIdValue3);
+                                                    vMNicDetailsInstance3.SourceNicArmId = sourceNicArmIdInstance3;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue3 = vmNicsValue3["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue3 != null && primaryNicStaticIPAddressValue3.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance3 = ((string)primaryNicStaticIPAddressValue3);
+                                                    vMNicDetailsInstance3.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance3;
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetValue = providerSpecificDetailsValue["recoveryAvailabilitySet"];
+                                        if (recoveryAvailabilitySetValue != null && recoveryAvailabilitySetValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetInstance = ((string)recoveryAvailabilitySetValue);
+                                            a2AReplicationDetailsInstance.RecoveryAvailabilitySet = recoveryAvailabilitySetInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricObjectIdValue = providerSpecificDetailsValue["recoveryFabricObjectId"];
+                                        if (recoveryFabricObjectIdValue != null && recoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricObjectIdInstance = ((string)recoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.RecoveryFabricObjectId = recoveryFabricObjectIdInstance;
+                                        }
+                                        
+                                        JToken monitoringJobTypeValue2 = providerSpecificDetailsValue["monitoringJobType"];
+                                        if (monitoringJobTypeValue2 != null && monitoringJobTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string monitoringJobTypeInstance2 = ((string)monitoringJobTypeValue2);
+                                            a2AReplicationDetailsInstance.MonitoringJobType = monitoringJobTypeInstance2;
+                                        }
+                                        
+                                        JToken monitoringPercentageCompletionValue2 = providerSpecificDetailsValue["monitoringPercentageCompletion"];
+                                        if (monitoringPercentageCompletionValue2 != null && monitoringPercentageCompletionValue2.Type != JTokenType.Null)
+                                        {
+                                            int monitoringPercentageCompletionInstance2 = ((int)monitoringPercentageCompletionValue2);
+                                            a2AReplicationDetailsInstance.MonitoringPercentageCompletion = monitoringPercentageCompletionInstance2;
+                                        }
+                                        
+                                        JToken lastHeartbeatValue = providerSpecificDetailsValue["lastHeartbeat"];
+                                        if (lastHeartbeatValue != null && lastHeartbeatValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastHeartbeatInstance = ((DateTime)lastHeartbeatValue);
+                                            a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
+                                        }
+                                        
+                                        JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
+                                        if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
+                                        {
+                                            string instanceTypeInstance3 = ((string)instanceTypeValue3);
+                                            a2AReplicationDetailsInstance.InstanceType = instanceTypeInstance3;
+                                        }
+                                        propertiesInstance.ProviderSpecificDetails = a2AReplicationDetailsInstance;
+                                    }
+                                    if (typeName == "InMageAzureV2")
+                                    {
+                                        InMageAzureV2ProviderSpecificSettings inMageAzureV2ProviderSpecificSettingsInstance = new InMageAzureV2ProviderSpecificSettings();
+                                        
+                                        JToken infrastructureVmIdValue = providerSpecificDetailsValue["infrastructureVmId"];
+                                        if (infrastructureVmIdValue != null && infrastructureVmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string infrastructureVmIdInstance = ((string)infrastructureVmIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.InfrastructureVmId = infrastructureVmIdInstance;
+                                        }
+                                        
+                                        JToken vCenterInfrastructureIdValue = providerSpecificDetailsValue["vCenterInfrastructureId"];
+                                        if (vCenterInfrastructureIdValue != null && vCenterInfrastructureIdValue.Type != JTokenType.Null)
+                                        {
+                                            string vCenterInfrastructureIdInstance = ((string)vCenterInfrastructureIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.VCenterInfrastructureId = vCenterInfrastructureIdInstance;
+                                        }
+                                        
+                                        JToken protectionStageValue = providerSpecificDetailsValue["protectionStage"];
+                                        if (protectionStageValue != null && protectionStageValue.Type != JTokenType.Null)
+                                        {
+                                            string protectionStageInstance = ((string)protectionStageValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ProtectionStage = protectionStageInstance;
+                                        }
+                                        
+                                        JToken vmIdValue3 = providerSpecificDetailsValue["vmId"];
+                                        if (vmIdValue3 != null && vmIdValue3.Type != JTokenType.Null)
+                                        {
+                                            string vmIdInstance3 = ((string)vmIdValue3);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.VmId = vmIdInstance3;
+                                        }
+                                        
+                                        JToken resyncProgressPercentageValue = providerSpecificDetailsValue["resyncProgressPercentage"];
+                                        if (resyncProgressPercentageValue != null && resyncProgressPercentageValue.Type != JTokenType.Null)
+                                        {
+                                            int resyncProgressPercentageInstance = ((int)resyncProgressPercentageValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ResyncProgressPercentage = resyncProgressPercentageInstance;
+                                        }
+                                        
+                                        JToken rpoInSecondsValue = providerSpecificDetailsValue["rpoInSeconds"];
+                                        if (rpoInSecondsValue != null && rpoInSecondsValue.Type != JTokenType.Null)
+                                        {
+                                            long rpoInSecondsInstance = ((long)rpoInSecondsValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RpoInSeconds = rpoInSecondsInstance;
+                                        }
+                                        
+                                        JToken compressedDataRateInMBValue = providerSpecificDetailsValue["compressedDataRateInMB"];
+                                        if (compressedDataRateInMBValue != null && compressedDataRateInMBValue.Type != JTokenType.Null)
+                                        {
+                                            double compressedDataRateInMBInstance = ((double)compressedDataRateInMBValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.CompressedDataRateInMB = compressedDataRateInMBInstance;
+                                        }
+                                        
+                                        JToken uncompressedDataRateInMBValue = providerSpecificDetailsValue["uncompressedDataRateInMB"];
+                                        if (uncompressedDataRateInMBValue != null && uncompressedDataRateInMBValue.Type != JTokenType.Null)
+                                        {
+                                            double uncompressedDataRateInMBInstance = ((double)uncompressedDataRateInMBValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.UncompressedDataRateInMB = uncompressedDataRateInMBInstance;
+                                        }
+                                        
+                                        JToken ipAddressValue = providerSpecificDetailsValue["ipAddress"];
+                                        if (ipAddressValue != null && ipAddressValue.Type != JTokenType.Null)
+                                        {
+                                            string ipAddressInstance = ((string)ipAddressValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
+                                        }
+                                        
+                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string agentVersionInstance = ((string)agentVersionValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
+                                        JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
+                                        if (isAgentUpdateRequiredValue != null && isAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isAgentUpdateRequiredInstance = ((string)isAgentUpdateRequiredValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.IsAgentUpdateRequired = isAgentUpdateRequiredInstance;
+                                        }
+                                        
+                                        JToken isRebootAfterUpdateRequiredValue = providerSpecificDetailsValue["isRebootAfterUpdateRequired"];
+                                        if (isRebootAfterUpdateRequiredValue != null && isRebootAfterUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isRebootAfterUpdateRequiredInstance = ((string)isRebootAfterUpdateRequiredValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.IsRebootAfterUpdateRequired = isRebootAfterUpdateRequiredInstance;
+                                        }
+                                        
+                                        JToken lastHeartbeatValue2 = providerSpecificDetailsValue["lastHeartbeat"];
+                                        if (lastHeartbeatValue2 != null && lastHeartbeatValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastHeartbeatInstance2 = ((DateTime)lastHeartbeatValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastHeartbeat = lastHeartbeatInstance2;
+                                        }
+                                        
+                                        JToken processServerIdValue = providerSpecificDetailsValue["processServerId"];
+                                        if (processServerIdValue != null && processServerIdValue.Type != JTokenType.Null)
+                                        {
+                                            string processServerIdInstance = ((string)processServerIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ProcessServerId = processServerIdInstance;
+                                        }
+                                        
+                                        JToken multiVmGroupIdValue2 = providerSpecificDetailsValue["multiVmGroupId"];
+                                        if (multiVmGroupIdValue2 != null && multiVmGroupIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmGroupIdInstance2 = ((string)multiVmGroupIdValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupId = multiVmGroupIdInstance2;
+                                        }
+                                        
+                                        JToken multiVmGroupNameValue2 = providerSpecificDetailsValue["multiVmGroupName"];
+                                        if (multiVmGroupNameValue2 != null && multiVmGroupNameValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmGroupNameInstance2 = ((string)multiVmGroupNameValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
+                                        }
+                                        
+                                        JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
+                                        if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken protectedDisksValue2 in ((JArray)protectedDisksArray2))
+                                            {
+                                                InMageAzureV2ProtectedDiskDetails inMageAzureV2ProtectedDiskDetailsInstance = new InMageAzureV2ProtectedDiskDetails();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.ProtectedDisks.Add(inMageAzureV2ProtectedDiskDetailsInstance);
+                                                
+                                                JToken diskIdValue = protectedDisksValue2["diskId"];
+                                                if (diskIdValue != null && diskIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskIdInstance = ((string)diskIdValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
+                                                }
+                                                
+                                                JToken diskNameValue = protectedDisksValue2["diskName"];
+                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance = ((string)diskNameValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
+                                                JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
+                                                if (protectionStageValue2 != null && protectionStageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string protectionStageInstance2 = ((string)protectionStageValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.ProtectionStage = protectionStageInstance2;
+                                                }
+                                                
+                                                JToken healthErrorCodeValue = protectedDisksValue2["healthErrorCode"];
+                                                if (healthErrorCodeValue != null && healthErrorCodeValue.Type != JTokenType.Null)
+                                                {
+                                                    string healthErrorCodeInstance = ((string)healthErrorCodeValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.HealthErrorCode = healthErrorCodeInstance;
+                                                }
+                                                
+                                                JToken rpoInSecondsValue2 = protectedDisksValue2["rpoInSeconds"];
+                                                if (rpoInSecondsValue2 != null && rpoInSecondsValue2.Type != JTokenType.Null)
+                                                {
+                                                    long rpoInSecondsInstance2 = ((long)rpoInSecondsValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.RpoInSeconds = rpoInSecondsInstance2;
+                                                }
+                                                
+                                                JToken resyncRequiredValue2 = protectedDisksValue2["resyncRequired"];
+                                                if (resyncRequiredValue2 != null && resyncRequiredValue2.Type != JTokenType.Null)
+                                                {
+                                                    string resyncRequiredInstance2 = ((string)resyncRequiredValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.ResyncRequired = resyncRequiredInstance2;
+                                                }
+                                                
+                                                JToken resyncProgressPercentageValue2 = protectedDisksValue2["resyncProgressPercentage"];
+                                                if (resyncProgressPercentageValue2 != null && resyncProgressPercentageValue2.Type != JTokenType.Null)
+                                                {
+                                                    int resyncProgressPercentageInstance2 = ((int)resyncProgressPercentageValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.ResyncProgressPercentage = resyncProgressPercentageInstance2;
+                                                }
+                                                
+                                                JToken resyncDurationInSecondsValue = protectedDisksValue2["resyncDurationInSeconds"];
+                                                if (resyncDurationInSecondsValue != null && resyncDurationInSecondsValue.Type != JTokenType.Null)
+                                                {
+                                                    long resyncDurationInSecondsInstance = ((long)resyncDurationInSecondsValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
+                                                }
+                                                
+                                                JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                {
+                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                }
+                                                
+                                                JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
+                                                if (fileSystemCapacityInBytesValue != null && fileSystemCapacityInBytesValue.Type != JTokenType.Null)
+                                                {
+                                                    long fileSystemCapacityInBytesInstance = ((long)fileSystemCapacityInBytesValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.FileSystemCapacityInBytes = fileSystemCapacityInBytesInstance;
+                                                }
+                                                
+                                                JToken sourceDataInMegaBytesValue = protectedDisksValue2["sourceDataInMegaBytes"];
+                                                if (sourceDataInMegaBytesValue != null && sourceDataInMegaBytesValue.Type != JTokenType.Null)
+                                                {
+                                                    double sourceDataInMegaBytesInstance = ((double)sourceDataInMegaBytesValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.SourceDataInMB = sourceDataInMegaBytesInstance;
+                                                }
+                                                
+                                                JToken psDataInMegaBytesValue = protectedDisksValue2["psDataInMegaBytes"];
+                                                if (psDataInMegaBytesValue != null && psDataInMegaBytesValue.Type != JTokenType.Null)
+                                                {
+                                                    double psDataInMegaBytesInstance = ((double)psDataInMegaBytesValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.PSDataInMB = psDataInMegaBytesInstance;
+                                                }
+                                                
+                                                JToken targetDataInMegaBytesValue = protectedDisksValue2["targetDataInMegaBytes"];
+                                                if (targetDataInMegaBytesValue != null && targetDataInMegaBytesValue.Type != JTokenType.Null)
+                                                {
+                                                    double targetDataInMegaBytesInstance = ((double)targetDataInMegaBytesValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.TargetDataInMB = targetDataInMegaBytesInstance;
+                                                }
+                                                
+                                                JToken diskResizedValue = protectedDisksValue2["diskResized"];
+                                                if (diskResizedValue != null && diskResizedValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskResizedInstance = ((string)diskResizedValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken diskResizedValue2 = providerSpecificDetailsValue["diskResized"];
+                                        if (diskResizedValue2 != null && diskResizedValue2.Type != JTokenType.Null)
+                                        {
+                                            string diskResizedInstance2 = ((string)diskResizedValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.DiskResized = diskResizedInstance2;
+                                        }
+                                        
+                                        JToken masterTargetIdValue = providerSpecificDetailsValue["masterTargetId"];
+                                        if (masterTargetIdValue != null && masterTargetIdValue.Type != JTokenType.Null)
+                                        {
+                                            string masterTargetIdInstance = ((string)masterTargetIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MasterTargetId = masterTargetIdInstance;
+                                        }
+                                        
+                                        JToken sourceVmCPUCountValue = providerSpecificDetailsValue["sourceVmCPUCount"];
+                                        if (sourceVmCPUCountValue != null && sourceVmCPUCountValue.Type != JTokenType.Null)
+                                        {
+                                            int sourceVmCPUCountInstance = ((int)sourceVmCPUCountValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.SourceVmCPUCount = sourceVmCPUCountInstance;
+                                        }
+                                        
+                                        JToken sourceVmRAMSizeInMBValue = providerSpecificDetailsValue["sourceVmRAMSizeInMB"];
+                                        if (sourceVmRAMSizeInMBValue != null && sourceVmRAMSizeInMBValue.Type != JTokenType.Null)
+                                        {
+                                            int sourceVmRAMSizeInMBInstance = ((int)sourceVmRAMSizeInMBValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.SourceVmRAMSizeInMB = sourceVmRAMSizeInMBInstance;
+                                        }
+                                        
+                                        JToken osTypeValue2 = providerSpecificDetailsValue["osType"];
+                                        if (osTypeValue2 != null && osTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string osTypeInstance2 = ((string)osTypeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.OSType = osTypeInstance2;
+                                        }
+                                        
+                                        JToken vhdNameValue3 = providerSpecificDetailsValue["vhdName"];
+                                        if (vhdNameValue3 != null && vhdNameValue3.Type != JTokenType.Null)
+                                        {
+                                            string vhdNameInstance3 = ((string)vhdNameValue3);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.VHDName = vhdNameInstance3;
+                                        }
+                                        
+                                        JToken osDiskIdValue = providerSpecificDetailsValue["osDiskId"];
+                                        if (osDiskIdValue != null && osDiskIdValue.Type != JTokenType.Null)
+                                        {
+                                            string osDiskIdInstance = ((string)osDiskIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.OSDiskId = osDiskIdInstance;
+                                        }
+                                        
+                                        JToken azureVMDiskDetailsArray = providerSpecificDetailsValue["azureVMDiskDetails"];
+                                        if (azureVMDiskDetailsArray != null && azureVMDiskDetailsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken azureVMDiskDetailsValue in ((JArray)azureVMDiskDetailsArray))
+                                            {
+                                                AzureVmDiskDetails azureVmDiskDetailsInstance = new AzureVmDiskDetails();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.AzureVMDiskDetails.Add(azureVmDiskDetailsInstance);
+                                                
+                                                JToken vhdTypeValue3 = azureVMDiskDetailsValue["vhdType"];
+                                                if (vhdTypeValue3 != null && vhdTypeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string vhdTypeInstance3 = ((string)vhdTypeValue3);
+                                                    azureVmDiskDetailsInstance.VhdType = vhdTypeInstance3;
+                                                }
+                                                
+                                                JToken vhdIdValue3 = azureVMDiskDetailsValue["vhdId"];
+                                                if (vhdIdValue3 != null && vhdIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string vhdIdInstance3 = ((string)vhdIdValue3);
+                                                    azureVmDiskDetailsInstance.VhdId = vhdIdInstance3;
+                                                }
+                                                
+                                                JToken vhdNameValue4 = azureVMDiskDetailsValue["vhdName"];
+                                                if (vhdNameValue4 != null && vhdNameValue4.Type != JTokenType.Null)
+                                                {
+                                                    string vhdNameInstance4 = ((string)vhdNameValue4);
+                                                    azureVmDiskDetailsInstance.VhdName = vhdNameInstance4;
+                                                }
+                                                
+                                                JToken maxSizeMBValue3 = azureVMDiskDetailsValue["maxSizeMB"];
+                                                if (maxSizeMBValue3 != null && maxSizeMBValue3.Type != JTokenType.Null)
+                                                {
+                                                    string maxSizeMBInstance3 = ((string)maxSizeMBValue3);
+                                                    azureVmDiskDetailsInstance.MaxSizeMB = maxSizeMBInstance3;
+                                                }
+                                                
+                                                JToken targetDiskLocationValue = azureVMDiskDetailsValue["targetDiskLocation"];
+                                                if (targetDiskLocationValue != null && targetDiskLocationValue.Type != JTokenType.Null)
+                                                {
+                                                    string targetDiskLocationInstance = ((string)targetDiskLocationValue);
+                                                    azureVmDiskDetailsInstance.TargetDiskLocation = targetDiskLocationInstance;
+                                                }
+                                                
+                                                JToken lunIdValue = azureVMDiskDetailsValue["lunId"];
+                                                if (lunIdValue != null && lunIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string lunIdInstance = ((string)lunIdValue);
+                                                    azureVmDiskDetailsInstance.LunId = lunIdInstance;
+                                                }
+                                                
+                                                JToken targetDiskNameValue = azureVMDiskDetailsValue["targetDiskName"];
+                                                if (targetDiskNameValue != null && targetDiskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string targetDiskNameInstance = ((string)targetDiskNameValue);
+                                                    azureVmDiskDetailsInstance.TargetDiskName = targetDiskNameInstance;
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken recoveryAzureVMNameValue2 = providerSpecificDetailsValue["recoveryAzureVMName"];
+                                        if (recoveryAzureVMNameValue2 != null && recoveryAzureVMNameValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureVMNameInstance2 = ((string)recoveryAzureVMNameValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureVMName = recoveryAzureVMNameInstance2;
+                                        }
+                                        
+                                        JToken recoveryAzureVMSizeValue2 = providerSpecificDetailsValue["recoveryAzureVMSize"];
+                                        if (recoveryAzureVMSizeValue2 != null && recoveryAzureVMSizeValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureVMSizeInstance2 = ((string)recoveryAzureVMSizeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureVMSize = recoveryAzureVMSizeInstance2;
+                                        }
+                                        
+                                        JToken recoveryAzureStorageAccountValue = providerSpecificDetailsValue["recoveryAzureStorageAccount"];
+                                        if (recoveryAzureStorageAccountValue != null && recoveryAzureStorageAccountValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureStorageAccountInstance = ((string)recoveryAzureStorageAccountValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureStorageAccount = recoveryAzureStorageAccountInstance;
+                                        }
+                                        
+                                        JToken vmNicsArray4 = providerSpecificDetailsValue["vmNics"];
+                                        if (vmNicsArray4 != null && vmNicsArray4.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken vmNicsValue4 in ((JArray)vmNicsArray4))
+                                            {
+                                                VMNicDetails vMNicDetailsInstance4 = new VMNicDetails();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.VMNics.Add(vMNicDetailsInstance4);
+                                                
+                                                JToken nicIdValue4 = vmNicsValue4["nicId"];
+                                                if (nicIdValue4 != null && nicIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string nicIdInstance4 = ((string)nicIdValue4);
+                                                    vMNicDetailsInstance4.NicId = nicIdInstance4;
+                                                }
+                                                
+                                                JToken vMSubnetNameValue4 = vmNicsValue4["vMSubnetName"];
+                                                if (vMSubnetNameValue4 != null && vMSubnetNameValue4.Type != JTokenType.Null)
+                                                {
+                                                    string vMSubnetNameInstance4 = ((string)vMSubnetNameValue4);
+                                                    vMNicDetailsInstance4.VMSubnetName = vMSubnetNameInstance4;
+                                                }
+                                                
+                                                JToken vMNetworkNameValue4 = vmNicsValue4["vMNetworkName"];
+                                                if (vMNetworkNameValue4 != null && vMNetworkNameValue4.Type != JTokenType.Null)
+                                                {
+                                                    string vMNetworkNameInstance4 = ((string)vMNetworkNameValue4);
+                                                    vMNicDetailsInstance4.VMNetworkName = vMNetworkNameInstance4;
+                                                }
+                                                
+                                                JToken recoveryVMNetworkIdValue4 = vmNicsValue4["recoveryVMNetworkId"];
+                                                if (recoveryVMNetworkIdValue4 != null && recoveryVMNetworkIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryVMNetworkIdInstance4 = ((string)recoveryVMNetworkIdValue4);
+                                                    vMNicDetailsInstance4.RecoveryVMNetworkId = recoveryVMNetworkIdInstance4;
+                                                }
+                                                
+                                                JToken recoveryVMSubnetNameValue4 = vmNicsValue4["recoveryVMSubnetName"];
+                                                if (recoveryVMSubnetNameValue4 != null && recoveryVMSubnetNameValue4.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryVMSubnetNameInstance4 = ((string)recoveryVMSubnetNameValue4);
+                                                    vMNicDetailsInstance4.RecoveryVMSubnetName = recoveryVMSubnetNameInstance4;
+                                                }
+                                                
+                                                JToken ipAddressTypeValue4 = vmNicsValue4["ipAddressType"];
+                                                if (ipAddressTypeValue4 != null && ipAddressTypeValue4.Type != JTokenType.Null)
+                                                {
+                                                    string ipAddressTypeInstance4 = ((string)ipAddressTypeValue4);
+                                                    vMNicDetailsInstance4.IpAddressType = ipAddressTypeInstance4;
+                                                }
+                                                
+                                                JToken replicaNicStaticIPAddressValue4 = vmNicsValue4["replicaNicStaticIPAddress"];
+                                                if (replicaNicStaticIPAddressValue4 != null && replicaNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                {
+                                                    string replicaNicStaticIPAddressInstance4 = ((string)replicaNicStaticIPAddressValue4);
+                                                    vMNicDetailsInstance4.ReplicaNicStaticIPAddress = replicaNicStaticIPAddressInstance4;
+                                                }
+                                                
+                                                JToken selectionTypeValue4 = vmNicsValue4["selectionType"];
+                                                if (selectionTypeValue4 != null && selectionTypeValue4.Type != JTokenType.Null)
+                                                {
+                                                    string selectionTypeInstance4 = ((string)selectionTypeValue4);
+                                                    vMNicDetailsInstance4.SelectionType = selectionTypeInstance4;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue4 = vmNicsValue4["sourceNicArmId"];
+                                                if (sourceNicArmIdValue4 != null && sourceNicArmIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance4 = ((string)sourceNicArmIdValue4);
+                                                    vMNicDetailsInstance4.SourceNicArmId = sourceNicArmIdInstance4;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue4 = vmNicsValue4["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue4 != null && primaryNicStaticIPAddressValue4.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance4 = ((string)primaryNicStaticIPAddressValue4);
+                                                    vMNicDetailsInstance4.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance4;
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken selectedRecoveryAzureNetworkIdValue2 = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
+                                        if (selectedRecoveryAzureNetworkIdValue2 != null && selectedRecoveryAzureNetworkIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string selectedRecoveryAzureNetworkIdInstance2 = ((string)selectedRecoveryAzureNetworkIdValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance2;
+                                        }
+                                        
+                                        JToken discoveryTypeValue = providerSpecificDetailsValue["discoveryType"];
+                                        if (discoveryTypeValue != null && discoveryTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string discoveryTypeInstance = ((string)discoveryTypeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance;
+                                        }
+                                        
+                                        JToken licenseTypeValue = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue != null && licenseTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance = ((string)licenseTypeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LicenseType = licenseTypeInstance;
+                                        }
+                                        
+                                        JToken enableRDPOnTargetOptionValue = providerSpecificDetailsValue["enableRDPOnTargetOption"];
+                                        if (enableRDPOnTargetOptionValue != null && enableRDPOnTargetOptionValue.Type != JTokenType.Null)
+                                        {
+                                            string enableRDPOnTargetOptionInstance = ((string)enableRDPOnTargetOptionValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.EnableRDPOnTargetOption = enableRDPOnTargetOptionInstance;
+                                        }
+                                        
+                                        JToken recoveryAzureLogStorageAccountIdValue = providerSpecificDetailsValue["recoveryAzureLogStorageAccountId"];
+                                        if (recoveryAzureLogStorageAccountIdValue != null && recoveryAzureLogStorageAccountIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureLogStorageAccountIdInstance = ((string)recoveryAzureLogStorageAccountIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance;
+                                        }
+                                        
+                                        JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
+                                        if (vmProtectionStateValue3 != null && vmProtectionStateValue3.Type != JTokenType.Null)
+                                        {
+                                            string vmProtectionStateInstance3 = ((string)vmProtectionStateValue3);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionState = vmProtectionStateInstance3;
+                                        }
+                                        
+                                        JToken vmProtectionStateDescriptionValue3 = providerSpecificDetailsValue["vmProtectionStateDescription"];
+                                        if (vmProtectionStateDescriptionValue3 != null && vmProtectionStateDescriptionValue3.Type != JTokenType.Null)
+                                        {
+                                            string vmProtectionStateDescriptionInstance3 = ((string)vmProtectionStateDescriptionValue3);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
+                                        }
+                                        
+                                        JToken datastoresArray = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray != null && datastoresArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue in ((JArray)datastoresArray))
+                                            {
+                                                inMageAzureV2ProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue != null && targetVmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance = ((string)targetVmIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance;
+                                        }
+                                        
+                                        JToken recoveryAzureResourceGroupIdValue2 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue2 != null && recoveryAzureResourceGroupIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance2 = ((string)recoveryAzureResourceGroupIdValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
+                                        }
+                                        
+                                        JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
+                                        if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
+                                        {
+                                            string instanceTypeInstance4 = ((string)instanceTypeValue4);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.InstanceType = instanceTypeInstance4;
+                                        }
+                                        propertiesInstance.ProviderSpecificDetails = inMageAzureV2ProviderSpecificSettingsInstance;
+                                    }
+                                    if (typeName == "InMage")
+                                    {
+                                        InMageProviderSpecificSettings inMageProviderSpecificSettingsInstance = new InMageProviderSpecificSettings();
+                                        
+                                        JToken activeSiteTypeValue = providerSpecificDetailsValue["activeSiteType"];
+                                        if (activeSiteTypeValue != null && activeSiteTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string activeSiteTypeInstance = ((string)activeSiteTypeValue);
+                                            inMageProviderSpecificSettingsInstance.ActiveSiteType = activeSiteTypeInstance;
+                                        }
+                                        
+                                        JToken sourceVmCPUCountValue2 = providerSpecificDetailsValue["sourceVmCPUCount"];
+                                        if (sourceVmCPUCountValue2 != null && sourceVmCPUCountValue2.Type != JTokenType.Null)
+                                        {
+                                            int sourceVmCPUCountInstance2 = ((int)sourceVmCPUCountValue2);
+                                            inMageProviderSpecificSettingsInstance.SourceVmCPUCount = sourceVmCPUCountInstance2;
+                                        }
+                                        
+                                        JToken sourceVmRAMSizeInMBValue2 = providerSpecificDetailsValue["sourceVmRAMSizeInMB"];
+                                        if (sourceVmRAMSizeInMBValue2 != null && sourceVmRAMSizeInMBValue2.Type != JTokenType.Null)
+                                        {
+                                            int sourceVmRAMSizeInMBInstance2 = ((int)sourceVmRAMSizeInMBValue2);
+                                            inMageProviderSpecificSettingsInstance.SourceVmRAMSizeInMB = sourceVmRAMSizeInMBInstance2;
+                                        }
+                                        
+                                        JToken osDetailsValue = providerSpecificDetailsValue["osDetails"];
+                                        if (osDetailsValue != null && osDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            OSDiskDetails osDetailsInstance = new OSDiskDetails();
+                                            inMageProviderSpecificSettingsInstance.OsDetails = osDetailsInstance;
+                                            
+                                            JToken osVhdIdValue = osDetailsValue["osVhdId"];
+                                            if (osVhdIdValue != null && osVhdIdValue.Type != JTokenType.Null)
+                                            {
+                                                string osVhdIdInstance = ((string)osVhdIdValue);
+                                                osDetailsInstance.OSVhdId = osVhdIdInstance;
+                                            }
+                                            
+                                            JToken osTypeValue3 = osDetailsValue["osType"];
+                                            if (osTypeValue3 != null && osTypeValue3.Type != JTokenType.Null)
+                                            {
+                                                string osTypeInstance3 = ((string)osTypeValue3);
+                                                osDetailsInstance.OSType = osTypeInstance3;
+                                            }
+                                            
+                                            JToken vhdNameValue5 = osDetailsValue["vhdName"];
+                                            if (vhdNameValue5 != null && vhdNameValue5.Type != JTokenType.Null)
+                                            {
+                                                string vhdNameInstance5 = ((string)vhdNameValue5);
+                                                osDetailsInstance.VhdName = vhdNameInstance5;
+                                            }
+                                        }
+                                        
+                                        JToken protectionStageValue3 = providerSpecificDetailsValue["protectionStage"];
+                                        if (protectionStageValue3 != null && protectionStageValue3.Type != JTokenType.Null)
+                                        {
+                                            string protectionStageInstance3 = ((string)protectionStageValue3);
+                                            inMageProviderSpecificSettingsInstance.ProtectionStage = protectionStageInstance3;
+                                        }
+                                        
+                                        JToken vmIdValue4 = providerSpecificDetailsValue["vmId"];
+                                        if (vmIdValue4 != null && vmIdValue4.Type != JTokenType.Null)
+                                        {
+                                            string vmIdInstance4 = ((string)vmIdValue4);
+                                            inMageProviderSpecificSettingsInstance.VmId = vmIdInstance4;
+                                        }
+                                        
+                                        JToken resyncDetailsValue = providerSpecificDetailsValue["resyncDetails"];
+                                        if (resyncDetailsValue != null && resyncDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            InitialReplicationDetails resyncDetailsInstance = new InitialReplicationDetails();
+                                            inMageProviderSpecificSettingsInstance.ResyncDetails = resyncDetailsInstance;
+                                            
+                                            JToken initialReplicationTypeValue3 = resyncDetailsValue["initialReplicationType"];
+                                            if (initialReplicationTypeValue3 != null && initialReplicationTypeValue3.Type != JTokenType.Null)
+                                            {
+                                                string initialReplicationTypeInstance3 = ((string)initialReplicationTypeValue3);
+                                                resyncDetailsInstance.InitialReplicationType = initialReplicationTypeInstance3;
+                                            }
+                                            
+                                            JToken initialReplicationProgressPercentageValue3 = resyncDetailsValue["initialReplicationProgressPercentage"];
+                                            if (initialReplicationProgressPercentageValue3 != null && initialReplicationProgressPercentageValue3.Type != JTokenType.Null)
+                                            {
+                                                string initialReplicationProgressPercentageInstance3 = ((string)initialReplicationProgressPercentageValue3);
+                                                resyncDetailsInstance.InitialReplicationProgressPercentage = initialReplicationProgressPercentageInstance3;
+                                            }
+                                        }
+                                        
+                                        JToken retentionWindowStartValue = providerSpecificDetailsValue["retentionWindowStart"];
+                                        if (retentionWindowStartValue != null && retentionWindowStartValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime retentionWindowStartInstance = ((DateTime)retentionWindowStartValue);
+                                            inMageProviderSpecificSettingsInstance.RetentionWindowStart = retentionWindowStartInstance;
+                                        }
+                                        
+                                        JToken retentionWindowEndValue = providerSpecificDetailsValue["retentionWindowEnd"];
+                                        if (retentionWindowEndValue != null && retentionWindowEndValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime retentionWindowEndInstance = ((DateTime)retentionWindowEndValue);
+                                            inMageProviderSpecificSettingsInstance.RetentionWindowEnd = retentionWindowEndInstance;
+                                        }
+                                        
+                                        JToken compressedDataRateInMBValue2 = providerSpecificDetailsValue["compressedDataRateInMB"];
+                                        if (compressedDataRateInMBValue2 != null && compressedDataRateInMBValue2.Type != JTokenType.Null)
+                                        {
+                                            double compressedDataRateInMBInstance2 = ((double)compressedDataRateInMBValue2);
+                                            inMageProviderSpecificSettingsInstance.CompressedDataRateInMB = compressedDataRateInMBInstance2;
+                                        }
+                                        
+                                        JToken uncompressedDataRateInMBValue2 = providerSpecificDetailsValue["uncompressedDataRateInMB"];
+                                        if (uncompressedDataRateInMBValue2 != null && uncompressedDataRateInMBValue2.Type != JTokenType.Null)
+                                        {
+                                            double uncompressedDataRateInMBInstance2 = ((double)uncompressedDataRateInMBValue2);
+                                            inMageProviderSpecificSettingsInstance.UncompressedDataRateInMB = uncompressedDataRateInMBInstance2;
+                                        }
+                                        
+                                        JToken rpoInSecondsValue3 = providerSpecificDetailsValue["rpoInSeconds"];
+                                        if (rpoInSecondsValue3 != null && rpoInSecondsValue3.Type != JTokenType.Null)
+                                        {
+                                            long rpoInSecondsInstance3 = ((long)rpoInSecondsValue3);
+                                            inMageProviderSpecificSettingsInstance.RpoInSeconds = rpoInSecondsInstance3;
+                                        }
+                                        
+                                        JToken protectedDisksArray3 = providerSpecificDetailsValue["protectedDisks"];
+                                        if (protectedDisksArray3 != null && protectedDisksArray3.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken protectedDisksValue3 in ((JArray)protectedDisksArray3))
+                                            {
+                                                InMageProtectedDiskDetails inMageProtectedDiskDetailsInstance = new InMageProtectedDiskDetails();
+                                                inMageProviderSpecificSettingsInstance.ProtectedDisks.Add(inMageProtectedDiskDetailsInstance);
+                                                
+                                                JToken diskIdValue2 = protectedDisksValue3["diskId"];
+                                                if (diskIdValue2 != null && diskIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string diskIdInstance2 = ((string)diskIdValue2);
+                                                    inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
+                                                }
+                                                
+                                                JToken diskNameValue2 = protectedDisksValue3["diskName"];
+                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance2 = ((string)diskNameValue2);
+                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                }
+                                                
+                                                JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
+                                                if (protectionStageValue4 != null && protectionStageValue4.Type != JTokenType.Null)
+                                                {
+                                                    string protectionStageInstance4 = ((string)protectionStageValue4);
+                                                    inMageProtectedDiskDetailsInstance.ProtectionStage = protectionStageInstance4;
+                                                }
+                                                
+                                                JToken healthErrorCodeValue2 = protectedDisksValue3["healthErrorCode"];
+                                                if (healthErrorCodeValue2 != null && healthErrorCodeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string healthErrorCodeInstance2 = ((string)healthErrorCodeValue2);
+                                                    inMageProtectedDiskDetailsInstance.HealthErrorCode = healthErrorCodeInstance2;
+                                                }
+                                                
+                                                JToken rpoInSecondsValue4 = protectedDisksValue3["rpoInSeconds"];
+                                                if (rpoInSecondsValue4 != null && rpoInSecondsValue4.Type != JTokenType.Null)
+                                                {
+                                                    long rpoInSecondsInstance4 = ((long)rpoInSecondsValue4);
+                                                    inMageProtectedDiskDetailsInstance.RpoInSeconds = rpoInSecondsInstance4;
+                                                }
+                                                
+                                                JToken resyncRequiredValue3 = protectedDisksValue3["resyncRequired"];
+                                                if (resyncRequiredValue3 != null && resyncRequiredValue3.Type != JTokenType.Null)
+                                                {
+                                                    string resyncRequiredInstance3 = ((string)resyncRequiredValue3);
+                                                    inMageProtectedDiskDetailsInstance.ResyncRequired = resyncRequiredInstance3;
+                                                }
+                                                
+                                                JToken resyncProgressPercentageValue3 = protectedDisksValue3["resyncProgressPercentage"];
+                                                if (resyncProgressPercentageValue3 != null && resyncProgressPercentageValue3.Type != JTokenType.Null)
+                                                {
+                                                    int resyncProgressPercentageInstance3 = ((int)resyncProgressPercentageValue3);
+                                                    inMageProtectedDiskDetailsInstance.ResyncProgressPercentage = resyncProgressPercentageInstance3;
+                                                }
+                                                
+                                                JToken resyncDurationInSecondsValue2 = protectedDisksValue3["resyncDurationInSeconds"];
+                                                if (resyncDurationInSecondsValue2 != null && resyncDurationInSecondsValue2.Type != JTokenType.Null)
+                                                {
+                                                    long resyncDurationInSecondsInstance2 = ((long)resyncDurationInSecondsValue2);
+                                                    inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
+                                                }
+                                                
+                                                JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                {
+                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                }
+                                                
+                                                JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
+                                                if (fileSystemCapacityInBytesValue2 != null && fileSystemCapacityInBytesValue2.Type != JTokenType.Null)
+                                                {
+                                                    long fileSystemCapacityInBytesInstance2 = ((long)fileSystemCapacityInBytesValue2);
+                                                    inMageProtectedDiskDetailsInstance.FileSystemCapacityInBytes = fileSystemCapacityInBytesInstance2;
+                                                }
+                                                
+                                                JToken sourceDataInMBValue = protectedDisksValue3["sourceDataInMB"];
+                                                if (sourceDataInMBValue != null && sourceDataInMBValue.Type != JTokenType.Null)
+                                                {
+                                                    double sourceDataInMBInstance = ((double)sourceDataInMBValue);
+                                                    inMageProtectedDiskDetailsInstance.SourceDataInMegaBytes = sourceDataInMBInstance;
+                                                }
+                                                
+                                                JToken psDataInMBValue = protectedDisksValue3["psDataInMB"];
+                                                if (psDataInMBValue != null && psDataInMBValue.Type != JTokenType.Null)
+                                                {
+                                                    double psDataInMBInstance = ((double)psDataInMBValue);
+                                                    inMageProtectedDiskDetailsInstance.PSDataInMegaBytes = psDataInMBInstance;
+                                                }
+                                                
+                                                JToken targetDataInMBValue = protectedDisksValue3["targetDataInMB"];
+                                                if (targetDataInMBValue != null && targetDataInMBValue.Type != JTokenType.Null)
+                                                {
+                                                    double targetDataInMBInstance = ((double)targetDataInMBValue);
+                                                    inMageProtectedDiskDetailsInstance.TargetDataInMegaBytes = targetDataInMBInstance;
+                                                }
+                                                
+                                                JToken diskResizedValue3 = protectedDisksValue3["diskResized"];
+                                                if (diskResizedValue3 != null && diskResizedValue3.Type != JTokenType.Null)
+                                                {
+                                                    string diskResizedInstance3 = ((string)diskResizedValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken ipAddressValue2 = providerSpecificDetailsValue["ipAddress"];
+                                        if (ipAddressValue2 != null && ipAddressValue2.Type != JTokenType.Null)
+                                        {
+                                            string ipAddressInstance2 = ((string)ipAddressValue2);
+                                            inMageProviderSpecificSettingsInstance.IpAddress = ipAddressInstance2;
+                                        }
+                                        
+                                        JToken lastHeartbeatValue3 = providerSpecificDetailsValue["lastHeartbeat"];
+                                        if (lastHeartbeatValue3 != null && lastHeartbeatValue3.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastHeartbeatInstance3 = ((DateTime)lastHeartbeatValue3);
+                                            inMageProviderSpecificSettingsInstance.LastHeartbeat = lastHeartbeatInstance3;
+                                        }
+                                        
+                                        JToken processServerIdValue2 = providerSpecificDetailsValue["processServerId"];
+                                        if (processServerIdValue2 != null && processServerIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string processServerIdInstance2 = ((string)processServerIdValue2);
+                                            inMageProviderSpecificSettingsInstance.ProcessServerId = processServerIdInstance2;
+                                        }
+                                        
+                                        JToken masterTargetIdValue2 = providerSpecificDetailsValue["masterTargetId"];
+                                        if (masterTargetIdValue2 != null && masterTargetIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string masterTargetIdInstance2 = ((string)masterTargetIdValue2);
+                                            inMageProviderSpecificSettingsInstance.MasterTargetId = masterTargetIdInstance2;
+                                        }
+                                        
+                                        JToken consistencyPointsSequenceElement = ((JToken)providerSpecificDetailsValue["consistencyPoints"]);
+                                        if (consistencyPointsSequenceElement != null && consistencyPointsSequenceElement.Type != JTokenType.Null)
+                                        {
+                                            foreach (JProperty property2 in consistencyPointsSequenceElement)
+                                            {
+                                                string consistencyPointsKey = ((string)property2.Name);
+                                                DateTime consistencyPointsValue = ((DateTime)property2.Value);
+                                                inMageProviderSpecificSettingsInstance.ConsistencyPoints.Add(consistencyPointsKey, consistencyPointsValue);
+                                            }
+                                        }
+                                        
+                                        JToken diskResizedValue4 = providerSpecificDetailsValue["diskResized"];
+                                        if (diskResizedValue4 != null && diskResizedValue4.Type != JTokenType.Null)
+                                        {
+                                            string diskResizedInstance4 = ((string)diskResizedValue4);
+                                            inMageProviderSpecificSettingsInstance.DiskResized = diskResizedInstance4;
+                                        }
+                                        
+                                        JToken rebootAfterUpdateStatusValue = providerSpecificDetailsValue["rebootAfterUpdateStatus"];
+                                        if (rebootAfterUpdateStatusValue != null && rebootAfterUpdateStatusValue.Type != JTokenType.Null)
+                                        {
+                                            string rebootAfterUpdateStatusInstance = ((string)rebootAfterUpdateStatusValue);
+                                            inMageProviderSpecificSettingsInstance.RebootAfterUpdateStatus = rebootAfterUpdateStatusInstance;
+                                        }
+                                        
+                                        JToken multiVmGroupIdValue3 = providerSpecificDetailsValue["multiVmGroupId"];
+                                        if (multiVmGroupIdValue3 != null && multiVmGroupIdValue3.Type != JTokenType.Null)
+                                        {
+                                            string multiVmGroupIdInstance3 = ((string)multiVmGroupIdValue3);
+                                            inMageProviderSpecificSettingsInstance.MultiVmGroupId = multiVmGroupIdInstance3;
+                                        }
+                                        
+                                        JToken multiVmGroupNameValue3 = providerSpecificDetailsValue["multiVmGroupName"];
+                                        if (multiVmGroupNameValue3 != null && multiVmGroupNameValue3.Type != JTokenType.Null)
+                                        {
+                                            string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
+                                            inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                        }
+                                        
+                                        JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
+                                        if (agentDetailsValue != null && agentDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
+                                            inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
+                                            
+                                            JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
+                                            if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                            {
+                                                string agentVersionInstance2 = ((string)agentVersionValue2);
+                                                agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                            }
+                                            
+                                            JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
+                                            if (agentUpdateStatusValue != null && agentUpdateStatusValue.Type != JTokenType.Null)
+                                            {
+                                                string agentUpdateStatusInstance = ((string)agentUpdateStatusValue);
+                                                agentDetailsInstance.AgentUpdateStatus = agentUpdateStatusInstance;
+                                            }
+                                            
+                                            JToken postUpdateRebootStatusValue = agentDetailsValue["postUpdateRebootStatus"];
+                                            if (postUpdateRebootStatusValue != null && postUpdateRebootStatusValue.Type != JTokenType.Null)
+                                            {
+                                                string postUpdateRebootStatusInstance = ((string)postUpdateRebootStatusValue);
+                                                agentDetailsInstance.PostUpdateRebootStatus = postUpdateRebootStatusInstance;
+                                            }
+                                        }
+                                        
+                                        JToken infrastructureVmIdValue2 = providerSpecificDetailsValue["infrastructureVmId"];
+                                        if (infrastructureVmIdValue2 != null && infrastructureVmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string infrastructureVmIdInstance2 = ((string)infrastructureVmIdValue2);
+                                            inMageProviderSpecificSettingsInstance.InfrastructureVmId = infrastructureVmIdInstance2;
+                                        }
+                                        
+                                        JToken vCenterInfrastructureIdValue2 = providerSpecificDetailsValue["vCenterInfrastructureId"];
+                                        if (vCenterInfrastructureIdValue2 != null && vCenterInfrastructureIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string vCenterInfrastructureIdInstance2 = ((string)vCenterInfrastructureIdValue2);
+                                            inMageProviderSpecificSettingsInstance.VCenterInfrastructureId = vCenterInfrastructureIdInstance2;
+                                        }
+                                        
+                                        JToken vmNicsArray5 = providerSpecificDetailsValue["vmNics"];
+                                        if (vmNicsArray5 != null && vmNicsArray5.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken vmNicsValue5 in ((JArray)vmNicsArray5))
+                                            {
+                                                VMNicDetails vMNicDetailsInstance5 = new VMNicDetails();
+                                                inMageProviderSpecificSettingsInstance.VMNics.Add(vMNicDetailsInstance5);
+                                                
+                                                JToken nicIdValue5 = vmNicsValue5["nicId"];
+                                                if (nicIdValue5 != null && nicIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string nicIdInstance5 = ((string)nicIdValue5);
+                                                    vMNicDetailsInstance5.NicId = nicIdInstance5;
+                                                }
+                                                
+                                                JToken vMSubnetNameValue5 = vmNicsValue5["vMSubnetName"];
+                                                if (vMSubnetNameValue5 != null && vMSubnetNameValue5.Type != JTokenType.Null)
+                                                {
+                                                    string vMSubnetNameInstance5 = ((string)vMSubnetNameValue5);
+                                                    vMNicDetailsInstance5.VMSubnetName = vMSubnetNameInstance5;
+                                                }
+                                                
+                                                JToken vMNetworkNameValue5 = vmNicsValue5["vMNetworkName"];
+                                                if (vMNetworkNameValue5 != null && vMNetworkNameValue5.Type != JTokenType.Null)
+                                                {
+                                                    string vMNetworkNameInstance5 = ((string)vMNetworkNameValue5);
+                                                    vMNicDetailsInstance5.VMNetworkName = vMNetworkNameInstance5;
+                                                }
+                                                
+                                                JToken recoveryVMNetworkIdValue5 = vmNicsValue5["recoveryVMNetworkId"];
+                                                if (recoveryVMNetworkIdValue5 != null && recoveryVMNetworkIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryVMNetworkIdInstance5 = ((string)recoveryVMNetworkIdValue5);
+                                                    vMNicDetailsInstance5.RecoveryVMNetworkId = recoveryVMNetworkIdInstance5;
+                                                }
+                                                
+                                                JToken recoveryVMSubnetNameValue5 = vmNicsValue5["recoveryVMSubnetName"];
+                                                if (recoveryVMSubnetNameValue5 != null && recoveryVMSubnetNameValue5.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryVMSubnetNameInstance5 = ((string)recoveryVMSubnetNameValue5);
+                                                    vMNicDetailsInstance5.RecoveryVMSubnetName = recoveryVMSubnetNameInstance5;
+                                                }
+                                                
+                                                JToken ipAddressTypeValue5 = vmNicsValue5["ipAddressType"];
+                                                if (ipAddressTypeValue5 != null && ipAddressTypeValue5.Type != JTokenType.Null)
+                                                {
+                                                    string ipAddressTypeInstance5 = ((string)ipAddressTypeValue5);
+                                                    vMNicDetailsInstance5.IpAddressType = ipAddressTypeInstance5;
+                                                }
+                                                
+                                                JToken replicaNicStaticIPAddressValue5 = vmNicsValue5["replicaNicStaticIPAddress"];
+                                                if (replicaNicStaticIPAddressValue5 != null && replicaNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                {
+                                                    string replicaNicStaticIPAddressInstance5 = ((string)replicaNicStaticIPAddressValue5);
+                                                    vMNicDetailsInstance5.ReplicaNicStaticIPAddress = replicaNicStaticIPAddressInstance5;
+                                                }
+                                                
+                                                JToken selectionTypeValue5 = vmNicsValue5["selectionType"];
+                                                if (selectionTypeValue5 != null && selectionTypeValue5.Type != JTokenType.Null)
+                                                {
+                                                    string selectionTypeInstance5 = ((string)selectionTypeValue5);
+                                                    vMNicDetailsInstance5.SelectionType = selectionTypeInstance5;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue5 = vmNicsValue5["sourceNicArmId"];
+                                                if (sourceNicArmIdValue5 != null && sourceNicArmIdValue5.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance5 = ((string)sourceNicArmIdValue5);
+                                                    vMNicDetailsInstance5.SourceNicArmId = sourceNicArmIdInstance5;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue5 = vmNicsValue5["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue5 != null && primaryNicStaticIPAddressValue5.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance5 = ((string)primaryNicStaticIPAddressValue5);
+                                                    vMNicDetailsInstance5.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance5;
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken discoveryTypeValue2 = providerSpecificDetailsValue["discoveryType"];
+                                        if (discoveryTypeValue2 != null && discoveryTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string discoveryTypeInstance2 = ((string)discoveryTypeValue2);
+                                            inMageProviderSpecificSettingsInstance.DiscoveryType = discoveryTypeInstance2;
+                                        }
+                                        
+                                        JToken vmProtectionStateValue4 = providerSpecificDetailsValue["vmProtectionState"];
+                                        if (vmProtectionStateValue4 != null && vmProtectionStateValue4.Type != JTokenType.Null)
+                                        {
+                                            string vmProtectionStateInstance4 = ((string)vmProtectionStateValue4);
+                                            inMageProviderSpecificSettingsInstance.VmProtectionState = vmProtectionStateInstance4;
+                                        }
+                                        
+                                        JToken vmProtectionStateDescriptionValue4 = providerSpecificDetailsValue["vmProtectionStateDescription"];
+                                        if (vmProtectionStateDescriptionValue4 != null && vmProtectionStateDescriptionValue4.Type != JTokenType.Null)
+                                        {
+                                            string vmProtectionStateDescriptionInstance4 = ((string)vmProtectionStateDescriptionValue4);
+                                            inMageProviderSpecificSettingsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance4;
+                                        }
+                                        
+                                        JToken azureStorageAccountIdValue = providerSpecificDetailsValue["azureStorageAccountId"];
+                                        if (azureStorageAccountIdValue != null && azureStorageAccountIdValue.Type != JTokenType.Null)
+                                        {
+                                            string azureStorageAccountIdInstance = ((string)azureStorageAccountIdValue);
+                                            inMageProviderSpecificSettingsInstance.AzureStorageAccountId = azureStorageAccountIdInstance;
+                                        }
+                                        
+                                        JToken datastoresArray2 = providerSpecificDetailsValue["datastores"];
+                                        if (datastoresArray2 != null && datastoresArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken datastoresValue2 in ((JArray)datastoresArray2))
+                                            {
+                                                inMageProviderSpecificSettingsInstance.Datastores.Add(((string)datastoresValue2));
+                                            }
+                                        }
+                                        
+                                        JToken targetVmIdValue2 = providerSpecificDetailsValue["targetVmId"];
+                                        if (targetVmIdValue2 != null && targetVmIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string targetVmIdInstance2 = ((string)targetVmIdValue2);
+                                            inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                        }
+                                        
+                                        JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
+                                        if (instanceTypeValue5 != null && instanceTypeValue5.Type != JTokenType.Null)
+                                        {
+                                            string instanceTypeInstance5 = ((string)instanceTypeValue5);
+                                            inMageProviderSpecificSettingsInstance.InstanceType = instanceTypeInstance5;
+                                        }
+                                        propertiesInstance.ProviderSpecificDetails = inMageProviderSpecificSettingsInstance;
+                                    }
+                                    if (typeName == "HyperVReplicaAzure")
+                                    {
+                                        HyperVReplicaAzureReplicationDetails hyperVReplicaAzureReplicationDetailsInstance = new HyperVReplicaAzureReplicationDetails();
+                                        
+                                        JToken azureVMDiskDetailsArray2 = providerSpecificDetailsValue["azureVMDiskDetails"];
+                                        if (azureVMDiskDetailsArray2 != null && azureVMDiskDetailsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken azureVMDiskDetailsValue2 in ((JArray)azureVMDiskDetailsArray2))
+                                            {
+                                                AzureVmDiskDetails azureVmDiskDetailsInstance2 = new AzureVmDiskDetails();
+                                                hyperVReplicaAzureReplicationDetailsInstance.AzureVMDiskDetails.Add(azureVmDiskDetailsInstance2);
+                                                
+                                                JToken vhdTypeValue4 = azureVMDiskDetailsValue2["vhdType"];
+                                                if (vhdTypeValue4 != null && vhdTypeValue4.Type != JTokenType.Null)
+                                                {
+                                                    string vhdTypeInstance4 = ((string)vhdTypeValue4);
+                                                    azureVmDiskDetailsInstance2.VhdType = vhdTypeInstance4;
+                                                }
+                                                
+                                                JToken vhdIdValue4 = azureVMDiskDetailsValue2["vhdId"];
+                                                if (vhdIdValue4 != null && vhdIdValue4.Type != JTokenType.Null)
+                                                {
+                                                    string vhdIdInstance4 = ((string)vhdIdValue4);
+                                                    azureVmDiskDetailsInstance2.VhdId = vhdIdInstance4;
+                                                }
+                                                
+                                                JToken vhdNameValue6 = azureVMDiskDetailsValue2["vhdName"];
+                                                if (vhdNameValue6 != null && vhdNameValue6.Type != JTokenType.Null)
+                                                {
+                                                    string vhdNameInstance6 = ((string)vhdNameValue6);
+                                                    azureVmDiskDetailsInstance2.VhdName = vhdNameInstance6;
+                                                }
+                                                
+                                                JToken maxSizeMBValue4 = azureVMDiskDetailsValue2["maxSizeMB"];
+                                                if (maxSizeMBValue4 != null && maxSizeMBValue4.Type != JTokenType.Null)
+                                                {
+                                                    string maxSizeMBInstance4 = ((string)maxSizeMBValue4);
+                                                    azureVmDiskDetailsInstance2.MaxSizeMB = maxSizeMBInstance4;
+                                                }
+                                                
+                                                JToken targetDiskLocationValue2 = azureVMDiskDetailsValue2["targetDiskLocation"];
+                                                if (targetDiskLocationValue2 != null && targetDiskLocationValue2.Type != JTokenType.Null)
+                                                {
+                                                    string targetDiskLocationInstance2 = ((string)targetDiskLocationValue2);
+                                                    azureVmDiskDetailsInstance2.TargetDiskLocation = targetDiskLocationInstance2;
+                                                }
+                                                
+                                                JToken lunIdValue2 = azureVMDiskDetailsValue2["lunId"];
+                                                if (lunIdValue2 != null && lunIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string lunIdInstance2 = ((string)lunIdValue2);
+                                                    azureVmDiskDetailsInstance2.LunId = lunIdInstance2;
+                                                }
+                                                
+                                                JToken targetDiskNameValue2 = azureVMDiskDetailsValue2["targetDiskName"];
+                                                if (targetDiskNameValue2 != null && targetDiskNameValue2.Type != JTokenType.Null)
+                                                {
+                                                    string targetDiskNameInstance2 = ((string)targetDiskNameValue2);
+                                                    azureVmDiskDetailsInstance2.TargetDiskName = targetDiskNameInstance2;
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken recoveryAzureVMNameValue3 = providerSpecificDetailsValue["recoveryAzureVMName"];
+                                        if (recoveryAzureVMNameValue3 != null && recoveryAzureVMNameValue3.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureVMNameInstance3 = ((string)recoveryAzureVMNameValue3);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureVMName = recoveryAzureVMNameInstance3;
+                                        }
+                                        
+                                        JToken recoveryAzureVMSizeValue3 = providerSpecificDetailsValue["recoveryAzureVMSize"];
+                                        if (recoveryAzureVMSizeValue3 != null && recoveryAzureVMSizeValue3.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureVMSizeInstance3 = ((string)recoveryAzureVMSizeValue3);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureVMSize = recoveryAzureVMSizeInstance3;
+                                        }
+                                        
+                                        JToken recoveryAzureStorageAccountValue2 = providerSpecificDetailsValue["recoveryAzureStorageAccount"];
+                                        if (recoveryAzureStorageAccountValue2 != null && recoveryAzureStorageAccountValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureStorageAccountInstance2 = ((string)recoveryAzureStorageAccountValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureStorageAccount = recoveryAzureStorageAccountInstance2;
+                                        }
+                                        
+                                        JToken lastReplicatedTimeValue3 = providerSpecificDetailsValue["lastReplicatedTime"];
+                                        if (lastReplicatedTimeValue3 != null && lastReplicatedTimeValue3.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastReplicatedTimeInstance3 = ((DateTime)lastReplicatedTimeValue3);
+                                            hyperVReplicaAzureReplicationDetailsInstance.LastReplicatedTime = lastReplicatedTimeInstance3;
+                                        }
+                                        
+                                        JToken vmIdValue5 = providerSpecificDetailsValue["vmId"];
+                                        if (vmIdValue5 != null && vmIdValue5.Type != JTokenType.Null)
+                                        {
+                                            string vmIdInstance5 = ((string)vmIdValue5);
+                                            hyperVReplicaAzureReplicationDetailsInstance.VmId = vmIdInstance5;
+                                        }
+                                        
+                                        JToken initialReplicationDetailsValue3 = providerSpecificDetailsValue["initialReplicationDetails"];
+                                        if (initialReplicationDetailsValue3 != null && initialReplicationDetailsValue3.Type != JTokenType.Null)
+                                        {
+                                            InitialReplicationDetails initialReplicationDetailsInstance3 = new InitialReplicationDetails();
+                                            hyperVReplicaAzureReplicationDetailsInstance.InitialReplicationDetails = initialReplicationDetailsInstance3;
+                                            
+                                            JToken initialReplicationTypeValue4 = initialReplicationDetailsValue3["initialReplicationType"];
+                                            if (initialReplicationTypeValue4 != null && initialReplicationTypeValue4.Type != JTokenType.Null)
+                                            {
+                                                string initialReplicationTypeInstance4 = ((string)initialReplicationTypeValue4);
+                                                initialReplicationDetailsInstance3.InitialReplicationType = initialReplicationTypeInstance4;
+                                            }
+                                            
+                                            JToken initialReplicationProgressPercentageValue4 = initialReplicationDetailsValue3["initialReplicationProgressPercentage"];
+                                            if (initialReplicationProgressPercentageValue4 != null && initialReplicationProgressPercentageValue4.Type != JTokenType.Null)
+                                            {
+                                                string initialReplicationProgressPercentageInstance4 = ((string)initialReplicationProgressPercentageValue4);
+                                                initialReplicationDetailsInstance3.InitialReplicationProgressPercentage = initialReplicationProgressPercentageInstance4;
+                                            }
+                                        }
+                                        
+                                        JToken vmNicsArray6 = providerSpecificDetailsValue["vmNics"];
+                                        if (vmNicsArray6 != null && vmNicsArray6.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken vmNicsValue6 in ((JArray)vmNicsArray6))
+                                            {
+                                                VMNicDetails vMNicDetailsInstance6 = new VMNicDetails();
+                                                hyperVReplicaAzureReplicationDetailsInstance.VMNics.Add(vMNicDetailsInstance6);
+                                                
+                                                JToken nicIdValue6 = vmNicsValue6["nicId"];
+                                                if (nicIdValue6 != null && nicIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string nicIdInstance6 = ((string)nicIdValue6);
+                                                    vMNicDetailsInstance6.NicId = nicIdInstance6;
+                                                }
+                                                
+                                                JToken vMSubnetNameValue6 = vmNicsValue6["vMSubnetName"];
+                                                if (vMSubnetNameValue6 != null && vMSubnetNameValue6.Type != JTokenType.Null)
+                                                {
+                                                    string vMSubnetNameInstance6 = ((string)vMSubnetNameValue6);
+                                                    vMNicDetailsInstance6.VMSubnetName = vMSubnetNameInstance6;
+                                                }
+                                                
+                                                JToken vMNetworkNameValue6 = vmNicsValue6["vMNetworkName"];
+                                                if (vMNetworkNameValue6 != null && vMNetworkNameValue6.Type != JTokenType.Null)
+                                                {
+                                                    string vMNetworkNameInstance6 = ((string)vMNetworkNameValue6);
+                                                    vMNicDetailsInstance6.VMNetworkName = vMNetworkNameInstance6;
+                                                }
+                                                
+                                                JToken recoveryVMNetworkIdValue6 = vmNicsValue6["recoveryVMNetworkId"];
+                                                if (recoveryVMNetworkIdValue6 != null && recoveryVMNetworkIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryVMNetworkIdInstance6 = ((string)recoveryVMNetworkIdValue6);
+                                                    vMNicDetailsInstance6.RecoveryVMNetworkId = recoveryVMNetworkIdInstance6;
+                                                }
+                                                
+                                                JToken recoveryVMSubnetNameValue6 = vmNicsValue6["recoveryVMSubnetName"];
+                                                if (recoveryVMSubnetNameValue6 != null && recoveryVMSubnetNameValue6.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryVMSubnetNameInstance6 = ((string)recoveryVMSubnetNameValue6);
+                                                    vMNicDetailsInstance6.RecoveryVMSubnetName = recoveryVMSubnetNameInstance6;
+                                                }
+                                                
+                                                JToken ipAddressTypeValue6 = vmNicsValue6["ipAddressType"];
+                                                if (ipAddressTypeValue6 != null && ipAddressTypeValue6.Type != JTokenType.Null)
+                                                {
+                                                    string ipAddressTypeInstance6 = ((string)ipAddressTypeValue6);
+                                                    vMNicDetailsInstance6.IpAddressType = ipAddressTypeInstance6;
+                                                }
+                                                
+                                                JToken replicaNicStaticIPAddressValue6 = vmNicsValue6["replicaNicStaticIPAddress"];
+                                                if (replicaNicStaticIPAddressValue6 != null && replicaNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                {
+                                                    string replicaNicStaticIPAddressInstance6 = ((string)replicaNicStaticIPAddressValue6);
+                                                    vMNicDetailsInstance6.ReplicaNicStaticIPAddress = replicaNicStaticIPAddressInstance6;
+                                                }
+                                                
+                                                JToken selectionTypeValue6 = vmNicsValue6["selectionType"];
+                                                if (selectionTypeValue6 != null && selectionTypeValue6.Type != JTokenType.Null)
+                                                {
+                                                    string selectionTypeInstance6 = ((string)selectionTypeValue6);
+                                                    vMNicDetailsInstance6.SelectionType = selectionTypeInstance6;
+                                                }
+                                                
+                                                JToken sourceNicArmIdValue6 = vmNicsValue6["sourceNicArmId"];
+                                                if (sourceNicArmIdValue6 != null && sourceNicArmIdValue6.Type != JTokenType.Null)
+                                                {
+                                                    string sourceNicArmIdInstance6 = ((string)sourceNicArmIdValue6);
+                                                    vMNicDetailsInstance6.SourceNicArmId = sourceNicArmIdInstance6;
+                                                }
+                                                
+                                                JToken primaryNicStaticIPAddressValue6 = vmNicsValue6["primaryNicStaticIPAddress"];
+                                                if (primaryNicStaticIPAddressValue6 != null && primaryNicStaticIPAddressValue6.Type != JTokenType.Null)
+                                                {
+                                                    string primaryNicStaticIPAddressInstance6 = ((string)primaryNicStaticIPAddressValue6);
+                                                    vMNicDetailsInstance6.PrimaryNicStaticIPAddress = primaryNicStaticIPAddressInstance6;
+                                                }
+                                            }
+                                        }
+                                        
+                                        JToken selectedRecoveryAzureNetworkIdValue3 = providerSpecificDetailsValue["selectedRecoveryAzureNetworkId"];
+                                        if (selectedRecoveryAzureNetworkIdValue3 != null && selectedRecoveryAzureNetworkIdValue3.Type != JTokenType.Null)
+                                        {
+                                            string selectedRecoveryAzureNetworkIdInstance3 = ((string)selectedRecoveryAzureNetworkIdValue3);
+                                            hyperVReplicaAzureReplicationDetailsInstance.SelectedRecoveryAzureNetworkId = selectedRecoveryAzureNetworkIdInstance3;
+                                        }
+                                        
+                                        JToken encryptionValue = providerSpecificDetailsValue["encryption"];
+                                        if (encryptionValue != null && encryptionValue.Type != JTokenType.Null)
+                                        {
+                                            string encryptionInstance = ((string)encryptionValue);
+                                            hyperVReplicaAzureReplicationDetailsInstance.Encryption = encryptionInstance;
+                                        }
+                                        
+                                        JToken oSDetailsValue = providerSpecificDetailsValue["oSDetails"];
+                                        if (oSDetailsValue != null && oSDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            OSDetails oSDetailsInstance = new OSDetails();
+                                            hyperVReplicaAzureReplicationDetailsInstance.OSDetails = oSDetailsInstance;
+                                            
+                                            JToken osTypeValue4 = oSDetailsValue["osType"];
+                                            if (osTypeValue4 != null && osTypeValue4.Type != JTokenType.Null)
+                                            {
+                                                string osTypeInstance4 = ((string)osTypeValue4);
+                                                oSDetailsInstance.OsType = osTypeInstance4;
+                                            }
+                                            
+                                            JToken productTypeValue = oSDetailsValue["productType"];
+                                            if (productTypeValue != null && productTypeValue.Type != JTokenType.Null)
+                                            {
+                                                string productTypeInstance = ((string)productTypeValue);
+                                                oSDetailsInstance.ProductType = productTypeInstance;
+                                            }
+                                            
+                                            JToken osEditionValue = oSDetailsValue["osEdition"];
+                                            if (osEditionValue != null && osEditionValue.Type != JTokenType.Null)
+                                            {
+                                                string osEditionInstance = ((string)osEditionValue);
+                                                oSDetailsInstance.OSEdition = osEditionInstance;
+                                            }
+                                            
+                                            JToken oSVersionValue = oSDetailsValue["oSVersion"];
+                                            if (oSVersionValue != null && oSVersionValue.Type != JTokenType.Null)
+                                            {
+                                                string oSVersionInstance = ((string)oSVersionValue);
+                                                oSDetailsInstance.OSVersion = oSVersionInstance;
+                                            }
+                                            
+                                            JToken oSMajorVersionValue = oSDetailsValue["oSMajorVersion"];
+                                            if (oSMajorVersionValue != null && oSMajorVersionValue.Type != JTokenType.Null)
+                                            {
+                                                string oSMajorVersionInstance = ((string)oSMajorVersionValue);
+                                                oSDetailsInstance.OSMajorVersion = oSMajorVersionInstance;
+                                            }
+                                            
+                                            JToken oSMinorVersionValue = oSDetailsValue["oSMinorVersion"];
+                                            if (oSMinorVersionValue != null && oSMinorVersionValue.Type != JTokenType.Null)
+                                            {
+                                                string oSMinorVersionInstance = ((string)oSMinorVersionValue);
+                                                oSDetailsInstance.OSMinorVersion = oSMinorVersionInstance;
+                                            }
+                                        }
+                                        
+                                        JToken sourceVmRAMSizeInMBValue3 = providerSpecificDetailsValue["sourceVmRAMSizeInMB"];
+                                        if (sourceVmRAMSizeInMBValue3 != null && sourceVmRAMSizeInMBValue3.Type != JTokenType.Null)
+                                        {
+                                            int sourceVmRAMSizeInMBInstance3 = ((int)sourceVmRAMSizeInMBValue3);
+                                            hyperVReplicaAzureReplicationDetailsInstance.SourceVmRAMSizeInMB = sourceVmRAMSizeInMBInstance3;
+                                        }
+                                        
+                                        JToken sourceVmCPUCountValue3 = providerSpecificDetailsValue["sourceVmCPUCount"];
+                                        if (sourceVmCPUCountValue3 != null && sourceVmCPUCountValue3.Type != JTokenType.Null)
+                                        {
+                                            int sourceVmCPUCountInstance3 = ((int)sourceVmCPUCountValue3);
+                                            hyperVReplicaAzureReplicationDetailsInstance.SourceVmCPUCount = sourceVmCPUCountInstance3;
+                                        }
+                                        
+                                        JToken licenseTypeValue2 = providerSpecificDetailsValue["licenseType"];
+                                        if (licenseTypeValue2 != null && licenseTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string licenseTypeInstance2 = ((string)licenseTypeValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.LicenseType = licenseTypeInstance2;
+                                        }
+                                        
+                                        JToken enableRDPOnTargetOptionValue2 = providerSpecificDetailsValue["enableRDPOnTargetOption"];
+                                        if (enableRDPOnTargetOptionValue2 != null && enableRDPOnTargetOptionValue2.Type != JTokenType.Null)
+                                        {
+                                            string enableRDPOnTargetOptionInstance2 = ((string)enableRDPOnTargetOptionValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.EnableRDPOnTargetOption = enableRDPOnTargetOptionInstance2;
+                                        }
+                                        
+                                        JToken vmProtectionStateValue5 = providerSpecificDetailsValue["vmProtectionState"];
+                                        if (vmProtectionStateValue5 != null && vmProtectionStateValue5.Type != JTokenType.Null)
+                                        {
+                                            string vmProtectionStateInstance5 = ((string)vmProtectionStateValue5);
+                                            hyperVReplicaAzureReplicationDetailsInstance.VmProtectionState = vmProtectionStateInstance5;
+                                        }
+                                        
+                                        JToken vmProtectionStateDescriptionValue5 = providerSpecificDetailsValue["vmProtectionStateDescription"];
+                                        if (vmProtectionStateDescriptionValue5 != null && vmProtectionStateDescriptionValue5.Type != JTokenType.Null)
+                                        {
+                                            string vmProtectionStateDescriptionInstance5 = ((string)vmProtectionStateDescriptionValue5);
+                                            hyperVReplicaAzureReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance5;
+                                        }
+                                        
+                                        JToken recoveryAzureResourceGroupIdValue3 = providerSpecificDetailsValue["recoveryAzureResourceGroupId"];
+                                        if (recoveryAzureResourceGroupIdValue3 != null && recoveryAzureResourceGroupIdValue3.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAzureResourceGroupIdInstance3 = ((string)recoveryAzureResourceGroupIdValue3);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance3;
+                                        }
+                                        
+                                        JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
+                                        if (instanceTypeValue6 != null && instanceTypeValue6.Type != JTokenType.Null)
+                                        {
+                                            string instanceTypeInstance6 = ((string)instanceTypeValue6);
+                                            hyperVReplicaAzureReplicationDetailsInstance.InstanceType = instanceTypeInstance6;
+                                        }
+                                        propertiesInstance.ProviderSpecificDetails = hyperVReplicaAzureReplicationDetailsInstance;
+                                    }
+                                }
+                            }
+                            
+                            JToken idValue2 = responseDoc["id"];
+                            if (idValue2 != null && idValue2.Type != JTokenType.Null)
+                            {
+                                string idInstance2 = ((string)idValue2);
+                                replicationProtectedItemInstance.Id = idInstance2;
+                            }
+                            
+                            JToken nameValue2 = responseDoc["name"];
+                            if (nameValue2 != null && nameValue2.Type != JTokenType.Null)
+                            {
+                                string nameInstance2 = ((string)nameValue2);
+                                replicationProtectedItemInstance.Name = nameInstance2;
+                            }
+                            
+                            JToken typeValue = responseDoc["type"];
+                            if (typeValue != null && typeValue.Type != JTokenType.Null)
+                            {
+                                string typeInstance = ((string)typeValue);
+                                replicationProtectedItemInstance.Type = typeInstance;
+                            }
+                            
+                            JToken locationValue = responseDoc["location"];
+                            if (locationValue != null && locationValue.Type != JTokenType.Null)
+                            {
+                                string locationInstance = ((string)locationValue);
+                                replicationProtectedItemInstance.Location = locationInstance;
+                            }
+                            
+                            JToken tagsSequenceElement2 = ((JToken)responseDoc["tags"]);
+                            if (tagsSequenceElement2 != null && tagsSequenceElement2.Type != JTokenType.Null)
+                            {
+                                foreach (JProperty property3 in tagsSequenceElement2)
+                                {
+                                    string tagsKey2 = ((string)property3.Name);
+                                    string tagsValue2 = ((string)property3.Value);
+                                    replicationProtectedItemInstance.Tags.Add(tagsKey2, tagsValue2);
+                                }
+                            }
+                            
+                            JToken locationValue2 = responseDoc["Location"];
+                            if (locationValue2 != null && locationValue2.Type != JTokenType.Null)
+                            {
+                                string locationInstance2 = ((string)locationValue2);
+                                result.Location = locationInstance2;
+                            }
+                            
+                            JToken retryAfterValue = responseDoc["RetryAfter"];
+                            if (retryAfterValue != null && retryAfterValue.Type != JTokenType.Null)
+                            {
+                                int retryAfterInstance = ((int)retryAfterValue);
+                                result.RetryAfter = retryAfterInstance;
+                            }
+                            
+                            JToken asyncOperationValue = responseDoc["AsyncOperation"];
+                            if (asyncOperationValue != null && asyncOperationValue.Type != JTokenType.Null)
+                            {
+                                string asyncOperationInstance = ((string)asyncOperationValue);
+                                result.AsyncOperation = asyncOperationInstance;
+                            }
+                            
+                            JToken statusValue = responseDoc["Status"];
+                            if (statusValue != null && statusValue.Type != JTokenType.Null)
+                            {
+                                OperationStatus statusInstance = ((OperationStatus)Enum.Parse(typeof(OperationStatus), ((string)statusValue), true));
+                                result.Status = statusInstance;
+                            }
+                            
+                            JToken cultureValue = responseDoc["Culture"];
+                            if (cultureValue != null && cultureValue.Type != JTokenType.Null)
+                            {
+                                string cultureInstance = ((string)cultureValue);
+                                result.Culture = cultureInstance;
+                            }
+                            
+                            JToken clientRequestIdValue = responseDoc["ClientRequestId"];
+                            if (clientRequestIdValue != null && clientRequestIdValue.Type != JTokenType.Null)
+                            {
+                                string clientRequestIdInstance = ((string)clientRequestIdValue);
+                                result.ClientRequestId = clientRequestIdInstance;
+                            }
+                            
+                            JToken correlationRequestIdValue = responseDoc["CorrelationRequestId"];
+                            if (correlationRequestIdValue != null && correlationRequestIdValue.Type != JTokenType.Null)
+                            {
+                                string correlationRequestIdInstance = ((string)correlationRequestIdValue);
+                                result.CorrelationRequestId = correlationRequestIdInstance;
+                            }
+                            
+                            JToken dateValue = responseDoc["Date"];
+                            if (dateValue != null && dateValue.Type != JTokenType.Null)
+                            {
+                                string dateInstance = ((string)dateValue);
+                                result.Date = dateInstance;
+                            }
+                            
+                            JToken contentTypeValue = responseDoc["ContentType"];
+                            if (contentTypeValue != null && contentTypeValue.Type != JTokenType.Null)
+                            {
+                                string contentTypeInstance = ((string)contentTypeValue);
+                                result.ContentType = contentTypeInstance;
+                            }
+                        }
+                        
+                    }
+                    result.StatusCode = statusCode;
+                    if (httpResponse.Headers.Contains("Azure-AsyncOperation"))
+                    {
+                        result.AsyncOperation = httpResponse.Headers.GetValues("Azure-AsyncOperation").FirstOrDefault();
+                    }
+                    if (httpResponse.Content != null && httpResponse.Content.Headers.Contains("Content-Type"))
+                    {
+                        result.ContentType = httpResponse.Content.Headers.GetValues("Content-Type").FirstOrDefault();
+                    }
+                    if (httpResponse.Headers.Contains("Date"))
+                    {
+                        result.Date = httpResponse.Headers.GetValues("Date").FirstOrDefault();
+                    }
+                    if (httpResponse.Headers.Contains("Location"))
+                    {
+                        result.Location = httpResponse.Headers.GetValues("Location").FirstOrDefault();
+                    }
+                    if (httpResponse.Headers.Contains("Retry-After"))
+                    {
+                        result.RetryAfter = int.Parse(httpResponse.Headers.GetValues("Retry-After").FirstOrDefault(), CultureInfo.InvariantCulture);
+                    }
+                    if (httpResponse.Headers.Contains("x-ms-client-request-id"))
+                    {
+                        result.ClientRequestId = httpResponse.Headers.GetValues("x-ms-client-request-id").FirstOrDefault();
+                    }
+                    if (httpResponse.Headers.Contains("x-ms-correlation-request-id"))
+                    {
+                        result.CorrelationRequestId = httpResponse.Headers.GetValues("x-ms-correlation-request-id").FirstOrDefault();
+                    }
+                    if (httpResponse.Headers.Contains("x-ms-request-id"))
+                    {
+                        result.RequestId = httpResponse.Headers.GetValues("x-ms-request-id").FirstOrDefault();
+                    }
+                    if (statusCode == HttpStatusCode.NoContent)
+                    {
+                        result.Status = OperationStatus.Failed;
+                    }
+                    if (statusCode == HttpStatusCode.Accepted)
+                    {
+                        result.Status = OperationStatus.InProgress;
+                    }
+                    if (statusCode == HttpStatusCode.OK)
+                    {
+                        result.Status = OperationStatus.Succeeded;
+                    }
+                    
+                    if (shouldTrace)
+                    {
+                        TracingAdapter.Exit(invocationId, result);
+                    }
+                    return result;
+                }
+                finally
+                {
+                    if (httpResponse != null)
+                    {
+                        httpResponse.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (httpRequest != null)
+                {
+                    httpRequest.Dispose();
+                }
+            }
+        }
+        
+        /// <summary>
+        /// The Get Operation Status operation returns the status of the
+        /// specified operation. After calling an asynchronous operation, you
+        /// can call Get Operation Status to determine whether the operation
+        /// has succeeded, failed, or is still in progress.
+        /// </summary>
+        /// <param name='operationStatusLink'>
+        /// Required. Location value returned by the Begin operation.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// Cancellation token.
+        /// </param>
+        /// <returns>
+        /// Service response for replication protected items operation.
+        /// </returns>
+        public async Task<ReplicationProtectedItemOperationResponse> GetTestFailoverCleanupStatusAsync(string operationStatusLink, CancellationToken cancellationToken)
+        {
+            // Validate
+            if (operationStatusLink == null)
+            {
+                throw new ArgumentNullException("operationStatusLink");
+            }
+            
+            // Tracing
+            bool shouldTrace = TracingAdapter.IsEnabled;
+            string invocationId = null;
+            if (shouldTrace)
+            {
+                invocationId = TracingAdapter.NextInvocationId.ToString();
+                Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
+                tracingParameters.Add("operationStatusLink", operationStatusLink);
+                TracingAdapter.Enter(invocationId, this, "GetTestFailoverCleanupStatusAsync", tracingParameters);
             }
             
             // Construct URL
@@ -41359,6 +44183,82 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 await TaskEx.Delay(delayInSeconds * 1000, cancellationToken).ConfigureAwait(false);
                 cancellationToken.ThrowIfCancellationRequested();
                 result = await client.ReplicationProtectedItem.GetTestFailoverStatusAsync(response.Location, cancellationToken).ConfigureAwait(false);
+                delayInSeconds = 30;
+                if (client.LongRunningOperationRetryTimeout >= 0)
+                {
+                    delayInSeconds = client.LongRunningOperationRetryTimeout;
+                }
+            }
+            
+            if (shouldTrace)
+            {
+                TracingAdapter.Exit(invocationId, result);
+            }
+            
+            return result;
+        }
+        
+        /// <summary>
+        /// Execute Test failover cleanup for the given Replication protected
+        /// item.
+        /// </summary>
+        /// <param name='fabricName'>
+        /// Required. Fabric name.
+        /// </param>
+        /// <param name='protectionContainerName'>
+        /// Required. Protection container name.
+        /// </param>
+        /// <param name='replicationProtectedItemName'>
+        /// Required. Replication protected item name.
+        /// </param>
+        /// <param name='input'>
+        /// Required. Test failover cleanup input.
+        /// </param>
+        /// <param name='customRequestHeaders'>
+        /// Optional. Request header parameters.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// Cancellation token.
+        /// </param>
+        /// <returns>
+        /// A standard service response for long running operations.
+        /// </returns>
+        public async Task<LongRunningOperationResponse> TestFailoverCleanupAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, TestFailoverCleanupInput input, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken)
+        {
+            SiteRecoveryManagementClient client = this.Client;
+            bool shouldTrace = TracingAdapter.IsEnabled;
+            string invocationId = null;
+            if (shouldTrace)
+            {
+                invocationId = TracingAdapter.NextInvocationId.ToString();
+                Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
+                tracingParameters.Add("fabricName", fabricName);
+                tracingParameters.Add("protectionContainerName", protectionContainerName);
+                tracingParameters.Add("replicationProtectedItemName", replicationProtectedItemName);
+                tracingParameters.Add("input", input);
+                tracingParameters.Add("customRequestHeaders", customRequestHeaders);
+                TracingAdapter.Enter(invocationId, this, "TestFailoverCleanupAsync", tracingParameters);
+            }
+            
+            cancellationToken.ThrowIfCancellationRequested();
+            LongRunningOperationResponse response = await client.ReplicationProtectedItem.BeginTestFailoverCleanupAsync(fabricName, protectionContainerName, replicationProtectedItemName, input, customRequestHeaders, cancellationToken).ConfigureAwait(false);
+            if (response.Status == OperationStatus.Succeeded)
+            {
+                return response;
+            }
+            cancellationToken.ThrowIfCancellationRequested();
+            ReplicationProtectedItemOperationResponse result = await client.ReplicationProtectedItem.GetTestFailoverCleanupStatusAsync(response.Location, cancellationToken).ConfigureAwait(false);
+            int delayInSeconds = 30;
+            if (client.LongRunningOperationInitialTimeout >= 0)
+            {
+                delayInSeconds = client.LongRunningOperationInitialTimeout;
+            }
+            while (result.Status == OperationStatus.InProgress)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                await TaskEx.Delay(delayInSeconds * 1000, cancellationToken).ConfigureAwait(false);
+                cancellationToken.ThrowIfCancellationRequested();
+                result = await client.ReplicationProtectedItem.GetTestFailoverCleanupStatusAsync(response.Location, cancellationToken).ConfigureAwait(false);
                 delayInSeconds = 30;
                 if (client.LongRunningOperationRetryTimeout >= 0)
                 {

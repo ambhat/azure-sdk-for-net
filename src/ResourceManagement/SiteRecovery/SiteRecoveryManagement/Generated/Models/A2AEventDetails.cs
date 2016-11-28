@@ -88,7 +88,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         private string _remoteFabricName;
         
         /// <summary>
-        /// Optional. The fabric arm name.
+        /// Optional. The remote fabric arm name.
         /// </summary>
         public string RemoteFabricName
         {

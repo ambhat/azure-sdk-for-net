@@ -76,6 +76,18 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._providerSpecificDetails = value; }
         }
         
+        private string _skipTestFailoverCleanup;
+        
+        /// <summary>
+        /// Optional. Gets or sets the flag indicating if cleanup is part of
+        /// the test failover.
+        /// </summary>
+        public string SkipTestFailoverCleanup
+        {
+            get { return this._skipTestFailoverCleanup; }
+            set { this._skipTestFailoverCleanup = value; }
+        }
+        
         /// <summary>
         /// Initializes a new instance of the
         /// RecoveryPlanTestFailoverInputProperties class.
