@@ -364,8 +364,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             providerSpecificInputValue["instanceType"] = "A2A";
                             A2APolicyCreationInput derived7 = ((A2APolicyCreationInput)input.Properties.ProviderSpecificInput);
                             
-                            providerSpecificInputValue["recoveryPointThresholdInMinutes"] = derived7.RecoveryPointThresholdInMinutes;
-                            
                             providerSpecificInputValue["recoveryPointHistory"] = derived7.RecoveryPointHistory;
                             
                             providerSpecificInputValue["crashConsistentFrequencyInMinutes"] = derived7.CrashConsistentFrequencyInMinutes;
@@ -950,8 +948,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
                     {
                         replicationProviderSettingsValue["instanceType"] = "A2A";
                         A2APolicyCreationInput derived7 = ((A2APolicyCreationInput)input.Properties.ReplicationProviderSettings);
-                        
-                        replicationProviderSettingsValue["recoveryPointThresholdInMinutes"] = derived7.RecoveryPointThresholdInMinutes;
                         
                         replicationProviderSettingsValue["recoveryPointHistory"] = derived7.RecoveryPointHistory;
                         

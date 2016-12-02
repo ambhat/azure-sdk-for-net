@@ -547,8 +547,7 @@ namespace SiteRecovery.Tests
                     AppConsistentFrequencyInMinutes = 15,
                     CrashConsistentFrequencyInMinutes = 15,
                     MultiVmSyncStatus = "Disable",
-                    RecoveryPointHistory = 15,
-                    RecoveryPointThresholdInMinutes = 30
+                    RecoveryPointHistory = 15
                 };
 
                 CreatePolicyInputProperties createInputProp = new CreatePolicyInputProperties()

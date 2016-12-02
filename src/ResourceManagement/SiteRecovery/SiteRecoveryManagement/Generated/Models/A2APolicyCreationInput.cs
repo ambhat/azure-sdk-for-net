@@ -75,17 +75,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._recoveryPointHistory = value; }
         }
         
-        private int _recoveryPointThresholdInMinutes;
-        
-        /// <summary>
-        /// Optional. Recovery point threshold in minutes.
-        /// </summary>
-        public int RecoveryPointThresholdInMinutes
-        {
-            get { return this._recoveryPointThresholdInMinutes; }
-            set { this._recoveryPointThresholdInMinutes = value; }
-        }
-        
         /// <summary>
         /// Initializes a new instance of the A2APolicyCreationInput class.
         /// </summary>
