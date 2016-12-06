@@ -15,7 +15,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// <summary>
     /// Fabric provider specific settings.
     /// </summary>
-    [JsonObject("Azure")]
     public partial class AzureFabricCreationInput : FabricSpecificCreationInput
     {
         /// <summary>

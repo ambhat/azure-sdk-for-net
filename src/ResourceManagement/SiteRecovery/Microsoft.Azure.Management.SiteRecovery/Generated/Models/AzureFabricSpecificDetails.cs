@@ -15,7 +15,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// <summary>
     /// Azure Fabric Specific Details.
     /// </summary>
-    [JsonObject("Azure")]
     public partial class AzureFabricSpecificDetails : FabricSpecificDetails
     {
         /// <summary>

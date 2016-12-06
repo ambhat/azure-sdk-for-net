@@ -49,6 +49,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Tracks the Site async operation.
         /// </summary>
+        /// Only for InitialReplicationTypeContract.Export.
         /// <param name='name'>
         /// Original Job id on which resume/restart was called.
         /// </param>
@@ -220,6 +221,31 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Resumes the specified job.
         /// </summary>
+        /// Only for InitialReplicationTypeContract.Export.
+        /// <param name='jobName'>
+        /// Job Id to resume.
+        /// </param>
+        /// <param name='resumeJobParams'>
+        /// Resume rob comments.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        public async Task<AzureOperationResponse> DeployProcessServerImageWithHttpMessagesAsync(string jobName, ResumeJobParams resumeJobParams, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            // Send request
+            AzureOperationResponse _response = await BeginDeployProcessServerImageWithHttpMessagesAsync(
+                jobName, resumeJobParams, customHeaders, cancellationToken);
+            return await this.Client.GetPostOrDeleteOperationResultAsync(_response, customHeaders, cancellationToken);
+        }
+
+        /// <summary>
+        /// Resumes the specified job.
+        /// </summary>
+        /// Only for InitialReplicationTypeContract.Export.
         /// <param name='jobName'>
         /// Job Id to resume.
         /// </param>
@@ -235,7 +261,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> DeployProcessServerImageWithHttpMessagesAsync(string jobName, ResumeJobParams resumeJobParams, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse> BeginDeployProcessServerImageWithHttpMessagesAsync(string jobName, ResumeJobParams resumeJobParams, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -279,7 +305,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 tracingParameters.Add("jobName", jobName);
                 tracingParameters.Add("resumeJobParams", resumeJobParams);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "DeployProcessServerImage", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "BeginDeployProcessServerImage", tracingParameters);
             }
             // Construct URL
             var _baseUrl = this.Client.BaseUri.AbsoluteUri;
@@ -396,6 +422,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Restarts the specified job.
         /// </summary>
+        /// Deletes the site.
+        /// <param name='jobName'>
+        /// Job Id to restart.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        public async Task<AzureOperationResponse> RestartWithHttpMessagesAsync(string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            // Send request
+            AzureOperationResponse _response = await BeginRestartWithHttpMessagesAsync(
+                jobName, customHeaders, cancellationToken);
+            return await this.Client.GetPostOrDeleteOperationResultAsync(_response, customHeaders, cancellationToken);
+        }
+
+        /// <summary>
+        /// Restarts the specified job.
+        /// </summary>
+        /// Deletes the site.
         /// <param name='jobName'>
         /// Job Id to restart.
         /// </param>
@@ -408,7 +456,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> RestartWithHttpMessagesAsync(string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse> BeginRestartWithHttpMessagesAsync(string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -447,7 +495,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("jobName", jobName);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "Restart", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "BeginRestart", tracingParameters);
             }
             // Construct URL
             var _baseUrl = this.Client.BaseUri.AbsoluteUri;
@@ -558,6 +606,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Cancels the specified job.
         /// </summary>
+        /// Deletes the site.
+        /// <param name='jobName'>
+        /// Job Id to cancel.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        public async Task<AzureOperationResponse> CancelWithHttpMessagesAsync(string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            // Send request
+            AzureOperationResponse _response = await BeginCancelWithHttpMessagesAsync(
+                jobName, customHeaders, cancellationToken);
+            return await this.Client.GetPostOrDeleteOperationResultAsync(_response, customHeaders, cancellationToken);
+        }
+
+        /// <summary>
+        /// Cancels the specified job.
+        /// </summary>
+        /// Deletes the site.
         /// <param name='jobName'>
         /// Job Id to cancel.
         /// </param>
@@ -570,7 +640,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> CancelWithHttpMessagesAsync(string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse> BeginCancelWithHttpMessagesAsync(string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -609,7 +679,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("jobName", jobName);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "Cancel", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "BeginCancel", tracingParameters);
             }
             // Construct URL
             var _baseUrl = this.Client.BaseUri.AbsoluteUri;
@@ -720,6 +790,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the job details.
         /// </summary>
+        /// Deletes the site.
         /// <param name='jobName'>
         /// Job Id to look details for.
         /// </param>
@@ -944,6 +1015,59 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// is set to
         /// "ScenarioName.ExportsJobs".
         /// </summary>
+        /// Deletes the site.
+        /// <param name='jobQueryParameter'>
+        /// job query filter.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        public async Task<AzureOperationResponse> ExportWithHttpMessagesAsync(JobQueryParameter jobQueryParameter, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            // Send request
+            AzureOperationResponse _response = await BeginExportWithHttpMessagesAsync(
+                jobQueryParameter, customHeaders, cancellationToken);
+            return await this.Client.GetPostOrDeleteOperationResultAsync(_response, customHeaders, cancellationToken);
+        }
+
+        /// <summary>
+        /// Gets "ExportJobs" workflow details.
+        /// Old method: Two APIs were exposed for performing export jobs,
+        /// one api
+        /// (subscriptions/workflow/computeWorkflowHistory) to trigger the
+        /// export jobs workflow and
+        /// another api to get the blob information after the workflow has
+        /// completed successfully
+        /// (subscriptions/workflow/{workflowId}/blobUrlWithSASKey)
+        /// New Method: Only one API is exposed to trigger export jobs
+        /// workflow, which will trigger
+        /// the export jobs workflow, however in order to store the blob
+        /// information(blobUri and
+        /// sas token) the CustomDetails field associated with the
+        /// JobProperties (in Job Object)
+        /// is being used. This will be set once the export jobs workflow
+        /// completes successfully.
+        /// Within custom details, instanceType is set to
+        /// "ExportJobsDetails" and fields
+        /// "blobUri" and "sasToken" contains the required information
+        /// that is necessary to access
+        /// exported jobs data.
+        /// Note:
+        /// 1. Current Implementation only supports one type of
+        /// AffectedObjectType and one value
+        /// for WorkflowStatus for the filer. Hence the current
+        /// implementation only uses the first
+        /// value in the corresponding lists.
+        /// 2. A dummy Job Entity is created in the Jobs table (this is
+        /// marked as internal job)
+        /// This job entity can be identified by the Scenario Name which
+        /// is set to
+        /// "ScenarioName.ExportsJobs".
+        /// </summary>
+        /// Deletes the site.
         /// <param name='jobQueryParameter'>
         /// job query filter.
         /// </param>
@@ -956,7 +1080,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> ExportWithHttpMessagesAsync(JobQueryParameter jobQueryParameter, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse> BeginExportWithHttpMessagesAsync(JobQueryParameter jobQueryParameter, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -995,7 +1119,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("jobQueryParameter", jobQueryParameter);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "Export", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "BeginExport", tracingParameters);
             }
             // Construct URL
             var _baseUrl = this.Client.BaseUri.AbsoluteUri;
@@ -1111,6 +1235,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the list of jobs.
         /// </summary>
+        /// Deletes the site.
         /// <param name='odataQuery'>
         /// OData parameters to apply to the operation.
         /// </param>
@@ -1307,6 +1432,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the list of jobs.
         /// </summary>
+        /// Deletes the site.
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

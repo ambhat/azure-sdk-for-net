@@ -15,7 +15,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// <summary>
     /// Protection container mapping object.
     /// </summary>
-    [JsonTransformation]
     public partial class ProtectionContainerMapping : Resource
     {
         /// <summary>
@@ -26,87 +25,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the ProtectionContainerMapping class.
         /// </summary>
-        public ProtectionContainerMapping(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string targetProtectionContainerId = default(string), string targetProtectionContainerFriendlyName = default(string), ProtectionContainerMappingProviderSpecificDetails providerSpecificDetails = default(ProtectionContainerMappingProviderSpecificDetails), string health = default(string), IList<HealthError> healthErrorDetails = default(IList<HealthError>), string policyId = default(string), string state = default(string), string sourceProtectionContainerFriendlyName = default(string), string sourceFabricFriendlyName = default(string), string targetFabricFriendlyName = default(string), string policyFriendlyName = default(string))
+        public ProtectionContainerMapping(string id = default(string), string name = default(string), string type = default(string), string location = default(string), ProtectionContainerMappingProperties properties = default(ProtectionContainerMappingProperties))
             : base(id, name, type, location)
         {
-            TargetProtectionContainerId = targetProtectionContainerId;
-            TargetProtectionContainerFriendlyName = targetProtectionContainerFriendlyName;
-            ProviderSpecificDetails = providerSpecificDetails;
-            Health = health;
-            HealthErrorDetails = healthErrorDetails;
-            PolicyId = policyId;
-            State = state;
-            SourceProtectionContainerFriendlyName = sourceProtectionContainerFriendlyName;
-            SourceFabricFriendlyName = sourceFabricFriendlyName;
-            TargetFabricFriendlyName = targetFabricFriendlyName;
-            PolicyFriendlyName = policyFriendlyName;
+            Properties = properties;
         }
 
         /// <summary>
-        /// Gets or sets Paired protection container ARM ID.
+        /// Gets or sets the custom data.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.targetProtectionContainerId")]
-        public string TargetProtectionContainerId { get; set; }
-
-        /// <summary>
-        /// Gets or sets Friendly name of paired container.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.targetProtectionContainerFriendlyName")]
-        public string TargetProtectionContainerFriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets Provider specific provider details.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.providerSpecificDetails")]
-        public ProtectionContainerMappingProviderSpecificDetails ProviderSpecificDetails { get; set; }
-
-        /// <summary>
-        /// Gets or sets Health of pairing.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.health")]
-        public string Health { get; set; }
-
-        /// <summary>
-        /// Gets or sets Health error.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.healthErrorDetails")]
-        public IList<HealthError> HealthErrorDetails { get; set; }
-
-        /// <summary>
-        /// Gets or sets Policy ARM Id.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.policyId")]
-        public string PolicyId { get; set; }
-
-        /// <summary>
-        /// Gets or sets Association Status
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.state")]
-        public string State { get; set; }
-
-        /// <summary>
-        /// Gets or sets Friendly name of source protection container.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.sourceProtectionContainerFriendlyName")]
-        public string SourceProtectionContainerFriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets Friendly name of source fabric.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.sourceFabricFriendlyName")]
-        public string SourceFabricFriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets Friendly name of target fabric.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.targetFabricFriendlyName")]
-        public string TargetFabricFriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets Friendly name of replication policy.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.policyFriendlyName")]
-        public string PolicyFriendlyName { get; set; }
+        [JsonProperty(PropertyName = "properties")]
+        public ProtectionContainerMappingProperties Properties { get; set; }
 
     }
 }

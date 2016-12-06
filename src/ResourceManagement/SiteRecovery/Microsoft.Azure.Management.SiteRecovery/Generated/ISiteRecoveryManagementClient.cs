@@ -91,14 +91,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
 
 
         /// <summary>
-        /// Gets the IReplicationProtectedItemsControllerOperations.
+        /// Gets the IReplicationProtectedItemsOperations.
         /// </summary>
-        IReplicationProtectedItemsControllerOperations ReplicationProtectedItemsController { get; }
+        IReplicationProtectedItemsOperations ReplicationProtectedItems { get; }
 
         /// <summary>
-        /// Gets the IRecoveryServicesProviderControllerOperations.
+        /// Gets the IRecoveryServicesProviderOperations.
         /// </summary>
-        IRecoveryServicesProviderControllerOperations RecoveryServicesProviderController { get; }
+        IRecoveryServicesProviderOperations RecoveryServicesProvider { get; }
 
         /// <summary>
         /// Gets the IRecoveryPointsControllerOperations.
@@ -106,39 +106,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
         IRecoveryPointsControllerOperations RecoveryPointsController { get; }
 
         /// <summary>
-        /// Gets the IRecoveryPlansControllerOperations.
+        /// Gets the IRecoveryPlansOperations.
         /// </summary>
-        IRecoveryPlansControllerOperations RecoveryPlansController { get; }
+        IRecoveryPlansOperations RecoveryPlans { get; }
 
         /// <summary>
-        /// Gets the IProtectionContainersControllerOperations.
+        /// Gets the IProtectionContainersOperations.
         /// </summary>
-        IProtectionContainersControllerOperations ProtectionContainersController { get; }
+        IProtectionContainersOperations ProtectionContainers { get; }
 
         /// <summary>
-        /// Gets the IProtectionContainerMappingsControllerOperations.
+        /// Gets the IProtectionContainerMappingsOperations.
         /// </summary>
-        IProtectionContainerMappingsControllerOperations ProtectionContainerMappingsController { get; }
+        IProtectionContainerMappingsOperations ProtectionContainerMappings { get; }
 
         /// <summary>
-        /// Gets the IProtectableItemsControllerOperations.
+        /// Gets the IProtectableItemsOperations.
         /// </summary>
-        IProtectableItemsControllerOperations ProtectableItemsController { get; }
+        IProtectableItemsOperations ProtectableItems { get; }
 
         /// <summary>
-        /// Gets the IPolicyControllerOperations.
+        /// Gets the IPoliciesOperations.
         /// </summary>
-        IPolicyControllerOperations PolicyController { get; }
+        IPoliciesOperations Policies { get; }
 
         /// <summary>
-        /// Gets the INetworksControllerOperations.
+        /// Gets the INetworksOperations.
         /// </summary>
-        INetworksControllerOperations NetworksController { get; }
-
-        /// <summary>
-        /// Gets the INetworkMappingsControllerOperations.
-        /// </summary>
-        INetworkMappingsControllerOperations NetworkMappingsController { get; }
+        INetworksOperations Networks { get; }
 
         /// <summary>
         /// Gets the INetworkMappingsOperations.

@@ -15,7 +15,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// <summary>
     /// Replication protected item
     /// </summary>
-    [JsonTransformation]
     public partial class ProtectableItem : Resource
     {
         /// <summary>
@@ -26,60 +25,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the ProtectableItem class.
         /// </summary>
-        public ProtectableItem(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string friendlyName = default(string), string protectionStatus = default(string), string replicationProtectedItemId = default(string), string recoveryServicesProviderId = default(string), IList<string> protectionReadinessErrors = default(IList<string>), IList<string> supportedReplicationProviders = default(IList<string>), ConfigurationSettings customDetails = default(ConfigurationSettings))
+        public ProtectableItem(string id = default(string), string name = default(string), string type = default(string), string location = default(string), ProtectableItemProperties properties = default(ProtectableItemProperties))
             : base(id, name, type, location)
         {
-            FriendlyName = friendlyName;
-            ProtectionStatus = protectionStatus;
-            ReplicationProtectedItemId = replicationProtectedItemId;
-            RecoveryServicesProviderId = recoveryServicesProviderId;
-            ProtectionReadinessErrors = protectionReadinessErrors;
-            SupportedReplicationProviders = supportedReplicationProviders;
-            CustomDetails = customDetails;
+            Properties = properties;
         }
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gets or sets the custom data.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.friendlyName")]
-        public string FriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the protection status.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.protectionStatus")]
-        public string ProtectionStatus { get; set; }
-
-        /// <summary>
-        /// Gets or sets the ARM resource of protected items.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.replicationProtectedItemId")]
-        public string ReplicationProtectedItemId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the recovery provider ARM Id.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.recoveryServicesProviderId")]
-        public string RecoveryServicesProviderId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Current protection readiness errors.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.protectionReadinessErrors")]
-        public IList<string> ProtectionReadinessErrors { get; set; }
-
-        /// <summary>
-        /// Gets or sets the list of replication providers supported for the
-        /// protectable item.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.supportedReplicationProviders")]
-        public IList<string> SupportedReplicationProviders { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Replication provider custom settings.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.customDetails")]
-        public ConfigurationSettings CustomDetails { get; set; }
+        [JsonProperty(PropertyName = "properties")]
+        public ProtectableItemProperties Properties { get; set; }
 
     }
 }

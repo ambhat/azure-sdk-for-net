@@ -15,7 +15,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// <summary>
     /// Recovery plan details.
     /// </summary>
-    [JsonTransformation]
     public partial class RecoveryPlan : Resource
     {
         /// <summary>
@@ -26,108 +25,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the RecoveryPlan class.
         /// </summary>
-        public RecoveryPlan(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string friendlyName = default(string), string primaryFabricId = default(string), string primaryFabricFriendlyName = default(string), string recoveryFabricId = default(string), string recoveryFabricFriendlyName = default(string), string failoverDeploymentModel = default(string), IList<string> replicationProviders = default(IList<string>), IList<string> allowedOperations = default(IList<string>), DateTime? lastPlannedFailoverTime = default(DateTime?), DateTime? lastTestFailoverTime = default(DateTime?), CurrentScenarioDetails currentScenario = default(CurrentScenarioDetails), string currentScenarioStatus = default(string), string currentScenarioStatusDescription = default(string), IList<RecoveryPlanGroup> groups = default(IList<RecoveryPlanGroup>))
+        public RecoveryPlan(string id = default(string), string name = default(string), string type = default(string), string location = default(string), RecoveryPlanProperties properties = default(RecoveryPlanProperties))
             : base(id, name, type, location)
         {
-            FriendlyName = friendlyName;
-            PrimaryFabricId = primaryFabricId;
-            PrimaryFabricFriendlyName = primaryFabricFriendlyName;
-            RecoveryFabricId = recoveryFabricId;
-            RecoveryFabricFriendlyName = recoveryFabricFriendlyName;
-            FailoverDeploymentModel = failoverDeploymentModel;
-            ReplicationProviders = replicationProviders;
-            AllowedOperations = allowedOperations;
-            LastPlannedFailoverTime = lastPlannedFailoverTime;
-            LastTestFailoverTime = lastTestFailoverTime;
-            CurrentScenario = currentScenario;
-            CurrentScenarioStatus = currentScenarioStatus;
-            CurrentScenarioStatusDescription = currentScenarioStatusDescription;
-            Groups = groups;
+            Properties = properties;
         }
 
         /// <summary>
-        /// Gets or sets the friendly name.
+        /// Gets or sets the custom details.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.friendlyName")]
-        public string FriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the primary fabric Id.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.primaryFabricId")]
-        public string PrimaryFabricId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the primary fabric friendly name.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.primaryFabricFriendlyName")]
-        public string PrimaryFabricFriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the recovery fabric Id.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.recoveryFabricId")]
-        public string RecoveryFabricId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the recovery fabric friendly name.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.recoveryFabricFriendlyName")]
-        public string RecoveryFabricFriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the failover deployment model.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.failoverDeploymentModel")]
-        public string FailoverDeploymentModel { get; set; }
-
-        /// <summary>
-        /// Gets or sets the list of replication providers.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.replicationProviders")]
-        public IList<string> ReplicationProviders { get; set; }
-
-        /// <summary>
-        /// Gets or sets the list of allowed operations.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.allowedOperations")]
-        public IList<string> AllowedOperations { get; set; }
-
-        /// <summary>
-        /// Gets or sets the start time of the last planned failover.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.lastPlannedFailoverTime")]
-        public DateTime? LastPlannedFailoverTime { get; set; }
-
-        /// <summary>
-        /// Gets or sets the start time of the last test failover.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.lastTestFailoverTime")]
-        public DateTime? LastTestFailoverTime { get; set; }
-
-        /// <summary>
-        /// Gets or sets the current scenario details.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.currentScenario")]
-        public CurrentScenarioDetails CurrentScenario { get; set; }
-
-        /// <summary>
-        /// Gets or sets the recovery plan status.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.currentScenarioStatus")]
-        public string CurrentScenarioStatus { get; set; }
-
-        /// <summary>
-        /// Gets or sets the recovery plan status description.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.currentScenarioStatusDescription")]
-        public string CurrentScenarioStatusDescription { get; set; }
-
-        /// <summary>
-        /// Gets or sets the recovery plan groups.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.groups")]
-        public IList<RecoveryPlanGroup> Groups { get; set; }
+        [JsonProperty(PropertyName = "properties")]
+        public RecoveryPlanProperties Properties { get; set; }
 
     }
 }

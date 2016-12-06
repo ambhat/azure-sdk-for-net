@@ -15,7 +15,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// <summary>
     /// Network model.
     /// </summary>
-    [JsonTransformation]
     public partial class Network : Resource
     {
         /// <summary>
@@ -26,38 +25,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the Network class.
         /// </summary>
-        public Network(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string fabricType = default(string), IList<Subnet> subnets = default(IList<Subnet>), string friendlyName = default(string), string networkType = default(string))
+        public Network(string id = default(string), string name = default(string), string type = default(string), string location = default(string), NetworkProperties properties = default(NetworkProperties))
             : base(id, name, type, location)
         {
-            FabricType = fabricType;
-            Subnets = subnets;
-            FriendlyName = friendlyName;
-            NetworkType = networkType;
+            Properties = properties;
         }
 
         /// <summary>
-        /// Gets or sets the Fabric Type.
+        /// Gets or sets the Network Properties.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.fabricType")]
-        public string FabricType { get; set; }
-
-        /// <summary>
-        /// Gets or sets the List of subnets.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.subnets")]
-        public IList<Subnet> Subnets { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Friendly Name.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.friendlyName")]
-        public string FriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Network Type.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.networkType")]
-        public string NetworkType { get; set; }
+        [JsonProperty(PropertyName = "properties")]
+        public NetworkProperties Properties { get; set; }
 
     }
 }

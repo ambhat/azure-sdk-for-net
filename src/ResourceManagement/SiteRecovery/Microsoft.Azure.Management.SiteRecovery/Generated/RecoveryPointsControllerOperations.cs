@@ -48,6 +48,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Get a recovery point.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// The fabric name.
         /// </param>
@@ -268,6 +269,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Get recovery points for a protected entity.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// The fabric name.
         /// </param>
@@ -479,6 +481,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Get recovery points for a protected entity.
         /// </summary>
+        /// Deletes the site.
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

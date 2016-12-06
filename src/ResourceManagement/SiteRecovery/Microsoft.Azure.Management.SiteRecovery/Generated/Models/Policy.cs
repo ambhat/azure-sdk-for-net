@@ -15,7 +15,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// <summary>
     /// Protection profile details.
     /// </summary>
-    [JsonTransformation]
     public partial class Policy : Resource
     {
         /// <summary>
@@ -26,24 +25,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the Policy class.
         /// </summary>
-        public Policy(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string friendlyName = default(string), PolicyProviderSpecificDetails providerSpecificDetails = default(PolicyProviderSpecificDetails))
+        public Policy(string id = default(string), string name = default(string), string type = default(string), string location = default(string), PolicyProperties properties = default(PolicyProperties))
             : base(id, name, type, location)
         {
-            FriendlyName = friendlyName;
-            ProviderSpecificDetails = providerSpecificDetails;
+            Properties = properties;
         }
 
         /// <summary>
-        /// Gets or sets the FriendlyName.
+        /// Gets or sets the custom data.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.friendlyName")]
-        public string FriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the ReplicationChannelSetting.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.providerSpecificDetails")]
-        public PolicyProviderSpecificDetails ProviderSpecificDetails { get; set; }
+        [JsonProperty(PropertyName = "properties")]
+        public PolicyProperties Properties { get; set; }
 
     }
 }

@@ -15,7 +15,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// <summary>
     /// Job details.
     /// </summary>
-    [JsonTransformation]
     public partial class Job : Resource
     {
         /// <summary>
@@ -26,124 +25,21 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the Job class.
         /// </summary>
-        public Job(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string activityId = default(string), string scenarioName = default(string), string friendlyName = default(string), string state = default(string), string stateDescription = default(string), IList<ASRTask> tasks = default(IList<ASRTask>), IList<JobErrorDetails> errors = default(IList<JobErrorDetails>), DateTime? jobPropertiesStartTime = default(DateTime?), DateTime? jobPropertiesEndTime = default(DateTime?), IList<string> allowedActions = default(IList<string>), string targetObjectId = default(string), string targetObjectName = default(string), string targetInstanceType = default(string), JobDetails customDetails = default(JobDetails), string status = default(string), string code = default(string), string message = default(string), string target = default(string), IList<ARMExceptionDetails> details = default(IList<ARMExceptionDetails>), ARMInnerError innererror = default(ARMInnerError), string startTime = default(string), string endTime = default(string))
+        public Job(string id = default(string), string name = default(string), string type = default(string), string location = default(string), JobProperties properties = default(JobProperties), string status = default(string), ARMException error = default(ARMException), string startTime = default(string), string endTime = default(string))
             : base(id, name, type, location)
         {
-            ActivityId = activityId;
-            ScenarioName = scenarioName;
-            FriendlyName = friendlyName;
-            State = state;
-            StateDescription = stateDescription;
-            Tasks = tasks;
-            Errors = errors;
-            JobPropertiesStartTime = jobPropertiesStartTime;
-            JobPropertiesEndTime = jobPropertiesEndTime;
-            AllowedActions = allowedActions;
-            TargetObjectId = targetObjectId;
-            TargetObjectName = targetObjectName;
-            TargetInstanceType = targetInstanceType;
-            CustomDetails = customDetails;
+            Properties = properties;
             Status = status;
-            Code = code;
-            Message = message;
-            Target = target;
-            Details = details;
-            Innererror = innererror;
+            Error = error;
             StartTime = startTime;
             EndTime = endTime;
         }
 
         /// <summary>
-        /// Gets or sets the activity id.
+        /// Gets or sets the custom data.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.activityId")]
-        public string ActivityId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the ScenarioName.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.scenarioName")]
-        public string ScenarioName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the DisplayName.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.friendlyName")]
-        public string FriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the status of the Job. It is one of these values -
-        /// NotStarted, InProgress,
-        /// Succeeded, Failed, Cancelled, Suspended or Other.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.state")]
-        public string State { get; set; }
-
-        /// <summary>
-        /// Gets or sets the description of the state of the Job. For e.g. -
-        /// For Succeeded state,
-        /// description can be Completed, PartiallySucceeded,
-        /// CompletedWithInformation or Skipped.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.stateDescription")]
-        public string StateDescription { get; set; }
-
-        /// <summary>
-        /// Gets or sets the tasks.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.tasks")]
-        public IList<ASRTask> Tasks { get; set; }
-
-        /// <summary>
-        /// Gets or sets the errors.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.errors")]
-        public IList<JobErrorDetails> Errors { get; set; }
-
-        /// <summary>
-        /// Gets or sets the start time.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.startTime")]
-        public DateTime? JobPropertiesStartTime { get; set; }
-
-        /// <summary>
-        /// Gets or sets the end time.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.endTime")]
-        public DateTime? JobPropertiesEndTime { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Allowed action the job.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.allowedActions")]
-        public IList<string> AllowedActions { get; set; }
-
-        /// <summary>
-        /// Gets or sets the affected Object Id.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.targetObjectId")]
-        public string TargetObjectId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of the affected object.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.targetObjectName")]
-        public string TargetObjectName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the type of the affected object which is
-        /// of
-        /// {Microsoft.Azure.SiteRecovery.V2015_11_10.AffectedObjectType}
-        /// class.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.targetInstanceType")]
-        public string TargetInstanceType { get; set; }
-
-        /// <summary>
-        /// Gets or sets the custom job details like test failover job details.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.customDetails")]
-        public JobDetails CustomDetails { get; set; }
+        [JsonProperty(PropertyName = "properties")]
+        public JobProperties Properties { get; set; }
 
         /// <summary>
         /// Gets or sets the status of the Job. ARM expects the terminal
@@ -156,34 +52,10 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         public string Status { get; set; }
 
         /// <summary>
-        /// Gets HTTP status code for the error.
+        /// Gets or sets the error.
         /// </summary>
-        [JsonProperty(PropertyName = "error.code")]
-        public string Code { get; set; }
-
-        /// <summary>
-        /// Gets exception message.
-        /// </summary>
-        [JsonProperty(PropertyName = "error.message")]
-        public string Message { get; set; }
-
-        /// <summary>
-        /// Gets exception target.
-        /// </summary>
-        [JsonProperty(PropertyName = "error.target")]
-        public string Target { get; set; }
-
-        /// <summary>
-        /// Gets service based error details.
-        /// </summary>
-        [JsonProperty(PropertyName = "error.details")]
-        public IList<ARMExceptionDetails> Details { get; set; }
-
-        /// <summary>
-        /// Gets private data for service debugging.
-        /// </summary>
-        [JsonProperty(PropertyName = "error.innererror")]
-        public ARMInnerError Innererror { get; set; }
+        [JsonProperty(PropertyName = "error")]
+        public ARMException Error { get; set; }
 
         /// <summary>
         /// Gets or sets the start time.

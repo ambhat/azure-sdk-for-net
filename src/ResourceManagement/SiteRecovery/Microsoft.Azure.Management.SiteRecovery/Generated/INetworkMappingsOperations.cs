@@ -19,8 +19,32 @@ namespace Microsoft.Azure.Management.SiteRecovery
     public partial interface INetworkMappingsOperations
     {
         /// <summary>
+        /// Tracks the provider async operation.
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='fabricName'>
+        /// Primary fabric name.
+        /// </param>
+        /// <param name='networkName'>
+        /// Primary network name.
+        /// </param>
+        /// <param name='networkMappingName'>
+        /// ARM Resource Name for network mapping.
+        /// </param>
+        /// <param name='jobName'>
+        /// job id to track.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse> TrackAsyncOperationWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
         /// Gets all the network mappings under a vault.
         /// </summary>
+        /// Deletes the site.
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
@@ -31,6 +55,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets all the network mappings under a network.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Primary fabric name.
         /// </param>
@@ -47,6 +72,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets network mapping by name.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Primary fabric name.
         /// </param>
@@ -66,6 +92,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Creates network mapping.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Primary fabric name.
         /// </param>
@@ -86,8 +113,32 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </param>
         Task<AzureOperationResponse> CreateWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
+        /// Creates network mapping.
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='fabricName'>
+        /// Primary fabric name.
+        /// </param>
+        /// <param name='networkName'>
+        /// Primary network name.
+        /// </param>
+        /// <param name='networkMappingName'>
+        /// Network mapping name.
+        /// </param>
+        /// <param name='input'>
+        /// Create network mapping input.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse> BeginCreateWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
         /// Delete network mapping.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Primary fabric name.
         /// </param>
@@ -105,8 +156,29 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </param>
         Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
+        /// Delete network mapping.
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='fabricName'>
+        /// Primary fabric name.
+        /// </param>
+        /// <param name='networkName'>
+        /// Primary network name.
+        /// </param>
+        /// <param name='networkMappingName'>
+        /// ARM Resource Name for network mapping.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse> BeginDeleteWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
         /// Gets all the network mappings under a vault.
         /// </summary>
+        /// Deletes the site.
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>
@@ -120,6 +192,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets all the network mappings under a network.
         /// </summary>
+        /// Deletes the site.
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

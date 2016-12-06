@@ -15,7 +15,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// <summary>
     /// Fabric definition.
     /// </summary>
-    [JsonTransformation]
     public partial class Fabric : Resource
     {
         /// <summary>
@@ -26,52 +25,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the Fabric class.
         /// </summary>
-        public Fabric(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string friendlyName = default(string), EncryptionDetails encryptionDetails = default(EncryptionDetails), EncryptionDetails rolloverEncryptionDetails = default(EncryptionDetails), string internalIdentifier = default(string), string bcdrState = default(string), FabricSpecificDetails customDetails = default(FabricSpecificDetails))
+        public Fabric(string id = default(string), string name = default(string), string type = default(string), string location = default(string), FabricProperties properties = default(FabricProperties))
             : base(id, name, type, location)
         {
-            FriendlyName = friendlyName;
-            EncryptionDetails = encryptionDetails;
-            RolloverEncryptionDetails = rolloverEncryptionDetails;
-            InternalIdentifier = internalIdentifier;
-            BcdrState = bcdrState;
-            CustomDetails = customDetails;
+            Properties = properties;
         }
 
         /// <summary>
-        /// Gets or sets Friendly name of the fabric.
+        /// Gets or sets Fabric related data.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.friendlyName")]
-        public string FriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets Encryption details for the fabric.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.encryptionDetails")]
-        public EncryptionDetails EncryptionDetails { get; set; }
-
-        /// <summary>
-        /// Gets or sets Rollover encryption details for the fabric.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.rolloverEncryptionDetails")]
-        public EncryptionDetails RolloverEncryptionDetails { get; set; }
-
-        /// <summary>
-        /// Gets or sets dra Registration Id.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.internalIdentifier")]
-        public string InternalIdentifier { get; set; }
-
-        /// <summary>
-        /// Gets or sets BCDR state of the fabric.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.bcdrState")]
-        public string BcdrState { get; set; }
-
-        /// <summary>
-        /// Gets or sets fabric specific settings.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.customDetails")]
-        public FabricSpecificDetails CustomDetails { get; set; }
+        [JsonProperty(PropertyName = "properties")]
+        public FabricProperties Properties { get; set; }
 
     }
 }

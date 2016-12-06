@@ -94,14 +94,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
         public bool? GenerateClientRequestId { get; set; }
 
         /// <summary>
-        /// Gets the IReplicationProtectedItemsControllerOperations.
+        /// Gets the IReplicationProtectedItemsOperations.
         /// </summary>
-        public virtual IReplicationProtectedItemsControllerOperations ReplicationProtectedItemsController { get; private set; }
+        public virtual IReplicationProtectedItemsOperations ReplicationProtectedItems { get; private set; }
 
         /// <summary>
-        /// Gets the IRecoveryServicesProviderControllerOperations.
+        /// Gets the IRecoveryServicesProviderOperations.
         /// </summary>
-        public virtual IRecoveryServicesProviderControllerOperations RecoveryServicesProviderController { get; private set; }
+        public virtual IRecoveryServicesProviderOperations RecoveryServicesProvider { get; private set; }
 
         /// <summary>
         /// Gets the IRecoveryPointsControllerOperations.
@@ -109,39 +109,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
         public virtual IRecoveryPointsControllerOperations RecoveryPointsController { get; private set; }
 
         /// <summary>
-        /// Gets the IRecoveryPlansControllerOperations.
+        /// Gets the IRecoveryPlansOperations.
         /// </summary>
-        public virtual IRecoveryPlansControllerOperations RecoveryPlansController { get; private set; }
+        public virtual IRecoveryPlansOperations RecoveryPlans { get; private set; }
 
         /// <summary>
-        /// Gets the IProtectionContainersControllerOperations.
+        /// Gets the IProtectionContainersOperations.
         /// </summary>
-        public virtual IProtectionContainersControllerOperations ProtectionContainersController { get; private set; }
+        public virtual IProtectionContainersOperations ProtectionContainers { get; private set; }
 
         /// <summary>
-        /// Gets the IProtectionContainerMappingsControllerOperations.
+        /// Gets the IProtectionContainerMappingsOperations.
         /// </summary>
-        public virtual IProtectionContainerMappingsControllerOperations ProtectionContainerMappingsController { get; private set; }
+        public virtual IProtectionContainerMappingsOperations ProtectionContainerMappings { get; private set; }
 
         /// <summary>
-        /// Gets the IProtectableItemsControllerOperations.
+        /// Gets the IProtectableItemsOperations.
         /// </summary>
-        public virtual IProtectableItemsControllerOperations ProtectableItemsController { get; private set; }
+        public virtual IProtectableItemsOperations ProtectableItems { get; private set; }
 
         /// <summary>
-        /// Gets the IPolicyControllerOperations.
+        /// Gets the IPoliciesOperations.
         /// </summary>
-        public virtual IPolicyControllerOperations PolicyController { get; private set; }
+        public virtual IPoliciesOperations Policies { get; private set; }
 
         /// <summary>
-        /// Gets the INetworksControllerOperations.
+        /// Gets the INetworksOperations.
         /// </summary>
-        public virtual INetworksControllerOperations NetworksController { get; private set; }
-
-        /// <summary>
-        /// Gets the INetworkMappingsControllerOperations.
-        /// </summary>
-        public virtual INetworkMappingsControllerOperations NetworkMappingsController { get; private set; }
+        public virtual INetworksOperations Networks { get; private set; }
 
         /// <summary>
         /// Gets the INetworkMappingsOperations.
@@ -342,16 +337,15 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </summary>
         private void Initialize()
         {
-            this.ReplicationProtectedItemsController = new ReplicationProtectedItemsControllerOperations(this);
-            this.RecoveryServicesProviderController = new RecoveryServicesProviderControllerOperations(this);
+            this.ReplicationProtectedItems = new ReplicationProtectedItemsOperations(this);
+            this.RecoveryServicesProvider = new RecoveryServicesProviderOperations(this);
             this.RecoveryPointsController = new RecoveryPointsControllerOperations(this);
-            this.RecoveryPlansController = new RecoveryPlansControllerOperations(this);
-            this.ProtectionContainersController = new ProtectionContainersControllerOperations(this);
-            this.ProtectionContainerMappingsController = new ProtectionContainerMappingsControllerOperations(this);
-            this.ProtectableItemsController = new ProtectableItemsControllerOperations(this);
-            this.PolicyController = new PolicyControllerOperations(this);
-            this.NetworksController = new NetworksControllerOperations(this);
-            this.NetworkMappingsController = new NetworkMappingsControllerOperations(this);
+            this.RecoveryPlans = new RecoveryPlansOperations(this);
+            this.ProtectionContainers = new ProtectionContainersOperations(this);
+            this.ProtectionContainerMappings = new ProtectionContainerMappingsOperations(this);
+            this.ProtectableItems = new ProtectableItemsOperations(this);
+            this.Policies = new PoliciesOperations(this);
+            this.Networks = new NetworksOperations(this);
             this.NetworkMappings = new NetworkMappingsOperations(this);
             this.LogicalNetworks = new LogicalNetworksOperations(this);
             this.Jobs = new JobsOperations(this);
@@ -374,7 +368,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
                         new Iso8601TimeSpanConverter()
                     }
             };
-            SerializationSettings.Converters.Add(new TransformationJsonConverter());
             DeserializationSettings = new JsonSerializerSettings
             {
                 DateFormatHandling = DateFormatHandling.IsoDateFormat,
@@ -419,7 +412,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
             DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<ReverseReplicationProviderSpecificInput>("instanceType"));
             SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<ApplyRecoveryPointProviderSpecificInput>("instanceType"));
             DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<ApplyRecoveryPointProviderSpecificInput>("instanceType"));
-            DeserializationSettings.Converters.Add(new TransformationJsonConverter());
             DeserializationSettings.Converters.Add(new CloudErrorJsonConverter()); 
         }    
     }

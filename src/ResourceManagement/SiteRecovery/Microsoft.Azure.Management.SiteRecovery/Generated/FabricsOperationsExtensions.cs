@@ -21,6 +21,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Tracks the Site async operation.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -30,14 +31,15 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='jobName'>
             /// job id to track.
             /// </param>
-            public static void TrackAsyncOperation(this IFabricsOperations operations, string fabricName, string jobName)
+            public static Fabric TrackAsyncOperation(this IFabricsOperations operations, string fabricName, string jobName)
             {
-                Task.Factory.StartNew(s => ((IFabricsOperations)s).TrackAsyncOperationAsync(fabricName, jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IFabricsOperations)s).TrackAsyncOperationAsync(fabricName, jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
             /// Tracks the Site async operation.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -50,14 +52,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task TrackAsyncOperationAsync(this IFabricsOperations operations, string fabricName, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Fabric> TrackAsyncOperationAsync(this IFabricsOperations operations, string fabricName, string jobName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.TrackAsyncOperationWithHttpMessagesAsync(fabricName, jobName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.TrackAsyncOperationWithHttpMessagesAsync(fabricName, jobName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
             /// Perform failover of the process server.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -76,6 +82,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Perform failover of the process server.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -97,6 +104,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Perform failover of the process server.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -115,6 +123,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Perform failover of the process server.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -136,6 +145,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Deploys a Process Server.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -154,6 +164,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Deploys a Process Server.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -175,6 +186,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Deploys a Process Server.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -193,6 +205,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Deploys a Process Server.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -214,6 +227,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Renews certificate for the site.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -228,6 +242,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Renews certificate for the site.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -245,6 +260,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Renews certificate for the site.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -259,6 +275,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Renews certificate for the site.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -276,6 +293,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Checks the consistency of the site.
             /// </summary>
+            /// Creates the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -290,6 +308,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Checks the consistency of the site.
             /// </summary>
+            /// Creates the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -307,6 +326,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Checks the consistency of the site.
             /// </summary>
+            /// Creates the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -321,6 +341,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Checks the consistency of the site.
             /// </summary>
+            /// Creates the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -340,6 +361,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// TODO: put a code based DebugAssert to ensure all HttpPosts
             /// have Operation entry made.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -356,6 +378,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// TODO: put a code based DebugAssert to ensure all HttpPosts
             /// have Operation entry made.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -375,6 +398,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// TODO: put a code based DebugAssert to ensure all HttpPosts
             /// have Operation entry made.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -391,6 +415,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// TODO: put a code based DebugAssert to ensure all HttpPosts
             /// have Operation entry made.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -408,6 +433,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets the details of a Site.
             /// </summary>
+            /// bksdfj kjdfs ajkgdhkg asjhg.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -422,6 +448,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets the details of a Site.
             /// </summary>
+            /// bksdfj kjdfs ajkgdhkg asjhg.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -442,6 +469,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Creates the site.
             /// </summary>
+            /// klklfd the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -451,14 +479,15 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Site creation input.
             /// </param>
-            public static void Create(this IFabricsOperations operations, string fabricName, FabricCreationInput input)
+            public static Fabric Create(this IFabricsOperations operations, string fabricName, FabricCreationInput input)
             {
-                Task.Factory.StartNew(s => ((IFabricsOperations)s).CreateAsync(fabricName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IFabricsOperations)s).CreateAsync(fabricName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
             /// Creates the site.
             /// </summary>
+            /// klklfd the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -471,14 +500,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task CreateAsync(this IFabricsOperations operations, string fabricName, FabricCreationInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Fabric> CreateAsync(this IFabricsOperations operations, string fabricName, FabricCreationInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.CreateWithHttpMessagesAsync(fabricName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.CreateWithHttpMessagesAsync(fabricName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
             /// Creates the site.
             /// </summary>
+            /// klklfd the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -488,14 +521,15 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Site creation input.
             /// </param>
-            public static void BeginCreate(this IFabricsOperations operations, string fabricName, FabricCreationInput input)
+            public static Fabric BeginCreate(this IFabricsOperations operations, string fabricName, FabricCreationInput input)
             {
-                Task.Factory.StartNew(s => ((IFabricsOperations)s).BeginCreateAsync(fabricName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IFabricsOperations)s).BeginCreateAsync(fabricName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
             /// Creates the site.
             /// </summary>
+            /// klklfd the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -508,14 +542,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginCreateAsync(this IFabricsOperations operations, string fabricName, FabricCreationInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Fabric> BeginCreateAsync(this IFabricsOperations operations, string fabricName, FabricCreationInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginCreateWithHttpMessagesAsync(fabricName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginCreateWithHttpMessagesAsync(fabricName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
             /// Purges the site.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -530,6 +568,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Purges the site.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -547,6 +586,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Purges the site.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -561,6 +601,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Purges the site.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -578,6 +619,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets the list of Site registered.
             /// </summary>
+            /// registered sites hjg.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -589,6 +631,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets the list of Site registered.
             /// </summary>
+            /// registered sites hjg.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -606,6 +649,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets the list of Site registered.
             /// </summary>
+            /// registered sites hjg.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -620,6 +664,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets the list of Site registered.
             /// </summary>
+            /// registered sites hjg.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>

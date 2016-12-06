@@ -19,8 +19,60 @@ namespace Microsoft.Azure.Management.SiteRecovery
     public static partial class NetworkMappingsOperationsExtensions
     {
             /// <summary>
+            /// Tracks the provider async operation.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Primary fabric name.
+            /// </param>
+            /// <param name='networkName'>
+            /// Primary network name.
+            /// </param>
+            /// <param name='networkMappingName'>
+            /// ARM Resource Name for network mapping.
+            /// </param>
+            /// <param name='jobName'>
+            /// job id to track.
+            /// </param>
+            public static void TrackAsyncOperation(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, string jobName)
+            {
+                Task.Factory.StartNew(s => ((INetworkMappingsOperations)s).TrackAsyncOperationAsync(fabricName, networkName, networkMappingName, jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Tracks the provider async operation.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Primary fabric name.
+            /// </param>
+            /// <param name='networkName'>
+            /// Primary network name.
+            /// </param>
+            /// <param name='networkMappingName'>
+            /// ARM Resource Name for network mapping.
+            /// </param>
+            /// <param name='jobName'>
+            /// job id to track.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task TrackAsyncOperationAsync(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.TrackAsyncOperationWithHttpMessagesAsync(fabricName, networkName, networkMappingName, jobName, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <summary>
             /// Gets all the network mappings under a vault.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -32,6 +84,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets all the network mappings under a vault.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -49,6 +102,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets all the network mappings under a network.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -66,6 +120,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets all the network mappings under a network.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -89,6 +144,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets network mapping by name.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -109,6 +165,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets network mapping by name.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -135,6 +192,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Creates network mapping.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -158,6 +216,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Creates network mapping.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -182,8 +241,60 @@ namespace Microsoft.Azure.Management.SiteRecovery
             }
 
             /// <summary>
+            /// Creates network mapping.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Primary fabric name.
+            /// </param>
+            /// <param name='networkName'>
+            /// Primary network name.
+            /// </param>
+            /// <param name='networkMappingName'>
+            /// Network mapping name.
+            /// </param>
+            /// <param name='input'>
+            /// Create network mapping input.
+            /// </param>
+            public static void BeginCreate(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input)
+            {
+                Task.Factory.StartNew(s => ((INetworkMappingsOperations)s).BeginCreateAsync(fabricName, networkName, networkMappingName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Creates network mapping.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Primary fabric name.
+            /// </param>
+            /// <param name='networkName'>
+            /// Primary network name.
+            /// </param>
+            /// <param name='networkMappingName'>
+            /// Network mapping name.
+            /// </param>
+            /// <param name='input'>
+            /// Create network mapping input.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task BeginCreateAsync(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.BeginCreateWithHttpMessagesAsync(fabricName, networkName, networkMappingName, input, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <summary>
             /// Delete network mapping.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -204,6 +315,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Delete network mapping.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -225,8 +337,54 @@ namespace Microsoft.Azure.Management.SiteRecovery
             }
 
             /// <summary>
+            /// Delete network mapping.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Primary fabric name.
+            /// </param>
+            /// <param name='networkName'>
+            /// Primary network name.
+            /// </param>
+            /// <param name='networkMappingName'>
+            /// ARM Resource Name for network mapping.
+            /// </param>
+            public static void BeginDelete(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName)
+            {
+                Task.Factory.StartNew(s => ((INetworkMappingsOperations)s).BeginDeleteAsync(fabricName, networkName, networkMappingName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Delete network mapping.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Primary fabric name.
+            /// </param>
+            /// <param name='networkName'>
+            /// Primary network name.
+            /// </param>
+            /// <param name='networkMappingName'>
+            /// ARM Resource Name for network mapping.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task BeginDeleteAsync(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.BeginDeleteWithHttpMessagesAsync(fabricName, networkName, networkMappingName, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <summary>
             /// Gets all the network mappings under a vault.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -241,6 +399,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets all the network mappings under a vault.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -261,6 +420,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets all the network mappings under a network.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -275,6 +435,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets all the network mappings under a network.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>

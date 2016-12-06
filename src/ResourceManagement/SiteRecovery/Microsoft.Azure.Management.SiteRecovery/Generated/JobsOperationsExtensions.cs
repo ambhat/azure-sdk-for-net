@@ -22,6 +22,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Tracks the Site async operation.
             /// </summary>
+            /// Only for InitialReplicationTypeContract.Export.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -39,6 +40,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Tracks the Site async operation.
             /// </summary>
+            /// Only for InitialReplicationTypeContract.Export.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -59,6 +61,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Resumes the specified job.
             /// </summary>
+            /// Only for InitialReplicationTypeContract.Export.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -76,6 +79,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Resumes the specified job.
             /// </summary>
+            /// Only for InitialReplicationTypeContract.Export.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -94,8 +98,48 @@ namespace Microsoft.Azure.Management.SiteRecovery
             }
 
             /// <summary>
+            /// Resumes the specified job.
+            /// </summary>
+            /// Only for InitialReplicationTypeContract.Export.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='jobName'>
+            /// Job Id to resume.
+            /// </param>
+            /// <param name='resumeJobParams'>
+            /// Resume rob comments.
+            /// </param>
+            public static void BeginDeployProcessServerImage(this IJobsOperations operations, string jobName, ResumeJobParams resumeJobParams)
+            {
+                Task.Factory.StartNew(s => ((IJobsOperations)s).BeginDeployProcessServerImageAsync(jobName, resumeJobParams), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Resumes the specified job.
+            /// </summary>
+            /// Only for InitialReplicationTypeContract.Export.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='jobName'>
+            /// Job Id to resume.
+            /// </param>
+            /// <param name='resumeJobParams'>
+            /// Resume rob comments.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task BeginDeployProcessServerImageAsync(this IJobsOperations operations, string jobName, ResumeJobParams resumeJobParams, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.BeginDeployProcessServerImageWithHttpMessagesAsync(jobName, resumeJobParams, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <summary>
             /// Restarts the specified job.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -110,6 +154,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Restarts the specified job.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -125,8 +170,42 @@ namespace Microsoft.Azure.Management.SiteRecovery
             }
 
             /// <summary>
+            /// Restarts the specified job.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='jobName'>
+            /// Job Id to restart.
+            /// </param>
+            public static void BeginRestart(this IJobsOperations operations, string jobName)
+            {
+                Task.Factory.StartNew(s => ((IJobsOperations)s).BeginRestartAsync(jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Restarts the specified job.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='jobName'>
+            /// Job Id to restart.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task BeginRestartAsync(this IJobsOperations operations, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.BeginRestartWithHttpMessagesAsync(jobName, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <summary>
             /// Cancels the specified job.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -141,6 +220,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Cancels the specified job.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -156,8 +236,42 @@ namespace Microsoft.Azure.Management.SiteRecovery
             }
 
             /// <summary>
+            /// Cancels the specified job.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='jobName'>
+            /// Job Id to cancel.
+            /// </param>
+            public static void BeginCancel(this IJobsOperations operations, string jobName)
+            {
+                Task.Factory.StartNew(s => ((IJobsOperations)s).BeginCancelAsync(jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Cancels the specified job.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='jobName'>
+            /// Job Id to cancel.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task BeginCancelAsync(this IJobsOperations operations, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.BeginCancelWithHttpMessagesAsync(jobName, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <summary>
             /// Gets the job details.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -172,6 +286,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets the job details.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -223,6 +338,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// is set to
             /// "ScenarioName.ExportsJobs".
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -268,6 +384,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// is set to
             /// "ScenarioName.ExportsJobs".
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -283,8 +400,104 @@ namespace Microsoft.Azure.Management.SiteRecovery
             }
 
             /// <summary>
+            /// Gets "ExportJobs" workflow details.
+            /// Old method: Two APIs were exposed for performing export jobs,
+            /// one api
+            /// (subscriptions/workflow/computeWorkflowHistory) to trigger the
+            /// export jobs workflow and
+            /// another api to get the blob information after the workflow has
+            /// completed successfully
+            /// (subscriptions/workflow/{workflowId}/blobUrlWithSASKey)
+            /// New Method: Only one API is exposed to trigger export jobs
+            /// workflow, which will trigger
+            /// the export jobs workflow, however in order to store the blob
+            /// information(blobUri and
+            /// sas token) the CustomDetails field associated with the
+            /// JobProperties (in Job Object)
+            /// is being used. This will be set once the export jobs workflow
+            /// completes successfully.
+            /// Within custom details, instanceType is set to
+            /// "ExportJobsDetails" and fields
+            /// "blobUri" and "sasToken" contains the required information
+            /// that is necessary to access
+            /// exported jobs data.
+            /// Note:
+            /// 1. Current Implementation only supports one type of
+            /// AffectedObjectType and one value
+            /// for WorkflowStatus for the filer. Hence the current
+            /// implementation only uses the first
+            /// value in the corresponding lists.
+            /// 2. A dummy Job Entity is created in the Jobs table (this is
+            /// marked as internal job)
+            /// This job entity can be identified by the Scenario Name which
+            /// is set to
+            /// "ScenarioName.ExportsJobs".
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='jobQueryParameter'>
+            /// job query filter.
+            /// </param>
+            public static void BeginExport(this IJobsOperations operations, JobQueryParameter jobQueryParameter)
+            {
+                Task.Factory.StartNew(s => ((IJobsOperations)s).BeginExportAsync(jobQueryParameter), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Gets "ExportJobs" workflow details.
+            /// Old method: Two APIs were exposed for performing export jobs,
+            /// one api
+            /// (subscriptions/workflow/computeWorkflowHistory) to trigger the
+            /// export jobs workflow and
+            /// another api to get the blob information after the workflow has
+            /// completed successfully
+            /// (subscriptions/workflow/{workflowId}/blobUrlWithSASKey)
+            /// New Method: Only one API is exposed to trigger export jobs
+            /// workflow, which will trigger
+            /// the export jobs workflow, however in order to store the blob
+            /// information(blobUri and
+            /// sas token) the CustomDetails field associated with the
+            /// JobProperties (in Job Object)
+            /// is being used. This will be set once the export jobs workflow
+            /// completes successfully.
+            /// Within custom details, instanceType is set to
+            /// "ExportJobsDetails" and fields
+            /// "blobUri" and "sasToken" contains the required information
+            /// that is necessary to access
+            /// exported jobs data.
+            /// Note:
+            /// 1. Current Implementation only supports one type of
+            /// AffectedObjectType and one value
+            /// for WorkflowStatus for the filer. Hence the current
+            /// implementation only uses the first
+            /// value in the corresponding lists.
+            /// 2. A dummy Job Entity is created in the Jobs table (this is
+            /// marked as internal job)
+            /// This job entity can be identified by the Scenario Name which
+            /// is set to
+            /// "ScenarioName.ExportsJobs".
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='jobQueryParameter'>
+            /// job query filter.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task BeginExportAsync(this IJobsOperations operations, JobQueryParameter jobQueryParameter, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                await operations.BeginExportWithHttpMessagesAsync(jobQueryParameter, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <summary>
             /// Gets the list of jobs.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -299,6 +512,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets the list of jobs.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -319,6 +533,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets the list of jobs.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -333,6 +548,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets the list of jobs.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>

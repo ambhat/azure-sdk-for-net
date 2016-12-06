@@ -21,6 +21,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Tracks the Site async operation.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site name to work on.
         /// </param>
@@ -33,10 +34,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> TrackAsyncOperationWithHttpMessagesAsync(string fabricName, string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Fabric>> TrackAsyncOperationWithHttpMessagesAsync(string fabricName, string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Perform failover of the process server.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// The name of the fabric containing the process server.
         /// </param>
@@ -54,6 +56,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Perform failover of the process server.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// The name of the fabric containing the process server.
         /// </param>
@@ -71,6 +74,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Deploys a Process Server.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Id of the fabric under which the process server is to be
         /// deployed.
@@ -88,6 +92,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Deploys a Process Server.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Id of the fabric under which the process server is to be
         /// deployed.
@@ -105,6 +110,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Renews certificate for the site.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site it to renew certs for.
         /// </param>
@@ -118,6 +124,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Renews certificate for the site.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site it to renew certs for.
         /// </param>
@@ -131,6 +138,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Checks the consistency of the site.
         /// </summary>
+        /// Creates the site.
         /// <param name='fabricName'>
         /// Site name.
         /// </param>
@@ -144,6 +152,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Checks the consistency of the site.
         /// </summary>
+        /// Creates the site.
         /// <param name='fabricName'>
         /// Site name.
         /// </param>
@@ -159,6 +168,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// TODO: put a code based DebugAssert to ensure all
         /// HttpPosts have Operation entry made.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site it to delete.
         /// </param>
@@ -174,6 +184,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// TODO: put a code based DebugAssert to ensure all
         /// HttpPosts have Operation entry made.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site it to delete.
         /// </param>
@@ -187,6 +198,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the details of a Site.
         /// </summary>
+        /// bksdfj kjdfs ajkgdhkg asjhg.
         /// <param name='fabricName'>
         /// Site name of interest.
         /// </param>
@@ -200,6 +212,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Creates the site.
         /// </summary>
+        /// klklfd the site.
         /// <param name='fabricName'>
         /// Name of the site.
         /// </param>
@@ -212,10 +225,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> CreateWithHttpMessagesAsync(string fabricName, FabricCreationInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Fabric>> CreateWithHttpMessagesAsync(string fabricName, FabricCreationInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Creates the site.
         /// </summary>
+        /// klklfd the site.
         /// <param name='fabricName'>
         /// Name of the site.
         /// </param>
@@ -228,10 +242,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> BeginCreateWithHttpMessagesAsync(string fabricName, FabricCreationInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Fabric>> BeginCreateWithHttpMessagesAsync(string fabricName, FabricCreationInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Purges the site.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site to purge.
         /// </param>
@@ -245,6 +260,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Purges the site.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site to purge.
         /// </param>
@@ -258,6 +274,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the list of Site registered.
         /// </summary>
+        /// registered sites hjg.
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
@@ -268,6 +285,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the list of Site registered.
         /// </summary>
+        /// registered sites hjg.
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

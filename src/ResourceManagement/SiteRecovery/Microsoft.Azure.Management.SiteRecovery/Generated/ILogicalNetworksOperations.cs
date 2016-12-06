@@ -21,6 +21,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the list of logical networks under a fabric.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Server Id.
         /// </param>
@@ -30,11 +31,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse<IPage<LogicalNetwork>>> ListWithHttpMessagesAsync(string fabricName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<LogicalNetwork>>> ListByFabricWithHttpMessagesAsync(string fabricName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Gets a logical network with specified server id and logical
         /// network name.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Server Id.
         /// </param>
@@ -51,6 +53,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the list of logical networks under a fabric.
         /// </summary>
+        /// Deletes the site.
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>
@@ -60,6 +63,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse<IPage<LogicalNetwork>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<LogicalNetwork>>> ListByFabricNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

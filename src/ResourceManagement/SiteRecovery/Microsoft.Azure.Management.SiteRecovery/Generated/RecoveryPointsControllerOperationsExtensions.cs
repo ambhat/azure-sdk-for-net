@@ -21,6 +21,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Get a recovery point.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -44,6 +45,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Get a recovery point.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -73,6 +75,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Get recovery points for a protected entity.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -93,6 +96,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Get recovery points for a protected entity.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -119,6 +123,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Get recovery points for a protected entity.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -133,6 +138,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Get recovery points for a protected entity.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>

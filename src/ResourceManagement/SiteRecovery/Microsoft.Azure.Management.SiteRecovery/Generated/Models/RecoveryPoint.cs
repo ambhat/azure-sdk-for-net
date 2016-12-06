@@ -15,7 +15,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// <summary>
     /// Base class representing a recovery point.
     /// </summary>
-    [JsonTransformation]
     public partial class RecoveryPoint : Resource
     {
         /// <summary>
@@ -26,25 +25,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the RecoveryPoint class.
         /// </summary>
-        public RecoveryPoint(string id = default(string), string name = default(string), string type = default(string), string location = default(string), DateTime? recoveryPointTime = default(DateTime?), string recoveryPointType = default(string))
+        public RecoveryPoint(string id = default(string), string name = default(string), string type = default(string), string location = default(string), RecoveryPointProperties properties = default(RecoveryPointProperties))
             : base(id, name, type, location)
         {
-            RecoveryPointTime = recoveryPointTime;
-            RecoveryPointType = recoveryPointType;
+            Properties = properties;
         }
 
         /// <summary>
-        /// Gets or sets the recovery point time.
+        /// Gets or sets recovery point related data.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.recoveryPointTime")]
-        public DateTime? RecoveryPointTime { get; set; }
-
-        /// <summary>
-        /// Gets or sets the recovery point type: ApplicationConsistent,
-        /// CrashConsistent.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.recoveryPointType")]
-        public string RecoveryPointType { get; set; }
+        [JsonProperty(PropertyName = "properties")]
+        public RecoveryPointProperties Properties { get; set; }
 
     }
 }

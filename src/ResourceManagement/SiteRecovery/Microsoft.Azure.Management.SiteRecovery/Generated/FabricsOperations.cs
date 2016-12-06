@@ -48,6 +48,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Tracks the Site async operation.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site name to work on.
         /// </param>
@@ -63,7 +64,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> TrackAsyncOperationWithHttpMessagesAsync(string fabricName, string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<Fabric>> TrackAsyncOperationWithHttpMessagesAsync(string fabricName, string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -183,7 +184,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
             if ((int)_statusCode != 200 && (int)_statusCode != 202 && (int)_statusCode != 204)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
-                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                try
+                {
+                    _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                    CloudError _errorBody = SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, this.Client.DeserializationSettings);
+                    if (_errorBody != null)
+                    {
+                        ex = new CloudException(_errorBody.Message);
+                        ex.Body = _errorBody;
+                    }
+                }
+                catch (JsonException)
+                {
+                    // Ignore the exception
+                }
                 ex.Request = new HttpRequestMessageWrapper(_httpRequest, _requestContent);
                 ex.Response = new HttpResponseMessageWrapper(_httpResponse, _responseContent);
                 if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -202,12 +216,30 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse();
+            var _result = new AzureOperationResponse<Fabric>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
             {
                 _result.RequestId = _httpResponse.Headers.GetValues("x-ms-request-id").FirstOrDefault();
+            }
+            // Deserialize Response
+            if ((int)_statusCode == 200)
+            {
+                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                try
+                {
+                    _result.Body = SafeJsonConvert.DeserializeObject<Fabric>(_responseContent, this.Client.DeserializationSettings);
+                }
+                catch (JsonException ex)
+                {
+                    _httpRequest.Dispose();
+                    if (_httpResponse != null)
+                    {
+                        _httpResponse.Dispose();
+                    }
+                    throw new SerializationException("Unable to deserialize the response.", _responseContent, ex);
+                }
             }
             if (_shouldTrace)
             {
@@ -219,6 +251,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Perform failover of the process server.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// The name of the fabric containing the process server.
         /// </param>
@@ -243,6 +276,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Perform failover of the process server.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// The name of the fabric containing the process server.
         /// </param>
@@ -420,6 +454,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Deploys a Process Server.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Id of the fabric under which the process server is to be
         /// deployed.
@@ -444,6 +479,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Deploys a Process Server.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Id of the fabric under which the process server is to be
         /// deployed.
@@ -621,6 +657,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Renews certificate for the site.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site it to renew certs for.
         /// </param>
@@ -641,6 +678,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Renews certificate for the site.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site it to renew certs for.
         /// </param>
@@ -803,6 +841,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Checks the consistency of the site.
         /// </summary>
+        /// Creates the site.
         /// <param name='fabricName'>
         /// Site name.
         /// </param>
@@ -823,6 +862,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Checks the consistency of the site.
         /// </summary>
+        /// Creates the site.
         /// <param name='fabricName'>
         /// Site name.
         /// </param>
@@ -987,6 +1027,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// TODO: put a code based DebugAssert to ensure all HttpPosts
         /// have Operation entry made.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site it to delete.
         /// </param>
@@ -1009,6 +1050,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// TODO: put a code based DebugAssert to ensure all HttpPosts
         /// have Operation entry made.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site it to delete.
         /// </param>
@@ -1171,6 +1213,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the details of a Site.
         /// </summary>
+        /// bksdfj kjdfs ajkgdhkg asjhg.
         /// <param name='fabricName'>
         /// Site name of interest.
         /// </param>
@@ -1364,6 +1407,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Creates the site.
         /// </summary>
+        /// klklfd the site.
         /// <param name='fabricName'>
         /// Name of the site.
         /// </param>
@@ -1376,10 +1420,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        public async Task<AzureOperationResponse> CreateWithHttpMessagesAsync(string fabricName, FabricCreationInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<Fabric>> CreateWithHttpMessagesAsync(string fabricName, FabricCreationInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             // Send Request
-            AzureOperationResponse _response = await BeginCreateWithHttpMessagesAsync(
+            AzureOperationResponse<Fabric> _response = await BeginCreateWithHttpMessagesAsync(
                 fabricName, input, customHeaders, cancellationToken);
             return await this.Client.GetPutOrPatchOperationResultAsync(_response,
                 customHeaders,
@@ -1389,6 +1433,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Creates the site.
         /// </summary>
+        /// klklfd the site.
         /// <param name='fabricName'>
         /// Name of the site.
         /// </param>
@@ -1404,7 +1449,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> BeginCreateWithHttpMessagesAsync(string fabricName, FabricCreationInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<Fabric>> BeginCreateWithHttpMessagesAsync(string fabricName, FabricCreationInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -1526,10 +1571,23 @@ namespace Microsoft.Azure.Management.SiteRecovery
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 202)
+            if ((int)_statusCode != 200 && (int)_statusCode != 202)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
-                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                try
+                {
+                    _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                    CloudError _errorBody = SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, this.Client.DeserializationSettings);
+                    if (_errorBody != null)
+                    {
+                        ex = new CloudException(_errorBody.Message);
+                        ex.Body = _errorBody;
+                    }
+                }
+                catch (JsonException)
+                {
+                    // Ignore the exception
+                }
                 ex.Request = new HttpRequestMessageWrapper(_httpRequest, _requestContent);
                 ex.Response = new HttpResponseMessageWrapper(_httpResponse, _responseContent);
                 if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -1548,12 +1606,30 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse();
+            var _result = new AzureOperationResponse<Fabric>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
             {
                 _result.RequestId = _httpResponse.Headers.GetValues("x-ms-request-id").FirstOrDefault();
+            }
+            // Deserialize Response
+            if ((int)_statusCode == 200)
+            {
+                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                try
+                {
+                    _result.Body = SafeJsonConvert.DeserializeObject<Fabric>(_responseContent, this.Client.DeserializationSettings);
+                }
+                catch (JsonException ex)
+                {
+                    _httpRequest.Dispose();
+                    if (_httpResponse != null)
+                    {
+                        _httpResponse.Dispose();
+                    }
+                    throw new SerializationException("Unable to deserialize the response.", _responseContent, ex);
+                }
             }
             if (_shouldTrace)
             {
@@ -1565,6 +1641,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Purges the site.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site to purge.
         /// </param>
@@ -1585,6 +1662,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Purges the site.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Site to purge.
         /// </param>
@@ -1747,6 +1825,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the list of Site registered.
         /// </summary>
+        /// registered sites hjg.
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
         /// </param>
@@ -1931,6 +2010,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the list of Site registered.
         /// </summary>
+        /// registered sites hjg.
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

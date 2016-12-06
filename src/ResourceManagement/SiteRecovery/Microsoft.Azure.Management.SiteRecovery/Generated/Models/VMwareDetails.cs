@@ -15,7 +15,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// <summary>
     /// Store the fabric details specific to the VMware fabric.
     /// </summary>
-    [JsonObject("VMware")]
     public partial class VMwareDetails : FabricSpecificDetails
     {
         /// <summary>

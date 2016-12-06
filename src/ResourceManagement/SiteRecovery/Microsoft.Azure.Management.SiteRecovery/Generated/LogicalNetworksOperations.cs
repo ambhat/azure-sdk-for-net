@@ -48,6 +48,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the list of logical networks under a fabric.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Server Id.
         /// </param>
@@ -60,7 +61,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<LogicalNetwork>>> ListWithHttpMessagesAsync(string fabricName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<LogicalNetwork>>> ListByFabricWithHttpMessagesAsync(string fabricName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -99,7 +100,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("fabricName", fabricName);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "ListByFabric", tracingParameters);
             }
             // Construct URL
             var _baseUrl = this.Client.BaseUri.AbsoluteUri;
@@ -241,6 +242,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets a logical network with specified server id and logical network name.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Server Id.
         /// </param>
@@ -443,6 +445,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the list of logical networks under a fabric.
         /// </summary>
+        /// Deletes the site.
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>
@@ -455,7 +458,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<LogicalNetwork>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<LogicalNetwork>>> ListByFabricNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (nextPageLink == null)
             {
@@ -470,7 +473,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("nextPageLink", nextPageLink);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "ListNext", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "ListByFabricNext", tracingParameters);
             }
             // Construct URL
             string _url = "{nextLink}";

@@ -15,7 +15,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// <summary>
     /// VMM fabric specific details.
     /// </summary>
-    [JsonObject("VMM")]
     public partial class VmmDetails : FabricSpecificDetails
     {
         /// <summary>

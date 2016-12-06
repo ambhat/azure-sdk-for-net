@@ -22,6 +22,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Tracks the Site async operation.
         /// </summary>
+        /// Only for InitialReplicationTypeContract.Export.
         /// <param name='name'>
         /// Original Job id on which resume/restart was called.
         /// </param>
@@ -38,6 +39,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Resumes the specified job.
         /// </summary>
+        /// Only for InitialReplicationTypeContract.Export.
         /// <param name='jobName'>
         /// Job Id to resume.
         /// </param>
@@ -52,8 +54,26 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </param>
         Task<AzureOperationResponse> DeployProcessServerImageWithHttpMessagesAsync(string jobName, ResumeJobParams resumeJobParams, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
+        /// Resumes the specified job.
+        /// </summary>
+        /// Only for InitialReplicationTypeContract.Export.
+        /// <param name='jobName'>
+        /// Job Id to resume.
+        /// </param>
+        /// <param name='resumeJobParams'>
+        /// Resume rob comments.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse> BeginDeployProcessServerImageWithHttpMessagesAsync(string jobName, ResumeJobParams resumeJobParams, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
         /// Restarts the specified job.
         /// </summary>
+        /// Deletes the site.
         /// <param name='jobName'>
         /// Job Id to restart.
         /// </param>
@@ -65,8 +85,23 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </param>
         Task<AzureOperationResponse> RestartWithHttpMessagesAsync(string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
+        /// Restarts the specified job.
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='jobName'>
+        /// Job Id to restart.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse> BeginRestartWithHttpMessagesAsync(string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
         /// Cancels the specified job.
         /// </summary>
+        /// Deletes the site.
         /// <param name='jobName'>
         /// Job Id to cancel.
         /// </param>
@@ -78,8 +113,23 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </param>
         Task<AzureOperationResponse> CancelWithHttpMessagesAsync(string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
+        /// Cancels the specified job.
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='jobName'>
+        /// Job Id to cancel.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse> BeginCancelWithHttpMessagesAsync(string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
         /// Gets the job details.
         /// </summary>
+        /// Deletes the site.
         /// <param name='jobName'>
         /// Job Id to look details for.
         /// </param>
@@ -124,6 +174,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// which is set to
         /// "ScenarioName.ExportsJobs".
         /// </summary>
+        /// Deletes the site.
         /// <param name='jobQueryParameter'>
         /// job query filter.
         /// </param>
@@ -135,8 +186,54 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </param>
         Task<AzureOperationResponse> ExportWithHttpMessagesAsync(JobQueryParameter jobQueryParameter, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
+        /// Gets "ExportJobs" workflow details.
+        /// Old method: Two APIs were exposed for performing
+        /// export jobs, one api
+        /// (subscriptions/workflow/computeWorkflowHistory) to
+        /// trigger the export jobs workflow and
+        /// another api to get the blob information after the
+        /// workflow has completed successfully
+        /// (subscriptions/workflow/{workflowId}/blobUrlWithSASKey)
+        /// New Method: Only one API is exposed to trigger export
+        /// jobs workflow, which will trigger
+        /// the export jobs workflow, however in order to store
+        /// the blob information(blobUri and
+        /// sas token) the CustomDetails field associated with the
+        /// JobProperties (in Job Object)
+        /// is being used. This will be set once the export jobs
+        /// workflow completes successfully.
+        /// Within custom details, instanceType is set to
+        /// "ExportJobsDetails" and fields
+        /// "blobUri" and "sasToken" contains the required
+        /// information that is necessary to access
+        /// exported jobs data.
+        /// Note:
+        /// 1. Current Implementation only supports one type of
+        /// AffectedObjectType and one value
+        /// for WorkflowStatus for the filer. Hence the current
+        /// implementation only uses the first
+        /// value in the corresponding lists.
+        /// 2. A dummy Job Entity is created in the Jobs table
+        /// (this is marked as internal job)
+        /// This job entity can be identified by the Scenario Name
+        /// which is set to
+        /// "ScenarioName.ExportsJobs".
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='jobQueryParameter'>
+        /// job query filter.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse> BeginExportWithHttpMessagesAsync(JobQueryParameter jobQueryParameter, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
         /// Gets the list of jobs.
         /// </summary>
+        /// Deletes the site.
         /// <param name='odataQuery'>
         /// OData parameters to apply to the operation.
         /// </param>
@@ -150,6 +247,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets the list of jobs.
         /// </summary>
+        /// Deletes the site.
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

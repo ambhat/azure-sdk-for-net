@@ -15,7 +15,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// <summary>
     /// Replication protected item.
     /// </summary>
-    [JsonTransformation]
     public partial class ReplicationProtectedItem : Resource
     {
         /// <summary>
@@ -26,186 +25,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the ReplicationProtectedItem class.
         /// </summary>
-        public ReplicationProtectedItem(string id = default(string), string name = default(string), string type = default(string), string location = default(string), string friendlyName = default(string), string protectedItemType = default(string), string protectableItemId = default(string), string recoveryServicesProviderId = default(string), string primaryFabricFriendlyName = default(string), string recoveryFabricFriendlyName = default(string), string recoveryFabricId = default(string), string primaryProtectionContainerFriendlyName = default(string), string recoveryProtectionContainerFriendlyName = default(string), string protectionState = default(string), string protectionStateDescription = default(string), string activeLocation = default(string), string testFailoverState = default(string), string testFailoverStateDescription = default(string), IList<string> allowedOperations = default(IList<string>), string replicationHealth = default(string), IList<HealthError> replicationHealthErrors = default(IList<HealthError>), string policyId = default(string), string policyFriendlyName = default(string), DateTime? lastSuccessfulFailoverTime = default(DateTime?), DateTime? lastSuccessfulTestFailoverTime = default(DateTime?), CurrentScenarioDetails currentScenario = default(CurrentScenarioDetails), string failoverRecoveryPointId = default(string), ReplicationProviderSpecificSettings providerSpecificDetails = default(ReplicationProviderSpecificSettings))
+        public ReplicationProtectedItem(string id = default(string), string name = default(string), string type = default(string), string location = default(string), ReplicationProtectedItemProperties properties = default(ReplicationProtectedItemProperties))
             : base(id, name, type, location)
         {
-            FriendlyName = friendlyName;
-            ProtectedItemType = protectedItemType;
-            ProtectableItemId = protectableItemId;
-            RecoveryServicesProviderId = recoveryServicesProviderId;
-            PrimaryFabricFriendlyName = primaryFabricFriendlyName;
-            RecoveryFabricFriendlyName = recoveryFabricFriendlyName;
-            RecoveryFabricId = recoveryFabricId;
-            PrimaryProtectionContainerFriendlyName = primaryProtectionContainerFriendlyName;
-            RecoveryProtectionContainerFriendlyName = recoveryProtectionContainerFriendlyName;
-            ProtectionState = protectionState;
-            ProtectionStateDescription = protectionStateDescription;
-            ActiveLocation = activeLocation;
-            TestFailoverState = testFailoverState;
-            TestFailoverStateDescription = testFailoverStateDescription;
-            AllowedOperations = allowedOperations;
-            ReplicationHealth = replicationHealth;
-            ReplicationHealthErrors = replicationHealthErrors;
-            PolicyId = policyId;
-            PolicyFriendlyName = policyFriendlyName;
-            LastSuccessfulFailoverTime = lastSuccessfulFailoverTime;
-            LastSuccessfulTestFailoverTime = lastSuccessfulTestFailoverTime;
-            CurrentScenario = currentScenario;
-            FailoverRecoveryPointId = failoverRecoveryPointId;
-            ProviderSpecificDetails = providerSpecificDetails;
+            Properties = properties;
         }
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gets or sets the custom data.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.friendlyName")]
-        public string FriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the type of protected item type.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.protectedItemType")]
-        public string ProtectedItemType { get; set; }
-
-        /// <summary>
-        /// Gets or sets the protected item ARM Id.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.protectableItemId")]
-        public string ProtectableItemId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the recovery provider ARM Id.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.recoveryServicesProviderId")]
-        public string RecoveryServicesProviderId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the friendly name of the primary fabric.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.primaryFabricFriendlyName")]
-        public string PrimaryFabricFriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the friendly name of recovery fabric.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.recoveryFabricFriendlyName")]
-        public string RecoveryFabricFriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Arm Id of recovery fabric.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.recoveryFabricId")]
-        public string RecoveryFabricId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of primary protection container friendly
-        /// name.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.primaryProtectionContainerFriendlyName")]
-        public string PrimaryProtectionContainerFriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of recovery container friendly name.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.recoveryProtectionContainerFriendlyName")]
-        public string RecoveryProtectionContainerFriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the protection status.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.protectionState")]
-        public string ProtectionState { get; set; }
-
-        /// <summary>
-        /// Gets or sets the protection state description.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.protectionStateDescription")]
-        public string ProtectionStateDescription { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Current active location of the PE.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.activeLocation")]
-        public string ActiveLocation { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Test failover state.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.testFailoverState")]
-        public string TestFailoverState { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Test failover state description.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.testFailoverStateDescription")]
-        public string TestFailoverStateDescription { get; set; }
-
-        /// <summary>
-        /// Gets or sets the allowed operations on the Replication protected
-        /// item.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.allowedOperations")]
-        public IList<string> AllowedOperations { get; set; }
-
-        /// <summary>
-        /// Gets or sets the consolidated protection health for the VM taking
-        /// any issues with SRS
-        /// as well as all the replication units associated with
-        /// the VM's replication group into
-        /// account. This is a string representation of the
-        /// ProtectionHealth enumeration.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.replicationHealth")]
-        public string ReplicationHealth { get; set; }
-
-        /// <summary>
-        /// Gets or sets list of replication health errors.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.replicationHealthErrors")]
-        public IList<HealthError> ReplicationHealthErrors { get; set; }
-
-        /// <summary>
-        /// Gets or sets the ID of Policy governing this PE.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.policyId")]
-        public string PolicyId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of Policy governing this PE.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.policyFriendlyName")]
-        public string PolicyFriendlyName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Last successful failover time.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.lastSuccessfulFailoverTime")]
-        public DateTime? LastSuccessfulFailoverTime { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Last successful test failover time.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.lastSuccessfulTestFailoverTime")]
-        public DateTime? LastSuccessfulTestFailoverTime { get; set; }
-
-        /// <summary>
-        /// Gets or sets the current scenario.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.currentScenario")]
-        public CurrentScenarioDetails CurrentScenario { get; set; }
-
-        /// <summary>
-        /// Gets or sets the recovery point ARM Id to which the Vm was failed
-        /// over.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.failoverRecoveryPointId")]
-        public string FailoverRecoveryPointId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Replication provider custom settings.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.providerSpecificDetails")]
-        public ReplicationProviderSpecificSettings ProviderSpecificDetails { get; set; }
+        [JsonProperty(PropertyName = "properties")]
+        public ReplicationProtectedItemProperties Properties { get; set; }
 
     }
 }

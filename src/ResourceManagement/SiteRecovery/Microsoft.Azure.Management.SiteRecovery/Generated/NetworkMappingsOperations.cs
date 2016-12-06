@@ -46,8 +46,199 @@ namespace Microsoft.Azure.Management.SiteRecovery
         public SiteRecoveryManagementClient Client { get; private set; }
 
         /// <summary>
+        /// Tracks the provider async operation.
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='fabricName'>
+        /// Primary fabric name.
+        /// </param>
+        /// <param name='networkName'>
+        /// Primary network name.
+        /// </param>
+        /// <param name='networkMappingName'>
+        /// ARM Resource Name for network mapping.
+        /// </param>
+        /// <param name='jobName'>
+        /// job id to track.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// Headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <return>
+        /// A response object containing the response body and response headers.
+        /// </return>
+        public async Task<AzureOperationResponse> TrackAsyncOperationWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (this.Client.ApiVersion == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ApiVersion");
+            }
+            if (this.Client.ResourceName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ResourceName");
+            }
+            if (this.Client.ResourceType == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ResourceType");
+            }
+            if (this.Client.ResourceNamespace == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ResourceNamespace");
+            }
+            if (this.Client.ResourceGroupName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ResourceGroupName");
+            }
+            if (this.Client.SubscriptionId == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
+            }
+            if (fabricName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "fabricName");
+            }
+            if (networkName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "networkName");
+            }
+            if (networkMappingName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "networkMappingName");
+            }
+            if (jobName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "jobName");
+            }
+            // Tracing
+            bool _shouldTrace = ServiceClientTracing.IsEnabled;
+            string _invocationId = null;
+            if (_shouldTrace)
+            {
+                _invocationId = ServiceClientTracing.NextInvocationId.ToString();
+                Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
+                tracingParameters.Add("fabricName", fabricName);
+                tracingParameters.Add("networkName", networkName);
+                tracingParameters.Add("networkMappingName", networkMappingName);
+                tracingParameters.Add("jobName", jobName);
+                tracingParameters.Add("cancellationToken", cancellationToken);
+                ServiceClientTracing.Enter(_invocationId, this, "TrackAsyncOperation", tracingParameters);
+            }
+            // Construct URL
+            var _baseUrl = this.Client.BaseUri.AbsoluteUri;
+            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}/replicationNetworkMappings/{networkMappingName}/operationresults/{jobName}").ToString();
+            _url = _url.Replace("{resourceName}", Uri.EscapeDataString(this.Client.ResourceName));
+            _url = _url.Replace("{resourceType}", Uri.EscapeDataString(this.Client.ResourceType));
+            _url = _url.Replace("{resourceNamespace}", Uri.EscapeDataString(this.Client.ResourceNamespace));
+            _url = _url.Replace("{resourceGroupName}", Uri.EscapeDataString(this.Client.ResourceGroupName));
+            _url = _url.Replace("{subscriptionId}", Uri.EscapeDataString(this.Client.SubscriptionId));
+            _url = _url.Replace("{fabricName}", Uri.EscapeDataString(fabricName));
+            _url = _url.Replace("{networkName}", Uri.EscapeDataString(networkName));
+            _url = _url.Replace("{networkMappingName}", Uri.EscapeDataString(networkMappingName));
+            _url = _url.Replace("{jobName}", Uri.EscapeDataString(jobName));
+            List<string> _queryParameters = new List<string>();
+            if (this.Client.ApiVersion != null)
+            {
+                _queryParameters.Add(string.Format("api-version={0}", Uri.EscapeDataString(this.Client.ApiVersion)));
+            }
+            if (_queryParameters.Count > 0)
+            {
+                _url += "?" + string.Join("&", _queryParameters);
+            }
+            // Create HTTP transport objects
+            HttpRequestMessage _httpRequest = new HttpRequestMessage();
+            HttpResponseMessage _httpResponse = null;
+            _httpRequest.Method = new HttpMethod("GET");
+            _httpRequest.RequestUri = new Uri(_url);
+            // Set Headers
+            if (this.Client.GenerateClientRequestId != null && this.Client.GenerateClientRequestId.Value)
+            {
+                _httpRequest.Headers.TryAddWithoutValidation("x-ms-client-request-id", Guid.NewGuid().ToString());
+            }
+            if (this.Client.AcceptLanguage != null)
+            {
+                if (_httpRequest.Headers.Contains("accept-language"))
+                {
+                    _httpRequest.Headers.Remove("accept-language");
+                }
+                _httpRequest.Headers.TryAddWithoutValidation("accept-language", this.Client.AcceptLanguage);
+            }
+            if (customHeaders != null)
+            {
+                foreach(var _header in customHeaders)
+                {
+                    if (_httpRequest.Headers.Contains(_header.Key))
+                    {
+                        _httpRequest.Headers.Remove(_header.Key);
+                    }
+                    _httpRequest.Headers.TryAddWithoutValidation(_header.Key, _header.Value);
+                }
+            }
+
+            // Serialize Request
+            string _requestContent = null;
+            // Set Credentials
+            if (this.Client.Credentials != null)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                await this.Client.Credentials.ProcessHttpRequestAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            }
+            // Send Request
+            if (_shouldTrace)
+            {
+                ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
+            }
+            cancellationToken.ThrowIfCancellationRequested();
+            _httpResponse = await this.Client.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            if (_shouldTrace)
+            {
+                ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
+            }
+            HttpStatusCode _statusCode = _httpResponse.StatusCode;
+            cancellationToken.ThrowIfCancellationRequested();
+            string _responseContent = null;
+            if ((int)_statusCode != 200 && (int)_statusCode != 202 && (int)_statusCode != 204)
+            {
+                var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
+                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                ex.Request = new HttpRequestMessageWrapper(_httpRequest, _requestContent);
+                ex.Response = new HttpResponseMessageWrapper(_httpResponse, _responseContent);
+                if (_httpResponse.Headers.Contains("x-ms-request-id"))
+                {
+                    ex.RequestId = _httpResponse.Headers.GetValues("x-ms-request-id").FirstOrDefault();
+                }
+                if (_shouldTrace)
+                {
+                    ServiceClientTracing.Error(_invocationId, ex);
+                }
+                _httpRequest.Dispose();
+                if (_httpResponse != null)
+                {
+                    _httpResponse.Dispose();
+                }
+                throw ex;
+            }
+            // Create Result
+            var _result = new AzureOperationResponse();
+            _result.Request = _httpRequest;
+            _result.Response = _httpResponse;
+            if (_httpResponse.Headers.Contains("x-ms-request-id"))
+            {
+                _result.RequestId = _httpResponse.Headers.GetValues("x-ms-request-id").FirstOrDefault();
+            }
+            if (_shouldTrace)
+            {
+                ServiceClientTracing.Exit(_invocationId, _result);
+            }
+            return _result;
+        }
+
+        /// <summary>
         /// Gets all the network mappings under a vault.
         /// </summary>
+        /// Deletes the site.
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
         /// </param>
@@ -232,6 +423,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets all the network mappings under a network.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Primary fabric name.
         /// </param>
@@ -434,6 +626,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets network mapping by name.
         /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Primary fabric name.
         /// </param>
@@ -645,6 +838,39 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Creates network mapping.
         /// </summary>
+        /// Deletes the site.
+        /// <param name='fabricName'>
+        /// Primary fabric name.
+        /// </param>
+        /// <param name='networkName'>
+        /// Primary network name.
+        /// </param>
+        /// <param name='networkMappingName'>
+        /// Network mapping name.
+        /// </param>
+        /// <param name='input'>
+        /// Create network mapping input.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        public async Task<AzureOperationResponse> CreateWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            // Send Request
+            AzureOperationResponse _response = await BeginCreateWithHttpMessagesAsync(
+                fabricName, networkName, networkMappingName, input, customHeaders, cancellationToken);
+            return await this.Client.GetPutOrPatchOperationResultAsync(_response,
+                customHeaders,
+                cancellationToken);
+        }
+
+        /// <summary>
+        /// Creates network mapping.
+        /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Primary fabric name.
         /// </param>
@@ -666,7 +892,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> CreateWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse> BeginCreateWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -720,7 +946,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 tracingParameters.Add("networkMappingName", networkMappingName);
                 tracingParameters.Add("input", input);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "Create", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "BeginCreate", tracingParameters);
             }
             // Construct URL
             var _baseUrl = this.Client.BaseUri.AbsoluteUri;
@@ -839,6 +1065,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Delete network mapping.
         /// </summary>
+        /// Deletes the site.
+        /// <param name='fabricName'>
+        /// Primary fabric name.
+        /// </param>
+        /// <param name='networkName'>
+        /// Primary network name.
+        /// </param>
+        /// <param name='networkMappingName'>
+        /// ARM Resource Name for network mapping.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            // Send request
+            AzureOperationResponse _response = await BeginDeleteWithHttpMessagesAsync(
+                fabricName, networkName, networkMappingName, customHeaders, cancellationToken);
+            return await this.Client.GetPostOrDeleteOperationResultAsync(_response, customHeaders, cancellationToken);
+        }
+
+        /// <summary>
+        /// Delete network mapping.
+        /// </summary>
+        /// Deletes the site.
         /// <param name='fabricName'>
         /// Primary fabric name.
         /// </param>
@@ -857,7 +1111,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse> BeginDeleteWithHttpMessagesAsync(string fabricName, string networkName, string networkMappingName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -906,7 +1160,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 tracingParameters.Add("networkName", networkName);
                 tracingParameters.Add("networkMappingName", networkMappingName);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "Delete", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "BeginDelete", tracingParameters);
             }
             // Construct URL
             var _baseUrl = this.Client.BaseUri.AbsoluteUri;
@@ -1019,6 +1273,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets all the network mappings under a vault.
         /// </summary>
+        /// Deletes the site.
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>
@@ -1178,6 +1433,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <summary>
         /// Gets all the network mappings under a network.
         /// </summary>
+        /// Deletes the site.
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

@@ -21,20 +21,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets the list of logical networks under a fabric.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='fabricName'>
             /// Server Id.
             /// </param>
-            public static IPage<LogicalNetwork> List(this ILogicalNetworksOperations operations, string fabricName)
+            public static IPage<LogicalNetwork> ListByFabric(this ILogicalNetworksOperations operations, string fabricName)
             {
-                return Task.Factory.StartNew(s => ((ILogicalNetworksOperations)s).ListAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((ILogicalNetworksOperations)s).ListByFabricAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
             /// Gets the list of logical networks under a fabric.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -44,9 +46,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<LogicalNetwork>> ListAsync(this ILogicalNetworksOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<LogicalNetwork>> ListByFabricAsync(this ILogicalNetworksOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListByFabricWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -55,6 +57,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets a logical network with specified server id and logical network name.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -72,6 +75,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets a logical network with specified server id and logical network name.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -95,20 +99,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <summary>
             /// Gets the list of logical networks under a fabric.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='nextPageLink'>
             /// The NextLink from the previous successful call to List operation.
             /// </param>
-            public static IPage<LogicalNetwork> ListNext(this ILogicalNetworksOperations operations, string nextPageLink)
+            public static IPage<LogicalNetwork> ListByFabricNext(this ILogicalNetworksOperations operations, string nextPageLink)
             {
-                return Task.Factory.StartNew(s => ((ILogicalNetworksOperations)s).ListNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((ILogicalNetworksOperations)s).ListByFabricNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
             /// Gets the list of logical networks under a fabric.
             /// </summary>
+            /// Deletes the site.
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -118,9 +124,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<LogicalNetwork>> ListNextAsync(this ILogicalNetworksOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<LogicalNetwork>> ListByFabricNextAsync(this ILogicalNetworksOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListByFabricNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
