@@ -19,6 +19,110 @@ namespace Microsoft.Azure.Management.SiteRecovery
     public static partial class ProtectionContainersOperationsExtensions
     {
             /// <summary>
+            /// Switches protection from one container to another or one replication
+            /// provider to
+            /// another.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Unique fabric name.
+            /// </param>
+            /// <param name='protectionContainerName'>
+            /// Protection container name.
+            /// </param>
+            /// <param name='switchInput'>
+            /// Switch protection input.
+            /// </param>
+            public static ProtectionContainer SwitchProtection(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, SwitchProtectionInput switchInput)
+            {
+                return Task.Factory.StartNew(s => ((IProtectionContainersOperations)s).SwitchProtectionAsync(fabricName, protectionContainerName, switchInput), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Switches protection from one container to another or one replication
+            /// provider to
+            /// another.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Unique fabric name.
+            /// </param>
+            /// <param name='protectionContainerName'>
+            /// Protection container name.
+            /// </param>
+            /// <param name='switchInput'>
+            /// Switch protection input.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<ProtectionContainer> SwitchProtectionAsync(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, SwitchProtectionInput switchInput, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.SwitchProtectionWithHttpMessagesAsync(fabricName, protectionContainerName, switchInput, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Switches protection from one container to another or one replication
+            /// provider to
+            /// another.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Unique fabric name.
+            /// </param>
+            /// <param name='protectionContainerName'>
+            /// Protection container name.
+            /// </param>
+            /// <param name='switchInput'>
+            /// Switch protection input.
+            /// </param>
+            public static ProtectionContainer BeginSwitchProtection(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, SwitchProtectionInput switchInput)
+            {
+                return Task.Factory.StartNew(s => ((IProtectionContainersOperations)s).BeginSwitchProtectionAsync(fabricName, protectionContainerName, switchInput), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Switches protection from one container to another or one replication
+            /// provider to
+            /// another.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Unique fabric name.
+            /// </param>
+            /// <param name='protectionContainerName'>
+            /// Protection container name.
+            /// </param>
+            /// <param name='switchInput'>
+            /// Switch protection input.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<ProtectionContainer> BeginSwitchProtectionAsync(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, SwitchProtectionInput switchInput, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginSwitchProtectionWithHttpMessagesAsync(fabricName, protectionContainerName, switchInput, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
             /// Removes a protection container.
             /// </summary>
             /// Deletes the site.
@@ -31,9 +135,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='protectionContainerName'>
             /// Unique protection container ARM name.
             /// </param>
-            public static void Remove(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName)
+            public static void Delete(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName)
             {
-                Task.Factory.StartNew(s => ((IProtectionContainersOperations)s).RemoveAsync(fabricName, protectionContainerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                Task.Factory.StartNew(s => ((IProtectionContainersOperations)s).DeleteAsync(fabricName, protectionContainerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -52,9 +156,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task RemoveAsync(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task DeleteAsync(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.RemoveWithHttpMessagesAsync(fabricName, protectionContainerName, null, cancellationToken).ConfigureAwait(false);
+                await operations.DeleteWithHttpMessagesAsync(fabricName, protectionContainerName, null, cancellationToken).ConfigureAwait(false);
             }
 
             /// <summary>
@@ -70,9 +174,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='protectionContainerName'>
             /// Unique protection container ARM name.
             /// </param>
-            public static void BeginRemove(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName)
+            public static void BeginDelete(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName)
             {
-                Task.Factory.StartNew(s => ((IProtectionContainersOperations)s).BeginRemoveAsync(fabricName, protectionContainerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                Task.Factory.StartNew(s => ((IProtectionContainersOperations)s).BeginDeleteAsync(fabricName, protectionContainerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -91,9 +195,157 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginRemoveAsync(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task BeginDeleteAsync(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginRemoveWithHttpMessagesAsync(fabricName, protectionContainerName, null, cancellationToken).ConfigureAwait(false);
+                await operations.BeginDeleteWithHttpMessagesAsync(fabricName, protectionContainerName, null, cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <summary>
+            /// Tracks the provider async operation.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Unique fabric name.
+            /// </param>
+            /// <param name='protectionContainerName'>
+            /// Site name to work on.
+            /// </param>
+            /// <param name='jobId'>
+            /// job id to track.
+            /// </param>
+            public static ProtectionContainer TrackAsyncOperation(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, string jobId)
+            {
+                return Task.Factory.StartNew(s => ((IProtectionContainersOperations)s).TrackAsyncOperationAsync(fabricName, protectionContainerName, jobId), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Tracks the provider async operation.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Unique fabric name.
+            /// </param>
+            /// <param name='protectionContainerName'>
+            /// Site name to work on.
+            /// </param>
+            /// <param name='jobId'>
+            /// job id to track.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<ProtectionContainer> TrackAsyncOperationAsync(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, string jobId, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.TrackAsyncOperationWithHttpMessagesAsync(fabricName, protectionContainerName, jobId, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Adds a protectable item inside the replication protection container.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// The name of the fabric.
+            /// </param>
+            /// <param name='protectionContainerName'>
+            /// The name of the container.
+            /// </param>
+            /// <param name='discoverProtectableItemRequest'>
+            /// The request object to add a protectable
+            /// item.
+            /// </param>
+            public static ProtectionContainer DiscoverProtectableItem(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, DiscoverProtectableItemRequest discoverProtectableItemRequest)
+            {
+                return Task.Factory.StartNew(s => ((IProtectionContainersOperations)s).DiscoverProtectableItemAsync(fabricName, protectionContainerName, discoverProtectableItemRequest), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Adds a protectable item inside the replication protection container.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// The name of the fabric.
+            /// </param>
+            /// <param name='protectionContainerName'>
+            /// The name of the container.
+            /// </param>
+            /// <param name='discoverProtectableItemRequest'>
+            /// The request object to add a protectable
+            /// item.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<ProtectionContainer> DiscoverProtectableItemAsync(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, DiscoverProtectableItemRequest discoverProtectableItemRequest, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.DiscoverProtectableItemWithHttpMessagesAsync(fabricName, protectionContainerName, discoverProtectableItemRequest, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Adds a protectable item inside the replication protection container.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// The name of the fabric.
+            /// </param>
+            /// <param name='protectionContainerName'>
+            /// The name of the container.
+            /// </param>
+            /// <param name='discoverProtectableItemRequest'>
+            /// The request object to add a protectable
+            /// item.
+            /// </param>
+            public static ProtectionContainer BeginDiscoverProtectableItem(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, DiscoverProtectableItemRequest discoverProtectableItemRequest)
+            {
+                return Task.Factory.StartNew(s => ((IProtectionContainersOperations)s).BeginDiscoverProtectableItemAsync(fabricName, protectionContainerName, discoverProtectableItemRequest), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Adds a protectable item inside the replication protection container.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// The name of the fabric.
+            /// </param>
+            /// <param name='protectionContainerName'>
+            /// The name of the container.
+            /// </param>
+            /// <param name='discoverProtectableItemRequest'>
+            /// The request object to add a protectable
+            /// item.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<ProtectionContainer> BeginDiscoverProtectableItemAsync(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, DiscoverProtectableItemRequest discoverProtectableItemRequest, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginDiscoverProtectableItemWithHttpMessagesAsync(fabricName, protectionContainerName, discoverProtectableItemRequest, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -154,9 +406,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='creationInput'>
             /// Creation input.
             /// </param>
-            public static void Create(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, CreateProtectionContainerInput creationInput)
+            public static ProtectionContainer Create(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, CreateProtectionContainerInput creationInput)
             {
-                Task.Factory.StartNew(s => ((IProtectionContainersOperations)s).CreateAsync(fabricName, protectionContainerName, creationInput), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IProtectionContainersOperations)s).CreateAsync(fabricName, protectionContainerName, creationInput), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -178,9 +430,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task CreateAsync(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, CreateProtectionContainerInput creationInput, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<ProtectionContainer> CreateAsync(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, CreateProtectionContainerInput creationInput, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.CreateWithHttpMessagesAsync(fabricName, protectionContainerName, creationInput, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.CreateWithHttpMessagesAsync(fabricName, protectionContainerName, creationInput, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -199,9 +454,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='creationInput'>
             /// Creation input.
             /// </param>
-            public static void BeginCreate(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, CreateProtectionContainerInput creationInput)
+            public static ProtectionContainer BeginCreate(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, CreateProtectionContainerInput creationInput)
             {
-                Task.Factory.StartNew(s => ((IProtectionContainersOperations)s).BeginCreateAsync(fabricName, protectionContainerName, creationInput), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IProtectionContainersOperations)s).BeginCreateAsync(fabricName, protectionContainerName, creationInput), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -223,9 +478,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginCreateAsync(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, CreateProtectionContainerInput creationInput, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<ProtectionContainer> BeginCreateAsync(this IProtectionContainersOperations operations, string fabricName, string protectionContainerName, CreateProtectionContainerInput creationInput, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginCreateWithHttpMessagesAsync(fabricName, protectionContainerName, creationInput, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginCreateWithHttpMessagesAsync(fabricName, protectionContainerName, creationInput, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>

@@ -32,9 +32,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='jobName'>
             /// job id to track.
             /// </param>
-            public static void TrackAsyncOperation(this IJobsOperations operations, string name, string jobName)
+            public static Job TrackAsyncOperation(this IJobsOperations operations, string name, string jobName)
             {
-                Task.Factory.StartNew(s => ((IJobsOperations)s).TrackAsyncOperationAsync(name, jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IJobsOperations)s).TrackAsyncOperationAsync(name, jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -53,9 +53,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task TrackAsyncOperationAsync(this IJobsOperations operations, string name, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Job> TrackAsyncOperationAsync(this IJobsOperations operations, string name, string jobName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.TrackAsyncOperationWithHttpMessagesAsync(name, jobName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.TrackAsyncOperationWithHttpMessagesAsync(name, jobName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -71,48 +74,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='resumeJobParams'>
             /// Resume rob comments.
             /// </param>
-            public static void DeployProcessServerImage(this IJobsOperations operations, string jobName, ResumeJobParams resumeJobParams)
+            public static Job Resume(this IJobsOperations operations, string jobName, ResumeJobParams resumeJobParams)
             {
-                Task.Factory.StartNew(s => ((IJobsOperations)s).DeployProcessServerImageAsync(jobName, resumeJobParams), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Resumes the specified job.
-            /// </summary>
-            /// Only for InitialReplicationTypeContract.Export.
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='jobName'>
-            /// Job Id to resume.
-            /// </param>
-            /// <param name='resumeJobParams'>
-            /// Resume rob comments.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task DeployProcessServerImageAsync(this IJobsOperations operations, string jobName, ResumeJobParams resumeJobParams, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                await operations.DeployProcessServerImageWithHttpMessagesAsync(jobName, resumeJobParams, null, cancellationToken).ConfigureAwait(false);
-            }
-
-            /// <summary>
-            /// Resumes the specified job.
-            /// </summary>
-            /// Only for InitialReplicationTypeContract.Export.
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='jobName'>
-            /// Job Id to resume.
-            /// </param>
-            /// <param name='resumeJobParams'>
-            /// Resume rob comments.
-            /// </param>
-            public static void BeginDeployProcessServerImage(this IJobsOperations operations, string jobName, ResumeJobParams resumeJobParams)
-            {
-                Task.Factory.StartNew(s => ((IJobsOperations)s).BeginDeployProcessServerImageAsync(jobName, resumeJobParams), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IJobsOperations)s).ResumeAsync(jobName, resumeJobParams), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -131,9 +95,54 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginDeployProcessServerImageAsync(this IJobsOperations operations, string jobName, ResumeJobParams resumeJobParams, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Job> ResumeAsync(this IJobsOperations operations, string jobName, ResumeJobParams resumeJobParams, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginDeployProcessServerImageWithHttpMessagesAsync(jobName, resumeJobParams, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.ResumeWithHttpMessagesAsync(jobName, resumeJobParams, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Resumes the specified job.
+            /// </summary>
+            /// Only for InitialReplicationTypeContract.Export.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='jobName'>
+            /// Job Id to resume.
+            /// </param>
+            /// <param name='resumeJobParams'>
+            /// Resume rob comments.
+            /// </param>
+            public static Job BeginResume(this IJobsOperations operations, string jobName, ResumeJobParams resumeJobParams)
+            {
+                return Task.Factory.StartNew(s => ((IJobsOperations)s).BeginResumeAsync(jobName, resumeJobParams), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Resumes the specified job.
+            /// </summary>
+            /// Only for InitialReplicationTypeContract.Export.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='jobName'>
+            /// Job Id to resume.
+            /// </param>
+            /// <param name='resumeJobParams'>
+            /// Resume rob comments.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<Job> BeginResumeAsync(this IJobsOperations operations, string jobName, ResumeJobParams resumeJobParams, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginResumeWithHttpMessagesAsync(jobName, resumeJobParams, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -146,9 +155,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='jobName'>
             /// Job Id to restart.
             /// </param>
-            public static void Restart(this IJobsOperations operations, string jobName)
+            public static Job Restart(this IJobsOperations operations, string jobName)
             {
-                Task.Factory.StartNew(s => ((IJobsOperations)s).RestartAsync(jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IJobsOperations)s).RestartAsync(jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -164,9 +173,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task RestartAsync(this IJobsOperations operations, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Job> RestartAsync(this IJobsOperations operations, string jobName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.RestartWithHttpMessagesAsync(jobName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.RestartWithHttpMessagesAsync(jobName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -179,9 +191,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='jobName'>
             /// Job Id to restart.
             /// </param>
-            public static void BeginRestart(this IJobsOperations operations, string jobName)
+            public static Job BeginRestart(this IJobsOperations operations, string jobName)
             {
-                Task.Factory.StartNew(s => ((IJobsOperations)s).BeginRestartAsync(jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IJobsOperations)s).BeginRestartAsync(jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -197,9 +209,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginRestartAsync(this IJobsOperations operations, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Job> BeginRestartAsync(this IJobsOperations operations, string jobName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginRestartWithHttpMessagesAsync(jobName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginRestartWithHttpMessagesAsync(jobName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -212,42 +227,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='jobName'>
             /// Job Id to cancel.
             /// </param>
-            public static void Cancel(this IJobsOperations operations, string jobName)
+            public static Job Cancel(this IJobsOperations operations, string jobName)
             {
-                Task.Factory.StartNew(s => ((IJobsOperations)s).CancelAsync(jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Cancels the specified job.
-            /// </summary>
-            /// Deletes the site.
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='jobName'>
-            /// Job Id to cancel.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task CancelAsync(this IJobsOperations operations, string jobName, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                await operations.CancelWithHttpMessagesAsync(jobName, null, cancellationToken).ConfigureAwait(false);
-            }
-
-            /// <summary>
-            /// Cancels the specified job.
-            /// </summary>
-            /// Deletes the site.
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='jobName'>
-            /// Job Id to cancel.
-            /// </param>
-            public static void BeginCancel(this IJobsOperations operations, string jobName)
-            {
-                Task.Factory.StartNew(s => ((IJobsOperations)s).BeginCancelAsync(jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IJobsOperations)s).CancelAsync(jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -263,9 +245,48 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginCancelAsync(this IJobsOperations operations, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Job> CancelAsync(this IJobsOperations operations, string jobName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginCancelWithHttpMessagesAsync(jobName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.CancelWithHttpMessagesAsync(jobName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Cancels the specified job.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='jobName'>
+            /// Job Id to cancel.
+            /// </param>
+            public static Job BeginCancel(this IJobsOperations operations, string jobName)
+            {
+                return Task.Factory.StartNew(s => ((IJobsOperations)s).BeginCancelAsync(jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Cancels the specified job.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='jobName'>
+            /// Job Id to cancel.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<Job> BeginCancelAsync(this IJobsOperations operations, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginCancelWithHttpMessagesAsync(jobName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -345,9 +366,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='jobQueryParameter'>
             /// job query filter.
             /// </param>
-            public static void Export(this IJobsOperations operations, JobQueryParameter jobQueryParameter)
+            public static Job Export(this IJobsOperations operations, JobQueryParameter jobQueryParameter)
             {
-                Task.Factory.StartNew(s => ((IJobsOperations)s).ExportAsync(jobQueryParameter), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IJobsOperations)s).ExportAsync(jobQueryParameter), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -394,9 +415,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task ExportAsync(this IJobsOperations operations, JobQueryParameter jobQueryParameter, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Job> ExportAsync(this IJobsOperations operations, JobQueryParameter jobQueryParameter, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.ExportWithHttpMessagesAsync(jobQueryParameter, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.ExportWithHttpMessagesAsync(jobQueryParameter, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -440,9 +464,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='jobQueryParameter'>
             /// job query filter.
             /// </param>
-            public static void BeginExport(this IJobsOperations operations, JobQueryParameter jobQueryParameter)
+            public static Job BeginExport(this IJobsOperations operations, JobQueryParameter jobQueryParameter)
             {
-                Task.Factory.StartNew(s => ((IJobsOperations)s).BeginExportAsync(jobQueryParameter), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IJobsOperations)s).BeginExportAsync(jobQueryParameter), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -489,9 +513,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginExportAsync(this IJobsOperations operations, JobQueryParameter jobQueryParameter, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Job> BeginExportAsync(this IJobsOperations operations, JobQueryParameter jobQueryParameter, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginExportWithHttpMessagesAsync(jobQueryParameter, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginExportWithHttpMessagesAsync(jobQueryParameter, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>

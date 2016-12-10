@@ -74,9 +74,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// The input to the failover process
             /// server operation.
             /// </param>
-            public static void FailoverProcessServer(this IFabricsOperations operations, string fabricName, FailoverProcessServerRequest failoverProcessServerRequest)
+            public static Fabric ReassociateGateway(this IFabricsOperations operations, string fabricName, FailoverProcessServerRequest failoverProcessServerRequest)
             {
-                Task.Factory.StartNew(s => ((IFabricsOperations)s).FailoverProcessServerAsync(fabricName, failoverProcessServerRequest), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IFabricsOperations)s).ReassociateGatewayAsync(fabricName, failoverProcessServerRequest), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -96,9 +96,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task FailoverProcessServerAsync(this IFabricsOperations operations, string fabricName, FailoverProcessServerRequest failoverProcessServerRequest, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Fabric> ReassociateGatewayAsync(this IFabricsOperations operations, string fabricName, FailoverProcessServerRequest failoverProcessServerRequest, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.FailoverProcessServerWithHttpMessagesAsync(fabricName, failoverProcessServerRequest, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.ReassociateGatewayWithHttpMessagesAsync(fabricName, failoverProcessServerRequest, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -115,9 +118,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// The input to the failover process
             /// server operation.
             /// </param>
-            public static void BeginFailoverProcessServer(this IFabricsOperations operations, string fabricName, FailoverProcessServerRequest failoverProcessServerRequest)
+            public static Fabric BeginReassociateGateway(this IFabricsOperations operations, string fabricName, FailoverProcessServerRequest failoverProcessServerRequest)
             {
-                Task.Factory.StartNew(s => ((IFabricsOperations)s).BeginFailoverProcessServerAsync(fabricName, failoverProcessServerRequest), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IFabricsOperations)s).BeginReassociateGatewayAsync(fabricName, failoverProcessServerRequest), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -137,9 +140,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginFailoverProcessServerAsync(this IFabricsOperations operations, string fabricName, FailoverProcessServerRequest failoverProcessServerRequest, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Fabric> BeginReassociateGatewayAsync(this IFabricsOperations operations, string fabricName, FailoverProcessServerRequest failoverProcessServerRequest, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginFailoverProcessServerWithHttpMessagesAsync(fabricName, failoverProcessServerRequest, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginReassociateGatewayWithHttpMessagesAsync(fabricName, failoverProcessServerRequest, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -156,50 +162,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='request'>
             /// The input to deploy a Process Server from Azure Image.
             /// </param>
-            public static void DeployProcessServerImage(this IFabricsOperations operations, string fabricName, DeployProcessServerRequest request)
+            public static Fabric DeployProcessServerImage(this IFabricsOperations operations, string fabricName, DeployProcessServerRequest request)
             {
-                Task.Factory.StartNew(s => ((IFabricsOperations)s).DeployProcessServerImageAsync(fabricName, request), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Deploys a Process Server.
-            /// </summary>
-            /// Deletes the site.
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='fabricName'>
-            /// Id of the fabric under which the process server is to be
-            /// deployed.
-            /// </param>
-            /// <param name='request'>
-            /// The input to deploy a Process Server from Azure Image.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task DeployProcessServerImageAsync(this IFabricsOperations operations, string fabricName, DeployProcessServerRequest request, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                await operations.DeployProcessServerImageWithHttpMessagesAsync(fabricName, request, null, cancellationToken).ConfigureAwait(false);
-            }
-
-            /// <summary>
-            /// Deploys a Process Server.
-            /// </summary>
-            /// Deletes the site.
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='fabricName'>
-            /// Id of the fabric under which the process server is to be
-            /// deployed.
-            /// </param>
-            /// <param name='request'>
-            /// The input to deploy a Process Server from Azure Image.
-            /// </param>
-            public static void BeginDeployProcessServerImage(this IFabricsOperations operations, string fabricName, DeployProcessServerRequest request)
-            {
-                Task.Factory.StartNew(s => ((IFabricsOperations)s).BeginDeployProcessServerImageAsync(fabricName, request), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IFabricsOperations)s).DeployProcessServerImageAsync(fabricName, request), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -219,9 +184,56 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginDeployProcessServerImageAsync(this IFabricsOperations operations, string fabricName, DeployProcessServerRequest request, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Fabric> DeployProcessServerImageAsync(this IFabricsOperations operations, string fabricName, DeployProcessServerRequest request, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginDeployProcessServerImageWithHttpMessagesAsync(fabricName, request, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.DeployProcessServerImageWithHttpMessagesAsync(fabricName, request, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Deploys a Process Server.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Id of the fabric under which the process server is to be
+            /// deployed.
+            /// </param>
+            /// <param name='request'>
+            /// The input to deploy a Process Server from Azure Image.
+            /// </param>
+            public static Fabric BeginDeployProcessServerImage(this IFabricsOperations operations, string fabricName, DeployProcessServerRequest request)
+            {
+                return Task.Factory.StartNew(s => ((IFabricsOperations)s).BeginDeployProcessServerImageAsync(fabricName, request), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Deploys a Process Server.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Id of the fabric under which the process server is to be
+            /// deployed.
+            /// </param>
+            /// <param name='request'>
+            /// The input to deploy a Process Server from Azure Image.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<Fabric> BeginDeployProcessServerImageAsync(this IFabricsOperations operations, string fabricName, DeployProcessServerRequest request, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginDeployProcessServerImageWithHttpMessagesAsync(fabricName, request, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -234,9 +246,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='fabricName'>
             /// Site it to renew certs for.
             /// </param>
-            public static void RenewCertificate(this IFabricsOperations operations, string fabricName)
+            public static Fabric RenewCertificate(this IFabricsOperations operations, string fabricName)
             {
-                Task.Factory.StartNew(s => ((IFabricsOperations)s).RenewCertificateAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IFabricsOperations)s).RenewCertificateAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -252,9 +264,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task RenewCertificateAsync(this IFabricsOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Fabric> RenewCertificateAsync(this IFabricsOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.RenewCertificateWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.RenewCertificateWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -267,9 +282,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='fabricName'>
             /// Site it to renew certs for.
             /// </param>
-            public static void BeginRenewCertificate(this IFabricsOperations operations, string fabricName)
+            public static Fabric BeginRenewCertificate(this IFabricsOperations operations, string fabricName)
             {
-                Task.Factory.StartNew(s => ((IFabricsOperations)s).BeginRenewCertificateAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IFabricsOperations)s).BeginRenewCertificateAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -285,9 +300,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginRenewCertificateAsync(this IFabricsOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Fabric> BeginRenewCertificateAsync(this IFabricsOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginRenewCertificateWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginRenewCertificateWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -300,42 +318,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='fabricName'>
             /// Site name.
             /// </param>
-            public static void CheckConsistency(this IFabricsOperations operations, string fabricName)
+            public static Fabric CheckConsistency(this IFabricsOperations operations, string fabricName)
             {
-                Task.Factory.StartNew(s => ((IFabricsOperations)s).CheckConsistencyAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Checks the consistency of the site.
-            /// </summary>
-            /// Creates the site.
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='fabricName'>
-            /// Site name.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task CheckConsistencyAsync(this IFabricsOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                await operations.CheckConsistencyWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false);
-            }
-
-            /// <summary>
-            /// Checks the consistency of the site.
-            /// </summary>
-            /// Creates the site.
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='fabricName'>
-            /// Site name.
-            /// </param>
-            public static void BeginCheckConsistency(this IFabricsOperations operations, string fabricName)
-            {
-                Task.Factory.StartNew(s => ((IFabricsOperations)s).BeginCheckConsistencyAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IFabricsOperations)s).CheckConsistencyAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -351,9 +336,48 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginCheckConsistencyAsync(this IFabricsOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Fabric> CheckConsistencyAsync(this IFabricsOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginCheckConsistencyWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.CheckConsistencyWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Checks the consistency of the site.
+            /// </summary>
+            /// Creates the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Site name.
+            /// </param>
+            public static Fabric BeginCheckConsistency(this IFabricsOperations operations, string fabricName)
+            {
+                return Task.Factory.StartNew(s => ((IFabricsOperations)s).BeginCheckConsistencyAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Checks the consistency of the site.
+            /// </summary>
+            /// Creates the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Site name.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<Fabric> BeginCheckConsistencyAsync(this IFabricsOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginCheckConsistencyWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>

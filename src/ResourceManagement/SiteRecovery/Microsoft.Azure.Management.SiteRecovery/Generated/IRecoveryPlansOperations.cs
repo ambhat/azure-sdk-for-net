@@ -19,11 +19,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
     public partial interface IRecoveryPlansOperations
     {
         /// <summary>
-        /// Execute reprotect of the recovery plan.
+        /// Tracks the recovery plan async operation.
         /// </summary>
         /// Deletes the site.
         /// <param name='recoveryPlanName'>
         /// Recovery plan name.
+        /// </param>
+        /// <param name='jobName'>
+        /// ARM name of the job.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -31,7 +34,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> ReprotectWithHttpMessagesAsync(string recoveryPlanName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> TrackAsyncOperationWithHttpMessagesAsync(string recoveryPlanName, string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Execute reprotect of the recovery plan.
         /// </summary>
@@ -45,7 +48,21 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> BeginReprotectWithHttpMessagesAsync(string recoveryPlanName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> ReprotectWithHttpMessagesAsync(string recoveryPlanName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Execute reprotect of the recovery plan.
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='recoveryPlanName'>
+        /// Recovery plan name.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse<RecoveryPlan>> BeginReprotectWithHttpMessagesAsync(string recoveryPlanName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Execute commit failover of the recovery plan.
         /// </summary>
@@ -59,7 +76,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> FailoverCommitWithHttpMessagesAsync(string recoveryPlanName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> FailoverCommitWithHttpMessagesAsync(string recoveryPlanName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Execute commit failover of the recovery plan.
         /// </summary>
@@ -73,7 +90,41 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> BeginFailoverCommitWithHttpMessagesAsync(string recoveryPlanName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> BeginFailoverCommitWithHttpMessagesAsync(string recoveryPlanName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Execute test failover cleanup of the recovery plan.
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='recoveryPlanName'>
+        /// Recovery plan name.
+        /// </param>
+        /// <param name='input'>
+        /// Test failover cleanup input.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse<RecoveryPlan>> TestFailoverCleanupWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanTestFailoverCleanupInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Execute test failover cleanup of the recovery plan.
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='recoveryPlanName'>
+        /// Recovery plan name.
+        /// </param>
+        /// <param name='input'>
+        /// Test failover cleanup input.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse<RecoveryPlan>> BeginTestFailoverCleanupWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanTestFailoverCleanupInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Execute test failover of the recovery plan.
         /// </summary>
@@ -90,7 +141,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> TestFailoverWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanTestFailoverInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> TestFailoverWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanTestFailoverInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Execute test failover of the recovery plan.
         /// </summary>
@@ -107,7 +158,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> BeginTestFailoverWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanTestFailoverInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> BeginTestFailoverWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanTestFailoverInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Execute unplanned failover of the recovery plan.
         /// </summary>
@@ -124,7 +175,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> UnplannedFailoverWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanUnplannedFailoverInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> UnplannedFailoverWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanUnplannedFailoverInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Execute unplanned failover of the recovery plan.
         /// </summary>
@@ -141,7 +192,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> BeginUnplannedFailoverWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanUnplannedFailoverInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> BeginUnplannedFailoverWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanUnplannedFailoverInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Execute planned failover of the recovery plan.
         /// </summary>
@@ -158,7 +209,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> PlannedFailoverWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanPlannedFailoverInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> PlannedFailoverWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanPlannedFailoverInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Execute planned failover of the recovery plan.
         /// </summary>
@@ -175,7 +226,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> BeginPlannedFailoverWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanPlannedFailoverInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> BeginPlannedFailoverWithHttpMessagesAsync(string recoveryPlanName, RecoveryPlanPlannedFailoverInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Gets the requested recovery plan.
         /// </summary>
@@ -206,7 +257,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> CreateWithHttpMessagesAsync(string recoveryPlanName, CreateRecoveryPlanInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> CreateWithHttpMessagesAsync(string recoveryPlanName, CreateRecoveryPlanInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Creates a recovery plan with the given details.
         /// </summary>
@@ -223,7 +274,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> BeginCreateWithHttpMessagesAsync(string recoveryPlanName, CreateRecoveryPlanInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> BeginCreateWithHttpMessagesAsync(string recoveryPlanName, CreateRecoveryPlanInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Deletes the specified recovery plan.
         /// </summary>
@@ -268,7 +319,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> UpdateWithHttpMessagesAsync(string recoveryPlanName, UpdateRecoveryPlanInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> UpdateWithHttpMessagesAsync(string recoveryPlanName, UpdateRecoveryPlanInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Updates the given recovery plan.
         /// </summary>
@@ -285,7 +336,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> BeginUpdateWithHttpMessagesAsync(string recoveryPlanName, UpdateRecoveryPlanInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryPlan>> BeginUpdateWithHttpMessagesAsync(string recoveryPlanName, UpdateRecoveryPlanInput input, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Gets the list of recovery plans.
         /// </summary>

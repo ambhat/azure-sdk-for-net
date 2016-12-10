@@ -19,6 +19,29 @@ namespace Microsoft.Azure.Management.SiteRecovery
     public partial interface IProtectionContainerMappingsOperations
     {
         /// <summary>
+        /// Tracks the protection container mapping async operation.
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='fabricName'>
+        /// Unique fabric name.
+        /// </param>
+        /// <param name='protectionContainerName'>
+        /// Protection container name.
+        /// </param>
+        /// <param name='mappingName'>
+        /// Container mapping ARM name.
+        /// </param>
+        /// <param name='jobId'>
+        /// job id to track.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse<ProtectionContainerMapping>> TrackAsyncOperationWithHttpMessagesAsync(string fabricName, string protectionContainerName, string mappingName, string jobId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
         /// Remove container mapping.
         /// </summary>
         /// Deletes the site.
@@ -106,7 +129,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> CreateWithHttpMessagesAsync(string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<ProtectionContainerMapping>> CreateWithHttpMessagesAsync(string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Create protection container mapping.
         /// </summary>
@@ -129,7 +152,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> BeginCreateWithHttpMessagesAsync(string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<ProtectionContainerMapping>> BeginCreateWithHttpMessagesAsync(string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Purges protection container mapping.
         /// </summary>

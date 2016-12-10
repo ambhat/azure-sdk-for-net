@@ -19,6 +19,60 @@ namespace Microsoft.Azure.Management.SiteRecovery
     public static partial class ProtectionContainerMappingsOperationsExtensions
     {
             /// <summary>
+            /// Tracks the protection container mapping async operation.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Unique fabric name.
+            /// </param>
+            /// <param name='protectionContainerName'>
+            /// Protection container name.
+            /// </param>
+            /// <param name='mappingName'>
+            /// Container mapping ARM name.
+            /// </param>
+            /// <param name='jobId'>
+            /// job id to track.
+            /// </param>
+            public static ProtectionContainerMapping TrackAsyncOperation(this IProtectionContainerMappingsOperations operations, string fabricName, string protectionContainerName, string mappingName, string jobId)
+            {
+                return Task.Factory.StartNew(s => ((IProtectionContainerMappingsOperations)s).TrackAsyncOperationAsync(fabricName, protectionContainerName, mappingName, jobId), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Tracks the protection container mapping async operation.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Unique fabric name.
+            /// </param>
+            /// <param name='protectionContainerName'>
+            /// Protection container name.
+            /// </param>
+            /// <param name='mappingName'>
+            /// Container mapping ARM name.
+            /// </param>
+            /// <param name='jobId'>
+            /// job id to track.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<ProtectionContainerMapping> TrackAsyncOperationAsync(this IProtectionContainerMappingsOperations operations, string fabricName, string protectionContainerName, string mappingName, string jobId, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.TrackAsyncOperationWithHttpMessagesAsync(fabricName, protectionContainerName, mappingName, jobId, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
             /// Remove container mapping.
             /// </summary>
             /// Deletes the site.
@@ -187,9 +241,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='creationInput'>
             /// Mapping creation input.
             /// </param>
-            public static void Create(this IProtectionContainerMappingsOperations operations, string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput)
+            public static ProtectionContainerMapping Create(this IProtectionContainerMappingsOperations operations, string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput)
             {
-                Task.Factory.StartNew(s => ((IProtectionContainerMappingsOperations)s).CreateAsync(fabricName, protectionContainerName, mappingName, creationInput), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IProtectionContainerMappingsOperations)s).CreateAsync(fabricName, protectionContainerName, mappingName, creationInput), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -214,9 +268,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task CreateAsync(this IProtectionContainerMappingsOperations operations, string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<ProtectionContainerMapping> CreateAsync(this IProtectionContainerMappingsOperations operations, string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.CreateWithHttpMessagesAsync(fabricName, protectionContainerName, mappingName, creationInput, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.CreateWithHttpMessagesAsync(fabricName, protectionContainerName, mappingName, creationInput, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -238,9 +295,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='creationInput'>
             /// Mapping creation input.
             /// </param>
-            public static void BeginCreate(this IProtectionContainerMappingsOperations operations, string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput)
+            public static ProtectionContainerMapping BeginCreate(this IProtectionContainerMappingsOperations operations, string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput)
             {
-                Task.Factory.StartNew(s => ((IProtectionContainerMappingsOperations)s).BeginCreateAsync(fabricName, protectionContainerName, mappingName, creationInput), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IProtectionContainerMappingsOperations)s).BeginCreateAsync(fabricName, protectionContainerName, mappingName, creationInput), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -265,9 +322,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginCreateAsync(this IProtectionContainerMappingsOperations operations, string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<ProtectionContainerMapping> BeginCreateAsync(this IProtectionContainerMappingsOperations operations, string fabricName, string protectionContainerName, string mappingName, CreateProtectionContainerMappingInput creationInput, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginCreateWithHttpMessagesAsync(fabricName, protectionContainerName, mappingName, creationInput, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginCreateWithHttpMessagesAsync(fabricName, protectionContainerName, mappingName, creationInput, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>

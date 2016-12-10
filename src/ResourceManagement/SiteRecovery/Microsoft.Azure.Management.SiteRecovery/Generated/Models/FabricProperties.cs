@@ -25,7 +25,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the FabricProperties class.
         /// </summary>
-        public FabricProperties(string friendlyName = default(string), EncryptionDetails encryptionDetails = default(EncryptionDetails), EncryptionDetails rolloverEncryptionDetails = default(EncryptionDetails), string internalIdentifier = default(string), string bcdrState = default(string), FabricSpecificDetails customDetails = default(FabricSpecificDetails))
+        public FabricProperties(string friendlyName = default(string), EncryptionDetails encryptionDetails = default(EncryptionDetails), EncryptionDetails rolloverEncryptionDetails = default(EncryptionDetails), string internalIdentifier = default(string), string bcdrState = default(string), FabricSpecificDetails customDetails = default(FabricSpecificDetails), IList<HealthError> healthErrorDetails = default(IList<HealthError>), string health = default(string))
         {
             FriendlyName = friendlyName;
             EncryptionDetails = encryptionDetails;
@@ -33,6 +33,8 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             InternalIdentifier = internalIdentifier;
             BcdrState = bcdrState;
             CustomDetails = customDetails;
+            HealthErrorDetails = healthErrorDetails;
+            Health = health;
         }
 
         /// <summary>
@@ -70,6 +72,18 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// </summary>
         [JsonProperty(PropertyName = "customDetails")]
         public FabricSpecificDetails CustomDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets fabric health error details.
+        /// </summary>
+        [JsonProperty(PropertyName = "healthErrorDetails")]
+        public IList<HealthError> HealthErrorDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets Health of fabric.
+        /// </summary>
+        [JsonProperty(PropertyName = "health")]
+        public string Health { get; set; }
 
     }
 }

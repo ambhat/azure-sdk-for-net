@@ -14,19 +14,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
     using Models;
 
     /// <summary>
-    /// RecoveryServicesProviderOperations operations.
+    /// RecoveryServicesProvidersOperations operations.
     /// </summary>
-    public partial interface IRecoveryServicesProviderOperations
+    public partial interface IRecoveryServicesProvidersOperations
     {
         /// <summary>
-        /// Refresh the data on the provider.
+        /// Tracks the provider async operation.
         /// </summary>
         /// Deletes the site.
         /// <param name='fabricName'>
         /// Unique fabric name.
         /// </param>
         /// <param name='providerName'>
-        /// Unique provider name.
+        /// Site name to work on.
+        /// </param>
+        /// <param name='jobName'>
+        /// job id to track.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -34,7 +37,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> RefreshProviderWithHttpMessagesAsync(string fabricName, string providerName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryServicesProvider>> TrackAsyncOperationWithHttpMessagesAsync(string fabricName, string providerName, string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Refresh the data on the provider.
         /// </summary>
@@ -51,7 +54,24 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<AzureOperationResponse> BeginRefreshProviderWithHttpMessagesAsync(string fabricName, string providerName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RecoveryServicesProvider>> RefreshProviderWithHttpMessagesAsync(string fabricName, string providerName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Refresh the data on the provider.
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='fabricName'>
+        /// Unique fabric name.
+        /// </param>
+        /// <param name='providerName'>
+        /// Unique provider name.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse<RecoveryServicesProvider>> BeginRefreshProviderWithHttpMessagesAsync(string fabricName, string providerName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Deletes provider from fabric.
         /// Note: Deleting provider for any fabric other than

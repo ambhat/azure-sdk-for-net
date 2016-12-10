@@ -21,17 +21,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
     using Models;
 
     /// <summary>
-    /// RecoveryServicesProviderOperations operations.
+    /// StorageClassificationMappingsOperations operations.
     /// </summary>
-    internal partial class RecoveryServicesProviderOperations : IServiceOperations<SiteRecoveryManagementClient>, IRecoveryServicesProviderOperations
+    internal partial class StorageClassificationMappingsOperations : IServiceOperations<SiteRecoveryManagementClient>, IStorageClassificationMappingsOperations
     {
         /// <summary>
-        /// Initializes a new instance of the RecoveryServicesProviderOperations class.
+        /// Initializes a new instance of the StorageClassificationMappingsOperations class.
         /// </summary>
         /// <param name='client'>
         /// Reference to the service client.
         /// </param>
-        internal RecoveryServicesProviderOperations(SiteRecoveryManagementClient client)
+        internal StorageClassificationMappingsOperations(SiteRecoveryManagementClient client)
         {
             if (client == null) 
             {
@@ -46,38 +46,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         public SiteRecoveryManagementClient Client { get; private set; }
 
         /// <summary>
-        /// Refresh the data on the provider.
+        /// Tracks async operations.
         /// </summary>
         /// Deletes the site.
         /// <param name='fabricName'>
-        /// Unique fabric name.
+        /// Site name of interest.
         /// </param>
-        /// <param name='providerName'>
-        /// Unique provider name.
+        /// <param name='storageClassificationName'>
+        /// Name of the storage.
         /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
+        /// <param name='storageClassificationMappingName'>
+        /// Name of the mapping object.
         /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        public async Task<AzureOperationResponse> RefreshProviderWithHttpMessagesAsync(string fabricName, string providerName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            // Send request
-            AzureOperationResponse _response = await BeginRefreshProviderWithHttpMessagesAsync(
-                fabricName, providerName, customHeaders, cancellationToken);
-            return await this.Client.GetPostOrDeleteOperationResultAsync(_response, customHeaders, cancellationToken);
-        }
-
-        /// <summary>
-        /// Refresh the data on the provider.
-        /// </summary>
-        /// Deletes the site.
-        /// <param name='fabricName'>
-        /// Unique fabric name.
-        /// </param>
-        /// <param name='providerName'>
-        /// Unique provider name.
+        /// <param name='jobName'>
+        /// job id to track.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -88,7 +70,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> BeginRefreshProviderWithHttpMessagesAsync(string fabricName, string providerName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<StorageClassificationMapping>> TrackAsyncOperationWithHttpMessagesAsync(string fabricName, string storageClassificationName, string storageClassificationMappingName, string jobName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -118,9 +100,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "fabricName");
             }
-            if (providerName == null)
+            if (storageClassificationName == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "providerName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "storageClassificationName");
+            }
+            if (storageClassificationMappingName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "storageClassificationMappingName");
+            }
+            if (jobName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "jobName");
             }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
@@ -130,20 +120,24 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("fabricName", fabricName);
-                tracingParameters.Add("providerName", providerName);
+                tracingParameters.Add("storageClassificationName", storageClassificationName);
+                tracingParameters.Add("storageClassificationMappingName", storageClassificationMappingName);
+                tracingParameters.Add("jobName", jobName);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "BeginRefreshProvider", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "TrackAsyncOperation", tracingParameters);
             }
             // Construct URL
             var _baseUrl = this.Client.BaseUri.AbsoluteUri;
-            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/refreshProvider").ToString();
+            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings/{storageClassificationMappingName}/operationresults/{jobName}").ToString();
             _url = _url.Replace("{resourceName}", Uri.EscapeDataString(this.Client.ResourceName));
             _url = _url.Replace("{resourceType}", Uri.EscapeDataString(this.Client.ResourceType));
             _url = _url.Replace("{resourceNamespace}", Uri.EscapeDataString(this.Client.ResourceNamespace));
             _url = _url.Replace("{resourceGroupName}", Uri.EscapeDataString(this.Client.ResourceGroupName));
             _url = _url.Replace("{subscriptionId}", Uri.EscapeDataString(this.Client.SubscriptionId));
             _url = _url.Replace("{fabricName}", Uri.EscapeDataString(fabricName));
-            _url = _url.Replace("{providerName}", Uri.EscapeDataString(providerName));
+            _url = _url.Replace("{storageClassificationName}", Uri.EscapeDataString(storageClassificationName));
+            _url = _url.Replace("{storageClassificationMappingName}", Uri.EscapeDataString(storageClassificationMappingName));
+            _url = _url.Replace("{jobName}", Uri.EscapeDataString(jobName));
             List<string> _queryParameters = new List<string>();
             if (this.Client.ApiVersion != null)
             {
@@ -156,7 +150,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             // Create HTTP transport objects
             HttpRequestMessage _httpRequest = new HttpRequestMessage();
             HttpResponseMessage _httpResponse = null;
-            _httpRequest.Method = new HttpMethod("POST");
+            _httpRequest.Method = new HttpMethod("GET");
             _httpRequest.RequestUri = new Uri(_url);
             // Set Headers
             if (this.Client.GenerateClientRequestId != null && this.Client.GenerateClientRequestId.Value)
@@ -205,220 +199,23 @@ namespace Microsoft.Azure.Management.SiteRecovery
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 202)
+            if ((int)_statusCode != 200 && (int)_statusCode != 202 && (int)_statusCode != 204)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
-                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
-                ex.Request = new HttpRequestMessageWrapper(_httpRequest, _requestContent);
-                ex.Response = new HttpResponseMessageWrapper(_httpResponse, _responseContent);
-                if (_httpResponse.Headers.Contains("x-ms-request-id"))
+                try
                 {
-                    ex.RequestId = _httpResponse.Headers.GetValues("x-ms-request-id").FirstOrDefault();
-                }
-                if (_shouldTrace)
-                {
-                    ServiceClientTracing.Error(_invocationId, ex);
-                }
-                _httpRequest.Dispose();
-                if (_httpResponse != null)
-                {
-                    _httpResponse.Dispose();
-                }
-                throw ex;
-            }
-            // Create Result
-            var _result = new AzureOperationResponse();
-            _result.Request = _httpRequest;
-            _result.Response = _httpResponse;
-            if (_httpResponse.Headers.Contains("x-ms-request-id"))
-            {
-                _result.RequestId = _httpResponse.Headers.GetValues("x-ms-request-id").FirstOrDefault();
-            }
-            if (_shouldTrace)
-            {
-                ServiceClientTracing.Exit(_invocationId, _result);
-            }
-            return _result;
-        }
-
-        /// <summary>
-        /// Deletes provider from fabric.
-        /// Note: Deleting provider for any fabric other than SingleHost
-        /// is unsupported. To
-        /// maintain backward compatibility for released clients the
-        /// object "deleteRspInput" is
-        /// used (if the object is empty we assume that it is old client
-        /// and continue the old
-        /// behavior).
-        /// </summary>
-        /// Deletes the site.
-        /// <param name='fabricName'>
-        /// Unique fabric Id.
-        /// </param>
-        /// <param name='providerName'>
-        /// Unique provider id.
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string fabricName, string providerName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            // Send request
-            AzureOperationResponse _response = await BeginDeleteWithHttpMessagesAsync(
-                fabricName, providerName, customHeaders, cancellationToken);
-            return await this.Client.GetPostOrDeleteOperationResultAsync(_response, customHeaders, cancellationToken);
-        }
-
-        /// <summary>
-        /// Deletes provider from fabric.
-        /// Note: Deleting provider for any fabric other than SingleHost
-        /// is unsupported. To
-        /// maintain backward compatibility for released clients the
-        /// object "deleteRspInput" is
-        /// used (if the object is empty we assume that it is old client
-        /// and continue the old
-        /// behavior).
-        /// </summary>
-        /// Deletes the site.
-        /// <param name='fabricName'>
-        /// Unique fabric Id.
-        /// </param>
-        /// <param name='providerName'>
-        /// Unique provider id.
-        /// </param>
-        /// <param name='customHeaders'>
-        /// Headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        /// <return>
-        /// A response object containing the response body and response headers.
-        /// </return>
-        public async Task<AzureOperationResponse> BeginDeleteWithHttpMessagesAsync(string fabricName, string providerName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            if (this.Client.ApiVersion == null)
-            {
-                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ApiVersion");
-            }
-            if (this.Client.ResourceName == null)
-            {
-                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ResourceName");
-            }
-            if (this.Client.ResourceType == null)
-            {
-                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ResourceType");
-            }
-            if (this.Client.ResourceNamespace == null)
-            {
-                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ResourceNamespace");
-            }
-            if (this.Client.ResourceGroupName == null)
-            {
-                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ResourceGroupName");
-            }
-            if (this.Client.SubscriptionId == null)
-            {
-                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
-            }
-            if (fabricName == null)
-            {
-                throw new ValidationException(ValidationRules.CannotBeNull, "fabricName");
-            }
-            if (providerName == null)
-            {
-                throw new ValidationException(ValidationRules.CannotBeNull, "providerName");
-            }
-            // Tracing
-            bool _shouldTrace = ServiceClientTracing.IsEnabled;
-            string _invocationId = null;
-            if (_shouldTrace)
-            {
-                _invocationId = ServiceClientTracing.NextInvocationId.ToString();
-                Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("fabricName", fabricName);
-                tracingParameters.Add("providerName", providerName);
-                tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "BeginDelete", tracingParameters);
-            }
-            // Construct URL
-            var _baseUrl = this.Client.BaseUri.AbsoluteUri;
-            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/remove").ToString();
-            _url = _url.Replace("{resourceName}", Uri.EscapeDataString(this.Client.ResourceName));
-            _url = _url.Replace("{resourceType}", Uri.EscapeDataString(this.Client.ResourceType));
-            _url = _url.Replace("{resourceNamespace}", Uri.EscapeDataString(this.Client.ResourceNamespace));
-            _url = _url.Replace("{resourceGroupName}", Uri.EscapeDataString(this.Client.ResourceGroupName));
-            _url = _url.Replace("{subscriptionId}", Uri.EscapeDataString(this.Client.SubscriptionId));
-            _url = _url.Replace("{fabricName}", Uri.EscapeDataString(fabricName));
-            _url = _url.Replace("{providerName}", Uri.EscapeDataString(providerName));
-            List<string> _queryParameters = new List<string>();
-            if (this.Client.ApiVersion != null)
-            {
-                _queryParameters.Add(string.Format("api-version={0}", Uri.EscapeDataString(this.Client.ApiVersion)));
-            }
-            if (_queryParameters.Count > 0)
-            {
-                _url += "?" + string.Join("&", _queryParameters);
-            }
-            // Create HTTP transport objects
-            HttpRequestMessage _httpRequest = new HttpRequestMessage();
-            HttpResponseMessage _httpResponse = null;
-            _httpRequest.Method = new HttpMethod("POST");
-            _httpRequest.RequestUri = new Uri(_url);
-            // Set Headers
-            if (this.Client.GenerateClientRequestId != null && this.Client.GenerateClientRequestId.Value)
-            {
-                _httpRequest.Headers.TryAddWithoutValidation("x-ms-client-request-id", Guid.NewGuid().ToString());
-            }
-            if (this.Client.AcceptLanguage != null)
-            {
-                if (_httpRequest.Headers.Contains("accept-language"))
-                {
-                    _httpRequest.Headers.Remove("accept-language");
-                }
-                _httpRequest.Headers.TryAddWithoutValidation("accept-language", this.Client.AcceptLanguage);
-            }
-            if (customHeaders != null)
-            {
-                foreach(var _header in customHeaders)
-                {
-                    if (_httpRequest.Headers.Contains(_header.Key))
+                    _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                    CloudError _errorBody = SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, this.Client.DeserializationSettings);
+                    if (_errorBody != null)
                     {
-                        _httpRequest.Headers.Remove(_header.Key);
+                        ex = new CloudException(_errorBody.Message);
+                        ex.Body = _errorBody;
                     }
-                    _httpRequest.Headers.TryAddWithoutValidation(_header.Key, _header.Value);
                 }
-            }
-
-            // Serialize Request
-            string _requestContent = null;
-            // Set Credentials
-            if (this.Client.Credentials != null)
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-                await this.Client.Credentials.ProcessHttpRequestAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
-            }
-            // Send Request
-            if (_shouldTrace)
-            {
-                ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
-            }
-            cancellationToken.ThrowIfCancellationRequested();
-            _httpResponse = await this.Client.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
-            if (_shouldTrace)
-            {
-                ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
-            }
-            HttpStatusCode _statusCode = _httpResponse.StatusCode;
-            cancellationToken.ThrowIfCancellationRequested();
-            string _responseContent = null;
-            if ((int)_statusCode != 202)
-            {
-                var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
-                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                catch (JsonException)
+                {
+                    // Ignore the exception
+                }
                 ex.Request = new HttpRequestMessageWrapper(_httpRequest, _requestContent);
                 ex.Response = new HttpResponseMessageWrapper(_httpResponse, _responseContent);
                 if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -437,12 +234,30 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse();
+            var _result = new AzureOperationResponse<StorageClassificationMapping>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
             {
                 _result.RequestId = _httpResponse.Headers.GetValues("x-ms-request-id").FirstOrDefault();
+            }
+            // Deserialize Response
+            if ((int)_statusCode == 200)
+            {
+                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                try
+                {
+                    _result.Body = SafeJsonConvert.DeserializeObject<StorageClassificationMapping>(_responseContent, this.Client.DeserializationSettings);
+                }
+                catch (JsonException ex)
+                {
+                    _httpRequest.Dispose();
+                    if (_httpResponse != null)
+                    {
+                        _httpResponse.Dispose();
+                    }
+                    throw new SerializationException("Unable to deserialize the response.", _responseContent, ex);
+                }
             }
             if (_shouldTrace)
             {
@@ -452,14 +267,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
         }
 
         /// <summary>
-        /// Gets the details of a server.
+        /// Gets the details of a storage classification mapping.
         /// </summary>
         /// Deletes the site.
         /// <param name='fabricName'>
-        /// Unique fabric Id.
+        /// Site name of interest.
         /// </param>
-        /// <param name='providerName'>
-        /// Server id.
+        /// <param name='storageClassificationName'>
+        /// Name of the storage.
+        /// </param>
+        /// <param name='storageClassificationMappingName'>
+        /// Name of the mapping object to be fetched.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -470,7 +288,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<RecoveryServicesProvider>> GetWithHttpMessagesAsync(string fabricName, string providerName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<StorageClassificationMapping>> GetWithHttpMessagesAsync(string fabricName, string storageClassificationName, string storageClassificationMappingName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -500,9 +318,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "fabricName");
             }
-            if (providerName == null)
+            if (storageClassificationName == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "providerName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "storageClassificationName");
+            }
+            if (storageClassificationMappingName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "storageClassificationMappingName");
             }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
@@ -512,20 +334,22 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("fabricName", fabricName);
-                tracingParameters.Add("providerName", providerName);
+                tracingParameters.Add("storageClassificationName", storageClassificationName);
+                tracingParameters.Add("storageClassificationMappingName", storageClassificationMappingName);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Get", tracingParameters);
             }
             // Construct URL
             var _baseUrl = this.Client.BaseUri.AbsoluteUri;
-            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}").ToString();
+            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings/{storageClassificationMappingName}").ToString();
             _url = _url.Replace("{resourceName}", Uri.EscapeDataString(this.Client.ResourceName));
             _url = _url.Replace("{resourceType}", Uri.EscapeDataString(this.Client.ResourceType));
             _url = _url.Replace("{resourceNamespace}", Uri.EscapeDataString(this.Client.ResourceNamespace));
             _url = _url.Replace("{resourceGroupName}", Uri.EscapeDataString(this.Client.ResourceGroupName));
             _url = _url.Replace("{subscriptionId}", Uri.EscapeDataString(this.Client.SubscriptionId));
             _url = _url.Replace("{fabricName}", Uri.EscapeDataString(fabricName));
-            _url = _url.Replace("{providerName}", Uri.EscapeDataString(providerName));
+            _url = _url.Replace("{storageClassificationName}", Uri.EscapeDataString(storageClassificationName));
+            _url = _url.Replace("{storageClassificationMappingName}", Uri.EscapeDataString(storageClassificationMappingName));
             List<string> _queryParameters = new List<string>();
             if (this.Client.ApiVersion != null)
             {
@@ -622,7 +446,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<RecoveryServicesProvider>();
+            var _result = new AzureOperationResponse<StorageClassificationMapping>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -635,7 +459,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = SafeJsonConvert.DeserializeObject<RecoveryServicesProvider>(_responseContent, this.Client.DeserializationSettings);
+                    _result.Body = SafeJsonConvert.DeserializeObject<StorageClassificationMapping>(_responseContent, this.Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -655,14 +479,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         }
 
         /// <summary>
-        /// Purges provider from fabric
+        /// Pairs two storage objects
         /// </summary>
         /// Deletes the site.
         /// <param name='fabricName'>
-        /// Unique fabric Id.
+        /// Site name of interest.
         /// </param>
-        /// <param name='providerName'>
-        /// Unique provider id.
+        /// <param name='storageClassificationName'>
+        /// Name of the storage.
+        /// </param>
+        /// <param name='storageClassificationMappingName'>
+        /// Name of the mapping object.
+        /// </param>
+        /// <param name='pairingInput'>
+        /// Pairing input.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -670,23 +500,31 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        public async Task<AzureOperationResponse> PurgeWithHttpMessagesAsync(string fabricName, string providerName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<StorageClassificationMapping>> CreateWithHttpMessagesAsync(string fabricName, string storageClassificationName, string storageClassificationMappingName, StorageClassificationMappingInput pairingInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            // Send request
-            AzureOperationResponse _response = await BeginPurgeWithHttpMessagesAsync(
-                fabricName, providerName, customHeaders, cancellationToken);
-            return await this.Client.GetPostOrDeleteOperationResultAsync(_response, customHeaders, cancellationToken);
+            // Send Request
+            AzureOperationResponse<StorageClassificationMapping> _response = await BeginCreateWithHttpMessagesAsync(
+                fabricName, storageClassificationName, storageClassificationMappingName, pairingInput, customHeaders, cancellationToken);
+            return await this.Client.GetPutOrPatchOperationResultAsync(_response,
+                customHeaders,
+                cancellationToken);
         }
 
         /// <summary>
-        /// Purges provider from fabric
+        /// Pairs two storage objects
         /// </summary>
         /// Deletes the site.
         /// <param name='fabricName'>
-        /// Unique fabric Id.
+        /// Site name of interest.
         /// </param>
-        /// <param name='providerName'>
-        /// Unique provider id.
+        /// <param name='storageClassificationName'>
+        /// Name of the storage.
+        /// </param>
+        /// <param name='storageClassificationMappingName'>
+        /// Name of the mapping object.
+        /// </param>
+        /// <param name='pairingInput'>
+        /// Pairing input.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -697,7 +535,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> BeginPurgeWithHttpMessagesAsync(string fabricName, string providerName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<StorageClassificationMapping>> BeginCreateWithHttpMessagesAsync(string fabricName, string storageClassificationName, string storageClassificationMappingName, StorageClassificationMappingInput pairingInput, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -727,9 +565,17 @@ namespace Microsoft.Azure.Management.SiteRecovery
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "fabricName");
             }
-            if (providerName == null)
+            if (storageClassificationName == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "providerName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "storageClassificationName");
+            }
+            if (storageClassificationMappingName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "storageClassificationMappingName");
+            }
+            if (pairingInput == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "pairingInput");
             }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
@@ -739,20 +585,268 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("fabricName", fabricName);
-                tracingParameters.Add("providerName", providerName);
+                tracingParameters.Add("storageClassificationName", storageClassificationName);
+                tracingParameters.Add("storageClassificationMappingName", storageClassificationMappingName);
+                tracingParameters.Add("pairingInput", pairingInput);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "BeginPurge", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "BeginCreate", tracingParameters);
             }
             // Construct URL
             var _baseUrl = this.Client.BaseUri.AbsoluteUri;
-            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}").ToString();
+            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings/{storageClassificationMappingName}").ToString();
             _url = _url.Replace("{resourceName}", Uri.EscapeDataString(this.Client.ResourceName));
             _url = _url.Replace("{resourceType}", Uri.EscapeDataString(this.Client.ResourceType));
             _url = _url.Replace("{resourceNamespace}", Uri.EscapeDataString(this.Client.ResourceNamespace));
             _url = _url.Replace("{resourceGroupName}", Uri.EscapeDataString(this.Client.ResourceGroupName));
             _url = _url.Replace("{subscriptionId}", Uri.EscapeDataString(this.Client.SubscriptionId));
             _url = _url.Replace("{fabricName}", Uri.EscapeDataString(fabricName));
-            _url = _url.Replace("{providerName}", Uri.EscapeDataString(providerName));
+            _url = _url.Replace("{storageClassificationName}", Uri.EscapeDataString(storageClassificationName));
+            _url = _url.Replace("{storageClassificationMappingName}", Uri.EscapeDataString(storageClassificationMappingName));
+            List<string> _queryParameters = new List<string>();
+            if (this.Client.ApiVersion != null)
+            {
+                _queryParameters.Add(string.Format("api-version={0}", Uri.EscapeDataString(this.Client.ApiVersion)));
+            }
+            if (_queryParameters.Count > 0)
+            {
+                _url += "?" + string.Join("&", _queryParameters);
+            }
+            // Create HTTP transport objects
+            HttpRequestMessage _httpRequest = new HttpRequestMessage();
+            HttpResponseMessage _httpResponse = null;
+            _httpRequest.Method = new HttpMethod("PUT");
+            _httpRequest.RequestUri = new Uri(_url);
+            // Set Headers
+            if (this.Client.GenerateClientRequestId != null && this.Client.GenerateClientRequestId.Value)
+            {
+                _httpRequest.Headers.TryAddWithoutValidation("x-ms-client-request-id", Guid.NewGuid().ToString());
+            }
+            if (this.Client.AcceptLanguage != null)
+            {
+                if (_httpRequest.Headers.Contains("accept-language"))
+                {
+                    _httpRequest.Headers.Remove("accept-language");
+                }
+                _httpRequest.Headers.TryAddWithoutValidation("accept-language", this.Client.AcceptLanguage);
+            }
+            if (customHeaders != null)
+            {
+                foreach(var _header in customHeaders)
+                {
+                    if (_httpRequest.Headers.Contains(_header.Key))
+                    {
+                        _httpRequest.Headers.Remove(_header.Key);
+                    }
+                    _httpRequest.Headers.TryAddWithoutValidation(_header.Key, _header.Value);
+                }
+            }
+
+            // Serialize Request
+            string _requestContent = null;
+            if(pairingInput != null)
+            {
+                _requestContent = SafeJsonConvert.SerializeObject(pairingInput, this.Client.SerializationSettings);
+                _httpRequest.Content = new StringContent(_requestContent, Encoding.UTF8);
+                _httpRequest.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json; charset=utf-8");
+            }
+            // Set Credentials
+            if (this.Client.Credentials != null)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                await this.Client.Credentials.ProcessHttpRequestAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            }
+            // Send Request
+            if (_shouldTrace)
+            {
+                ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
+            }
+            cancellationToken.ThrowIfCancellationRequested();
+            _httpResponse = await this.Client.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            if (_shouldTrace)
+            {
+                ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
+            }
+            HttpStatusCode _statusCode = _httpResponse.StatusCode;
+            cancellationToken.ThrowIfCancellationRequested();
+            string _responseContent = null;
+            if ((int)_statusCode != 200 && (int)_statusCode != 202)
+            {
+                var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
+                try
+                {
+                    _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                    CloudError _errorBody = SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, this.Client.DeserializationSettings);
+                    if (_errorBody != null)
+                    {
+                        ex = new CloudException(_errorBody.Message);
+                        ex.Body = _errorBody;
+                    }
+                }
+                catch (JsonException)
+                {
+                    // Ignore the exception
+                }
+                ex.Request = new HttpRequestMessageWrapper(_httpRequest, _requestContent);
+                ex.Response = new HttpResponseMessageWrapper(_httpResponse, _responseContent);
+                if (_httpResponse.Headers.Contains("x-ms-request-id"))
+                {
+                    ex.RequestId = _httpResponse.Headers.GetValues("x-ms-request-id").FirstOrDefault();
+                }
+                if (_shouldTrace)
+                {
+                    ServiceClientTracing.Error(_invocationId, ex);
+                }
+                _httpRequest.Dispose();
+                if (_httpResponse != null)
+                {
+                    _httpResponse.Dispose();
+                }
+                throw ex;
+            }
+            // Create Result
+            var _result = new AzureOperationResponse<StorageClassificationMapping>();
+            _result.Request = _httpRequest;
+            _result.Response = _httpResponse;
+            if (_httpResponse.Headers.Contains("x-ms-request-id"))
+            {
+                _result.RequestId = _httpResponse.Headers.GetValues("x-ms-request-id").FirstOrDefault();
+            }
+            // Deserialize Response
+            if ((int)_statusCode == 200)
+            {
+                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                try
+                {
+                    _result.Body = SafeJsonConvert.DeserializeObject<StorageClassificationMapping>(_responseContent, this.Client.DeserializationSettings);
+                }
+                catch (JsonException ex)
+                {
+                    _httpRequest.Dispose();
+                    if (_httpResponse != null)
+                    {
+                        _httpResponse.Dispose();
+                    }
+                    throw new SerializationException("Unable to deserialize the response.", _responseContent, ex);
+                }
+            }
+            if (_shouldTrace)
+            {
+                ServiceClientTracing.Exit(_invocationId, _result);
+            }
+            return _result;
+        }
+
+        /// <summary>
+        /// Pairs two storage objects
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='fabricName'>
+        /// Site name of interest.
+        /// </param>
+        /// <param name='storageClassificationName'>
+        /// Name of the storage.
+        /// </param>
+        /// <param name='storageClassificationMappingName'>
+        /// Name of the mapping object.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string fabricName, string storageClassificationName, string storageClassificationMappingName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            // Send request
+            AzureOperationResponse _response = await BeginDeleteWithHttpMessagesAsync(
+                fabricName, storageClassificationName, storageClassificationMappingName, customHeaders, cancellationToken);
+            return await this.Client.GetPostOrDeleteOperationResultAsync(_response, customHeaders, cancellationToken);
+        }
+
+        /// <summary>
+        /// Pairs two storage objects
+        /// </summary>
+        /// Deletes the site.
+        /// <param name='fabricName'>
+        /// Site name of interest.
+        /// </param>
+        /// <param name='storageClassificationName'>
+        /// Name of the storage.
+        /// </param>
+        /// <param name='storageClassificationMappingName'>
+        /// Name of the mapping object.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// Headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <return>
+        /// A response object containing the response body and response headers.
+        /// </return>
+        public async Task<AzureOperationResponse> BeginDeleteWithHttpMessagesAsync(string fabricName, string storageClassificationName, string storageClassificationMappingName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (this.Client.ApiVersion == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ApiVersion");
+            }
+            if (this.Client.ResourceName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ResourceName");
+            }
+            if (this.Client.ResourceType == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ResourceType");
+            }
+            if (this.Client.ResourceNamespace == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ResourceNamespace");
+            }
+            if (this.Client.ResourceGroupName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ResourceGroupName");
+            }
+            if (this.Client.SubscriptionId == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
+            }
+            if (fabricName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "fabricName");
+            }
+            if (storageClassificationName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "storageClassificationName");
+            }
+            if (storageClassificationMappingName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "storageClassificationMappingName");
+            }
+            // Tracing
+            bool _shouldTrace = ServiceClientTracing.IsEnabled;
+            string _invocationId = null;
+            if (_shouldTrace)
+            {
+                _invocationId = ServiceClientTracing.NextInvocationId.ToString();
+                Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
+                tracingParameters.Add("fabricName", fabricName);
+                tracingParameters.Add("storageClassificationName", storageClassificationName);
+                tracingParameters.Add("storageClassificationMappingName", storageClassificationMappingName);
+                tracingParameters.Add("cancellationToken", cancellationToken);
+                ServiceClientTracing.Enter(_invocationId, this, "BeginDelete", tracingParameters);
+            }
+            // Construct URL
+            var _baseUrl = this.Client.BaseUri.AbsoluteUri;
+            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings/{storageClassificationMappingName}").ToString();
+            _url = _url.Replace("{resourceName}", Uri.EscapeDataString(this.Client.ResourceName));
+            _url = _url.Replace("{resourceType}", Uri.EscapeDataString(this.Client.ResourceType));
+            _url = _url.Replace("{resourceNamespace}", Uri.EscapeDataString(this.Client.ResourceNamespace));
+            _url = _url.Replace("{resourceGroupName}", Uri.EscapeDataString(this.Client.ResourceGroupName));
+            _url = _url.Replace("{subscriptionId}", Uri.EscapeDataString(this.Client.SubscriptionId));
+            _url = _url.Replace("{fabricName}", Uri.EscapeDataString(fabricName));
+            _url = _url.Replace("{storageClassificationName}", Uri.EscapeDataString(storageClassificationName));
+            _url = _url.Replace("{storageClassificationMappingName}", Uri.EscapeDataString(storageClassificationMappingName));
             List<string> _queryParameters = new List<string>();
             if (this.Client.ApiVersion != null)
             {
@@ -814,7 +908,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 202)
+            if ((int)_statusCode != 202 && (int)_statusCode != 204)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
@@ -851,11 +945,14 @@ namespace Microsoft.Azure.Management.SiteRecovery
         }
 
         /// <summary>
-        /// Gets the list of servers registered.
+        /// Gets the list of storage classification mappings objects under a storage.
         /// </summary>
         /// Deletes the site.
         /// <param name='fabricName'>
-        /// Id of the fabric to be retrieved
+        /// Site name of interest.
+        /// </param>
+        /// <param name='storageClassificationName'>
+        /// Name of the storage classfication.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -866,7 +963,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<RecoveryServicesProvider>>> ListByFabricWithHttpMessagesAsync(string fabricName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<StorageClassificationMapping>>> ListByStorageClassificationWithHttpMessagesAsync(string fabricName, string storageClassificationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -896,6 +993,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "fabricName");
             }
+            if (storageClassificationName == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "storageClassificationName");
+            }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -904,18 +1005,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("fabricName", fabricName);
+                tracingParameters.Add("storageClassificationName", storageClassificationName);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "ListByFabric", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "ListByStorageClassification", tracingParameters);
             }
             // Construct URL
             var _baseUrl = this.Client.BaseUri.AbsoluteUri;
-            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders").ToString();
+            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings").ToString();
             _url = _url.Replace("{resourceName}", Uri.EscapeDataString(this.Client.ResourceName));
             _url = _url.Replace("{resourceType}", Uri.EscapeDataString(this.Client.ResourceType));
             _url = _url.Replace("{resourceNamespace}", Uri.EscapeDataString(this.Client.ResourceNamespace));
             _url = _url.Replace("{resourceGroupName}", Uri.EscapeDataString(this.Client.ResourceGroupName));
             _url = _url.Replace("{subscriptionId}", Uri.EscapeDataString(this.Client.SubscriptionId));
             _url = _url.Replace("{fabricName}", Uri.EscapeDataString(fabricName));
+            _url = _url.Replace("{storageClassificationName}", Uri.EscapeDataString(storageClassificationName));
             List<string> _queryParameters = new List<string>();
             if (this.Client.ApiVersion != null)
             {
@@ -1012,7 +1115,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IPage<RecoveryServicesProvider>>();
+            var _result = new AzureOperationResponse<IPage<StorageClassificationMapping>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -1025,7 +1128,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = SafeJsonConvert.DeserializeObject<Page<RecoveryServicesProvider>>(_responseContent, this.Client.DeserializationSettings);
+                    _result.Body = SafeJsonConvert.DeserializeObject<Page<StorageClassificationMapping>>(_responseContent, this.Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -1045,8 +1148,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         }
 
         /// <summary>
-        /// Gets the list of servers registered across fabrics.
-        /// This is view only api.
+        /// Gets the list of storage classification mappings objects under a vault.
         /// </summary>
         /// Deletes the site.
         /// <param name='customHeaders'>
@@ -1058,7 +1160,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<RecoveryServicesProvider>>> ListWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<StorageClassificationMapping>>> ListWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (this.Client.ApiVersion == null)
             {
@@ -1096,7 +1198,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             }
             // Construct URL
             var _baseUrl = this.Client.BaseUri.AbsoluteUri;
-            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryServicesProviders").ToString();
+            var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationStorageClassificationMappings").ToString();
             _url = _url.Replace("{resourceName}", Uri.EscapeDataString(this.Client.ResourceName));
             _url = _url.Replace("{resourceType}", Uri.EscapeDataString(this.Client.ResourceType));
             _url = _url.Replace("{resourceNamespace}", Uri.EscapeDataString(this.Client.ResourceNamespace));
@@ -1198,7 +1300,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IPage<RecoveryServicesProvider>>();
+            var _result = new AzureOperationResponse<IPage<StorageClassificationMapping>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -1211,7 +1313,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = SafeJsonConvert.DeserializeObject<Page<RecoveryServicesProvider>>(_responseContent, this.Client.DeserializationSettings);
+                    _result.Body = SafeJsonConvert.DeserializeObject<Page<StorageClassificationMapping>>(_responseContent, this.Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -1231,7 +1333,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         }
 
         /// <summary>
-        /// Gets the list of servers registered.
+        /// Gets the list of storage classification mappings objects under a storage.
         /// </summary>
         /// Deletes the site.
         /// <param name='nextPageLink'>
@@ -1246,7 +1348,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<RecoveryServicesProvider>>> ListByFabricNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<StorageClassificationMapping>>> ListByStorageClassificationNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (nextPageLink == null)
             {
@@ -1261,7 +1363,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("nextPageLink", nextPageLink);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "ListByFabricNext", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "ListByStorageClassificationNext", tracingParameters);
             }
             // Construct URL
             string _url = "{nextLink}";
@@ -1358,7 +1460,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IPage<RecoveryServicesProvider>>();
+            var _result = new AzureOperationResponse<IPage<StorageClassificationMapping>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -1371,7 +1473,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = SafeJsonConvert.DeserializeObject<Page<RecoveryServicesProvider>>(_responseContent, this.Client.DeserializationSettings);
+                    _result.Body = SafeJsonConvert.DeserializeObject<Page<StorageClassificationMapping>>(_responseContent, this.Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -1391,8 +1493,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         }
 
         /// <summary>
-        /// Gets the list of servers registered across fabrics.
-        /// This is view only api.
+        /// Gets the list of storage classification mappings objects under a vault.
         /// </summary>
         /// Deletes the site.
         /// <param name='nextPageLink'>
@@ -1407,7 +1508,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<RecoveryServicesProvider>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<StorageClassificationMapping>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (nextPageLink == null)
             {
@@ -1519,7 +1620,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IPage<RecoveryServicesProvider>>();
+            var _result = new AzureOperationResponse<IPage<StorageClassificationMapping>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -1532,7 +1633,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = SafeJsonConvert.DeserializeObject<Page<RecoveryServicesProvider>>(_responseContent, this.Client.DeserializationSettings);
+                    _result.Body = SafeJsonConvert.DeserializeObject<Page<StorageClassificationMapping>>(_responseContent, this.Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {

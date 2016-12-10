@@ -25,20 +25,13 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the A2APolicyCreationInput class.
         /// </summary>
-        public A2APolicyCreationInput(SetMultiVmSyncStatus multiVmSyncStatus, int? recoveryPointThresholdInMinutes = default(int?), int? recoveryPointHistory = default(int?), int? crashConsistentFrequencyInMinutes = default(int?), int? appConsistentFrequencyInMinutes = default(int?))
+        public A2APolicyCreationInput(SetMultiVmSyncStatus multiVmSyncStatus, int? recoveryPointHistory = default(int?), int? crashConsistentFrequencyInMinutes = default(int?), int? appConsistentFrequencyInMinutes = default(int?))
         {
-            RecoveryPointThresholdInMinutes = recoveryPointThresholdInMinutes;
             RecoveryPointHistory = recoveryPointHistory;
             CrashConsistentFrequencyInMinutes = crashConsistentFrequencyInMinutes;
             AppConsistentFrequencyInMinutes = appConsistentFrequencyInMinutes;
             MultiVmSyncStatus = multiVmSyncStatus;
         }
-
-        /// <summary>
-        /// Gets or sets the recovery point threshold in minutes.
-        /// </summary>
-        [JsonProperty(PropertyName = "recoveryPointThresholdInMinutes")]
-        public int? RecoveryPointThresholdInMinutes { get; set; }
 
         /// <summary>
         /// Gets or sets the duration in minutes until which the recovery

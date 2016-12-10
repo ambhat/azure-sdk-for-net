@@ -19,6 +19,48 @@ namespace Microsoft.Azure.Management.SiteRecovery
     public static partial class PoliciesOperationsExtensions
     {
             /// <summary>
+            /// Tracks the protection profiles async operation.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='policyName'>
+            /// Policy Name.
+            /// </param>
+            /// <param name='jobName'>
+            /// job id to track.
+            /// </param>
+            public static Policy TrackAsyncOperation(this IPoliciesOperations operations, string policyName, string jobName)
+            {
+                return Task.Factory.StartNew(s => ((IPoliciesOperations)s).TrackAsyncOperationAsync(policyName, jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Tracks the protection profiles async operation.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='policyName'>
+            /// Policy Name.
+            /// </param>
+            /// <param name='jobName'>
+            /// job id to track.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<Policy> TrackAsyncOperationAsync(this IPoliciesOperations operations, string policyName, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.TrackAsyncOperationWithHttpMessagesAsync(policyName, jobName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
             /// Gets the requested policy.
             /// </summary>
             /// Deletes the site.
@@ -67,9 +109,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Create policy input
             /// </param>
-            public static void Create(this IPoliciesOperations operations, string policyName, CreatePolicyInput input)
+            public static Policy Create(this IPoliciesOperations operations, string policyName, CreatePolicyInput input)
             {
-                Task.Factory.StartNew(s => ((IPoliciesOperations)s).CreateAsync(policyName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IPoliciesOperations)s).CreateAsync(policyName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -88,9 +130,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task CreateAsync(this IPoliciesOperations operations, string policyName, CreatePolicyInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Policy> CreateAsync(this IPoliciesOperations operations, string policyName, CreatePolicyInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.CreateWithHttpMessagesAsync(policyName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.CreateWithHttpMessagesAsync(policyName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -106,9 +151,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Create policy input
             /// </param>
-            public static void BeginCreate(this IPoliciesOperations operations, string policyName, CreatePolicyInput input)
+            public static Policy BeginCreate(this IPoliciesOperations operations, string policyName, CreatePolicyInput input)
             {
-                Task.Factory.StartNew(s => ((IPoliciesOperations)s).BeginCreateAsync(policyName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IPoliciesOperations)s).BeginCreateAsync(policyName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -127,9 +172,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginCreateAsync(this IPoliciesOperations operations, string policyName, CreatePolicyInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Policy> BeginCreateAsync(this IPoliciesOperations operations, string policyName, CreatePolicyInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginCreateWithHttpMessagesAsync(policyName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginCreateWithHttpMessagesAsync(policyName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -211,9 +259,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Update Protection Profile Input
             /// </param>
-            public static void Update(this IPoliciesOperations operations, string policyName, UpdatePolicyInput input)
+            public static Policy Update(this IPoliciesOperations operations, string policyName, UpdatePolicyInput input)
             {
-                Task.Factory.StartNew(s => ((IPoliciesOperations)s).UpdateAsync(policyName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IPoliciesOperations)s).UpdateAsync(policyName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -232,9 +280,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task UpdateAsync(this IPoliciesOperations operations, string policyName, UpdatePolicyInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Policy> UpdateAsync(this IPoliciesOperations operations, string policyName, UpdatePolicyInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.UpdateWithHttpMessagesAsync(policyName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.UpdateWithHttpMessagesAsync(policyName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -250,9 +301,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Update Protection Profile Input
             /// </param>
-            public static void BeginUpdate(this IPoliciesOperations operations, string policyName, UpdatePolicyInput input)
+            public static Policy BeginUpdate(this IPoliciesOperations operations, string policyName, UpdatePolicyInput input)
             {
-                Task.Factory.StartNew(s => ((IPoliciesOperations)s).BeginUpdateAsync(policyName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IPoliciesOperations)s).BeginUpdateAsync(policyName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -271,9 +322,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginUpdateAsync(this IPoliciesOperations operations, string policyName, UpdatePolicyInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Policy> BeginUpdateAsync(this IPoliciesOperations operations, string policyName, UpdatePolicyInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginUpdateWithHttpMessagesAsync(policyName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginUpdateWithHttpMessagesAsync(policyName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>

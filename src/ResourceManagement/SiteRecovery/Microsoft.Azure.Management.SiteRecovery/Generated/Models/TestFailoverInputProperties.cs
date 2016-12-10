@@ -27,11 +27,12 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// Initializes a new instance of the TestFailoverInputProperties
         /// class.
         /// </summary>
-        public TestFailoverInputProperties(string failoverDirection = default(string), string networkType = default(string), string networkId = default(string), ProviderSpecificFailoverInput providerSpecificDetails = default(ProviderSpecificFailoverInput))
+        public TestFailoverInputProperties(string failoverDirection = default(string), string networkType = default(string), string networkId = default(string), bool? skipTestFailoverCleanup = default(bool?), ProviderSpecificFailoverInput providerSpecificDetails = default(ProviderSpecificFailoverInput))
         {
             FailoverDirection = failoverDirection;
             NetworkType = networkType;
             NetworkId = networkId;
+            SkipTestFailoverCleanup = skipTestFailoverCleanup;
             ProviderSpecificDetails = providerSpecificDetails;
         }
 
@@ -52,6 +53,15 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// </summary>
         [JsonProperty(PropertyName = "networkId")]
         public string NetworkId { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the test failover cleanup
+        /// is to be skipped.
+        /// ToDo(LShai): Change such that we do not expose this
+        /// property separately.
+        /// </summary>
+        [JsonProperty(PropertyName = "skipTestFailoverCleanup")]
+        public bool? SkipTestFailoverCleanup { get; set; }
 
         /// <summary>
         /// Gets or sets Provider specific settings

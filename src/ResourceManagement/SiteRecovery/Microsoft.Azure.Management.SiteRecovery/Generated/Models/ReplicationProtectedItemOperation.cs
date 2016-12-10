@@ -26,6 +26,8 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         DisableProtection,
         [EnumMember(Value = "TestFailover")]
         TestFailover,
+        [EnumMember(Value = "TestFailoverCleanup")]
+        TestFailoverCleanup,
         [EnumMember(Value = "Failback")]
         Failback,
         [EnumMember(Value = "FinalizeFailback")]

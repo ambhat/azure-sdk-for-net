@@ -25,7 +25,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the VMwareDetails class.
         /// </summary>
-        public VMwareDetails(IList<ProcessServer> processServers = default(IList<ProcessServer>), IList<MasterTargetServer> masterTargetServers = default(IList<MasterTargetServer>), IList<RunAsAccount> runAsAccounts = default(IList<RunAsAccount>), string replicationPairCount = default(string), string processServerCount = default(string), string agentCount = default(string), string protectedServers = default(string), string systemLoad = default(string), string systemLoadStatus = default(string), string cpuLoad = default(string), string cpuLoadStatus = default(string), long? totalMemoryInBytes = default(long?), long? availableMemoryInBytes = default(long?), string memoryUsageStatus = default(string), long? totalSpaceInBytes = default(long?), long? availableSpaceInBytes = default(long?), string spaceUsageStatus = default(string), string webLoad = default(string), string webLoadStatus = default(string), string databaseServerLoad = default(string), string databaseServerLoadStatus = default(string), string csServiceStatus = default(string), string ipAddress = default(string), string agentVersion = default(string), string hostName = default(string), DateTime? lastHeartbeat = default(DateTime?), string versionStatus = default(string))
+        public VMwareDetails(IList<ProcessServer> processServers = default(IList<ProcessServer>), IList<MasterTargetServer> masterTargetServers = default(IList<MasterTargetServer>), IList<RunAsAccount> runAsAccounts = default(IList<RunAsAccount>), string replicationPairCount = default(string), string processServerCount = default(string), string agentCount = default(string), string protectedServers = default(string), string systemLoad = default(string), string systemLoadStatus = default(string), string cpuLoad = default(string), string cpuLoadStatus = default(string), long? totalMemoryInBytes = default(long?), long? availableMemoryInBytes = default(long?), string memoryUsageStatus = default(string), long? totalSpaceInBytes = default(long?), long? availableSpaceInBytes = default(long?), string spaceUsageStatus = default(string), string webLoad = default(string), string webLoadStatus = default(string), string databaseServerLoad = default(string), string databaseServerLoadStatus = default(string), string csServiceStatus = default(string), string ipAddress = default(string), string agentVersion = default(string), string hostName = default(string), DateTime? lastHeartbeat = default(DateTime?), string versionStatus = default(string), DateTime? sslCertExpiryDate = default(DateTime?), int? sslCertExpiryRemainingDays = default(int?))
         {
             ProcessServers = processServers;
             MasterTargetServers = masterTargetServers;
@@ -54,6 +54,8 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             HostName = hostName;
             LastHeartbeat = lastHeartbeat;
             VersionStatus = versionStatus;
+            SslCertExpiryDate = sslCertExpiryDate;
+            SslCertExpiryRemainingDays = sslCertExpiryRemainingDays;
         }
 
         /// <summary>
@@ -220,6 +222,18 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// </summary>
         [JsonProperty(PropertyName = "versionStatus")]
         public string VersionStatus { get; set; }
+
+        /// <summary>
+        /// Gets or sets CS SSL cert expiry date.
+        /// </summary>
+        [JsonProperty(PropertyName = "sslCertExpiryDate")]
+        public DateTime? SslCertExpiryDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets CS SSL cert expiry date.
+        /// </summary>
+        [JsonProperty(PropertyName = "sslCertExpiryRemainingDays")]
+        public int? SslCertExpiryRemainingDays { get; set; }
 
     }
 }

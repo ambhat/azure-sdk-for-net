@@ -37,9 +37,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='jobName'>
             /// job id to track.
             /// </param>
-            public static void TrackAsyncOperation(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, string jobName)
+            public static NetworkMapping TrackAsyncOperation(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, string jobName)
             {
-                Task.Factory.StartNew(s => ((INetworkMappingsOperations)s).TrackAsyncOperationAsync(fabricName, networkName, networkMappingName, jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((INetworkMappingsOperations)s).TrackAsyncOperationAsync(fabricName, networkName, networkMappingName, jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -64,9 +64,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task TrackAsyncOperationAsync(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<NetworkMapping> TrackAsyncOperationAsync(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, string jobName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.TrackAsyncOperationWithHttpMessagesAsync(fabricName, networkName, networkMappingName, jobName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.TrackAsyncOperationWithHttpMessagesAsync(fabricName, networkName, networkMappingName, jobName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -208,9 +211,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Create network mapping input.
             /// </param>
-            public static void Create(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input)
+            public static NetworkMapping Create(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input)
             {
-                Task.Factory.StartNew(s => ((INetworkMappingsOperations)s).CreateAsync(fabricName, networkName, networkMappingName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((INetworkMappingsOperations)s).CreateAsync(fabricName, networkName, networkMappingName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -235,9 +238,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task CreateAsync(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<NetworkMapping> CreateAsync(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.CreateWithHttpMessagesAsync(fabricName, networkName, networkMappingName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.CreateWithHttpMessagesAsync(fabricName, networkName, networkMappingName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -259,9 +265,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Create network mapping input.
             /// </param>
-            public static void BeginCreate(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input)
+            public static NetworkMapping BeginCreate(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input)
             {
-                Task.Factory.StartNew(s => ((INetworkMappingsOperations)s).BeginCreateAsync(fabricName, networkName, networkMappingName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((INetworkMappingsOperations)s).BeginCreateAsync(fabricName, networkName, networkMappingName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -286,9 +292,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginCreateAsync(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<NetworkMapping> BeginCreateAsync(this INetworkMappingsOperations operations, string fabricName, string networkName, string networkMappingName, CreateNetworkMappingInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginCreateWithHttpMessagesAsync(fabricName, networkName, networkMappingName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginCreateWithHttpMessagesAsync(fabricName, networkName, networkMappingName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>

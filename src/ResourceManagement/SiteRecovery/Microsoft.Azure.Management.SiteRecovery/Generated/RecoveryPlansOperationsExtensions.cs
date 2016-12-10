@@ -19,6 +19,48 @@ namespace Microsoft.Azure.Management.SiteRecovery
     public static partial class RecoveryPlansOperationsExtensions
     {
             /// <summary>
+            /// Tracks the recovery plan async operation.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='recoveryPlanName'>
+            /// Recovery plan name.
+            /// </param>
+            /// <param name='jobName'>
+            /// ARM name of the job.
+            /// </param>
+            public static RecoveryPlan TrackAsyncOperation(this IRecoveryPlansOperations operations, string recoveryPlanName, string jobName)
+            {
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).TrackAsyncOperationAsync(recoveryPlanName, jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Tracks the recovery plan async operation.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='recoveryPlanName'>
+            /// Recovery plan name.
+            /// </param>
+            /// <param name='jobName'>
+            /// ARM name of the job.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<RecoveryPlan> TrackAsyncOperationAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.TrackAsyncOperationWithHttpMessagesAsync(recoveryPlanName, jobName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
             /// Execute reprotect of the recovery plan.
             /// </summary>
             /// Deletes the site.
@@ -28,9 +70,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='recoveryPlanName'>
             /// Recovery plan name.
             /// </param>
-            public static void Reprotect(this IRecoveryPlansOperations operations, string recoveryPlanName)
+            public static RecoveryPlan Reprotect(this IRecoveryPlansOperations operations, string recoveryPlanName)
             {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).ReprotectAsync(recoveryPlanName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).ReprotectAsync(recoveryPlanName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -46,9 +88,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task ReprotectAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryPlan> ReprotectAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.ReprotectWithHttpMessagesAsync(recoveryPlanName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.ReprotectWithHttpMessagesAsync(recoveryPlanName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -61,9 +106,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='recoveryPlanName'>
             /// Recovery plan name.
             /// </param>
-            public static void BeginReprotect(this IRecoveryPlansOperations operations, string recoveryPlanName)
+            public static RecoveryPlan BeginReprotect(this IRecoveryPlansOperations operations, string recoveryPlanName)
             {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginReprotectAsync(recoveryPlanName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginReprotectAsync(recoveryPlanName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -79,9 +124,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginReprotectAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryPlan> BeginReprotectAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginReprotectWithHttpMessagesAsync(recoveryPlanName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginReprotectWithHttpMessagesAsync(recoveryPlanName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -94,42 +142,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='recoveryPlanName'>
             /// Recovery plan name.
             /// </param>
-            public static void FailoverCommit(this IRecoveryPlansOperations operations, string recoveryPlanName)
+            public static RecoveryPlan FailoverCommit(this IRecoveryPlansOperations operations, string recoveryPlanName)
             {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).FailoverCommitAsync(recoveryPlanName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Execute commit failover of the recovery plan.
-            /// </summary>
-            /// Deletes the site.
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='recoveryPlanName'>
-            /// Recovery plan name.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task FailoverCommitAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                await operations.FailoverCommitWithHttpMessagesAsync(recoveryPlanName, null, cancellationToken).ConfigureAwait(false);
-            }
-
-            /// <summary>
-            /// Execute commit failover of the recovery plan.
-            /// </summary>
-            /// Deletes the site.
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='recoveryPlanName'>
-            /// Recovery plan name.
-            /// </param>
-            public static void BeginFailoverCommit(this IRecoveryPlansOperations operations, string recoveryPlanName)
-            {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginFailoverCommitAsync(recoveryPlanName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).FailoverCommitAsync(recoveryPlanName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -145,9 +160,132 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginFailoverCommitAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryPlan> FailoverCommitAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginFailoverCommitWithHttpMessagesAsync(recoveryPlanName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.FailoverCommitWithHttpMessagesAsync(recoveryPlanName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Execute commit failover of the recovery plan.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='recoveryPlanName'>
+            /// Recovery plan name.
+            /// </param>
+            public static RecoveryPlan BeginFailoverCommit(this IRecoveryPlansOperations operations, string recoveryPlanName)
+            {
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginFailoverCommitAsync(recoveryPlanName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Execute commit failover of the recovery plan.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='recoveryPlanName'>
+            /// Recovery plan name.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<RecoveryPlan> BeginFailoverCommitAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginFailoverCommitWithHttpMessagesAsync(recoveryPlanName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Execute test failover cleanup of the recovery plan.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='recoveryPlanName'>
+            /// Recovery plan name.
+            /// </param>
+            /// <param name='input'>
+            /// Test failover cleanup input.
+            /// </param>
+            public static RecoveryPlan TestFailoverCleanup(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanTestFailoverCleanupInput input)
+            {
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).TestFailoverCleanupAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Execute test failover cleanup of the recovery plan.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='recoveryPlanName'>
+            /// Recovery plan name.
+            /// </param>
+            /// <param name='input'>
+            /// Test failover cleanup input.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<RecoveryPlan> TestFailoverCleanupAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanTestFailoverCleanupInput input, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.TestFailoverCleanupWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Execute test failover cleanup of the recovery plan.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='recoveryPlanName'>
+            /// Recovery plan name.
+            /// </param>
+            /// <param name='input'>
+            /// Test failover cleanup input.
+            /// </param>
+            public static RecoveryPlan BeginTestFailoverCleanup(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanTestFailoverCleanupInput input)
+            {
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginTestFailoverCleanupAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Execute test failover cleanup of the recovery plan.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='recoveryPlanName'>
+            /// Recovery plan name.
+            /// </param>
+            /// <param name='input'>
+            /// Test failover cleanup input.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<RecoveryPlan> BeginTestFailoverCleanupAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanTestFailoverCleanupInput input, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginTestFailoverCleanupWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -163,9 +301,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Failover input.
             /// </param>
-            public static void TestFailover(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanTestFailoverInput input)
+            public static RecoveryPlan TestFailover(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanTestFailoverInput input)
             {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).TestFailoverAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).TestFailoverAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -184,9 +322,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task TestFailoverAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanTestFailoverInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryPlan> TestFailoverAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanTestFailoverInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.TestFailoverWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.TestFailoverWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -202,9 +343,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Failover input.
             /// </param>
-            public static void BeginTestFailover(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanTestFailoverInput input)
+            public static RecoveryPlan BeginTestFailover(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanTestFailoverInput input)
             {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginTestFailoverAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginTestFailoverAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -223,9 +364,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginTestFailoverAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanTestFailoverInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryPlan> BeginTestFailoverAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanTestFailoverInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginTestFailoverWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginTestFailoverWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -241,48 +385,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Failover input.
             /// </param>
-            public static void UnplannedFailover(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanUnplannedFailoverInput input)
+            public static RecoveryPlan UnplannedFailover(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanUnplannedFailoverInput input)
             {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).UnplannedFailoverAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Execute unplanned failover of the recovery plan.
-            /// </summary>
-            /// Deletes the site.
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='recoveryPlanName'>
-            /// Recovery plan name.
-            /// </param>
-            /// <param name='input'>
-            /// Failover input.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task UnplannedFailoverAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanUnplannedFailoverInput input, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                await operations.UnplannedFailoverWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false);
-            }
-
-            /// <summary>
-            /// Execute unplanned failover of the recovery plan.
-            /// </summary>
-            /// Deletes the site.
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='recoveryPlanName'>
-            /// Recovery plan name.
-            /// </param>
-            /// <param name='input'>
-            /// Failover input.
-            /// </param>
-            public static void BeginUnplannedFailover(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanUnplannedFailoverInput input)
-            {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginUnplannedFailoverAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).UnplannedFailoverAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -301,9 +406,54 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginUnplannedFailoverAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanUnplannedFailoverInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryPlan> UnplannedFailoverAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanUnplannedFailoverInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginUnplannedFailoverWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.UnplannedFailoverWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Execute unplanned failover of the recovery plan.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='recoveryPlanName'>
+            /// Recovery plan name.
+            /// </param>
+            /// <param name='input'>
+            /// Failover input.
+            /// </param>
+            public static RecoveryPlan BeginUnplannedFailover(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanUnplannedFailoverInput input)
+            {
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginUnplannedFailoverAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Execute unplanned failover of the recovery plan.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='recoveryPlanName'>
+            /// Recovery plan name.
+            /// </param>
+            /// <param name='input'>
+            /// Failover input.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<RecoveryPlan> BeginUnplannedFailoverAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanUnplannedFailoverInput input, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginUnplannedFailoverWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -319,9 +469,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Failover input.
             /// </param>
-            public static void PlannedFailover(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanPlannedFailoverInput input)
+            public static RecoveryPlan PlannedFailover(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanPlannedFailoverInput input)
             {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).PlannedFailoverAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).PlannedFailoverAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -340,9 +490,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task PlannedFailoverAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanPlannedFailoverInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryPlan> PlannedFailoverAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanPlannedFailoverInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.PlannedFailoverWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.PlannedFailoverWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -358,9 +511,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Failover input.
             /// </param>
-            public static void BeginPlannedFailover(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanPlannedFailoverInput input)
+            public static RecoveryPlan BeginPlannedFailover(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanPlannedFailoverInput input)
             {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginPlannedFailoverAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginPlannedFailoverAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -379,9 +532,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginPlannedFailoverAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanPlannedFailoverInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryPlan> BeginPlannedFailoverAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, RecoveryPlanPlannedFailoverInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginPlannedFailoverWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginPlannedFailoverWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -433,9 +589,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Recovery Plan creation input.
             /// </param>
-            public static void Create(this IRecoveryPlansOperations operations, string recoveryPlanName, CreateRecoveryPlanInput input)
+            public static RecoveryPlan Create(this IRecoveryPlansOperations operations, string recoveryPlanName, CreateRecoveryPlanInput input)
             {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).CreateAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).CreateAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -454,9 +610,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task CreateAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, CreateRecoveryPlanInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryPlan> CreateAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, CreateRecoveryPlanInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.CreateWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.CreateWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -472,9 +631,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Recovery Plan creation input.
             /// </param>
-            public static void BeginCreate(this IRecoveryPlansOperations operations, string recoveryPlanName, CreateRecoveryPlanInput input)
+            public static RecoveryPlan BeginCreate(this IRecoveryPlansOperations operations, string recoveryPlanName, CreateRecoveryPlanInput input)
             {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginCreateAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginCreateAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -493,9 +652,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginCreateAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, CreateRecoveryPlanInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryPlan> BeginCreateAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, CreateRecoveryPlanInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginCreateWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginCreateWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -577,9 +739,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Update recovery plan input
             /// </param>
-            public static void Update(this IRecoveryPlansOperations operations, string recoveryPlanName, UpdateRecoveryPlanInput input)
+            public static RecoveryPlan Update(this IRecoveryPlansOperations operations, string recoveryPlanName, UpdateRecoveryPlanInput input)
             {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).UpdateAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).UpdateAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -598,9 +760,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task UpdateAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, UpdateRecoveryPlanInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryPlan> UpdateAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, UpdateRecoveryPlanInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.UpdateWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.UpdateWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -616,9 +781,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='input'>
             /// Update recovery plan input
             /// </param>
-            public static void BeginUpdate(this IRecoveryPlansOperations operations, string recoveryPlanName, UpdateRecoveryPlanInput input)
+            public static RecoveryPlan BeginUpdate(this IRecoveryPlansOperations operations, string recoveryPlanName, UpdateRecoveryPlanInput input)
             {
-                Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginUpdateAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryPlansOperations)s).BeginUpdateAsync(recoveryPlanName, input), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -637,9 +802,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginUpdateAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, UpdateRecoveryPlanInput input, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryPlan> BeginUpdateAsync(this IRecoveryPlansOperations operations, string recoveryPlanName, UpdateRecoveryPlanInput input, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginUpdateWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginUpdateWithHttpMessagesAsync(recoveryPlanName, input, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>

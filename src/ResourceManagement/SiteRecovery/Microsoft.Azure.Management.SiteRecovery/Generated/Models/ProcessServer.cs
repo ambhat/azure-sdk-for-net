@@ -25,7 +25,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the ProcessServer class.
         /// </summary>
-        public ProcessServer(string friendlyName = default(string), string id = default(string), string ipAddress = default(string), string osType = default(string), string agentVersion = default(string), DateTime? lastHeartbeat = default(DateTime?), string versionStatus = default(string), IList<MobilityServiceUpdate> mobilityServiceUpdates = default(IList<MobilityServiceUpdate>), string hostId = default(string), string machineCount = default(string), string replicationPairCount = default(string), string systemLoad = default(string), string systemLoadStatus = default(string), string cpuLoad = default(string), string cpuLoadStatus = default(string), long? totalMemoryInBytes = default(long?), long? availableMemoryInBytes = default(long?), string memoryUsageStatus = default(string), long? totalSpaceInBytes = default(long?), long? availableSpaceInBytes = default(long?), string spaceUsageStatus = default(string), string psServiceStatus = default(string))
+        public ProcessServer(string friendlyName = default(string), string id = default(string), string ipAddress = default(string), string osType = default(string), string agentVersion = default(string), DateTime? lastHeartbeat = default(DateTime?), string versionStatus = default(string), IList<MobilityServiceUpdate> mobilityServiceUpdates = default(IList<MobilityServiceUpdate>), string hostId = default(string), string machineCount = default(string), string replicationPairCount = default(string), string systemLoad = default(string), string systemLoadStatus = default(string), string cpuLoad = default(string), string cpuLoadStatus = default(string), long? totalMemoryInBytes = default(long?), long? availableMemoryInBytes = default(long?), string memoryUsageStatus = default(string), long? totalSpaceInBytes = default(long?), long? availableSpaceInBytes = default(long?), string spaceUsageStatus = default(string), string psServiceStatus = default(string), DateTime? sslCertExpiryDate = default(DateTime?), int? sslCertExpiryRemainingDays = default(int?))
         {
             FriendlyName = friendlyName;
             Id = id;
@@ -49,6 +49,8 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             AvailableSpaceInBytes = availableSpaceInBytes;
             SpaceUsageStatus = spaceUsageStatus;
             PsServiceStatus = psServiceStatus;
+            SslCertExpiryDate = sslCertExpiryDate;
+            SslCertExpiryRemainingDays = sslCertExpiryRemainingDays;
         }
 
         /// <summary>
@@ -184,6 +186,18 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// </summary>
         [JsonProperty(PropertyName = "psServiceStatus")]
         public string PsServiceStatus { get; set; }
+
+        /// <summary>
+        /// Gets or sets the PS SSL cert expiry date.
+        /// </summary>
+        [JsonProperty(PropertyName = "sslCertExpiryDate")]
+        public DateTime? SslCertExpiryDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets CS SSL cert expiry date.
+        /// </summary>
+        [JsonProperty(PropertyName = "sslCertExpiryRemainingDays")]
+        public int? SslCertExpiryRemainingDays { get; set; }
 
     }
 }

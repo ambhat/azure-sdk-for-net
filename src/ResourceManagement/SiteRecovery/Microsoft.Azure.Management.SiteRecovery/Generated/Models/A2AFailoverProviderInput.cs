@@ -25,9 +25,10 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// <summary>
         /// Initializes a new instance of the A2AFailoverProviderInput class.
         /// </summary>
-        public A2AFailoverProviderInput(string recoveryPointId = default(string))
+        public A2AFailoverProviderInput(string recoveryPointId = default(string), string cloudServiceCreationOption = default(string))
         {
             RecoveryPointId = recoveryPointId;
+            CloudServiceCreationOption = cloudServiceCreationOption;
         }
 
         /// <summary>
@@ -38,6 +39,13 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// </summary>
         [JsonProperty(PropertyName = "recoveryPointId")]
         public string RecoveryPointId { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to use recovery cloud
+        /// service for TFO or not.
+        /// </summary>
+        [JsonProperty(PropertyName = "cloudServiceCreationOption")]
+        public string CloudServiceCreationOption { get; set; }
 
     }
 }

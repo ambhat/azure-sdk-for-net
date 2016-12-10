@@ -14,11 +14,59 @@ namespace Microsoft.Azure.Management.SiteRecovery
     using Models;
 
     /// <summary>
-    /// Extension methods for RecoveryServicesProviderOperations.
+    /// Extension methods for RecoveryServicesProvidersOperations.
     /// </summary>
-    public static partial class RecoveryServicesProviderOperationsExtensions
+    public static partial class RecoveryServicesProvidersOperationsExtensions
     {
             /// <summary>
+            /// Tracks the provider async operation.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Unique fabric name.
+            /// </param>
+            /// <param name='providerName'>
+            /// Site name to work on.
+            /// </param>
+            /// <param name='jobName'>
+            /// job id to track.
+            /// </param>
+            public static RecoveryServicesProvider TrackAsyncOperation(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName, string jobName)
+            {
+                return Task.Factory.StartNew(s => ((IRecoveryServicesProvidersOperations)s).TrackAsyncOperationAsync(fabricName, providerName, jobName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Tracks the provider async operation.
+            /// </summary>
+            /// Deletes the site.
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='fabricName'>
+            /// Unique fabric name.
+            /// </param>
+            /// <param name='providerName'>
+            /// Site name to work on.
+            /// </param>
+            /// <param name='jobName'>
+            /// job id to track.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<RecoveryServicesProvider> TrackAsyncOperationAsync(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName, string jobName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.TrackAsyncOperationWithHttpMessagesAsync(fabricName, providerName, jobName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
             /// Refresh the data on the provider.
             /// </summary>
             /// Deletes the site.
@@ -31,9 +79,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='providerName'>
             /// Unique provider name.
             /// </param>
-            public static void RefreshProvider(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName)
+            public static RecoveryServicesProvider RefreshProvider(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName)
             {
-                Task.Factory.StartNew(s => ((IRecoveryServicesProviderOperations)s).RefreshProviderAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryServicesProvidersOperations)s).RefreshProviderAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -52,9 +100,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task RefreshProviderAsync(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryServicesProvider> RefreshProviderAsync(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.RefreshProviderWithHttpMessagesAsync(fabricName, providerName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.RefreshProviderWithHttpMessagesAsync(fabricName, providerName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -70,9 +121,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='providerName'>
             /// Unique provider name.
             /// </param>
-            public static void BeginRefreshProvider(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName)
+            public static RecoveryServicesProvider BeginRefreshProvider(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName)
             {
-                Task.Factory.StartNew(s => ((IRecoveryServicesProviderOperations)s).BeginRefreshProviderAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryServicesProvidersOperations)s).BeginRefreshProviderAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -91,9 +142,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginRefreshProviderAsync(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryServicesProvider> BeginRefreshProviderAsync(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                await operations.BeginRefreshProviderWithHttpMessagesAsync(fabricName, providerName, null, cancellationToken).ConfigureAwait(false);
+                using (var _result = await operations.BeginRefreshProviderWithHttpMessagesAsync(fabricName, providerName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
             /// <summary>
@@ -116,9 +170,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='providerName'>
             /// Unique provider id.
             /// </param>
-            public static void Delete(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName)
+            public static void Delete(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName)
             {
-                Task.Factory.StartNew(s => ((IRecoveryServicesProviderOperations)s).DeleteAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                Task.Factory.StartNew(s => ((IRecoveryServicesProvidersOperations)s).DeleteAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -144,7 +198,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task DeleteAsync(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task DeleteAsync(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 await operations.DeleteWithHttpMessagesAsync(fabricName, providerName, null, cancellationToken).ConfigureAwait(false);
             }
@@ -169,9 +223,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='providerName'>
             /// Unique provider id.
             /// </param>
-            public static void BeginDelete(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName)
+            public static void BeginDelete(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName)
             {
-                Task.Factory.StartNew(s => ((IRecoveryServicesProviderOperations)s).BeginDeleteAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                Task.Factory.StartNew(s => ((IRecoveryServicesProvidersOperations)s).BeginDeleteAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -197,7 +251,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginDeleteAsync(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task BeginDeleteAsync(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 await operations.BeginDeleteWithHttpMessagesAsync(fabricName, providerName, null, cancellationToken).ConfigureAwait(false);
             }
@@ -215,9 +269,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='providerName'>
             /// Server id.
             /// </param>
-            public static RecoveryServicesProvider Get(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName)
+            public static RecoveryServicesProvider Get(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName)
             {
-                return Task.Factory.StartNew(s => ((IRecoveryServicesProviderOperations)s).GetAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryServicesProvidersOperations)s).GetAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -236,7 +290,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<RecoveryServicesProvider> GetAsync(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecoveryServicesProvider> GetAsync(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.GetWithHttpMessagesAsync(fabricName, providerName, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -257,9 +311,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='providerName'>
             /// Unique provider id.
             /// </param>
-            public static void Purge(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName)
+            public static void Purge(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName)
             {
-                Task.Factory.StartNew(s => ((IRecoveryServicesProviderOperations)s).PurgeAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                Task.Factory.StartNew(s => ((IRecoveryServicesProvidersOperations)s).PurgeAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -278,7 +332,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task PurgeAsync(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task PurgeAsync(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 await operations.PurgeWithHttpMessagesAsync(fabricName, providerName, null, cancellationToken).ConfigureAwait(false);
             }
@@ -296,9 +350,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='providerName'>
             /// Unique provider id.
             /// </param>
-            public static void BeginPurge(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName)
+            public static void BeginPurge(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName)
             {
-                Task.Factory.StartNew(s => ((IRecoveryServicesProviderOperations)s).BeginPurgeAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                Task.Factory.StartNew(s => ((IRecoveryServicesProvidersOperations)s).BeginPurgeAsync(fabricName, providerName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -317,7 +371,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginPurgeAsync(this IRecoveryServicesProviderOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task BeginPurgeAsync(this IRecoveryServicesProvidersOperations operations, string fabricName, string providerName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 await operations.BeginPurgeWithHttpMessagesAsync(fabricName, providerName, null, cancellationToken).ConfigureAwait(false);
             }
@@ -332,9 +386,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='fabricName'>
             /// Id of the fabric to be retrieved
             /// </param>
-            public static IPage<RecoveryServicesProvider> ListByFabric(this IRecoveryServicesProviderOperations operations, string fabricName)
+            public static IPage<RecoveryServicesProvider> ListByFabric(this IRecoveryServicesProvidersOperations operations, string fabricName)
             {
-                return Task.Factory.StartNew(s => ((IRecoveryServicesProviderOperations)s).ListByFabricAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryServicesProvidersOperations)s).ListByFabricAsync(fabricName), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -350,7 +404,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<RecoveryServicesProvider>> ListByFabricAsync(this IRecoveryServicesProviderOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<RecoveryServicesProvider>> ListByFabricAsync(this IRecoveryServicesProvidersOperations operations, string fabricName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListByFabricWithHttpMessagesAsync(fabricName, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -366,9 +420,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            public static IPage<RecoveryServicesProvider> List(this IRecoveryServicesProviderOperations operations)
+            public static IPage<RecoveryServicesProvider> List(this IRecoveryServicesProvidersOperations operations)
             {
-                return Task.Factory.StartNew(s => ((IRecoveryServicesProviderOperations)s).ListAsync(), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryServicesProvidersOperations)s).ListAsync(), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -382,7 +436,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<RecoveryServicesProvider>> ListAsync(this IRecoveryServicesProviderOperations operations, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<RecoveryServicesProvider>> ListAsync(this IRecoveryServicesProvidersOperations operations, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false))
                 {
@@ -400,9 +454,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='nextPageLink'>
             /// The NextLink from the previous successful call to List operation.
             /// </param>
-            public static IPage<RecoveryServicesProvider> ListByFabricNext(this IRecoveryServicesProviderOperations operations, string nextPageLink)
+            public static IPage<RecoveryServicesProvider> ListByFabricNext(this IRecoveryServicesProvidersOperations operations, string nextPageLink)
             {
-                return Task.Factory.StartNew(s => ((IRecoveryServicesProviderOperations)s).ListByFabricNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryServicesProvidersOperations)s).ListByFabricNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -418,7 +472,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<RecoveryServicesProvider>> ListByFabricNextAsync(this IRecoveryServicesProviderOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<RecoveryServicesProvider>> ListByFabricNextAsync(this IRecoveryServicesProvidersOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListByFabricNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -437,9 +491,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='nextPageLink'>
             /// The NextLink from the previous successful call to List operation.
             /// </param>
-            public static IPage<RecoveryServicesProvider> ListNext(this IRecoveryServicesProviderOperations operations, string nextPageLink)
+            public static IPage<RecoveryServicesProvider> ListNext(this IRecoveryServicesProvidersOperations operations, string nextPageLink)
             {
-                return Task.Factory.StartNew(s => ((IRecoveryServicesProviderOperations)s).ListNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IRecoveryServicesProvidersOperations)s).ListNextAsync(nextPageLink), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -456,7 +510,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<RecoveryServicesProvider>> ListNextAsync(this IRecoveryServicesProviderOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<RecoveryServicesProvider>> ListNextAsync(this IRecoveryServicesProvidersOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {

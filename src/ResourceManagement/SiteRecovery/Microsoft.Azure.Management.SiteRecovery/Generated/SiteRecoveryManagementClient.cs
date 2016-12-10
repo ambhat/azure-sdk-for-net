@@ -94,19 +94,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
         public bool? GenerateClientRequestId { get; set; }
 
         /// <summary>
+        /// Gets the IVCentersOperations.
+        /// </summary>
+        public virtual IVCentersOperations VCenters { get; private set; }
+
+        /// <summary>
+        /// Gets the IStorageClassificationMappingsOperations.
+        /// </summary>
+        public virtual IStorageClassificationMappingsOperations StorageClassificationMappings { get; private set; }
+
+        /// <summary>
+        /// Gets the IStorageClassificationsOperations.
+        /// </summary>
+        public virtual IStorageClassificationsOperations StorageClassifications { get; private set; }
+
+        /// <summary>
         /// Gets the IReplicationProtectedItemsOperations.
         /// </summary>
         public virtual IReplicationProtectedItemsOperations ReplicationProtectedItems { get; private set; }
 
         /// <summary>
-        /// Gets the IRecoveryServicesProviderOperations.
+        /// Gets the IRecoveryServicesProvidersOperations.
         /// </summary>
-        public virtual IRecoveryServicesProviderOperations RecoveryServicesProvider { get; private set; }
+        public virtual IRecoveryServicesProvidersOperations RecoveryServicesProviders { get; private set; }
 
         /// <summary>
-        /// Gets the IRecoveryPointsControllerOperations.
+        /// Gets the IRecoveryPointsOperations.
         /// </summary>
-        public virtual IRecoveryPointsControllerOperations RecoveryPointsController { get; private set; }
+        public virtual IRecoveryPointsOperations RecoveryPoints { get; private set; }
 
         /// <summary>
         /// Gets the IRecoveryPlansOperations.
@@ -157,6 +172,16 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// Gets the IFabricsOperations.
         /// </summary>
         public virtual IFabricsOperations Fabrics { get; private set; }
+
+        /// <summary>
+        /// Gets the IEventsOperations.
+        /// </summary>
+        public virtual IEventsOperations Events { get; private set; }
+
+        /// <summary>
+        /// Gets the IAlertSettingsOperations.
+        /// </summary>
+        public virtual IAlertSettingsOperations AlertSettings { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the SiteRecoveryManagementClient class.
@@ -337,9 +362,12 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// </summary>
         private void Initialize()
         {
+            this.VCenters = new VCentersOperations(this);
+            this.StorageClassificationMappings = new StorageClassificationMappingsOperations(this);
+            this.StorageClassifications = new StorageClassificationsOperations(this);
             this.ReplicationProtectedItems = new ReplicationProtectedItemsOperations(this);
-            this.RecoveryServicesProvider = new RecoveryServicesProviderOperations(this);
-            this.RecoveryPointsController = new RecoveryPointsControllerOperations(this);
+            this.RecoveryServicesProviders = new RecoveryServicesProvidersOperations(this);
+            this.RecoveryPoints = new RecoveryPointsOperations(this);
             this.RecoveryPlans = new RecoveryPlansOperations(this);
             this.ProtectionContainers = new ProtectionContainersOperations(this);
             this.ProtectionContainerMappings = new ProtectionContainerMappingsOperations(this);
@@ -350,6 +378,8 @@ namespace Microsoft.Azure.Management.SiteRecovery
             this.LogicalNetworks = new LogicalNetworksOperations(this);
             this.Jobs = new JobsOperations(this);
             this.Fabrics = new FabricsOperations(this);
+            this.Events = new EventsOperations(this);
+            this.AlertSettings = new AlertSettingsOperations(this);
             this.BaseUri = new Uri("https://management.azure.com");
             this.ApiVersion = "2015_11_10";
             this.AcceptLanguage = "en-US";
@@ -380,6 +410,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
                         new Iso8601TimeSpanConverter()
                     }
             };
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<EventProviderSpecificDetails>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<EventProviderSpecificDetails>("instanceType"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<EventSpecificDetails>("instanceType"));
+            DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<EventSpecificDetails>("instanceType"));
             SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<FabricSpecificDetails>("instanceType"));
             DeserializationSettings.Converters.Add(new PolymorphicDeserializeJsonConverter<FabricSpecificDetails>("instanceType"));
             SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<FabricSpecificCreationInput>("instanceType"));

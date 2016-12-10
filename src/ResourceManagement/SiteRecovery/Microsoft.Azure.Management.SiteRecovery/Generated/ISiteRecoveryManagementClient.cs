@@ -91,19 +91,34 @@ namespace Microsoft.Azure.Management.SiteRecovery
 
 
         /// <summary>
+        /// Gets the IVCentersOperations.
+        /// </summary>
+        IVCentersOperations VCenters { get; }
+
+        /// <summary>
+        /// Gets the IStorageClassificationMappingsOperations.
+        /// </summary>
+        IStorageClassificationMappingsOperations StorageClassificationMappings { get; }
+
+        /// <summary>
+        /// Gets the IStorageClassificationsOperations.
+        /// </summary>
+        IStorageClassificationsOperations StorageClassifications { get; }
+
+        /// <summary>
         /// Gets the IReplicationProtectedItemsOperations.
         /// </summary>
         IReplicationProtectedItemsOperations ReplicationProtectedItems { get; }
 
         /// <summary>
-        /// Gets the IRecoveryServicesProviderOperations.
+        /// Gets the IRecoveryServicesProvidersOperations.
         /// </summary>
-        IRecoveryServicesProviderOperations RecoveryServicesProvider { get; }
+        IRecoveryServicesProvidersOperations RecoveryServicesProviders { get; }
 
         /// <summary>
-        /// Gets the IRecoveryPointsControllerOperations.
+        /// Gets the IRecoveryPointsOperations.
         /// </summary>
-        IRecoveryPointsControllerOperations RecoveryPointsController { get; }
+        IRecoveryPointsOperations RecoveryPoints { get; }
 
         /// <summary>
         /// Gets the IRecoveryPlansOperations.
@@ -154,6 +169,16 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// Gets the IFabricsOperations.
         /// </summary>
         IFabricsOperations Fabrics { get; }
+
+        /// <summary>
+        /// Gets the IEventsOperations.
+        /// </summary>
+        IEventsOperations Events { get; }
+
+        /// <summary>
+        /// Gets the IAlertSettingsOperations.
+        /// </summary>
+        IAlertSettingsOperations AlertSettings { get; }
 
     }
 }
