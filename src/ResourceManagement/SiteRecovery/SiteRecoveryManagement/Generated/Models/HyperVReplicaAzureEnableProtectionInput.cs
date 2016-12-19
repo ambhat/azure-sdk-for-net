@@ -66,6 +66,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._hvHostVmId = value; }
         }
         
+        private string _logStorageAccountId;
+        
+        /// <summary>
+        /// Optional. Gets or sets the storage account to be used for logging
+        /// during replication.This is needed when the target storage account
+        /// is of premium type only.
+        /// </summary>
+        public string LogStorageAccountId
+        {
+            get { return this._logStorageAccountId; }
+            set { this._logStorageAccountId = value; }
+        }
+        
         private string _oSType;
         
         /// <summary>

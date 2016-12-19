@@ -111,6 +111,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._oSDetails = value; }
         }
         
+        private string _recoveryAzureLogStorageAccountId;
+        
+        /// <summary>
+        /// Optional. Gets or sets the ARM id of the log storage account used
+        /// for replication.This will be set to null if no log storage account
+        /// was provided during enableprotection.
+        /// </summary>
+        public string RecoveryAzureLogStorageAccountId
+        {
+            get { return this._recoveryAzureLogStorageAccountId; }
+            set { this._recoveryAzureLogStorageAccountId = value; }
+        }
+        
         private string _recoveryAzureResourceGroupId;
         
         /// <summary>
