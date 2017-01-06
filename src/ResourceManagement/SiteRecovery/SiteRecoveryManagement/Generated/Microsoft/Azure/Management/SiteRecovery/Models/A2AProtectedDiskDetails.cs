@@ -48,6 +48,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._dataPendingInStagingStorageAccountInMB = value; }
         }
         
+        private string _diskName;
+        
+        /// <summary>
+        /// Optional. Disk name.
+        /// </summary>
+        public string DiskName
+        {
+            get { return this._diskName; }
+            set { this._diskName = value; }
+        }
+        
         private string _diskType;
         
         /// <summary>

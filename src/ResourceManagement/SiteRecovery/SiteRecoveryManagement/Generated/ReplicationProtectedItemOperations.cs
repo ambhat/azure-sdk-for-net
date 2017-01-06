@@ -5101,6 +5101,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                 }
                                                 
+                                                JToken diskNameValue = protectedDisksValue["diskName"];
+                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance = ((string)diskNameValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -5445,6 +5452,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                         }
                                         
+                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string agentVersionInstance = ((string)agentVersionValue);
+                                            a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -5520,11 +5534,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                         }
                                         
-                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                         {
-                                            string agentVersionInstance = ((string)agentVersionValue);
-                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                            string agentVersionInstance2 = ((string)agentVersionValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                         }
                                         
                                         JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -5584,11 +5598,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                 }
                                                 
-                                                JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance = ((string)diskNameValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                    string diskNameInstance2 = ((string)diskNameValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                 }
                                                 
                                                 JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -6104,11 +6118,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                 }
                                                 
-                                                JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance2 = ((string)diskNameValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                    string diskNameInstance3 = ((string)diskNameValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                 }
                                                 
                                                 JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -6270,11 +6284,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                             inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                             
-                                            JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                            if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                            JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                            if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                             {
-                                                string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                             }
                                             
                                             JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -7639,6 +7653,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                 }
                                                 
+                                                JToken diskNameValue = protectedDisksValue["diskName"];
+                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance = ((string)diskNameValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -7983,6 +8004,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                         }
                                         
+                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string agentVersionInstance = ((string)agentVersionValue);
+                                            a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -8058,11 +8086,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                         }
                                         
-                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                         {
-                                            string agentVersionInstance = ((string)agentVersionValue);
-                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                            string agentVersionInstance2 = ((string)agentVersionValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                         }
                                         
                                         JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -8122,11 +8150,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                 }
                                                 
-                                                JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance = ((string)diskNameValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                    string diskNameInstance2 = ((string)diskNameValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                 }
                                                 
                                                 JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -8642,11 +8670,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                 }
                                                 
-                                                JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance2 = ((string)diskNameValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                    string diskNameInstance3 = ((string)diskNameValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                 }
                                                 
                                                 JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -8808,11 +8836,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                             inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                             
-                                            JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                            if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                            JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                            if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                             {
-                                                string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                             }
                                             
                                             JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -10236,6 +10264,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                 }
                                                 
+                                                JToken diskNameValue = protectedDisksValue["diskName"];
+                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance = ((string)diskNameValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -10580,6 +10615,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                         }
                                         
+                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string agentVersionInstance = ((string)agentVersionValue);
+                                            a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -10655,11 +10697,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                         }
                                         
-                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                         {
-                                            string agentVersionInstance = ((string)agentVersionValue);
-                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                            string agentVersionInstance2 = ((string)agentVersionValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                         }
                                         
                                         JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -10719,11 +10761,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                 }
                                                 
-                                                JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance = ((string)diskNameValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                    string diskNameInstance2 = ((string)diskNameValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                 }
                                                 
                                                 JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -11239,11 +11281,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                 }
                                                 
-                                                JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance2 = ((string)diskNameValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                    string diskNameInstance3 = ((string)diskNameValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                 }
                                                 
                                                 JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -11405,11 +11447,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                             inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                             
-                                            JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                            if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                            JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                            if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                             {
-                                                string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                             }
                                             
                                             JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -13064,6 +13106,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                 }
                                                 
+                                                JToken diskNameValue = protectedDisksValue["diskName"];
+                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance = ((string)diskNameValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -13408,6 +13457,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                         }
                                         
+                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string agentVersionInstance = ((string)agentVersionValue);
+                                            a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -13483,11 +13539,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                         }
                                         
-                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                         {
-                                            string agentVersionInstance = ((string)agentVersionValue);
-                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                            string agentVersionInstance2 = ((string)agentVersionValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                         }
                                         
                                         JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -13547,11 +13603,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                 }
                                                 
-                                                JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance = ((string)diskNameValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                    string diskNameInstance2 = ((string)diskNameValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                 }
                                                 
                                                 JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -14067,11 +14123,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                 }
                                                 
-                                                JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance2 = ((string)diskNameValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                    string diskNameInstance3 = ((string)diskNameValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                 }
                                                 
                                                 JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -14233,11 +14289,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                             inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                             
-                                            JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                            if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                            JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                            if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                             {
-                                                string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                             }
                                             
                                             JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -15661,6 +15717,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                 }
                                                 
+                                                JToken diskNameValue = protectedDisksValue["diskName"];
+                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance = ((string)diskNameValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -16005,6 +16068,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                         }
                                         
+                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string agentVersionInstance = ((string)agentVersionValue);
+                                            a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -16080,11 +16150,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                         }
                                         
-                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                         {
-                                            string agentVersionInstance = ((string)agentVersionValue);
-                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                            string agentVersionInstance2 = ((string)agentVersionValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                         }
                                         
                                         JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -16144,11 +16214,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                 }
                                                 
-                                                JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance = ((string)diskNameValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                    string diskNameInstance2 = ((string)diskNameValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                 }
                                                 
                                                 JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -16664,11 +16734,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                 }
                                                 
-                                                JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance2 = ((string)diskNameValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                    string diskNameInstance3 = ((string)diskNameValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                 }
                                                 
                                                 JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -16830,11 +16900,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                             inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                             
-                                            JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                            if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                            JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                            if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                             {
-                                                string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                             }
                                             
                                             JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -18489,6 +18559,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                 }
                                                 
+                                                JToken diskNameValue = protectedDisksValue["diskName"];
+                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance = ((string)diskNameValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -18833,6 +18910,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                         }
                                         
+                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string agentVersionInstance = ((string)agentVersionValue);
+                                            a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -18908,11 +18992,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                         }
                                         
-                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                         {
-                                            string agentVersionInstance = ((string)agentVersionValue);
-                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                            string agentVersionInstance2 = ((string)agentVersionValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                         }
                                         
                                         JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -18972,11 +19056,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                 }
                                                 
-                                                JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance = ((string)diskNameValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                    string diskNameInstance2 = ((string)diskNameValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                 }
                                                 
                                                 JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -19492,11 +19576,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                 }
                                                 
-                                                JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance2 = ((string)diskNameValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                    string diskNameInstance3 = ((string)diskNameValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                 }
                                                 
                                                 JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -19658,11 +19742,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                             inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                             
-                                            JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                            if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                            JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                            if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                             {
-                                                string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                             }
                                             
                                             JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -21086,6 +21170,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                 }
                                                 
+                                                JToken diskNameValue = protectedDisksValue["diskName"];
+                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance = ((string)diskNameValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -21430,6 +21521,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                         }
                                         
+                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string agentVersionInstance = ((string)agentVersionValue);
+                                            a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -21505,11 +21603,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                         }
                                         
-                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                         {
-                                            string agentVersionInstance = ((string)agentVersionValue);
-                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                            string agentVersionInstance2 = ((string)agentVersionValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                         }
                                         
                                         JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -21569,11 +21667,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                 }
                                                 
-                                                JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance = ((string)diskNameValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                    string diskNameInstance2 = ((string)diskNameValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                 }
                                                 
                                                 JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -22089,11 +22187,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                 }
                                                 
-                                                JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance2 = ((string)diskNameValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                    string diskNameInstance3 = ((string)diskNameValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                 }
                                                 
                                                 JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -22255,11 +22353,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                             inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                             
-                                            JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                            if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                            JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                            if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                             {
-                                                string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                             }
                                             
                                             JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -23683,6 +23781,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                 }
                                                 
+                                                JToken diskNameValue = protectedDisksValue["diskName"];
+                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance = ((string)diskNameValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -24027,6 +24132,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                         }
                                         
+                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string agentVersionInstance = ((string)agentVersionValue);
+                                            a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -24102,11 +24214,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                         }
                                         
-                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                         {
-                                            string agentVersionInstance = ((string)agentVersionValue);
-                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                            string agentVersionInstance2 = ((string)agentVersionValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                         }
                                         
                                         JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -24166,11 +24278,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                 }
                                                 
-                                                JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance = ((string)diskNameValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                    string diskNameInstance2 = ((string)diskNameValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                 }
                                                 
                                                 JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -24686,11 +24798,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                 }
                                                 
-                                                JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance2 = ((string)diskNameValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                    string diskNameInstance3 = ((string)diskNameValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                 }
                                                 
                                                 JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -24852,11 +24964,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                             inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                             
-                                            JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                            if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                            JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                            if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                             {
-                                                string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                             }
                                             
                                             JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -26280,6 +26392,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                 }
                                                 
+                                                JToken diskNameValue = protectedDisksValue["diskName"];
+                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance = ((string)diskNameValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -26624,6 +26743,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                         }
                                         
+                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string agentVersionInstance = ((string)agentVersionValue);
+                                            a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -26699,11 +26825,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                         }
                                         
-                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                         {
-                                            string agentVersionInstance = ((string)agentVersionValue);
-                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                            string agentVersionInstance2 = ((string)agentVersionValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                         }
                                         
                                         JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -26763,11 +26889,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                 }
                                                 
-                                                JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance = ((string)diskNameValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                    string diskNameInstance2 = ((string)diskNameValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                 }
                                                 
                                                 JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -27283,11 +27409,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                 }
                                                 
-                                                JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance2 = ((string)diskNameValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                    string diskNameInstance3 = ((string)diskNameValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                 }
                                                 
                                                 JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -27449,11 +27575,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                             inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                             
-                                            JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                            if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                            JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                            if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                             {
-                                                string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                             }
                                             
                                             JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -28877,6 +29003,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                 }
                                                 
+                                                JToken diskNameValue = protectedDisksValue["diskName"];
+                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance = ((string)diskNameValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -29221,6 +29354,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                         }
                                         
+                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string agentVersionInstance = ((string)agentVersionValue);
+                                            a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -29296,11 +29436,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                         }
                                         
-                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                         {
-                                            string agentVersionInstance = ((string)agentVersionValue);
-                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                            string agentVersionInstance2 = ((string)agentVersionValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                         }
                                         
                                         JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -29360,11 +29500,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                 }
                                                 
-                                                JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance = ((string)diskNameValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                    string diskNameInstance2 = ((string)diskNameValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                 }
                                                 
                                                 JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -29880,11 +30020,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                 }
                                                 
-                                                JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance2 = ((string)diskNameValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                    string diskNameInstance3 = ((string)diskNameValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                 }
                                                 
                                                 JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -30046,11 +30186,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                             inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                             
-                                            JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                            if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                            JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                            if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                             {
-                                                string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                             }
                                             
                                             JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -31474,6 +31614,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                 }
                                                 
+                                                JToken diskNameValue = protectedDisksValue["diskName"];
+                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance = ((string)diskNameValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -31818,6 +31965,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                         }
                                         
+                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string agentVersionInstance = ((string)agentVersionValue);
+                                            a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -31893,11 +32047,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                         }
                                         
-                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                         {
-                                            string agentVersionInstance = ((string)agentVersionValue);
-                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                            string agentVersionInstance2 = ((string)agentVersionValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                         }
                                         
                                         JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -31957,11 +32111,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                 }
                                                 
-                                                JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance = ((string)diskNameValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                    string diskNameInstance2 = ((string)diskNameValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                 }
                                                 
                                                 JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -32477,11 +32631,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                 }
                                                 
-                                                JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance2 = ((string)diskNameValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                    string diskNameInstance3 = ((string)diskNameValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                 }
                                                 
                                                 JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -32643,11 +32797,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                             inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                             
-                                            JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                            if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                            JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                            if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                             {
-                                                string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                             }
                                             
                                             JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -34071,6 +34225,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                 }
                                                 
+                                                JToken diskNameValue = protectedDisksValue["diskName"];
+                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                {
+                                                    string diskNameInstance = ((string)diskNameValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -34415,6 +34576,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                         }
                                         
+                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string agentVersionInstance = ((string)agentVersionValue);
+                                            a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -34490,11 +34658,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                         }
                                         
-                                        JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                        if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                        JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                        if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                         {
-                                            string agentVersionInstance = ((string)agentVersionValue);
-                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                            string agentVersionInstance2 = ((string)agentVersionValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                         }
                                         
                                         JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -34554,11 +34722,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                 }
                                                 
-                                                JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance = ((string)diskNameValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                    string diskNameInstance2 = ((string)diskNameValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                 }
                                                 
                                                 JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -35074,11 +35242,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                 }
                                                 
-                                                JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                 {
-                                                    string diskNameInstance2 = ((string)diskNameValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                    string diskNameInstance3 = ((string)diskNameValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                 }
                                                 
                                                 JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -35240,11 +35408,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                             inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                             
-                                            JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                            if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                            JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                            if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                             {
-                                                string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                             }
                                             
                                             JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -36717,6 +36885,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                         }
                                                         
+                                                        JToken diskNameValue = protectedDisksValue["diskName"];
+                                                        if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                        {
+                                                            string diskNameInstance = ((string)diskNameValue);
+                                                            a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                        }
+                                                        
                                                         JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                         if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                         {
@@ -37061,6 +37236,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                                 }
                                                 
+                                                JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                                if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                                {
+                                                    string agentVersionInstance = ((string)agentVersionValue);
+                                                    a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                                 {
@@ -37136,11 +37318,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                                 }
                                                 
-                                                JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                                if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                                JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                                if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                                 {
-                                                    string agentVersionInstance = ((string)agentVersionValue);
-                                                    inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                                    string agentVersionInstance2 = ((string)agentVersionValue2);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                                 }
                                                 
                                                 JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -37200,11 +37382,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                         }
                                                         
-                                                        JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                        if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                        JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                        if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                         {
-                                                            string diskNameInstance = ((string)diskNameValue);
-                                                            inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                            string diskNameInstance2 = ((string)diskNameValue2);
+                                                            inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                         }
                                                         
                                                         JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -37720,11 +37902,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                         }
                                                         
-                                                        JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                        if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                        JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                        if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                         {
-                                                            string diskNameInstance2 = ((string)diskNameValue2);
-                                                            inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                            string diskNameInstance3 = ((string)diskNameValue3);
+                                                            inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                         }
                                                         
                                                         JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -37886,11 +38068,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                                     inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                                     
-                                                    JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                                    if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                                    JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                                    if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                                     {
-                                                        string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                        agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                        string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                        agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                                     }
                                                     
                                                     JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -39314,6 +39496,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                         }
                                                         
+                                                        JToken diskNameValue = protectedDisksValue["diskName"];
+                                                        if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                        {
+                                                            string diskNameInstance = ((string)diskNameValue);
+                                                            a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                        }
+                                                        
                                                         JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                         if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                         {
@@ -39658,6 +39847,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                                 }
                                                 
+                                                JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                                if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                                {
+                                                    string agentVersionInstance = ((string)agentVersionValue);
+                                                    a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                                 {
@@ -39733,11 +39929,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                                 }
                                                 
-                                                JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                                if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                                JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                                if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                                 {
-                                                    string agentVersionInstance = ((string)agentVersionValue);
-                                                    inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                                    string agentVersionInstance2 = ((string)agentVersionValue2);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                                 }
                                                 
                                                 JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -39797,11 +39993,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                         }
                                                         
-                                                        JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                        if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                        JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                        if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                         {
-                                                            string diskNameInstance = ((string)diskNameValue);
-                                                            inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                            string diskNameInstance2 = ((string)diskNameValue2);
+                                                            inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                         }
                                                         
                                                         JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -40317,11 +40513,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                         }
                                                         
-                                                        JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                        if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                        JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                        if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                         {
-                                                            string diskNameInstance2 = ((string)diskNameValue2);
-                                                            inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                            string diskNameInstance3 = ((string)diskNameValue3);
+                                                            inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                         }
                                                         
                                                         JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -40483,11 +40679,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                                     inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                                     
-                                                    JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                                    if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                                    JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                                    if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                                     {
-                                                        string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                        agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                        string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                        agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                                     }
                                                     
                                                     JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];
@@ -41869,6 +42065,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             a2AProtectedDiskDetailsInstance.DiskUri = diskUriInstance;
                                                         }
                                                         
+                                                        JToken diskNameValue = protectedDisksValue["diskName"];
+                                                        if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                        {
+                                                            string diskNameInstance = ((string)diskNameValue);
+                                                            a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                        }
+                                                        
                                                         JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                         if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                         {
@@ -42213,6 +42416,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.LastHeartbeat = lastHeartbeatInstance;
                                                 }
                                                 
+                                                JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
+                                                if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                                {
+                                                    string agentVersionInstance = ((string)agentVersionValue);
+                                                    a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                                 {
@@ -42288,11 +42498,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.IpAddress = ipAddressInstance;
                                                 }
                                                 
-                                                JToken agentVersionValue = providerSpecificDetailsValue["agentVersion"];
-                                                if (agentVersionValue != null && agentVersionValue.Type != JTokenType.Null)
+                                                JToken agentVersionValue2 = providerSpecificDetailsValue["agentVersion"];
+                                                if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
                                                 {
-                                                    string agentVersionInstance = ((string)agentVersionValue);
-                                                    inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance;
+                                                    string agentVersionInstance2 = ((string)agentVersionValue2);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.AgentVersion = agentVersionInstance2;
                                                 }
                                                 
                                                 JToken isAgentUpdateRequiredValue = providerSpecificDetailsValue["isAgentUpdateRequired"];
@@ -42352,11 +42562,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             inMageAzureV2ProtectedDiskDetailsInstance.DiskId = diskIdInstance;
                                                         }
                                                         
-                                                        JToken diskNameValue = protectedDisksValue2["diskName"];
-                                                        if (diskNameValue != null && diskNameValue.Type != JTokenType.Null)
+                                                        JToken diskNameValue2 = protectedDisksValue2["diskName"];
+                                                        if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
                                                         {
-                                                            string diskNameInstance = ((string)diskNameValue);
-                                                            inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                            string diskNameInstance2 = ((string)diskNameValue2);
+                                                            inMageAzureV2ProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
                                                         }
                                                         
                                                         JToken protectionStageValue2 = protectedDisksValue2["protectionStage"];
@@ -42872,11 +43082,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             inMageProtectedDiskDetailsInstance.DiskId = diskIdInstance2;
                                                         }
                                                         
-                                                        JToken diskNameValue2 = protectedDisksValue3["diskName"];
-                                                        if (diskNameValue2 != null && diskNameValue2.Type != JTokenType.Null)
+                                                        JToken diskNameValue3 = protectedDisksValue3["diskName"];
+                                                        if (diskNameValue3 != null && diskNameValue3.Type != JTokenType.Null)
                                                         {
-                                                            string diskNameInstance2 = ((string)diskNameValue2);
-                                                            inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance2;
+                                                            string diskNameInstance3 = ((string)diskNameValue3);
+                                                            inMageProtectedDiskDetailsInstance.DiskName = diskNameInstance3;
                                                         }
                                                         
                                                         JToken protectionStageValue4 = protectedDisksValue3["protectionStage"];
@@ -43038,11 +43248,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     InMageAgentDetails agentDetailsInstance = new InMageAgentDetails();
                                                     inMageProviderSpecificSettingsInstance.AgentDetails = agentDetailsInstance;
                                                     
-                                                    JToken agentVersionValue2 = agentDetailsValue["agentVersion"];
-                                                    if (agentVersionValue2 != null && agentVersionValue2.Type != JTokenType.Null)
+                                                    JToken agentVersionValue3 = agentDetailsValue["agentVersion"];
+                                                    if (agentVersionValue3 != null && agentVersionValue3.Type != JTokenType.Null)
                                                     {
-                                                        string agentVersionInstance2 = ((string)agentVersionValue2);
-                                                        agentDetailsInstance.AgentVersion = agentVersionInstance2;
+                                                        string agentVersionInstance3 = ((string)agentVersionValue3);
+                                                        agentDetailsInstance.AgentVersion = agentVersionInstance3;
                                                     }
                                                     
                                                     JToken agentUpdateStatusValue = agentDetailsValue["agentUpdateStatus"];

@@ -32,6 +32,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// </summary>
     public partial class A2AReplicationDetails : ReplicationProviderSpecificSettings
     {
+        private string _agentVersion;
+        
+        /// <summary>
+        /// Optional. Gets or sets the agent version.
+        /// </summary>
+        public string AgentVersion
+        {
+            get { return this._agentVersion; }
+            set { this._agentVersion = value; }
+        }
+        
         private string _fabricObjectId;
         
         /// <summary>
