@@ -1579,7 +1579,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             
                             if (derived.RecoveryPointId != null)
                             {
-                                providerSpecificDetailsValue["recoveryPointId "] = derived.RecoveryPointId;
+                                providerSpecificDetailsValue["recoveryPointId"] = derived.RecoveryPointId;
                             }
                         }
                         if (input.Properties.ProviderSpecificDetails is HyperVReplicaAzureFailbackProviderInput)
@@ -2780,7 +2780,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             
                             if (derived.RecoveryPointId != null)
                             {
-                                providerSpecificDetailsValue["recoveryPointId "] = derived.RecoveryPointId;
+                                providerSpecificDetailsValue["recoveryPointId"] = derived.RecoveryPointId;
                             }
                         }
                         if (input.Properties.ProviderSpecificDetails is HyperVReplicaAzureFailbackProviderInput)
@@ -3337,7 +3337,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             
                             if (derived.RecoveryPointId != null)
                             {
-                                providerSpecificDetailsValue["recoveryPointId "] = derived.RecoveryPointId;
+                                providerSpecificDetailsValue["recoveryPointId"] = derived.RecoveryPointId;
                             }
                         }
                         if (input.Properties.ProviderSpecificDetails is HyperVReplicaAzureFailbackProviderInput)
