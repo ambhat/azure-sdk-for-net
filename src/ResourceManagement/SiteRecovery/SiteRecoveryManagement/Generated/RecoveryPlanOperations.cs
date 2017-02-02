@@ -1129,6 +1129,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     recoveryPlanProviderSpecificFailoverInputValue["instanceType"] = derived4.InstanceType;
                                 }
                             }
+                            if (providerSpecificDetailsItem is RecoveryPlanA2AFailoverInput)
+                            {
+                                recoveryPlanProviderSpecificFailoverInputValue["instanceType"] = "A2A";
+                                RecoveryPlanA2AFailoverInput derived5 = ((RecoveryPlanA2AFailoverInput)providerSpecificDetailsItem);
+                                
+                                recoveryPlanProviderSpecificFailoverInputValue["recoveryPointType"] = derived5.RecoveryPointType;
+                                
+                                if (derived5.InstanceType != null)
+                                {
+                                    recoveryPlanProviderSpecificFailoverInputValue["instanceType"] = derived5.InstanceType;
+                                }
+                            }
                         }
                         propertiesValue["providerSpecificDetails"] = providerSpecificDetailsArray;
                     }
@@ -1607,6 +1619,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 if (derived4.InstanceType != null)
                                 {
                                     recoveryPlanProviderSpecificFailoverInputValue["instanceType"] = derived4.InstanceType;
+                                }
+                            }
+                            if (providerSpecificDetailsItem is RecoveryPlanA2AFailoverInput)
+                            {
+                                recoveryPlanProviderSpecificFailoverInputValue["instanceType"] = "A2A";
+                                RecoveryPlanA2AFailoverInput derived5 = ((RecoveryPlanA2AFailoverInput)providerSpecificDetailsItem);
+                                
+                                recoveryPlanProviderSpecificFailoverInputValue["recoveryPointType"] = derived5.RecoveryPointType;
+                                
+                                if (derived5.InstanceType != null)
+                                {
+                                    recoveryPlanProviderSpecificFailoverInputValue["instanceType"] = derived5.InstanceType;
                                 }
                             }
                         }
@@ -2108,6 +2132,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 if (derived4.InstanceType != null)
                                 {
                                     recoveryPlanProviderSpecificFailoverInputValue["instanceType"] = derived4.InstanceType;
+                                }
+                            }
+                            if (providerSpecificDetailsItem is RecoveryPlanA2AFailoverInput)
+                            {
+                                recoveryPlanProviderSpecificFailoverInputValue["instanceType"] = "A2A";
+                                RecoveryPlanA2AFailoverInput derived5 = ((RecoveryPlanA2AFailoverInput)providerSpecificDetailsItem);
+                                
+                                recoveryPlanProviderSpecificFailoverInputValue["recoveryPointType"] = derived5.RecoveryPointType;
+                                
+                                if (derived5.InstanceType != null)
+                                {
+                                    recoveryPlanProviderSpecificFailoverInputValue["instanceType"] = derived5.InstanceType;
                                 }
                             }
                         }
