@@ -111,6 +111,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._oSDetails = value; }
         }
         
+        private string _recoveryAvailabilitySetId;
+        
+        /// <summary>
+        /// Optional. Gets or set the recovery Azure availability set Id.
+        /// </summary>
+        public string RecoveryAvailabilitySetId
+        {
+            get { return this._recoveryAvailabilitySetId; }
+            set { this._recoveryAvailabilitySetId = value; }
+        }
+        
         private string _recoveryAzureLogStorageAccountId;
         
         /// <summary>

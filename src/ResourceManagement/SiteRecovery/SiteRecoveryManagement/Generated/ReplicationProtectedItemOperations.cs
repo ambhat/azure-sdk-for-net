@@ -5972,6 +5972,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
+                                        JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -6768,6 +6775,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -8524,6 +8538,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
+                                        JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -9320,6 +9341,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -11135,6 +11163,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
+                                        JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -11931,6 +11966,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -13977,6 +14019,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
+                                        JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -14773,6 +14822,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -16588,6 +16644,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
+                                        JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -17384,6 +17447,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -19430,6 +19500,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
+                                        JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -20226,6 +20303,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -22041,6 +22125,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
+                                        JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -22837,6 +22928,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -24652,6 +24750,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
+                                        JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -25448,6 +25553,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -27263,6 +27375,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
+                                        JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -28059,6 +28178,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -29874,6 +30000,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
+                                        JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -30670,6 +30803,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -32485,6 +32625,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
+                                        JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -33281,6 +33428,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -35096,6 +35250,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                         }
                                         
+                                        JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -35892,6 +36053,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                        }
+                                        
+                                        JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                        if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -37756,6 +37924,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                                 }
                                                 
+                                                JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                                if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -38552,6 +38727,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                                     hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                                }
+                                                
+                                                JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                                if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                                    hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -40367,6 +40549,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                                 }
                                                 
+                                                JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                                if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -41163,6 +41352,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                                     hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                                }
+                                                
+                                                JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                                if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                                    hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -42936,6 +43132,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAzureResourceGroupId = recoveryAzureResourceGroupIdInstance2;
                                                 }
                                                 
+                                                JToken recoveryAvailabilitySetIdValue = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                                if (recoveryAvailabilitySetIdValue != null && recoveryAvailabilitySetIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAvailabilitySetIdInstance = ((string)recoveryAvailabilitySetIdValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -43732,6 +43935,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string recoveryAzureLogStorageAccountIdInstance2 = ((string)recoveryAzureLogStorageAccountIdValue2);
                                                     hyperVReplicaAzureReplicationDetailsInstance.RecoveryAzureLogStorageAccountId = recoveryAzureLogStorageAccountIdInstance2;
+                                                }
+                                                
+                                                JToken recoveryAvailabilitySetIdValue2 = providerSpecificDetailsValue["recoveryAvailabilitySetId"];
+                                                if (recoveryAvailabilitySetIdValue2 != null && recoveryAvailabilitySetIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
+                                                    hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
