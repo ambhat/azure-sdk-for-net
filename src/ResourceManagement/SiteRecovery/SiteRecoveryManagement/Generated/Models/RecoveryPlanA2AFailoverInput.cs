@@ -30,10 +30,23 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// </summary>
     public partial class RecoveryPlanA2AFailoverInput : RecoveryPlanProviderSpecificFailoverInput
     {
+        private string _cloudServiceCreationOption;
+        
+        /// <summary>
+        /// Required. Indicates whether to use recovery cloud service for TFO
+        /// or not. Values from AutoCreateCloudService/UseRecoveryCloudService.
+        /// </summary>
+        public string CloudServiceCreationOption
+        {
+            get { return this._cloudServiceCreationOption; }
+            set { this._cloudServiceCreationOption = value; }
+        }
+        
         private string _recoveryPointType;
         
         /// <summary>
-        /// Required. The recovery point type. Values from LatestTime/LatestTag.
+        /// Required. The recovery point type. Values from
+        /// Latest/LatestProcessed/LatestApplicationConsistent/LatestCrashConsistent.
         /// </summary>
         public string RecoveryPointType
         {
@@ -53,14 +66,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// Initializes a new instance of the RecoveryPlanA2AFailoverInput
         /// class with required arguments.
         /// </summary>
-        public RecoveryPlanA2AFailoverInput(string recoveryPointType)
+        public RecoveryPlanA2AFailoverInput(string recoveryPointType, string cloudServiceCreationOption)
             : this()
         {
             if (recoveryPointType == null)
             {
                 throw new ArgumentNullException("recoveryPointType");
             }
+            if (cloudServiceCreationOption == null)
+            {
+                throw new ArgumentNullException("cloudServiceCreationOption");
+            }
             this.RecoveryPointType = recoveryPointType;
+            this.CloudServiceCreationOption = cloudServiceCreationOption;
         }
     }
 }
