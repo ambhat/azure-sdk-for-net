@@ -59,6 +59,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._diskName = value; }
         }
         
+        private int? _diskSize;
+        
+        /// <summary>
+        /// Optional. Disk size.
+        /// </summary>
+        public int? DiskSize
+        {
+            get { return this._diskSize; }
+            set { this._diskSize = value; }
+        }
+        
         private string _diskType;
         
         /// <summary>

@@ -5108,6 +5108,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
+                                                JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskSizeInstance = ((int)diskSizeValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -7686,6 +7693,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskNameInstance = ((string)diskNameValue);
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
+                                                JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskSizeInstance = ((int)diskSizeValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -10325,6 +10339,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskNameInstance = ((string)diskNameValue);
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
+                                                JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskSizeInstance = ((int)diskSizeValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -13197,6 +13218,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
+                                                JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskSizeInstance = ((int)diskSizeValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -15834,6 +15862,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskNameInstance = ((string)diskNameValue);
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
+                                                JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskSizeInstance = ((int)diskSizeValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -18706,6 +18741,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
+                                                JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskSizeInstance = ((int)diskSizeValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -21343,6 +21385,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskNameInstance = ((string)diskNameValue);
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
+                                                JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskSizeInstance = ((int)diskSizeValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -23984,6 +24033,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
+                                                JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskSizeInstance = ((int)diskSizeValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -26621,6 +26677,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskNameInstance = ((string)diskNameValue);
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
+                                                JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskSizeInstance = ((int)diskSizeValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -29262,6 +29325,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
+                                                JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskSizeInstance = ((int)diskSizeValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -31901,6 +31971,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
+                                                JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskSizeInstance = ((int)diskSizeValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
+                                                }
+                                                
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                 if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                 {
@@ -34538,6 +34615,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskNameInstance = ((string)diskNameValue);
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                }
+                                                
+                                                JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskSizeInstance = ((int)diskSizeValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -37228,6 +37312,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                         }
                                                         
+                                                        JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                        if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                        {
+                                                            int diskSizeInstance = ((int)diskSizeValue);
+                                                            a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
+                                                        }
+                                                        
                                                         JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                         if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                         {
@@ -39867,6 +39958,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                         }
                                                         
+                                                        JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                        if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                        {
+                                                            int diskSizeInstance = ((int)diskSizeValue);
+                                                            a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
+                                                        }
+                                                        
                                                         JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
                                                         if (recoveryAzureStorageAccountIdValue != null && recoveryAzureStorageAccountIdValue.Type != JTokenType.Null)
                                                         {
@@ -42462,6 +42560,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string diskNameInstance = ((string)diskNameValue);
                                                             a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
+                                                        }
+                                                        
+                                                        JToken diskSizeValue = protectedDisksValue["diskSize"];
+                                                        if (diskSizeValue != null && diskSizeValue.Type != JTokenType.Null)
+                                                        {
+                                                            int diskSizeInstance = ((int)diskSizeValue);
+                                                            a2AProtectedDiskDetailsInstance.DiskSize = diskSizeInstance;
                                                         }
                                                         
                                                         JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
