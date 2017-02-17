@@ -2587,6 +2587,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             vMwareFabricDetailsInstance.SslCertExpiryRemainingDays = sslCertExpiryRemainingDaysInstance2;
                                         }
                                         
+                                        JToken psTemplateVersionValue = customDetailsValue["psTemplateVersion"];
+                                        if (psTemplateVersionValue != null && psTemplateVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string psTemplateVersionInstance = ((string)psTemplateVersionValue);
+                                            vMwareFabricDetailsInstance.PsTemplateVersion = psTemplateVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = customDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -3807,6 +3814,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int sslCertExpiryRemainingDaysInstance2 = ((int)sslCertExpiryRemainingDaysValue2);
                                             vMwareFabricDetailsInstance.SslCertExpiryRemainingDays = sslCertExpiryRemainingDaysInstance2;
+                                        }
+                                        
+                                        JToken psTemplateVersionValue = customDetailsValue["psTemplateVersion"];
+                                        if (psTemplateVersionValue != null && psTemplateVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string psTemplateVersionInstance = ((string)psTemplateVersionValue);
+                                            vMwareFabricDetailsInstance.PsTemplateVersion = psTemplateVersionInstance;
                                         }
                                         
                                         JToken instanceTypeValue4 = customDetailsValue["instanceType"];
@@ -5090,6 +5104,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             vMwareFabricDetailsInstance.SslCertExpiryRemainingDays = sslCertExpiryRemainingDaysInstance2;
                                         }
                                         
+                                        JToken psTemplateVersionValue = customDetailsValue["psTemplateVersion"];
+                                        if (psTemplateVersionValue != null && psTemplateVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string psTemplateVersionInstance = ((string)psTemplateVersionValue);
+                                            vMwareFabricDetailsInstance.PsTemplateVersion = psTemplateVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = customDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -6371,6 +6392,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             vMwareFabricDetailsInstance.SslCertExpiryRemainingDays = sslCertExpiryRemainingDaysInstance2;
                                         }
                                         
+                                        JToken psTemplateVersionValue = customDetailsValue["psTemplateVersion"];
+                                        if (psTemplateVersionValue != null && psTemplateVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string psTemplateVersionInstance = ((string)psTemplateVersionValue);
+                                            vMwareFabricDetailsInstance.PsTemplateVersion = psTemplateVersionInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = customDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -7419,6 +7447,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int sslCertExpiryRemainingDaysInstance2 = ((int)sslCertExpiryRemainingDaysValue2);
                                             vMwareFabricDetailsInstance.SslCertExpiryRemainingDays = sslCertExpiryRemainingDaysInstance2;
+                                        }
+                                        
+                                        JToken psTemplateVersionValue = customDetailsValue["psTemplateVersion"];
+                                        if (psTemplateVersionValue != null && psTemplateVersionValue.Type != JTokenType.Null)
+                                        {
+                                            string psTemplateVersionInstance = ((string)psTemplateVersionValue);
+                                            vMwareFabricDetailsInstance.PsTemplateVersion = psTemplateVersionInstance;
                                         }
                                         
                                         JToken instanceTypeValue4 = customDetailsValue["instanceType"];
@@ -8498,6 +8533,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     int sslCertExpiryRemainingDaysInstance2 = ((int)sslCertExpiryRemainingDaysValue2);
                                                     vMwareFabricDetailsInstance.SslCertExpiryRemainingDays = sslCertExpiryRemainingDaysInstance2;
+                                                }
+                                                
+                                                JToken psTemplateVersionValue = customDetailsValue["psTemplateVersion"];
+                                                if (psTemplateVersionValue != null && psTemplateVersionValue.Type != JTokenType.Null)
+                                                {
+                                                    string psTemplateVersionInstance = ((string)psTemplateVersionValue);
+                                                    vMwareFabricDetailsInstance.PsTemplateVersion = psTemplateVersionInstance;
                                                 }
                                                 
                                                 JToken instanceTypeValue4 = customDetailsValue["instanceType"];
