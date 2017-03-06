@@ -5583,6 +5583,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                         }
                                         
+                                        JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                        }
+                                        
                                         JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                         if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                         {
@@ -6283,6 +6290,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                             inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                        }
+                                        
+                                        JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                            inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                         }
                                         
                                         JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -8149,6 +8163,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                         }
                                         
+                                        JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                        }
+                                        
                                         JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                         if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                         {
@@ -8849,6 +8870,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                             inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                        }
+                                        
+                                        JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                            inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                         }
                                         
                                         JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -10774,6 +10802,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                         }
                                         
+                                        JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                        }
+                                        
                                         JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                         if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                         {
@@ -11474,6 +11509,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                             inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                        }
+                                        
+                                        JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                            inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                         }
                                         
                                         JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -13630,6 +13672,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                         }
                                         
+                                        JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                        }
+                                        
                                         JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                         if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                         {
@@ -14330,6 +14379,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                             inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                        }
+                                        
+                                        JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                            inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                         }
                                         
                                         JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -16255,6 +16311,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                         }
                                         
+                                        JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                        }
+                                        
                                         JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                         if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                         {
@@ -16955,6 +17018,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                             inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                        }
+                                        
+                                        JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                            inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                         }
                                         
                                         JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -19111,6 +19181,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                         }
                                         
+                                        JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                        }
+                                        
                                         JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                         if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                         {
@@ -19811,6 +19888,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                             inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                        }
+                                        
+                                        JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                            inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                         }
                                         
                                         JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -21736,6 +21820,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                         }
                                         
+                                        JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                        }
+                                        
                                         JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                         if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                         {
@@ -22436,6 +22527,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                             inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                        }
+                                        
+                                        JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                            inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                         }
                                         
                                         JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -24361,6 +24459,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                         }
                                         
+                                        JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                        }
+                                        
                                         JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                         if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                         {
@@ -25061,6 +25166,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                             inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                        }
+                                        
+                                        JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                            inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                         }
                                         
                                         JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -26986,6 +27098,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                         }
                                         
+                                        JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                        }
+                                        
                                         JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                         if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                         {
@@ -27686,6 +27805,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                             inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                        }
+                                        
+                                        JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                            inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                         }
                                         
                                         JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -29611,6 +29737,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                         }
                                         
+                                        JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                        }
+                                        
                                         JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                         if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                         {
@@ -30311,6 +30444,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                             inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                        }
+                                        
+                                        JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                            inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                         }
                                         
                                         JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -32236,6 +32376,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                         }
                                         
+                                        JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                        }
+                                        
                                         JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                         if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                         {
@@ -32936,6 +33083,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                             inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                        }
+                                        
+                                        JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                            inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                         }
                                         
                                         JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -34861,6 +35015,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                         }
                                         
+                                        JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                        }
+                                        
                                         JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                         if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                         {
@@ -35561,6 +35722,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                             inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                        }
+                                        
+                                        JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                        if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                        {
+                                            string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                            inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                         }
                                         
                                         JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -37535,6 +37703,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                                 }
                                                 
+                                                JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                                if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                                {
+                                                    string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                                }
+                                                
                                                 JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                                 if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                                 {
@@ -38235,6 +38410,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                                     inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                                }
+                                                
+                                                JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                                if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                                {
+                                                    string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                                    inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                                 }
                                                 
                                                 JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -40160,6 +40342,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                                 }
                                                 
+                                                JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                                if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                                {
+                                                    string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                                }
+                                                
                                                 JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                                 if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                                 {
@@ -40860,6 +41049,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                                     inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                                }
+                                                
+                                                JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                                if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                                {
+                                                    string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                                    inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                                 }
                                                 
                                                 JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];
@@ -42743,6 +42939,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance2;
                                                 }
                                                 
+                                                JToken multiVmSyncStatusValue = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                                if (multiVmSyncStatusValue != null && multiVmSyncStatusValue.Type != JTokenType.Null)
+                                                {
+                                                    string multiVmSyncStatusInstance = ((string)multiVmSyncStatusValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance;
+                                                }
+                                                
                                                 JToken protectedDisksArray2 = providerSpecificDetailsValue["protectedDisks"];
                                                 if (protectedDisksArray2 != null && protectedDisksArray2.Type != JTokenType.Null)
                                                 {
@@ -43443,6 +43646,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string multiVmGroupNameInstance3 = ((string)multiVmGroupNameValue3);
                                                     inMageProviderSpecificSettingsInstance.MultiVmGroupName = multiVmGroupNameInstance3;
+                                                }
+                                                
+                                                JToken multiVmSyncStatusValue2 = providerSpecificDetailsValue["multiVmSyncStatus"];
+                                                if (multiVmSyncStatusValue2 != null && multiVmSyncStatusValue2.Type != JTokenType.Null)
+                                                {
+                                                    string multiVmSyncStatusInstance2 = ((string)multiVmSyncStatusValue2);
+                                                    inMageProviderSpecificSettingsInstance.MultiVmSyncStatus = multiVmSyncStatusInstance2;
                                                 }
                                                 
                                                 JToken agentDetailsValue = providerSpecificDetailsValue["agentDetails"];

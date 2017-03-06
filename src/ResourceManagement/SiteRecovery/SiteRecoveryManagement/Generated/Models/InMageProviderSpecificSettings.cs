@@ -192,6 +192,18 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._multiVmGroupName = value; }
         }
         
+        private string _multiVmSyncStatus;
+        
+        /// <summary>
+        /// Optional. Gets or sets a value indicating whether multivmsync is
+        /// Enabled or Disabled.
+        /// </summary>
+        public string MultiVmSyncStatus
+        {
+            get { return this._multiVmSyncStatus; }
+            set { this._multiVmSyncStatus = value; }
+        }
+        
         private OSDiskDetails _osDetails;
         
         /// <summary>
