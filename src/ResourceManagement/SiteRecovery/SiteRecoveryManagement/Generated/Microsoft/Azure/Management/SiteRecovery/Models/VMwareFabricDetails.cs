@@ -221,6 +221,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._protectedServers = value; }
         }
         
+        private string _psTemplateVersion;
+        
+        /// <summary>
+        /// Optional. PS template version
+        /// </summary>
+        public string PsTemplateVersion
+        {
+            get { return this._psTemplateVersion; }
+            set { this._psTemplateVersion = value; }
+        }
+        
         private string _replicationPairCount;
         
         /// <summary>

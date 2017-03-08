@@ -3959,6 +3959,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             {
                                 providerSpecificDetailsValue["recoveryAzureV2ResourceGroupId"] = derived2.RecoveryAzureV2ResourceGroupId;
                             }
+                            
+                            if (derived2.UseManagedDisks != null)
+                            {
+                                providerSpecificDetailsValue["useManagedDisks"] = derived2.UseManagedDisks;
+                            }
                         }
                         if (input.Properties.ProviderSpecificDetails is InMageAzureV2UpdateReplicationProtectedItemInput)
                         {
@@ -3973,6 +3978,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             if (derived3.RecoveryAzureV2ResourceGroupId != null)
                             {
                                 providerSpecificDetailsValue["recoveryAzureV2ResourceGroupId"] = derived3.RecoveryAzureV2ResourceGroupId;
+                            }
+                            
+                            if (derived3.UseManagedDisks != null)
+                            {
+                                providerSpecificDetailsValue["useManagedDisks"] = derived3.UseManagedDisks;
                             }
                         }
                     }
