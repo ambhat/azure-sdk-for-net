@@ -5490,6 +5490,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                        if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                        {
+                                            string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                            a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -8089,6 +8096,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance3 = ((string)vmProtectionStateDescriptionValue3);
                                             a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
+                                        }
+                                        
+                                        JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                        if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                        {
+                                            string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                            a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -10749,6 +10763,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance3 = ((string)vmProtectionStateDescriptionValue3);
                                             a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
+                                        }
+                                        
+                                        JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                        if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                        {
+                                            string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                            a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -13642,6 +13663,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                        if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                        {
+                                            string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                            a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -16300,6 +16328,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance3 = ((string)vmProtectionStateDescriptionValue3);
                                             a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
+                                        }
+                                        
+                                        JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                        if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                        {
+                                            string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                            a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -19193,6 +19228,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                        if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                        {
+                                            string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                            a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -21851,6 +21893,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance3 = ((string)vmProtectionStateDescriptionValue3);
                                             a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
+                                        }
+                                        
+                                        JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                        if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                        {
+                                            string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                            a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -24513,6 +24562,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                        if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                        {
+                                            string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                            a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -27171,6 +27227,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance3 = ((string)vmProtectionStateDescriptionValue3);
                                             a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
+                                        }
+                                        
+                                        JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                        if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                        {
+                                            string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                            a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -29833,6 +29896,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                        if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                        {
+                                            string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                            a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -32493,6 +32563,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                         }
                                         
+                                        JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                        if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                        {
+                                            string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                            a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -35151,6 +35228,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string vmProtectionStateDescriptionInstance3 = ((string)vmProtectionStateDescriptionValue3);
                                             a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
+                                        }
+                                        
+                                        JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                        if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                        {
+                                            string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                            a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -37862,6 +37946,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                                 }
                                                 
+                                                JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                                if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                                    a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                                 {
@@ -40522,6 +40613,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
                                                 }
                                                 
+                                                JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                                if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                                    a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                                 {
@@ -43138,6 +43236,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string vmProtectionStateDescriptionInstance3 = ((string)vmProtectionStateDescriptionValue3);
                                                     a2AReplicationDetailsInstance.VmProtectionStateDescription = vmProtectionStateDescriptionInstance3;
+                                                }
+                                                
+                                                JToken lifecycleIdValue = providerSpecificDetailsValue["lifecycleId"];
+                                                if (lifecycleIdValue != null && lifecycleIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string lifecycleIdInstance = ((string)lifecycleIdValue);
+                                                    a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                                 }
                                                 
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];

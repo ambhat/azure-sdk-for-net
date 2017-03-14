@@ -65,6 +65,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._lastHeartbeat = value; }
         }
         
+        private string _lifecycleId;
+        
+        /// <summary>
+        /// Optional. Gets or sets the lifecycle id.
+        /// </summary>
+        public string LifecycleId
+        {
+            get { return this._lifecycleId; }
+            set { this._lifecycleId = value; }
+        }
+        
         private string _monitoringJobType;
         
         /// <summary>
