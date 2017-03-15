@@ -425,6 +425,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._uncompressedDataRateInMB = value; }
         }
         
+        private string _useManagedDisks;
+        
+        /// <summary>
+        /// Optional. Gets or sets the flag indicating if managed disks should
+        /// be used.Will be 'True' if managed disks are to be used, and
+        /// 'False' otherwise.
+        /// </summary>
+        public string UseManagedDisks
+        {
+            get { return this._useManagedDisks; }
+            set { this._useManagedDisks = value; }
+        }
+        
         private string _vCenterInfrastructureId;
         
         /// <summary>

@@ -6024,6 +6024,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                         }
                                         
+                                        JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -6834,6 +6841,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                        }
+                                        
+                                        JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -8632,6 +8646,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                         }
                                         
+                                        JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -9442,6 +9463,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                        }
+                                        
+                                        JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -11299,6 +11327,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                         }
                                         
+                                        JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -12109,6 +12144,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                        }
+                                        
+                                        JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -14197,6 +14239,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                         }
                                         
+                                        JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -15007,6 +15056,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                        }
+                                        
+                                        JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -16864,6 +16920,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                         }
                                         
+                                        JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -17674,6 +17737,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                        }
+                                        
+                                        JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -19762,6 +19832,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                         }
                                         
+                                        JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -20572,6 +20649,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                        }
+                                        
+                                        JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -22429,6 +22513,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                         }
                                         
+                                        JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -23239,6 +23330,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                        }
+                                        
+                                        JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -25096,6 +25194,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                         }
                                         
+                                        JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -25906,6 +26011,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                        }
+                                        
+                                        JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -27763,6 +27875,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                         }
                                         
+                                        JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -28573,6 +28692,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                        }
+                                        
+                                        JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -30430,6 +30556,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                         }
                                         
+                                        JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -31240,6 +31373,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                        }
+                                        
+                                        JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -33097,6 +33237,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                         }
                                         
+                                        JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -33907,6 +34054,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                        }
+                                        
+                                        JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -35764,6 +35918,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                         }
                                         
+                                        JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -36574,6 +36735,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                             hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                        }
+                                        
+                                        JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                        if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                        {
+                                            string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                            hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                         }
                                         
                                         JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -38480,6 +38648,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                                 }
                                                 
+                                                JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                                if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                                {
+                                                    string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -39290,6 +39465,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                                     hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                                }
+                                                
+                                                JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                                if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                                {
+                                                    string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                                    hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -41147,6 +41329,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                                 }
                                                 
+                                                JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                                if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                                {
+                                                    string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -41957,6 +42146,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                                     hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                                }
+                                                
+                                                JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                                if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                                {
+                                                    string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                                    hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
@@ -43772,6 +43968,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance;
                                                 }
                                                 
+                                                JToken useManagedDisksValue = providerSpecificDetailsValue["useManagedDisks"];
+                                                if (useManagedDisksValue != null && useManagedDisksValue.Type != JTokenType.Null)
+                                                {
+                                                    string useManagedDisksInstance = ((string)useManagedDisksValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -44582,6 +44785,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string recoveryAvailabilitySetIdInstance2 = ((string)recoveryAvailabilitySetIdValue2);
                                                     hyperVReplicaAzureReplicationDetailsInstance.RecoveryAvailabilitySetId = recoveryAvailabilitySetIdInstance2;
+                                                }
+                                                
+                                                JToken useManagedDisksValue2 = providerSpecificDetailsValue["useManagedDisks"];
+                                                if (useManagedDisksValue2 != null && useManagedDisksValue2.Type != JTokenType.Null)
+                                                {
+                                                    string useManagedDisksInstance2 = ((string)useManagedDisksValue2);
+                                                    hyperVReplicaAzureReplicationDetailsInstance.UseManagedDisks = useManagedDisksInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue6 = providerSpecificDetailsValue["instanceType"];
