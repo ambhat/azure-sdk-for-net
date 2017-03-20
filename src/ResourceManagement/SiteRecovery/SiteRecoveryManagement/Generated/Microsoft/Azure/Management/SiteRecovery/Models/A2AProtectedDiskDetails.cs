@@ -48,6 +48,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._dataPendingInStagingStorageAccountInMB = value; }
         }
         
+        private long _diskCapacityInBytes;
+        
+        /// <summary>
+        /// Optional. The disk capacity in bytes.
+        /// </summary>
+        public long DiskCapacityInBytes
+        {
+            get { return this._diskCapacityInBytes; }
+            set { this._diskCapacityInBytes = value; }
+        }
+        
         private string _diskName;
         
         /// <summary>
@@ -57,17 +68,6 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         {
             get { return this._diskName; }
             set { this._diskName = value; }
-        }
-        
-        private string _diskSizeInMB;
-        
-        /// <summary>
-        /// Optional. Disk size in MB.
-        /// </summary>
-        public string DiskSizeInMB
-        {
-            get { return this._diskSizeInMB; }
-            set { this._diskSizeInMB = value; }
         }
         
         private string _diskType;

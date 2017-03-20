@@ -5118,11 +5118,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
-                                                JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                 {
-                                                    string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                    a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -5692,11 +5692,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -6226,11 +6226,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                    long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -7740,11 +7740,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
-                                                JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                 {
-                                                    string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                    a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -8314,11 +8314,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -8848,11 +8848,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                    long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -10421,11 +10421,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
-                                                JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                 {
-                                                    string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                    a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -10995,11 +10995,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -11529,11 +11529,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                    long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -13333,11 +13333,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
-                                                JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                 {
-                                                    string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                    a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -13907,11 +13907,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -14441,11 +14441,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                    long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -16014,11 +16014,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
-                                                JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                 {
-                                                    string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                    a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -16588,11 +16588,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -17122,11 +17122,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                    long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -18926,11 +18926,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
-                                                JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                 {
-                                                    string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                    a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -19500,11 +19500,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -20034,11 +20034,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                    long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -21607,11 +21607,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
-                                                JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                 {
-                                                    string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                    a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -22181,11 +22181,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -22715,11 +22715,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                    long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -24288,11 +24288,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
-                                                JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                 {
-                                                    string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                    a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -24862,11 +24862,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -25396,11 +25396,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                    long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -26969,11 +26969,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
-                                                JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                 {
-                                                    string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                    a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -27543,11 +27543,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -28077,11 +28077,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                    long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -29650,11 +29650,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
-                                                JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                 {
-                                                    string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                    a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -30224,11 +30224,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -30758,11 +30758,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                    long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -32331,11 +32331,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
-                                                JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                 {
-                                                    string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                    a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -32905,11 +32905,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -33439,11 +33439,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                    long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -35012,11 +35012,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                 }
                                                 
-                                                JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                 {
-                                                    string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                    a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                    a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                 }
                                                 
                                                 JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -35586,11 +35586,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -36120,11 +36120,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                 }
                                                 
-                                                JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                 {
-                                                    long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                    long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                    inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                 }
                                                 
                                                 JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -37742,11 +37742,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                         }
                                                         
-                                                        JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                        if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                        JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                        if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                         {
-                                                            string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                            a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                            long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                            a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                         }
                                                         
                                                         JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -38316,11 +38316,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                         }
                                                         
-                                                        JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                        if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                        JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                        if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                         {
-                                                            long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                            inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                            long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                            inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                         }
                                                         
                                                         JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -38850,11 +38850,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                         }
                                                         
-                                                        JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                        if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                        JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                        if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                         {
-                                                            long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                            inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                            long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                            inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                         }
                                                         
                                                         JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -40423,11 +40423,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                         }
                                                         
-                                                        JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                        if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                        JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                        if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                         {
-                                                            string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                            a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                            long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                            a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                         }
                                                         
                                                         JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -40997,11 +40997,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                         }
                                                         
-                                                        JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                        if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                        JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                        if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                         {
-                                                            long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                            inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                            long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                            inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                         }
                                                         
                                                         JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -41531,11 +41531,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                         }
                                                         
-                                                        JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                        if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                        JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                        if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                         {
-                                                            long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                            inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                            long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                            inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                         }
                                                         
                                                         JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
@@ -43062,11 +43062,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             a2AProtectedDiskDetailsInstance.DiskName = diskNameInstance;
                                                         }
                                                         
-                                                        JToken diskSizeInMBValue = protectedDisksValue["diskSizeInMB"];
-                                                        if (diskSizeInMBValue != null && diskSizeInMBValue.Type != JTokenType.Null)
+                                                        JToken diskCapacityInBytesValue = protectedDisksValue["diskCapacityInBytes"];
+                                                        if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
                                                         {
-                                                            string diskSizeInMBInstance = ((string)diskSizeInMBValue);
-                                                            a2AProtectedDiskDetailsInstance.DiskSizeInMB = diskSizeInMBInstance;
+                                                            long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
+                                                            a2AProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
                                                         }
                                                         
                                                         JToken recoveryAzureStorageAccountIdValue = protectedDisksValue["recoveryAzureStorageAccountId"];
@@ -43636,11 +43636,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             inMageAzureV2ProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance;
                                                         }
                                                         
-                                                        JToken diskCapacityInBytesValue = protectedDisksValue2["diskCapacityInBytes"];
-                                                        if (diskCapacityInBytesValue != null && diskCapacityInBytesValue.Type != JTokenType.Null)
+                                                        JToken diskCapacityInBytesValue2 = protectedDisksValue2["diskCapacityInBytes"];
+                                                        if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
                                                         {
-                                                            long diskCapacityInBytesInstance = ((long)diskCapacityInBytesValue);
-                                                            inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance;
+                                                            long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
+                                                            inMageAzureV2ProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
                                                         }
                                                         
                                                         JToken fileSystemCapacityInBytesValue = protectedDisksValue2["fileSystemCapacityInBytes"];
@@ -44170,11 +44170,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             inMageProtectedDiskDetailsInstance.ResyncDurationInSeconds = resyncDurationInSecondsInstance2;
                                                         }
                                                         
-                                                        JToken diskCapacityInBytesValue2 = protectedDisksValue3["diskCapacityInBytes"];
-                                                        if (diskCapacityInBytesValue2 != null && diskCapacityInBytesValue2.Type != JTokenType.Null)
+                                                        JToken diskCapacityInBytesValue3 = protectedDisksValue3["diskCapacityInBytes"];
+                                                        if (diskCapacityInBytesValue3 != null && diskCapacityInBytesValue3.Type != JTokenType.Null)
                                                         {
-                                                            long diskCapacityInBytesInstance2 = ((long)diskCapacityInBytesValue2);
-                                                            inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance2;
+                                                            long diskCapacityInBytesInstance3 = ((long)diskCapacityInBytesValue3);
+                                                            inMageProtectedDiskDetailsInstance.DiskCapacityInBytes = diskCapacityInBytesInstance3;
                                                         }
                                                         
                                                         JToken fileSystemCapacityInBytesValue2 = protectedDisksValue3["fileSystemCapacityInBytes"];
