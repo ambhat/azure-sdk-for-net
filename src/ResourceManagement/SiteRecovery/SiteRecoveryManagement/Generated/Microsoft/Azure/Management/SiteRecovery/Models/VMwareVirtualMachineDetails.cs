@@ -122,6 +122,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._poweredOn = value; }
         }
         
+        private IList<HealthError> _validationErrors;
+        
+        /// <summary>
+        /// Optional. The validation errors from the discovery.
+        /// </summary>
+        public IList<HealthError> ValidationErrors
+        {
+            get { return this._validationErrors; }
+            set { this._validationErrors = value; }
+        }
+        
         private string _vCenterInfrastructureId;
         
         /// <summary>
@@ -139,6 +150,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         public VMwareVirtualMachineDetails()
         {
             this.DiskDetails = new LazyList<InMageDiskDetails>();
+            this.ValidationErrors = new LazyList<HealthError>();
         }
     }
 }

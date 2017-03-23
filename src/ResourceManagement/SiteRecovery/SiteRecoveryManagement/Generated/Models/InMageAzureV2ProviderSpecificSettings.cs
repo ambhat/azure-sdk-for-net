@@ -438,6 +438,18 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._useManagedDisks = value; }
         }
         
+        private IList<HealthError> _validationErrors;
+        
+        /// <summary>
+        /// Optional. Gets or sets the validation errors from the on-prem
+        /// server.
+        /// </summary>
+        public IList<HealthError> ValidationErrors
+        {
+            get { return this._validationErrors; }
+            set { this._validationErrors = value; }
+        }
+        
         private string _vCenterInfrastructureId;
         
         /// <summary>
@@ -513,6 +525,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             this.AzureVMDiskDetails = new LazyList<AzureVmDiskDetails>();
             this.Datastores = new LazyList<string>();
             this.ProtectedDisks = new LazyList<InMageAzureV2ProtectedDiskDetails>();
+            this.ValidationErrors = new LazyList<HealthError>();
             this.VMNics = new LazyList<VMNicDetails>();
         }
     }

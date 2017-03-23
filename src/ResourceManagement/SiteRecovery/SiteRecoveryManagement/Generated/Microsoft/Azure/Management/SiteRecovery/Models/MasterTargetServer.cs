@@ -120,6 +120,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._retentionVolumes = value; }
         }
         
+        private IList<HealthError> _validationErrors;
+        
+        /// <summary>
+        /// Optional. The validation errors from the discovery data.
+        /// </summary>
+        public IList<HealthError> ValidationErrors
+        {
+            get { return this._validationErrors; }
+            set { this._validationErrors = value; }
+        }
+        
         private string _versionStatus;
         
         /// <summary>
@@ -138,6 +149,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         {
             this.DataStores = new LazyList<DataStore>();
             this.RetentionVolumes = new LazyList<RetentionVolume>();
+            this.ValidationErrors = new LazyList<HealthError>();
         }
     }
 }

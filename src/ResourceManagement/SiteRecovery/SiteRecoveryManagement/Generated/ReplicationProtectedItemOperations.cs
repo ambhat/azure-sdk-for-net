@@ -6046,6 +6046,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                         }
                                         
+                                        JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                            {
+                                                HealthError healthErrorInstance2 = new HealthError();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                
+                                                JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                    healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                }
+                                                
+                                                JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                    healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                }
+                                                
+                                                JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                    healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                }
+                                                
+                                                JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                    healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                }
+                                                
+                                                JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                    healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                    healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                    healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                }
+                                                
+                                                JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance2 = ((string)entityIdValue2);
+                                                    healthErrorInstance2.EntityId = entityIdInstance2;
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -6523,6 +6589,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                             inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                        }
+                                        
+                                        JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                            {
+                                                HealthError healthErrorInstance3 = new HealthError();
+                                                inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                
+                                                JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                    healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                }
+                                                
+                                                JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                    healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                }
+                                                
+                                                JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                    healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                }
+                                                
+                                                JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                    healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                }
+                                                
+                                                JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                    healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                    healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                    healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                }
+                                                
+                                                JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance3 = ((string)entityIdValue3);
+                                                    healthErrorInstance3.EntityId = entityIdInstance3;
+                                                }
+                                            }
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -8675,6 +8807,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                         }
                                         
+                                        JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                            {
+                                                HealthError healthErrorInstance2 = new HealthError();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                
+                                                JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                    healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                }
+                                                
+                                                JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                    healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                }
+                                                
+                                                JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                    healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                }
+                                                
+                                                JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                    healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                }
+                                                
+                                                JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                    healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                    healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                    healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                }
+                                                
+                                                JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance2 = ((string)entityIdValue2);
+                                                    healthErrorInstance2.EntityId = entityIdInstance2;
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -9152,6 +9350,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                             inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                        }
+                                        
+                                        JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                            {
+                                                HealthError healthErrorInstance3 = new HealthError();
+                                                inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                
+                                                JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                    healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                }
+                                                
+                                                JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                    healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                }
+                                                
+                                                JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                    healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                }
+                                                
+                                                JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                    healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                }
+                                                
+                                                JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                    healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                    healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                    healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                }
+                                                
+                                                JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance3 = ((string)entityIdValue3);
+                                                    healthErrorInstance3.EntityId = entityIdInstance3;
+                                                }
+                                            }
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -11363,6 +11627,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                         }
                                         
+                                        JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                            {
+                                                HealthError healthErrorInstance2 = new HealthError();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                
+                                                JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                    healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                }
+                                                
+                                                JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                    healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                }
+                                                
+                                                JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                    healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                }
+                                                
+                                                JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                    healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                }
+                                                
+                                                JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                    healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                    healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                    healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                }
+                                                
+                                                JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance2 = ((string)entityIdValue2);
+                                                    healthErrorInstance2.EntityId = entityIdInstance2;
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -11840,6 +12170,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                             inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                        }
+                                        
+                                        JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                            {
+                                                HealthError healthErrorInstance3 = new HealthError();
+                                                inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                
+                                                JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                    healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                }
+                                                
+                                                JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                    healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                }
+                                                
+                                                JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                    healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                }
+                                                
+                                                JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                    healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                }
+                                                
+                                                JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                    healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                    healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                    healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                }
+                                                
+                                                JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance3 = ((string)entityIdValue3);
+                                                    healthErrorInstance3.EntityId = entityIdInstance3;
+                                                }
+                                            }
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -14282,6 +14678,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                         }
                                         
+                                        JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                            {
+                                                HealthError healthErrorInstance2 = new HealthError();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                
+                                                JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                    healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                }
+                                                
+                                                JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                    healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                }
+                                                
+                                                JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                    healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                }
+                                                
+                                                JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                    healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                }
+                                                
+                                                JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                    healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                    healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                    healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                }
+                                                
+                                                JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance2 = ((string)entityIdValue2);
+                                                    healthErrorInstance2.EntityId = entityIdInstance2;
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -14759,6 +15221,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                             inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                        }
+                                        
+                                        JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                            {
+                                                HealthError healthErrorInstance3 = new HealthError();
+                                                inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                
+                                                JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                    healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                }
+                                                
+                                                JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                    healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                }
+                                                
+                                                JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                    healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                }
+                                                
+                                                JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                    healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                }
+                                                
+                                                JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                    healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                    healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                    healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                }
+                                                
+                                                JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance3 = ((string)entityIdValue3);
+                                                    healthErrorInstance3.EntityId = entityIdInstance3;
+                                                }
+                                            }
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -16970,6 +17498,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                         }
                                         
+                                        JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                            {
+                                                HealthError healthErrorInstance2 = new HealthError();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                
+                                                JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                    healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                }
+                                                
+                                                JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                    healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                }
+                                                
+                                                JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                    healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                }
+                                                
+                                                JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                    healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                }
+                                                
+                                                JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                    healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                    healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                    healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                }
+                                                
+                                                JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance2 = ((string)entityIdValue2);
+                                                    healthErrorInstance2.EntityId = entityIdInstance2;
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -17447,6 +18041,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                             inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                        }
+                                        
+                                        JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                            {
+                                                HealthError healthErrorInstance3 = new HealthError();
+                                                inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                
+                                                JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                    healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                }
+                                                
+                                                JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                    healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                }
+                                                
+                                                JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                    healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                }
+                                                
+                                                JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                    healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                }
+                                                
+                                                JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                    healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                    healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                    healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                }
+                                                
+                                                JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance3 = ((string)entityIdValue3);
+                                                    healthErrorInstance3.EntityId = entityIdInstance3;
+                                                }
+                                            }
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -19889,6 +20549,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                         }
                                         
+                                        JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                            {
+                                                HealthError healthErrorInstance2 = new HealthError();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                
+                                                JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                    healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                }
+                                                
+                                                JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                    healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                }
+                                                
+                                                JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                    healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                }
+                                                
+                                                JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                    healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                }
+                                                
+                                                JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                    healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                    healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                    healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                }
+                                                
+                                                JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance2 = ((string)entityIdValue2);
+                                                    healthErrorInstance2.EntityId = entityIdInstance2;
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -20366,6 +21092,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                             inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                        }
+                                        
+                                        JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                            {
+                                                HealthError healthErrorInstance3 = new HealthError();
+                                                inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                
+                                                JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                    healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                }
+                                                
+                                                JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                    healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                }
+                                                
+                                                JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                    healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                }
+                                                
+                                                JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                    healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                }
+                                                
+                                                JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                    healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                    healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                    healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                }
+                                                
+                                                JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance3 = ((string)entityIdValue3);
+                                                    healthErrorInstance3.EntityId = entityIdInstance3;
+                                                }
+                                            }
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -22577,6 +23369,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                         }
                                         
+                                        JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                            {
+                                                HealthError healthErrorInstance2 = new HealthError();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                
+                                                JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                    healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                }
+                                                
+                                                JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                    healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                }
+                                                
+                                                JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                    healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                }
+                                                
+                                                JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                    healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                }
+                                                
+                                                JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                    healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                    healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                    healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                }
+                                                
+                                                JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance2 = ((string)entityIdValue2);
+                                                    healthErrorInstance2.EntityId = entityIdInstance2;
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -23054,6 +23912,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                             inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                        }
+                                        
+                                        JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                            {
+                                                HealthError healthErrorInstance3 = new HealthError();
+                                                inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                
+                                                JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                    healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                }
+                                                
+                                                JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                    healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                }
+                                                
+                                                JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                    healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                }
+                                                
+                                                JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                    healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                }
+                                                
+                                                JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                    healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                    healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                    healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                }
+                                                
+                                                JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance3 = ((string)entityIdValue3);
+                                                    healthErrorInstance3.EntityId = entityIdInstance3;
+                                                }
+                                            }
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -25265,6 +26189,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                         }
                                         
+                                        JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                            {
+                                                HealthError healthErrorInstance2 = new HealthError();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                
+                                                JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                    healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                }
+                                                
+                                                JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                    healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                }
+                                                
+                                                JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                    healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                }
+                                                
+                                                JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                    healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                }
+                                                
+                                                JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                    healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                    healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                    healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                }
+                                                
+                                                JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance2 = ((string)entityIdValue2);
+                                                    healthErrorInstance2.EntityId = entityIdInstance2;
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -25742,6 +26732,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                             inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                        }
+                                        
+                                        JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                            {
+                                                HealthError healthErrorInstance3 = new HealthError();
+                                                inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                
+                                                JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                    healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                }
+                                                
+                                                JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                    healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                }
+                                                
+                                                JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                    healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                }
+                                                
+                                                JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                    healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                }
+                                                
+                                                JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                    healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                    healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                    healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                }
+                                                
+                                                JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance3 = ((string)entityIdValue3);
+                                                    healthErrorInstance3.EntityId = entityIdInstance3;
+                                                }
+                                            }
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -27953,6 +29009,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                         }
                                         
+                                        JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                            {
+                                                HealthError healthErrorInstance2 = new HealthError();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                
+                                                JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                    healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                }
+                                                
+                                                JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                    healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                }
+                                                
+                                                JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                    healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                }
+                                                
+                                                JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                    healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                }
+                                                
+                                                JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                    healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                    healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                    healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                }
+                                                
+                                                JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance2 = ((string)entityIdValue2);
+                                                    healthErrorInstance2.EntityId = entityIdInstance2;
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -28430,6 +29552,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                             inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                        }
+                                        
+                                        JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                            {
+                                                HealthError healthErrorInstance3 = new HealthError();
+                                                inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                
+                                                JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                    healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                }
+                                                
+                                                JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                    healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                }
+                                                
+                                                JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                    healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                }
+                                                
+                                                JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                    healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                }
+                                                
+                                                JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                    healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                    healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                    healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                }
+                                                
+                                                JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance3 = ((string)entityIdValue3);
+                                                    healthErrorInstance3.EntityId = entityIdInstance3;
+                                                }
+                                            }
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -30641,6 +31829,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                         }
                                         
+                                        JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                            {
+                                                HealthError healthErrorInstance2 = new HealthError();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                
+                                                JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                    healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                }
+                                                
+                                                JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                    healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                }
+                                                
+                                                JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                    healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                }
+                                                
+                                                JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                    healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                }
+                                                
+                                                JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                    healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                    healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                    healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                }
+                                                
+                                                JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance2 = ((string)entityIdValue2);
+                                                    healthErrorInstance2.EntityId = entityIdInstance2;
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -31118,6 +32372,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                             inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                        }
+                                        
+                                        JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                            {
+                                                HealthError healthErrorInstance3 = new HealthError();
+                                                inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                
+                                                JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                    healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                }
+                                                
+                                                JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                    healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                }
+                                                
+                                                JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                    healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                }
+                                                
+                                                JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                    healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                }
+                                                
+                                                JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                    healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                    healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                    healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                }
+                                                
+                                                JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance3 = ((string)entityIdValue3);
+                                                    healthErrorInstance3.EntityId = entityIdInstance3;
+                                                }
+                                            }
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -33329,6 +34649,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                         }
                                         
+                                        JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                            {
+                                                HealthError healthErrorInstance2 = new HealthError();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                
+                                                JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                    healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                }
+                                                
+                                                JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                    healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                }
+                                                
+                                                JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                    healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                }
+                                                
+                                                JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                    healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                }
+                                                
+                                                JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                    healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                    healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                    healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                }
+                                                
+                                                JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance2 = ((string)entityIdValue2);
+                                                    healthErrorInstance2.EntityId = entityIdInstance2;
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -33806,6 +35192,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                             inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                        }
+                                        
+                                        JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                            {
+                                                HealthError healthErrorInstance3 = new HealthError();
+                                                inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                
+                                                JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                    healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                }
+                                                
+                                                JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                    healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                }
+                                                
+                                                JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                    healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                }
+                                                
+                                                JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                    healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                }
+                                                
+                                                JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                    healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                    healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                    healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                }
+                                                
+                                                JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance3 = ((string)entityIdValue3);
+                                                    healthErrorInstance3.EntityId = entityIdInstance3;
+                                                }
+                                            }
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -36017,6 +37469,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                         }
                                         
+                                        JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                            {
+                                                HealthError healthErrorInstance2 = new HealthError();
+                                                inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                
+                                                JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                    healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                }
+                                                
+                                                JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                    healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                }
+                                                
+                                                JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                    healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                }
+                                                
+                                                JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                    healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                }
+                                                
+                                                JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                    healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                    healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                    healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                }
+                                                
+                                                JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance2 = ((string)entityIdValue2);
+                                                    healthErrorInstance2.EntityId = entityIdInstance2;
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -36494,6 +38012,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                             inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                        }
+                                        
+                                        JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                        if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                            {
+                                                HealthError healthErrorInstance3 = new HealthError();
+                                                inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                
+                                                JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                    healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                }
+                                                
+                                                JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                    healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                }
+                                                
+                                                JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                    healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                }
+                                                
+                                                JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                    healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                }
+                                                
+                                                JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                    healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                    healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                    healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                }
+                                                
+                                                JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance3 = ((string)entityIdValue3);
+                                                    healthErrorInstance3.EntityId = entityIdInstance3;
+                                                }
+                                            }
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -38754,6 +40338,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                                 }
                                                 
+                                                JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                                if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                                    {
+                                                        HealthError healthErrorInstance2 = new HealthError();
+                                                        inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                        
+                                                        JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                        if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                            healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                        }
+                                                        
+                                                        JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                        if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                            healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                        }
+                                                        
+                                                        JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                        if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                            healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                        }
+                                                        
+                                                        JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                        if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                            healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                        }
+                                                        
+                                                        JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                        if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                            healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                        }
+                                                        
+                                                        JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                        if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                            healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                        }
+                                                        
+                                                        JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                        if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                            healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                        }
+                                                        
+                                                        JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                        if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string entityIdInstance2 = ((string)entityIdValue2);
+                                                            healthErrorInstance2.EntityId = entityIdInstance2;
+                                                        }
+                                                    }
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -39231,6 +40881,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                                     inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                                }
+                                                
+                                                JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                                if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                                    {
+                                                        HealthError healthErrorInstance3 = new HealthError();
+                                                        inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                        
+                                                        JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                        if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                            healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                        }
+                                                        
+                                                        JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                        if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                            healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                        }
+                                                        
+                                                        JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                        if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                            healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                        }
+                                                        
+                                                        JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                        if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                            healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                        }
+                                                        
+                                                        JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                        if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                            healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                        }
+                                                        
+                                                        JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                        if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                            healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                        }
+                                                        
+                                                        JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                        if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                            healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                        }
+                                                        
+                                                        JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                        if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string entityIdInstance3 = ((string)entityIdValue3);
+                                                            healthErrorInstance3.EntityId = entityIdInstance3;
+                                                        }
+                                                    }
                                                 }
                                                 
                                                 JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -41442,6 +43158,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                                 }
                                                 
+                                                JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                                if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                                    {
+                                                        HealthError healthErrorInstance2 = new HealthError();
+                                                        inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                        
+                                                        JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                        if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                            healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                        }
+                                                        
+                                                        JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                        if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                            healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                        }
+                                                        
+                                                        JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                        if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                            healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                        }
+                                                        
+                                                        JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                        if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                            healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                        }
+                                                        
+                                                        JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                        if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                            healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                        }
+                                                        
+                                                        JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                        if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                            healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                        }
+                                                        
+                                                        JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                        if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                            healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                        }
+                                                        
+                                                        JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                        if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string entityIdInstance2 = ((string)entityIdValue2);
+                                                            healthErrorInstance2.EntityId = entityIdInstance2;
+                                                        }
+                                                    }
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -41919,6 +43701,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                                     inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                                }
+                                                
+                                                JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                                if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                                    {
+                                                        HealthError healthErrorInstance3 = new HealthError();
+                                                        inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                        
+                                                        JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                        if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                            healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                        }
+                                                        
+                                                        JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                        if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                            healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                        }
+                                                        
+                                                        JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                        if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                            healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                        }
+                                                        
+                                                        JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                        if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                            healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                        }
+                                                        
+                                                        JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                        if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                            healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                        }
+                                                        
+                                                        JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                        if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                            healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                        }
+                                                        
+                                                        JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                        if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                            healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                        }
+                                                        
+                                                        JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                        if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string entityIdInstance3 = ((string)entityIdValue3);
+                                                            healthErrorInstance3.EntityId = entityIdInstance3;
+                                                        }
+                                                    }
                                                 }
                                                 
                                                 JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -44088,6 +45936,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     inMageAzureV2ProviderSpecificSettingsInstance.UseManagedDisks = useManagedDisksInstance;
                                                 }
                                                 
+                                                JToken validationErrorsArray = providerSpecificDetailsValue["validationErrors"];
+                                                if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                                    {
+                                                        HealthError healthErrorInstance2 = new HealthError();
+                                                        inMageAzureV2ProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance2);
+                                                        
+                                                        JToken errorLevelValue2 = validationErrorsValue["errorLevel"];
+                                                        if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string errorLevelInstance2 = ((string)errorLevelValue2);
+                                                            healthErrorInstance2.ErrorLevel = errorLevelInstance2;
+                                                        }
+                                                        
+                                                        JToken errorCodeValue2 = validationErrorsValue["errorCode"];
+                                                        if (errorCodeValue2 != null && errorCodeValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string errorCodeInstance2 = ((string)errorCodeValue2);
+                                                            healthErrorInstance2.ErrorCode = errorCodeInstance2;
+                                                        }
+                                                        
+                                                        JToken errorMessageValue2 = validationErrorsValue["errorMessage"];
+                                                        if (errorMessageValue2 != null && errorMessageValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string errorMessageInstance2 = ((string)errorMessageValue2);
+                                                            healthErrorInstance2.ErrorMessage = errorMessageInstance2;
+                                                        }
+                                                        
+                                                        JToken possibleCausesValue2 = validationErrorsValue["possibleCauses"];
+                                                        if (possibleCausesValue2 != null && possibleCausesValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string possibleCausesInstance2 = ((string)possibleCausesValue2);
+                                                            healthErrorInstance2.PossibleCauses = possibleCausesInstance2;
+                                                        }
+                                                        
+                                                        JToken recommendedActionValue2 = validationErrorsValue["recommendedAction"];
+                                                        if (recommendedActionValue2 != null && recommendedActionValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string recommendedActionInstance2 = ((string)recommendedActionValue2);
+                                                            healthErrorInstance2.RecommendedAction = recommendedActionInstance2;
+                                                        }
+                                                        
+                                                        JToken creationTimeUtcValue2 = validationErrorsValue["creationTimeUtc"];
+                                                        if (creationTimeUtcValue2 != null && creationTimeUtcValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string creationTimeUtcInstance2 = ((string)creationTimeUtcValue2);
+                                                            healthErrorInstance2.CreationTimeUtc = creationTimeUtcInstance2;
+                                                        }
+                                                        
+                                                        JToken recoveryProviderErrorMessageValue2 = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                        if (recoveryProviderErrorMessageValue2 != null && recoveryProviderErrorMessageValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string recoveryProviderErrorMessageInstance2 = ((string)recoveryProviderErrorMessageValue2);
+                                                            healthErrorInstance2.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance2;
+                                                        }
+                                                        
+                                                        JToken entityIdValue2 = validationErrorsValue["entityId"];
+                                                        if (entityIdValue2 != null && entityIdValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string entityIdInstance2 = ((string)entityIdValue2);
+                                                            healthErrorInstance2.EntityId = entityIdInstance2;
+                                                        }
+                                                    }
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -44565,6 +46479,72 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string targetVmIdInstance2 = ((string)targetVmIdValue2);
                                                     inMageProviderSpecificSettingsInstance.TargetVmId = targetVmIdInstance2;
+                                                }
+                                                
+                                                JToken validationErrorsArray2 = providerSpecificDetailsValue["validationErrors"];
+                                                if (validationErrorsArray2 != null && validationErrorsArray2.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken validationErrorsValue2 in ((JArray)validationErrorsArray2))
+                                                    {
+                                                        HealthError healthErrorInstance3 = new HealthError();
+                                                        inMageProviderSpecificSettingsInstance.ValidationErrors.Add(healthErrorInstance3);
+                                                        
+                                                        JToken errorLevelValue3 = validationErrorsValue2["errorLevel"];
+                                                        if (errorLevelValue3 != null && errorLevelValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string errorLevelInstance3 = ((string)errorLevelValue3);
+                                                            healthErrorInstance3.ErrorLevel = errorLevelInstance3;
+                                                        }
+                                                        
+                                                        JToken errorCodeValue3 = validationErrorsValue2["errorCode"];
+                                                        if (errorCodeValue3 != null && errorCodeValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string errorCodeInstance3 = ((string)errorCodeValue3);
+                                                            healthErrorInstance3.ErrorCode = errorCodeInstance3;
+                                                        }
+                                                        
+                                                        JToken errorMessageValue3 = validationErrorsValue2["errorMessage"];
+                                                        if (errorMessageValue3 != null && errorMessageValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string errorMessageInstance3 = ((string)errorMessageValue3);
+                                                            healthErrorInstance3.ErrorMessage = errorMessageInstance3;
+                                                        }
+                                                        
+                                                        JToken possibleCausesValue3 = validationErrorsValue2["possibleCauses"];
+                                                        if (possibleCausesValue3 != null && possibleCausesValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string possibleCausesInstance3 = ((string)possibleCausesValue3);
+                                                            healthErrorInstance3.PossibleCauses = possibleCausesInstance3;
+                                                        }
+                                                        
+                                                        JToken recommendedActionValue3 = validationErrorsValue2["recommendedAction"];
+                                                        if (recommendedActionValue3 != null && recommendedActionValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string recommendedActionInstance3 = ((string)recommendedActionValue3);
+                                                            healthErrorInstance3.RecommendedAction = recommendedActionInstance3;
+                                                        }
+                                                        
+                                                        JToken creationTimeUtcValue3 = validationErrorsValue2["creationTimeUtc"];
+                                                        if (creationTimeUtcValue3 != null && creationTimeUtcValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string creationTimeUtcInstance3 = ((string)creationTimeUtcValue3);
+                                                            healthErrorInstance3.CreationTimeUtc = creationTimeUtcInstance3;
+                                                        }
+                                                        
+                                                        JToken recoveryProviderErrorMessageValue3 = validationErrorsValue2["recoveryProviderErrorMessage"];
+                                                        if (recoveryProviderErrorMessageValue3 != null && recoveryProviderErrorMessageValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string recoveryProviderErrorMessageInstance3 = ((string)recoveryProviderErrorMessageValue3);
+                                                            healthErrorInstance3.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance3;
+                                                        }
+                                                        
+                                                        JToken entityIdValue3 = validationErrorsValue2["entityId"];
+                                                        if (entityIdValue3 != null && entityIdValue3.Type != JTokenType.Null)
+                                                        {
+                                                            string entityIdInstance3 = ((string)entityIdValue3);
+                                                            healthErrorInstance3.EntityId = entityIdInstance3;
+                                                        }
+                                                    }
                                                 }
                                                 
                                                 JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];

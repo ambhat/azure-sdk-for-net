@@ -348,6 +348,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._uncompressedDataRateInMB = value; }
         }
         
+        private IList<HealthError> _validationErrors;
+        
+        /// <summary>
+        /// Optional. Get or sets the validation errors from the on-prem server.
+        /// </summary>
+        public IList<HealthError> ValidationErrors
+        {
+            get { return this._validationErrors; }
+            set { this._validationErrors = value; }
+        }
+        
         private string _vCenterInfrastructureId;
         
         /// <summary>
@@ -412,6 +423,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             this.ConsistencyPoints = new LazyDictionary<string, DateTime>();
             this.Datastores = new LazyList<string>();
             this.ProtectedDisks = new LazyList<InMageProtectedDiskDetails>();
+            this.ValidationErrors = new LazyList<HealthError>();
             this.VMNics = new LazyList<VMNicDetails>();
         }
     }
