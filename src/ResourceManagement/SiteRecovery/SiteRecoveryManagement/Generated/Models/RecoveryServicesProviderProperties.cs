@@ -23,6 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Hyak.Common;
+using Microsoft.Azure.Management.SiteRecovery.Models;
 
 namespace Microsoft.Azure.Management.SiteRecovery.Models
 {
@@ -84,6 +85,18 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         {
             get { return this._friendlyName; }
             set { this._friendlyName = value; }
+        }
+        
+        private IList<HealthError> _healthErrorDetails;
+        
+        /// <summary>
+        /// Optional. Gets or sets the recovery services provider health error
+        /// details.
+        /// </summary>
+        public IList<HealthError> HealthErrorDetails
+        {
+            get { return this._healthErrorDetails; }
+            set { this._healthErrorDetails = value; }
         }
         
         private System.DateTime? _lastHeartbeat;
@@ -160,6 +173,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         public RecoveryServicesProviderProperties()
         {
             this.AllowedScenarios = new LazyList<string>();
+            this.HealthErrorDetails = new LazyList<HealthError>();
         }
     }
 }

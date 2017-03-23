@@ -917,6 +917,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     int protectedItemCountInstance = ((int)protectedItemCountValue);
                                     propertiesInstance.ProtectedItemCount = protectedItemCountInstance;
                                 }
+                                
+                                JToken healthErrorDetailsValue = propertiesValue["healthErrorDetails"];
+                                if (healthErrorDetailsValue != null && healthErrorDetailsValue.Type != JTokenType.Null)
+                                {
+                                    List<HealthError> healthErrorDetailsInstance = ((string)healthErrorDetailsValue);
+                                    propertiesInstance.HealthErrorDetails = healthErrorDetailsInstance;
+                                }
                             }
                             
                             JToken idValue = responseDoc["id"];
@@ -1949,6 +1956,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             int protectedItemCountInstance = ((int)protectedItemCountValue);
                                             propertiesInstance.ProtectedItemCount = protectedItemCountInstance;
                                         }
+                                        
+                                        JToken healthErrorDetailsValue = propertiesValue["healthErrorDetails"];
+                                        if (healthErrorDetailsValue != null && healthErrorDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            List<HealthError> healthErrorDetailsInstance = ((string)healthErrorDetailsValue);
+                                            propertiesInstance.HealthErrorDetails = healthErrorDetailsInstance;
+                                        }
                                     }
                                     
                                     JToken idValue = valueValue["id"];
@@ -2286,6 +2300,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             int protectedItemCountInstance = ((int)protectedItemCountValue);
                                             propertiesInstance.ProtectedItemCount = protectedItemCountInstance;
+                                        }
+                                        
+                                        JToken healthErrorDetailsValue = propertiesValue["healthErrorDetails"];
+                                        if (healthErrorDetailsValue != null && healthErrorDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            List<HealthError> healthErrorDetailsInstance = ((string)healthErrorDetailsValue);
+                                            propertiesInstance.HealthErrorDetails = healthErrorDetailsInstance;
                                         }
                                     }
                                     
