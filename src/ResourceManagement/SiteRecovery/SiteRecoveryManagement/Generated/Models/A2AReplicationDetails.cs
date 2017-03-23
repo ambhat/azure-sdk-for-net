@@ -54,6 +54,18 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._fabricObjectId = value; }
         }
         
+        private string _isReplicationAgentUpdateRequired;
+        
+        /// <summary>
+        /// Optional. Gets or sets a value indicating whether replication agent
+        /// update is required.
+        /// </summary>
+        public string IsReplicationAgentUpdateRequired
+        {
+            get { return this._isReplicationAgentUpdateRequired; }
+            set { this._isReplicationAgentUpdateRequired = value; }
+        }
+        
         private System.DateTime? _lastHeartbeat;
         
         /// <summary>

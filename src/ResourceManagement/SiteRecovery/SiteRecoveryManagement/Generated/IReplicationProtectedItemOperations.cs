@@ -222,6 +222,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='replicationProtectedItemName'>
         /// Replication protected item name.
         /// </param>
+        /// <param name='repairReplicationInput'>
+        /// Repair replication input.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Request header parameters.
         /// </param>
@@ -231,7 +234,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        Task<LongRunningOperationResponse> BeginRepairReplicationAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
+        Task<LongRunningOperationResponse> BeginRepairReplicationAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, RepairReplicationInput repairReplicationInput, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
         
         /// <summary>
         /// Execute reprotect for the given Replication protected item.
@@ -853,6 +856,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='replicationProtectedItemName'>
         /// Replication protected item name.
         /// </param>
+        /// <param name='repairReplicationInput'>
+        /// Repair replication input.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Request header parameters.
         /// </param>
@@ -862,7 +868,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        Task<LongRunningOperationResponse> RepairReplicationAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
+        Task<LongRunningOperationResponse> RepairReplicationAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, RepairReplicationInput repairReplicationInput, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
         
         /// <summary>
         /// Execute reprotect for the given Replication protected item.

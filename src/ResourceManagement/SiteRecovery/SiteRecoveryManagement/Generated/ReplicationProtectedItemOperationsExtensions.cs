@@ -483,17 +483,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='replicationProtectedItemName'>
         /// Required. Replication protected item name.
         /// </param>
+        /// <param name='repairReplicationInput'>
+        /// Required. Repair replication input.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Optional. Request header parameters.
         /// </param>
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        public static LongRunningOperationResponse BeginRepairReplication(this IReplicationProtectedItemOperations operations, string fabricName, string protectionContainerName, string replicationProtectedItemName, CustomRequestHeaders customRequestHeaders)
+        public static LongRunningOperationResponse BeginRepairReplication(this IReplicationProtectedItemOperations operations, string fabricName, string protectionContainerName, string replicationProtectedItemName, RepairReplicationInput repairReplicationInput, CustomRequestHeaders customRequestHeaders)
         {
             return Task.Factory.StartNew((object s) => 
             {
-                return ((IReplicationProtectedItemOperations)s).BeginRepairReplicationAsync(fabricName, protectionContainerName, replicationProtectedItemName, customRequestHeaders);
+                return ((IReplicationProtectedItemOperations)s).BeginRepairReplicationAsync(fabricName, protectionContainerName, replicationProtectedItemName, repairReplicationInput, customRequestHeaders);
             }
             , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
         }
@@ -515,15 +518,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='replicationProtectedItemName'>
         /// Required. Replication protected item name.
         /// </param>
+        /// <param name='repairReplicationInput'>
+        /// Required. Repair replication input.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Optional. Request header parameters.
         /// </param>
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        public static Task<LongRunningOperationResponse> BeginRepairReplicationAsync(this IReplicationProtectedItemOperations operations, string fabricName, string protectionContainerName, string replicationProtectedItemName, CustomRequestHeaders customRequestHeaders)
+        public static Task<LongRunningOperationResponse> BeginRepairReplicationAsync(this IReplicationProtectedItemOperations operations, string fabricName, string protectionContainerName, string replicationProtectedItemName, RepairReplicationInput repairReplicationInput, CustomRequestHeaders customRequestHeaders)
         {
-            return operations.BeginRepairReplicationAsync(fabricName, protectionContainerName, replicationProtectedItemName, customRequestHeaders, CancellationToken.None);
+            return operations.BeginRepairReplicationAsync(fabricName, protectionContainerName, replicationProtectedItemName, repairReplicationInput, customRequestHeaders, CancellationToken.None);
         }
         
         /// <summary>
@@ -2105,17 +2111,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='replicationProtectedItemName'>
         /// Required. Replication protected item name.
         /// </param>
+        /// <param name='repairReplicationInput'>
+        /// Required. Repair replication input.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Optional. Request header parameters.
         /// </param>
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        public static LongRunningOperationResponse RepairReplication(this IReplicationProtectedItemOperations operations, string fabricName, string protectionContainerName, string replicationProtectedItemName, CustomRequestHeaders customRequestHeaders)
+        public static LongRunningOperationResponse RepairReplication(this IReplicationProtectedItemOperations operations, string fabricName, string protectionContainerName, string replicationProtectedItemName, RepairReplicationInput repairReplicationInput, CustomRequestHeaders customRequestHeaders)
         {
             return Task.Factory.StartNew((object s) => 
             {
-                return ((IReplicationProtectedItemOperations)s).RepairReplicationAsync(fabricName, protectionContainerName, replicationProtectedItemName, customRequestHeaders);
+                return ((IReplicationProtectedItemOperations)s).RepairReplicationAsync(fabricName, protectionContainerName, replicationProtectedItemName, repairReplicationInput, customRequestHeaders);
             }
             , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
         }
@@ -2137,15 +2146,18 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='replicationProtectedItemName'>
         /// Required. Replication protected item name.
         /// </param>
+        /// <param name='repairReplicationInput'>
+        /// Required. Repair replication input.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Optional. Request header parameters.
         /// </param>
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        public static Task<LongRunningOperationResponse> RepairReplicationAsync(this IReplicationProtectedItemOperations operations, string fabricName, string protectionContainerName, string replicationProtectedItemName, CustomRequestHeaders customRequestHeaders)
+        public static Task<LongRunningOperationResponse> RepairReplicationAsync(this IReplicationProtectedItemOperations operations, string fabricName, string protectionContainerName, string replicationProtectedItemName, RepairReplicationInput repairReplicationInput, CustomRequestHeaders customRequestHeaders)
         {
-            return operations.RepairReplicationAsync(fabricName, protectionContainerName, replicationProtectedItemName, customRequestHeaders, CancellationToken.None);
+            return operations.RepairReplicationAsync(fabricName, protectionContainerName, replicationProtectedItemName, repairReplicationInput, customRequestHeaders, CancellationToken.None);
         }
         
         /// <summary>

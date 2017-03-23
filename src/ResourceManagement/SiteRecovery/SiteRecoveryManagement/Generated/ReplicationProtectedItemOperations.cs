@@ -1950,6 +1950,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='replicationProtectedItemName'>
         /// Required. Replication protected item name.
         /// </param>
+        /// <param name='repairReplicationInput'>
+        /// Required. Repair replication input.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Optional. Request header parameters.
         /// </param>
@@ -1959,7 +1962,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        public async Task<LongRunningOperationResponse> BeginRepairReplicationAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken)
+        public async Task<LongRunningOperationResponse> BeginRepairReplicationAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, RepairReplicationInput repairReplicationInput, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken)
         {
             // Validate
             if (fabricName == null)
@@ -1974,6 +1977,10 @@ namespace Microsoft.Azure.Management.SiteRecovery
             {
                 throw new ArgumentNullException("replicationProtectedItemName");
             }
+            if (repairReplicationInput == null)
+            {
+                throw new ArgumentNullException("repairReplicationInput");
+            }
             
             // Tracing
             bool shouldTrace = TracingAdapter.IsEnabled;
@@ -1985,6 +1992,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 tracingParameters.Add("fabricName", fabricName);
                 tracingParameters.Add("protectionContainerName", protectionContainerName);
                 tracingParameters.Add("replicationProtectedItemName", replicationProtectedItemName);
+                tracingParameters.Add("repairReplicationInput", repairReplicationInput);
                 tracingParameters.Add("customRequestHeaders", customRequestHeaders);
                 TracingAdapter.Enter(invocationId, this, "BeginRepairReplicationAsync", tracingParameters);
             }
@@ -5476,6 +5484,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
                                         }
                                         
+                                        JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                        if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                            a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
+                                        }
+                                        
                                         JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
                                         if (vmProtectionStateValue3 != null && vmProtectionStateValue3.Type != JTokenType.Null)
                                         {
@@ -8096,6 +8111,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string agentVersionInstance = ((string)agentVersionValue);
                                             a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
+                                        JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                        if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                            a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
                                         }
                                         
                                         JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
@@ -10777,6 +10799,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string agentVersionInstance = ((string)agentVersionValue);
                                             a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
+                                        JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                        if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                            a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
                                         }
                                         
                                         JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
@@ -13691,6 +13720,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
                                         }
                                         
+                                        JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                        if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                            a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
+                                        }
+                                        
                                         JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
                                         if (vmProtectionStateValue3 != null && vmProtectionStateValue3.Type != JTokenType.Null)
                                         {
@@ -16370,6 +16406,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string agentVersionInstance = ((string)agentVersionValue);
                                             a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
+                                        JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                        if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                            a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
                                         }
                                         
                                         JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
@@ -19284,6 +19327,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
                                         }
                                         
+                                        JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                        if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                            a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
+                                        }
+                                        
                                         JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
                                         if (vmProtectionStateValue3 != null && vmProtectionStateValue3.Type != JTokenType.Null)
                                         {
@@ -21963,6 +22013,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string agentVersionInstance = ((string)agentVersionValue);
                                             a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
+                                        JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                        if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                            a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
                                         }
                                         
                                         JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
@@ -24646,6 +24703,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
                                         }
                                         
+                                        JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                        if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                            a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
+                                        }
+                                        
                                         JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
                                         if (vmProtectionStateValue3 != null && vmProtectionStateValue3.Type != JTokenType.Null)
                                         {
@@ -27325,6 +27389,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string agentVersionInstance = ((string)agentVersionValue);
                                             a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
+                                        JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                        if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                            a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
                                         }
                                         
                                         JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
@@ -30008,6 +30079,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
                                         }
                                         
+                                        JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                        if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                            a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
+                                        }
+                                        
                                         JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
                                         if (vmProtectionStateValue3 != null && vmProtectionStateValue3.Type != JTokenType.Null)
                                         {
@@ -32689,6 +32767,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
                                         }
                                         
+                                        JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                        if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                            a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
+                                        }
+                                        
                                         JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
                                         if (vmProtectionStateValue3 != null && vmProtectionStateValue3.Type != JTokenType.Null)
                                         {
@@ -35368,6 +35453,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string agentVersionInstance = ((string)agentVersionValue);
                                             a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
+                                        }
+                                        
+                                        JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                        if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                        {
+                                            string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                            a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
                                         }
                                         
                                         JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
@@ -38100,6 +38192,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
                                                 }
                                                 
+                                                JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                                if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                                {
+                                                    string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                                    a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
+                                                }
+                                                
                                                 JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
                                                 if (vmProtectionStateValue3 != null && vmProtectionStateValue3.Type != JTokenType.Null)
                                                 {
@@ -40781,6 +40880,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
                                                 }
                                                 
+                                                JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                                if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                                {
+                                                    string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                                    a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
+                                                }
+                                                
                                                 JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
                                                 if (vmProtectionStateValue3 != null && vmProtectionStateValue3.Type != JTokenType.Null)
                                                 {
@@ -43420,6 +43526,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.AgentVersion = agentVersionInstance;
                                                 }
                                                 
+                                                JToken isReplicationAgentUpdateRequiredValue = providerSpecificDetailsValue["isReplicationAgentUpdateRequired"];
+                                                if (isReplicationAgentUpdateRequiredValue != null && isReplicationAgentUpdateRequiredValue.Type != JTokenType.Null)
+                                                {
+                                                    string isReplicationAgentUpdateRequiredInstance = ((string)isReplicationAgentUpdateRequiredValue);
+                                                    a2AReplicationDetailsInstance.IsReplicationAgentUpdateRequired = isReplicationAgentUpdateRequiredInstance;
+                                                }
+                                                
                                                 JToken vmProtectionStateValue3 = providerSpecificDetailsValue["vmProtectionState"];
                                                 if (vmProtectionStateValue3 != null && vmProtectionStateValue3.Type != JTokenType.Null)
                                                 {
@@ -45374,6 +45487,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='replicationProtectedItemName'>
         /// Required. Replication protected item name.
         /// </param>
+        /// <param name='repairReplicationInput'>
+        /// Required. Repair replication input.
+        /// </param>
         /// <param name='customRequestHeaders'>
         /// Optional. Request header parameters.
         /// </param>
@@ -45383,7 +45499,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        public async Task<LongRunningOperationResponse> RepairReplicationAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken)
+        public async Task<LongRunningOperationResponse> RepairReplicationAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, RepairReplicationInput repairReplicationInput, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken)
         {
             SiteRecoveryManagementClient client = this.Client;
             bool shouldTrace = TracingAdapter.IsEnabled;
@@ -45395,12 +45511,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 tracingParameters.Add("fabricName", fabricName);
                 tracingParameters.Add("protectionContainerName", protectionContainerName);
                 tracingParameters.Add("replicationProtectedItemName", replicationProtectedItemName);
+                tracingParameters.Add("repairReplicationInput", repairReplicationInput);
                 tracingParameters.Add("customRequestHeaders", customRequestHeaders);
                 TracingAdapter.Enter(invocationId, this, "RepairReplicationAsync", tracingParameters);
             }
             
             cancellationToken.ThrowIfCancellationRequested();
-            LongRunningOperationResponse response = await client.ReplicationProtectedItem.BeginRepairReplicationAsync(fabricName, protectionContainerName, replicationProtectedItemName, customRequestHeaders, cancellationToken).ConfigureAwait(false);
+            LongRunningOperationResponse response = await client.ReplicationProtectedItem.BeginRepairReplicationAsync(fabricName, protectionContainerName, replicationProtectedItemName, repairReplicationInput, customRequestHeaders, cancellationToken).ConfigureAwait(false);
             if (response.Status == OperationStatus.Succeeded)
             {
                 return response;
