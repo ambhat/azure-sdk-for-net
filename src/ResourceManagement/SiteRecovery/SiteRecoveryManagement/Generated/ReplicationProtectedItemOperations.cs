@@ -1069,6 +1069,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             {
                                 providerSpecificDetailsValue["logStorageAccountId"] = derived.LogStorageAccountId;
                             }
+                            
+                            if (derived.UseManagedDisks != null)
+                            {
+                                providerSpecificDetailsValue["useManagedDisks"] = derived.UseManagedDisks;
+                            }
                         }
                         if (input.Properties.ProviderSpecificDetails is InMageAzureV2EnableProtectionInput)
                         {
@@ -1156,6 +1161,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                             if (derived2.TargetAzureV2ResourceGroupId != null)
                             {
                                 providerSpecificDetailsValue["targetAzureV2ResourceGroupId"] = derived2.TargetAzureV2ResourceGroupId;
+                            }
+                            
+                            if (derived2.UseManagedDisks != null)
+                            {
+                                providerSpecificDetailsValue["useManagedDisks"] = derived2.UseManagedDisks;
                             }
                         }
                         if (input.Properties.ProviderSpecificDetails is InMageEnableProtectionInput)
