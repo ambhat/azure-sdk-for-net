@@ -1960,7 +1960,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='replicationProtectedItemName'>
         /// Required. Replication protected item name.
         /// </param>
-        /// <param name='repairReplicationInput'>
+        /// <param name='input'>
         /// Required. Repair replication input.
         /// </param>
         /// <param name='customRequestHeaders'>
@@ -1972,7 +1972,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        public async Task<LongRunningOperationResponse> BeginRepairReplicationAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, RepairReplicationInput repairReplicationInput, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken)
+        public async Task<LongRunningOperationResponse> BeginRepairReplicationAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, RepairReplicationInput input, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken)
         {
             // Validate
             if (fabricName == null)
@@ -1987,9 +1987,9 @@ namespace Microsoft.Azure.Management.SiteRecovery
             {
                 throw new ArgumentNullException("replicationProtectedItemName");
             }
-            if (repairReplicationInput == null)
+            if (input == null)
             {
-                throw new ArgumentNullException("repairReplicationInput");
+                throw new ArgumentNullException("input");
             }
             
             // Tracing
@@ -2002,7 +2002,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 tracingParameters.Add("fabricName", fabricName);
                 tracingParameters.Add("protectionContainerName", protectionContainerName);
                 tracingParameters.Add("replicationProtectedItemName", replicationProtectedItemName);
-                tracingParameters.Add("repairReplicationInput", repairReplicationInput);
+                tracingParameters.Add("input", input);
                 tracingParameters.Add("customRequestHeaders", customRequestHeaders);
                 TracingAdapter.Enter(invocationId, this, "BeginRepairReplicationAsync", tracingParameters);
             }
@@ -2066,6 +2066,28 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 cancellationToken.ThrowIfCancellationRequested();
                 await this.Client.Credentials.ProcessHttpRequestAsync(httpRequest, cancellationToken).ConfigureAwait(false);
                 
+                // Serialize Request
+                string requestContent = null;
+                JToken requestDoc = null;
+                
+                JObject repairReplicationInputValue = new JObject();
+                requestDoc = repairReplicationInputValue;
+                
+                if (input.Properties != null)
+                {
+                    JObject propertiesValue = new JObject();
+                    repairReplicationInputValue["properties"] = propertiesValue;
+                    
+                    if (input.Properties.RepairReplicationActiontype != null)
+                    {
+                        propertiesValue["repairReplicationActiontype"] = input.Properties.RepairReplicationActiontype;
+                    }
+                }
+                
+                requestContent = requestDoc.ToString(Newtonsoft.Json.Formatting.Indented);
+                httpRequest.Content = new StringContent(requestContent, Encoding.UTF8);
+                httpRequest.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
+                
                 // Send Request
                 HttpResponseMessage httpResponse = null;
                 try
@@ -2084,7 +2106,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
                     if (statusCode != HttpStatusCode.OK && statusCode != HttpStatusCode.Accepted)
                     {
                         cancellationToken.ThrowIfCancellationRequested();
-                        CloudException ex = CloudException.Create(httpRequest, null, httpResponse, await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false));
+                        CloudException ex = CloudException.Create(httpRequest, requestContent, httpResponse, await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false));
                         if (shouldTrace)
                         {
                             TracingAdapter.Error(invocationId, ex);
@@ -47477,7 +47499,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <param name='replicationProtectedItemName'>
         /// Required. Replication protected item name.
         /// </param>
-        /// <param name='repairReplicationInput'>
+        /// <param name='input'>
         /// Required. Repair replication input.
         /// </param>
         /// <param name='customRequestHeaders'>
@@ -47489,7 +47511,7 @@ namespace Microsoft.Azure.Management.SiteRecovery
         /// <returns>
         /// A standard service response for long running operations.
         /// </returns>
-        public async Task<LongRunningOperationResponse> RepairReplicationAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, RepairReplicationInput repairReplicationInput, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken)
+        public async Task<LongRunningOperationResponse> RepairReplicationAsync(string fabricName, string protectionContainerName, string replicationProtectedItemName, RepairReplicationInput input, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken)
         {
             SiteRecoveryManagementClient client = this.Client;
             bool shouldTrace = TracingAdapter.IsEnabled;
@@ -47501,13 +47523,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                 tracingParameters.Add("fabricName", fabricName);
                 tracingParameters.Add("protectionContainerName", protectionContainerName);
                 tracingParameters.Add("replicationProtectedItemName", replicationProtectedItemName);
-                tracingParameters.Add("repairReplicationInput", repairReplicationInput);
+                tracingParameters.Add("input", input);
                 tracingParameters.Add("customRequestHeaders", customRequestHeaders);
                 TracingAdapter.Enter(invocationId, this, "RepairReplicationAsync", tracingParameters);
             }
             
             cancellationToken.ThrowIfCancellationRequested();
-            LongRunningOperationResponse response = await client.ReplicationProtectedItem.BeginRepairReplicationAsync(fabricName, protectionContainerName, replicationProtectedItemName, repairReplicationInput, customRequestHeaders, cancellationToken).ConfigureAwait(false);
+            LongRunningOperationResponse response = await client.ReplicationProtectedItem.BeginRepairReplicationAsync(fabricName, protectionContainerName, replicationProtectedItemName, input, customRequestHeaders, cancellationToken).ConfigureAwait(false);
             if (response.Status == OperationStatus.Succeeded)
             {
                 return response;
