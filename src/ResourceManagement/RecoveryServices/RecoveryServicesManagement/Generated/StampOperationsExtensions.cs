@@ -43,6 +43,64 @@ namespace Microsoft.Azure.Management.RecoveryServices
         /// <param name='provisioningApiVersion'>
         /// Required. Provisioning api version.
         /// </param>
+        /// <param name='input'>
+        /// Required. Allocate stamp input.
+        /// </param>
+        /// <param name='customRequestHeaders'>
+        /// Optional. Request header parameters.
+        /// </param>
+        /// <returns>
+        /// The response model for Stamp allocation.
+        /// </returns>
+        public static StampAllocateResponse Allocate(this IStampOperations operations, string region, string provisioningApiVersion, AllocateStampInput input, CustomRequestHeaders customRequestHeaders)
+        {
+            return Task.Factory.StartNew((object s) => 
+            {
+                return ((IStampOperations)s).AllocateAsync(region, provisioningApiVersion, input, customRequestHeaders);
+            }
+            , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+        }
+        
+        /// <summary>
+        /// Retrieve a list of allocated stamps.
+        /// </summary>
+        /// <param name='operations'>
+        /// Reference to the
+        /// Microsoft.Azure.Management.RecoveryServices.IStampOperations.
+        /// </param>
+        /// <param name='region'>
+        /// Required. Region of the stamp.
+        /// </param>
+        /// <param name='provisioningApiVersion'>
+        /// Required. Provisioning api version.
+        /// </param>
+        /// <param name='input'>
+        /// Required. Allocate stamp input.
+        /// </param>
+        /// <param name='customRequestHeaders'>
+        /// Optional. Request header parameters.
+        /// </param>
+        /// <returns>
+        /// The response model for Stamp allocation.
+        /// </returns>
+        public static Task<StampAllocateResponse> AllocateAsync(this IStampOperations operations, string region, string provisioningApiVersion, AllocateStampInput input, CustomRequestHeaders customRequestHeaders)
+        {
+            return operations.AllocateAsync(region, provisioningApiVersion, input, customRequestHeaders, CancellationToken.None);
+        }
+        
+        /// <summary>
+        /// Retrieve a list of allocated stamps.
+        /// </summary>
+        /// <param name='operations'>
+        /// Reference to the
+        /// Microsoft.Azure.Management.RecoveryServices.IStampOperations.
+        /// </param>
+        /// <param name='region'>
+        /// Required. Region of the stamp.
+        /// </param>
+        /// <param name='provisioningApiVersion'>
+        /// Required. Provisioning api version.
+        /// </param>
         /// <param name='parameters'>
         /// Required. Stamp query parameter.
         /// </param>
@@ -50,7 +108,7 @@ namespace Microsoft.Azure.Management.RecoveryServices
         /// Optional. Request header parameters.
         /// </param>
         /// <returns>
-        /// The response model for Stamp.
+        /// The response model for Stamp list.
         /// </returns>
         public static StampListResponse List(this IStampOperations operations, string region, string provisioningApiVersion, StampQueryParameter parameters, CustomRequestHeaders customRequestHeaders)
         {
@@ -81,7 +139,7 @@ namespace Microsoft.Azure.Management.RecoveryServices
         /// Optional. Request header parameters.
         /// </param>
         /// <returns>
-        /// The response model for Stamp.
+        /// The response model for Stamp list.
         /// </returns>
         public static Task<StampListResponse> ListAsync(this IStampOperations operations, string region, string provisioningApiVersion, StampQueryParameter parameters, CustomRequestHeaders customRequestHeaders)
         {

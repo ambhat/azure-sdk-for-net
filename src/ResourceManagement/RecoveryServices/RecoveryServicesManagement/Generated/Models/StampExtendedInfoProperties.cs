@@ -23,49 +23,54 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Hyak.Common;
-using Microsoft.Azure;
 using Microsoft.Azure.Management.RecoveryServices.Models;
 
 namespace Microsoft.Azure.Management.RecoveryServices.Models
 {
     /// <summary>
-    /// The response model for Stamp list.
+    /// The definition of a extended information stamp properties.
     /// </summary>
-    public partial class StampListResponse : AzureOperationResponse, IEnumerable<Stamp>
+    public partial class StampExtendedInfoProperties
     {
-        private IList<Stamp> _stamps;
+        private IList<StampQueueDetails> _queueDetails;
         
         /// <summary>
-        /// Optional. The list of stamps for the given region.
+        /// Optional. Queue details of stamp.
         /// </summary>
-        public IList<Stamp> Stamps
+        public IList<StampQueueDetails> QueueDetails
         {
-            get { return this._stamps; }
-            set { this._stamps = value; }
+            get { return this._queueDetails; }
+            set { this._queueDetails = value; }
+        }
+        
+        private string _stampType;
+        
+        /// <summary>
+        /// Optional. Gets or sets the type of the Stamp.
+        /// </summary>
+        public string StampType
+        {
+            get { return this._stampType; }
+            set { this._stampType = value; }
+        }
+        
+        private string _uri;
+        
+        /// <summary>
+        /// Optional. Gets or sets the uri of the Stamp.
+        /// </summary>
+        public string Uri
+        {
+            get { return this._uri; }
+            set { this._uri = value; }
         }
         
         /// <summary>
-        /// Initializes a new instance of the StampListResponse class.
+        /// Initializes a new instance of the StampExtendedInfoProperties class.
         /// </summary>
-        public StampListResponse()
+        public StampExtendedInfoProperties()
         {
-            this.Stamps = new LazyList<Stamp>();
-        }
-        
-        /// <summary>
-        /// Gets the sequence of Stamps.
-        /// </summary>
-        public IEnumerator<Stamp> GetEnumerator()
-        {
-            return this.Stamps.GetEnumerator();
-        }
-        
-        /// <summary>
-        /// Gets the sequence of Stamps.
-        /// </summary>
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-        {
-            return this.GetEnumerator();
+            this.QueueDetails = new LazyList<StampQueueDetails>();
         }
     }
 }
