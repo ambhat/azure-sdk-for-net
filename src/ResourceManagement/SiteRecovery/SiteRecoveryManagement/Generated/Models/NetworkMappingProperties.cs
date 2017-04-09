@@ -74,6 +74,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._primaryNetworkId = value; }
         }
         
+        private string _recoveryFabricArmId;
+        
+        /// <summary>
+        /// Optional. Arm id of the recovery fabric.
+        /// </summary>
+        public string RecoveryFabricArmId
+        {
+            get { return this._recoveryFabricArmId; }
+            set { this._recoveryFabricArmId = value; }
+        }
+        
         private string _recoveryFabricFriendlyName;
         
         /// <summary>
