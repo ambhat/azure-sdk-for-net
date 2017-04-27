@@ -253,6 +253,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._selectedRecoveryAzureNetworkId = value; }
         }
         
+        private string _testFailoverRecoveryFabricObjectId;
+        
+        /// <summary>
+        /// Optional. Gets or sets the test failover fabric object Id.
+        /// </summary>
+        public string TestFailoverRecoveryFabricObjectId
+        {
+            get { return this._testFailoverRecoveryFabricObjectId; }
+            set { this._testFailoverRecoveryFabricObjectId = value; }
+        }
+        
         private IList<VMNicDetails> _vMNics;
         
         /// <summary>

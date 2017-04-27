@@ -5514,6 +5514,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                         }
                                         
+                                        JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                        if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -8273,6 +8280,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string lifecycleIdInstance = ((string)lifecycleIdValue);
                                             a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                        }
+                                        
+                                        JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                        if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -11093,6 +11107,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string lifecycleIdInstance = ((string)lifecycleIdValue);
                                             a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                        }
+                                        
+                                        JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                        if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -14146,6 +14167,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                         }
                                         
+                                        JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                        if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -16964,6 +16992,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string lifecycleIdInstance = ((string)lifecycleIdValue);
                                             a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                        }
+                                        
+                                        JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                        if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -20017,6 +20052,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                         }
                                         
+                                        JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                        if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -22835,6 +22877,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string lifecycleIdInstance = ((string)lifecycleIdValue);
                                             a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                        }
+                                        
+                                        JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                        if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -25657,6 +25706,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                         }
                                         
+                                        JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                        if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -28475,6 +28531,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string lifecycleIdInstance = ((string)lifecycleIdValue);
                                             a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                        }
+                                        
+                                        JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                        if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -31297,6 +31360,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                         }
                                         
+                                        JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                        if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -34117,6 +34187,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                         }
                                         
+                                        JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                        if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                         {
@@ -36935,6 +37012,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string lifecycleIdInstance = ((string)lifecycleIdValue);
                                             a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                        }
+                                        
+                                        JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                        if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                        {
+                                            string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                            a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
                                         }
                                         
                                         JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
@@ -39806,6 +39890,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                                 }
                                                 
+                                                JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                                if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                                    a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                                 {
@@ -42626,6 +42717,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
                                                 }
                                                 
+                                                JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                                if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                                    a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue3 != null && instanceTypeValue3.Type != JTokenType.Null)
                                                 {
@@ -45402,6 +45500,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string lifecycleIdInstance = ((string)lifecycleIdValue);
                                                     a2AReplicationDetailsInstance.LifecycleId = lifecycleIdInstance;
+                                                }
+                                                
+                                                JToken testFailoverRecoveryFabricObjectIdValue = providerSpecificDetailsValue["testFailoverRecoveryFabricObjectId"];
+                                                if (testFailoverRecoveryFabricObjectIdValue != null && testFailoverRecoveryFabricObjectIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string testFailoverRecoveryFabricObjectIdInstance = ((string)testFailoverRecoveryFabricObjectIdValue);
+                                                    a2AReplicationDetailsInstance.TestFailoverRecoveryFabricObjectId = testFailoverRecoveryFabricObjectIdInstance;
                                                 }
                                                 
                                                 JToken instanceTypeValue3 = providerSpecificDetailsValue["instanceType"];
