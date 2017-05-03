@@ -2444,6 +2444,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         }
                                                     }
                                                 }
+                                                
+                                                JToken diskCountValue = masterTargetServersValue["diskCount"];
+                                                if (diskCountValue != null && diskCountValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskCountInstance = ((int)diskCountValue);
+                                                    masterTargetServerInstance.DiskCount = diskCountInstance;
+                                                }
                                             }
                                         }
                                         
@@ -3738,6 +3745,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             healthErrorInstance.EntityId = entityIdInstance;
                                                         }
                                                     }
+                                                }
+                                                
+                                                JToken diskCountValue = masterTargetServersValue["diskCount"];
+                                                if (diskCountValue != null && diskCountValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskCountInstance = ((int)diskCountValue);
+                                                    masterTargetServerInstance.DiskCount = diskCountInstance;
                                                 }
                                             }
                                         }
@@ -5093,6 +5107,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         }
                                                     }
                                                 }
+                                                
+                                                JToken diskCountValue = masterTargetServersValue["diskCount"];
+                                                if (diskCountValue != null && diskCountValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskCountInstance = ((int)diskCountValue);
+                                                    masterTargetServerInstance.DiskCount = diskCountInstance;
+                                                }
                                             }
                                         }
                                         
@@ -6447,6 +6468,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         }
                                                     }
                                                 }
+                                                
+                                                JToken diskCountValue = masterTargetServersValue["diskCount"];
+                                                if (diskCountValue != null && diskCountValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskCountInstance = ((int)diskCountValue);
+                                                    masterTargetServerInstance.DiskCount = diskCountInstance;
+                                                }
                                             }
                                         }
                                         
@@ -7569,6 +7597,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             healthErrorInstance.EntityId = entityIdInstance;
                                                         }
                                                     }
+                                                }
+                                                
+                                                JToken diskCountValue = masterTargetServersValue["diskCount"];
+                                                if (diskCountValue != null && diskCountValue.Type != JTokenType.Null)
+                                                {
+                                                    int diskCountInstance = ((int)diskCountValue);
+                                                    masterTargetServerInstance.DiskCount = diskCountInstance;
                                                 }
                                             }
                                         }
@@ -8721,6 +8756,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                                     healthErrorInstance.EntityId = entityIdInstance;
                                                                 }
                                                             }
+                                                        }
+                                                        
+                                                        JToken diskCountValue = masterTargetServersValue["diskCount"];
+                                                        if (diskCountValue != null && diskCountValue.Type != JTokenType.Null)
+                                                        {
+                                                            int diskCountInstance = ((int)diskCountValue);
+                                                            masterTargetServerInstance.DiskCount = diskCountInstance;
                                                         }
                                                     }
                                                 }

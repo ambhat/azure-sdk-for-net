@@ -54,6 +54,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._dataStores = value; }
         }
         
+        private int _diskCount;
+        
+        /// <summary>
+        /// Optional. Disk count of the master target.
+        /// </summary>
+        public int DiskCount
+        {
+            get { return this._diskCount; }
+            set { this._diskCount = value; }
+        }
+        
         private string _id;
         
         /// <summary>
