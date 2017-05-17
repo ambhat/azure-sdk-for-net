@@ -41,6 +41,18 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._recoveryPointType = value; }
         }
         
+        private string _useMultiVmSyncPoint;
+        
+        /// <summary>
+        /// Optional. Indicates whether multi VM sync enabled VMs should use
+        /// multi VM sync points for failover.
+        /// </summary>
+        public string UseMultiVmSyncPoint
+        {
+            get { return this._useMultiVmSyncPoint; }
+            set { this._useMultiVmSyncPoint = value; }
+        }
+        
         private string _vaultLocation;
         
         /// <summary>

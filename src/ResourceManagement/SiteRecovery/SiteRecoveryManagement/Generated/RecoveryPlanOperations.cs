@@ -1112,6 +1112,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 
                                 recoveryPlanProviderSpecificFailoverInputValue["recoveryPointType"] = derived3.RecoveryPointType;
                                 
+                                if (derived3.UseMultiVmSyncPoint != null)
+                                {
+                                    recoveryPlanProviderSpecificFailoverInputValue["useMultiVmSyncPoint"] = derived3.UseMultiVmSyncPoint;
+                                }
+                                
                                 if (derived3.InstanceType != null)
                                 {
                                     recoveryPlanProviderSpecificFailoverInputValue["instanceType"] = derived3.InstanceType;
@@ -1605,6 +1610,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 recoveryPlanProviderSpecificFailoverInputValue["vaultLocation"] = derived3.VaultLocation;
                                 
                                 recoveryPlanProviderSpecificFailoverInputValue["recoveryPointType"] = derived3.RecoveryPointType;
+                                
+                                if (derived3.UseMultiVmSyncPoint != null)
+                                {
+                                    recoveryPlanProviderSpecificFailoverInputValue["useMultiVmSyncPoint"] = derived3.UseMultiVmSyncPoint;
+                                }
                                 
                                 if (derived3.InstanceType != null)
                                 {
@@ -2120,6 +2130,11 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 recoveryPlanProviderSpecificFailoverInputValue["vaultLocation"] = derived3.VaultLocation;
                                 
                                 recoveryPlanProviderSpecificFailoverInputValue["recoveryPointType"] = derived3.RecoveryPointType;
+                                
+                                if (derived3.UseMultiVmSyncPoint != null)
+                                {
+                                    recoveryPlanProviderSpecificFailoverInputValue["useMultiVmSyncPoint"] = derived3.UseMultiVmSyncPoint;
+                                }
                                 
                                 if (derived3.InstanceType != null)
                                 {
