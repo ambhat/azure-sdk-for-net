@@ -95,6 +95,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._healthErrorCode = value; }
         }
         
+        private System.DateTime? _lastRpoCalculatedTime;
+        
+        /// <summary>
+        /// Optional. Gets or sets the last RPO calculated time.
+        /// </summary>
+        public System.DateTime? LastRpoCalculatedTime
+        {
+            get { return this._lastRpoCalculatedTime; }
+            set { this._lastRpoCalculatedTime = value; }
+        }
+        
         private string _protectionStage;
         
         /// <summary>

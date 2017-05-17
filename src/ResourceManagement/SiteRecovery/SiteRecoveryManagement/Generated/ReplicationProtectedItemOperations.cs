@@ -5757,6 +5757,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string diskResizedInstance = ((string)diskResizedValue);
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                 }
+                                                
+                                                JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -6121,6 +6128,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             }
                                         }
                                         
+                                        JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                        }
+                                        
+                                        JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance = ((string)replicaIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -6356,6 +6384,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskResizedInstance3 = ((string)diskResizedValue3);
                                                     inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                    inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                 }
                                             }
                                         }
@@ -6664,6 +6699,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     healthErrorInstance3.EntityId = entityIdInstance3;
                                                 }
                                             }
+                                        }
+                                        
+                                        JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                            inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                            inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                        }
+                                        
+                                        JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance2 = ((string)replicaIdValue2);
+                                            inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -8525,6 +8581,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string diskResizedInstance = ((string)diskResizedValue);
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                 }
+                                                
+                                                JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -8889,6 +8952,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             }
                                         }
                                         
+                                        JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                        }
+                                        
+                                        JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance = ((string)replicaIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -9124,6 +9208,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskResizedInstance3 = ((string)diskResizedValue3);
                                                     inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                    inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                 }
                                             }
                                         }
@@ -9432,6 +9523,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     healthErrorInstance3.EntityId = entityIdInstance3;
                                                 }
                                             }
+                                        }
+                                        
+                                        JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                            inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                            inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                        }
+                                        
+                                        JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance2 = ((string)replicaIdValue2);
+                                            inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -11352,6 +11464,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string diskResizedInstance = ((string)diskResizedValue);
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                 }
+                                                
+                                                JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -11716,6 +11835,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             }
                                         }
                                         
+                                        JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                        }
+                                        
+                                        JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance = ((string)replicaIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -11951,6 +12091,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskResizedInstance3 = ((string)diskResizedValue3);
                                                     inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                    inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                 }
                                             }
                                         }
@@ -12259,6 +12406,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     healthErrorInstance3.EntityId = entityIdInstance3;
                                                 }
                                             }
+                                        }
+                                        
+                                        JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                            inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                            inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                        }
+                                        
+                                        JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance2 = ((string)replicaIdValue2);
+                                            inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -14410,6 +14578,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string diskResizedInstance = ((string)diskResizedValue);
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                 }
+                                                
+                                                JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -14774,6 +14949,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             }
                                         }
                                         
+                                        JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                        }
+                                        
+                                        JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance = ((string)replicaIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -15009,6 +15205,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskResizedInstance3 = ((string)diskResizedValue3);
                                                     inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                    inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                 }
                                             }
                                         }
@@ -15317,6 +15520,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     healthErrorInstance3.EntityId = entityIdInstance3;
                                                 }
                                             }
+                                        }
+                                        
+                                        JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                            inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                            inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                        }
+                                        
+                                        JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance2 = ((string)replicaIdValue2);
+                                            inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -17237,6 +17461,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string diskResizedInstance = ((string)diskResizedValue);
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                 }
+                                                
+                                                JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -17601,6 +17832,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             }
                                         }
                                         
+                                        JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                        }
+                                        
+                                        JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance = ((string)replicaIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -17836,6 +18088,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskResizedInstance3 = ((string)diskResizedValue3);
                                                     inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                    inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                 }
                                             }
                                         }
@@ -18144,6 +18403,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     healthErrorInstance3.EntityId = entityIdInstance3;
                                                 }
                                             }
+                                        }
+                                        
+                                        JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                            inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                            inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                        }
+                                        
+                                        JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance2 = ((string)replicaIdValue2);
+                                            inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -20295,6 +20575,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string diskResizedInstance = ((string)diskResizedValue);
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                 }
+                                                
+                                                JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -20659,6 +20946,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             }
                                         }
                                         
+                                        JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                        }
+                                        
+                                        JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance = ((string)replicaIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -20894,6 +21202,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskResizedInstance3 = ((string)diskResizedValue3);
                                                     inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                    inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                 }
                                             }
                                         }
@@ -21202,6 +21517,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     healthErrorInstance3.EntityId = entityIdInstance3;
                                                 }
                                             }
+                                        }
+                                        
+                                        JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                            inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                            inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                        }
+                                        
+                                        JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance2 = ((string)replicaIdValue2);
+                                            inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -23122,6 +23458,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string diskResizedInstance = ((string)diskResizedValue);
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                 }
+                                                
+                                                JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -23486,6 +23829,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             }
                                         }
                                         
+                                        JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                        }
+                                        
+                                        JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance = ((string)replicaIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -23721,6 +24085,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskResizedInstance3 = ((string)diskResizedValue3);
                                                     inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                    inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                 }
                                             }
                                         }
@@ -24029,6 +24400,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     healthErrorInstance3.EntityId = entityIdInstance3;
                                                 }
                                             }
+                                        }
+                                        
+                                        JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                            inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                            inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                        }
+                                        
+                                        JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance2 = ((string)replicaIdValue2);
+                                            inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -25949,6 +26341,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string diskResizedInstance = ((string)diskResizedValue);
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                 }
+                                                
+                                                JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -26313,6 +26712,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             }
                                         }
                                         
+                                        JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                        }
+                                        
+                                        JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance = ((string)replicaIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -26548,6 +26968,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskResizedInstance3 = ((string)diskResizedValue3);
                                                     inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                    inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                 }
                                             }
                                         }
@@ -26856,6 +27283,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     healthErrorInstance3.EntityId = entityIdInstance3;
                                                 }
                                             }
+                                        }
+                                        
+                                        JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                            inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                            inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                        }
+                                        
+                                        JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance2 = ((string)replicaIdValue2);
+                                            inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -28776,6 +29224,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string diskResizedInstance = ((string)diskResizedValue);
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                 }
+                                                
+                                                JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -29140,6 +29595,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             }
                                         }
                                         
+                                        JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                        }
+                                        
+                                        JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance = ((string)replicaIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -29375,6 +29851,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskResizedInstance3 = ((string)diskResizedValue3);
                                                     inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                    inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                 }
                                             }
                                         }
@@ -29683,6 +30166,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     healthErrorInstance3.EntityId = entityIdInstance3;
                                                 }
                                             }
+                                        }
+                                        
+                                        JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                            inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                            inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                        }
+                                        
+                                        JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance2 = ((string)replicaIdValue2);
+                                            inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -31603,6 +32107,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string diskResizedInstance = ((string)diskResizedValue);
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                 }
+                                                
+                                                JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -31967,6 +32478,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             }
                                         }
                                         
+                                        JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                        }
+                                        
+                                        JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance = ((string)replicaIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -32202,6 +32734,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskResizedInstance3 = ((string)diskResizedValue3);
                                                     inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                    inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                 }
                                             }
                                         }
@@ -32510,6 +33049,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     healthErrorInstance3.EntityId = entityIdInstance3;
                                                 }
                                             }
+                                        }
+                                        
+                                        JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                            inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                            inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                        }
+                                        
+                                        JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance2 = ((string)replicaIdValue2);
+                                            inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -34430,6 +34990,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string diskResizedInstance = ((string)diskResizedValue);
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                 }
+                                                
+                                                JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -34794,6 +35361,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             }
                                         }
                                         
+                                        JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                        }
+                                        
+                                        JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance = ((string)replicaIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -35029,6 +35617,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskResizedInstance3 = ((string)diskResizedValue3);
                                                     inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                    inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                 }
                                             }
                                         }
@@ -35337,6 +35932,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     healthErrorInstance3.EntityId = entityIdInstance3;
                                                 }
                                             }
+                                        }
+                                        
+                                        JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                            inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                            inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                        }
+                                        
+                                        JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance2 = ((string)replicaIdValue2);
+                                            inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -37257,6 +37873,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string diskResizedInstance = ((string)diskResizedValue);
                                                     inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                 }
+                                                
+                                                JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                    inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -37621,6 +38244,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             }
                                         }
                                         
+                                        JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                        }
+                                        
+                                        JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance = ((string)replicaIdValue);
+                                            inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                        }
+                                        
                                         JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                         if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                         {
@@ -37856,6 +38500,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string diskResizedInstance3 = ((string)diskResizedValue3);
                                                     inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                    inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                 }
                                             }
                                         }
@@ -38164,6 +38815,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     healthErrorInstance3.EntityId = entityIdInstance3;
                                                 }
                                             }
+                                        }
+                                        
+                                        JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                        if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                            inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                        }
+                                        
+                                        JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                        if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                        {
+                                            DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                            inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                        }
+                                        
+                                        JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                        if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                        {
+                                            string replicaIdInstance2 = ((string)replicaIdValue2);
+                                            inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                         }
                                         
                                         JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -40133,6 +40805,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string diskResizedInstance = ((string)diskResizedValue);
                                                             inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                         }
+                                                        
+                                                        JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                        if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                        {
+                                                            DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                            inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                        }
                                                     }
                                                 }
                                                 
@@ -40497,6 +41176,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     }
                                                 }
                                                 
+                                                JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                                }
+                                                
+                                                JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                                if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                                }
+                                                
+                                                JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                                if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string replicaIdInstance = ((string)replicaIdValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -40732,6 +41432,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string diskResizedInstance3 = ((string)diskResizedValue3);
                                                             inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                        }
+                                                        
+                                                        JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                        if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                        {
+                                                            DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                            inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                         }
                                                     }
                                                 }
@@ -41040,6 +41747,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             healthErrorInstance3.EntityId = entityIdInstance3;
                                                         }
                                                     }
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                                    inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                                }
+                                                
+                                                JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                                if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                                    inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                                }
+                                                
+                                                JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                                if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string replicaIdInstance2 = ((string)replicaIdValue2);
+                                                    inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -42960,6 +43688,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string diskResizedInstance = ((string)diskResizedValue);
                                                             inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                         }
+                                                        
+                                                        JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                        if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                        {
+                                                            DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                            inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                        }
                                                     }
                                                 }
                                                 
@@ -43324,6 +44059,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     }
                                                 }
                                                 
+                                                JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                                }
+                                                
+                                                JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                                if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                                }
+                                                
+                                                JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                                if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string replicaIdInstance = ((string)replicaIdValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -43559,6 +44315,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string diskResizedInstance3 = ((string)diskResizedValue3);
                                                             inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                        }
+                                                        
+                                                        JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                        if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                        {
+                                                            DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                            inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                         }
                                                     }
                                                 }
@@ -43867,6 +44630,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             healthErrorInstance3.EntityId = entityIdInstance3;
                                                         }
                                                     }
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                                    inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                                }
+                                                
+                                                JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                                if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                                    inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                                }
+                                                
+                                                JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                                if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string replicaIdInstance2 = ((string)replicaIdValue2);
+                                                    inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];
@@ -45745,6 +46529,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string diskResizedInstance = ((string)diskResizedValue);
                                                             inMageAzureV2ProtectedDiskDetailsInstance.DiskResized = diskResizedInstance;
                                                         }
+                                                        
+                                                        JToken lastRpoCalculatedTimeValue = protectedDisksValue2["lastRpoCalculatedTime"];
+                                                        if (lastRpoCalculatedTimeValue != null && lastRpoCalculatedTimeValue.Type != JTokenType.Null)
+                                                        {
+                                                            DateTime lastRpoCalculatedTimeInstance = ((DateTime)lastRpoCalculatedTimeValue);
+                                                            inMageAzureV2ProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance;
+                                                        }
                                                     }
                                                 }
                                                 
@@ -46109,6 +46900,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     }
                                                 }
                                                 
+                                                JToken lastRpoCalculatedTimeValue2 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue2 != null && lastRpoCalculatedTimeValue2.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance2 = ((DateTime)lastRpoCalculatedTimeValue2);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance2;
+                                                }
+                                                
+                                                JToken lastUpdateReceivedTimeValue = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                                if (lastUpdateReceivedTimeValue != null && lastUpdateReceivedTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastUpdateReceivedTimeInstance = ((DateTime)lastUpdateReceivedTimeValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance;
+                                                }
+                                                
+                                                JToken replicaIdValue = providerSpecificDetailsValue["replicaId"];
+                                                if (replicaIdValue != null && replicaIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string replicaIdInstance = ((string)replicaIdValue);
+                                                    inMageAzureV2ProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance;
+                                                }
+                                                
                                                 JToken instanceTypeValue4 = providerSpecificDetailsValue["instanceType"];
                                                 if (instanceTypeValue4 != null && instanceTypeValue4.Type != JTokenType.Null)
                                                 {
@@ -46344,6 +47156,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string diskResizedInstance3 = ((string)diskResizedValue3);
                                                             inMageProtectedDiskDetailsInstance.DiskResized = diskResizedInstance3;
+                                                        }
+                                                        
+                                                        JToken lastRpoCalculatedTimeValue3 = protectedDisksValue3["lastRpoCalculatedTime"];
+                                                        if (lastRpoCalculatedTimeValue3 != null && lastRpoCalculatedTimeValue3.Type != JTokenType.Null)
+                                                        {
+                                                            DateTime lastRpoCalculatedTimeInstance3 = ((DateTime)lastRpoCalculatedTimeValue3);
+                                                            inMageProtectedDiskDetailsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance3;
                                                         }
                                                     }
                                                 }
@@ -46652,6 +47471,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             healthErrorInstance3.EntityId = entityIdInstance3;
                                                         }
                                                     }
+                                                }
+                                                
+                                                JToken lastRpoCalculatedTimeValue4 = providerSpecificDetailsValue["lastRpoCalculatedTime"];
+                                                if (lastRpoCalculatedTimeValue4 != null && lastRpoCalculatedTimeValue4.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastRpoCalculatedTimeInstance4 = ((DateTime)lastRpoCalculatedTimeValue4);
+                                                    inMageProviderSpecificSettingsInstance.LastRpoCalculatedTime = lastRpoCalculatedTimeInstance4;
+                                                }
+                                                
+                                                JToken lastUpdateReceivedTimeValue2 = providerSpecificDetailsValue["lastUpdateReceivedTime"];
+                                                if (lastUpdateReceivedTimeValue2 != null && lastUpdateReceivedTimeValue2.Type != JTokenType.Null)
+                                                {
+                                                    DateTime lastUpdateReceivedTimeInstance2 = ((DateTime)lastUpdateReceivedTimeValue2);
+                                                    inMageProviderSpecificSettingsInstance.LastUpdateReceivedTime = lastUpdateReceivedTimeInstance2;
+                                                }
+                                                
+                                                JToken replicaIdValue2 = providerSpecificDetailsValue["replicaId"];
+                                                if (replicaIdValue2 != null && replicaIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string replicaIdInstance2 = ((string)replicaIdValue2);
+                                                    inMageProviderSpecificSettingsInstance.ReplicaId = replicaIdInstance2;
                                                 }
                                                 
                                                 JToken instanceTypeValue5 = providerSpecificDetailsValue["instanceType"];

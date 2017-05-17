@@ -168,6 +168,29 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._lastHeartbeat = value; }
         }
         
+        private System.DateTime? _lastRpoCalculatedTime;
+        
+        /// <summary>
+        /// Optional. Gets or sets the last RPO calculated time.
+        /// </summary>
+        public System.DateTime? LastRpoCalculatedTime
+        {
+            get { return this._lastRpoCalculatedTime; }
+            set { this._lastRpoCalculatedTime = value; }
+        }
+        
+        private System.DateTime? _lastUpdateReceivedTime;
+        
+        /// <summary>
+        /// Optional. Gets or sets the last update time received from on-prem
+        /// components.
+        /// </summary>
+        public System.DateTime? LastUpdateReceivedTime
+        {
+            get { return this._lastUpdateReceivedTime; }
+            set { this._lastUpdateReceivedTime = value; }
+        }
+        
         private string _licenseType;
         
         /// <summary>
@@ -346,6 +369,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         {
             get { return this._recoveryAzureVMSize; }
             set { this._recoveryAzureVMSize = value; }
+        }
+        
+        private string _replicaId;
+        
+        /// <summary>
+        /// Optional. Gets or sets the replicaId of the protected vm.
+        /// </summary>
+        public string ReplicaId
+        {
+            get { return this._replicaId; }
+            set { this._replicaId = value; }
         }
         
         private int _resyncProgressPercentage;
