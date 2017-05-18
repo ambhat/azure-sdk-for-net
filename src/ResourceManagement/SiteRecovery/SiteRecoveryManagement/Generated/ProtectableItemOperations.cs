@@ -520,6 +520,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 HealthError healthErrorInstance = new HealthError();
                                                 vMwareVirtualMachineDetailsInstance.ValidationErrors.Add(healthErrorInstance);
                                                 
+                                                JToken errorSourceValue = validationErrorsValue["errorSource"];
+                                                if (errorSourceValue != null && errorSourceValue.Type != JTokenType.Null)
+                                                {
+                                                    string errorSourceInstance = ((string)errorSourceValue);
+                                                    healthErrorInstance.ErrorSource = errorSourceInstance;
+                                                }
+                                                
+                                                JToken errorTypeValue = validationErrorsValue["errorType"];
+                                                if (errorTypeValue != null && errorTypeValue.Type != JTokenType.Null)
+                                                {
+                                                    string errorTypeInstance = ((string)errorTypeValue);
+                                                    healthErrorInstance.ErrorType = errorTypeInstance;
+                                                }
+                                                
+                                                JToken errorScopeValue = validationErrorsValue["errorScope"];
+                                                if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
+                                                {
+                                                    string errorScopeInstance = ((string)errorScopeValue);
+                                                    healthErrorInstance.ErrorScope = errorScopeInstance;
+                                                }
+                                                
                                                 JToken errorLevelValue = validationErrorsValue["errorLevel"];
                                                 if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
                                                 {
@@ -1201,6 +1222,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         HealthError healthErrorInstance = new HealthError();
                                                         vMwareVirtualMachineDetailsInstance.ValidationErrors.Add(healthErrorInstance);
                                                         
+                                                        JToken errorSourceValue = validationErrorsValue["errorSource"];
+                                                        if (errorSourceValue != null && errorSourceValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorSourceInstance = ((string)errorSourceValue);
+                                                            healthErrorInstance.ErrorSource = errorSourceInstance;
+                                                        }
+                                                        
+                                                        JToken errorTypeValue = validationErrorsValue["errorType"];
+                                                        if (errorTypeValue != null && errorTypeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorTypeInstance = ((string)errorTypeValue);
+                                                            healthErrorInstance.ErrorType = errorTypeInstance;
+                                                        }
+                                                        
+                                                        JToken errorScopeValue = validationErrorsValue["errorScope"];
+                                                        if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorScopeInstance = ((string)errorScopeValue);
+                                                            healthErrorInstance.ErrorScope = errorScopeInstance;
+                                                        }
+                                                        
                                                         JToken errorLevelValue = validationErrorsValue["errorLevel"];
                                                         if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
                                                         {
@@ -1817,6 +1859,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     {
                                                         HealthError healthErrorInstance = new HealthError();
                                                         vMwareVirtualMachineDetailsInstance.ValidationErrors.Add(healthErrorInstance);
+                                                        
+                                                        JToken errorSourceValue = validationErrorsValue["errorSource"];
+                                                        if (errorSourceValue != null && errorSourceValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorSourceInstance = ((string)errorSourceValue);
+                                                            healthErrorInstance.ErrorSource = errorSourceInstance;
+                                                        }
+                                                        
+                                                        JToken errorTypeValue = validationErrorsValue["errorType"];
+                                                        if (errorTypeValue != null && errorTypeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorTypeInstance = ((string)errorTypeValue);
+                                                            healthErrorInstance.ErrorType = errorTypeInstance;
+                                                        }
+                                                        
+                                                        JToken errorScopeValue = validationErrorsValue["errorScope"];
+                                                        if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorScopeInstance = ((string)errorScopeValue);
+                                                            healthErrorInstance.ErrorScope = errorScopeInstance;
+                                                        }
                                                         
                                                         JToken errorLevelValue = validationErrorsValue["errorLevel"];
                                                         if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)

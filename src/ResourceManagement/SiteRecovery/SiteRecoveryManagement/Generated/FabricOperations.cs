@@ -2387,6 +2387,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         HealthError healthErrorInstance = new HealthError();
                                                         masterTargetServerInstance.ValidationErrors.Add(healthErrorInstance);
                                                         
+                                                        JToken errorSourceValue = validationErrorsValue["errorSource"];
+                                                        if (errorSourceValue != null && errorSourceValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorSourceInstance = ((string)errorSourceValue);
+                                                            healthErrorInstance.ErrorSource = errorSourceInstance;
+                                                        }
+                                                        
+                                                        JToken errorTypeValue = validationErrorsValue["errorType"];
+                                                        if (errorTypeValue != null && errorTypeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorTypeInstance = ((string)errorTypeValue);
+                                                            healthErrorInstance.ErrorType = errorTypeInstance;
+                                                        }
+                                                        
+                                                        JToken errorScopeValue = validationErrorsValue["errorScope"];
+                                                        if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorScopeInstance = ((string)errorScopeValue);
+                                                            healthErrorInstance.ErrorScope = errorScopeInstance;
+                                                        }
+                                                        
                                                         JToken errorLevelValue = validationErrorsValue["errorLevel"];
                                                         if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
                                                         {
@@ -2684,6 +2705,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     {
                                         HealthError healthErrorInstance2 = new HealthError();
                                         propertiesInstance.HealthErrorDetails.Add(healthErrorInstance2);
+                                        
+                                        JToken errorSourceValue2 = healthErrorDetailsValue["errorSource"];
+                                        if (errorSourceValue2 != null && errorSourceValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorSourceInstance2 = ((string)errorSourceValue2);
+                                            healthErrorInstance2.ErrorSource = errorSourceInstance2;
+                                        }
+                                        
+                                        JToken errorTypeValue2 = healthErrorDetailsValue["errorType"];
+                                        if (errorTypeValue2 != null && errorTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorTypeInstance2 = ((string)errorTypeValue2);
+                                            healthErrorInstance2.ErrorType = errorTypeInstance2;
+                                        }
+                                        
+                                        JToken errorScopeValue2 = healthErrorDetailsValue["errorScope"];
+                                        if (errorScopeValue2 != null && errorScopeValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorScopeInstance2 = ((string)errorScopeValue2);
+                                            healthErrorInstance2.ErrorScope = errorScopeInstance2;
+                                        }
                                         
                                         JToken errorLevelValue2 = healthErrorDetailsValue["errorLevel"];
                                         if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
@@ -3689,6 +3731,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         HealthError healthErrorInstance = new HealthError();
                                                         masterTargetServerInstance.ValidationErrors.Add(healthErrorInstance);
                                                         
+                                                        JToken errorSourceValue = validationErrorsValue["errorSource"];
+                                                        if (errorSourceValue != null && errorSourceValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorSourceInstance = ((string)errorSourceValue);
+                                                            healthErrorInstance.ErrorSource = errorSourceInstance;
+                                                        }
+                                                        
+                                                        JToken errorTypeValue = validationErrorsValue["errorType"];
+                                                        if (errorTypeValue != null && errorTypeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorTypeInstance = ((string)errorTypeValue);
+                                                            healthErrorInstance.ErrorType = errorTypeInstance;
+                                                        }
+                                                        
+                                                        JToken errorScopeValue = validationErrorsValue["errorScope"];
+                                                        if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorScopeInstance = ((string)errorScopeValue);
+                                                            healthErrorInstance.ErrorScope = errorScopeInstance;
+                                                        }
+                                                        
                                                         JToken errorLevelValue = validationErrorsValue["errorLevel"];
                                                         if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
                                                         {
@@ -3986,6 +4049,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     {
                                         HealthError healthErrorInstance2 = new HealthError();
                                         propertiesInstance.HealthErrorDetails.Add(healthErrorInstance2);
+                                        
+                                        JToken errorSourceValue2 = healthErrorDetailsValue["errorSource"];
+                                        if (errorSourceValue2 != null && errorSourceValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorSourceInstance2 = ((string)errorSourceValue2);
+                                            healthErrorInstance2.ErrorSource = errorSourceInstance2;
+                                        }
+                                        
+                                        JToken errorTypeValue2 = healthErrorDetailsValue["errorType"];
+                                        if (errorTypeValue2 != null && errorTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorTypeInstance2 = ((string)errorTypeValue2);
+                                            healthErrorInstance2.ErrorType = errorTypeInstance2;
+                                        }
+                                        
+                                        JToken errorScopeValue2 = healthErrorDetailsValue["errorScope"];
+                                        if (errorScopeValue2 != null && errorScopeValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorScopeInstance2 = ((string)errorScopeValue2);
+                                            healthErrorInstance2.ErrorScope = errorScopeInstance2;
+                                        }
                                         
                                         JToken errorLevelValue2 = healthErrorDetailsValue["errorLevel"];
                                         if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
@@ -5050,6 +5134,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         HealthError healthErrorInstance = new HealthError();
                                                         masterTargetServerInstance.ValidationErrors.Add(healthErrorInstance);
                                                         
+                                                        JToken errorSourceValue = validationErrorsValue["errorSource"];
+                                                        if (errorSourceValue != null && errorSourceValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorSourceInstance = ((string)errorSourceValue);
+                                                            healthErrorInstance.ErrorSource = errorSourceInstance;
+                                                        }
+                                                        
+                                                        JToken errorTypeValue = validationErrorsValue["errorType"];
+                                                        if (errorTypeValue != null && errorTypeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorTypeInstance = ((string)errorTypeValue);
+                                                            healthErrorInstance.ErrorType = errorTypeInstance;
+                                                        }
+                                                        
+                                                        JToken errorScopeValue = validationErrorsValue["errorScope"];
+                                                        if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorScopeInstance = ((string)errorScopeValue);
+                                                            healthErrorInstance.ErrorScope = errorScopeInstance;
+                                                        }
+                                                        
                                                         JToken errorLevelValue = validationErrorsValue["errorLevel"];
                                                         if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
                                                         {
@@ -5347,6 +5452,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     {
                                         HealthError healthErrorInstance2 = new HealthError();
                                         propertiesInstance.HealthErrorDetails.Add(healthErrorInstance2);
+                                        
+                                        JToken errorSourceValue2 = healthErrorDetailsValue["errorSource"];
+                                        if (errorSourceValue2 != null && errorSourceValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorSourceInstance2 = ((string)errorSourceValue2);
+                                            healthErrorInstance2.ErrorSource = errorSourceInstance2;
+                                        }
+                                        
+                                        JToken errorTypeValue2 = healthErrorDetailsValue["errorType"];
+                                        if (errorTypeValue2 != null && errorTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorTypeInstance2 = ((string)errorTypeValue2);
+                                            healthErrorInstance2.ErrorType = errorTypeInstance2;
+                                        }
+                                        
+                                        JToken errorScopeValue2 = healthErrorDetailsValue["errorScope"];
+                                        if (errorScopeValue2 != null && errorScopeValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorScopeInstance2 = ((string)errorScopeValue2);
+                                            healthErrorInstance2.ErrorScope = errorScopeInstance2;
+                                        }
                                         
                                         JToken errorLevelValue2 = healthErrorDetailsValue["errorLevel"];
                                         if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
@@ -6411,6 +6537,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         HealthError healthErrorInstance = new HealthError();
                                                         masterTargetServerInstance.ValidationErrors.Add(healthErrorInstance);
                                                         
+                                                        JToken errorSourceValue = validationErrorsValue["errorSource"];
+                                                        if (errorSourceValue != null && errorSourceValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorSourceInstance = ((string)errorSourceValue);
+                                                            healthErrorInstance.ErrorSource = errorSourceInstance;
+                                                        }
+                                                        
+                                                        JToken errorTypeValue = validationErrorsValue["errorType"];
+                                                        if (errorTypeValue != null && errorTypeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorTypeInstance = ((string)errorTypeValue);
+                                                            healthErrorInstance.ErrorType = errorTypeInstance;
+                                                        }
+                                                        
+                                                        JToken errorScopeValue = validationErrorsValue["errorScope"];
+                                                        if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorScopeInstance = ((string)errorScopeValue);
+                                                            healthErrorInstance.ErrorScope = errorScopeInstance;
+                                                        }
+                                                        
                                                         JToken errorLevelValue = validationErrorsValue["errorLevel"];
                                                         if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
                                                         {
@@ -6708,6 +6855,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     {
                                         HealthError healthErrorInstance2 = new HealthError();
                                         propertiesInstance.HealthErrorDetails.Add(healthErrorInstance2);
+                                        
+                                        JToken errorSourceValue2 = healthErrorDetailsValue["errorSource"];
+                                        if (errorSourceValue2 != null && errorSourceValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorSourceInstance2 = ((string)errorSourceValue2);
+                                            healthErrorInstance2.ErrorSource = errorSourceInstance2;
+                                        }
+                                        
+                                        JToken errorTypeValue2 = healthErrorDetailsValue["errorType"];
+                                        if (errorTypeValue2 != null && errorTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorTypeInstance2 = ((string)errorTypeValue2);
+                                            healthErrorInstance2.ErrorType = errorTypeInstance2;
+                                        }
+                                        
+                                        JToken errorScopeValue2 = healthErrorDetailsValue["errorScope"];
+                                        if (errorScopeValue2 != null && errorScopeValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorScopeInstance2 = ((string)errorScopeValue2);
+                                            healthErrorInstance2.ErrorScope = errorScopeInstance2;
+                                        }
                                         
                                         JToken errorLevelValue2 = healthErrorDetailsValue["errorLevel"];
                                         if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
@@ -7541,6 +7709,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         HealthError healthErrorInstance = new HealthError();
                                                         masterTargetServerInstance.ValidationErrors.Add(healthErrorInstance);
                                                         
+                                                        JToken errorSourceValue = validationErrorsValue["errorSource"];
+                                                        if (errorSourceValue != null && errorSourceValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorSourceInstance = ((string)errorSourceValue);
+                                                            healthErrorInstance.ErrorSource = errorSourceInstance;
+                                                        }
+                                                        
+                                                        JToken errorTypeValue = validationErrorsValue["errorType"];
+                                                        if (errorTypeValue != null && errorTypeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorTypeInstance = ((string)errorTypeValue);
+                                                            healthErrorInstance.ErrorType = errorTypeInstance;
+                                                        }
+                                                        
+                                                        JToken errorScopeValue = validationErrorsValue["errorScope"];
+                                                        if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorScopeInstance = ((string)errorScopeValue);
+                                                            healthErrorInstance.ErrorScope = errorScopeInstance;
+                                                        }
+                                                        
                                                         JToken errorLevelValue = validationErrorsValue["errorLevel"];
                                                         if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
                                                         {
@@ -7838,6 +8027,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     {
                                         HealthError healthErrorInstance2 = new HealthError();
                                         propertiesInstance.HealthErrorDetails.Add(healthErrorInstance2);
+                                        
+                                        JToken errorSourceValue2 = healthErrorDetailsValue["errorSource"];
+                                        if (errorSourceValue2 != null && errorSourceValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorSourceInstance2 = ((string)errorSourceValue2);
+                                            healthErrorInstance2.ErrorSource = errorSourceInstance2;
+                                        }
+                                        
+                                        JToken errorTypeValue2 = healthErrorDetailsValue["errorType"];
+                                        if (errorTypeValue2 != null && errorTypeValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorTypeInstance2 = ((string)errorTypeValue2);
+                                            healthErrorInstance2.ErrorType = errorTypeInstance2;
+                                        }
+                                        
+                                        JToken errorScopeValue2 = healthErrorDetailsValue["errorScope"];
+                                        if (errorScopeValue2 != null && errorScopeValue2.Type != JTokenType.Null)
+                                        {
+                                            string errorScopeInstance2 = ((string)errorScopeValue2);
+                                            healthErrorInstance2.ErrorScope = errorScopeInstance2;
+                                        }
                                         
                                         JToken errorLevelValue2 = healthErrorDetailsValue["errorLevel"];
                                         if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)
@@ -8700,6 +8910,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                                 HealthError healthErrorInstance = new HealthError();
                                                                 masterTargetServerInstance.ValidationErrors.Add(healthErrorInstance);
                                                                 
+                                                                JToken errorSourceValue = validationErrorsValue["errorSource"];
+                                                                if (errorSourceValue != null && errorSourceValue.Type != JTokenType.Null)
+                                                                {
+                                                                    string errorSourceInstance = ((string)errorSourceValue);
+                                                                    healthErrorInstance.ErrorSource = errorSourceInstance;
+                                                                }
+                                                                
+                                                                JToken errorTypeValue = validationErrorsValue["errorType"];
+                                                                if (errorTypeValue != null && errorTypeValue.Type != JTokenType.Null)
+                                                                {
+                                                                    string errorTypeInstance = ((string)errorTypeValue);
+                                                                    healthErrorInstance.ErrorType = errorTypeInstance;
+                                                                }
+                                                                
+                                                                JToken errorScopeValue = validationErrorsValue["errorScope"];
+                                                                if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
+                                                                {
+                                                                    string errorScopeInstance = ((string)errorScopeValue);
+                                                                    healthErrorInstance.ErrorScope = errorScopeInstance;
+                                                                }
+                                                                
                                                                 JToken errorLevelValue = validationErrorsValue["errorLevel"];
                                                                 if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
                                                                 {
@@ -8997,6 +9228,27 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             {
                                                 HealthError healthErrorInstance2 = new HealthError();
                                                 propertiesInstance.HealthErrorDetails.Add(healthErrorInstance2);
+                                                
+                                                JToken errorSourceValue2 = healthErrorDetailsValue["errorSource"];
+                                                if (errorSourceValue2 != null && errorSourceValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorSourceInstance2 = ((string)errorSourceValue2);
+                                                    healthErrorInstance2.ErrorSource = errorSourceInstance2;
+                                                }
+                                                
+                                                JToken errorTypeValue2 = healthErrorDetailsValue["errorType"];
+                                                if (errorTypeValue2 != null && errorTypeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorTypeInstance2 = ((string)errorTypeValue2);
+                                                    healthErrorInstance2.ErrorType = errorTypeInstance2;
+                                                }
+                                                
+                                                JToken errorScopeValue2 = healthErrorDetailsValue["errorScope"];
+                                                if (errorScopeValue2 != null && errorScopeValue2.Type != JTokenType.Null)
+                                                {
+                                                    string errorScopeInstance2 = ((string)errorScopeValue2);
+                                                    healthErrorInstance2.ErrorScope = errorScopeInstance2;
+                                                }
                                                 
                                                 JToken errorLevelValue2 = healthErrorDetailsValue["errorLevel"];
                                                 if (errorLevelValue2 != null && errorLevelValue2.Type != JTokenType.Null)

@@ -84,6 +84,39 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._errorMessage = value; }
         }
         
+        private string _errorScope;
+        
+        /// <summary>
+        /// Optional. Scope of error.
+        /// </summary>
+        public string ErrorScope
+        {
+            get { return this._errorScope; }
+            set { this._errorScope = value; }
+        }
+        
+        private string _errorSource;
+        
+        /// <summary>
+        /// Optional. Source of error.
+        /// </summary>
+        public string ErrorSource
+        {
+            get { return this._errorSource; }
+            set { this._errorSource = value; }
+        }
+        
+        private string _errorType;
+        
+        /// <summary>
+        /// Optional. Type of error.
+        /// </summary>
+        public string ErrorType
+        {
+            get { return this._errorType; }
+            set { this._errorType = value; }
+        }
+        
         private string _possibleCauses;
         
         /// <summary>
