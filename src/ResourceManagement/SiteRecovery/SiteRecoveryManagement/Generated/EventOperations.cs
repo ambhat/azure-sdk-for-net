@@ -550,13 +550,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             healthErrorInstance.ErrorType = errorTypeInstance;
                                         }
                                         
-                                        JToken errorScopeValue = healthErrorsValue["errorScope"];
-                                        if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
-                                        {
-                                            string errorScopeInstance = ((string)errorScopeValue);
-                                            healthErrorInstance.ErrorScope = errorScopeInstance;
-                                        }
-                                        
                                         JToken errorLevelValue = healthErrorsValue["errorLevel"];
                                         if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
                                         {
@@ -1227,13 +1220,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string errorTypeInstance = ((string)errorTypeValue);
                                                     healthErrorInstance.ErrorType = errorTypeInstance;
-                                                }
-                                                
-                                                JToken errorScopeValue = healthErrorsValue["errorScope"];
-                                                if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
-                                                {
-                                                    string errorScopeInstance = ((string)errorScopeValue);
-                                                    healthErrorInstance.ErrorScope = errorScopeInstance;
                                                 }
                                                 
                                                 JToken errorLevelValue = healthErrorsValue["errorLevel"];

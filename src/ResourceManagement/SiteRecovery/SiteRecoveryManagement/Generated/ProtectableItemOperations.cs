@@ -534,13 +534,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     healthErrorInstance.ErrorType = errorTypeInstance;
                                                 }
                                                 
-                                                JToken errorScopeValue = validationErrorsValue["errorScope"];
-                                                if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
-                                                {
-                                                    string errorScopeInstance = ((string)errorScopeValue);
-                                                    healthErrorInstance.ErrorScope = errorScopeInstance;
-                                                }
-                                                
                                                 JToken errorLevelValue = validationErrorsValue["errorLevel"];
                                                 if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
                                                 {
@@ -1236,13 +1229,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             healthErrorInstance.ErrorType = errorTypeInstance;
                                                         }
                                                         
-                                                        JToken errorScopeValue = validationErrorsValue["errorScope"];
-                                                        if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
-                                                        {
-                                                            string errorScopeInstance = ((string)errorScopeValue);
-                                                            healthErrorInstance.ErrorScope = errorScopeInstance;
-                                                        }
-                                                        
                                                         JToken errorLevelValue = validationErrorsValue["errorLevel"];
                                                         if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
                                                         {
@@ -1872,13 +1858,6 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string errorTypeInstance = ((string)errorTypeValue);
                                                             healthErrorInstance.ErrorType = errorTypeInstance;
-                                                        }
-                                                        
-                                                        JToken errorScopeValue = validationErrorsValue["errorScope"];
-                                                        if (errorScopeValue != null && errorScopeValue.Type != JTokenType.Null)
-                                                        {
-                                                            string errorScopeInstance = ((string)errorScopeValue);
-                                                            healthErrorInstance.ErrorScope = errorScopeInstance;
                                                         }
                                                         
                                                         JToken errorLevelValue = validationErrorsValue["errorLevel"];
