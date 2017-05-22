@@ -4131,6 +4131,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string subnetInstance = ((string)subnetValue);
                                                     failoverReplicationProtectedItemDetailsInstance.Subnet = subnetInstance;
                                                 }
+                                                
+                                                JToken recoveryPointIdValue = protectedItemDetailsValue["recoveryPointId"];
+                                                if (recoveryPointIdValue != null && recoveryPointIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryPointIdInstance = ((string)recoveryPointIdValue);
+                                                    failoverReplicationProtectedItemDetailsInstance.RecoveryPointId = recoveryPointIdInstance;
+                                                }
+                                                
+                                                JToken recoveryPointTimeValue = protectedItemDetailsValue["recoveryPointTime"];
+                                                if (recoveryPointTimeValue != null && recoveryPointTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime recoveryPointTimeInstance = ((DateTime)recoveryPointTimeValue);
+                                                    failoverReplicationProtectedItemDetailsInstance.RecoveryPointTime = recoveryPointTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -4212,6 +4226,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string subnetInstance2 = ((string)subnetValue2);
                                                     failoverReplicationProtectedItemDetailsInstance2.Subnet = subnetInstance2;
+                                                }
+                                                
+                                                JToken recoveryPointIdValue2 = protectedItemDetailsValue2["recoveryPointId"];
+                                                if (recoveryPointIdValue2 != null && recoveryPointIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryPointIdInstance2 = ((string)recoveryPointIdValue2);
+                                                    failoverReplicationProtectedItemDetailsInstance2.RecoveryPointId = recoveryPointIdInstance2;
+                                                }
+                                                
+                                                JToken recoveryPointTimeValue2 = protectedItemDetailsValue2["recoveryPointTime"];
+                                                if (recoveryPointTimeValue2 != null && recoveryPointTimeValue2.Type != JTokenType.Null)
+                                                {
+                                                    DateTime recoveryPointTimeInstance2 = ((DateTime)recoveryPointTimeValue2);
+                                                    failoverReplicationProtectedItemDetailsInstance2.RecoveryPointTime = recoveryPointTimeInstance2;
                                                 }
                                             }
                                         }
@@ -7541,6 +7569,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string subnetInstance = ((string)subnetValue);
                                                     failoverReplicationProtectedItemDetailsInstance.Subnet = subnetInstance;
                                                 }
+                                                
+                                                JToken recoveryPointIdValue = protectedItemDetailsValue["recoveryPointId"];
+                                                if (recoveryPointIdValue != null && recoveryPointIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryPointIdInstance = ((string)recoveryPointIdValue);
+                                                    failoverReplicationProtectedItemDetailsInstance.RecoveryPointId = recoveryPointIdInstance;
+                                                }
+                                                
+                                                JToken recoveryPointTimeValue = protectedItemDetailsValue["recoveryPointTime"];
+                                                if (recoveryPointTimeValue != null && recoveryPointTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime recoveryPointTimeInstance = ((DateTime)recoveryPointTimeValue);
+                                                    failoverReplicationProtectedItemDetailsInstance.RecoveryPointTime = recoveryPointTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -7622,6 +7664,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string subnetInstance2 = ((string)subnetValue2);
                                                     failoverReplicationProtectedItemDetailsInstance2.Subnet = subnetInstance2;
+                                                }
+                                                
+                                                JToken recoveryPointIdValue2 = protectedItemDetailsValue2["recoveryPointId"];
+                                                if (recoveryPointIdValue2 != null && recoveryPointIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryPointIdInstance2 = ((string)recoveryPointIdValue2);
+                                                    failoverReplicationProtectedItemDetailsInstance2.RecoveryPointId = recoveryPointIdInstance2;
+                                                }
+                                                
+                                                JToken recoveryPointTimeValue2 = protectedItemDetailsValue2["recoveryPointTime"];
+                                                if (recoveryPointTimeValue2 != null && recoveryPointTimeValue2.Type != JTokenType.Null)
+                                                {
+                                                    DateTime recoveryPointTimeInstance2 = ((DateTime)recoveryPointTimeValue2);
+                                                    failoverReplicationProtectedItemDetailsInstance2.RecoveryPointTime = recoveryPointTimeInstance2;
                                                 }
                                             }
                                         }
@@ -11006,6 +11062,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string subnetInstance = ((string)subnetValue);
                                                     failoverReplicationProtectedItemDetailsInstance.Subnet = subnetInstance;
                                                 }
+                                                
+                                                JToken recoveryPointIdValue = protectedItemDetailsValue["recoveryPointId"];
+                                                if (recoveryPointIdValue != null && recoveryPointIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryPointIdInstance = ((string)recoveryPointIdValue);
+                                                    failoverReplicationProtectedItemDetailsInstance.RecoveryPointId = recoveryPointIdInstance;
+                                                }
+                                                
+                                                JToken recoveryPointTimeValue = protectedItemDetailsValue["recoveryPointTime"];
+                                                if (recoveryPointTimeValue != null && recoveryPointTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime recoveryPointTimeInstance = ((DateTime)recoveryPointTimeValue);
+                                                    failoverReplicationProtectedItemDetailsInstance.RecoveryPointTime = recoveryPointTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -11087,6 +11157,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string subnetInstance2 = ((string)subnetValue2);
                                                     failoverReplicationProtectedItemDetailsInstance2.Subnet = subnetInstance2;
+                                                }
+                                                
+                                                JToken recoveryPointIdValue2 = protectedItemDetailsValue2["recoveryPointId"];
+                                                if (recoveryPointIdValue2 != null && recoveryPointIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryPointIdInstance2 = ((string)recoveryPointIdValue2);
+                                                    failoverReplicationProtectedItemDetailsInstance2.RecoveryPointId = recoveryPointIdInstance2;
+                                                }
+                                                
+                                                JToken recoveryPointTimeValue2 = protectedItemDetailsValue2["recoveryPointTime"];
+                                                if (recoveryPointTimeValue2 != null && recoveryPointTimeValue2.Type != JTokenType.Null)
+                                                {
+                                                    DateTime recoveryPointTimeInstance2 = ((DateTime)recoveryPointTimeValue2);
+                                                    failoverReplicationProtectedItemDetailsInstance2.RecoveryPointTime = recoveryPointTimeInstance2;
                                                 }
                                             }
                                         }
@@ -14475,6 +14559,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string subnetInstance = ((string)subnetValue);
                                                     failoverReplicationProtectedItemDetailsInstance.Subnet = subnetInstance;
                                                 }
+                                                
+                                                JToken recoveryPointIdValue = protectedItemDetailsValue["recoveryPointId"];
+                                                if (recoveryPointIdValue != null && recoveryPointIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryPointIdInstance = ((string)recoveryPointIdValue);
+                                                    failoverReplicationProtectedItemDetailsInstance.RecoveryPointId = recoveryPointIdInstance;
+                                                }
+                                                
+                                                JToken recoveryPointTimeValue = protectedItemDetailsValue["recoveryPointTime"];
+                                                if (recoveryPointTimeValue != null && recoveryPointTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime recoveryPointTimeInstance = ((DateTime)recoveryPointTimeValue);
+                                                    failoverReplicationProtectedItemDetailsInstance.RecoveryPointTime = recoveryPointTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -14556,6 +14654,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string subnetInstance2 = ((string)subnetValue2);
                                                     failoverReplicationProtectedItemDetailsInstance2.Subnet = subnetInstance2;
+                                                }
+                                                
+                                                JToken recoveryPointIdValue2 = protectedItemDetailsValue2["recoveryPointId"];
+                                                if (recoveryPointIdValue2 != null && recoveryPointIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryPointIdInstance2 = ((string)recoveryPointIdValue2);
+                                                    failoverReplicationProtectedItemDetailsInstance2.RecoveryPointId = recoveryPointIdInstance2;
+                                                }
+                                                
+                                                JToken recoveryPointTimeValue2 = protectedItemDetailsValue2["recoveryPointTime"];
+                                                if (recoveryPointTimeValue2 != null && recoveryPointTimeValue2.Type != JTokenType.Null)
+                                                {
+                                                    DateTime recoveryPointTimeInstance2 = ((DateTime)recoveryPointTimeValue2);
+                                                    failoverReplicationProtectedItemDetailsInstance2.RecoveryPointTime = recoveryPointTimeInstance2;
                                                 }
                                             }
                                         }
@@ -17944,6 +18056,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     string subnetInstance = ((string)subnetValue);
                                                     failoverReplicationProtectedItemDetailsInstance.Subnet = subnetInstance;
                                                 }
+                                                
+                                                JToken recoveryPointIdValue = protectedItemDetailsValue["recoveryPointId"];
+                                                if (recoveryPointIdValue != null && recoveryPointIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryPointIdInstance = ((string)recoveryPointIdValue);
+                                                    failoverReplicationProtectedItemDetailsInstance.RecoveryPointId = recoveryPointIdInstance;
+                                                }
+                                                
+                                                JToken recoveryPointTimeValue = protectedItemDetailsValue["recoveryPointTime"];
+                                                if (recoveryPointTimeValue != null && recoveryPointTimeValue.Type != JTokenType.Null)
+                                                {
+                                                    DateTime recoveryPointTimeInstance = ((DateTime)recoveryPointTimeValue);
+                                                    failoverReplicationProtectedItemDetailsInstance.RecoveryPointTime = recoveryPointTimeInstance;
+                                                }
                                             }
                                         }
                                         
@@ -18025,6 +18151,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string subnetInstance2 = ((string)subnetValue2);
                                                     failoverReplicationProtectedItemDetailsInstance2.Subnet = subnetInstance2;
+                                                }
+                                                
+                                                JToken recoveryPointIdValue2 = protectedItemDetailsValue2["recoveryPointId"];
+                                                if (recoveryPointIdValue2 != null && recoveryPointIdValue2.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryPointIdInstance2 = ((string)recoveryPointIdValue2);
+                                                    failoverReplicationProtectedItemDetailsInstance2.RecoveryPointId = recoveryPointIdInstance2;
+                                                }
+                                                
+                                                JToken recoveryPointTimeValue2 = protectedItemDetailsValue2["recoveryPointTime"];
+                                                if (recoveryPointTimeValue2 != null && recoveryPointTimeValue2.Type != JTokenType.Null)
+                                                {
+                                                    DateTime recoveryPointTimeInstance2 = ((DateTime)recoveryPointTimeValue2);
+                                                    failoverReplicationProtectedItemDetailsInstance2.RecoveryPointTime = recoveryPointTimeInstance2;
                                                 }
                                             }
                                         }
@@ -21455,6 +21595,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                             string subnetInstance = ((string)subnetValue);
                                                             failoverReplicationProtectedItemDetailsInstance.Subnet = subnetInstance;
                                                         }
+                                                        
+                                                        JToken recoveryPointIdValue = protectedItemDetailsValue["recoveryPointId"];
+                                                        if (recoveryPointIdValue != null && recoveryPointIdValue.Type != JTokenType.Null)
+                                                        {
+                                                            string recoveryPointIdInstance = ((string)recoveryPointIdValue);
+                                                            failoverReplicationProtectedItemDetailsInstance.RecoveryPointId = recoveryPointIdInstance;
+                                                        }
+                                                        
+                                                        JToken recoveryPointTimeValue = protectedItemDetailsValue["recoveryPointTime"];
+                                                        if (recoveryPointTimeValue != null && recoveryPointTimeValue.Type != JTokenType.Null)
+                                                        {
+                                                            DateTime recoveryPointTimeInstance = ((DateTime)recoveryPointTimeValue);
+                                                            failoverReplicationProtectedItemDetailsInstance.RecoveryPointTime = recoveryPointTimeInstance;
+                                                        }
                                                     }
                                                 }
                                                 
@@ -21536,6 +21690,20 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                         {
                                                             string subnetInstance2 = ((string)subnetValue2);
                                                             failoverReplicationProtectedItemDetailsInstance2.Subnet = subnetInstance2;
+                                                        }
+                                                        
+                                                        JToken recoveryPointIdValue2 = protectedItemDetailsValue2["recoveryPointId"];
+                                                        if (recoveryPointIdValue2 != null && recoveryPointIdValue2.Type != JTokenType.Null)
+                                                        {
+                                                            string recoveryPointIdInstance2 = ((string)recoveryPointIdValue2);
+                                                            failoverReplicationProtectedItemDetailsInstance2.RecoveryPointId = recoveryPointIdInstance2;
+                                                        }
+                                                        
+                                                        JToken recoveryPointTimeValue2 = protectedItemDetailsValue2["recoveryPointTime"];
+                                                        if (recoveryPointTimeValue2 != null && recoveryPointTimeValue2.Type != JTokenType.Null)
+                                                        {
+                                                            DateTime recoveryPointTimeInstance2 = ((DateTime)recoveryPointTimeValue2);
+                                                            failoverReplicationProtectedItemDetailsInstance2.RecoveryPointTime = recoveryPointTimeInstance2;
                                                         }
                                                     }
                                                 }

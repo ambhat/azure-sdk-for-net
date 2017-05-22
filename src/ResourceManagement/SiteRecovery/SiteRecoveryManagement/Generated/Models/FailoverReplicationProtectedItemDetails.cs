@@ -73,6 +73,28 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._networkFriendlyName = value; }
         }
         
+        private string _recoveryPointId;
+        
+        /// <summary>
+        /// Optional. Recovery point Id.
+        /// </summary>
+        public string RecoveryPointId
+        {
+            get { return this._recoveryPointId; }
+            set { this._recoveryPointId = value; }
+        }
+        
+        private System.DateTime? _recoveryPointTime;
+        
+        /// <summary>
+        /// Optional. Recovery point time.
+        /// </summary>
+        public System.DateTime? RecoveryPointTime
+        {
+            get { return this._recoveryPointTime; }
+            set { this._recoveryPointTime = value; }
+        }
+        
         private string _subnet;
         
         /// <summary>
