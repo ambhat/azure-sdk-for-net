@@ -1144,6 +1144,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     propertiesInstance.RecoveryNetworkFriendlyName = recoveryNetworkFriendlyNameInstance;
                                 }
                                 
+                                JToken recoveryFabricArmIdValue = propertiesValue["recoveryFabricArmId"];
+                                if (recoveryFabricArmIdValue != null && recoveryFabricArmIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryFabricArmIdInstance = ((string)recoveryFabricArmIdValue);
+                                    propertiesInstance.RecoveryFabricArmId = recoveryFabricArmIdInstance;
+                                }
+                                
                                 JToken recoveryFabricFriendlyNameValue = propertiesValue["recoveryFabricFriendlyName"];
                                 if (recoveryFabricFriendlyNameValue != null && recoveryFabricFriendlyNameValue.Type != JTokenType.Null)
                                 {
@@ -1499,6 +1506,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             propertiesInstance.RecoveryNetworkFriendlyName = recoveryNetworkFriendlyNameInstance;
                                         }
                                         
+                                        JToken recoveryFabricArmIdValue = propertiesValue["recoveryFabricArmId"];
+                                        if (recoveryFabricArmIdValue != null && recoveryFabricArmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricArmIdInstance = ((string)recoveryFabricArmIdValue);
+                                            propertiesInstance.RecoveryFabricArmId = recoveryFabricArmIdInstance;
+                                        }
+                                        
                                         JToken recoveryFabricFriendlyNameValue = propertiesValue["recoveryFabricFriendlyName"];
                                         if (recoveryFabricFriendlyNameValue != null && recoveryFabricFriendlyNameValue.Type != JTokenType.Null)
                                         {
@@ -1832,6 +1846,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                 {
                                     string recoveryNetworkFriendlyNameInstance = ((string)recoveryNetworkFriendlyNameValue);
                                     propertiesInstance.RecoveryNetworkFriendlyName = recoveryNetworkFriendlyNameInstance;
+                                }
+                                
+                                JToken recoveryFabricArmIdValue = propertiesValue["recoveryFabricArmId"];
+                                if (recoveryFabricArmIdValue != null && recoveryFabricArmIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryFabricArmIdInstance = ((string)recoveryFabricArmIdValue);
+                                    propertiesInstance.RecoveryFabricArmId = recoveryFabricArmIdInstance;
                                 }
                                 
                                 JToken recoveryFabricFriendlyNameValue = propertiesValue["recoveryFabricFriendlyName"];
@@ -2450,6 +2471,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     propertiesInstance.RecoveryNetworkFriendlyName = recoveryNetworkFriendlyNameInstance;
                                 }
                                 
+                                JToken recoveryFabricArmIdValue = propertiesValue["recoveryFabricArmId"];
+                                if (recoveryFabricArmIdValue != null && recoveryFabricArmIdValue.Type != JTokenType.Null)
+                                {
+                                    string recoveryFabricArmIdInstance = ((string)recoveryFabricArmIdValue);
+                                    propertiesInstance.RecoveryFabricArmId = recoveryFabricArmIdInstance;
+                                }
+                                
                                 JToken recoveryFabricFriendlyNameValue = propertiesValue["recoveryFabricFriendlyName"];
                                 if (recoveryFabricFriendlyNameValue != null && recoveryFabricFriendlyNameValue.Type != JTokenType.Null)
                                 {
@@ -2882,6 +2910,13 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryNetworkFriendlyNameInstance = ((string)recoveryNetworkFriendlyNameValue);
                                             propertiesInstance.RecoveryNetworkFriendlyName = recoveryNetworkFriendlyNameInstance;
+                                        }
+                                        
+                                        JToken recoveryFabricArmIdValue = propertiesValue["recoveryFabricArmId"];
+                                        if (recoveryFabricArmIdValue != null && recoveryFabricArmIdValue.Type != JTokenType.Null)
+                                        {
+                                            string recoveryFabricArmIdInstance = ((string)recoveryFabricArmIdValue);
+                                            propertiesInstance.RecoveryFabricArmId = recoveryFabricArmIdInstance;
                                         }
                                         
                                         JToken recoveryFabricFriendlyNameValue = propertiesValue["recoveryFabricFriendlyName"];

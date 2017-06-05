@@ -76,12 +76,12 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._networkType = value; }
         }
         
-        private IList<TestFailoverReplicationProtectedItemDetails> _protectedItemDetails;
+        private IList<FailoverReplicationProtectedItemDetails> _protectedItemDetails;
         
         /// <summary>
         /// Optional. Protected item details for the test failover job.
         /// </summary>
-        public IList<TestFailoverReplicationProtectedItemDetails> ProtectedItemDetails
+        public IList<FailoverReplicationProtectedItemDetails> ProtectedItemDetails
         {
             get { return this._protectedItemDetails; }
             set { this._protectedItemDetails = value; }
@@ -103,7 +103,7 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
         /// </summary>
         public TestFailoverJobDetails()
         {
-            this.ProtectedItemDetails = new LazyList<TestFailoverReplicationProtectedItemDetails>();
+            this.ProtectedItemDetails = new LazyList<FailoverReplicationProtectedItemDetails>();
         }
         
         /// <summary>

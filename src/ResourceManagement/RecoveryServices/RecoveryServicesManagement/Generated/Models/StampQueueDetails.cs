@@ -20,52 +20,42 @@
 // code is regenerated.
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using Hyak.Common;
-using Microsoft.Azure;
-using Microsoft.Azure.Management.RecoveryServices.Models;
 
 namespace Microsoft.Azure.Management.RecoveryServices.Models
 {
     /// <summary>
-    /// The response model for Stamp list.
+    /// The definition of a queue details of stamp.
     /// </summary>
-    public partial class StampListResponse : AzureOperationResponse, IEnumerable<Stamp>
+    public partial class StampQueueDetails
     {
-        private IList<Stamp> _stamps;
+        private string _queueSASToken;
         
         /// <summary>
-        /// Optional. The list of stamps for the given region.
+        /// Optional. Gets or sets the queue SAS token of the Stamp.
         /// </summary>
-        public IList<Stamp> Stamps
+        public string QueueSASToken
         {
-            get { return this._stamps; }
-            set { this._stamps = value; }
+            get { return this._queueSASToken; }
+            set { this._queueSASToken = value; }
+        }
+        
+        private string _queueSASUri;
+        
+        /// <summary>
+        /// Optional. Gets or sets the queue SAS uri of the Stamp.
+        /// </summary>
+        public string QueueSASUri
+        {
+            get { return this._queueSASUri; }
+            set { this._queueSASUri = value; }
         }
         
         /// <summary>
-        /// Initializes a new instance of the StampListResponse class.
+        /// Initializes a new instance of the StampQueueDetails class.
         /// </summary>
-        public StampListResponse()
+        public StampQueueDetails()
         {
-            this.Stamps = new LazyList<Stamp>();
-        }
-        
-        /// <summary>
-        /// Gets the sequence of Stamps.
-        /// </summary>
-        public IEnumerator<Stamp> GetEnumerator()
-        {
-            return this.Stamps.GetEnumerator();
-        }
-        
-        /// <summary>
-        /// Gets the sequence of Stamps.
-        /// </summary>
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-        {
-            return this.GetEnumerator();
         }
     }
 }

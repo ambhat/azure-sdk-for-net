@@ -42,6 +42,29 @@ namespace Microsoft.Azure.Management.RecoveryServices
         /// <param name='provisioningApiVersion'>
         /// Provisioning api version.
         /// </param>
+        /// <param name='input'>
+        /// Allocate stamp input.
+        /// </param>
+        /// <param name='customRequestHeaders'>
+        /// Request header parameters.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// Cancellation token.
+        /// </param>
+        /// <returns>
+        /// The response model for Stamp allocation.
+        /// </returns>
+        Task<StampAllocateResponse> AllocateAsync(string region, string provisioningApiVersion, AllocateStampInput input, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Retrieve a list of allocated stamps.
+        /// </summary>
+        /// <param name='region'>
+        /// Region of the stamp.
+        /// </param>
+        /// <param name='provisioningApiVersion'>
+        /// Provisioning api version.
+        /// </param>
         /// <param name='parameters'>
         /// Stamp query parameter.
         /// </param>
@@ -52,7 +75,7 @@ namespace Microsoft.Azure.Management.RecoveryServices
         /// Cancellation token.
         /// </param>
         /// <returns>
-        /// The response model for Stamp.
+        /// The response model for Stamp list.
         /// </returns>
         Task<StampListResponse> ListAsync(string region, string provisioningApiVersion, StampQueryParameter parameters, CustomRequestHeaders customRequestHeaders, CancellationToken cancellationToken);
     }

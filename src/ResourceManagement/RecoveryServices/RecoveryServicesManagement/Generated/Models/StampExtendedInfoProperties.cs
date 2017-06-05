@@ -20,55 +20,57 @@
 // code is regenerated.
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Azure.Management.SiteRecovery.Models;
+using Hyak.Common;
+using Microsoft.Azure.Management.RecoveryServices.Models;
 
-namespace Microsoft.Azure.Management.SiteRecovery.Models
+namespace Microsoft.Azure.Management.RecoveryServices.Models
 {
     /// <summary>
-    /// Recovery point properties.
+    /// The definition of a extended information stamp properties.
     /// </summary>
-    public partial class RecoveryPointProperties
+    public partial class StampExtendedInfoProperties
     {
-        private ProviderSpecificRecoveryPointDetails _providerSpecificDetails;
+        private IList<StampQueueDetails> _queueDetails;
         
         /// <summary>
-        /// Optional. The provider specific details
+        /// Optional. Queue details of stamp.
         /// </summary>
-        public ProviderSpecificRecoveryPointDetails ProviderSpecificDetails
+        public IList<StampQueueDetails> QueueDetails
         {
-            get { return this._providerSpecificDetails; }
-            set { this._providerSpecificDetails = value; }
+            get { return this._queueDetails; }
+            set { this._queueDetails = value; }
         }
         
-        private DateTime _recoveryPointTime;
+        private string _stampType;
         
         /// <summary>
-        /// Optional. The recovery point time.
+        /// Optional. Gets or sets the type of the Stamp.
         /// </summary>
-        public DateTime RecoveryPointTime
+        public string StampType
         {
-            get { return this._recoveryPointTime; }
-            set { this._recoveryPointTime = value; }
+            get { return this._stampType; }
+            set { this._stampType = value; }
         }
         
-        private string _recoveryPointType;
+        private string _uri;
         
         /// <summary>
-        /// Optional. The recovery point type: ApplicationConsistent,
-        /// CrashConsistent.
+        /// Optional. Gets or sets the uri of the Stamp.
         /// </summary>
-        public string RecoveryPointType
+        public string Uri
         {
-            get { return this._recoveryPointType; }
-            set { this._recoveryPointType = value; }
+            get { return this._uri; }
+            set { this._uri = value; }
         }
         
         /// <summary>
-        /// Initializes a new instance of the RecoveryPointProperties class.
+        /// Initializes a new instance of the StampExtendedInfoProperties class.
         /// </summary>
-        public RecoveryPointProperties()
+        public StampExtendedInfoProperties()
         {
+            this.QueueDetails = new LazyList<StampQueueDetails>();
         }
     }
 }

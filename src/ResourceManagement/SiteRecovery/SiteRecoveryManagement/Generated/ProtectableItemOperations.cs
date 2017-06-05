@@ -512,6 +512,86 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                             vMwareVirtualMachineDetailsInstance.DiscoveryType = discoveryTypeInstance;
                                         }
                                         
+                                        JToken validationErrorsArray = customDetailsValue["validationErrors"];
+                                        if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                        {
+                                            foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                            {
+                                                HealthError healthErrorInstance = new HealthError();
+                                                vMwareVirtualMachineDetailsInstance.ValidationErrors.Add(healthErrorInstance);
+                                                
+                                                JToken errorSourceValue = validationErrorsValue["errorSource"];
+                                                if (errorSourceValue != null && errorSourceValue.Type != JTokenType.Null)
+                                                {
+                                                    string errorSourceInstance = ((string)errorSourceValue);
+                                                    healthErrorInstance.ErrorSource = errorSourceInstance;
+                                                }
+                                                
+                                                JToken errorTypeValue = validationErrorsValue["errorType"];
+                                                if (errorTypeValue != null && errorTypeValue.Type != JTokenType.Null)
+                                                {
+                                                    string errorTypeInstance = ((string)errorTypeValue);
+                                                    healthErrorInstance.ErrorType = errorTypeInstance;
+                                                }
+                                                
+                                                JToken errorLevelValue = validationErrorsValue["errorLevel"];
+                                                if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
+                                                {
+                                                    string errorLevelInstance = ((string)errorLevelValue);
+                                                    healthErrorInstance.ErrorLevel = errorLevelInstance;
+                                                }
+                                                
+                                                JToken errorCodeValue = validationErrorsValue["errorCode"];
+                                                if (errorCodeValue != null && errorCodeValue.Type != JTokenType.Null)
+                                                {
+                                                    string errorCodeInstance = ((string)errorCodeValue);
+                                                    healthErrorInstance.ErrorCode = errorCodeInstance;
+                                                }
+                                                
+                                                JToken errorMessageValue = validationErrorsValue["errorMessage"];
+                                                if (errorMessageValue != null && errorMessageValue.Type != JTokenType.Null)
+                                                {
+                                                    string errorMessageInstance = ((string)errorMessageValue);
+                                                    healthErrorInstance.ErrorMessage = errorMessageInstance;
+                                                }
+                                                
+                                                JToken possibleCausesValue = validationErrorsValue["possibleCauses"];
+                                                if (possibleCausesValue != null && possibleCausesValue.Type != JTokenType.Null)
+                                                {
+                                                    string possibleCausesInstance = ((string)possibleCausesValue);
+                                                    healthErrorInstance.PossibleCauses = possibleCausesInstance;
+                                                }
+                                                
+                                                JToken recommendedActionValue = validationErrorsValue["recommendedAction"];
+                                                if (recommendedActionValue != null && recommendedActionValue.Type != JTokenType.Null)
+                                                {
+                                                    string recommendedActionInstance = ((string)recommendedActionValue);
+                                                    healthErrorInstance.RecommendedAction = recommendedActionInstance;
+                                                }
+                                                
+                                                JToken creationTimeUtcValue = validationErrorsValue["creationTimeUtc"];
+                                                if (creationTimeUtcValue != null && creationTimeUtcValue.Type != JTokenType.Null)
+                                                {
+                                                    string creationTimeUtcInstance = ((string)creationTimeUtcValue);
+                                                    healthErrorInstance.CreationTimeUtc = creationTimeUtcInstance;
+                                                }
+                                                
+                                                JToken recoveryProviderErrorMessageValue = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                if (recoveryProviderErrorMessageValue != null && recoveryProviderErrorMessageValue.Type != JTokenType.Null)
+                                                {
+                                                    string recoveryProviderErrorMessageInstance = ((string)recoveryProviderErrorMessageValue);
+                                                    healthErrorInstance.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance;
+                                                }
+                                                
+                                                JToken entityIdValue = validationErrorsValue["entityId"];
+                                                if (entityIdValue != null && entityIdValue.Type != JTokenType.Null)
+                                                {
+                                                    string entityIdInstance = ((string)entityIdValue);
+                                                    healthErrorInstance.EntityId = entityIdInstance;
+                                                }
+                                            }
+                                        }
+                                        
                                         JToken instanceTypeValue2 = customDetailsValue["instanceType"];
                                         if (instanceTypeValue2 != null && instanceTypeValue2.Type != JTokenType.Null)
                                         {
@@ -1127,6 +1207,86 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                     vMwareVirtualMachineDetailsInstance.DiscoveryType = discoveryTypeInstance;
                                                 }
                                                 
+                                                JToken validationErrorsArray = customDetailsValue["validationErrors"];
+                                                if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                                    {
+                                                        HealthError healthErrorInstance = new HealthError();
+                                                        vMwareVirtualMachineDetailsInstance.ValidationErrors.Add(healthErrorInstance);
+                                                        
+                                                        JToken errorSourceValue = validationErrorsValue["errorSource"];
+                                                        if (errorSourceValue != null && errorSourceValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorSourceInstance = ((string)errorSourceValue);
+                                                            healthErrorInstance.ErrorSource = errorSourceInstance;
+                                                        }
+                                                        
+                                                        JToken errorTypeValue = validationErrorsValue["errorType"];
+                                                        if (errorTypeValue != null && errorTypeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorTypeInstance = ((string)errorTypeValue);
+                                                            healthErrorInstance.ErrorType = errorTypeInstance;
+                                                        }
+                                                        
+                                                        JToken errorLevelValue = validationErrorsValue["errorLevel"];
+                                                        if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorLevelInstance = ((string)errorLevelValue);
+                                                            healthErrorInstance.ErrorLevel = errorLevelInstance;
+                                                        }
+                                                        
+                                                        JToken errorCodeValue = validationErrorsValue["errorCode"];
+                                                        if (errorCodeValue != null && errorCodeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorCodeInstance = ((string)errorCodeValue);
+                                                            healthErrorInstance.ErrorCode = errorCodeInstance;
+                                                        }
+                                                        
+                                                        JToken errorMessageValue = validationErrorsValue["errorMessage"];
+                                                        if (errorMessageValue != null && errorMessageValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorMessageInstance = ((string)errorMessageValue);
+                                                            healthErrorInstance.ErrorMessage = errorMessageInstance;
+                                                        }
+                                                        
+                                                        JToken possibleCausesValue = validationErrorsValue["possibleCauses"];
+                                                        if (possibleCausesValue != null && possibleCausesValue.Type != JTokenType.Null)
+                                                        {
+                                                            string possibleCausesInstance = ((string)possibleCausesValue);
+                                                            healthErrorInstance.PossibleCauses = possibleCausesInstance;
+                                                        }
+                                                        
+                                                        JToken recommendedActionValue = validationErrorsValue["recommendedAction"];
+                                                        if (recommendedActionValue != null && recommendedActionValue.Type != JTokenType.Null)
+                                                        {
+                                                            string recommendedActionInstance = ((string)recommendedActionValue);
+                                                            healthErrorInstance.RecommendedAction = recommendedActionInstance;
+                                                        }
+                                                        
+                                                        JToken creationTimeUtcValue = validationErrorsValue["creationTimeUtc"];
+                                                        if (creationTimeUtcValue != null && creationTimeUtcValue.Type != JTokenType.Null)
+                                                        {
+                                                            string creationTimeUtcInstance = ((string)creationTimeUtcValue);
+                                                            healthErrorInstance.CreationTimeUtc = creationTimeUtcInstance;
+                                                        }
+                                                        
+                                                        JToken recoveryProviderErrorMessageValue = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                        if (recoveryProviderErrorMessageValue != null && recoveryProviderErrorMessageValue.Type != JTokenType.Null)
+                                                        {
+                                                            string recoveryProviderErrorMessageInstance = ((string)recoveryProviderErrorMessageValue);
+                                                            healthErrorInstance.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance;
+                                                        }
+                                                        
+                                                        JToken entityIdValue = validationErrorsValue["entityId"];
+                                                        if (entityIdValue != null && entityIdValue.Type != JTokenType.Null)
+                                                        {
+                                                            string entityIdInstance = ((string)entityIdValue);
+                                                            healthErrorInstance.EntityId = entityIdInstance;
+                                                        }
+                                                    }
+                                                }
+                                                
                                                 JToken instanceTypeValue2 = customDetailsValue["instanceType"];
                                                 if (instanceTypeValue2 != null && instanceTypeValue2.Type != JTokenType.Null)
                                                 {
@@ -1676,6 +1836,86 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                                 {
                                                     string discoveryTypeInstance = ((string)discoveryTypeValue);
                                                     vMwareVirtualMachineDetailsInstance.DiscoveryType = discoveryTypeInstance;
+                                                }
+                                                
+                                                JToken validationErrorsArray = customDetailsValue["validationErrors"];
+                                                if (validationErrorsArray != null && validationErrorsArray.Type != JTokenType.Null)
+                                                {
+                                                    foreach (JToken validationErrorsValue in ((JArray)validationErrorsArray))
+                                                    {
+                                                        HealthError healthErrorInstance = new HealthError();
+                                                        vMwareVirtualMachineDetailsInstance.ValidationErrors.Add(healthErrorInstance);
+                                                        
+                                                        JToken errorSourceValue = validationErrorsValue["errorSource"];
+                                                        if (errorSourceValue != null && errorSourceValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorSourceInstance = ((string)errorSourceValue);
+                                                            healthErrorInstance.ErrorSource = errorSourceInstance;
+                                                        }
+                                                        
+                                                        JToken errorTypeValue = validationErrorsValue["errorType"];
+                                                        if (errorTypeValue != null && errorTypeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorTypeInstance = ((string)errorTypeValue);
+                                                            healthErrorInstance.ErrorType = errorTypeInstance;
+                                                        }
+                                                        
+                                                        JToken errorLevelValue = validationErrorsValue["errorLevel"];
+                                                        if (errorLevelValue != null && errorLevelValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorLevelInstance = ((string)errorLevelValue);
+                                                            healthErrorInstance.ErrorLevel = errorLevelInstance;
+                                                        }
+                                                        
+                                                        JToken errorCodeValue = validationErrorsValue["errorCode"];
+                                                        if (errorCodeValue != null && errorCodeValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorCodeInstance = ((string)errorCodeValue);
+                                                            healthErrorInstance.ErrorCode = errorCodeInstance;
+                                                        }
+                                                        
+                                                        JToken errorMessageValue = validationErrorsValue["errorMessage"];
+                                                        if (errorMessageValue != null && errorMessageValue.Type != JTokenType.Null)
+                                                        {
+                                                            string errorMessageInstance = ((string)errorMessageValue);
+                                                            healthErrorInstance.ErrorMessage = errorMessageInstance;
+                                                        }
+                                                        
+                                                        JToken possibleCausesValue = validationErrorsValue["possibleCauses"];
+                                                        if (possibleCausesValue != null && possibleCausesValue.Type != JTokenType.Null)
+                                                        {
+                                                            string possibleCausesInstance = ((string)possibleCausesValue);
+                                                            healthErrorInstance.PossibleCauses = possibleCausesInstance;
+                                                        }
+                                                        
+                                                        JToken recommendedActionValue = validationErrorsValue["recommendedAction"];
+                                                        if (recommendedActionValue != null && recommendedActionValue.Type != JTokenType.Null)
+                                                        {
+                                                            string recommendedActionInstance = ((string)recommendedActionValue);
+                                                            healthErrorInstance.RecommendedAction = recommendedActionInstance;
+                                                        }
+                                                        
+                                                        JToken creationTimeUtcValue = validationErrorsValue["creationTimeUtc"];
+                                                        if (creationTimeUtcValue != null && creationTimeUtcValue.Type != JTokenType.Null)
+                                                        {
+                                                            string creationTimeUtcInstance = ((string)creationTimeUtcValue);
+                                                            healthErrorInstance.CreationTimeUtc = creationTimeUtcInstance;
+                                                        }
+                                                        
+                                                        JToken recoveryProviderErrorMessageValue = validationErrorsValue["recoveryProviderErrorMessage"];
+                                                        if (recoveryProviderErrorMessageValue != null && recoveryProviderErrorMessageValue.Type != JTokenType.Null)
+                                                        {
+                                                            string recoveryProviderErrorMessageInstance = ((string)recoveryProviderErrorMessageValue);
+                                                            healthErrorInstance.RecoveryProviderErrorMessage = recoveryProviderErrorMessageInstance;
+                                                        }
+                                                        
+                                                        JToken entityIdValue = validationErrorsValue["entityId"];
+                                                        if (entityIdValue != null && entityIdValue.Type != JTokenType.Null)
+                                                        {
+                                                            string entityIdInstance = ((string)entityIdValue);
+                                                            healthErrorInstance.EntityId = entityIdInstance;
+                                                        }
+                                                    }
                                                 }
                                                 
                                                 JToken instanceTypeValue2 = customDetailsValue["instanceType"];

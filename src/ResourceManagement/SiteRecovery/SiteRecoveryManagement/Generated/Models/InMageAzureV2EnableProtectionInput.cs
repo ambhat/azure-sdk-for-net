@@ -203,6 +203,19 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._targetAzureVmName = value; }
         }
         
+        private string _useManagedDisks;
+        
+        /// <summary>
+        /// Optional. Gets or sets the value indicating if managed disks should
+        /// be used.Should be 'True' if managed disks are to be used, and
+        /// 'False' otherwise.
+        /// </summary>
+        public string UseManagedDisks
+        {
+            get { return this._useManagedDisks; }
+            set { this._useManagedDisks = value; }
+        }
+        
         /// <summary>
         /// Initializes a new instance of the
         /// InMageAzureV2EnableProtectionInput class.

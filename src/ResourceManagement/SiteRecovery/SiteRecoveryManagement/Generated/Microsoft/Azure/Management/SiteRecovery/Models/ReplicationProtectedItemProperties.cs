@@ -66,6 +66,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
             set { this._currentScenario = value; }
         }
         
+        private string _failoverHealth;
+        
+        /// <summary>
+        /// Optional. Gets or sets the consolidated failover health.
+        /// </summary>
+        public string FailoverHealth
+        {
+            get { return this._failoverHealth; }
+            set { this._failoverHealth = value; }
+        }
+        
         private string _failoverRecoveryPointId;
         
         /// <summary>

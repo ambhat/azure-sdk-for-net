@@ -21,6 +21,7 @@
 
 using System;
 using System.Linq;
+using Microsoft.Azure.Management.SiteRecovery.Models;
 
 namespace Microsoft.Azure.Management.SiteRecovery.Models
 {
@@ -29,6 +30,17 @@ namespace Microsoft.Azure.Management.SiteRecovery.Models
     /// </summary>
     public partial class RecoveryPointProperties
     {
+        private ProviderSpecificRecoveryPointDetails _providerSpecificDetails;
+        
+        /// <summary>
+        /// Optional. The provider specific details
+        /// </summary>
+        public ProviderSpecificRecoveryPointDetails ProviderSpecificDetails
+        {
+            get { return this._providerSpecificDetails; }
+            set { this._providerSpecificDetails = value; }
+        }
+        
         private DateTime _recoveryPointTime;
         
         /// <summary>

@@ -242,6 +242,31 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                     string recoveryPointTypeInstance = ((string)recoveryPointTypeValue);
                                     propertiesInstance.RecoveryPointType = recoveryPointTypeInstance;
                                 }
+                                
+                                JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
+                                if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
+                                {
+                                    string typeName = ((string)providerSpecificDetailsValue["instanceType"]);
+                                    if (typeName == "InMageAzureV2")
+                                    {
+                                        InMageAzureV2RecoveryPointDetails inMageAzureV2RecoveryPointDetailsInstance = new InMageAzureV2RecoveryPointDetails();
+                                        
+                                        JToken isMultiVmSyncPointValue = providerSpecificDetailsValue["isMultiVmSyncPoint"];
+                                        if (isMultiVmSyncPointValue != null && isMultiVmSyncPointValue.Type != JTokenType.Null)
+                                        {
+                                            string isMultiVmSyncPointInstance = ((string)isMultiVmSyncPointValue);
+                                            inMageAzureV2RecoveryPointDetailsInstance.IsMultiVmSyncPoint = isMultiVmSyncPointInstance;
+                                        }
+                                        
+                                        JToken instanceTypeValue = providerSpecificDetailsValue["instanceType"];
+                                        if (instanceTypeValue != null && instanceTypeValue.Type != JTokenType.Null)
+                                        {
+                                            string instanceTypeInstance = ((string)instanceTypeValue);
+                                            inMageAzureV2RecoveryPointDetailsInstance.InstanceType = instanceTypeInstance;
+                                        }
+                                        propertiesInstance.ProviderSpecificDetails = inMageAzureV2RecoveryPointDetailsInstance;
+                                    }
+                                }
                             }
                             
                             JToken idValue = responseDoc["id"];
@@ -535,6 +560,31 @@ namespace Microsoft.Azure.Management.SiteRecovery
                                         {
                                             string recoveryPointTypeInstance = ((string)recoveryPointTypeValue);
                                             propertiesInstance.RecoveryPointType = recoveryPointTypeInstance;
+                                        }
+                                        
+                                        JToken providerSpecificDetailsValue = propertiesValue["providerSpecificDetails"];
+                                        if (providerSpecificDetailsValue != null && providerSpecificDetailsValue.Type != JTokenType.Null)
+                                        {
+                                            string typeName = ((string)providerSpecificDetailsValue["instanceType"]);
+                                            if (typeName == "InMageAzureV2")
+                                            {
+                                                InMageAzureV2RecoveryPointDetails inMageAzureV2RecoveryPointDetailsInstance = new InMageAzureV2RecoveryPointDetails();
+                                                
+                                                JToken isMultiVmSyncPointValue = providerSpecificDetailsValue["isMultiVmSyncPoint"];
+                                                if (isMultiVmSyncPointValue != null && isMultiVmSyncPointValue.Type != JTokenType.Null)
+                                                {
+                                                    string isMultiVmSyncPointInstance = ((string)isMultiVmSyncPointValue);
+                                                    inMageAzureV2RecoveryPointDetailsInstance.IsMultiVmSyncPoint = isMultiVmSyncPointInstance;
+                                                }
+                                                
+                                                JToken instanceTypeValue = providerSpecificDetailsValue["instanceType"];
+                                                if (instanceTypeValue != null && instanceTypeValue.Type != JTokenType.Null)
+                                                {
+                                                    string instanceTypeInstance = ((string)instanceTypeValue);
+                                                    inMageAzureV2RecoveryPointDetailsInstance.InstanceType = instanceTypeInstance;
+                                                }
+                                                propertiesInstance.ProviderSpecificDetails = inMageAzureV2RecoveryPointDetailsInstance;
+                                            }
                                         }
                                     }
                                     

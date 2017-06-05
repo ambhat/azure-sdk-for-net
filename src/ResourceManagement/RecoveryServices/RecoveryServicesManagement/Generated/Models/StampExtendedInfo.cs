@@ -26,10 +26,21 @@ using Microsoft.Azure.Management.RecoveryServices.Models;
 namespace Microsoft.Azure.Management.RecoveryServices.Models
 {
     /// <summary>
-    /// The response model for the Stamp object.
+    /// The response model for the extended information stamp object.
     /// </summary>
-    public partial class Stamp
+    public partial class StampExtendedInfo
     {
+        private string _contractVersion;
+        
+        /// <summary>
+        /// Optional. Gets or sets the contract version.
+        /// </summary>
+        public string ContractVersion
+        {
+            get { return this._contractVersion; }
+            set { this._contractVersion = value; }
+        }
+        
         private string _id;
         
         /// <summary>
@@ -52,12 +63,12 @@ namespace Microsoft.Azure.Management.RecoveryServices.Models
             set { this._name = value; }
         }
         
-        private StampProperties _properties;
+        private StampExtendedInfoProperties _properties;
         
         /// <summary>
         /// Required. Properties of the stamp.
         /// </summary>
-        public StampProperties Properties
+        public StampExtendedInfoProperties Properties
         {
             get { return this._properties; }
             set { this._properties = value; }
@@ -75,17 +86,17 @@ namespace Microsoft.Azure.Management.RecoveryServices.Models
         }
         
         /// <summary>
-        /// Initializes a new instance of the Stamp class.
+        /// Initializes a new instance of the StampExtendedInfo class.
         /// </summary>
-        public Stamp()
+        public StampExtendedInfo()
         {
         }
         
         /// <summary>
-        /// Initializes a new instance of the Stamp class with required
-        /// arguments.
+        /// Initializes a new instance of the StampExtendedInfo class with
+        /// required arguments.
         /// </summary>
-        public Stamp(StampProperties properties)
+        public StampExtendedInfo(StampExtendedInfoProperties properties)
             : this()
         {
             if (properties == null)

@@ -20,52 +20,32 @@
 // code is regenerated.
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using Hyak.Common;
-using Microsoft.Azure;
 using Microsoft.Azure.Management.RecoveryServices.Models;
 
 namespace Microsoft.Azure.Management.RecoveryServices.Models
 {
     /// <summary>
-    /// The response model for Stamp list.
+    /// The definition of a AllocateStampInput object.
     /// </summary>
-    public partial class StampListResponse : AzureOperationResponse, IEnumerable<Stamp>
+    public partial class AllocateStampInput
     {
-        private IList<Stamp> _stamps;
+        private AllocateStampInputProperties _properties;
         
         /// <summary>
-        /// Optional. The list of stamps for the given region.
+        /// Optional. Gets or sets allocate stamp input properties.
         /// </summary>
-        public IList<Stamp> Stamps
+        public AllocateStampInputProperties Properties
         {
-            get { return this._stamps; }
-            set { this._stamps = value; }
+            get { return this._properties; }
+            set { this._properties = value; }
         }
         
         /// <summary>
-        /// Initializes a new instance of the StampListResponse class.
+        /// Initializes a new instance of the AllocateStampInput class.
         /// </summary>
-        public StampListResponse()
+        public AllocateStampInput()
         {
-            this.Stamps = new LazyList<Stamp>();
-        }
-        
-        /// <summary>
-        /// Gets the sequence of Stamps.
-        /// </summary>
-        public IEnumerator<Stamp> GetEnumerator()
-        {
-            return this.Stamps.GetEnumerator();
-        }
-        
-        /// <summary>
-        /// Gets the sequence of Stamps.
-        /// </summary>
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-        {
-            return this.GetEnumerator();
         }
     }
 }

@@ -29,39 +29,39 @@ using Microsoft.Azure.Management.RecoveryServices.Models;
 namespace Microsoft.Azure.Management.RecoveryServices.Models
 {
     /// <summary>
-    /// The response model for Stamp list.
+    /// The response model for Stamp allocation.
     /// </summary>
-    public partial class StampListResponse : AzureOperationResponse, IEnumerable<Stamp>
+    public partial class StampAllocateResponse : AzureOperationResponse, IEnumerable<StampExtendedInfo>
     {
-        private IList<Stamp> _stamps;
+        private IList<StampExtendedInfo> _stampInfo;
         
         /// <summary>
-        /// Optional. The list of stamps for the given region.
+        /// Optional. The details of stamp of given type for the given region.
         /// </summary>
-        public IList<Stamp> Stamps
+        public IList<StampExtendedInfo> StampInfo
         {
-            get { return this._stamps; }
-            set { this._stamps = value; }
+            get { return this._stampInfo; }
+            set { this._stampInfo = value; }
         }
         
         /// <summary>
-        /// Initializes a new instance of the StampListResponse class.
+        /// Initializes a new instance of the StampAllocateResponse class.
         /// </summary>
-        public StampListResponse()
+        public StampAllocateResponse()
         {
-            this.Stamps = new LazyList<Stamp>();
+            this.StampInfo = new LazyList<StampExtendedInfo>();
         }
         
         /// <summary>
-        /// Gets the sequence of Stamps.
+        /// Gets the sequence of StampInfo.
         /// </summary>
-        public IEnumerator<Stamp> GetEnumerator()
+        public IEnumerator<StampExtendedInfo> GetEnumerator()
         {
-            return this.Stamps.GetEnumerator();
+            return this.StampInfo.GetEnumerator();
         }
         
         /// <summary>
-        /// Gets the sequence of Stamps.
+        /// Gets the sequence of StampInfo.
         /// </summary>
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
